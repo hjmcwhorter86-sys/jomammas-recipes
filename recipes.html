@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Recipes • JoMama’s Recipes</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="header">
+    <nav class="nav">
+      <a href="index.html">Home</a>
+      <a href="recipes.html" aria-current="page">Recipes</a>
+    </nav>
+
+    <h1>Recipes</h1>
+    <p>Search, click, and expand for the full recipe.</p>
+    <input id="search" type="search" placeholder="Search recipes…" />
+    <div class="filters" id="filters"></div>
+  </header>
+
+  <main id="recipes" class="grid"></main>
+  <div id="detailed-view" style="display: none;"></div>
+
+  <script src="recipes-data.js"></script>
+  <script src="app.js"></script>
+
+</body>
+</html>

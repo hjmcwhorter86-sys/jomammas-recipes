@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>JoMama's Recipes</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="header">
+    <nav class="nav">
+      <a href="index.html" aria-current="page">Home</a>
+      <a href="recipes.html">Recipes</a>
+    </nav>
+
+   <div class="brand">
+  <img src="mascot.png" alt="JoMama mascot" class="mascot" />
+
+  <div class="brand-text">
+    <p>Family recipes. No ads. No stories. Just food.</p>
+  </div>
+</div>
+
+  </header>
+
+  <main class="home">
+    <section class="category-section">
+      <h2>Browse by Category</h2>
+      <div class="category-scroll-wrapper">
+        <button class="scroll-arrow scroll-arrow-left" id="scrollLeft" aria-label="Scroll left">‹</button>
+        <div class="category-grid" id="categoryGrid">
+        <a href="recipes.html?category=Chicken" class="category-tile">
+          <span class="category-emoji">🍗</span>
+          <span class="category-name">Chicken</span>
+        </a>
+        <a href="recipes.html?category=Beef" class="category-tile">
+          <span class="category-emoji">🥩</span>
+          <span class="category-name">Beef</span>
+        </a>
+        <a href="recipes.html?category=Pasta" class="category-tile">
+          <span class="category-emoji">🍝</span>
+          <span class="category-name">Pasta</span>
+        </a>
+        <a href="recipes.html?category=Snacks" class="category-tile">
+          <span class="category-emoji">🧀</span>
+          <span class="category-name">Snacks & Apps</span>
+        </a>
+        <a href="recipes.html?category=Slow%20Cooker" class="category-tile">
+          <span class="category-emoji">🍽️</span>
+          <span class="category-name">Slow Cooker</span>
+        </a>
+        <a href="recipes.html?category=Breakfast" class="category-tile">
+          <span class="category-emoji">🍳</span>
+          <span class="category-name">Breakfast</span>
+        </a>
+        <a href="recipes.html?category=Soup" class="category-tile">
+          <span class="category-emoji">🍲</span>
+          <span class="category-name">Soup</span>
+        </a>
+        <a href="recipes.html?category=Dessert" class="category-tile">
+          <span class="category-emoji">🍰</span>
+          <span class="category-name">Dessert</span>
+        </a>
+        </div>
+        <button class="scroll-arrow scroll-arrow-right" id="scrollRight" aria-label="Scroll right">›</button>
+      </div>
+    </section>
+
+    <section class="card">
+      <h3>Newest Recipes</h3>
+      <div id="newest" class="newest-grid"></div>
+      <p><a href="recipes.html">See all recipes →</a></p>
+    </section>
+  </main>
+
+  <script src="recipes-data.js"></script>
+  <script src="app.js"></script>
+
+</body>
+</html>
