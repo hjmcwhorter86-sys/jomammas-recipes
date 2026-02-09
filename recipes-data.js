@@ -1,8 +1,9 @@
 window.recipes = [
   {
-
+  id: "cornflake-chicken-tenders",
   title: "Bang Bang Cornflake Chicken Tenders",
   description: "Crispy air-fried cornflake chicken with sweet-heat bang bang sauce — fast, crunchy, and family-approved.",
+  image: "images/cornflake-chicken-tenders-air-fry.png",
   category: "Chicken",
   dateAdded: "2026-02-04",
   calories: "",
@@ -45,8 +46,10 @@ window.recipes = [
 },
 
   {
+  id: "light-chicken-alfredo-pasta",
   title: "Lightened-Up Chicken Alfredo (Protein Pasta Edition)",
   description: "Silky, glossy Alfredo vibes with lighter ingredients and big protein energy — feeds the whole family.",
+  image: "images/no-photo.jpg",
   category: "Pasta",
   dateAdded: "2026-02-04",
   calories: "",
@@ -92,8 +95,10 @@ window.recipes = [
 },
 
   {
+  id: "pepper-jack-queso",
   title: "Sodium Citrate Pepper Jack Queso (Eva’s Chili-Spiced Version)",
   description: "Ultra-smooth, pourable queso made with real cheese, light dairy, and sodium citrate — kid-approved but flavor-forward.",
+  image: "images/no-photo.jpg",
   category: "Snacks",
   dateAdded: "2026-02-04",
   calories: "",
@@ -131,8 +136,10 @@ window.recipes = [
   ]
 }
 ,{
+  id: "protein-cheesecake-jars",
   title: "Protein Cheesecake Jars",
   description: "No-bake high-protein cheesecake jars for dessert wins.",
+  image: "images/cheesecake-jars.png",
   calories: "~160",
   protein: "~8g",
     category: "Dessert",
@@ -156,9 +163,11 @@ notes: [
 tags: ["dessert", "high protein"]
 },
 
-{
+{ 
+  id: "skillet-salisbury-steak",
   title: "Easy Skillet Salisbury Steak",
   description: "Classic comfort food with a tangy gravy twist — fast, cozy, and family-approved.",
+  image: "images/salisbury-steak.png",
   category: "Ground Beef",
   dateAdded: "2026-02-04",
   calories: "",

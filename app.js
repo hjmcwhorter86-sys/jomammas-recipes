@@ -2,15 +2,6 @@
 
 const recipes = window.recipes || [];
 
-// Generate URL-friendly slug from recipe title
-function generateSlug(title) {
-  return title
-    .toLowerCase()
-    .replace(/[^\w\s-]/g, '')
-    .trim()
-    .replace(/\s+/g, '-');
-}
-
 const recipesEl = document.getElementById("recipes");
 const searchEl = document.getElementById("search");
 const detailedViewEl = document.getElementById("detailed-view");
@@ -24,7 +15,33 @@ if (newestEl) {
     .slice(0, 4);
 
   newestEl.innerHTML = newest.map(r => `
-    <a class="newest-card" href="recipes.html?q=${encodeURIComponent(r.title)}">
+    <a class="newest-card" href="recipes.html?id=${r.id}">
+      ${r.image ? `<img src="${r.image}" alt="${r.title}" class="newest-card-image">` : ''}
+      <div class="newest-card-inner">
+        <h4>${r.title}</h4>
+        <p>${r.description}</p>
+        <div class="meta-small">${r.category || ''}</div>
+      </div>
+    </a>
+  `).join('');
+}
+
+// Homepage: render popular recipes into #popular when present
+const popularEl = document.getElementById('popular');
+if (popularEl) {
+  const popularRecipeIds = [
+    "cornflake-chicken-tenders",
+    "light-chicken-alfredo-pasta",
+    "pepper-jack-queso"
+  ];
+
+  const popular = popularRecipeIds
+    .map(id => recipes.find(r => r.id === id))
+    .filter(Boolean);
+
+  popularEl.innerHTML = popular.map(r => `
+    <a class="newest-card" href="recipes.html?id=${r.id}">
+      ${r.image ? `<img src="${r.image}" alt="${r.title}" class="newest-card-image">` : ''}
       <div class="newest-card-inner">
         <h4>${r.title}</h4>
         <p>${r.description}</p>
@@ -43,7 +60,7 @@ if (!recipesEl || !searchEl) {
 
   function render(list) {
     recipesEl.innerHTML = list.map(r => `
-      <a href="recipes.html?id=${generateSlug(r.title)}" class="card">
+      <a href="recipes.html?id=${(r.id)}" class="card">
         <h3>${r.title}</h3>
         <p>${r.description}</p>
         <div class="meta">Calories: ${r.calories} • Protein: ${r.protein}</div>
@@ -58,7 +75,7 @@ if (!recipesEl || !searchEl) {
     if (!detailedViewEl) return;
     
     // Find current recipe index for Previous/Next navigation
-    const currentIndex = recipes.findIndex(r => generateSlug(r.title) === generateSlug(recipe.title));
+    const currentIndex = recipes.findIndex(r => r.id === recipe.id);
     const prevRecipe = currentIndex > 0 ? recipes[currentIndex - 1] : null;
     const nextRecipe = currentIndex < recipes.length - 1 ? recipes[currentIndex + 1] : null;
     
@@ -76,14 +93,17 @@ if (!recipesEl || !searchEl) {
           ${recipe.protein ? `<span class="meta-item">Protein: ${recipe.protein}</span>` : ''}
         </div>
         ${recipe.tags ? `<div class="recipe-tags">${recipe.tags.map(t => `<span class="tag">${t}</span>`).join('')}</div>` : ''}
-        ${recipe.ingredients ? `
-          <section class="recipe-section">
-            <h2>Ingredients</h2>
-            <ul class="ingredients-list">
-              ${recipe.ingredients.map(i => `<li>${i}</li>`).join('')}
-            </ul>
-          </section>
-        ` : ''}
+        <div class="recipe-content-wrapper">
+          ${recipe.ingredients ? `
+            <section class="recipe-section">
+              <h2>Ingredients</h2>
+              <ul class="ingredients-list">
+                ${recipe.ingredients.map(i => `<li>${i}</li>`).join('')}
+              </ul>
+            </section>
+          ` : ''}
+          ${recipe.image ? `<div class="recipe-image-container"><img src="${recipe.image}" alt="${recipe.title}" class="recipe-image"></div>` : ''}
+        </div>
         ${recipe.steps ? `
           <section class="recipe-section">
             <h2>Instructions</h2>
@@ -102,8 +122,8 @@ if (!recipesEl || !searchEl) {
         ` : ''}
       </article>
       <div class="recipe-nav">
-        ${prevRecipe ? `<a href="recipes.html?id=${generateSlug(prevRecipe.title)}" class="nav-btn prev-btn">← ${prevRecipe.title}</a>` : ''}
-        ${nextRecipe ? `<a href="recipes.html?id=${generateSlug(nextRecipe.title)}" class="nav-btn next-btn">${nextRecipe.title} →</a>` : ''}
+        ${prevRecipe ? `<a href="recipes.html?id=${(prevRecipe.id)}" class="nav-btn prev-btn">← ${prevRecipe.title}</a>` : ''}
+        ${nextRecipe ? `<a href="recipes.html?id=${(nextRecipe.id)}" class="nav-btn next-btn">${nextRecipe.title} →</a>` : ''}
       </div>
     `;
     detailedViewEl.style.display = 'block';
@@ -180,7 +200,7 @@ if (!recipesEl || !searchEl) {
   
   if (recipeId) {
     // Show detailed recipe view
-    const recipe = recipes.find(r => generateSlug(r.title) === recipeId);
+    const recipe = recipes.find(r => (r.id) === recipeId);
     if (recipe) {
       // Hide the grid and filters
       recipesEl.style.display = 'none';
