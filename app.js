@@ -93,6 +93,7 @@ if (!recipesEl || !searchEl) {
           ${recipe.protein ? `<span class="meta-item">Protein: ${recipe.protein}</span>` : ''}
         </div>
         ${recipe.tags ? `<div class="recipe-tags">${recipe.tags.map(t => `<span class="tag">${t}</span>`).join('')}</div>` : ''}
+        ${recipe.image ? `<div class="recipe-image-outer"><img src="${recipe.image}" alt="${recipe.title}" class="recipe-image"></div>` : ''}
         <div class="recipe-content-wrapper">
           ${recipe.ingredients ? `
             <section class="recipe-section">
@@ -102,7 +103,6 @@ if (!recipesEl || !searchEl) {
               </ul>
             </section>
           ` : ''}
-          ${recipe.image ? `<div class="recipe-image-container"><img src="${recipe.image}" alt="${recipe.title}" class="recipe-image"></div>` : ''}
         </div>
         ${recipe.steps ? `
           <section class="recipe-section">
