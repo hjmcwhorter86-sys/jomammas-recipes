@@ -75,23 +75,52 @@ if (pageType === 'list' && recipesEl && searchEl) {
   let currentCategory = 'All';
 
   function render(list) {
-    recipesEl.innerHTML = list.map(r => {
-      // Build meta line only if we have calories or protein
-      let metaItems = [];
-      if (r.calories && r.calories.trim()) metaItems.push(`Calories: ${r.calories}`);
-      if (r.protein && r.protein.trim()) metaItems.push(`Protein: ${r.protein}`);
-      const metaLine = metaItems.length > 0 ? `<div class="meta">${metaItems.join(' • ')}</div>` : '';
+    // Show empty state if no results
+    if (list.length === 0) {
+      recipesEl.innerHTML = `
+        <div class="empty-state">
+          <div class="empty-state-icon">🔍</div>
+          <h3>No recipes found</h3>
+          <p>Try adjusting your search or filters</p>
+          <button class="clear-filters-btn" id="clearFilters">Clear filters</button>
+        </div>
+      `;
       
+      // Add event listener for clear filters button
+      const clearBtn = document.getElementById('clearFilters');
+      if (clearBtn) {
+        clearBtn.addEventListener('click', () => {
+          searchEl.value = '';
+          currentCategory = 'All';
+          document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+          document.querySelector('.filter-btn[data-category="All"]')?.classList.add('active');
+          render(filterRecipes('', 'All'));
+        });
+      }
+      return;
+    }
+    
+    recipesEl.innerHTML = list.map(r => {
       // Use recipe image or fallback to placeholder
       const imageUrl = r.image && r.image.trim() ? r.image : 'images/no-photo.jpg';
       
+      // Build meta items for the meta row
+      let metaItems = [];
+      if (r.calories && r.calories.trim()) metaItems.push(`<span class="meta-item">${r.calories}</span>`);
+      if (r.protein && r.protein.trim()) metaItems.push(`<span class="meta-item">${r.protein}</span>`);
+      
       return `
         <a href="recipe-detail.html?id=${(r.id)}" class="card recipe-card">
-          <img src="${imageUrl}" alt="${r.title}" class="recipe-card-image" />
+          <div class="recipe-card-image-wrapper">
+            <img src="${imageUrl}" alt="${r.title}" class="recipe-card-image" />
+          </div>
           <div class="recipe-card-content">
             <h3>${r.title}</h3>
             <p>${r.description}</p>
-            ${metaLine}
+            <div class="recipe-meta-row">
+              <span class="category-pill">${r.category}</span>
+              ${metaItems.length > 0 ? `<div class="recipe-meta-items">${metaItems.join(' • ')}</div>` : ''}
+            </div>
             <div class="tags">
               ${r.tags.map(t => `<span class="tag">${t}</span>`).join("")}
             </div>

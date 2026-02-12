@@ -37,6 +37,12 @@ body {
   gap: 8px;
 }
 
+.logo-image {
+  height: 48px;
+  width: auto;
+  display: block;
+}
+
 .logo-text {
   font-size: 16px;
   font-weight: 700;
@@ -127,6 +133,10 @@ body {
 
   .header-top {
     gap: 12px;
+  }
+
+  .logo-image {
+    height: 40px;
   }
 
   .logo-text {
@@ -221,12 +231,20 @@ body {
     gap: 14px;
   }
   
-  .recipe-card-image {
+  .recipe-card-image-wrapper {
     height: 160px;
   }
   
   .recipe-card {
     min-height: 340px;
+  }
+  
+  .filters {
+    top: 60px;
+    margin-left: -12px;
+    margin-right: -12px;
+    padding-left: 12px;
+    padding-right: 12px;
   }
 }
 
@@ -258,14 +276,38 @@ body {
   padding: 0;
   overflow: hidden;
   min-height: 360px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.recipe-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 28px rgba(0,0,0,0.12);
+}
+
+.recipe-card-image-wrapper {
+  width: 100%;
+  height: 190px;
+  overflow: hidden;
+  position: relative;
+  background: #f8f7f5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .recipe-card-image {
   width: 100%;
-  height: 190px;
-  object-fit: cover;
+  height: 100%;
+  object-fit: contain;
   display: block;
-  border-radius: 16px 16px 0 0;
+  transition: transform 0.3s ease;
+  padding: 8px;
+  box-sizing: border-box;
+}
+
+.recipe-card:hover .recipe-card-image {
+  transform: scale(1.02);
 }
 
 .recipe-card-content {
@@ -305,10 +347,87 @@ a.card:hover {
   flex: 1;
 }
 
+/* Recipe meta row with category pill and stats */
+.recipe-meta-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 12px;
+  flex-wrap: wrap;
+}
+
+.category-pill {
+  display: inline-block;
+  padding: 4px 10px;
+  font-size: 12px;
+  font-weight: 600;
+  background: rgba(109,40,217,0.1);
+  border: 1px solid rgba(109,40,217,0.3);
+  border-radius: 999px;
+  color: #6d28d9;
+  white-space: nowrap;
+}
+
+.recipe-meta-items {
+  display: flex;
+  gap: 8px;
+  font-size: 12px;
+  opacity: 0.75;
+}
+
+.recipe-meta-items .meta-item {
+  white-space: nowrap;
+}
+
 .meta { 
   font-size: 13px; 
   opacity: 0.85;
   margin-bottom: 10px;
+}
+
+/* Empty state */
+.empty-state {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 60px 20px;
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+.empty-state-icon {
+  font-size: 64px;
+  margin-bottom: 16px;
+  opacity: 0.5;
+}
+
+.empty-state h3 {
+  margin: 0 0 8px;
+  font-size: 24px;
+  color: #111;
+}
+
+.empty-state p {
+  margin: 0 0 24px;
+  color: rgba(17,17,17,0.6);
+  font-size: 16px;
+}
+
+.clear-filters-btn {
+  padding: 12px 24px;
+  background: var(--accent);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.clear-filters-btn:hover {
+  filter: brightness(1.08);
+  box-shadow: 0 4px 12px rgba(109,40,217,0.3);
 }
 
 .tags { 
@@ -343,10 +462,21 @@ details.card li {
 
 .filters {
   margin-top: 10px;
+  margin-bottom: 20px;
   display: flex;
   gap: 8px;
   flex-wrap: wrap;
   align-items: flex-start;
+  position: sticky;
+  top: 72px;
+  background: var(--bg);
+  padding: 12px 0;
+  z-index: 50;
+  margin-left: -16px;
+  margin-right: -16px;
+  padding-left: 16px;
+  padding-right: 16px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
 }
 
 .filter-btn {
@@ -553,7 +683,6 @@ body{
 }
 
 /* === Card thumbnail images (Homepage + any grids) === */
-.recipe-card img,
 .card img,
 .newest-grid img {
   width: 100%;
