@@ -3,7 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Recipes • JoMama’s Recipes</title>
+  <meta name="page-type" content="detail" />
+  <title>Recipe • JoMama's Recipes</title>
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
@@ -16,23 +17,14 @@
       </div>
       <nav class="nav">
         <a href="index.html">Home</a>
-        <a href="recipes.html" aria-current="page" class="recipes-link">Recipes <span class="dropdown-arrow">▼</span></a>
+        <a href="recipes-list.html" class="recipes-link">Recipes <span class="dropdown-arrow">▼</span></a>
       </nav>
       <div class="header-actions">
-        <input id="search" type="search" class="search-input" placeholder="Search recipes…" />
-        <a href="recipes.html" class="view-all-button">View All Categories</a>
       </div>
-    </div>
-
-    <div class="recipes-header-content">
-      <h1>Recipes</h1>
-      <p>Search, click, and expand for the full recipe.</p>
-      <div class="filters" id="filters"></div>
     </div>
   </header>
 
-  <main id="recipes" class="grid"></main>
-  <div id="detailed-view" style="display: none;"></div>
+  <main id="detailed-view"></main>
 
   <script src="recipes-data.js"></script>
   <script src="app.js"></script>

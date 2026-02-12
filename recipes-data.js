@@ -49,7 +49,7 @@ window.recipes = [
   id: "light-chicken-alfredo-pasta",
   title: "Lightened-Up Chicken Alfredo (Protein Pasta Edition)",
   description: "Silky, glossy Alfredo vibes with lighter ingredients and big protein energy — feeds the whole family.",
-  image: "images/no-photo.jpg",
+  image: "images/light-chicken-alfredo.jpg",
   category: "Pasta",
   dateAdded: "2026-02-04",
   calories: "",
@@ -176,7 +176,7 @@ tags: ["dessert", "high protein"]
 
   ingredients: [
     "1 lb lean ground beef",
-    "1/3 cup bread crumbs",
+    "1/3 cup seasoned bread crumbs",
     "2 tsp ketchup",
     "1 tsp mustard",
     "1 tsp Worcestershire sauce",
@@ -201,10 +201,227 @@ tags: ["dessert", "high protein"]
   ],
 
   notes: [
-    "Serve with mashed potatoes and carrots for full comfort mode.",
+    "Serve with mashed potatoes and green beans for full comfort mode.",
     "Patties can be shaped ahead and refrigerated until ready to cook."
   ]
 },
+
+{
+  id: "quick-lobster-bisque",
+  title: "Quick Lobster Bisque",
+  description: "Creamy, cozy lobster bisque made fast with Better Than Bouillon — rich flavor without the restaurant fuss.",
+  image: "images/quick-lobster-bisque.png",
+  category: "Soup",
+  dateAdded: "2026-02-11",
+  calories: "",
+  protein: "",
+  tags: ["seafood", "soup", "easy", "weeknight", "comfort food"],
+
+  ingredients: [
+    "2 cups half & half or milk",
+    "1 cup water",
+    "2 Tbsp dry white wine",
+    "1½ Tbsp Better Than Bouillon Seasoned Lobster Base",
+    "3 Tbsp flour",
+    "2 Tbsp tomato paste",
+    "¼ tsp paprika",
+    "½ cup minced lobster meat or langoustine tail meat",
+    "Fresh herbs (parsley or chives)"
+  ],
+
+  steps: [
+    "In a saucepan over medium heat, add half & half, water, wine, lobster base, flour, tomato paste, and paprika.",
+    "Bring to a boil while stirring. Reduce heat and add lobster. Simmer for 5 minutes.",
+    "Top with fresh herbs and serve."
+  ],
+
+  notes: [
+    "Great with grilled cheese or crusty bread.",
+    "For extra richness, swap part of the milk for heavy cream."
+  ]
+},
+
+{
+  id: "air-fryer-general-tsos-chicken",
+  title: "Air Fryer General Tso’s Chicken",
+  description: "Crispy, saucy, and lighter than takeout — perfect for a quick weeknight Asian-inspired dinner.",
+  image: "images/air-fryer-general-tsos-chicken.png",
+  category: "Chicken",
+  dateAdded: "2026-02-11",
+  tags: ["air fryer", "chicken", "weeknight", "easy", "takeout fix", "high protein", "Asian"],
+  calories: "~370 per serving (with 1/2 cup cooked brown rice)",
+  protein: "~38g",
+
+  ingredients: [
+    "1.5 lbs boneless skinless chicken breast, cut into 1-inch cubes",
+    "2 tbsp cornstarch",
+    "1 tbsp flour (optional, for extra crispness)",
+    "1 tsp kosher salt",
+    "1/2 tsp garlic powder",
+    "1–2 tsp avocado oil (or light spray)",
+    "1/2–2/3 cup Iron Kitchen General Tso’s sauce (enough to coat without drowning)",
+
+    "Optional: steamed broccoli florets",
+    "Optional: bell pepper strips",
+    "Optional: snow peas or snap peas",
+    "Optional for serving: brown rice",
+    "Optional garnish: sesame seeds, sliced green onions"
+  ],
+
+  steps: [
+    "Prep chicken: Pat dry, then toss in a bowl with cornstarch, flour (if using), salt, and garlic powder until evenly coated.",
+    "Air fry: Spray lightly with avocado oil. Air fry at 390°F for 6–8 minutes, shake basket, then cook another 4–6 minutes until golden and cooked through.",
+    "Heat sauce: In a large skillet or wok, warm the General Tso’s sauce over medium heat.",
+    "Combine: Toss cooked chicken into the sauce until coated. Add steamed veggies at this stage if using.",
+    "Serve: Over brown rice. Garnish with sesame seeds and green onions if you want it to look like you paid $18 for it."
+  ],
+
+  notes: [
+    "For a lighter plate: go heavy on veggies and lighter on rice.",
+    "For better calorie control: brush sauce on instead of pouring.",
+    "If you want extra crisp: don’t overcrowd the basket; cook in batches."
+  ]
+},
+
+{
+  id: "air-fryer-chicken-parmesan",
+  title: "Air Fryer Chicken Parmesan",
+  description: "Crispy comfort, lighter macros, family win.",
+  image: "images/air-fryer-chicken-parmesan.jpg",
+  category: "Chicken",
+  dateAdded: "2026-02-11",
+  tags: ["air fryer", "kid-friendly", "low calorie", "high protein", "Italian"],
+
+  // Optional macros (leave blank if you don't want to estimate yet)
+  calories: "",
+  protein: "",
+
+  ingredients: [
+    "1.25–1.5 lbs thin-sliced boneless skinless chicken breast",
+    "1/2 cup Italian-style breadcrumbs (or panko + Italian seasoning)",
+    "1/4 cup grated parmesan",
+    "1 tsp garlic powder",
+    "1/2 tsp onion powder",
+    "Salt & pepper, to taste",
+    "2 eggs, whisked",
+    "Cooking spray",
+    "~1 cup marinara (Rao’s or whatever red sauce speaks to your soul)",
+    "3/4–1 cup reduced-fat shredded mozzarella",
+    "Extra parmesan for sprinkling",
+  ],
+
+  steps: [
+    "Bread the chicken: Set up two bowls. Bowl 1: whisked eggs. Bowl 2: breadcrumbs + parmesan + garlic powder + onion powder + salt & pepper. Dip chicken in egg, then press into breadcrumb mix to coat.",
+    "Air fry: Preheat air fryer to 390°F. Spray basket and tops of chicken lightly. Cook 6–7 minutes, flip, spray again, then cook 5–6 minutes more until golden and cooked through.",
+    "Parm it up: Spoon marinara over each piece. Top with mozzarella + extra parm. Air fry 2–3 minutes until cheese melts and bubbles.",
+    "Serve: Plate chicken over spaghetti squash (or protein pasta). Optional garnish: basil, parsley, and crushed red pepper."
+  ],
+
+  notes: [
+    "Want it extra crispy? Add 1 tbsp cornstarch to the breadcrumb mix.",
+    "Ethan loved this one (major mom victory)."
+  ]
+},
+
+{
+  id: "buffalo-chicken-enchiladas",
+  title: "Buffalo Chicken Enchiladas",
+  description: "Spicy chicken enchiladas perfect for a weeknight meal to feed a large family.",
+  image: "images/buffalo-chicken-enchiladas.jpg",
+  category: "Chicken",
+  dateAdded: "2026-02-11",
+  tags: ["casserole", "comfort food", "weeknight", "spicy"],
+
+  calories: "",
+  protein: "",
+
+  ingredients: [
+    "3 tbsp unsalted butter, melted (plus more for greasing the pan)",
+    "4 cups shredded rotisserie chicken",
+    "8 oz cream cheese, at room temperature",
+    "2 cups shredded cheddar",
+    "1 cup Buffalo-style hot sauce (plus more for serving)",
+    "1 bunch scallions, thinly sliced (white and green parts separated)",
+    "1/4 tsp ground cumin",
+    "16 corn or flour tortillas",
+    "2 tbsp crumbled blue cheese",
+    "2 tbsp ranch or blue cheese dressing"
+  ],
+
+  steps: [
+    "Preheat oven to 400°F and butter a 9×13-inch baking dish.",
+    "In a large bowl, mix chicken, cream cheese, 1 cup cheddar, 1/3 cup hot sauce, scallion whites, and cumin until well combined.",
+    "In a medium bowl, stir together melted butter, remaining 2/3 cup hot sauce, and 3 tbsp water.",
+    "Microwave tortillas in batches until warm and flexible, about 30 seconds. Keep wrapped in damp paper towels.",
+    "Spoon chicken mixture down the center of each tortilla and roll up.",
+    "Place enchiladas seam-side down in the prepared pan.",
+    "Pour hot sauce mixture over tortillas.",
+    "Top with remaining 1 cup cheddar and blue cheese. Bake 15–17 minutes until cheese is melted and bubbly.",
+    "Drizzle with ranch or blue cheese dressing, sprinkle with scallion greens, and serve with extra hot sauce."
+  ],
+
+  notes: [
+    "Want the kids to like it? Use flour tortillas and omit the blue cheese crumbles."
+  ]
+},
+
+{
+  id: "bbq-chicken-baked-potatoes",
+  title: "BBQ Chicken Baked Potatoes",
+  description: "Build-your-own BBQ chicken potato bar — easy weeknight comfort food.",
+  image: "images/bbq-chicken-baked-potatoes.jpg",
+  category: "Chicken",
+  dateAdded: "2026-02-12",
+  tags: ["weeknight", "comfort food", "slow cooker", "family dinner", "build your own"],
+
+  calories: "",
+  protein: "",
+
+  ingredients: [
+    "4 large russet potatoes (jumbo if you’re going full steakhouse mode)",
+    "1–2 tbsp olive oil",
+    "1–1½ tsp kosher salt (for skin)",
+    "Optional: freshly cracked black pepper",
+
+    "1½–2 lbs boneless skinless chicken breasts",
+    "1 tsp kosher salt",
+    "½ tsp black pepper",
+    "1 tsp garlic powder",
+    "1 tsp smoked paprika",
+    "¾–1 cup Sweet Baby Ray’s Sugar-Free BBQ Sauce (to taste)",
+
+    "Butter or light spread",
+    "Light sour cream or plain Greek yogurt",
+    "Reduced-fat shredded cheese",
+    "Crispy bacon pieces",
+    "Fresh chives, sliced",
+    "Extra salt & pepper",
+    "Hot sauce"
+  ],
+
+  steps: [
+    "Preheat oven to 400°F.",
+    "Scrub potatoes clean and dry thoroughly. Rub lightly with olive oil and sprinkle generously with kosher salt.",
+    "Place potatoes directly on the oven rack with a sheet pan below. Bake 50–60 minutes until skins are crisp and centers are tender. Rest 5 minutes before slicing.",
+
+    "Season chicken with salt, pepper, garlic powder, and smoked paprika. Place in slow cooker.",
+    "Cook on LOW 2–3 hours until tender and shreddable (about 2 hours if your crockpot runs hot, closer to 3 for most).",
+    "Shred chicken directly in the slow cooker, stir in BBQ sauce, and cook another 20–30 minutes until saucy.",
+
+    "Slice potatoes open and fluff insides with a fork. Season lightly.",
+    "Add butter or yogurt/sour cream, then spoon BBQ chicken over top.",
+    "Let everyone customize with cheese, bacon, chives, hot sauce, and serve immediately."
+  ],
+
+  notes: [
+    "Keep it lighter with Greek yogurt, reduced-fat cheese, and skipping bacon.",
+    "Going indulgent? Load it like a steakhouse and live your best life.",
+    "For smaller portions, use medium russets and about 4 oz chicken per potato."
+  ]
+},
+
+
+
 
 
 ];

@@ -2,6 +2,9 @@
 
 const recipes = window.recipes || [];
 
+// Detect page type from meta tag
+const pageType = document.querySelector('meta[name="page-type"]')?.getAttribute('content') || 'home';
+
 const recipesEl = document.getElementById("recipes");
 const searchEl = document.getElementById("search");
 const detailedViewEl = document.getElementById("detailed-view");
@@ -15,7 +18,7 @@ if (newestEl) {
     .slice(0, 4);
 
   newestEl.innerHTML = newest.map(r => `
-    <a class="newest-card" href="recipes.html?id=${r.id}">
+    <a class="newest-card" href="recipe-detail.html?id=${r.id}">
       ${r.image ? `<img src="${r.image}" alt="${r.title}" class="newest-card-image">` : ''}
       <div class="newest-card-inner">
         <h4>${r.title}</h4>
@@ -32,35 +35,48 @@ if (popularEl) {
   const popularRecipeIds = [
     "cornflake-chicken-tenders",
     "light-chicken-alfredo-pasta",
-    "pepper-jack-queso"
+    "pepper-jack-queso",
+    "protein-cheesecake-jars"
   ];
 
   const popular = popularRecipeIds
     .map(id => recipes.find(r => r.id === id))
     .filter(Boolean);
 
-  popularEl.innerHTML = popular.map(r => `
-    <a class="newest-card" href="recipes.html?id=${r.id}">
-      ${r.image ? `<img src="${r.image}" alt="${r.title}" class="newest-card-image">` : ''}
+  // Helper function to get badge text for a recipe
+  function getBadgeText(recipe) {
+    // If tags exist, pick the first one. Otherwise fall back to category.
+    if (recipe.tags && Array.isArray(recipe.tags) && recipe.tags.length > 0) {
+      return recipe.tags[0];
+    }
+    return recipe.category || '';
+  }
+
+  popularEl.innerHTML = popular.map(r => {
+    const badgeText = getBadgeText(r);
+    return `
+    <a class="newest-card" href="recipe-detail.html?id=${r.id}">
+      <div class="newest-card-image-wrapper">
+        ${r.image ? `<img src="${r.image}" alt="${r.title}" class="newest-card-image">` : ''}
+        ${badgeText ? `<span class="recipe-badge">${badgeText}</span>` : ''}
+      </div>
       <div class="newest-card-inner">
         <h4>${r.title}</h4>
         <p>${r.description}</p>
         <div class="meta-small">${r.category || ''}</div>
       </div>
     </a>
-  `).join('');
+  `;}).join('');
 }
 
-// If we're not on the recipes page, do nothing.
-if (!recipesEl || !searchEl) {
-  // app.js loaded on a page that doesn't have the recipes UI.
-} else {
+// If we're on the recipes list page, initialize recipes page functionality
+if (pageType === 'list' && recipesEl && searchEl) {
   const allCategories = [...new Set(recipes.map(r => r.category))].sort();
   let currentCategory = 'All';
 
   function render(list) {
     recipesEl.innerHTML = list.map(r => `
-      <a href="recipes.html?id=${(r.id)}" class="card">
+      <a href="recipe-detail.html?id=${(r.id)}" class="card">
         <h3>${r.title}</h3>
         <p>${r.description}</p>
         <div class="meta">Calories: ${r.calories} • Protein: ${r.protein}</div>
@@ -74,14 +90,22 @@ if (!recipesEl || !searchEl) {
   function renderDetailedView(recipe) {
     if (!detailedViewEl) return;
     
+    // Validate recipe has required fields
+    const hasIngredients = Array.isArray(recipe.ingredients) && recipe.ingredients.length > 0;
+    const hasSteps = Array.isArray(recipe.steps) && recipe.steps.length > 0;
+    const isIncomplete = !hasIngredients || !hasSteps;
+    
     // Find current recipe index for Previous/Next navigation
     const currentIndex = recipes.findIndex(r => r.id === recipe.id);
     const prevRecipe = currentIndex > 0 ? recipes[currentIndex - 1] : null;
     const nextRecipe = currentIndex < recipes.length - 1 ? recipes[currentIndex + 1] : null;
     
+    // Helper to safely render notes (can be array or string for backwards compatibility)
+    const notesArray = Array.isArray(recipe.notes) ? recipe.notes : (recipe.notes ? [recipe.notes] : []);
+    
     detailedViewEl.innerHTML = `
       <div class="detail-controls">
-        <button class="back-btn" onclick="window.location.href='recipes.html'">← Back to Recipes</button>
+        <button class="back-btn" onclick="window.location.href='recipes-list.html'">← Back to Recipes</button>
         <button class="copy-link-btn" id="copyLinkBtn">Copy Link</button>
       </div>
       <article class="recipe-detail">
@@ -92,38 +116,39 @@ if (!recipesEl || !searchEl) {
           ${recipe.calories ? `<span class="meta-item">Calories: ${recipe.calories}</span>` : ''}
           ${recipe.protein ? `<span class="meta-item">Protein: ${recipe.protein}</span>` : ''}
         </div>
-        ${recipe.tags ? `<div class="recipe-tags">${recipe.tags.map(t => `<span class="tag">${t}</span>`).join('')}</div>` : ''}
+        ${recipe.tags && Array.isArray(recipe.tags) && recipe.tags.length > 0 ? `<div class="recipe-tags">${recipe.tags.map(t => `<span class="tag">${t}</span>`).join('')}</div>` : ''}
         ${recipe.image ? `<div class="recipe-image-outer"><img src="${recipe.image}" alt="${recipe.title}" class="recipe-image"></div>` : ''}
         <div class="recipe-content-wrapper">
-          ${recipe.ingredients ? `
+          ${hasIngredients ? `
             <section class="recipe-section">
               <h2>Ingredients</h2>
               <ul class="ingredients-list">
                 ${recipe.ingredients.map(i => `<li>${i}</li>`).join('')}
               </ul>
             </section>
-          ` : ''}
+          ` : '<p class="incomplete-warning">Ingredients data incomplete</p>'}
         </div>
-        ${recipe.steps ? `
+        ${hasSteps ? `
           <section class="recipe-section">
             <h2>Instructions</h2>
             <ol class="steps-list">
               ${recipe.steps.map(s => `<li>${s}</li>`).join('')}
             </ol>
           </section>
-        ` : ''}
-        ${recipe.notes ? `
+        ` : '<p class="incomplete-warning">Instructions data incomplete</p>'}
+        ${notesArray.length > 0 ? `
           <section class="recipe-section">
             <h2>Notes</h2>
             <ul class="notes-list">
-              ${recipe.notes.map(n => `<li>${n}</li>`).join('')}
+              ${notesArray.map(n => `<li>${n}</li>`).join('')}
             </ul>
           </section>
         ` : ''}
+        ${isIncomplete ? `<div class="incomplete-message"><p><strong>⚠️ Recipe data incomplete:</strong> This recipe is missing ingredients or instructions. Please check back later or contact the maintainer.</p></div>` : ''}
       </article>
       <div class="recipe-nav">
-        ${prevRecipe ? `<a href="recipes.html?id=${(prevRecipe.id)}" class="nav-btn prev-btn">← ${prevRecipe.title}</a>` : ''}
-        ${nextRecipe ? `<a href="recipes.html?id=${(nextRecipe.id)}" class="nav-btn next-btn">${nextRecipe.title} →</a>` : ''}
+        ${prevRecipe ? `<a href="recipe-detail.html?id=${(prevRecipe.id)}" class="nav-btn prev-btn">← ${prevRecipe.title}</a>` : ''}
+        ${nextRecipe ? `<a href="recipe-detail.html?id=${(nextRecipe.id)}" class="nav-btn next-btn">${nextRecipe.title} →</a>` : ''}
       </div>
     `;
     detailedViewEl.style.display = 'block';
@@ -192,9 +217,9 @@ if (!recipesEl || !searchEl) {
     render(filterRecipes(e.target.value, currentCategory));
   });
 
-  // Prefill search from `q` query parameter when present (recipes.html?q=...)
-  // Also read `category` parameter from URL (recipes.html?category=Chicken)
-  // Or show detailed view if `id` parameter present (recipes.html?id=recipe-slug)
+  // Prefill search from `q` query parameter when present (recipes-list.html?q=...)
+  // Also read `category` parameter from URL (recipes-list.html?category=Chicken)
+  // Or show detailed view if `id` parameter present (recipes-list.html?id=recipe-slug)
   const urlParams = new URLSearchParams(window.location.search);
   const recipeId = urlParams.get('id');
   
@@ -248,6 +273,114 @@ if (!recipesEl || !searchEl) {
         btn.classList.remove('active');
       }
     });
+  }
+}
+
+// If we're on the recipe detail page, handle detail view rendering
+if (pageType === 'detail' && detailedViewEl) {
+  function renderDetailedView(recipe) {
+    // Validate recipe has required fields
+    const hasIngredients = Array.isArray(recipe.ingredients) && recipe.ingredients.length > 0;
+    const hasSteps = Array.isArray(recipe.steps) && recipe.steps.length > 0;
+    const isIncomplete = !hasIngredients || !hasSteps;
+    
+    // Find current recipe index for Previous/Next navigation
+    const currentIndex = recipes.findIndex(r => r.id === recipe.id);
+    const prevRecipe = currentIndex > 0 ? recipes[currentIndex - 1] : null;
+    const nextRecipe = currentIndex < recipes.length - 1 ? recipes[currentIndex + 1] : null;
+    
+    // Helper to safely render notes (can be array or string for backwards compatibility)
+    const notesArray = Array.isArray(recipe.notes) ? recipe.notes : (recipe.notes ? [recipe.notes] : []);
+    
+    detailedViewEl.innerHTML = `
+      <div class="detail-controls">
+        <button class="back-btn" onclick="window.location.href='recipes-list.html'">← Back to Recipes</button>
+        <button class="copy-link-btn" id="copyLinkBtn">Copy Link</button>
+      </div>
+      <article class="recipe-detail">
+        <h1>${recipe.title}</h1>
+        <p class="recipe-description">${recipe.description}</p>
+        <div class="recipe-meta">
+          <span class="badge">${recipe.category}</span>
+          ${recipe.calories ? `<span class="meta-item">Calories: ${recipe.calories}</span>` : ''}
+          ${recipe.protein ? `<span class="meta-item">Protein: ${recipe.protein}</span>` : ''}
+        </div>
+        ${recipe.tags && Array.isArray(recipe.tags) && recipe.tags.length > 0 ? `<div class="recipe-tags">${recipe.tags.map(t => `<span class="tag">${t}</span>`).join('')}</div>` : ''}
+        ${recipe.image ? `<div class="recipe-image-outer"><img src="${recipe.image}" alt="${recipe.title}" class="recipe-image"></div>` : ''}
+        <div class="recipe-content-wrapper">
+          ${hasIngredients ? `
+            <section class="recipe-section">
+              <h2>Ingredients</h2>
+              <ul class="ingredients-list">
+                ${recipe.ingredients.map(i => `<li>${i}</li>`).join('')}
+              </ul>
+            </section>
+          ` : '<p class="incomplete-warning">Ingredients data incomplete</p>'}
+        </div>
+        ${hasSteps ? `
+          <section class="recipe-section">
+            <h2>Instructions</h2>
+            <ol class="steps-list">
+              ${recipe.steps.map(s => `<li>${s}</li>`).join('')}
+            </ol>
+          </section>
+        ` : '<p class="incomplete-warning">Instructions data incomplete</p>'}
+        ${notesArray.length > 0 ? `
+          <section class="recipe-section">
+            <h2>Notes</h2>
+            <ul class="notes-list">
+              ${notesArray.map(n => `<li>${n}</li>`).join('')}
+            </ul>
+          </section>
+        ` : ''}
+        ${isIncomplete ? `<div class="incomplete-message"><p><strong>⚠️ Recipe data incomplete:</strong> This recipe is missing ingredients or instructions. Please check back later or contact the maintainer.</p></div>` : ''}
+      </article>
+      <div class="recipe-nav">
+        ${prevRecipe ? `<a href="recipe-detail.html?id=${(prevRecipe.id)}" class="nav-btn prev-btn">← ${prevRecipe.title}</a>` : ''}
+        ${nextRecipe ? `<a href="recipe-detail.html?id=${(nextRecipe.id)}" class="nav-btn next-btn">${nextRecipe.title} →</a>` : ''}
+      </div>
+    `;
+    
+    // Attach copy link button handler
+    const copyBtn = document.getElementById('copyLinkBtn');
+    if (copyBtn) {
+      copyBtn.addEventListener('click', () => {
+        const url = window.location.href;
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+          navigator.clipboard.writeText(url).then(() => {
+            const originalText = copyBtn.textContent;
+            copyBtn.textContent = 'Copied!';
+            setTimeout(() => {
+              copyBtn.textContent = originalText;
+            }, 1500);
+          }).catch(() => {
+            fallbackCopy(url);
+          });
+        } else {
+          fallbackCopy(url);
+        }
+      });
+    }
+  }
+
+  function fallbackCopy(url) {
+    const userInput = prompt('Copy the link below:', url);
+    if (userInput !== null) {
+      // User clicked OK, text is already in the prompt for selection
+    }
+  }
+
+  // Read recipe ID from URL and render detail view
+  const urlParams = new URLSearchParams(window.location.search);
+  const recipeId = urlParams.get('id');
+  
+  if (recipeId) {
+    const recipe = recipes.find(r => (r.id) === recipeId);
+    if (recipe) {
+      renderDetailedView(recipe);
+    } else {
+      detailedViewEl.innerHTML = '<p>Recipe not found. <a href="recipes-list.html">Back to recipes</a></p>';
+    }
   }
 }
 

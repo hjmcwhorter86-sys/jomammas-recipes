@@ -8,62 +8,75 @@
 </head>
 <body>
   <header class="header">
-    <nav class="nav">
-      <a href="index.html" aria-current="page">Home</a>
-      <a href="recipes.html">Recipes</a>
-    </nav>
-
-   <div class="brand">
-  <img src="mascot.png" alt="JoMama mascot" class="mascot" />
+    <div class="header-top">
+      <div class="logo">
+        <a href="index.html" class="logo-link">
+          <span class="logo-text">JoMamma's Recipes</span>
+        </a>
+      </div>
+      <nav class="nav">
+        <a href="index.html" aria-current="page">Home</a>
+        <a href="recipes-list.html" class="recipes-link">Recipes <span class="dropdown-arrow">▼</span></a>
+      </nav>
+      <div class="header-actions">
+        <input id="search" type="search" class="search-input" placeholder="Search recipes…" />
+        <a href="recipes-list.html" class="view-all-button">View All Categories</a>
+      </div>
+    </div>
+  </header>
 
   <section class="hero">
-  <h2>Welcome to JoMama’s Kitchen</h2>
-  <p>Tried-and-true family recipes — comfort food, weeknight wins, and macro-friendly favorites.</p>
+    <div class="hero-inner">
+      <div class="hero-left">
+        <img src="images/mascot.png" alt="JoMamma mascot" class="hero-mascot">
+      </div>
+
+      <div class="hero-right">
+        <h1>Welcome to JoMamma's Recipes!</h1>
+        <p>Tried-and-true family recipes that Ethan, Eva, Adrien and Claire grew up with (and love).</p>
+      </div>
+    </div>
   </section>
-
-
-  <div class="brand-text">
-    <p>Family recipes. No ads. No stories. Just food.</p>
-  </div>
-</div>
-
-  </header>
 
   <main class="home">
     <section class="category-section">
-      <h2>Browse by Category</h2>
+      <div class="section-divider">
+        <span class="divider-line"></span>
+        <h2 class="divider-title">Browse by Category</h2>
+        <span class="divider-line"></span>
+      </div>
       <div class="category-scroll-wrapper">
         <button class="scroll-arrow scroll-arrow-left" id="scrollLeft" aria-label="Scroll left">‹</button>
         <div class="category-grid" id="categoryGrid">
-        <a href="recipes.html?category=Chicken" class="category-tile">
+        <a href="recipes-list.html?category=Chicken" class="category-tile">
           <span class="category-emoji">🍗</span>
           <span class="category-name">Chicken</span>
         </a>
-        <a href="recipes.html?category=Beef" class="category-tile">
+        <a href="recipes-list.html?category=Beef" class="category-tile">
           <span class="category-emoji">🥩</span>
           <span class="category-name">Beef</span>
         </a>
-        <a href="recipes.html?category=Pasta" class="category-tile">
+        <a href="recipes-list.html?category=Pasta" class="category-tile">
           <span class="category-emoji">🍝</span>
           <span class="category-name">Pasta</span>
         </a>
-        <a href="recipes.html?category=Snacks" class="category-tile">
+        <a href="recipes-list.html?category=Snacks" class="category-tile">
           <span class="category-emoji">🧀</span>
           <span class="category-name">Snacks & Apps</span>
         </a>
-        <a href="recipes.html?category=Slow%20Cooker" class="category-tile">
+        <a href="recipes-list.html?category=Slow%20Cooker" class="category-tile">
           <span class="category-emoji">🍽️</span>
           <span class="category-name">Slow Cooker</span>
         </a>
-        <a href="recipes.html?category=Breakfast" class="category-tile">
+        <a href="recipes-list.html?category=Breakfast" class="category-tile">
           <span class="category-emoji">🍳</span>
           <span class="category-name">Breakfast</span>
         </a>
-        <a href="recipes.html?category=Soup" class="category-tile">
+        <a href="recipes-list.html?category=Soup" class="category-tile">
           <span class="category-emoji">🍲</span>
           <span class="category-name">Soup</span>
         </a>
-        <a href="recipes.html?category=Dessert" class="category-tile">
+        <a href="recipes-list.html?category=Dessert" class="category-tile">
           <span class="category-emoji">🍰</span>
           <span class="category-name">Dessert</span>
         </a>
@@ -73,15 +86,23 @@
     </section>
 
     <section class="card">
-      <h3>Newest Recipes</h3>
+      <div class="section-divider">
+        <span class="divider-line"></span>
+        <h2 class="divider-title">Newest Recipes</h2>
+        <span class="divider-line"></span>
+      </div>
       <div id="newest" class="newest-grid"></div>
-      <p><a href="recipes.html">See all recipes →</a></p>
+      <p><a href="recipes-list.html">See all recipes →</a></p>
     </section>
 
     <section class="card">
-      <h3>Popular Recipes</h3>
+      <div class="section-divider">
+        <span class="divider-line"></span>
+        <h2 class="divider-title">Popular Recipes</h2>
+        <span class="divider-line"></span>
+      </div>
       <div id="popular" class="newest-grid"></div>
-      <p><a href="recipes.html">See all recipes →</a></p>
+      <p><a href="recipes-list.html">See all recipes →</a></p>
     </section>
   </main>
 
