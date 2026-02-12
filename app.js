@@ -82,13 +82,19 @@ if (pageType === 'list' && recipesEl && searchEl) {
       if (r.protein && r.protein.trim()) metaItems.push(`Protein: ${r.protein}`);
       const metaLine = metaItems.length > 0 ? `<div class="meta">${metaItems.join(' • ')}</div>` : '';
       
+      // Use recipe image or fallback to placeholder
+      const imageUrl = r.image && r.image.trim() ? r.image : 'images/no-photo.jpg';
+      
       return `
-        <a href="recipe-detail.html?id=${(r.id)}" class="card">
-          <h3>${r.title}</h3>
-          <p>${r.description}</p>
-          ${metaLine}
-          <div class="tags">
-            ${r.tags.map(t => `<span class="tag">${t}</span>`).join("")}
+        <a href="recipe-detail.html?id=${(r.id)}" class="card recipe-card">
+          <img src="${imageUrl}" alt="${r.title}" class="recipe-card-image" />
+          <div class="recipe-card-content">
+            <h3>${r.title}</h3>
+            <p>${r.description}</p>
+            ${metaLine}
+            <div class="tags">
+              ${r.tags.map(t => `<span class="tag">${t}</span>`).join("")}
+            </div>
           </div>
         </a>
       `;
