@@ -8,7 +8,7 @@
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <header class="header header-recipes">
+  <header class="header">
     <div class="header-top">
       <div class="logo">
         <a href="index.html" class="logo-link">
@@ -24,15 +24,18 @@
         <a href="recipes-list.html" class="view-all-button">View All Categories</a>
       </div>
     </div>
+  </header>
 
-    <div class="recipes-header-content">
+  <div class="recipes-page-container">
+    <div class="recipes-page-header">
       <h1>Recipes</h1>
       <p>Search, click, and expand for the full recipe.</p>
       <div class="filters" id="filters"></div>
     </div>
-  </header>
 
-  <main id="recipes" class="grid"></main>
+    <main id="recipes" class="recipes-grid"></main>
+  </div>
+  
   <div id="detailed-view" style="display: none;"></div>
 
   <script src="recipes-data.js"></script>

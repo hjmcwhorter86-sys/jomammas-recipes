@@ -75,16 +75,24 @@ if (pageType === 'list' && recipesEl && searchEl) {
   let currentCategory = 'All';
 
   function render(list) {
-    recipesEl.innerHTML = list.map(r => `
-      <a href="recipe-detail.html?id=${(r.id)}" class="card">
-        <h3>${r.title}</h3>
-        <p>${r.description}</p>
-        <div class="meta">Calories: ${r.calories} • Protein: ${r.protein}</div>
-        <div class="tags">
-          ${r.tags.map(t => `<span class="tag">${t}</span>`).join("")}
-        </div>
-      </a>
-    `).join("");
+    recipesEl.innerHTML = list.map(r => {
+      // Build meta line only if we have calories or protein
+      let metaItems = [];
+      if (r.calories && r.calories.trim()) metaItems.push(`Calories: ${r.calories}`);
+      if (r.protein && r.protein.trim()) metaItems.push(`Protein: ${r.protein}`);
+      const metaLine = metaItems.length > 0 ? `<div class="meta">${metaItems.join(' • ')}</div>` : '';
+      
+      return `
+        <a href="recipe-detail.html?id=${(r.id)}" class="card">
+          <h3>${r.title}</h3>
+          <p>${r.description}</p>
+          ${metaLine}
+          <div class="tags">
+            ${r.tags.map(t => `<span class="tag">${t}</span>`).join("")}
+          </div>
+        </a>
+      `;
+    }).join("");
   }
 
   function renderDetailedView(recipe) {
