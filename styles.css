@@ -38,7 +38,7 @@ body {
 }
 
 .logo-image {
-  height: 48px;
+  max-height: 60px;
   width: auto;
   display: block;
 }
@@ -136,7 +136,7 @@ body {
   }
 
   .logo-image {
-    height: 40px;
+    max-height: 50px;
   }
 
   .logo-text {
@@ -586,6 +586,11 @@ details.card li {
 
 body{
   background: var(--bg);
+  background-image: url("images/background-paper.png");
+  background-repeat: repeat;
+  background-position: top left;
+  background-attachment: fixed;
+  background-size: auto;
 }
 
 .header h1{
