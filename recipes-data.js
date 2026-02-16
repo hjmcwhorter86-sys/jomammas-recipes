@@ -420,6 +420,48 @@ tags: ["dessert", "high protein"]
   ]
 },
 
+{
+  id: "light-tuscan-chicken",
+  title: "Light Tuscan Chicken",
+  description: "A delicious, creamy Tuscan chicken that's light on calories.",
+  image: "images/tuscan-chicken.jpg",
+  category: "Chicken",
+  dateAdded: "2026-02-12",
+  tags: ["Italian", "low calorie", "chicken"],
+
+  ingredients: [
+    "4 boneless, skinless chicken breasts",
+    "2 teaspoons olive oil",
+    "1 shallot, finely diced",
+    "3 cloves garlic, minced",
+    "2 cups fresh spinach",
+    "1/4 cup sun-dried tomatoes, chopped (or oven blistered tomatoes)",
+    "1/2 cup reduced-sodium chicken broth",
+    "1/2 cup white cooking wine",
+    "3 oz reduced-fat cream cheese",
+    "1/4 cup freshly grated Parmesan",
+    "1 teaspoon Italian seasoning, divided",
+    "1/2 teaspoon garlic powder",
+    "1/4 teaspoon red pepper flakes (optional)",
+    "Salt and pepper, to taste"
+  ],
+
+  steps: [
+    "Season chicken breasts with salt, pepper, garlic powder, and half of the Italian seasoning.",
+    "Heat olive oil in a large skillet over medium-high heat. Cook chicken 4–5 minutes per side until golden and cooked through (165°F). Remove and set aside.",
+    "In the same skillet, cook shallot 2–3 minutes until softened. Add garlic and sauté 30 seconds.",
+    "Stir in white cooking wine, scraping up browned bits. Simmer 2 minutes to reduce slightly.",
+    "Add chicken broth and whisk in cream cheese until smooth.",
+    "Mix in tomatoes, remaining Italian seasoning, and red pepper flakes. Simmer 2–3 minutes.",
+    "Add spinach and cook until just wilted. Stir in Parmesan.",
+    "Return chicken to skillet and spoon sauce over top before serving."
+  ],
+  notes: [
+    "Serve with parmesan polenta, and vegetable of your choice"
+  ]
+},
+
+
 
 
 

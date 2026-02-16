@@ -281,8 +281,8 @@ body {
 }
 
 .recipe-card:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 12px 28px rgba(0,0,0,0.12);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(120, 80, 40, 0.18);
 }
 
 .recipe-card-image-wrapper {
@@ -935,10 +935,10 @@ body{
   justify-content: center;
   gap: 8px;
   padding: 16px 12px;
-  background: white;
-  border: 1px solid #eee;
-  border-radius: 16px;
-  box-shadow: 0 6px 16px rgba(0,0,0,0.06);
+  background: rgba(255, 250, 242, 0.92);
+  border: 1px solid rgba(120, 80, 40, 0.12);
+  border-radius: 14px;
+  box-shadow: 0 6px 16px rgba(120, 80, 40, 0.12);
   text-decoration: none;
   color: #111;
   transition: all 0.2s ease;
@@ -948,9 +948,9 @@ body{
 }
 
 .category-tile:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
-  border-color: #ddd;
+  transform: translateY(-1px);
+  box-shadow: 0 8px 18px rgba(120, 80, 40, 0.18);
+  border-color: rgba(120, 80, 40, 0.2);
 }
 
 .category-emoji {
@@ -1299,6 +1299,28 @@ body{
   .divider-line {
     height: 1px;
   }
+}
+
+/* Warm parchment card styling (homepage + recipe cards) */
+.hero-inner,
+.home section.card,
+.newest-card,
+.newest-card-inner,
+.recipe-card {
+  background: rgba(255, 250, 242, 0.92);
+  border: 1px solid rgba(120, 80, 40, 0.12);
+  box-shadow: 0 6px 16px rgba(120, 80, 40, 0.12);
+  border-radius: 14px;
+}
+
+.newest-card-inner {
+  box-shadow: none;
+}
+
+.home a.card:hover,
+.newest-card:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 8px 18px rgba(120, 80, 40, 0.18);
 }
 
 /* Incomplete recipe data warnings */
