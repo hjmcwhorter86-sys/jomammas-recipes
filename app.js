@@ -160,7 +160,7 @@ if (pageType === 'list' && recipesEl && searchEl) {
           ${recipe.protein ? `<span class="meta-item">Protein: ${recipe.protein}</span>` : ''}
         </div>
         ${recipe.tags && Array.isArray(recipe.tags) && recipe.tags.length > 0 ? `<div class="recipe-tags">${recipe.tags.map(t => `<span class="tag">${t}</span>`).join('')}</div>` : ''}
-        ${recipe.image ? `<div class="recipe-image-outer"><img src="${recipe.image}" alt="${recipe.title}" class="recipe-image"></div>` : ''}
+        ${recipe.image ? `<div class="recipe-image-outer"><img src="${recipe.image}" alt="${recipe.title}" class="recipe-image" id="recipe-image-zoom" style="cursor: zoom-in;"></div>` : ''}
         <div class="recipe-content-wrapper">
           ${hasIngredients ? `
             <section class="recipe-section">
@@ -192,6 +192,10 @@ if (pageType === 'list' && recipesEl && searchEl) {
       <div class="recipe-nav">
         ${prevRecipe ? `<a href="recipe-detail.html?id=${(prevRecipe.id)}" class="nav-btn prev-btn">← ${prevRecipe.title}</a>` : ''}
         ${nextRecipe ? `<a href="recipe-detail.html?id=${(nextRecipe.id)}" class="nav-btn next-btn">${nextRecipe.title} →</a>` : ''}
+      </div>
+      <div id="imageModal" class="image-modal">
+        <span class="image-modal-close">&times;</span>
+        <img class="image-modal-content" id="modalImage" src="" alt="">
       </div>
     `;
     detailedViewEl.style.display = 'block';
@@ -349,7 +353,7 @@ if (pageType === 'detail' && detailedViewEl) {
           ${recipe.protein ? `<span class="meta-item">Protein: ${recipe.protein}</span>` : ''}
         </div>
         ${recipe.tags && Array.isArray(recipe.tags) && recipe.tags.length > 0 ? `<div class="recipe-tags">${recipe.tags.map(t => `<span class="tag">${t}</span>`).join('')}</div>` : ''}
-        ${recipe.image ? `<div class="recipe-image-outer"><img src="${recipe.image}" alt="${recipe.title}" class="recipe-image"></div>` : ''}
+        ${recipe.image ? `<div class="recipe-image-outer"><img src="${recipe.image}" alt="${recipe.title}" class="recipe-image" id="recipe-image-zoom" style="cursor: zoom-in;"></div>` : ''}
         <div class="recipe-content-wrapper">
           ${hasIngredients ? `
             <section class="recipe-section">
@@ -381,6 +385,10 @@ if (pageType === 'detail' && detailedViewEl) {
       <div class="recipe-nav">
         ${prevRecipe ? `<a href="recipe-detail.html?id=${(prevRecipe.id)}" class="nav-btn prev-btn">← ${prevRecipe.title}</a>` : ''}
         ${nextRecipe ? `<a href="recipe-detail.html?id=${(nextRecipe.id)}" class="nav-btn next-btn">${nextRecipe.title} →</a>` : ''}
+      </div>
+      <div id="imageModal" class="image-modal">
+        <span class="image-modal-close">&times;</span>
+        <img class="image-modal-content" id="modalImage" src="" alt="">
       </div>
     `;
     
@@ -421,6 +429,32 @@ if (pageType === 'detail' && detailedViewEl) {
     const recipe = recipes.find(r => (r.id) === recipeId);
     if (recipe) {
       renderDetailedView(recipe);
+      
+      // Setup image zoom modal
+      setTimeout(() => {
+        const imageZoom = document.getElementById('recipe-image-zoom');
+        const modal = document.getElementById('imageModal');
+        const modalImg = document.getElementById('modalImage');
+        const closeBtn = document.querySelector('.image-modal-close');
+        
+        if (imageZoom && modal && modalImg && closeBtn) {
+          imageZoom.addEventListener('click', () => {
+            modal.style.display = 'flex';
+            modalImg.src = imageZoom.src;
+            modalImg.alt = imageZoom.alt;
+          });
+          
+          closeBtn.addEventListener('click', () => {
+            modal.style.display = 'none';
+          });
+          
+          modal.addEventListener('click', (e) => {
+            if (e.target === modal) {
+              modal.style.display = 'none';
+            }
+          });
+        }
+      }, 0);
     } else {
       detailedViewEl.innerHTML = '<p>Recipe not found. <a href="recipes-list.html">Back to recipes</a></p>';
     }
