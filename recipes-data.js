@@ -461,6 +461,44 @@ tags: ["dessert", "high protein"]
   ]
 },
 
+{
+  id: "protein-pasta-lo-mein",
+  title: "Protein Pasta Chicken Lo Mein",
+  description: "A large family size lo mein recipe to hit those takeout cravings.",
+  image: "images/no-photo.jpg",
+  category: "Pasta",
+  dateAdded: "2026-02-16",
+  tags: ["takeout", "low calorie", "chicken", "pasta"],
+
+  ingredients: [
+    "1 box protein pasta (14–15 oz)",
+    "1 bag frozen stir-fry vegetables (12–16 oz)",
+    "1½–2 lbs chicken breast, cooked & sliced",
+    "2 tsp avocado oil or light butter",
+    "3–4 cloves garlic, minced",
+    "Optional: 1 tsp grated ginger",
+    "⅓ cup low-sodium soy sauce",
+    "3 tbsp oyster sauce",
+    "2–3 tbsp hoisin sauce",
+    "1½ tbsp sesame oil",
+    "1½ tbsp cornstarch",
+    "1 cup chicken broth (or half broth, half reserved pasta water)",
+    "A splash of rice vinegar",
+    "A drizzle of Sriracha (optional)"
+  ],
+
+  steps: [
+    "Cook pasta just to al dente. Reserve 1 cup of pasta water before draining.",
+    "Heat oil in a large skillet or wok over medium-high. Cook vegetables 5–6 minutes until hot and tender.",
+    "Add garlic and ginger. Cook 30 seconds until fragrant.",
+    "Add sliced chicken and warm through.",
+    "In a bowl, whisk soy sauce, oyster sauce, hoisin, sesame oil, cornstarch, broth, rice vinegar, and Sriracha until smooth.",
+    "Pour sauce into the pan and simmer 1–2 minutes until thickened and glossy.",
+    "Add cooked pasta and toss to combine.",
+    "Add reserved pasta water as needed to loosen and coat everything evenly."
+  ]
+},
+
 
 
 
