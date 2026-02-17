@@ -148,8 +148,8 @@ if (pageType === 'list' && recipesEl && searchEl) {
     
     detailedViewEl.innerHTML = `
       <div class="detail-controls">
-        <button class="back-btn" onclick="window.location.href='recipes-list.html'">← Back to Recipes</button>
-        <button class="copy-link-btn" id="copyLinkBtn">Copy Link</button>
+        <button class="back-btn button-family button-secondary" onclick="window.location.href='recipes-list.html'">← Back to Recipes</button>
+        <button class="copy-link-btn button-family button-secondary" id="copyLinkBtn">Copy Link</button>
       </div>
       <article class="recipe-detail">
         <h1>${recipe.title}</h1>
@@ -157,7 +157,7 @@ if (pageType === 'list' && recipesEl && searchEl) {
         <div class="recipe-meta">
           <div class="meta-primary">
             <span class="badge">${recipe.category}</span>
-            <button class="print-recipe-btn" id="printRecipeBtn" type="button">Print Recipe</button>
+            <button class="print-recipe-btn button-family button-primary" id="printRecipeBtn" type="button">Print Recipe</button>
           </div>
           ${recipe.calories ? `<span class="meta-item">Calories: ${recipe.calories}</span>` : ''}
           ${recipe.protein ? `<span class="meta-item">Protein: ${recipe.protein}</span>` : ''}
@@ -351,8 +351,8 @@ if (pageType === 'detail' && detailedViewEl) {
     
     detailedViewEl.innerHTML = `
       <div class="detail-controls">
-        <button class="back-btn" onclick="window.location.href='recipes-list.html'">← Back to Recipes</button>
-        <button class="copy-link-btn" id="copyLinkBtn">Copy Link</button>
+        <button class="back-btn button-family button-secondary" onclick="window.location.href='recipes-list.html'">← Back to Recipes</button>
+        <button class="copy-link-btn button-family button-secondary" id="copyLinkBtn">Copy Link</button>
       </div>
       <article class="recipe-detail">
         <h1>${recipe.title}</h1>
@@ -360,7 +360,7 @@ if (pageType === 'detail' && detailedViewEl) {
         <div class="recipe-meta">
           <div class="meta-primary">
             <span class="badge">${recipe.category}</span>
-            <button class="print-recipe-btn" id="printRecipeBtn" type="button">Print Recipe</button>
+            <button class="print-recipe-btn button-family button-primary" id="printRecipeBtn" type="button">Print Recipe</button>
           </div>
           ${recipe.calories ? `<span class="meta-item">Calories: ${recipe.calories}</span>` : ''}
           ${recipe.protein ? `<span class="meta-item">Protein: ${recipe.protein}</span>` : ''}
