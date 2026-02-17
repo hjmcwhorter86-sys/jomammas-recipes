@@ -7,7 +7,7 @@ body {
 
 .header {
   margin-top: 16px;
-  padding: 24px 16px;
+  padding: 16px 16px;
   background: rgba(255, 250, 242, 0.92);
   border-bottom: 1px solid rgba(120, 80, 40, 0.12);
   box-shadow: 0 12px 32px rgba(120, 80, 40, 0.25);
@@ -589,7 +589,7 @@ details.card li {
 
 body{
   background: var(--bg);
-  background-image: url("images/background-paper.png");
+  background-image: url("images/background-wood.png");
   background-repeat: repeat;
   background-position: top left;
   background-attachment: fixed;
@@ -1026,10 +1026,12 @@ body{
 }
 
 .recipe-detail {
-  background: white;
+  background: rgba(255, 252, 245, 0.92);
+  border: 1px solid rgba(140, 110, 70, 0.18);
   border-radius: 16px;
   padding: 32px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+  box-shadow: 0 10px 26px rgba(0,0,0,0.12);
+  backdrop-filter: blur(2px);
 }
 
 .recipe-detail h1 {
@@ -1220,29 +1222,31 @@ body{
 
 .hero {
   max-width: 100%;
-  margin: 24px auto 10px;
-  padding: 16px;
+  margin: 20px auto 8px;
+  padding: 12px 16px;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
 .hero-inner {
-  max-width: 1100px;
-  width: 100%;
-  background: white;
-  border-radius: 16px;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+  max-width: 1040px;
+  width: min(100%, 1040px);
+  min-height: 360px;
+  position: relative;
+  background: transparent;
+  border-radius: 0;
+  box-shadow: none;
   padding: 20px 16px;
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 20px;
+  gap: 10px;
 }
 
 .hero h1 {
-  margin: 0 0 12px;
-  font-size: 32px;
+  margin: 0 0 6px;
+  font-size: 30px;
   letter-spacing: -0.02em;
   color: #111;
 }
@@ -1251,30 +1255,38 @@ body{
   margin: 0;
   color: rgba(17, 17, 17, 0.7);
   font-size: 16px;
-  line-height: 1.6;
+  line-height: 1.45;
 }
 
 .hero-mascot {
-  max-width: 350px;
+  max-width: 272px;
   height: auto;
   flex-shrink: 0;
+  transform: translateY(24px);
 }
 
 .hero-right {
   max-width: 500px;
   flex: 1;
+  transform: translateX(-10px) translateY(8px);
 }
 
 @media (max-width: 768px) {
+  .hero {
+    margin: 18px auto 6px;
+    padding: 12px;
+  }
+
   .hero-inner {
     flex-direction: column;
-    gap: 24px;
+    gap: 14px;
     padding: 24px 20px;
     text-align: center;
+    min-height: 0;
   }
 
   .hero h1 {
-    font-size: 26px;
+    font-size: 25px;
   }
 
   .hero p {
@@ -1282,11 +1294,13 @@ body{
   }
 
   .hero-mascot {
-    max-width: 200px;
+    max-width: 168px;
+    transform: translateY(14px);
   }
 
   .hero-right {
     max-width: 100%;
+    transform: translateY(6px);
   }
 }
 @media (max-width: 768px) {
@@ -1314,6 +1328,40 @@ body{
   border: 1px solid rgba(120, 80, 40, 0.12);
   box-shadow: 0 6px 16px rgba(120, 80, 40, 0.12);
   border-radius: 14px;
+}
+
+.hero-inner {
+  background: transparent;
+  border: none;
+  box-shadow: none;
+}
+
+.hero-inner::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: min(1380px, 136vw);
+  height: min(720px, 90vw);
+  transform: translate(-50%, -50%);
+  background-image: url("images/hero-background-lace-doily.png");
+  background-size: contain;
+  background-position: center center;
+  background-repeat: no-repeat;
+  pointer-events: none;
+  z-index: 0;
+}
+
+@media (max-width: 768px) {
+  .hero-inner::before {
+    width: min(820px, 200vw);
+    height: min(560px, 152vw);
+  }
+}
+
+.hero-inner > * {
+  position: relative;
+  z-index: 1;
 }
 
 /* Refined matte paper panel styling for Newest Recipes sections */
