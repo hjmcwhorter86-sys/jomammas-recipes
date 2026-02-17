@@ -8,7 +8,7 @@
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <header class="header header-recipes">
+  <header class="header">
     <div class="header-top">
       <div class="logo">
         <a href="index.html" class="logo-link">
@@ -17,14 +17,31 @@
       </div>
       <nav class="nav">
         <a href="index.html">Home</a>
-        <a href="recipes-list.html" class="recipes-link">Recipes <span class="dropdown-arrow">▼</span></a>
+        <a href="recipes-list.html" aria-current="page" class="recipes-link">Recipes <span class="dropdown-arrow">▼</span></a>
       </nav>
       <div class="header-actions">
+        <input id="search" type="search" class="search-input" placeholder="Search recipes…" />
+        <a href="recipes-list.html" class="view-all-button button-family button-primary">View All Categories</a>
       </div>
     </div>
   </header>
 
   <main id="detailed-view"></main>
+
+  <footer class="site-footer" aria-label="Site footer">
+    <div class="site-footer-inner">
+      <div class="site-footer-brand">
+        <h2>JoMamma's Recipes</h2>
+        <p>Ad free recipes for everyone to enjoy</p>
+      </div>
+      <nav class="site-footer-nav" aria-label="Footer navigation">
+        <a href="index.html">Home</a>
+        <a href="recipes-list.html">All Recipes</a>
+        <a href="index.html#categories">Categories</a>
+      </nav>
+      <p class="site-footer-copy">© 2026 • easy printer-friendly recipes</p>
+    </div>
+  </footer>
 
   <script src="recipes-data.js"></script>
   <script src="app.js"></script>

@@ -5,9 +5,50 @@ const recipes = window.recipes || [];
 // Detect page type from meta tag
 const pageType = document.querySelector('meta[name="page-type"]')?.getAttribute('content') || 'home';
 
+function setSeo(titleText, descriptionText) {
+  const siteName = "JoMama's Recipes";
+  document.title = titleText ? `${titleText} • ${siteName}` : siteName;
+
+  let descriptionMeta = document.querySelector('meta[name="description"]');
+  if (!descriptionMeta) {
+    descriptionMeta = document.createElement('meta');
+    descriptionMeta.setAttribute('name', 'description');
+    document.head.appendChild(descriptionMeta);
+  }
+  descriptionMeta.setAttribute('content', (descriptionText || '').trim());
+}
+
+if (pageType === 'home') {
+  setSeo('Home', 'No Ads. No long-winded stories. Just good food.');
+}
+
+if (pageType === 'list') {
+  setSeo('Recipes', 'Search, browse, and filter macro-friendly comfort food recipes.');
+}
+
 const recipesEl = document.getElementById("recipes");
 const searchEl = document.getElementById("search");
 const detailedViewEl = document.getElementById("detailed-view");
+const recipesListLinks = document.querySelectorAll('a[href="recipes-list.html"]');
+
+recipesListLinks.forEach((link) => {
+  link.addEventListener('click', (event) => {
+    event.preventDefault();
+    window.location.href = 'recipes-list.html';
+  });
+});
+
+// Header search behavior for non-list pages: Enter navigates to recipes list with query.
+if (searchEl && pageType !== 'list') {
+  searchEl.addEventListener('keydown', (event) => {
+    if (event.key === 'Enter') {
+      event.preventDefault();
+      const query = searchEl.value.trim();
+      const target = query ? `recipes-list.html?q=${encodeURIComponent(query)}` : 'recipes-list.html';
+      window.location.href = target;
+    }
+  });
+}
 
 // Homepage: render newest recipes into #newest when present
 const newestEl = document.getElementById('newest');
@@ -21,7 +62,7 @@ if (newestEl) {
     <a class="newest-card" href="recipe-detail.html?id=${r.id}">
       ${r.image ? `<img src="${r.image}" alt="${r.title}" class="newest-card-image">` : ''}
       <div class="newest-card-inner">
-        <h4>${r.title}</h4>
+        <h3>${r.title}</h3>
         <p>${r.description}</p>
         <div class="meta-small">${r.category || ''}</div>
       </div>
@@ -61,7 +102,7 @@ if (popularEl) {
         ${badgeText ? `<span class="recipe-badge">${badgeText}</span>` : ''}
       </div>
       <div class="newest-card-inner">
-        <h4>${r.title}</h4>
+        <h3>${r.title}</h3>
         <p>${r.description}</p>
         <div class="meta-small">${r.category || ''}</div>
       </div>
@@ -131,6 +172,8 @@ if (pageType === 'list' && recipesEl && searchEl) {
   }
 
   function renderDetailedView(recipe) {
+    setSeo(recipe.title, recipe.description || '');
+
     if (!detailedViewEl) return;
     
     // Validate recipe has required fields
@@ -288,11 +331,6 @@ if (pageType === 'list' && recipesEl && searchEl) {
       recipesEl.style.display = 'none';
       const filtersEl = document.getElementById('filters');
       if (filtersEl) filtersEl.style.display = 'none';
-      const headerContent = document.querySelector('header');
-      if (headerContent) {
-        const searchInput = headerContent.querySelector('#search');
-        if (searchInput) searchInput.style.display = 'none';
-      }
       // Show detailed view
       renderDetailedView(recipe);
     } else {
@@ -336,6 +374,8 @@ if (pageType === 'list' && recipesEl && searchEl) {
 // If we're on the recipe detail page, handle detail view rendering
 if (pageType === 'detail' && detailedViewEl) {
   function renderDetailedView(recipe) {
+    setSeo(recipe.title, recipe.description || '');
+
     // Validate recipe has required fields
     const hasIngredients = Array.isArray(recipe.ingredients) && recipe.ingredients.length > 0;
     const hasSteps = Array.isArray(recipe.steps) && recipe.steps.length > 0;
