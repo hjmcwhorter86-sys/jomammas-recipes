@@ -1337,7 +1337,7 @@ body{
 .hero-right {
   max-width: 500px;
   flex: 1;
-  transform: translateX(-10px) translateY(8px);
+  transform: translateX(-26px) translateY(8px);
 }
 
 @media (max-width: 768px) {
