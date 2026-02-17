@@ -1019,6 +1019,13 @@ body{
   font-size: var(--font-size-xl);
 }
 
+.category-icon-image {
+  width: 2.5em;
+  height: 2.5em;
+  display: block;
+  object-fit: contain;
+}
+
 .category-name {
   font-size: var(--font-size-sm);
   font-weight: 600;

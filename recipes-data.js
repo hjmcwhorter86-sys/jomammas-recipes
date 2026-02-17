@@ -370,7 +370,7 @@ tags: ["dessert", "high protein"]
   title: "BBQ Chicken Baked Potatoes",
   description: "Build-your-own BBQ chicken potato bar — easy weeknight comfort food.",
   image: "images/bbq-chicken-baked-potatoes.jpg",
-  category: "Chicken",
+  category: "Slow Cooker",
   dateAdded: "2026-02-12",
   tags: ["weeknight", "comfort food", "slow cooker", "family dinner", "build your own"],
 
