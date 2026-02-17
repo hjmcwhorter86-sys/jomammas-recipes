@@ -155,7 +155,10 @@ if (pageType === 'list' && recipesEl && searchEl) {
         <h1>${recipe.title}</h1>
         <p class="recipe-description">${recipe.description}</p>
         <div class="recipe-meta">
-          <span class="badge">${recipe.category}</span>
+          <div class="meta-primary">
+            <span class="badge">${recipe.category}</span>
+            <button class="print-recipe-btn" id="printRecipeBtn" type="button">Print Recipe</button>
+          </div>
           ${recipe.calories ? `<span class="meta-item">Calories: ${recipe.calories}</span>` : ''}
           ${recipe.protein ? `<span class="meta-item">Protein: ${recipe.protein}</span>` : ''}
         </div>
@@ -218,6 +221,13 @@ if (pageType === 'list' && recipesEl && searchEl) {
         } else {
           fallbackCopy(url);
         }
+      });
+    }
+
+    const printBtn = document.getElementById('printRecipeBtn');
+    if (printBtn) {
+      printBtn.addEventListener('click', () => {
+        window.print();
       });
     }
   }
@@ -348,7 +358,10 @@ if (pageType === 'detail' && detailedViewEl) {
         <h1>${recipe.title}</h1>
         <p class="recipe-description">${recipe.description}</p>
         <div class="recipe-meta">
-          <span class="badge">${recipe.category}</span>
+          <div class="meta-primary">
+            <span class="badge">${recipe.category}</span>
+            <button class="print-recipe-btn" id="printRecipeBtn" type="button">Print Recipe</button>
+          </div>
           ${recipe.calories ? `<span class="meta-item">Calories: ${recipe.calories}</span>` : ''}
           ${recipe.protein ? `<span class="meta-item">Protein: ${recipe.protein}</span>` : ''}
         </div>
@@ -410,6 +423,13 @@ if (pageType === 'detail' && detailedViewEl) {
         } else {
           fallbackCopy(url);
         }
+      });
+    }
+
+    const printBtn = document.getElementById('printRecipeBtn');
+    if (printBtn) {
+      printBtn.addEventListener('click', () => {
+        window.print();
       });
     }
   }
