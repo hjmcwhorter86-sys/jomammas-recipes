@@ -165,11 +165,6 @@ h3 {
   font-weight: 600;
 }
 
-.dropdown-arrow {
-  font-size: var(--font-size-2xs);
-  display: inline-block;
-}
-
 .header-actions {
   display: flex;
   align-items: center;

@@ -499,6 +499,41 @@ tags: ["dessert", "high protein"]
   ]
 },
 
+{
+  id: "protein-buffalo-mac-and-cheese",
+  title: "High Protein Buffalo Chicken Mac and Cheese",
+  description: "Creamy buffalo chicken style mac and cheese that's loaded with protein.",
+  image: "images/buffalo-chicken-mac-and-cheese.jpg",
+  category: "Pasta",
+  dateAdded: "2026-02-17",
+  tags: ["high protein", "low calorie", "chicken", "pasta", "mac and cheese"],
+
+  ingredients: [
+    "12 oz Barilla Protein Plus elbow macaroni or penne pasta",
+    "16 oz full-fat cottage cheese",
+    "1/2 cup buffalo sauce",
+    "2 cups shredded cooked chicken",
+    "1/4 cup milk",
+    "2 tbsp ranch seasoning",
+    "1 cup shredded cheddar cheese",
+    "1 cup shredded mozzarella cheese",
+    "1 tbsp butter, melted (or light margarine)",
+    "1/3 cup panko breadcrumbs"
+  ],
+
+  steps: [
+    "Preheat oven to 400°F.",
+    "Bring a large pot of water to a boil and cook pasta according to package directions. Drain. Return to pot off heat.",
+    "While pasta cooks, prepare the sauce.",
+    "In a blender or food processor, combine cottage cheese, buffalo sauce, milk, ranch seasoning, cheddar, and mozzarella.",
+    "Blend on high until completely smooth and creamy.",
+    "In a small bowl, combine melted butter and panko breadcrumbs. Set aside.",
+    "Add shredded chicken and cheese sauce to the drained pasta. Stir until evenly coated.",
+    "Transfer mixture to a baking dish and sprinkle breadcrumb mixture evenly over the top.",
+    "Bake for 15 minutes, until breadcrumbs are golden brown and pasta is heated through."
+  ]
+},
+
 
 
 
