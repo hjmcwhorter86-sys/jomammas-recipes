@@ -5,6 +5,68 @@ const recipes = window.recipes || [];
 // Detect page type from meta tag
 const pageType = document.querySelector('meta[name="page-type"]')?.getAttribute('content') || 'home';
 
+// Hamburger Menu Toggle
+const hamburgerMenu = document.getElementById('hamburgerMenu');
+const mobileMenu = document.getElementById('mobileMenu');
+const searchIconButton = document.getElementById('searchIconButton');
+const mobileSearchContainer = document.getElementById('mobileSearchContainer');
+const mobileSearchInput = document.getElementById('mobile-search');
+
+if (hamburgerMenu && mobileMenu) {
+  hamburgerMenu.addEventListener('click', () => {
+    hamburgerMenu.classList.toggle('active');
+    mobileMenu.classList.toggle('active');
+    hamburgerMenu.setAttribute('aria-expanded', hamburgerMenu.classList.contains('active'));
+    // Close search when opening menu
+    if (searchIconButton.classList.contains('active')) {
+      searchIconButton.classList.remove('active');
+      mobileSearchContainer.classList.remove('active');
+      searchIconButton.setAttribute('aria-expanded', 'false');
+    }
+  });
+
+  // Close menu when a link is clicked
+  const mobileMenuLinks = mobileMenu.querySelectorAll('.mobile-menu-link');
+  mobileMenuLinks.forEach(link => {
+    link.addEventListener('click', () => {
+      hamburgerMenu.classList.remove('active');
+      mobileMenu.classList.remove('active');
+      hamburgerMenu.setAttribute('aria-expanded', 'false');
+    });
+  });
+}
+
+// Mobile Search Toggle
+if (searchIconButton && mobileSearchContainer) {
+  searchIconButton.addEventListener('click', () => {
+    searchIconButton.classList.toggle('active');
+    mobileSearchContainer.classList.toggle('active');
+    searchIconButton.setAttribute('aria-expanded', searchIconButton.classList.contains('active'));
+    // Close menu when opening search
+    if (hamburgerMenu && hamburgerMenu.classList.contains('active')) {
+      hamburgerMenu.classList.remove('active');
+      mobileMenu.classList.remove('active');
+      hamburgerMenu.setAttribute('aria-expanded', 'false');
+    }
+    // Focus search input when opening
+    if (searchIconButton.classList.contains('active') && mobileSearchInput) {
+      setTimeout(() => mobileSearchInput.focus(), 100);
+    }
+  });
+
+  // Handle search on Enter key in mobile search
+  if (mobileSearchInput) {
+    mobileSearchInput.addEventListener('keydown', (event) => {
+      if (event.key === 'Enter') {
+        event.preventDefault();
+        const query = mobileSearchInput.value.trim();
+        const target = query ? `recipes-list.html?q=${encodeURIComponent(query)}` : 'recipes-list.html';
+        window.location.href = target;
+      }
+    });
+  }
+}
+
 function setSeo(titleText, descriptionText) {
   const siteName = "JoMama's Recipes";
   document.title = titleText ? `${titleText} • ${siteName}` : siteName;
