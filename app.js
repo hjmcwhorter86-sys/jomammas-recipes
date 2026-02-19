@@ -206,6 +206,7 @@ if (pageType === 'list' && recipesEl && searchEl) {
           ${recipe.protein ? `<span class="meta-item">Protein: ${recipe.protein}</span>` : ''}
         </div>
         ${recipe.tags && Array.isArray(recipe.tags) && recipe.tags.length > 0 ? `<div class="recipe-tags">${recipe.tags.map(t => `<span class="tag">${t}</span>`).join('')}</div>` : ''}
+        ${recipe.servings ? `<div class="recipe-servings"><strong>Servings:</strong> ${recipe.servings}</div>` : ''}
         ${recipe.image ? `<div class="recipe-image-outer"><img src="${recipe.image}" alt="${recipe.title}" class="recipe-image" id="recipe-image-zoom" style="cursor: zoom-in;"></div>` : ''}
         <div class="recipe-content-wrapper">
           ${hasIngredients ? `
@@ -406,6 +407,7 @@ if (pageType === 'detail' && detailedViewEl) {
           ${recipe.protein ? `<span class="meta-item">Protein: ${recipe.protein}</span>` : ''}
         </div>
         ${recipe.tags && Array.isArray(recipe.tags) && recipe.tags.length > 0 ? `<div class="recipe-tags">${recipe.tags.map(t => `<span class="tag">${t}</span>`).join('')}</div>` : ''}
+        ${recipe.servings ? `<div class="recipe-servings"><strong>Servings:</strong> ${recipe.servings}</div>` : ''}
         ${recipe.image ? `<div class="recipe-image-outer"><img src="${recipe.image}" alt="${recipe.title}" class="recipe-image" id="recipe-image-zoom" style="cursor: zoom-in;"></div>` : ''}
         <div class="recipe-content-wrapper">
           ${hasIngredients ? `

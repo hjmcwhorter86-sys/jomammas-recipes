@@ -947,6 +947,12 @@ body{
   margin-bottom: 28px;
 }
 
+.recipe-servings {
+  margin-bottom: 28px;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
 .recipe-content-wrapper {
   display: block;
   margin-bottom: 32px;

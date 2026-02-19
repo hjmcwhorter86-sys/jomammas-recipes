@@ -8,6 +8,7 @@ window.recipes = [
   dateAdded: "2026-02-04",
   calories: "",
   protein: "",
+  servings: "4-6",
   tags: ["air fryer", "chicken", "sweet heat", "family favorite"],
 
   ingredients: [
@@ -54,6 +55,7 @@ window.recipes = [
   dateAdded: "2026-02-04",
   calories: "",
   protein: "",
+  servings: "6",
   tags: ["pasta", "high protein", "family dinner", "comfort food"],
 
   ingredients: [
@@ -103,6 +105,7 @@ window.recipes = [
   dateAdded: "2026-02-04",
   calories: "",
   protein: "",
+  servings: "4",
   tags: ["queso", "dip", "cheese", "party"],
 
   ingredients: [
@@ -142,7 +145,8 @@ window.recipes = [
   image: "images/cheesecake-jars.png",
   calories: "~160",
   protein: "~8g",
-    category: "Dessert",
+  servings: "4",
+  category: "Dessert",
   dateAdded: "2026-02-04",
   ingredients: [
   "1 cup low-fat cottage cheese",
@@ -172,6 +176,7 @@ tags: ["dessert", "high protein"]
   dateAdded: "2026-02-04",
   calories: "",
   protein: "",
+  servings: "4",
   tags: ["beef", "skillet", "comfort food", "weeknight"],
 
   ingredients: [
@@ -215,6 +220,7 @@ tags: ["dessert", "high protein"]
   dateAdded: "2026-02-11",
   calories: "",
   protein: "",
+  servings: "4-6",
   tags: ["seafood", "soup", "easy", "weeknight", "comfort food"],
 
   ingredients: [
@@ -290,6 +296,7 @@ tags: ["dessert", "high protein"]
   image: "images/air-fryer-chicken-parmesan.jpg",
   category: "Chicken",
   dateAdded: "2026-02-11",
+  servings: "4",
   tags: ["air fryer", "kid-friendly", "low calorie", "high protein", "Italian"],
 
   // Optional macros (leave blank if you don't want to estimate yet)
@@ -330,6 +337,7 @@ tags: ["dessert", "high protein"]
   image: "images/buffalo-chicken-enchiladas.jpg",
   category: "Chicken",
   dateAdded: "2026-02-11",
+  servings: "5",
   tags: ["casserole", "comfort food", "weeknight", "spicy"],
 
   calories: "",
@@ -343,7 +351,7 @@ tags: ["dessert", "high protein"]
     "1 cup Buffalo-style hot sauce (plus more for serving)",
     "1 bunch scallions, thinly sliced (white and green parts separated)",
     "1/4 tsp ground cumin",
-    "16 corn or flour tortillas",
+    "10 corn or flour tortillas",
     "2 tbsp crumbled blue cheese",
     "2 tbsp ranch or blue cheese dressing"
   ],
@@ -428,6 +436,7 @@ tags: ["dessert", "high protein"]
   image: "images/tuscan-chicken.jpg",
   category: "Chicken",
   dateAdded: "2026-02-12",
+  servings: "4",
   tags: ["Italian", "low calorie", "chicken"],
 
   ingredients: [
@@ -469,6 +478,7 @@ tags: ["dessert", "high protein"]
   image: "images/no-photo.jpg",
   category: "Pasta",
   dateAdded: "2026-02-16",
+  servings: "6",
   tags: ["takeout", "low calorie", "chicken", "pasta"],
 
   ingredients: [
@@ -507,6 +517,7 @@ tags: ["dessert", "high protein"]
   image: "images/buffalo-chicken-mac-and-cheese.jpg",
   category: "Pasta",
   dateAdded: "2026-02-17",
+  servings: "6",
   tags: ["high protein", "low calorie", "chicken", "pasta", "mac and cheese"],
 
   ingredients: [
@@ -542,6 +553,7 @@ tags: ["dessert", "high protein"]
   image: "images/easy-monkey-bread.png",
   category: "Dessert",
   dateAdded: "2026-02-18",
+  servings: "6",
   tags: ["dessert", "holiday", "sweet", "bread", "easy"],
 
   ingredients: [
