@@ -262,11 +262,12 @@ h3 {
 
 @media (max-width: 768px) {
   .header {
-    padding: var(--space-2) var(--space-3);
+    padding: var(--space-2) var(--space-2-5);
   }
 
   .header-top {
-    gap: var(--space-3);
+    justify-content: flex-start;
+    gap: var(--space-2-5);
   }
 
   .logo-image {
@@ -274,7 +275,8 @@ h3 {
   }
 
   .nav {
-    gap: var(--space-4);
+    flex: 0 1 auto;
+    gap: var(--space-3);
   }
 
   .nav a {
@@ -294,6 +296,15 @@ h3 {
   .print-recipe-btn {
     padding: var(--space-1-5) var(--space-3);
     font-size: var(--font-size-xs);
+  }
+
+  .search-input,
+  .view-all-button {
+    display: none;
+  }
+
+  .header-actions {
+    display: none;
   }
 }
 
@@ -1162,15 +1173,16 @@ body{
 @media (max-width: 768px) {
   .hero {
     margin: -10px auto var(--space-1-5);
-    padding: var(--space-3);
+    padding: 0;
   }
 
   .hero-inner {
     flex-direction: column;
     gap: var(--space-3-5);
-    padding: var(--space-5) var(--space-5);
+    padding: var(--space-5) var(--space-4);
     text-align: center;
     min-height: 0;
+    width: 100%;
   }
 
   .hero h1 {
@@ -1183,8 +1195,7 @@ body{
   }
 
   .hero-mascot {
-    max-width: 168px;
-    transform: translateY(14px);
+    display: none;
   }
 
   .hero-right {
@@ -1282,8 +1293,13 @@ body{
 
 @media (max-width: 768px) {
   .hero-inner::before {
-    width: min(820px, 200vw);
-    height: min(560px, 152vw);
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    transform: none;
+    background-size: cover;
+    background-position: center;
   }
 }
 
