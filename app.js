@@ -140,9 +140,9 @@ if (newestEl) {
 const popularEl = document.getElementById('popular');
 if (popularEl) {
   const popularRecipeIds = [
-    "cornflake-chicken-tenders",
+    "light-tuscan-chicken",
     "light-chicken-alfredo-pasta",
-    "pepper-jack-queso",
+    "air-fryer-general-tsos-chicken",
     "protein-cheesecake-jars"
   ];
 
