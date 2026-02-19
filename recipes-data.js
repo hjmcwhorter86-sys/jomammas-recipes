@@ -400,13 +400,14 @@ tags: ["dessert", "high protein"]
   ],
 
   steps: [
-    "Preheat oven to 400°F.",
-    "Scrub potatoes clean and dry thoroughly. Rub lightly with olive oil and sprinkle generously with kosher salt.",
-    "Place potatoes directly on the oven rack with a sheet pan below. Bake 50–60 minutes until skins are crisp and centers are tender. Rest 5 minutes before slicing.",
-
     "Season chicken with salt, pepper, garlic powder, and smoked paprika. Place in slow cooker.",
     "Cook on LOW 2–3 hours until tender and shreddable (about 2 hours if your crockpot runs hot, closer to 3 for most).",
     "Shred chicken directly in the slow cooker, stir in BBQ sauce, and cook another 20–30 minutes until saucy.",
+    "Switch slow cooker to keep warm setting.",
+    
+    "Preheat oven to 400°F.",
+    "Scrub potatoes clean and dry thoroughly. Rub lightly with olive oil and sprinkle generously with kosher salt.",
+    "Place potatoes directly on the oven rack with a sheet pan below. Bake 50–60 minutes until skins are crisp and centers are tender. Rest 5 minutes before slicing.",
 
     "Slice potatoes open and fluff insides with a fork. Season lightly.",
     "Add butter or yogurt/sour cream, then spoon BBQ chicken over top.",
@@ -534,8 +535,35 @@ tags: ["dessert", "high protein"]
   ]
 },
 
+{
+  id: "classic-easy-monkey-bread",
+  title: "Classic Easy Monkey Bread",
+  description: "Pull-apart cinnamon sugar monkey bread with buttery brown sugar sauce. Easy, nostalgic, and dangerously good.",
+  image: "images/easy-monkey-bread.png",
+  category: "Dessert",
+  dateAdded: "2026-02-18",
+  tags: ["dessert", "holiday", "sweet", "bread", "easy"],
 
+  ingredients: [
+    "3 cans refrigerated buttermilk biscuits (regular, not flaky layers)",
+    "1 cup granulated sugar",
+    "2 tsp cinnamon",
+    "½ cup butter (1 stick)",
+    "¾ cup brown sugar",
+    "Optional: ½–1 cup chopped pecans or walnuts"
+  ],
 
+  steps: [
+    "Preheat oven to 350°F. Grease a bundt pan very well (butter plus spray works best).",
+    "Open biscuit cans and cut each biscuit into quarters. Place pieces in a large bowl.",
+    "In a separate bowl, mix granulated sugar and cinnamon. Toss biscuit pieces in cinnamon sugar until fully coated. Add nuts here if using.",
+    "Drop coated biscuit pieces into the prepared bundt pan. No need to layer neatly.",
+    "In a saucepan or microwave-safe bowl, melt butter. Stir in brown sugar and heat just until gently bubbling.",
+    "Pour butter-sugar mixture evenly over biscuits in the pan.",
+    "Bake for 35–40 minutes until deep golden and bubbly on top.",
+    "Let cool only 5 minutes, then invert onto a plate. Serve warm."
+  ]
+},
 
 
 
