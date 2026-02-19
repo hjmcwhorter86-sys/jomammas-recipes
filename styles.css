@@ -1494,6 +1494,10 @@ body.about-page {
   text-align: center;
 }
 
+.about-view .about-panel .recipe-description + .recipe-description {
+  margin-top: var(--space-4);
+}
+
 @media (max-width: 768px) {
   .about-view .about-panel {
     min-height: 72vh;
