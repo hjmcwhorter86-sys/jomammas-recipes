@@ -437,6 +437,20 @@ h3 {
     font-size: var(--font-size-sm);
   }
 
+  /* Reorder homepage sections on mobile */
+  .category-section {
+    display: none;
+    order: 2;
+  }
+
+  .home section.card:nth-of-type(1) {
+    order: 1;
+  }
+
+  .home section.card:nth-of-type(2) {
+    order: 3;
+  }
+
   .search-input {
     width: 170px;
     font-size: var(--font-size-xs);
@@ -509,11 +523,7 @@ h3 {
   }
   
   .filters {
-    top: 60px;
-    margin-left: -12px;
-    margin-right: -12px;
-    padding-left: 12px;
-    padding-right: 12px;
+    display: none;
   }
 }
 
@@ -758,6 +768,8 @@ h3 {
   max-width: 1000px;
   margin: 0 auto;
   padding: 0 var(--space-4) var(--space-7);
+  display: flex;
+  flex-direction: column;
 }
 
 .home section.card {
@@ -1443,6 +1455,53 @@ body{
     0 2px 5px rgba(104, 70, 36, 0.16),
     0 10px 24px rgba(104, 70, 36, 0.14),
     inset 0 1px 0 rgba(255, 255, 255, 0.5);
+}
+
+.about-view .about-panel {
+  min-height: 70vh;
+  text-align: center;
+}
+
+body.about-page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.about-page .about-view {
+  flex: 1;
+}
+
+#detailed-view.about-view {
+  padding-top: var(--space-4);
+}
+
+.about-view .about-panel h1 {
+  text-align: center;
+  color: var(--color-teal);
+}
+
+.about-view .about-panel .about-photo {
+  display: block;
+  width: min(280px, 100%);
+  height: auto;
+  margin: 0 auto var(--space-4);
+  border-radius: var(--radius-md);
+}
+
+.about-view .about-panel .recipe-description {
+  margin: 0 auto;
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  .about-view .about-panel {
+    min-height: 72vh;
+  }
+
+  #detailed-view.about-view {
+    padding-top: var(--space-5);
+  }
 }
 
 /* Incomplete recipe data warnings */

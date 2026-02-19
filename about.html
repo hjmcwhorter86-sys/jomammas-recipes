@@ -3,11 +3,11 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="page-type" content="detail" />
-  <title>Recipe • JoMama's Recipes</title>
+  <meta name="page-type" content="about" />
+  <title>About • JoMama's Recipes</title>
   <link rel="stylesheet" href="styles.css" />
 </head>
-<body>
+<body class="about-page">
   <header class="header">
     <div class="header-top">
       <button class="hamburger-menu" id="hamburgerMenu" aria-label="Toggle menu" aria-expanded="false">
@@ -22,8 +22,8 @@
       </div>
       <nav class="nav">
         <a href="index.html">Home</a>
-        <a href="recipes-list.html" aria-current="page" class="recipes-link">Recipes</a>
-        <a href="about.html">About</a>
+        <a href="recipes-list.html" class="recipes-link">Recipes</a>
+        <a href="about.html" aria-current="page">About</a>
       </nav>
       <div class="header-actions">
         <input id="search" type="search" class="search-input" placeholder="Search recipes…" />
@@ -46,7 +46,13 @@
     </div>
   </header>
 
-  <main id="detailed-view"></main>
+  <main id="detailed-view" class="about-view">
+    <article class="recipe-detail about-panel">
+      <h1>About JoMamma</h1>
+      <img src="images/jo-mamma-kitchen.png" alt="JoMamma in the kitchen" class="about-photo" />
+      <p class="recipe-description">JoMamma, Heather Jo, created this website as a way to find and cook her favorite recipes without messy ads and long stories making them difficult to follow. Each recipe is designed to be like a simple page in a cookbook or an old-fashioned recipe card. Please enjoy uncomplicated, easy cooking.</p>
+    </article>
+  </main>
 
   <footer class="site-footer" aria-label="Site footer">
     <div class="site-footer-inner">
@@ -57,15 +63,13 @@
       <nav class="site-footer-nav" aria-label="Footer navigation">
         <a href="index.html">Home</a>
         <a href="recipes-list.html">All Recipes</a>
-        <a href="about.html">About</a>
+        <a href="about.html" aria-current="page">About</a>
         <a href="index.html#categories">Categories</a>
       </nav>
       <p class="site-footer-copy">© 2026 • easy printer-friendly recipes</p>
     </div>
   </footer>
 
-  <script src="recipes-data.js"></script>
   <script src="app.js"></script>
-
 </body>
 </html>

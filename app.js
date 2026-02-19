@@ -88,6 +88,10 @@ if (pageType === 'list') {
   setSeo('Recipes', 'Search, browse, and filter macro-friendly comfort food recipes.');
 }
 
+if (pageType === 'about') {
+  setSeo('About', 'This website was made for cooking quick and easy recipes with no fluff or distractions.');
+}
+
 const recipesEl = document.getElementById("recipes");
 const searchEl = document.getElementById("search");
 const detailedViewEl = document.getElementById("detailed-view");
