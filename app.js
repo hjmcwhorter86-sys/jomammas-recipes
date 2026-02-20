@@ -67,6 +67,116 @@ if (searchIconButton && mobileSearchContainer) {
   }
 }
 
+let cookModeEnabled = false;
+let cookWakeLockSentinel = null;
+
+function isCookModeSupported() {
+  return 'wakeLock' in navigator && typeof navigator.wakeLock.request === 'function';
+}
+
+function updateCookModeUI() {
+  const cookModeBtn = document.getElementById('cookModeBtn');
+  const cookModeStatus = document.getElementById('cookModeStatus');
+  const supported = isCookModeSupported();
+
+  if (!cookModeBtn || !cookModeStatus) return;
+
+  if (!supported) {
+    cookModeBtn.textContent = 'Cook Mode Unavailable';
+    cookModeBtn.disabled = true;
+    cookModeBtn.classList.remove('is-active');
+    cookModeBtn.setAttribute('aria-pressed', 'false');
+    cookModeStatus.textContent = 'Cook mode is not supported on this browser/device.';
+    return;
+  }
+
+  const isActive = cookModeEnabled && !!cookWakeLockSentinel;
+  cookModeBtn.textContent = isActive ? 'Cook Mode: On' : 'Cook Mode: Off';
+  cookModeBtn.classList.toggle('is-active', isActive);
+  cookModeBtn.setAttribute('aria-pressed', isActive ? 'true' : 'false');
+
+  if (isActive) {
+    cookModeStatus.textContent = 'Your screen will stay awake while this tab is active.';
+    return;
+  }
+
+  if (cookModeEnabled && document.visibilityState !== 'visible') {
+    cookModeStatus.textContent = 'Return to this tab to resume cook mode.';
+    return;
+  }
+
+  cookModeStatus.textContent = 'Turn on cook mode to keep your screen awake while cooking.';
+}
+
+async function requestCookWakeLock() {
+  if (!isCookModeSupported() || document.visibilityState !== 'visible') {
+    return false;
+  }
+
+  try {
+    cookWakeLockSentinel = await navigator.wakeLock.request('screen');
+    cookWakeLockSentinel.addEventListener('release', () => {
+      cookWakeLockSentinel = null;
+      updateCookModeUI();
+    });
+    return true;
+  } catch {
+    cookWakeLockSentinel = null;
+    return false;
+  }
+}
+
+async function setCookMode(nextState) {
+  cookModeEnabled = nextState;
+
+  if (!nextState) {
+    if (cookWakeLockSentinel) {
+      try {
+        await cookWakeLockSentinel.release();
+      } catch {
+        // no-op
+      }
+      cookWakeLockSentinel = null;
+    }
+    updateCookModeUI();
+    return;
+  }
+
+  await requestCookWakeLock();
+  updateCookModeUI();
+}
+
+function setupCookModeControl() {
+  const cookModeBtn = document.getElementById('cookModeBtn');
+  if (!cookModeBtn) return;
+
+  cookModeBtn.addEventListener('click', async () => {
+    cookModeBtn.disabled = true;
+    await setCookMode(!cookModeEnabled);
+    cookModeBtn.disabled = false;
+  });
+
+  updateCookModeUI();
+}
+
+document.addEventListener('visibilitychange', async () => {
+  if (cookModeEnabled && !cookWakeLockSentinel && document.visibilityState === 'visible') {
+    await requestCookWakeLock();
+    updateCookModeUI();
+    return;
+  }
+
+  if (cookModeEnabled) {
+    updateCookModeUI();
+  }
+});
+
+window.addEventListener('beforeunload', () => {
+  if (cookWakeLockSentinel) {
+    cookWakeLockSentinel.release();
+  }
+});
+
 function setSeo(titleText, descriptionText) {
   const siteName = "JoMama's Recipes";
   document.title = titleText ? `${titleText} • ${siteName}` : siteName;
@@ -267,10 +377,12 @@ if (pageType === 'list' && recipesEl && searchEl) {
           <div class="meta-primary">
             <span class="badge">${recipe.category}</span>
             <button class="print-recipe-btn button-family button-primary" id="printRecipeBtn" type="button">Print Recipe</button>
+            <button class="cook-mode-btn button-family button-secondary" id="cookModeBtn" type="button" aria-pressed="false">Cook Mode: Off</button>
           </div>
           ${recipe.calories ? `<span class="meta-item">Calories: ${recipe.calories}</span>` : ''}
           ${recipe.protein ? `<span class="meta-item">Protein: ${recipe.protein}</span>` : ''}
         </div>
+        <p class="cook-mode-status" id="cookModeStatus" aria-live="polite"></p>
         ${recipe.tags && Array.isArray(recipe.tags) && recipe.tags.length > 0 ? `<div class="recipe-tags">${recipe.tags.map(t => `<span class="tag">${t}</span>`).join('')}</div>` : ''}
         ${recipe.servings ? `<div class="recipe-servings"><strong>Servings:</strong> ${recipe.servings}</div>` : ''}
         ${recipe.image ? `<div class="recipe-image-outer"><img src="${recipe.image}" alt="${recipe.title}" class="recipe-image" id="recipe-image-zoom" style="cursor: zoom-in;"></div>` : ''}
@@ -340,6 +452,8 @@ if (pageType === 'list' && recipesEl && searchEl) {
         window.print();
       });
     }
+
+    setupCookModeControl();
   }
 
   function fallbackCopy(url) {
@@ -468,10 +582,12 @@ if (pageType === 'detail' && detailedViewEl) {
           <div class="meta-primary">
             <span class="badge">${recipe.category}</span>
             <button class="print-recipe-btn button-family button-primary" id="printRecipeBtn" type="button">Print Recipe</button>
+            <button class="cook-mode-btn button-family button-secondary" id="cookModeBtn" type="button" aria-pressed="false">Cook Mode: Off</button>
           </div>
           ${recipe.calories ? `<span class="meta-item">Calories: ${recipe.calories}</span>` : ''}
           ${recipe.protein ? `<span class="meta-item">Protein: ${recipe.protein}</span>` : ''}
         </div>
+        <p class="cook-mode-status" id="cookModeStatus" aria-live="polite"></p>
         ${recipe.tags && Array.isArray(recipe.tags) && recipe.tags.length > 0 ? `<div class="recipe-tags">${recipe.tags.map(t => `<span class="tag">${t}</span>`).join('')}</div>` : ''}
         ${recipe.servings ? `<div class="recipe-servings"><strong>Servings:</strong> ${recipe.servings}</div>` : ''}
         ${recipe.image ? `<div class="recipe-image-outer"><img src="${recipe.image}" alt="${recipe.title}" class="recipe-image" id="recipe-image-zoom" style="cursor: zoom-in;"></div>` : ''}
@@ -540,6 +656,8 @@ if (pageType === 'detail' && detailedViewEl) {
         window.print();
       });
     }
+
+    setupCookModeControl();
   }
 
   function fallbackCopy(url) {

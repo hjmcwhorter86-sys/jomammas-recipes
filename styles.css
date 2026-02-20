@@ -1056,6 +1056,18 @@ body{
   flex-wrap: wrap;
 }
 
+.cook-mode-btn.is-active {
+  background: var(--color-teal);
+  border-color: var(--color-teal);
+  color: var(--color-surface-strong);
+}
+
+.cook-mode-status {
+  margin: 0 0 var(--space-4);
+  font-size: var(--font-size-sm);
+  color: var(--color-text-muted);
+}
+
 
 .recipe-detail {
   background: var(--color-surface);
@@ -1224,9 +1236,11 @@ body{
 @media print {
   .header,
   .detail-controls,
+  .cook-mode-status,
   .recipe-nav,
   .image-modal,
-  .print-recipe-btn {
+  .print-recipe-btn,
+  .cook-mode-btn {
     display: none !important;
   }
 
