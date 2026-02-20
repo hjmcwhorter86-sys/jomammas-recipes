@@ -491,6 +491,7 @@ h3 {
   margin: 0 0 8px;
   font-size: var(--font-size-xl);
   letter-spacing: -0.02em;
+  color: var(--color-teal);
 }
 
 .recipes-page-header p {
@@ -774,6 +775,10 @@ h3 {
 
 .home section.card {
   margin-bottom: var(--space-5);
+}
+
+.home section.card p.section-cta {
+  margin: var(--space-4) 0 0;
 }
 
 .newest-card-inner {
@@ -1553,7 +1558,7 @@ body.about-page {
 }
 
 .image-modal[style*="display: flex"] {
-  display: flex !important;
+  display: flex;
 }
 
 .image-modal-content {

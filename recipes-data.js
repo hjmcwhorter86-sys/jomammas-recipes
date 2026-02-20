@@ -53,8 +53,8 @@ window.recipes = [
   image: "images/light-chicken-alfredo.jpg",
   category: "Pasta",
   dateAdded: "2026-02-04",
-  calories: "",
-  protein: "",
+  calories: "~500 per serving",
+  protein: "~54g per serving",
   servings: "6",
   tags: ["pasta", "high protein", "family dinner", "comfort food"],
 
@@ -68,7 +68,7 @@ window.recipes = [
 
     "12 oz protein pasta (Barilla Protein+, Goodles, etc.)",
 
-    "2 cups skim milk (or 1%)",
+    "2 cups 1% milk",
     "1¼ tsp sodium citrate",
     "3 tbsp light butter or margarine",
     "4½ oz reduced-fat parmesan, finely grated (or 3 oz parm + 1½ oz reduced-fat mozzarella)",
@@ -143,8 +143,8 @@ window.recipes = [
   title: "Protein Cheesecake Jars",
   description: "No-bake high-protein cheesecake jars for dessert wins.",
   image: "images/cheesecake-jars.png",
-  calories: "~160",
-  protein: "~8g",
+  calories: "~135 per jar",
+  protein: "~18g per jar",
   servings: "4",
   category: "Dessert",
   dateAdded: "2026-02-04",
@@ -163,6 +163,7 @@ steps: [
 notes: [
   "Too thick? Add a splash of milk.",
   "Too loose? Add a bit more Greek yogurt or a pinch more pudding mix.",
+  "Top with fresh berries, crushed graham crackers, or sugar-free caramel sauce."
 ],
 tags: ["dessert", "high protein"]
 },
@@ -174,8 +175,8 @@ tags: ["dessert", "high protein"]
   image: "images/salisbury-steak.png",
   category: "Beef",
   dateAdded: "2026-02-04",
-  calories: "",
-  protein: "",
+  calories: "~310 per serving (with gravy)",
+  protein: "~25g per serving",
   servings: "4",
   tags: ["beef", "skillet", "comfort food", "weeknight"],
 
@@ -218,8 +219,8 @@ tags: ["dessert", "high protein"]
   image: "images/quick-lobster-bisque.png",
   category: "Soup",
   dateAdded: "2026-02-11",
-  calories: "",
-  protein: "",
+  calories: "~185 per serving",
+  protein: "~9g per serving",
   servings: "4-6",
   tags: ["seafood", "soup", "easy", "weeknight", "comfort food"],
 
@@ -243,7 +244,8 @@ tags: ["dessert", "high protein"]
 
   notes: [
     "Great with grilled cheese or crusty bread.",
-    "For extra richness, swap part of the milk for heavy cream."
+    "For extra richness, swap part of the milk for heavy cream.",
+    "For extra protein, stir in a spoon of greek yogurt off-heat before serving or add extra minced lobster meat on top."
   ]
 },
 
@@ -300,8 +302,8 @@ tags: ["dessert", "high protein"]
   tags: ["air fryer", "kid-friendly", "low calorie", "high protein", "Italian"],
 
   // Optional macros (leave blank if you don't want to estimate yet)
-  calories: "",
-  protein: "",
+  calories: "~400 per serving",
+  protein: "~49g per serving",
 
   ingredients: [
     "1.25–1.5 lbs thin-sliced boneless skinless chicken breast",
@@ -340,8 +342,8 @@ tags: ["dessert", "high protein"]
   servings: "5",
   tags: ["casserole", "comfort food", "weeknight", "spicy"],
 
-  calories: "",
-  protein: "",
+  calories: "~820 per serving",
+  protein: "~52g per serving",
 
   ingredients: [
     "3 tbsp unsalted butter, melted (plus more for greasing the pan)",
@@ -380,10 +382,11 @@ tags: ["dessert", "high protein"]
   image: "images/bbq-chicken-baked-potatoes.jpg",
   category: "Slow Cooker",
   dateAdded: "2026-02-12",
+  servings: "4",
   tags: ["weeknight", "comfort food", "slow cooker", "family dinner", "build your own"],
 
-  calories: "",
-  protein: "",
+  calories: "~850 per fully loaded potato",
+  protein: "~68g per fuly loaded potato",
 
   ingredients: [
     "4 large russet potatoes (jumbo if you’re going full steakhouse mode)",
@@ -438,6 +441,8 @@ tags: ["dessert", "high protein"]
   dateAdded: "2026-02-12",
   servings: "4",
   tags: ["Italian", "low calorie", "chicken"],
+  calories: "~310 per serving",
+  protein: "~44g per serving",
 
   ingredients: [
     "4 boneless, skinless chicken breasts",
@@ -475,11 +480,13 @@ tags: ["dessert", "high protein"]
   id: "protein-pasta-lo-mein",
   title: "Protein Pasta Chicken Lo Mein",
   description: "A large family size lo mein recipe to hit those takeout cravings.",
-  image: "images/no-photo.jpg",
+  image: "images/protein-pasta-chicken-lo-mein.png",
   category: "Pasta",
-  dateAdded: "2026-02-16",
+  dateAdded: "2026-02-19",
   servings: "6",
   tags: ["takeout", "low calorie", "chicken", "pasta"],
+  calories: "~480 per serving",
+  protein: "~45g per serving",
 
   ingredients: [
     "1 box protein pasta (14–15 oz)",
@@ -519,6 +526,8 @@ tags: ["dessert", "high protein"]
   dateAdded: "2026-02-17",
   servings: "6",
   tags: ["high protein", "low calorie", "chicken", "pasta", "mac and cheese"],
+  calories: "~500 per serving",
+  protein: "~38g per serving",
 
   ingredients: [
     "12 oz Barilla Protein Plus elbow macaroni or penne pasta",
@@ -555,6 +564,8 @@ tags: ["dessert", "high protein"]
   dateAdded: "2026-02-18",
   servings: "6",
   tags: ["dessert", "holiday", "sweet", "bread", "easy"],
+  calories: "~670 per serving",
+  protein: "~8g per serving",
 
   ingredients: [
     "3 cans refrigerated buttermilk biscuits (regular, not flaky layers)",
