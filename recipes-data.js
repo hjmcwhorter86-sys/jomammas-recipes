@@ -256,7 +256,7 @@ tags: ["dessert", "high protein"]
   image: "images/air-fryer-general-tsos-chicken.png",
   category: "Chicken",
   dateAdded: "2026-02-11",
-  tags: ["air fryer", "chicken", "weeknight", "easy", "takeout fix", "high protein", "Asian"],
+  tags: ["air fryer", "chicken", "weeknight", "easy", "takeout fix", "high protein", "asian"],
   calories: "~370 per serving (with 1/2 cup cooked brown rice)",
   protein: "~38g",
 
@@ -299,7 +299,7 @@ tags: ["dessert", "high protein"]
   category: "Chicken",
   dateAdded: "2026-02-11",
   servings: "4",
-  tags: ["air fryer", "kid-friendly", "low calorie", "high protein", "Italian"],
+  tags: ["air fryer", "kid-friendly", "low calorie", "high protein", "italian"],
 
   // Optional macros (leave blank if you don't want to estimate yet)
   calories: "~400 per serving",
@@ -440,7 +440,7 @@ tags: ["dessert", "high protein"]
   category: "Chicken",
   dateAdded: "2026-02-12",
   servings: "4",
-  tags: ["Italian", "low calorie", "chicken"],
+  tags: ["italian", "low calorie", "chicken"],
   calories: "~310 per serving",
   protein: "~44g per serving",
 
@@ -450,7 +450,7 @@ tags: ["dessert", "high protein"]
     "1 shallot, finely diced",
     "3 cloves garlic, minced",
     "2 cups fresh spinach",
-    "1/4 cup sun-dried tomatoes, chopped (or oven blistered tomatoes)",
+    "1/4 cup sun-dried tomatoes, chopped (or <a href=\"recipe-detail.html?id=oven-blistered-cherry-tomatoes\">oven blistered tomatoes</a>)",
     "1/2 cup reduced-sodium chicken broth",
     "1/2 cup white cooking wine",
     "3 oz reduced-fat cream cheese",
@@ -491,7 +491,7 @@ tags: ["dessert", "high protein"]
   ingredients: [
     "1 box protein pasta (14–15 oz)",
     "1 bag frozen stir-fry vegetables (12–16 oz)",
-    "1½–2 lbs chicken breast, cooked & sliced",
+    "1½–2 lbs <a href=\"recipe-detail.html?id=seared-chicken-pieces\">chicken breast, cooked & sliced</a>",
     "2 tsp avocado oil or light butter",
     "3–4 cloves garlic, minced",
     "Optional: 1 tsp grated ginger",
@@ -585,6 +585,62 @@ tags: ["dessert", "high protein"]
     "Pour butter-sugar mixture evenly over biscuits in the pan.",
     "Bake for 35–40 minutes until deep golden and bubbly on top.",
     "Let cool only 5 minutes, then invert onto a plate. Serve warm."
+  ]
+},
+
+{
+  id: "seared-chicken-pieces",
+  title: "Seared Bite Sized Chicken Pieces",
+  description: "How to cook chicken for recipes like lo mein, fried rice, or even a taco bowl.",
+  image: "images/seared-chicken-pieces.png",
+  category: "Kitchen Basics",
+  dateAdded: "2026-02-10",
+  tags: ["high protein", "low calorie", "chicken", "how to", "Kitchen Basics"],
+
+  ingredients: [
+    "1 pound of boneless, skinless chicken breasts",
+    "1/2 teaspoon kosher salt",
+    "1/4 teaspoon black pepper, or to taste",
+    "1/4 teaspoon onion powder",
+    "1/4 teaspoon garlic powder",
+    "1/4 teaspoon smoked paprika",
+    "1 or 2 tablespoons avocado oil or oil of your choice"
+  ],
+
+  steps: [
+    "Cut chicken into bite sized pieces.",
+    "Heat oil over medium-high heat in a skillet or cast iron pan.",
+    "Add chicken pieces to hot pan in a single, uncrowded layer. (I usually let my pan heat up for 5 minutes or so before adding chicken).",
+    "Let the chicken pieces sear on one side, without disruption, for about 3-4 minutes or until a nice brown color is achieved.",
+    "With tongs, flip the pieces over and cook for another 3 minutes.",
+    "Check that chicken is cooked to 165°F using a food themometer.",
+    "Remove chicken from pan and let rest on a plate."
+  ]
+},
+
+{
+  id: "oven-blistered-cherry-tomatoes",
+  title: "Oven Blistered Cherry Tomatoes",
+  description: "How to blister tomatoes for pasta sauce, Tuscan chicken, and more.",
+  image: "images/oven-blistered-tomatoes.png",
+  category: "Kitchen Basics",
+  dateAdded: "2026-02-10",
+  tags: ["low calorie", "vegetables", "sides", "how to", "Kitchen Basics"],
+
+  ingredients: [
+    "1–2 cups cherry or grape tomatoes (whole)",
+    "1–2 teaspoons olive oil (just enough to coat)",
+    "¼ teaspoon kosher salt",
+    "Fresh cracked black pepper",
+    "Optional flavor boosters (pick ONE or mix lightly): pinch garlic powder, tiny pinch Italian seasoning, pinch crushed red pepper flakes",
+    "Optional finish: splash of balsamic or squeeze of lemon"
+  ],
+
+  steps: [
+    "Heat oven to 425°F (hot is key for blistering, not sad wrinkling).",
+    "Toss tomatoes whole with olive oil, salt, pepper, and any optional seasoning.",
+    "Spread on a sheet pan in one layer (don’t crowd — give those babies breathing room).",
+    "Roast 15–20 minutes, shaking the pan once halfway."
   ]
 },
 
