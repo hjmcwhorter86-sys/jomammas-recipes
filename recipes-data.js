@@ -153,7 +153,7 @@ window.recipes = [
   "1 cup plain nonfat Greek yogurt",
   "1 box sugar-free cheesecake or vanilla pudding mix",
   "1 scoop vanilla protein powder",
-  "1–2 tbsp Jordan’s Skinny Syrup (optional)",
+  "1–2 tbsp Jordan’s Skinny Syrup Vanilla or Vanilla Caramel. You can also use a sugar-free sweetener of your choice.",
 ],
 steps: [
   "Blend cottage cheese until completely smooth.",
@@ -489,7 +489,7 @@ tags: ["dessert", "high protein"]
   protein: "~45g per serving",
 
   ingredients: [
-    "1 box protein pasta (14–15 oz)",
+    "1 box protein pasta, I use spaghetti (14–15 oz)",
     "1 bag frozen stir-fry vegetables (12–16 oz)",
     "1½–2 lbs <a href=\"recipe-detail.html?id=seared-chicken-pieces\">chicken breast, cooked & sliced</a>",
     "2 tsp avocado oil or light butter",
@@ -632,7 +632,7 @@ tags: ["dessert", "high protein"]
     "1–2 teaspoons olive oil (just enough to coat)",
     "¼ teaspoon kosher salt",
     "Fresh cracked black pepper",
-    "Optional flavor boosters (pick ONE or mix lightly): pinch garlic powder, tiny pinch Italian seasoning, pinch crushed red pepper flakes",
+    "Optional flavor boosters (pick one or mix lightly): pinch garlic powder, tiny pinch Italian seasoning, pinch crushed red pepper flakes",
     "Optional finish: splash of balsamic or squeeze of lemon"
   ],
 
