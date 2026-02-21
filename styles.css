@@ -437,18 +437,19 @@ h3 {
     font-size: var(--font-size-sm);
   }
 
-  /* Reorder homepage sections on mobile */
+  /* Hide desktop category section on mobile */
   .category-section {
     display: none;
-    order: 2;
   }
 
-  .home section.card:nth-of-type(1) {
-    order: 1;
+  /* Mobile category grid section */
+  .mobile-categories {
+    margin-bottom: var(--space-5);
   }
 
-  .home section.card:nth-of-type(2) {
-    order: 3;
+  /* Tighten tile padding so 3 fit comfortably */
+  .mobile-category-grid .category-tile {
+    padding: var(--space-2-5) var(--space-2);
   }
 
   .search-input {
@@ -779,6 +780,19 @@ h3 {
 
 .home section.card p.section-cta {
   margin: var(--space-4) 0 0;
+}
+
+/* Mobile categories section — hidden on desktop, shown on mobile */
+@media (min-width: 769px) {
+  .mobile-categories {
+    display: none;
+  }
+}
+
+.mobile-category-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-2-5);
 }
 
 .newest-card-inner {
