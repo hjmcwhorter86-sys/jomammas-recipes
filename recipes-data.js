@@ -644,6 +644,39 @@ tags: ["dessert", "high protein"]
   ]
 },
 
+{
+  id: "super-easy-brownies",
+  title: "Super Easy Brownies",
+  description: "The easiest, but tastiest brownies you'll ever make.",
+  image: "images/super-easy-brownies.png",
+  category: "Dessert",
+  dateAdded: "2026-02-21",
+  calories: "~440 per serving",
+  protein: "~4g per serving",
+  servings: "9",
+  tags: ["chocolate", "dessert", "brownies"],
+
+  ingredients: [
+    "2 cups granulated sugar",
+    "4 eggs, room temperature",
+    "1 cup salted butter, melted and slightly cooled",
+    "½ tsp vanilla extract",
+    "⅔ cup cocoa powder",
+    "¾ cup all-purpose flour",
+    "¼ tsp salt"
+  ],
+
+  steps: [
+    "Preheat oven to 350°F. Spray a 9x9 metal brownie pan with cooking spray.",
+    "In a large bowl, beat sugar and room-temperature eggs for 4 minutes until thick and pale.",
+    "Add melted butter and vanilla extract. Beat on low speed for about 1 minute until combined.",
+    "Fold in cocoa powder, flour, and salt just until incorporated. Do not overmix.",
+    "Pour batter into prepared pan and smooth the top.",
+    "Bake for 35 minutes, or until a toothpick inserted comes out mostly clean.",
+    "Cool slightly before slicing. Serve warm or room temperature."
+  ]
+},
+
 
 
 ];
