@@ -677,6 +677,83 @@ tags: ["dessert", "high protein"]
   ]
 },
 
+{
+  id: "slow-cooker-butter-chicken",
+  title: "Lazy Slow Cooker Butter Chicken",
+  description: "Weeknight-friendly butter chicken from the slow cooker.",
+  image: "images/slow-cooker-butter-chicken.png",
+  category: "Slow Cooker",
+  dateAdded: "2026-03-04",
+  servings: "4-6",
+  tags: ["chicken", "slow cooker", "easy"],
+
+  ingredients: [
+    "1.5–2 lbs boneless skinless chicken thighs",
+    "1 small yellow onion, finely diced",
+    "3 cloves garlic, minced",
+    "1 tbsp fresh grated ginger (or 1/2 tsp ground ginger)",
+    "1 (15 oz) can tomato sauce",
+    "1 (6 oz) can tomato paste",
+    "1 cup chicken broth",
+    "1 tbsp garam masala",
+    "1 tsp curry powder",
+    "1 tsp smoked paprika",
+    "1/2–1 tsp chili powder (adjust heat)",
+    "1 tsp kosher salt",
+    "1/2 tsp black pepper",
+    "1 tbsp butter",
+    "1/2–3/4 cup heavy cream, OR 1/2 cup half-and-half + 2 tbsp Greek yogurt",
+    "Optional: 1/2 tsp sugar (only if sauce tastes too acidic)",
+    "Optional garnish: fresh cilantro"
+  ],
+
+  steps: [
+    "Add everything except the cream/yogurt to your slow cooker, then stir gently to combine.",
+    "Cook on LOW for 3–4 hours or HIGH for 2–3 hours, until chicken is tender and cooked through.",
+    "Remove chicken and shred or cut into bite-sized chunks (optional), then return it to the sauce.",
+    "Stir in heavy cream, or use half-and-half plus Greek yogurt for a lighter option.",
+    "Cook another 10–15 minutes on LOW.",
+    "Taste and adjust salt; add sugar only if needed to balance acidity.",
+    "Serve over basmati rice and garnish with fresh cilantro if desired."
+  ],
+
+  notes: [
+    "If your slow cooker runs hot, start checking around 2 hours on LOW.",
+    "Adjust chili powder to control heat level.",
+    "For best texture, avoid boiling after adding dairy."
+  ]
+},
+
+{
+  id: "drunken-turkey-pasta",
+  title: "Drunken Turkey Pasta",
+  description: "A quick and easy dinner favorite featuring vodka sauce and ground Italian-style turkey.",
+  image: "images/drunken-turkey-pasta.png",
+  category: "Pasta",
+  dateAdded: "2026-03-04",
+  servings: "4-6",
+  tags: ["turkey", "easy", "lean", "pasta"],
+
+  ingredients: [
+    "1 box Barilla Protein Plus pasta",
+    "1 jar garlic vodka sauce",
+    "1 lb ground Italian-style turkey",
+    "1/4 cup half-and-half",
+    "Freshly grated Parmesan cheese, to taste",
+    "Optional garnish: chopped parsley"
+  ],
+
+  steps: [
+    "Boil pasta according to package directions; drain and return to the pot off heat.",
+    "Brown ground turkey in a skillet over medium heat until fully cooked and no longer pink.",
+    "Reduce heat to medium-low, add vodka sauce, and stir occasionally until warmed through.",
+    "Remove skillet from heat.",
+    "Stir in half-and-half and grated Parmesan cheese.",
+    "Add warmed sauce to the pasta and stir well to combine.",
+    "Garnish with extra grated Parmesan and parsley, then serve."
+  ]
+},
+
 
 
 ];
