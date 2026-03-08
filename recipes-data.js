@@ -754,6 +754,30 @@ tags: ["dessert", "high protein"]
   ]
 },
 
+{
+  id: "rice-cooker-basmati-rice",
+  title: "Perfect Rice Cooker Basmati Rice",
+  description: "The perfect side dish for your favorite Indian recipes.",
+  image: "images/no-photo.jpg",
+  category: "Kitchen Basics",
+  dateAdded: "2026-03-08",
+  tags: ["rice", "rice cooker", "side dishes"],
 
+  ingredients: [
+    "2 cups dry basmati rice",
+    "3 cups water",
+    "1 tsp kosher salt",
+    "1 tsp butter or olive oil"
+  ],
+
+  steps: [
+    "Place rice in a bowl and cover with cold water.",
+    "Swirl rice around with your hands a couple of times, then drain. Repeat 3-4 more times or until the water is clear.",
+    "Place rinsed rice in the rice cooker with 3 cups of water, kosher salt, and butter.",
+    "Press the \"White Rice\" button and let it cook until the rice cooker is finished.",
+    "Allow rice to sit in the rice cooker on \"Keep Warm\" for about 10 minutes.",
+    "Fluff gently with a fork and serve."
+  ]
+},
 
 ];
