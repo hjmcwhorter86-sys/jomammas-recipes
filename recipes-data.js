@@ -780,4 +780,49 @@ tags: ["dessert", "high protein"]
   ]
 },
 
+{
+  id: "family-style-american-goulash-with-protein-pasta",
+  title: "Family Style American Goulash with Protein Pasta",
+  description: "Classic American goulash gets a glow-up: rich tomato flavor, hearty protein pasta, and a brothier texture that's comforting without being heavy.",
+  image: "images/american-goulash.jpg",
+  category: "Soup",
+  dateAdded: "2026-03-10",
+  calories: "265",
+  protein: "24 g",
+  tags: ["soup", "protein", "ground beef"],
+
+  ingredients: [
+    "1 pound 93-96% lean ground beef (or lean ground turkey)",
+    "1 tsp kosher salt",
+    "3/4 tsp black pepper",
+    "1 tsp smoked paprika",
+    "1 1/2 tsp garlic powder",
+    "1 tsp onion powder",
+    "1 1/2 medium yellow onions, diced",
+    "3 cloves garlic, minced",
+    "1 green bell pepper, finely diced",
+    "1 (29 oz) can tomato sauce",
+    "1 (28 oz) can diced tomatoes, undrained",
+    "3 tbsp tomato paste",
+    "4 cups beef broth",
+    "1 tbsp Worcestershire sauce",
+    "1 tsp Italian seasoning",
+    "1/2 tsp crushed red pepper flakes (or to taste)",
+    "Optional: a few dashes hot sauce",
+    "9 oz protein pasta (Barilla Protein+ elbows or rotini)",
+    "1 tsp red wine vinegar",
+    "Optional garnish: chopped parsley or reduced-fat cheese"
+  ],
+
+  steps: [
+    "Heat a large pot or Dutch oven over medium heat. Add the ground beef, salt, pepper, smoked paprika, garlic powder, and onion powder. Cook until browned, breaking the meat into small crumbles as it cooks. Drain excess fat if needed.",
+    "Add diced onion, garlic, and bell pepper. Cook for 3-5 minutes until softened and fragrant.",
+    "Stir in the tomato paste and cook for about 1 minute to deepen the flavor. Add tomato sauce, diced tomatoes with their juices, Worcestershire sauce, Italian seasoning, and crushed red pepper flakes.",
+    "Pour in the beef broth and stir well. Bring to a gentle simmer and cook uncovered for about 10 minutes so the flavors meld together. Taste and add more salt if needed.",
+    "Stir in the dry protein pasta. Simmer uncovered for 10-12 minutes, stirring occasionally, until the pasta is tender.",
+    "If the goulash becomes too thick, add a splash of broth or water. The final texture should be slightly soupy.",
+    "Stir in the vinegar to brighten the tomato flavor. Taste and adjust salt, pepper, or heat as needed. Serve hot with optional herbs and/or a sprinkle of cheese."
+  ]
+},
+
 ];
