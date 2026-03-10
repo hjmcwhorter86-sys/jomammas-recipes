@@ -783,7 +783,7 @@ tags: ["dessert", "high protein"]
 {
   id: "family-style-american-goulash-with-protein-pasta",
   title: "Family Style American Goulash with Protein Pasta",
-  description: "Classic American goulash gets a glow-up: rich tomato flavor, hearty protein pasta, and a brothier texture that's comforting without being heavy.",
+  description: "Classic American goulash with rich tomato flavor, protein pasta, and ground beef.",
   image: "images/american-goulash.jpg",
   category: "Soup",
   dateAdded: "2026-03-10",
