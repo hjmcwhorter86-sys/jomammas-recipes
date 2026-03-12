@@ -100,7 +100,7 @@ window.recipes = [
   id: "pepper-jack-queso",
   title: "Sodium Citrate Pepper Jack Queso (Eva’s Chili-Spiced Version)",
   description: "Ultra-smooth, pourable queso made with real cheese, light dairy, and sodium citrate — kid-approved but flavor-forward.",
-  image: "images/no-photo.jpg",
+  image: "images/sodium-citrate-queso-dip.png",
   category: "Snacks",
   dateAdded: "2026-02-04",
   calories: "",
@@ -822,6 +822,39 @@ tags: ["dessert", "high protein"]
     "Stir in the dry protein pasta. Simmer uncovered for 10-12 minutes, stirring occasionally, until the pasta is tender.",
     "If the goulash becomes too thick, add a splash of broth or water. The final texture should be slightly soupy.",
     "Stir in the vinegar to brighten the tomato flavor. Taste and adjust salt, pepper, or heat as needed. Serve hot with optional herbs and/or a sprinkle of cheese."
+  ]
+},
+
+{
+  id: "honey-mustard-chicken-thighs",
+  title: "Honey Mustard Chicken Thighs",
+  description: "Sweet-tangy roasted chicken with caramelized edges",
+  image: "images/honey-mustard-chicken-thighs.jpg",
+  category: "Chicken",
+  dateAdded: "2026-03-12",
+  calories: "520 per 2 chicken thighs",
+  protein: "52 g",
+  tags: ["chicken", "protein", "easy", "weeknight"],
+
+  ingredients: [
+    "2 lbs boneless skinless chicken thighs (about 8–10 thighs)",
+    "¼ cup Dijon mustard",
+    "3 tbsp honey",
+    "1½ tbsp olive oil",
+    "1 tbsp apple cider vinegar (or lemon juice)",
+    "1 tsp kosher salt",
+    "½ tsp black pepper",
+    "1 tsp smoked paprika",
+    "Optional: ½ tsp garlic powder",
+    "Optional: pinch dried thyme or rosemary"
+  ],
+
+  steps: [
+    "Preheat oven to 425°F. Line a sheet pan with foil or parchment for easy cleanup.",
+    "In a bowl, whisk together Dijon mustard, honey, olive oil, vinegar, salt, pepper, paprika, and optional seasonings.",
+    "Place chicken thighs on the sheet pan, pour sauce over them, and toss to coat. Spread out so the pieces are not piled on top of each other.",
+    "Roast for 35–40 minutes, flipping the thighs halfway through.",
+    "Optional: broil 2–3 minutes at the end to caramelize and get sticky golden edges."
   ]
 },
 
