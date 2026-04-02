@@ -380,7 +380,7 @@ tags: ["dessert", "high protein"]
   title: "BBQ Chicken Baked Potatoes",
   description: "Build-your-own BBQ chicken potato bar — easy weeknight comfort food.",
   image: "images/bbq-chicken-baked-potatoes.jpg",
-  category: "Slow Cooker",
+  category: ["Slow Cooker", "Chicken"],
   dateAdded: "2026-02-12",
   servings: "4",
   tags: ["weeknight", "comfort food", "slow cooker", "family dinner", "build your own"],
@@ -682,7 +682,7 @@ tags: ["dessert", "high protein"]
   title: "Lazy Slow Cooker Butter Chicken",
   description: "Weeknight-friendly butter chicken from the slow cooker.",
   image: "images/slow-cooker-butter-chicken.png",
-  category: "Slow Cooker",
+  category: ["Slow Cooker", "Chicken"],
   dateAdded: "2026-03-04",
   servings: "4-6",
   tags: ["chicken", "slow cooker", "easy"],
@@ -785,7 +785,7 @@ tags: ["dessert", "high protein"]
   title: "Family Style American Goulash with Protein Pasta",
   description: "Classic American goulash with rich tomato flavor, protein pasta, and ground beef.",
   image: "images/american-goulash.jpg",
-  category: "Soup",
+  category: ["Soup", "Beef"],
   dateAdded: "2026-03-10",
   calories: "265",
   protein: "24 g",
@@ -855,6 +855,115 @@ tags: ["dessert", "high protein"]
     "Place chicken thighs on the sheet pan, pour sauce over them, and toss to coat. Spread out so the pieces are not piled on top of each other.",
     "Roast for 35–40 minutes, flipping the thighs halfway through.",
     "Optional: broil 2–3 minutes at the end to caramelize and get sticky golden edges."
+  ]
+},
+
+{
+  id: "bbq-chicken-protein-pizza",
+  title: "BBQ Chicken Protein Pizza",
+  description: "Sweet, smoky, cheesy, and protein-packed — pizza night without the regret.",
+  image: "images/bbq-chicken-protein-pizza.png",
+  category: "Chicken",
+  dateAdded: "2026-03-26",
+  calories: "500 calories per pizza",
+  protein: "68 g per pizza",
+  tags: ["chicken", "protein", "easy", "weeknight", "pizza", "fast"],
+
+  ingredients: [
+    "1 Golden Home Ultra Thin Protein Pizza Crust",
+    "Sugar-free or low-sugar BBQ sauce (Ray's No Sugar Added works great)",
+    "Reduced-fat mozzarella cheese, shredded",
+    "Cooked chicken breast, diced or shredded",
+    "Pickled jalapeños, sliced (to taste)",
+    "Red onion, thinly sliced",
+    "Pineapple chunks (optional)"
+  ],
+
+  steps: [
+    "Preheat oven to 400°F.",
+    "Spread a thin, even layer of sugar-free BBQ sauce over the crust.",
+    "Sprinkle shredded reduced-fat mozzarella evenly over the sauce.",
+    "Add diced chicken, jalapeños, red onion, and pineapple (if using).",
+    "Place pizza directly on the oven rack or on a perforated pizza pan.",
+    "Bake for 8–10 minutes, until the cheese is fully melted and edges are golden brown and crispy.",
+    "Cool slightly, slice, and enjoy."
+  ]
+},
+
+{
+  id: "quick-pasta-arrabbiata",
+  title: "Quick Pasta Arrabbiata",
+  description: "Quick and easy pasta with a spicy tomato sauce.",
+  image: "images/quick-pasta-arrabbiata.png",
+  category: "Pasta",
+  dateAdded: "2026-04-02",
+  calories: "380 calories",
+  protein: "18 g",
+  tags: ["pasta", "meatless", "easy", "weeknight", "spicy", "fast", "low calorie"],
+
+  ingredients: [
+    "12 oz spaghetti or penne pasta (protein pasta works great)",
+    "3 tbsp olive oil",
+    "6 cloves garlic, thinly sliced",
+    "2–3 tsp crushed red pepper flakes (adjust to your heat tolerance)",
+    "1 tbsp Calabrian chili paste (optional)",
+    "1½ tbsp tomato paste",
+    "1 anchovy fillet or 1 tsp Worcestershire sauce",
+    "1 (28 oz) can crushed tomatoes",
+    "1 tsp kosher salt (start here)",
+    "½ tsp black pepper",
+    "1 parmesan rind",
+    "¼ tsp sugar (optional, only if tomatoes taste harsh)",
+    "½ cup reserved pasta water",
+    "2 tbsp fresh grated parmesan",
+    "1 tbsp butter or light butter (optional for richness)",
+    "Squeeze of lemon or splash of red wine vinegar",
+    "Fresh parsley or basil"
+  ],
+
+  steps: [
+    "Boil pasta in salted water until just shy of al dente; reserve ½ cup pasta water before draining.",
+    "Heat olive oil over medium heat in a large skillet. Add garlic and cook until fragrant, about 30 seconds.",
+    "Add crushed red pepper flakes and Calabrian chili paste. Cook 30 seconds so the oil becomes spicy.",
+    "Stir in tomato paste and anchovy or Worcestershire. Cook 1 minute to caramelize the tomato paste.",
+    "Add crushed tomatoes, salt, pepper, and parmesan rind. Simmer 10–15 minutes, stirring occasionally.",
+    "Remove the parmesan rind. Add pasta and reserved pasta water to the sauce. Toss until glossy and slightly thickened.",
+    "Optional: stir in extra parmesan, butter, or a squeeze of lemon or splash of red wine vinegar.",
+    "Taste and adjust salt or other seasonings. Finish with fresh herbs."
+  ]
+},
+
+{
+  id: "lightened-up-sheet-pan-garlic-butter-shrimp",
+  title: "Lightened Up Sheet Pan Garlic Butter Shrimp",
+  description: "Fast, garlicky sheet pan shrimp with bright lemon and buttery flavor in a lighter prep.",
+  image: "images/sheet-pan-garlic-butter-shrimp-light.png",
+  category: "Seafood",
+  dateAdded: "2026-04-02",
+  calories: "200 calories per serving",
+  protein: "25 g",
+  tags: ["shrimp", "seafood", "easy", "weeknight", "fast", "low calorie"],
+
+  ingredients: [
+    "2 lbs large shrimp, peeled and deveined",
+    "2 tbsp real butter, melted",
+    "1 tbsp light margarine spread, melted",
+    "2–3 tbsp dry white wine (pinot grigio, sauvignon blanc, etc.)",
+    "4–5 cloves garlic, minced",
+    "½ tsp kosher salt",
+    "½ tsp black pepper",
+    "¼–½ tsp red pepper flakes (to taste)",
+    "Zest of 1 lemon",
+    "Juice of ½–1 lemon",
+    "1 tbsp chopped parsley (optional)"
+  ],
+
+  steps: [
+    "Preheat oven to 400°F.",
+    "In a bowl, mix melted butter, melted light margarine, white wine, garlic, salt, pepper, red pepper flakes, lemon zest, and lemon juice.",
+    "Spread shrimp in a single layer on a sheet pan.",
+    "Pour sauce over the top and toss lightly to coat.",
+    "Bake for 8–10 minutes, until shrimp are pink and opaque."
   ]
 },
 

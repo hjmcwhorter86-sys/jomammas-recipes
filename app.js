@@ -2,6 +2,46 @@
 
 const recipes = window.recipes || [];
 
+function normalizeCategoryValue(value) {
+  return (value || '').trim().toLowerCase();
+}
+
+function getRecipeCategories(recipe) {
+  const categoryValues = [];
+
+  if (Array.isArray(recipe?.category)) {
+    categoryValues.push(...recipe.category);
+  } else if (typeof recipe?.category === 'string') {
+    categoryValues.push(recipe.category);
+  }
+
+  if (Array.isArray(recipe?.categories)) {
+    categoryValues.push(...recipe.categories);
+  }
+
+  const deduped = [];
+  const seen = new Set();
+  categoryValues.forEach((value) => {
+    if (typeof value !== 'string') return;
+    const trimmed = value.trim();
+    if (!trimmed) return;
+    const normalized = normalizeCategoryValue(trimmed);
+    if (seen.has(normalized)) return;
+    seen.add(normalized);
+    deduped.push(trimmed);
+  });
+
+  return deduped;
+}
+
+function getPrimaryCategory(recipe) {
+  return getRecipeCategories(recipe)[0] || '';
+}
+
+function formatRecipeCategories(recipe, separator = ', ') {
+  return getRecipeCategories(recipe).join(separator);
+}
+
 // Detect page type from meta tag
 const pageType = document.querySelector('meta[name="page-type"]')?.getAttribute('content') || 'home';
 
@@ -240,7 +280,7 @@ if (newestEl) {
       <div class="newest-card-inner">
         <h3>${r.title}</h3>
         <p>${r.description}</p>
-        <div class="meta-small">${r.category || ''}</div>
+        <div class="meta-small">${formatRecipeCategories(r)}</div>
       </div>
     </a>
   `).join('');
@@ -266,7 +306,7 @@ if (popularEl) {
     if (recipe.tags && Array.isArray(recipe.tags) && recipe.tags.length > 0) {
       return recipe.tags[0];
     }
-    return recipe.category || '';
+    return getPrimaryCategory(recipe);
   }
 
   popularEl.innerHTML = popular.map(r => {
@@ -280,7 +320,7 @@ if (popularEl) {
       <div class="newest-card-inner">
         <h3>${r.title}</h3>
         <p>${r.description}</p>
-        <div class="meta-small">${r.category || ''}</div>
+        <div class="meta-small">${formatRecipeCategories(r)}</div>
       </div>
     </a>
   `;}).join('');
@@ -288,7 +328,21 @@ if (popularEl) {
 
 // If we're on the recipes list page, initialize recipes page functionality
 if (pageType === 'list' && recipesEl && searchEl) {
-  const allCategories = [...new Set(recipes.map(r => r.category))].sort();
+  const categoryMap = new Map();
+  recipes.flatMap(getRecipeCategories).forEach((category) => {
+    const normalized = normalizeCategoryValue(category);
+    if (!normalized || categoryMap.has(normalized)) return;
+    categoryMap.set(normalized, category);
+  });
+
+  const allCategories = [...categoryMap.values()].sort();
+
+  function resolveCategorySelection(inputCategory) {
+    if (!inputCategory || inputCategory === 'All') return 'All';
+    const normalizedInput = normalizeCategoryValue(inputCategory);
+    return categoryMap.get(normalizedInput) || inputCategory;
+  }
+
   let currentCategory = 'All';
 
   function render(list) {
@@ -335,7 +389,7 @@ if (pageType === 'list' && recipesEl && searchEl) {
             <h3>${r.title}</h3>
             <p>${r.description}</p>
             <div class="recipe-meta-row">
-              <span class="category-pill">${r.category}</span>
+              <span class="category-pill">${formatRecipeCategories(r)}</span>
               ${metaItems.length > 0 ? `<div class="recipe-meta-items">${metaItems.join(' • ')}</div>` : ''}
             </div>
             <div class="tags">
@@ -375,7 +429,7 @@ if (pageType === 'list' && recipesEl && searchEl) {
         <p class="recipe-description">${recipe.description}</p>
         <div class="recipe-meta">
           <div class="meta-primary">
-            <span class="badge">${recipe.category}</span>
+            <span class="badge">${formatRecipeCategories(recipe, ' • ')}</span>
             <button class="print-recipe-btn button-family button-primary" id="printRecipeBtn" type="button">Print Recipe</button>
             <button class="cook-mode-btn button-family button-secondary" id="cookModeBtn" type="button" aria-pressed="false">Cook Mode: Off</button>
           </div>
@@ -466,7 +520,9 @@ if (pageType === 'list' && recipesEl && searchEl) {
   function filterRecipes(q, category = 'All') {
     let list = recipes;
     if (category !== 'All') {
-      list = list.filter(r => r.category === category);
+      const normalizedCategory = normalizeCategoryValue(category);
+      list = list.filter((recipe) => getRecipeCategories(recipe)
+        .some((recipeCategory) => normalizeCategoryValue(recipeCategory) === normalizedCategory));
     }
     if (q && q.trim()) {
       const query = q.trim().toLowerCase();
@@ -517,7 +573,7 @@ if (pageType === 'list' && recipesEl && searchEl) {
     } else {
       // Recipe not found, show grid
       const initialQuery = urlParams.get('q') || '';
-      const initialCategory = urlParams.get('category') || 'All';
+      const initialCategory = resolveCategorySelection(urlParams.get('category') || 'All');
       if (initialQuery) searchEl.value = initialQuery;
       currentCategory = initialCategory;
       render(filterRecipes(initialQuery, currentCategory));
@@ -533,7 +589,7 @@ if (pageType === 'list' && recipesEl && searchEl) {
   } else {
     // Show grid view (original behavior)
     const initialQuery = urlParams.get('q') || '';
-    const initialCategory = urlParams.get('category') || 'All';
+    const initialCategory = resolveCategorySelection(urlParams.get('category') || 'All');
     
     if (initialQuery) searchEl.value = initialQuery;
     currentCategory = initialCategory;
@@ -580,7 +636,7 @@ if (pageType === 'detail' && detailedViewEl) {
         <p class="recipe-description">${recipe.description}</p>
         <div class="recipe-meta">
           <div class="meta-primary">
-            <span class="badge">${recipe.category}</span>
+            <span class="badge">${formatRecipeCategories(recipe, ' • ')}</span>
             <button class="print-recipe-btn button-family button-primary" id="printRecipeBtn" type="button">Print Recipe</button>
             <button class="cook-mode-btn button-family button-secondary" id="cookModeBtn" type="button" aria-pressed="false">Cook Mode: Off</button>
           </div>
