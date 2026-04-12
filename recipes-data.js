@@ -1,4 +1,4 @@
-window.recipes = [
+﻿window.recipes = [
   {
   id: "cornflake-chicken-tenders",
   title: "Bang Bang Cornflake Chicken Tenders",
@@ -964,6 +964,41 @@ tags: ["dessert", "high protein"]
     "Spread shrimp in a single layer on a sheet pan.",
     "Pour sauce over the top and toss lightly to coat.",
     "Bake for 8–10 minutes, until shrimp are pink and opaque."
+  ]
+},
+
+  {
+  id: "creamy-sherry-tomato-soup",
+  title: "Creamy Tomato Soup with Sherry",
+  description: "A lightened-up version of a classic creamy tomato soup—lower in fat than traditional recipes, but still rich and comforting.",
+  image: "images/no-photo.jpg",
+  category: "Soup",
+  dateAdded: "2026-04-05",
+  calories: "250 calories per serving",
+  protein: "4g",
+  tags: ["soup", "tomato", "easy", "weeknight", "fast", "low calorie", "comfort food"],
+
+  ingredients: [
+    "6 tablespoons light butter spread",
+    "1 46 oz bottle of tomato juice",
+    "2–3 tbsp chicken base (like Better Than Bouillon)",
+    "2 cans diced tomatoes",
+    "4 tbsp sugar",
+    "Salt and pepper to taste",
+    "1 cup cooking sherry",
+    "1½ cups half and half",
+    "Chopped fresh parsley and basil, for topping"
+  ],
+
+  steps: [
+    "Melt butter spread in a large pot over medium heat.",
+    "Add tomatoes, tomato juice, chicken base, sugar, salt, and pepper.",
+    "Bring almost to a boil.",
+    "Remove from heat.",
+    "Stir in sherry and half and half.",
+    "Adjust seasonings if needed.",
+    "Blend with a hand blender until smooth.",
+    "Top with fresh herbs and serve."
   ]
 },
 
