@@ -417,7 +417,7 @@ tags: ["dessert", "high protein"]
     "Switch slow cooker to keep warm setting.",
     
     "Preheat oven to 400°F.",
-    "Scrub potatoes clean and dry thoroughly. Rub lightly with olive oil and sprinkle generously with kosher salt.",
+    "Scrub potatoes clean and dry thoroughly. Poke each potato all over with a fork (about 8–10 times) to allow steam to escape. Rub lightly with olive oil and sprinkle generously with kosher salt.",
     "Place potatoes directly on the oven rack with a sheet pan below. Bake 50–60 minutes until skins are crisp and centers are tender. Rest 5 minutes before slicing.",
 
     "Slice potatoes open and fluff insides with a fork. Season lightly.",
