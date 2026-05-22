@@ -1002,4 +1002,63 @@ tags: ["dessert", "high protein"]
   ]
 },
 
+{
+  id: "birria-chuck-roast",
+  title: "Birria-Style Chuck Roast",
+  description: "Deeply spiced, fall-apart chuck roast slow cooked in a rich chile broth — bold, smoky, and worth every minute. Serve over rice with consommé or stuff into tacos.",
+  image: "images/birria-chuck-roast.jpg",
+  category: ["Beef", "Slow Cooker"],
+  dateAdded: "2026-05-22",
+  calories: "",
+  protein: "",
+  servings: "6",
+  tags: ["beef", "slow cooker", "birria", "mexican", "chuck roast", "comfort food", "spicy"],
+
+  ingredients: [
+    "3.5 lbs chuck roast",
+    "2 tsp salt (plus 1 tsp more to adjust consommé at the end)",
+    "1 tsp black pepper",
+    "2 tbsp vegetable oil",
+
+    "4 dried guajillo chiles, stems and seeds removed",
+    "3 dried ancho chiles, stems and seeds removed",
+    "2 chipotle peppers in adobo sauce",
+    "6 garlic cloves",
+    "1 white onion, roughly chopped",
+    "2 roma tomatoes, halved",
+    "2 tbsp apple cider vinegar",
+    "2 tsp ground cumin",
+    "1 tsp dried oregano (Mexican oregano if you can find it)",
+    "¼ tsp ground cinnamon",
+    "2 cups beef broth, divided",
+
+    "2 bay leaves",
+
+    "Cooked Mexican rice, for serving",
+    "Warm tortillas, for serving",
+    "Diced white onion, for serving",
+    "Fresh cilantro, for serving",
+    "Lime wedges, for serving",
+    "Crumbled cotija cheese, for serving",
+    "Pico de gallo, for serving"
+  ],
+
+  steps: [
+    "Toast the chiles: Tear open the guajillo and ancho chiles, removing stems and seeds. Toast in a dry skillet over medium heat for about 30 seconds per side — just until fragrant, not burnt. Place in a bowl, cover with hot water, and soak 15–20 minutes until softened.",
+    "Season and sear the roast: Cut the chuck roast into 3–4 large chunks. Season all over with 2 tsp salt and the black pepper. Heat vegetable oil in a large skillet over high heat and sear 2–3 minutes per side until deeply browned. Don't skip this step — it builds the flavor base. Transfer to the slow cooker.",
+    "Blend the chile sauce: Drain the soaked chiles and add to a blender with the chipotle peppers, garlic, onion, tomatoes, apple cider vinegar, cumin, oregano, cinnamon, and 1 cup of beef broth. Blend until very smooth. Taste — it should be bold, smoky, and slightly spicy.",
+    "Load the slow cooker: Pour the chile sauce over the seared beef. Add the remaining 1 cup of beef broth and tuck in the bay leaves. The liquid should come about halfway up the meat — that's perfect.",
+    "Cook on LOW for 6–7 hours. Start checking around the 6-hour mark — the meat is done when it shreds easily with two forks. Switch to keep warm if it finishes early; it only gets better.",
+    "Remove the bay leaves. Pull the beef chunks out and shred with two forks, then return the meat to the pot and stir back into the broth. Taste the consommé and add up to 1 tsp salt if needed. Serve the consommé alongside in small bowls for sipping or ladling over the bowl."
+  ],
+
+  notes: [
+    "On the dried chiles: Guajillo = mild, fruity, slightly tangy. Ancho = dark, rich, chocolate-y. Chipotle in adobo = smoky heat. All three together is what makes birria taste like birria — don't substitute with chili powder. Look for dried chiles in the Hispanic foods aisle at Walmart or order online.",
+    "Hot-running slow cooker: If your slow cooker runs hot, start checking at 5.5–6 hours rather than waiting the full 7.",
+    "Serving as bowls: Rice on the bottom, shredded beef on top, ladle consommé over everything. Top with diced onion, cilantro, cotija, and a squeeze of lime.",
+    "For birria tacos: Dip tortillas briefly in the consommé, fill with shredded beef, and crisp in a hot skillet. Mind-blowing.",
+    "Leftovers: Even better the next day. The consommé thickens overnight in the fridge into an incredible sauce."
+  ]
+},
+
 ];
