@@ -101,7 +101,7 @@
   title: "Sodium Citrate Pepper Jack Queso (Eva’s Chili-Spiced Version)",
   description: "Ultra-smooth, pourable queso made with real cheese, light dairy, and sodium citrate — kid-approved but flavor-forward.",
   image: "images/sodium-citrate-queso-dip.png",
-  category: "Snacks",
+  category: "Snacks & Sides",
   dateAdded: "2026-02-04",
   calories: "",
   protein: "",
