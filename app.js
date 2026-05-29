@@ -42,6 +42,15 @@ function formatRecipeCategories(recipe, separator = ', ') {
   return getRecipeCategories(recipe).join(separator);
 }
 
+function getRecipeImageUrl(recipe) {
+  if (!recipe || typeof recipe.image !== 'string') {
+    return 'images/no-photo.jpg';
+  }
+
+  const normalizedPath = recipe.image.trim().replace(/\\/g, '/');
+  return normalizedPath || 'images/no-photo.jpg';
+}
+
 // Detect page type from meta tag
 const pageType = document.querySelector('meta[name="page-type"]')?.getAttribute('content') || 'home';
 
@@ -276,7 +285,7 @@ if (newestEl) {
 
   newestEl.innerHTML = newest.map(r => `
     <a class="newest-card" href="recipe-detail.html?id=${r.id}">
-      ${r.image ? `<img src="${r.image}" alt="${r.title}" class="newest-card-image">` : ''}
+      <img src="${getRecipeImageUrl(r)}" alt="${r.title}" class="newest-card-image">
       <div class="newest-card-inner">
         <h3>${r.title}</h3>
         <p>${r.description}</p>
@@ -314,7 +323,7 @@ if (popularEl) {
     return `
     <a class="newest-card" href="recipe-detail.html?id=${r.id}">
       <div class="newest-card-image-wrapper">
-        ${r.image ? `<img src="${r.image}" alt="${r.title}" class="newest-card-image">` : ''}
+        <img src="${getRecipeImageUrl(r)}" alt="${r.title}" class="newest-card-image">
         ${badgeText ? `<span class="recipe-badge">${badgeText}</span>` : ''}
       </div>
       <div class="newest-card-inner">
@@ -373,7 +382,7 @@ if (pageType === 'list' && recipesEl && searchEl) {
     
     recipesEl.innerHTML = list.map(r => {
       // Use recipe image or fallback to placeholder
-      const imageUrl = r.image && r.image.trim() ? r.image : 'images/no-photo.jpg';
+      const imageUrl = getRecipeImageUrl(r);
       
       // Build meta items for the meta row
       let metaItems = [];
@@ -439,7 +448,7 @@ if (pageType === 'list' && recipesEl && searchEl) {
         <p class="cook-mode-status" id="cookModeStatus" aria-live="polite"></p>
         ${recipe.tags && Array.isArray(recipe.tags) && recipe.tags.length > 0 ? `<div class="recipe-tags">${recipe.tags.map(t => `<span class="tag">${t}</span>`).join('')}</div>` : ''}
         ${recipe.servings ? `<div class="recipe-servings"><strong>Servings:</strong> ${recipe.servings}</div>` : ''}
-        ${recipe.image ? `<div class="recipe-image-outer"><img src="${recipe.image}" alt="${recipe.title}" class="recipe-image" id="recipe-image-zoom" style="cursor: zoom-in;"></div>` : ''}
+        <div class="recipe-image-outer"><img src="${getRecipeImageUrl(recipe)}" alt="${recipe.title}" class="recipe-image" id="recipe-image-zoom" style="cursor: zoom-in;"></div>
         <div class="recipe-content-wrapper">
           ${hasIngredients ? `
             <section class="recipe-section">
@@ -646,7 +655,7 @@ if (pageType === 'detail' && detailedViewEl) {
         <p class="cook-mode-status" id="cookModeStatus" aria-live="polite"></p>
         ${recipe.tags && Array.isArray(recipe.tags) && recipe.tags.length > 0 ? `<div class="recipe-tags">${recipe.tags.map(t => `<span class="tag">${t}</span>`).join('')}</div>` : ''}
         ${recipe.servings ? `<div class="recipe-servings"><strong>Servings:</strong> ${recipe.servings}</div>` : ''}
-        ${recipe.image ? `<div class="recipe-image-outer"><img src="${recipe.image}" alt="${recipe.title}" class="recipe-image" id="recipe-image-zoom" style="cursor: zoom-in;"></div>` : ''}
+        <div class="recipe-image-outer"><img src="${getRecipeImageUrl(recipe)}" alt="${recipe.title}" class="recipe-image" id="recipe-image-zoom" style="cursor: zoom-in;"></div>
         <div class="recipe-content-wrapper">
           ${hasIngredients ? `
             <section class="recipe-section">
