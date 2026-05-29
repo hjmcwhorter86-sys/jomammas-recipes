@@ -217,7 +217,7 @@ tags: ["dessert", "high protein"]
   title: "Quick Lobster Bisque",
   description: "Creamy, cozy lobster bisque made fast with Better Than Bouillon — rich flavor without the restaurant fuss.",
   image: "images/quick-lobster-bisque.png",
-  category: "Soup",
+  category: ["Soup", "Seafood"],
   dateAdded: "2026-02-11",
   calories: "~185 per serving",
   protein: "~9g per serving",
