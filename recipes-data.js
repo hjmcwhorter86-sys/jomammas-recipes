@@ -1116,39 +1116,64 @@ tags: ["dessert", "high protein"]
   tags: ["beef", "korean", "rice bowl", "weeknight", "ground beef", "pickled"],
 
   ingredients: [
-    "2 lbs ground beef (80/20)",
-    "1 tbsp vegetable oil",
-
-    "6 tbsp soy sauce (plus 2 tsp)",
-    "4 tbsp brown sugar",
-    "1½ tbsp toasted sesame oil",
-    "6 garlic cloves, minced",
-    "1½ tsp fresh ginger, grated (or ¾ tsp ground ginger)",
-    "¾ tsp red pepper flakes",
-    "2 tsp gochujang paste",
-
-    "2.5 cups jasmine rice",
-    "1.5 cups chicken broth",
-    "1.25 cups water",
-    "½ tsp toasted sesame oil",
-    "¾ tsp salt",
-    "1 tsp rice vinegar (stirred in after cooking)",
-
-    "4 medium carrots, peeled and julienned",
-    "1 cup rice vinegar",
-    "2 tsp sugar",
-    "1 tsp salt",
-    "½ cup water",
-    "Pinch of red pepper flakes (optional)",
-
-    "1 mini cucumber, thinly sliced",
-    "1 tbsp rice vinegar",
-    "¼ tsp sugar",
-    "Pinch of salt",
-    "Tiny drizzle of toasted sesame oil",
-
-    "4 green onions, sliced",
-    "1 tbsp sesame seeds"
+    {
+      title: "The Beef",
+      items: [
+        "2 lbs ground beef (80/20)",
+        "1 tbsp vegetable oil"
+      ]
+    },
+    {
+      title: "The Sauce",
+      items: [
+        "6 tbsp soy sauce (plus 2 tsp)",
+        "4 tbsp brown sugar",
+        "1½ tbsp toasted sesame oil",
+        "6 garlic cloves, minced",
+        "1½ tsp fresh ginger, grated (or ¾ tsp ground ginger)",
+        "¾ tsp red pepper flakes",
+        "2 tsp gochujang paste"
+      ]
+    },
+    {
+      title: "The Rice",
+      items: [
+        "2.5 cups jasmine rice",
+        "1.5 cups chicken broth",
+        "1.25 cups water",
+        "½ tsp toasted sesame oil",
+        "¾ tsp salt",
+        "1 tsp rice vinegar (stirred in after cooking)"
+      ]
+    },
+    {
+      title: "Pickled Carrots",
+      items: [
+        "4 medium carrots, peeled and julienned",
+        "1 cup rice vinegar",
+        "2 tsp sugar",
+        "1 tsp salt",
+        "½ cup water",
+        "Pinch of red pepper flakes (optional)"
+      ]
+    },
+    {
+      title: "Vinegar Cucumbers",
+      items: [
+        "1 mini cucumber, thinly sliced",
+        "1 tbsp rice vinegar",
+        "¼ tsp sugar",
+        "Pinch of salt",
+        "Tiny drizzle of toasted sesame oil"
+      ]
+    },
+    {
+      title: "Toppings",
+      items: [
+        "4 green onions, sliced",
+        "1 tbsp sesame seeds"
+      ]
+    }
   ],
 
   steps: [

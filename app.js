@@ -51,6 +51,55 @@ function getRecipeImageUrl(recipe) {
   return normalizedPath || 'images/no-photo.jpg';
 }
 
+function renderIngredientsMarkup(ingredients) {
+  if (!Array.isArray(ingredients) || ingredients.length === 0) {
+    return '';
+  }
+
+  const hasStructuredSections = ingredients.some((entry) => (
+    entry && typeof entry === 'object' && !Array.isArray(entry) && Array.isArray(entry.items)
+  ));
+
+  if (!hasStructuredSections) {
+    return `
+      <ul class="ingredients-list">
+        ${ingredients
+          .filter((item) => typeof item === 'string' && item.trim())
+          .map((item) => `<li>${item}</li>`)
+          .join('')}
+      </ul>
+    `;
+  }
+
+  return `
+    <div class="ingredient-sections">
+      ${ingredients.map((entry) => {
+        if (!entry || typeof entry !== 'object' || Array.isArray(entry)) {
+          return '';
+        }
+
+        const title = typeof entry.title === 'string' ? entry.title.trim() : '';
+        const items = Array.isArray(entry.items)
+          ? entry.items.filter((item) => typeof item === 'string' && item.trim())
+          : [];
+
+        if (items.length === 0) {
+          return '';
+        }
+
+        return `
+          <section class="ingredient-group">
+            ${title ? `<h3 class="ingredient-group-title">${title}</h3>` : ''}
+            <ul class="ingredients-list">
+              ${items.map((item) => `<li>${item}</li>`).join('')}
+            </ul>
+          </section>
+        `;
+      }).join('')}
+    </div>
+  `;
+}
+
 // Detect page type from meta tag
 const pageType = document.querySelector('meta[name="page-type"]')?.getAttribute('content') || 'home';
 
@@ -453,9 +502,7 @@ if (pageType === 'list' && recipesEl && searchEl) {
           ${hasIngredients ? `
             <section class="recipe-section">
               <h2>Ingredients</h2>
-              <ul class="ingredients-list">
-                ${recipe.ingredients.map(i => `<li>${i}</li>`).join('')}
-              </ul>
+              ${renderIngredientsMarkup(recipe.ingredients)}
             </section>
           ` : '<p class="incomplete-warning">Ingredients data incomplete</p>'}
         </div>
@@ -660,9 +707,7 @@ if (pageType === 'detail' && detailedViewEl) {
           ${hasIngredients ? `
             <section class="recipe-section">
               <h2>Ingredients</h2>
-              <ul class="ingredients-list">
-                ${recipe.ingredients.map(i => `<li>${i}</li>`).join('')}
-              </ul>
+              ${renderIngredientsMarkup(recipe.ingredients)}
             </section>
           ` : '<p class="incomplete-warning">Ingredients data incomplete</p>'}
         </div>

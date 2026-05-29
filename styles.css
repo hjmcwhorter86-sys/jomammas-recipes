@@ -1207,6 +1207,23 @@ body{
   padding-left: 24px;
 }
 
+.ingredient-sections {
+  display: grid;
+  gap: 20px;
+}
+
+.ingredient-group {
+  display: grid;
+  gap: 10px;
+}
+
+.ingredient-group-title {
+  margin: 0;
+  font-size: var(--font-size-md);
+  font-weight: 700;
+  line-height: 1.35;
+}
+
 .ingredients-list li {
   margin-bottom: 10px;
   line-height: 1.65;
