@@ -1061,4 +1061,46 @@ tags: ["dessert", "high protein"]
   ]
 },
 
+{
+  id: "esquites-mexican-street-corn",
+  title: "Esquites (Mexican Street Corn in a Cup)",
+  description: "Mexican street corn in a cup — charred corn kernels coated in a creamy, tangy, spiced sauce and topped with cotija and fresh lime. Bold enough to steal the show.",
+  image: "images/esquites.png",
+  category: "Snacks & Sides",
+  dateAdded: "2026-05-29",
+  calories: "",
+  protein: "",
+  servings: "6",
+  tags: ["mexican", "corn", "side dish", "vegetarian", "snack", "street food"],
+
+  ingredients: [
+    "6 ears of corn, kernels cut off (or 4.5 cups frozen corn, thawed and patted very dry)",
+    "3 tbsp butter",
+    "3 garlic cloves, minced (or ¾ tsp garlic powder in a pinch)",
+    "⅓ cup mayonnaise",
+    "⅓ cup sour cream",
+    "1 tsp chili powder",
+    "½ tsp smoked paprika",
+    "¼ tsp cayenne pepper (adjust to taste)",
+    "½ tsp salt",
+    "Juice of 3 limes",
+    "½ cup cotija cheese, crumbled (queso fresco works great if you can't find cotija)",
+    "¼ cup fresh cilantro, chopped"
+  ],
+
+  steps: [
+    "Heat a large cast iron skillet or heavy pan over HIGH heat until very hot. Add the butter and let it melt. Add the corn in a single layer — don't stir for 2 minutes to let it char. Then stir and let it char another 2 minutes. You want some kernels to get dark and almost smoky. Work in two batches if needed so the corn chars instead of steams.",
+    "Reduce heat to medium. Push the corn to the sides and add the garlic to the center. Sauté 30 seconds until fragrant, then stir into the corn. (If using garlic powder, skip this step and add it with the sauce instead.)",
+    "Remove pan from heat. Stir in the mayonnaise, sour cream, chili powder, smoked paprika, cayenne, salt, and lime juice. Stir until everything is coated and creamy.",
+    "Transfer to a serving bowl. Top with cotija (or queso fresco) and fresh cilantro. Serve warm with extra lime wedges and chili powder on the side so everyone can adjust their own heat level."
+  ],
+
+  notes: [
+    "Frozen corn works great — just make sure to thaw it first and pat it as dry as possible with paper towels before it hits the pan. Wet corn steams instead of chars and you'll miss out on those smoky caramelized bits that make this dish.",
+    "On the cheese: Cotija is the traditional choice — look for it in the Hispanic foods aisle. Queso fresco is a slightly milder, creamier substitute that works beautifully. In a real pinch, parmesan will do.",
+    "Make it spicier: Add a diced jalapeño when you sauté the garlic, or finish with a drizzle of hot sauce.",
+    "Pairs perfectly with: Birria chuck roast, tacos, grilled chicken, or honestly anything off the grill."
+  ]
+},
+
 ];
