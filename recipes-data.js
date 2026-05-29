@@ -1103,4 +1103,71 @@ tags: ["dessert", "high protein"]
   ]
 },
 
+{
+  id: "korean-beef-bowls",
+  title: "Korean Beef Bowls",
+  description: "Bold, savory-sweet ground beef over fluffy rice with a soy-sesame sauce, quick pickled carrots, and vinegar cucumbers.",
+  image: "images/korean-beef-bowls.png",
+  category: "Beef",
+  dateAdded: "2026-05-29",
+  calories: "",
+  protein: "",
+  servings: "6",
+  tags: ["beef", "korean", "rice bowl", "weeknight", "ground beef", "pickled"],
+
+  ingredients: [
+    "2 lbs ground beef (80/20)",
+    "1 tbsp vegetable oil",
+
+    "6 tbsp soy sauce (plus 2 tsp)",
+    "4 tbsp brown sugar",
+    "1½ tbsp toasted sesame oil",
+    "6 garlic cloves, minced",
+    "1½ tsp fresh ginger, grated (or ¾ tsp ground ginger)",
+    "¾ tsp red pepper flakes",
+    "2 tsp gochujang paste",
+
+    "2.5 cups jasmine rice",
+    "1.5 cups chicken broth",
+    "1.25 cups water",
+    "½ tsp toasted sesame oil",
+    "¾ tsp salt",
+    "1 tsp rice vinegar (stirred in after cooking)",
+
+    "4 medium carrots, peeled and julienned",
+    "1 cup rice vinegar",
+    "2 tsp sugar",
+    "1 tsp salt",
+    "½ cup water",
+    "Pinch of red pepper flakes (optional)",
+
+    "1 mini cucumber, thinly sliced",
+    "1 tbsp rice vinegar",
+    "¼ tsp sugar",
+    "Pinch of salt",
+    "Tiny drizzle of toasted sesame oil",
+
+    "4 green onions, sliced",
+    "1 tbsp sesame seeds"
+  ],
+
+  steps: [
+    "Warm a quart-sized Mason jar by rinsing with hot tap water. Combine rice vinegar, water, sugar, salt, and red pepper flakes in a small saucepan or microwave-safe cup. Heat until steaming and sugar is dissolved — about 90 seconds in the microwave. Pack julienned carrots tightly into the jar, pour hot brine over them, and let sit at room temperature for 20–30 minutes.",
+    "Thinly slice the cucumber and toss with rice vinegar, sugar, salt, and a tiny drizzle of sesame oil. Let sit at least 10 minutes before serving.",
+    "Rinse jasmine rice until water runs mostly clear. Add to rice cooker with chicken broth, water, sesame oil, and salt. Cook on the white rice setting. When done, fluff with a fork and stir in the rice vinegar.",
+    "Whisk together soy sauce, brown sugar, sesame oil, ginger, red pepper flakes, and gochujang paste in a small bowl. Taste — it should be salty, slightly sweet, and have a little heat.",
+    "Heat vegetable oil in a large skillet over medium-high heat. Add ground beef and break it apart. Cook until browned and no longer pink, about 5–6 minutes. Drain excess grease if needed.",
+    "Push the beef to the sides of the pan and add minced garlic to the center. Sauté 30 seconds until fragrant, then stir into the beef. Pour the sauce over everything and stir to coat. Cook another 1–2 minutes until the sauce absorbs slightly.",
+    "Spoon rice into bowls, top with the beef mixture. Add pickled carrots and cucumbers on the side. Garnish with green onions and sesame seeds. Serve immediately."
+  ],
+
+  notes: [
+    "The gochujang upgrade: Adding 2 tsp of gochujang paste to the sauce takes this from great to exceptional. It adds a deep fermented heat that red pepper flakes alone can't replicate. Don't skip it if you can find it — it's usually in the Asian foods aisle.",
+    "On the pickled carrots: The hot brine on thinly julienned carrots works faster than you'd think — 20–30 minutes at room temp is all you need. They'll keep in the fridge for up to a week and are great on tacos, sandwiches, or as a snack.",
+    "Rice tip: Cooking the jasmine rice in a mix of chicken broth and water with a splash of sesame oil makes it taste intentional rather than just a vehicle for the beef. The rice vinegar stirred in at the end brightens everything up.",
+    "Toppings that take it further: A fried egg on top is chef's kiss. Sriracha mayo (sriracha + mayo) drizzled over the bowl is also fantastic.",
+    "Leftovers: The beef reheats really well. Store separately from rice for best texture."
+  ]
+},
+
 ];
