@@ -1170,4 +1170,54 @@ tags: ["dessert", "high protein"]
   ]
 },
 
+  {
+  id: "gochujang-butter-shrimp",
+  title: "Gochujang Butter Shrimp",
+  description: "Spicy, glossy, and deeply savory — this weeknight shrimp comes together in under 30 minutes but tastes like you actually tried. Serve over steamed rice and try not to lick the pan.",
+  image: "images/gochujang-butter-shrimp.png",
+  category: "Seafood",
+  dateAdded: "2026-05-29",
+  calories: "",
+  protein: "",
+  servings: "6",
+  tags: ["shrimp", "Korean", "spicy", "weeknight", "seafood"],
+
+  ingredients: [
+    "2 lbs large shrimp, peeled and deveined (21-25 count)",
+    "¾ tsp kosher salt",
+    "¼ tsp black pepper",
+    "2 tbsp neutral oil (avocado or vegetable)",
+
+    "3 tbsp gochujang (Korean chili paste)",
+    "2 tbsp soy sauce",
+    "1 tbsp honey",
+    "1 tbsp rice vinegar",
+    "1 tsp sesame oil",
+
+    "4 tbsp unsalted butter",
+    "6 garlic cloves, minced",
+    "1 tbsp fresh ginger, grated",
+
+    "6 cups cooked jasmine rice",
+    "4 green onions, thinly sliced",
+    "1 tbsp sesame seeds"
+  ],
+
+  steps: [
+    "Pat shrimp very dry with paper towels — wet shrimp steam instead of caramelize. Season with salt and pepper.",
+    "In a small bowl, whisk together gochujang, soy sauce, honey, rice vinegar, and sesame oil. Set aside before the shrimp hit the pan.",
+    "Heat oil in a large skillet or wok over high heat until shimmering. Add shrimp in a single layer (work in batches if needed) and cook 60-90 seconds per side until just pink and slightly charred at the edges. Remove shrimp and set aside.",
+    "Reduce heat to medium. Add butter to the same pan. Once melted, add garlic and ginger and cook for 60 seconds until fragrant — don't let the garlic burn.",
+    "Pour the sauce mixture into the pan and let it bubble and reduce for about 90 seconds, stirring constantly, until it thickens and looks glossy. Add the shrimp back in and toss to coat. Pull off heat immediately — shrimp go rubbery fast.",
+    "Spoon over jasmine rice and top with green onions and sesame seeds. Serve immediately."
+  ],
+
+  notes: [
+    "Heat level: 3 tbsp gochujang is medium-spicy. Go 2 tbsp for sensitive eaters, 4 tbsp if you want to feel it. Brands vary — Bibigo is milder, Mother-in-Law's runs hotter.",
+    "Don't overcook the shrimp. Pull them out of the sear when they're just turning pink — they'll finish in the sauce. Overcooked shrimp are the only way this dish goes wrong.",
+    "Additions that work great: Sliced snap peas or bok choy tossed in with the sauce, or a jammy soft-boiled egg on the side.",
+    "Flavorful rice tip: Butter-toast the dry rice for 2-3 minutes before adding liquid, cook in low-sodium chicken broth instead of water, then finish with a splash of soy sauce and a drizzle of sesame oil when you fluff it."
+  ]
+},
+
 ];
