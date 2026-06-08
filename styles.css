@@ -1553,14 +1553,6 @@ body.about-page {
   color: var(--color-teal);
 }
 
-.about-view .about-panel .about-photo {
-  display: block;
-  width: min(280px, 100%);
-  height: auto;
-  margin: 0 auto var(--space-4);
-  border-radius: var(--radius-md);
-}
-
 .about-view .about-panel .recipe-description {
   margin: 0 auto;
   text-align: center;
