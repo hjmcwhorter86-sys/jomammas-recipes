@@ -42,6 +42,21 @@ function formatRecipeCategories(recipe, separator = ', ') {
   return getRecipeCategories(recipe).join(separator);
 }
 
+function renderNutritionSection(recipe) {
+  const formatValue = (value) => (value === null || value === undefined || value === '') ? '—' : value;
+  return `
+          <div class="recipe-nutrition">
+            <h3>Nutrition (per serving)</h3>
+            <ul class="nutrition-list">
+              <li><strong>Calories:</strong> ${formatValue(recipe.calories)}</li>
+              <li><strong>Protein:</strong> ${formatValue(recipe.protein)}</li>
+              <li><strong>Carbs:</strong> ${formatValue(recipe.carbs)}</li>
+              <li><strong>Fat:</strong> ${formatValue(recipe.fat)}</li>
+              <li><strong>Fiber:</strong> ${formatValue(recipe.fiber)}</li>
+            </ul>
+          </div>`;
+}
+
 function getRecipeImageUrl(recipe) {
   if (!recipe || typeof recipe.image !== 'string') {
     return 'images/no-photo.jpg';
@@ -491,9 +506,8 @@ if (pageType === 'list' && recipesEl && searchEl) {
             <button class="print-recipe-btn button-family button-primary" id="printRecipeBtn" type="button">Print Recipe</button>
             <button class="cook-mode-btn button-family button-secondary" id="cookModeBtn" type="button" aria-pressed="false">Cook Mode: Off</button>
           </div>
-          ${recipe.calories ? `<span class="meta-item">Calories: ${recipe.calories}</span>` : ''}
-          ${recipe.protein ? `<span class="meta-item">Protein: ${recipe.protein}</span>` : ''}
         </div>
+        ${renderNutritionSection(recipe)}
         <p class="cook-mode-status" id="cookModeStatus" aria-live="polite"></p>
         ${recipe.tags && Array.isArray(recipe.tags) && recipe.tags.length > 0 ? `<div class="recipe-tags">${recipe.tags.map(t => `<span class="tag">${t}</span>`).join('')}</div>` : ''}
         ${recipe.servings ? `<div class="recipe-servings"><strong>Servings:</strong> ${recipe.servings}</div>` : ''}
@@ -696,9 +710,8 @@ if (pageType === 'detail' && detailedViewEl) {
             <button class="print-recipe-btn button-family button-primary" id="printRecipeBtn" type="button">Print Recipe</button>
             <button class="cook-mode-btn button-family button-secondary" id="cookModeBtn" type="button" aria-pressed="false">Cook Mode: Off</button>
           </div>
-          ${recipe.calories ? `<span class="meta-item">Calories: ${recipe.calories}</span>` : ''}
-          ${recipe.protein ? `<span class="meta-item">Protein: ${recipe.protein}</span>` : ''}
         </div>
+        ${renderNutritionSection(recipe)}
         <p class="cook-mode-status" id="cookModeStatus" aria-live="polite"></p>
         ${recipe.tags && Array.isArray(recipe.tags) && recipe.tags.length > 0 ? `<div class="recipe-tags">${recipe.tags.map(t => `<span class="tag">${t}</span>`).join('')}</div>` : ''}
         ${recipe.servings ? `<div class="recipe-servings"><strong>Servings:</strong> ${recipe.servings}</div>` : ''}
