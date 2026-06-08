@@ -1245,4 +1245,62 @@ tags: ["dessert", "high protein"]
   ]
 },
 
+{
+  id: "honey-garlic-chicken-mac",
+  title: "Honey Garlic Chicken with Garlic Mac n Cheese",
+  description: "Sticky, golden honey garlic chicken served over creamy lightened-up garlic mac n cheese.",
+  image: "images/honey-garlic-chicken-mac.png",
+  category: "Chicken",
+  dateAdded: "2026-06-08",
+  calories: "",
+  protein: "",
+  servings: "5-6",
+  tags: ["chicken", "pasta", "mac and cheese", "comfort food", "family dinner"],
+
+  ingredients: [
+    "1.8 lbs raw chicken breast, cut into cubes",
+    "1½ tsp salt",
+    "1 tsp black pepper",
+    "1 tsp chilli flakes (optional)",
+    "1½ tsp garlic powder",
+    "1½ tsp onion powder",
+    "1½ tsp paprika or smoked paprika",
+    "2 tsp olive oil",
+    "2 tbsp light butter (for cooking)",
+    "1 tbsp light butter (finishing, split between batches)",
+    "2 tsp minced garlic",
+    "2 tbsp honey (1 tbsp per batch)",
+    "1 tbsp fresh chopped parsley",
+
+    "3 cups macaroni or pasta of choice (uncooked)",
+    "1½ tbsp minced garlic",
+    "2 cups skim milk",
+    "1 cup light cream cheese / Philadelphia (one full 8oz block)",
+    "5 oz low fat cheddar cheese, shredded",
+    "1½ tsp salt (or to taste)",
+    "¾ tsp black pepper",
+    "1½ tsp smoked paprika",
+    "¾ tsp nutmeg"
+  ],
+
+  steps: [
+    "Season the chicken: toss chicken cubes with salt, pepper, chilli flakes, garlic powder, onion powder, paprika, and olive oil until evenly coated.",
+    "Cook batch 1: heat a pan over medium heat. Add half the cooking butter. Once melted, add the first batch of chicken — don't overcrowd the pan. Cook 4–5 minutes on one side until golden brown.",
+    "Flip and cook the other side 3–4 more minutes.",
+    "Lower the heat. Add half the finishing butter, half the minced garlic, and 1 tbsp honey. Stir until well coated and sticky. Set aside.",
+    "Repeat the cooking and glazing steps with the second batch of chicken, using the remaining butter, garlic, and 1 tbsp honey.",
+    "Cook the pasta according to package directions. Drain and set aside.",
+    "In the same pan used for the chicken (don't wipe it out — that residual butter is flavor!), cook the minced garlic over medium-low heat for 2 minutes until fragrant. Add milk, cream cheese, salt, pepper, smoked paprika, and nutmeg. Stir until completely smooth. If needed, transfer to a larger pot.",
+    "Lower the heat before adding shredded cheddar. Stir until melted. Add cooked pasta and mix well. Serve topped with the honey garlic chicken and fresh parsley. Enjoy!"
+  ],
+
+  notes: [
+    "Chicken serves 4. Mac and cheese is scaled to 1.5x to serve 5–6 (one person skipping the chicken).",
+    "The cream cheese at 1.5x works out to basically one full 8oz Philadelphia block — convenient!",
+    "Honey is 1 tbsp per batch of chicken.",
+    "You may want to transfer to a larger pot for the mac sauce step given the bigger quantity.",
+    "Cook chicken in two batches for best browning."
+  ]
+},
+
 ];
