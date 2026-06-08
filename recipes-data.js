@@ -1258,29 +1258,38 @@ tags: ["dessert", "high protein"]
   tags: ["chicken", "pasta", "mac and cheese", "comfort food", "family dinner"],
 
   ingredients: [
-    "1.8 lbs raw chicken breast, cut into cubes",
-    "1½ tsp salt",
-    "1 tsp black pepper",
-    "1 tsp chilli flakes (optional)",
-    "1½ tsp garlic powder",
-    "1½ tsp onion powder",
-    "1½ tsp paprika or smoked paprika",
-    "2 tsp olive oil",
-    "2 tbsp light butter (for cooking)",
-    "1 tbsp light butter (finishing, split between batches)",
-    "2 tsp minced garlic",
-    "2 tbsp honey (1 tbsp per batch)",
-    "1 tbsp fresh chopped parsley",
-
-    "3 cups macaroni or pasta of choice (uncooked)",
-    "1½ tbsp minced garlic",
-    "2 cups skim milk",
-    "1 cup light cream cheese / Philadelphia (one full 8oz block)",
-    "5 oz low fat cheddar cheese, shredded",
-    "1½ tsp salt (or to taste)",
-    "¾ tsp black pepper",
-    "1½ tsp smoked paprika",
-    "¾ tsp nutmeg"
+    {
+      title: "For the Chicken",
+      items: [
+        "1.8 lbs raw chicken breast, cut into cubes",
+        "1½ tsp salt",
+        "1 tsp black pepper",
+        "1 tsp chilli flakes (optional)",
+        "1½ tsp garlic powder",
+        "1½ tsp onion powder",
+        "1½ tsp paprika or smoked paprika",
+        "2 tsp olive oil",
+        "2 tbsp light butter (for cooking)",
+        "1 tbsp light butter (finishing, split between batches)",
+        "2 tsp minced garlic",
+        "2 tbsp honey (1 tbsp per batch)",
+        "1 tbsp fresh chopped parsley"
+      ]
+    },
+    {
+      title: "For the Mac and Cheese",
+      items: [
+        "3 cups macaroni or pasta of choice (uncooked)",
+        "1½ tbsp minced garlic",
+        "2 cups skim milk",
+        "1 cup light cream cheese / Philadelphia (one full 8oz block)",
+        "5 oz low fat cheddar cheese, shredded",
+        "1½ tsp salt (or to taste)",
+        "¾ tsp black pepper",
+        "1½ tsp smoked paprika",
+        "¾ tsp nutmeg"
+      ]
+    }
   ],
 
   steps: [
