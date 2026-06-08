@@ -1306,8 +1306,6 @@ tags: ["dessert", "high protein"]
   notes: [
     "Chicken serves 4. Mac and cheese is scaled to 1.5x to serve 5–6 (one person skipping the chicken).",
     "The cream cheese at 1.5x works out to basically one full 8oz Philadelphia block — convenient!",
-    "Honey is 1 tbsp per batch of chicken.",
-    "You may want to transfer to a larger pot for the mac sauce step given the bigger quantity.",
     "Cook chicken in two batches for best browning."
   ]
 },
