@@ -401,6 +401,10 @@ if (pageType === 'about') {
   setSeo('About', 'This website was made for cooking quick and easy recipes with no fluff or distractions.');
 }
 
+if (pageType === 'flags') {
+  setSeo('Feature Flags', 'Turn experimental features on or off in this browser.');
+}
+
 const recipesEl = document.getElementById("recipes");
 const searchEl = document.getElementById("search");
 const detailedViewEl = document.getElementById("detailed-view");

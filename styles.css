@@ -1752,3 +1752,147 @@ body.about-page {
     justify-self: center;
   }
 }
+
+/* Footer feature-flags link */
+.footer-flag-link {
+  font-size: var(--font-size-md);
+  opacity: 0.35;
+  filter: grayscale(40%);
+}
+
+.footer-flag-link:hover,
+.footer-flag-link:focus-visible {
+  opacity: 1;
+  filter: none;
+}
+
+/* Feature flags page */
+.flags-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  margin-top: var(--space-4);
+  text-align: left;
+}
+
+.flag-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-4);
+  padding: var(--space-3) var(--space-4);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  background: var(--color-surface);
+}
+
+.flag-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.flag-label {
+  margin: 0;
+  font-weight: 600;
+}
+
+.flag-description {
+  margin: var(--space-1) 0 0;
+  font-size: var(--font-size-sm);
+  color: var(--color-text-muted);
+}
+
+.flag-status {
+  margin: var(--space-1) 0 0;
+  font-size: var(--font-size-xs);
+  color: var(--color-text-muted);
+}
+
+.flag-controls {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  flex-shrink: 0;
+}
+
+.flag-toggle {
+  position: relative;
+  display: inline-block;
+  width: 44px;
+  height: 24px;
+}
+
+.flag-toggle input {
+  position: absolute;
+  opacity: 0;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  cursor: pointer;
+}
+
+.flag-toggle-track {
+  position: absolute;
+  inset: 0;
+  background: var(--color-border);
+  border-radius: 999px;
+  transition: background-color 0.15s ease;
+}
+
+.flag-toggle-thumb {
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #fff;
+  box-shadow: var(--shadow-sm);
+  transition: transform 0.15s ease;
+}
+
+.flag-toggle input:checked + .flag-toggle-track {
+  background: var(--color-teal);
+}
+
+.flag-toggle input:checked + .flag-toggle-track .flag-toggle-thumb {
+  transform: translateX(20px);
+}
+
+.flag-toggle input:focus-visible + .flag-toggle-track {
+  outline: 2px solid var(--color-teal);
+  outline-offset: 2px;
+}
+
+.flag-reset {
+  background: none;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: var(--space-1) var(--space-2);
+  font-size: var(--font-size-xs);
+  font-weight: 600;
+  color: var(--color-text);
+  cursor: pointer;
+}
+
+.flag-reset:hover:not(:disabled) {
+  border-color: var(--color-teal);
+  color: var(--color-teal);
+}
+
+.flag-reset:disabled {
+  opacity: 0.4;
+  cursor: default;
+}
+
+@media (max-width: 600px) {
+  .flag-row {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .flag-controls {
+    width: 100%;
+    justify-content: space-between;
+  }
+}
