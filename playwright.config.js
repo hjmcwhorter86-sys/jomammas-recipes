@@ -15,8 +15,10 @@ module.exports = defineConfig({
   },
   projects: [
     {
+      // Pixel 5 (Chromium-based) rather than an iPhone preset, since CI only
+      // installs the Chromium browser.
       name: 'mobile',
-      use: { ...devices['iPhone 13'] },
+      use: { ...devices['Pixel 5'] },
     },
     {
       name: 'desktop',

@@ -40,7 +40,7 @@ test.describe('Core pages', () => {
 
   test('flags page - flag toggled on', async ({ page }, testInfo) => {
     await page.goto('/flags.html');
-    await page.locator('.flag-toggle input').first().click();
+    await page.locator('.flag-toggle input').first().click({ force: true });
     await shoot(page, testInfo.project.name, 'flags-toggled-on');
   });
 });
@@ -64,15 +64,15 @@ test.describe('Recipe detail pages', () => {
 });
 
 test.describe('Interactive states (mobile only)', () => {
-  test.skip(({ }, testInfo) => testInfo.project.name !== 'mobile', 'Mobile-only header controls');
-
   test('mobile menu open', async ({ page }, testInfo) => {
+    test.skip(testInfo.project.name !== 'mobile', 'Mobile-only header controls');
     await page.goto('/index.html');
     await page.locator('#hamburgerMenu').click();
     await shoot(page, testInfo.project.name, 'mobile-menu-open');
   });
 
   test('search open', async ({ page }, testInfo) => {
+    test.skip(testInfo.project.name !== 'mobile', 'Mobile-only header controls');
     await page.goto('/index.html');
     await page.locator('#searchIconButton').click();
     await shoot(page, testInfo.project.name, 'search-open');
