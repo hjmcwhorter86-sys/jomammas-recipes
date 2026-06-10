@@ -5,43 +5,75 @@
 // interactive states at mobile and desktop sizes. The screenshots get
 // committed alongside the code change so reviewers can see the rendered
 // result (and diff it against the previous version) directly in the PR.
+//
+// Layout: screenshots/<page>/<viewport>-<variant>.png — one folder per page,
+// general (main) to specific (interactive states, flag variants), so a
+// reviewer can open a page's folder and see all its states together.
 const { test } = require('@playwright/test');
 const fs = require('fs');
 const path = require('path');
 
 const SCREENSHOT_DIR = path.join(__dirname, '..', 'screenshots');
 
-async function shoot(page, projectName, name) {
-  const dir = path.join(SCREENSHOT_DIR, projectName);
+async function shoot(page, pageName, viewport, variant = 'main') {
+  const dir = path.join(SCREENSHOT_DIR, pageName);
   fs.mkdirSync(dir, { recursive: true });
-  await page.screenshot({ path: path.join(dir, `${name}.png`) });
+  await page.screenshot({ path: path.join(dir, `${viewport}-${variant}.png`) });
 }
 
-test.describe('Core pages', () => {
-  test('home', async ({ page }, testInfo) => {
+// Sets a per-browser feature flag override (as flags.html would via
+// flags-service.js's localStorage-backed overrides) before the page loads.
+async function setFlagOverride(page, key, value) {
+  await page.addInitScript(([k, v]) => {
+    localStorage.setItem(`flag:${k}`, v ? 'true' : 'false');
+  }, [key, value]);
+}
+
+test.describe('Home page', () => {
+  test('main', async ({ page }, testInfo) => {
     await page.goto('/index.html');
-    await shoot(page, testInfo.project.name, 'home');
+    await shoot(page, 'home', testInfo.project.name, 'main');
   });
 
-  test('recipes list', async ({ page }, testInfo) => {
+  test('mobile menu open', async ({ page }, testInfo) => {
+    test.skip(testInfo.project.name !== 'mobile', 'Mobile-only header controls');
+    await page.goto('/index.html');
+    await page.locator('#hamburgerMenu').click();
+    await shoot(page, 'home', testInfo.project.name, 'menu-open');
+  });
+
+  test('search open', async ({ page }, testInfo) => {
+    test.skip(testInfo.project.name !== 'mobile', 'Mobile-only header controls');
+    await page.goto('/index.html');
+    await page.locator('#searchIconButton').click();
+    await shoot(page, 'home', testInfo.project.name, 'search-open');
+  });
+});
+
+test.describe('Recipes list page', () => {
+  test('main', async ({ page }, testInfo) => {
     await page.goto('/recipes-list.html');
-    await shoot(page, testInfo.project.name, 'recipes-list');
+    await shoot(page, 'recipes-list', testInfo.project.name, 'main');
   });
+});
 
-  test('about', async ({ page }, testInfo) => {
+test.describe('About page', () => {
+  test('main', async ({ page }, testInfo) => {
     await page.goto('/about.html');
-    await shoot(page, testInfo.project.name, 'about');
+    await shoot(page, 'about', testInfo.project.name, 'main');
   });
+});
 
-  test('flags page', async ({ page }, testInfo) => {
+test.describe('Flags page', () => {
+  test('main', async ({ page }, testInfo) => {
     await page.goto('/flags.html');
-    await shoot(page, testInfo.project.name, 'flags');
+    await shoot(page, 'flags', testInfo.project.name, 'main');
   });
 
-  test('flags page - flag toggled on', async ({ page }, testInfo) => {
+  test('flag toggled on', async ({ page }, testInfo) => {
     await page.goto('/flags.html');
     await page.locator('.flag-toggle input').first().click({ force: true });
-    await shoot(page, testInfo.project.name, 'flags-toggled-on');
+    await shoot(page, 'flags', testInfo.project.name, 'flag-toggled-on');
   });
 });
 
@@ -56,25 +88,21 @@ test.describe('Recipe detail pages', () => {
   ];
 
   for (const id of recipeIds) {
-    test(`recipe detail - ${id}`, async ({ page }, testInfo) => {
+    test(`${id} - main`, async ({ page }, testInfo) => {
       await page.goto(`/recipe-detail.html?id=${id}`);
-      await shoot(page, testInfo.project.name, `recipe-${id}`);
+      await shoot(page, `recipe-${id}`, testInfo.project.name, 'main');
     });
   }
-});
 
-test.describe('Interactive states (mobile only)', () => {
-  test('mobile menu open', async ({ page }, testInfo) => {
-    test.skip(testInfo.project.name !== 'mobile', 'Mobile-only header controls');
-    await page.goto('/index.html');
-    await page.locator('#hamburgerMenu').click();
-    await shoot(page, testInfo.project.name, 'mobile-menu-open');
+  test('korean-beef-bowls - computed nutrition flag on', async ({ page }, testInfo) => {
+    await setFlagOverride(page, 'showComputedNutrition', true);
+    await page.goto('/recipe-detail.html?id=korean-beef-bowls');
+    await shoot(page, 'recipe-korean-beef-bowls', testInfo.project.name, 'nutrition-flag-on');
   });
 
-  test('search open', async ({ page }, testInfo) => {
-    test.skip(testInfo.project.name !== 'mobile', 'Mobile-only header controls');
-    await page.goto('/index.html');
-    await page.locator('#searchIconButton').click();
-    await shoot(page, testInfo.project.name, 'search-open');
+  test('korean-beef-bowls - computed nutrition flag off', async ({ page }, testInfo) => {
+    await setFlagOverride(page, 'showComputedNutrition', false);
+    await page.goto('/recipe-detail.html?id=korean-beef-bowls');
+    await shoot(page, 'recipe-korean-beef-bowls', testInfo.project.name, 'nutrition-flag-off');
   });
 });

@@ -54,6 +54,159 @@ function renderNutritionSection(recipe) {
               <li><strong>Fat:</strong> ${formatValue(recipe.fat)}</li>
               <li><strong>Fiber:</strong> ${formatValue(recipe.fiber)}</li>
             </ul>
+          </div>${renderComputedNutritionSection(recipe)}`;
+}
+
+// Flattens both flat-array and {title, items}-section ingredient lists into
+// a single array of ingredient items.
+function flattenIngredients(ingredients) {
+  if (!Array.isArray(ingredients)) return [];
+  const flat = [];
+  ingredients.forEach((entry) => {
+    if (entry && typeof entry === 'object' && Array.isArray(entry.items)) {
+      flat.push(...entry.items);
+    } else {
+      flat.push(entry);
+    }
+  });
+  return flat;
+}
+
+// Looks up an ingredient name in window.ingredientNutrition, falling back to
+// a naive singular form (e.g. "eggs" -> "egg") when there's no exact match.
+function getIngredientNutritionEntry(name) {
+  const db = window.ingredientNutrition || {};
+  const key = (name || '').trim().toLowerCase();
+  if (db[key]) return { key, entry: db[key] };
+  if (key.endsWith('s') && db[key.slice(0, -1)]) {
+    const singular = key.slice(0, -1);
+    return { key: singular, entry: db[singular] };
+  }
+  return null;
+}
+
+// Converts a structured ingredient item's quantity into grams (or, for
+// liquids tracked per-100ml, milliliters), using window.unitConversions.
+// Returns null if the unit can't be resolved against the nutrition entry.
+function getIngredientAmount(item, key, entry) {
+  const qty = (item.qtyMax !== null && item.qtyMax !== undefined)
+    ? (item.qty + item.qtyMax) / 2
+    : item.qty;
+  if (qty === null || qty === undefined) return null;
+
+  const unit = item.unit;
+  const conversions = window.unitConversions || {};
+
+  if (!unit) {
+    const perUnit = entry.unitWeights?.[key];
+    return perUnit ? { grams: qty * perUnit } : null;
+  }
+
+  if (conversions.mass?.units?.[unit]) {
+    return { grams: qty * conversions.mass.units[unit].toBase };
+  }
+
+  if (conversions.volume?.units?.[unit]) {
+    const ml = qty * conversions.volume.units[unit].toBase;
+    if (entry.per === '100ml') return { ml };
+    const density = conversions.densities?.[key];
+    return density ? { grams: ml * density } : null;
+  }
+
+  if (conversions.countUnits?.[unit]) {
+    const perUnit = entry.unitWeights?.[unit];
+    return perUnit ? { grams: qty * perUnit } : null;
+  }
+
+  return null;
+}
+
+// Computes per-serving nutrition totals from a recipe's structured
+// ingredients and window.ingredientNutrition. Only ingredients present in
+// the nutrition database (and with a resolvable unit) contribute, so the
+// result also reports how many ingredients were actually used.
+function computeRecipeNutrition(recipe) {
+  const items = flattenIngredients(recipe.ingredients).filter(
+    (item) => item && typeof item === 'object' && item.qty !== null && item.qty !== undefined && item.name
+  );
+
+  const totals = { calories: 0, protein: 0, fat: 0, fiber: 0, carbs: 0 };
+  let matchedCount = 0;
+  let allVerified = true;
+
+  items.forEach((item) => {
+    const match = getIngredientNutritionEntry(item.name);
+    if (!match) return;
+    const { key, entry } = match;
+    const amount = getIngredientAmount(item, key, entry);
+    if (!amount) return;
+
+    const factor = entry.per === '100ml'
+      ? (amount.ml || 0) / 100
+      : (amount.grams || 0) / 100;
+    if (!factor) return;
+
+    totals.calories += entry.calories * factor;
+    totals.protein += entry.protein * factor;
+    totals.fat += entry.fat * factor;
+    totals.fiber += entry.fiber * factor;
+    totals.carbs += entry.carbs * factor;
+    matchedCount++;
+    if (!entry.verified) allVerified = false;
+  });
+
+  if (matchedCount === 0) {
+    return { hasData: false, matchedCount, totalCount: items.length };
+  }
+
+  const servings = parseFloat(recipe.servings) || 1;
+  return {
+    hasData: true,
+    matchedCount,
+    totalCount: items.length,
+    allVerified,
+    perServing: {
+      calories: totals.calories / servings,
+      protein: totals.protein / servings,
+      fat: totals.fat / servings,
+      fiber: totals.fiber / servings,
+      carbs: totals.carbs / servings,
+      netCarbs: (totals.carbs - totals.fiber) / servings,
+    },
+  };
+}
+
+// Renders the "computed nutrition" block, gated by the showComputedNutrition
+// feature flag. Returns '' when the flag is off.
+function renderComputedNutritionSection(recipe) {
+  if (!window.flagsService?.isEnabled('showComputedNutrition')) return '';
+
+  const result = computeRecipeNutrition(recipe);
+  const round = (value) => Math.round(value * 10) / 10;
+
+  if (!result.hasData) {
+    return `
+          <div class="recipe-nutrition recipe-nutrition-computed">
+            <h3>Estimated Nutrition (computed)</h3>
+            <p class="nutrition-coverage-note">No ingredient nutrition data available yet for this recipe.</p>
+          </div>`;
+  }
+
+  const { perServing, matchedCount, totalCount, allVerified } = result;
+  return `
+          <div class="recipe-nutrition recipe-nutrition-computed">
+            <h3>Estimated Nutrition (computed, per serving)</h3>
+            <ul class="nutrition-list">
+              <li><strong>Calories:</strong> ${round(perServing.calories)}</li>
+              <li><strong>Protein:</strong> ${round(perServing.protein)}g</li>
+              <li><strong>Carbs:</strong> ${round(perServing.carbs)}g</li>
+              <li><strong>Net Carbs:</strong> ${round(perServing.netCarbs)}g</li>
+              <li><strong>Fat:</strong> ${round(perServing.fat)}g</li>
+              <li><strong>Fiber:</strong> ${round(perServing.fiber)}g</li>
+            </ul>
+            <p class="nutrition-coverage-note">
+              Estimated from ${matchedCount} of ${totalCount} ingredient${totalCount === 1 ? '' : 's'} with nutrition data.${allVerified ? '' : ' Some values are unverified estimates.'}
+            </p>
           </div>`;
 }
 

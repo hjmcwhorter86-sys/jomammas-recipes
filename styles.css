@@ -1172,6 +1172,20 @@ body{
   font-size: 16px;
 }
 
+.recipe-nutrition-computed {
+  margin-top: var(--space-2);
+  padding: var(--space-3);
+  border: 1px dashed var(--color-border);
+  border-radius: var(--radius-md);
+  background: var(--color-surface-soft, rgba(0, 0, 0, 0.02));
+}
+
+.nutrition-coverage-note {
+  margin: var(--space-2) 0 0;
+  font-size: var(--font-size-sm);
+  color: var(--color-text-muted);
+}
+
 .recipe-content-wrapper {
   display: block;
   margin-bottom: 32px;
