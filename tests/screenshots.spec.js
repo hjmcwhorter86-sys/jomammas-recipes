@@ -106,3 +106,10 @@ test.describe('Recipe detail pages', () => {
     await shoot(page, 'recipe-korean-beef-bowls', testInfo.project.name, 'nutrition-flag-off');
   });
 });
+
+test.describe('Nutrition info page', () => {
+  test('korean-beef-bowls', async ({ page }, testInfo) => {
+    await page.goto('/nutrition-info.html?id=korean-beef-bowls');
+    await shoot(page, 'nutrition-info-korean-beef-bowls', testInfo.project.name, 'main');
+  });
+});

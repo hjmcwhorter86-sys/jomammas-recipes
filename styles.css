@@ -1162,6 +1162,11 @@ body{
   margin-bottom: var(--space-2);
 }
 
+.nutrition-info-link {
+  text-decoration: none;
+  margin-left: var(--space-1);
+}
+
 .nutrition-list {
   list-style: none;
   display: flex;
@@ -1172,18 +1177,33 @@ body{
   font-size: 16px;
 }
 
-.recipe-nutrition-computed {
-  margin-top: var(--space-2);
-  padding: var(--space-3);
-  border: 1px dashed var(--color-border);
-  border-radius: var(--radius-md);
-  background: var(--color-surface-soft, rgba(0, 0, 0, 0.02));
-}
-
-.nutrition-coverage-note {
-  margin: var(--space-2) 0 0;
+.nutrition-disclaimer {
   font-size: var(--font-size-sm);
   color: var(--color-text-muted);
+  max-width: 65ch;
+}
+
+.nutrition-info-table-wrapper {
+  overflow-x: auto;
+}
+
+.nutrition-info-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: var(--font-size-sm);
+  white-space: nowrap;
+}
+
+.nutrition-info-table th,
+.nutrition-info-table td {
+  border-bottom: 1px solid var(--color-border);
+  padding: var(--space-2);
+  text-align: left;
+}
+
+.nutrition-info-row-excluded td {
+  color: var(--color-text-muted);
+  font-style: italic;
 }
 
 .recipe-content-wrapper {

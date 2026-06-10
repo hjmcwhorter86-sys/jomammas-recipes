@@ -42,19 +42,54 @@ function formatRecipeCategories(recipe, separator = ', ') {
   return getRecipeCategories(recipe).join(separator);
 }
 
+const NUTRITION_FIELDS = ['calories', 'protein', 'fat', 'fiber', 'carbs'];
+
 function renderNutritionSection(recipe) {
   const formatValue = (value) => (value === null || value === undefined || value === '') ? '—' : value;
+  const computedOn = !!window.flagsService?.isEnabled('showComputedNutrition');
+
+  let display;
+  if (computedOn) {
+    const result = computeRecipeNutrition(recipe);
+    const round = (value) => Math.round(value * 10) / 10;
+    const field = (key, suffix = '') => result.unknown.has(key) ? 'Unknown' : `${round(result.perServing[key])}${suffix}`;
+    display = {
+      calories: field('calories'),
+      protein: field('protein', 'g'),
+      carbs: field('carbs', 'g'),
+      netCarbs: field('netCarbs', 'g'),
+      fat: field('fat', 'g'),
+      fiber: field('fiber', 'g'),
+    };
+  } else {
+    display = {
+      calories: formatValue(recipe.calories),
+      protein: formatValue(recipe.protein),
+      carbs: formatValue(recipe.carbs),
+      netCarbs: '—',
+      fat: formatValue(recipe.fat),
+      fiber: formatValue(recipe.fiber),
+    };
+  }
+
+  // The info link only appears when computed nutrition is shown, since
+  // that's the data it lets reviewers fact-check.
+  const infoLink = computedOn
+    ? ` <a class="nutrition-info-link" href="nutrition-info.html?id=${recipe.id}" aria-label="Nutrition data, sources, and disclaimer" title="Nutrition data, sources, and disclaimer">ℹ️</a>`
+    : '';
+
   return `
           <div class="recipe-nutrition">
-            <h3>Nutrition (per serving)</h3>
+            <h3>Nutrition (per serving)${infoLink}</h3>
             <ul class="nutrition-list">
-              <li><strong>Calories:</strong> ${formatValue(recipe.calories)}</li>
-              <li><strong>Protein:</strong> ${formatValue(recipe.protein)}</li>
-              <li><strong>Carbs:</strong> ${formatValue(recipe.carbs)}</li>
-              <li><strong>Fat:</strong> ${formatValue(recipe.fat)}</li>
-              <li><strong>Fiber:</strong> ${formatValue(recipe.fiber)}</li>
+              <li><strong>Calories:</strong> ${display.calories}</li>
+              <li><strong>Protein:</strong> ${display.protein}</li>
+              <li><strong>Carbs:</strong> ${display.carbs}</li>
+              <li><strong>Net Carbs:</strong> ${display.netCarbs}</li>
+              <li><strong>Fat:</strong> ${display.fat}</li>
+              <li><strong>Fiber:</strong> ${display.fiber}</li>
             </ul>
-          </div>${renderComputedNutritionSection(recipe)}`;
+          </div>`;
 }
 
 // Flattens both flat-array and {title, items}-section ingredient lists into
@@ -121,50 +156,66 @@ function getIngredientAmount(item, key, entry) {
   return null;
 }
 
+// Resolves a single structured ingredient item against the nutrition
+// database, returning its matched entry, key, and a per-100g/100ml scale
+// factor — or null if the ingredient isn't in the database or its unit
+// can't be converted.
+function resolveIngredientNutrition(item) {
+  const match = getIngredientNutritionEntry(item.name);
+  if (!match) return null;
+  const { key, entry } = match;
+  const amount = getIngredientAmount(item, key, entry);
+  if (!amount) return null;
+  const factor = entry.per === '100ml'
+    ? (amount.ml || 0) / 100
+    : (amount.grams || 0) / 100;
+  if (!factor) return null;
+  return { key, entry, factor };
+}
+
 // Computes per-serving nutrition totals from a recipe's structured
-// ingredients and window.ingredientNutrition. Only ingredients present in
-// the nutrition database (and with a resolvable unit) contribute, so the
-// result also reports how many ingredients were actually used.
+// ingredients and window.ingredientNutrition.
+//
+// Non-quantifiable items (qty: null, e.g. "salt and pepper to taste") and
+// items marked optional:true are excluded from both the totals and the
+// completeness check — optional items may get an opt-in include/exclude
+// toggle in a future update.
+//
+// `unknown` lists which per-serving fields couldn't be computed. Every
+// ingredientNutrition entry covers all five macros together, so if ANY
+// remaining (required, quantified) ingredient isn't in the database or
+// can't be unit-converted, ALL fields are marked unknown.
 function computeRecipeNutrition(recipe) {
   const items = flattenIngredients(recipe.ingredients).filter(
-    (item) => item && typeof item === 'object' && item.qty !== null && item.qty !== undefined && item.name
+    (item) => item && typeof item === 'object' && item.qty !== null && item.qty !== undefined && !item.optional && item.name
   );
 
   const totals = { calories: 0, protein: 0, fat: 0, fiber: 0, carbs: 0 };
-  let matchedCount = 0;
+  let allResolved = items.length > 0;
   let allVerified = true;
 
   items.forEach((item) => {
-    const match = getIngredientNutritionEntry(item.name);
-    if (!match) return;
-    const { key, entry } = match;
-    const amount = getIngredientAmount(item, key, entry);
-    if (!amount) return;
-
-    const factor = entry.per === '100ml'
-      ? (amount.ml || 0) / 100
-      : (amount.grams || 0) / 100;
-    if (!factor) return;
-
-    totals.calories += entry.calories * factor;
-    totals.protein += entry.protein * factor;
-    totals.fat += entry.fat * factor;
-    totals.fiber += entry.fiber * factor;
-    totals.carbs += entry.carbs * factor;
-    matchedCount++;
-    if (!entry.verified) allVerified = false;
+    const resolved = resolveIngredientNutrition(item);
+    if (!resolved) {
+      allResolved = false;
+      return;
+    }
+    NUTRITION_FIELDS.forEach((field) => {
+      totals[field] += resolved.entry[field] * resolved.factor;
+    });
+    if (!resolved.entry.verified) allVerified = false;
   });
 
-  if (matchedCount === 0) {
-    return { hasData: false, matchedCount, totalCount: items.length };
+  const unknown = new Set();
+  if (!allResolved) {
+    [...NUTRITION_FIELDS, 'netCarbs'].forEach((field) => unknown.add(field));
   }
 
   const servings = parseFloat(recipe.servings) || 1;
   return {
-    hasData: true,
-    matchedCount,
-    totalCount: items.length,
+    allResolved,
     allVerified,
+    unknown,
     perServing: {
       calories: totals.calories / servings,
       protein: totals.protein / servings,
@@ -176,38 +227,88 @@ function computeRecipeNutrition(recipe) {
   };
 }
 
-// Renders the "computed nutrition" block, gated by the showComputedNutrition
-// feature flag. Returns '' when the flag is off.
-function renderComputedNutritionSection(recipe) {
-  if (!window.flagsService?.isEnabled('showComputedNutrition')) return '';
+// Renders the per-recipe nutrition info page: a disclaimer plus a table of
+// every ingredient's matched nutrition data (or why it's excluded/missing),
+// so the computed nutrition numbers can be fact-checked and corrected.
+function renderNutritionInfoSection(recipe) {
+  const items = flattenIngredients(recipe.ingredients).filter((item) => item && typeof item === 'object');
 
-  const result = computeRecipeNutrition(recipe);
-  const round = (value) => Math.round(value * 10) / 10;
+  const rows = items.map((item) => {
+    const label = renderIngredientLine(item);
 
-  if (!result.hasData) {
-    return `
-          <div class="recipe-nutrition recipe-nutrition-computed">
-            <h3>Estimated Nutrition (computed)</h3>
-            <p class="nutrition-coverage-note">No ingredient nutrition data available yet for this recipe.</p>
-          </div>`;
-  }
+    if (item.qty === null || item.qty === undefined) {
+      return { label, note: 'Not quantifiable — excluded from totals.' };
+    }
 
-  const { perServing, matchedCount, totalCount, allVerified } = result;
+    if (item.optional) {
+      return { label, note: 'Optional — currently excluded from totals.' };
+    }
+
+    const resolved = resolveIngredientNutrition(item);
+    if (!resolved) {
+      const match = getIngredientNutritionEntry(item.name);
+      if (!match) return { label, note: 'Not in the nutrition database yet.' };
+      return { label, note: `Unit "${item.unit || '(none)'}" not supported for "${match.key}".` };
+    }
+
+    const { entry } = resolved;
+    return {
+      label,
+      entry,
+      per: entry.per === '100ml' ? '100ml' : '100g',
+    };
+  });
+
   return `
-          <div class="recipe-nutrition recipe-nutrition-computed">
-            <h3>Estimated Nutrition (computed, per serving)</h3>
-            <ul class="nutrition-list">
-              <li><strong>Calories:</strong> ${round(perServing.calories)}</li>
-              <li><strong>Protein:</strong> ${round(perServing.protein)}g</li>
-              <li><strong>Carbs:</strong> ${round(perServing.carbs)}g</li>
-              <li><strong>Net Carbs:</strong> ${round(perServing.netCarbs)}g</li>
-              <li><strong>Fat:</strong> ${round(perServing.fat)}g</li>
-              <li><strong>Fiber:</strong> ${round(perServing.fiber)}g</li>
-            </ul>
-            <p class="nutrition-coverage-note">
-              Estimated from ${matchedCount} of ${totalCount} ingredient${totalCount === 1 ? '' : 's'} with nutrition data.${allVerified ? '' : ' Some values are unverified estimates.'}
-            </p>
-          </div>`;
+    <div class="detail-controls">
+      <button class="back-btn button-family button-secondary" onclick="window.location.href='recipe-detail.html?id=${recipe.id}'">← Back to ${recipe.title}</button>
+    </div>
+    <article class="recipe-detail nutrition-info-page">
+      <h1>Nutrition Info: ${recipe.title}</h1>
+      <p class="nutrition-disclaimer">
+        These values are rough estimates calculated from a public ingredient
+        nutrition database. They are not a substitute for medical or
+        professional dietary advice. Quantities are approximate, brands and
+        preparation vary, and some ingredients aren't in the database yet —
+        use this as a starting point, not a guarantee.
+      </p>
+      <div class="nutrition-info-table-wrapper">
+        <table class="nutrition-info-table">
+          <thead>
+            <tr>
+              <th>Ingredient</th>
+              <th>Per</th>
+              <th>Calories</th>
+              <th>Protein</th>
+              <th>Fat</th>
+              <th>Fiber</th>
+              <th>Carbs</th>
+              <th>Verified</th>
+              <th>Source</th>
+            </tr>
+          </thead>
+          <tbody>
+            ${rows.map((row) => row.entry ? `
+            <tr>
+              <td>${row.label}</td>
+              <td>${row.per}</td>
+              <td>${row.entry.calories}</td>
+              <td>${row.entry.protein}g</td>
+              <td>${row.entry.fat}g</td>
+              <td>${row.entry.fiber}g</td>
+              <td>${row.entry.carbs}g</td>
+              <td>${row.entry.verified ? '✓' : '—'}</td>
+              <td>${row.entry.source || '—'}</td>
+            </tr>` : `
+            <tr class="nutrition-info-row-excluded">
+              <td>${row.label}</td>
+              <td colspan="8">${row.note}</td>
+            </tr>`).join('')}
+          </tbody>
+        </table>
+      </div>
+    </article>
+  `;
 }
 
 function getRecipeImageUrl(recipe) {
@@ -1070,6 +1171,21 @@ if (pageType === 'detail' && detailedViewEl) {
     } else {
       detailedViewEl.innerHTML = '<p>Recipe not found. <a href="recipes-list.html">Back to recipes</a></p>';
     }
+  }
+}
+
+// If we're on the nutrition info page, render the per-recipe ingredient
+// nutrition breakdown and disclaimer.
+if (pageType === 'nutrition-info' && detailedViewEl) {
+  const urlParams = new URLSearchParams(window.location.search);
+  const recipeId = urlParams.get('id');
+  const recipe = recipes.find(r => (r.id) === recipeId);
+
+  if (recipe) {
+    setSeo(`Nutrition Info: ${recipe.title}`, 'Ingredient nutrition data, sources, and disclaimer for this recipe.');
+    detailedViewEl.innerHTML = renderNutritionInfoSection(recipe);
+  } else {
+    detailedViewEl.innerHTML = '<p>Recipe not found. <a href="recipes-list.html">Back to recipes</a></p>';
   }
 }
 
