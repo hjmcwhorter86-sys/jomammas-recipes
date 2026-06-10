@@ -1562,6 +1562,14 @@ body.about-page {
   margin-top: var(--space-4);
 }
 
+.about-mascot {
+  display: block;
+  margin: 0 auto 1.5rem;
+  max-width: 220px;
+  width: 100%;
+  border-radius: 50%;
+}
+
 @media (max-width: 768px) {
   .about-view .about-panel {
     min-height: 72vh;
