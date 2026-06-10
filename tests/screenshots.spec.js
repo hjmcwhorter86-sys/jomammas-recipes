@@ -14,7 +14,7 @@ const SCREENSHOT_DIR = path.join(__dirname, '..', 'screenshots');
 async function shoot(page, projectName, name) {
   const dir = path.join(SCREENSHOT_DIR, projectName);
   fs.mkdirSync(dir, { recursive: true });
-  await page.screenshot({ path: path.join(dir, `${name}.png`), fullPage: true });
+  await page.screenshot({ path: path.join(dir, `${name}.png`) });
 }
 
 test.describe('Core pages', () => {
