@@ -66,6 +66,88 @@ function getRecipeImageUrl(recipe) {
   return normalizedPath || 'images/no-photo.jpg';
 }
 
+// Maps decimal fractions to their unicode glyphs for ingredient quantity display.
+const QUANTITY_FRACTION_MAP = [
+  [0.125, '⅛'],
+  [0.25, '¼'],
+  [0.333, '⅓'],
+  [0.5, '½'],
+  [0.667, '⅔'],
+  [0.75, '¾'],
+  [0.875, '⅞'],
+];
+
+// Formats a quantity (and optional range) as "1¼", "½–¾", "~2", etc.
+function formatQuantityDisplay(qty, qtyMax, approx) {
+  if (qty === null || qty === undefined) return '';
+
+  const formatOne = (value) => {
+    const whole = Math.floor(value);
+    const frac = value - whole;
+    if (frac === 0) return String(whole);
+    const match = QUANTITY_FRACTION_MAP.find(([dec]) => Math.abs(dec - frac) < 0.02);
+    const fracStr = match ? match[1] : parseFloat(frac.toFixed(2)).toString().slice(1);
+    return whole > 0 ? `${whole}${fracStr}` : fracStr;
+  };
+
+  let result = formatOne(qty);
+  if (qtyMax !== null && qtyMax !== undefined) {
+    result += `–${formatOne(qtyMax)}`;
+  }
+  return approx ? `~${result}` : result;
+}
+
+// Looks up the singular/plural display form of a unit based on quantity.
+function getUnitDisplay(unit, qty, qtyMax) {
+  if (!unit) return '';
+
+  const conversions = window.unitConversions || {};
+  const tables = [conversions.volume?.units, conversions.mass?.units, conversions.countUnits];
+  const entry = tables.find((table) => table && table[unit])?.[unit];
+
+  const isPlural = (qtyMax !== null && qtyMax !== undefined) ? true : qty !== 1;
+  if (entry && isPlural && entry.plural) return entry.plural;
+  return unit;
+}
+
+// Builds the display string for one ingredient entry (structured object or legacy string).
+function renderIngredientLine(item) {
+  if (typeof item === 'string') {
+    return item;
+  }
+  if (!item || typeof item !== 'object') {
+    return '';
+  }
+  if (item.display) {
+    return item.display;
+  }
+
+  const parts = [];
+  if (item.qty !== null && item.qty !== undefined) {
+    parts.push(formatQuantityDisplay(item.qty, item.qtyMax, item.approx));
+    if (item.unit) parts.push(getUnitDisplay(item.unit, item.qty, item.qtyMax));
+  }
+  parts.push(item.name);
+
+  let line = parts.join(' ');
+  if (item.notes) line += ` (${item.notes})`;
+
+  const hasAlt = (item.altQty !== null && item.altQty !== undefined) || item.altUnit || item.altName;
+  if (hasAlt) {
+    const altParts = [];
+    if (item.altQty !== null && item.altQty !== undefined) {
+      altParts.push(formatQuantityDisplay(item.altQty, null, false));
+      if (item.altUnit) altParts.push(getUnitDisplay(item.altUnit, item.altQty, null));
+    } else if (item.altUnit) {
+      altParts.push(item.altUnit);
+    }
+    if (item.altName) altParts.push(item.altName);
+    line += ` (or ${altParts.join(' ')})`;
+  }
+
+  return line;
+}
+
 function renderIngredientsMarkup(ingredients) {
   if (!Array.isArray(ingredients) || ingredients.length === 0) {
     return '';
@@ -75,12 +157,16 @@ function renderIngredientsMarkup(ingredients) {
     entry && typeof entry === 'object' && !Array.isArray(entry) && Array.isArray(entry.items)
   ));
 
+  const isRenderable = (item) => (
+    item !== null && item !== undefined && !(typeof item === 'string' && !item.trim())
+  );
+
   if (!hasStructuredSections) {
     return `
       <ul class="ingredients-list">
         ${ingredients
-          .filter((item) => typeof item === 'string' && item.trim())
-          .map((item) => `<li>${item}</li>`)
+          .filter(isRenderable)
+          .map((item) => `<li>${renderIngredientLine(item)}</li>`)
           .join('')}
       </ul>
     `;
@@ -95,7 +181,7 @@ function renderIngredientsMarkup(ingredients) {
 
         const title = typeof entry.title === 'string' ? entry.title.trim() : '';
         const items = Array.isArray(entry.items)
-          ? entry.items.filter((item) => typeof item === 'string' && item.trim())
+          ? entry.items.filter(isRenderable)
           : [];
 
         if (items.length === 0) {
@@ -106,7 +192,7 @@ function renderIngredientsMarkup(ingredients) {
           <section class="ingredient-group">
             ${title ? `<h3 class="ingredient-group-title">${title}</h3>` : ''}
             <ul class="ingredients-list">
-              ${items.map((item) => `<li>${item}</li>`).join('')}
+              ${items.map((item) => `<li>${renderIngredientLine(item)}</li>`).join('')}
             </ul>
           </section>
         `;
