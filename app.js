@@ -107,11 +107,28 @@ function flattenIngredients(ingredients) {
   return flat;
 }
 
-// Looks up an ingredient name in window.ingredientNutrition, falling back to
-// a naive singular form (e.g. "eggs" -> "egg") when there's no exact match.
+// Normalizes an ingredient name for nutrition-database lookups: lowercases,
+// spells out "&" as "and", treats hyphens as spaces, drops commas, and
+// collapses whitespace. This consolidates near-duplicate ingredient name
+// variants (e.g. "half-and-half" / "half & half" / "half and half") onto a
+// single database entry.
+function normalizeIngredientName(name) {
+  return (name || '')
+    .trim()
+    .toLowerCase()
+    .replace(/&/g, 'and')
+    .replace(/-/g, ' ')
+    .replace(/,/g, '')
+    .replace(/\s+/g, ' ')
+    .trim();
+}
+
+// Looks up an ingredient name in window.ingredientNutrition, normalizing the
+// name first and falling back to a naive singular form (e.g. "eggs" -> "egg")
+// when there's no exact match.
 function getIngredientNutritionEntry(name) {
   const db = window.ingredientNutrition || {};
-  const key = (name || '').trim().toLowerCase();
+  const key = normalizeIngredientName(name);
   if (db[key]) return { key, entry: db[key] };
   if (key.endsWith('s') && db[key.slice(0, -1)]) {
     const singular = key.slice(0, -1);
@@ -259,6 +276,8 @@ function renderNutritionInfoSection(recipe) {
     };
   });
 
+  const hasUnverified = rows.some((row) => row.entry && !row.entry.verified);
+
   return `
     <div class="detail-controls">
       <button class="back-btn button-family button-secondary" onclick="window.location.href='recipe-detail.html?id=${recipe.id}'">← Back to ${recipe.title}</button>
@@ -290,7 +309,7 @@ function renderNutritionInfoSection(recipe) {
           <tbody>
             ${rows.map((row) => row.entry ? `
             <tr>
-              <td>${row.label}</td>
+              <td>${row.label}${row.entry.verified ? '' : ' *'}</td>
               <td>${row.per}</td>
               <td>${row.entry.calories}</td>
               <td>${row.entry.protein}g</td>
@@ -307,6 +326,12 @@ function renderNutritionInfoSection(recipe) {
           </tbody>
         </table>
       </div>
+      ${hasUnverified ? `
+      <p class="nutrition-disclaimer nutrition-unverified-note">
+        * These ingredient values were looked up and estimated by Claude and
+        have not yet been double-checked. They may be inaccurate — corrections
+        are welcome.
+      </p>` : ''}
     </article>
   `;
 }
