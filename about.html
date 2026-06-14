@@ -28,6 +28,10 @@
       <div class="header-actions">
         <input id="search" type="search" class="search-input" placeholder="Search recipes…" />
         <a href="recipes-list.html" class="view-all-button button-family button-primary">View All Categories</a>
+        <select id="unitSystemSelect" class="unit-system-select" aria-label="Units">
+          <option value="us">US</option>
+          <option value="metric">Metric</option>
+        </select>
       </div>
       <button class="search-icon-button" id="searchIconButton" aria-label="Open search" aria-expanded="false">
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -40,6 +44,13 @@
       <a href="index.html" class="mobile-menu-link">Home</a>
       <a href="recipes-list.html" class="mobile-menu-link">Recipes</a>
       <a href="about.html" class="mobile-menu-link">About</a>
+      <div class="mobile-menu-units">
+        <label for="unitSystemSelectMobile">Units</label>
+        <select id="unitSystemSelectMobile" class="unit-system-select">
+          <option value="us">US</option>
+          <option value="metric">Metric</option>
+        </select>
+      </div>
     </nav>
     <div class="mobile-search-container" id="mobileSearchContainer">
       <input id="mobile-search" type="search" class="mobile-search-input" placeholder="Search recipes…" />
@@ -75,6 +86,7 @@
 
   <script src="feature-flags.js"></script>
   <script src="flags-service.js"></script>
+  <script src="units-service.js"></script>
   <script src="app.js"></script>
 </body>
 </html>

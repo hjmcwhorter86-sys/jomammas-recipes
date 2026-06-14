@@ -139,5 +139,20 @@ window.unitConversions = {
     "nutmeg": 0.45,
     "granulated sugar": 0.85,
     "vegetable oil": 0.92,
+  },
+
+  // Preferred display units for the US/Metric units toggle (units-service.js).
+  // For a quantity converted to its base unit (grams for mass, ml for
+  // volume), pick the first entry whose `maxBase` the amount is below;
+  // the last entry (maxBase: Infinity) is the fallback for large amounts.
+  displayUnits: {
+    us: {
+      mass:   [ { unit: "oz", maxBase: 453.592 }, { unit: "lb", maxBase: Infinity } ],
+      volume: [ { unit: "tsp", maxBase: 14.7868 }, { unit: "tbsp", maxBase: 236.588 }, { unit: "cup", maxBase: Infinity } ],
+    },
+    metric: {
+      mass:   [ { unit: "g", maxBase: 1000 }, { unit: "kg", maxBase: Infinity } ],
+      volume: [ { unit: "ml", maxBase: 1000 }, { unit: "l", maxBase: Infinity } ],
+    }
   }
 };

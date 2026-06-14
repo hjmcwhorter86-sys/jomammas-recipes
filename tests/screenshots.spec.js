@@ -29,6 +29,14 @@ async function setFlagOverride(page, key, value) {
   }, [key, value]);
 }
 
+// Sets the US/Metric units preference (as units-service.js stores it) before
+// the page loads.
+async function setUnitSystemOverride(page, system) {
+  await page.addInitScript((s) => {
+    localStorage.setItem('unitSystem', s);
+  }, system);
+}
+
 test.describe('Home page', () => {
   test('main', async ({ page }, testInfo) => {
     await page.goto('/index.html');
@@ -105,11 +113,23 @@ test.describe('Recipe detail pages', () => {
     await page.goto('/recipe-detail.html?id=korean-beef-bowls');
     await shoot(page, 'recipe-korean-beef-bowls', testInfo.project.name, 'nutrition-flag-off');
   });
+
+  test('korean-beef-bowls - metric units', async ({ page }, testInfo) => {
+    await setUnitSystemOverride(page, 'metric');
+    await page.goto('/recipe-detail.html?id=korean-beef-bowls');
+    await shoot(page, 'recipe-korean-beef-bowls', testInfo.project.name, 'metric-units');
+  });
 });
 
 test.describe('Nutrition info page', () => {
   test('korean-beef-bowls', async ({ page }, testInfo) => {
     await page.goto('/nutrition-info.html?id=korean-beef-bowls');
     await shoot(page, 'nutrition-info-korean-beef-bowls', testInfo.project.name, 'main');
+  });
+
+  test('korean-beef-bowls - all ingredients', async ({ page }, testInfo) => {
+    await page.goto('/nutrition-info.html?id=korean-beef-bowls');
+    await page.locator('#toggleAllIngredientsBtn').click();
+    await shoot(page, 'nutrition-info-korean-beef-bowls', testInfo.project.name, 'all-ingredients');
   });
 });
