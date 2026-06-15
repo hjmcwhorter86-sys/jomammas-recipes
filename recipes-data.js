@@ -1413,4 +1413,72 @@ tags: ["dessert", "high protein"]
   ]
 },
 
+{
+  id: "creamy-chicken-piccata",
+  title: "Creamy Chicken Piccata",
+  description: "Pan-seared in butter and olive oil, with white cooking wine and a glossy lemon-caper cream sauce.",
+  image: "images/creamy-chicken-piccata.png",
+  category: "Chicken",
+  dateAdded: "2026-06-15",
+  carbs: null,
+  fat: null,
+  fiber: null,
+  calories: "",
+  protein: "",
+  servings: "6",
+  tags: ["chicken", "Italian-inspired", "weeknight dinner"],
+
+  ingredients: [
+    {
+      title: "For the Chicken",
+      items: [
+        "2 lbs boneless skinless chicken breast, pounded or sliced into thin cutlets",
+        "⅓ cup all-purpose flour",
+        "2 tsp garlic powder",
+        "1½ tsp kosher salt",
+        "½ tsp black pepper"
+      ]
+    },
+    {
+      title: "For the Sear",
+      items: [
+        "1 tbsp unsalted butter",
+        "1½ tbsp olive oil"
+      ]
+    },
+    {
+      title: "For the Sauce",
+      items: [
+        "¼ cup white cooking wine",
+        "½ cup chicken broth",
+        "⅓ cup fresh lemon juice (about 3 lemons)",
+        "4 tbsp unsalted butter",
+        "3 garlic cloves, minced",
+        "¼ cup brined capers, drained",
+        "½ cup heavy cream",
+        "¼ tsp red pepper flakes",
+        "1 tbsp cold unsalted butter, for finishing",
+        "Salt and pepper to taste",
+        "Fresh parsley, for garnish"
+      ]
+    }
+  ],
+
+  steps: [
+    "Season chicken lightly with salt and pepper on both sides. Combine the flour, garlic powder, 1½ tsp salt, and pepper in a shallow dish. Dredge each cutlet to coat lightly on both sides.",
+    "Heat 1 tbsp butter and 1½ tbsp olive oil together in a large heavy skillet over medium heat until the butter foams and subsides. Working in batches if needed, sear the cutlets 3–4 minutes per side without crowding. Remove and set aside. Reduce heat to low.",
+    "Add the minced garlic to the pan and sauté about 30 seconds until fragrant. Pour in the white cooking wine and scrape up all the browned bits from the bottom of the pan. Let it bubble and reduce by about half, 1–2 minutes.",
+    "Add the 4 tbsp butter and let it melt, then stir in the broth and lemon juice. Bring to a gentle simmer, then slowly stir in the heavy cream and add the capers and red pepper flakes.",
+    "Return the chicken to the pan and simmer gently 4–8 minutes until cooked through (165°F internal temp). Taste the sauce and adjust salt as needed.",
+    "Remove from heat. Swirl in the cold finishing butter until glossy. Garnish with fresh parsley and lemon slices. Serve immediately over pasta, rice, or with crusty bread."
+  ],
+
+  notes: [
+    "Pat the chicken dry before dredging so the flour sticks evenly and you get a proper sear instead of steaming.",
+    "The finishing butter is optional but makes the sauce glossy and restaurant-rich — don't skip it if you can help it.",
+    "If the sauce breaks (looks greasy or separated), pull it fully off heat and whisk in a splash of cold cream or broth.",
+    "White cooking wine has added salt, so taste before salting the sauce further."
+  ]
+},
+
 ];
