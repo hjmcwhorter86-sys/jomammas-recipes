@@ -57,7 +57,7 @@
   --font-size-display: 48px;
 
   /* Compatibility aliases used in existing rules */
-  --bg: #81d8d0;
+  --bg: #c8a87a;
   --card: var(--color-surface-strong);
   --border: rgba(17, 17, 17, 0.1);
   --shadow: var(--shadow-md);
@@ -1455,6 +1455,7 @@ body{
   align-items: center;
   justify-content: center;
   gap: var(--space-3);
+  background-color: #ece8de;
   background-image: url("images/hero-background-lace-doily.png");
   background-size: auto 100%;
   background-position: center;

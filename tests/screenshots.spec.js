@@ -43,6 +43,19 @@ test.describe('Home page', () => {
     await shoot(page, 'home', testInfo.project.name, 'main');
   });
 
+  // Captures what the page looks like before images have finished loading, to
+  // make the background-color fallback (vs the old teal flash) visible in the
+  // PR screenshot diff.
+  test('early load state (before images)', async ({ page }, testInfo) => {
+    test.skip(testInfo.project.name !== 'desktop', 'Desktop-only visual demo');
+    await page.route('**/*.{png,jpg,jpeg}', async (route) => {
+      await new Promise((resolve) => setTimeout(resolve, 400));
+      await route.continue();
+    });
+    await page.goto('/index.html', { waitUntil: 'domcontentloaded' });
+    await shoot(page, 'home', testInfo.project.name, 'early-load');
+  });
+
   test('mobile menu open', async ({ page }, testInfo) => {
     test.skip(testInfo.project.name !== 'mobile', 'Mobile-only header controls');
     await page.goto('/index.html');

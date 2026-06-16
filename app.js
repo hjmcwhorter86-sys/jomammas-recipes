@@ -407,6 +407,14 @@ function getRecipeImageUrl(recipe) {
   return normalizedPath || 'images/no-photo.jpg';
 }
 
+// Returns the full-quality original image for recipe detail pages. Originals
+// are preserved in images/originals/ by scripts/optimize-images.js; the
+// main images/ copies are compressed thumbnails.
+function getRecipeOriginalImageUrl(recipe) {
+  const thumbPath = getRecipeImageUrl(recipe);
+  return thumbPath.replace(/^images\//, 'images/originals/');
+}
+
 // Maps decimal fractions to their unicode glyphs for ingredient quantity display.
 const QUANTITY_FRACTION_MAP = [
   [0.125, '⅛'],
@@ -833,7 +841,7 @@ if (newestEl) {
 
   newestEl.innerHTML = newest.map(r => `
     <a class="newest-card" href="recipe-detail.html?id=${r.id}">
-      <img src="${getRecipeImageUrl(r)}" alt="${r.title}" class="newest-card-image">
+      <img src="${getRecipeImageUrl(r)}" alt="${r.title}" class="newest-card-image" loading="lazy">
       <div class="newest-card-inner">
         <h3>${r.title}</h3>
         <p>${r.description}</p>
@@ -871,7 +879,7 @@ if (popularEl) {
     return `
     <a class="newest-card" href="recipe-detail.html?id=${r.id}">
       <div class="newest-card-image-wrapper">
-        <img src="${getRecipeImageUrl(r)}" alt="${r.title}" class="newest-card-image">
+        <img src="${getRecipeImageUrl(r)}" alt="${r.title}" class="newest-card-image" loading="lazy">
         ${badgeText ? `<span class="recipe-badge">${badgeText}</span>` : ''}
       </div>
       <div class="newest-card-inner">
@@ -940,7 +948,7 @@ if (pageType === 'list' && recipesEl && searchEl) {
       return `
         <a href="recipe-detail.html?id=${(r.id)}" class="card recipe-card">
           <div class="recipe-card-image-wrapper">
-            <img src="${imageUrl}" alt="${r.title}" class="recipe-card-image" />
+            <img src="${imageUrl}" alt="${r.title}" class="recipe-card-image" loading="lazy" />
           </div>
           <div class="recipe-card-content">
             <h3>${r.title}</h3>
@@ -995,7 +1003,7 @@ if (pageType === 'list' && recipesEl && searchEl) {
         <p class="cook-mode-status" id="cookModeStatus" aria-live="polite"></p>
         ${recipe.tags && Array.isArray(recipe.tags) && recipe.tags.length > 0 ? `<div class="recipe-tags">${recipe.tags.map(t => `<span class="tag">${t}</span>`).join('')}</div>` : ''}
         ${recipe.servings ? `<div class="recipe-servings"><strong>Servings:</strong> ${recipe.servings}</div>` : ''}
-        <div class="recipe-image-outer"><img src="${getRecipeImageUrl(recipe)}" alt="${recipe.title}" class="recipe-image" id="recipe-image-zoom" style="cursor: zoom-in;"></div>
+        <div class="recipe-image-outer"><img src="${getRecipeOriginalImageUrl(recipe)}" alt="${recipe.title}" class="recipe-image" id="recipe-image-zoom" style="cursor: zoom-in;"></div>
         <div class="recipe-content-wrapper">
           ${hasIngredients ? `
             <section class="recipe-section">
@@ -1199,7 +1207,7 @@ if (pageType === 'detail' && detailedViewEl) {
         <p class="cook-mode-status" id="cookModeStatus" aria-live="polite"></p>
         ${recipe.tags && Array.isArray(recipe.tags) && recipe.tags.length > 0 ? `<div class="recipe-tags">${recipe.tags.map(t => `<span class="tag">${t}</span>`).join('')}</div>` : ''}
         ${recipe.servings ? `<div class="recipe-servings"><strong>Servings:</strong> ${recipe.servings}</div>` : ''}
-        <div class="recipe-image-outer"><img src="${getRecipeImageUrl(recipe)}" alt="${recipe.title}" class="recipe-image" id="recipe-image-zoom" style="cursor: zoom-in;"></div>
+        <div class="recipe-image-outer"><img src="${getRecipeOriginalImageUrl(recipe)}" alt="${recipe.title}" class="recipe-image" id="recipe-image-zoom" style="cursor: zoom-in;"></div>
         <div class="recipe-content-wrapper">
           ${hasIngredients ? `
             <section class="recipe-section">
