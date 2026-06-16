@@ -1237,6 +1237,27 @@ body{
   font-style: italic;
 }
 
+.nutrition-info-table th.th-sortable {
+  cursor: pointer;
+  user-select: none;
+}
+
+.nutrition-info-table th.th-sortable::after {
+  content: ' ⇅';
+  opacity: 0.4;
+  font-size: 0.8em;
+}
+
+.nutrition-info-table th.th-sortable[aria-sort="ascending"]::after {
+  content: ' ↑';
+  opacity: 1;
+}
+
+.nutrition-info-table th.th-sortable[aria-sort="descending"]::after {
+  content: ' ↓';
+  opacity: 1;
+}
+
 .recipe-content-wrapper {
   display: block;
   margin-bottom: 32px;

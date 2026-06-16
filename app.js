@@ -333,13 +333,13 @@ function renderNutritionInfoSection(recipe) {
           <table class="nutrition-info-table">
             <thead>
               <tr>
-                <th>Ingredient</th>
+                <th class="th-sortable" data-col="0">Ingredient</th>
                 <th>Calories</th>
                 <th>Protein</th>
                 <th>Fat</th>
                 <th>Fiber</th>
                 <th>Carbs</th>
-                <th>Source</th>
+                <th class="th-sortable" data-col="6">Source</th>
               </tr>
             </thead>
             <tbody>
@@ -367,14 +367,14 @@ function renderNutritionInfoSection(recipe) {
           <table class="nutrition-info-table">
             <thead>
               <tr>
-                <th>Ingredient</th>
+                <th class="th-sortable" data-col="0">Ingredient</th>
                 <th>Per</th>
                 <th>Calories</th>
                 <th>Protein</th>
                 <th>Fat</th>
                 <th>Fiber</th>
                 <th>Carbs</th>
-                <th>Source</th>
+                <th class="th-sortable" data-col="7">Source</th>
               </tr>
             </thead>
             <tbody>
@@ -1336,6 +1336,42 @@ if (pageType === 'nutrition-info' && detailedViewEl) {
         toggleBtn.textContent = showingAll ? 'Show All Ingredients' : "Show This Recipe's Ingredients";
       });
     }
+
+    // Wire sortable column headers: clicking Ingredient or Source th sorts
+    // the tbody rows alphabetically; clicking again reverses the order.
+    // Excluded rows (colspan note rows) stay at the bottom.
+    function wireSortableTable(tableEl) {
+      if (!tableEl) return;
+      const table = tableEl.querySelector('table');
+      if (!table) return;
+      table.querySelectorAll('th.th-sortable').forEach((th) => {
+        const colIndex = parseInt(th.dataset.col, 10);
+        let ascending = true;
+        th.setAttribute('aria-sort', 'none');
+        th.addEventListener('click', () => {
+          const tbody = table.querySelector('tbody');
+          const rows = Array.from(tbody.querySelectorAll('tr'));
+          const excluded = rows.filter((r) => r.classList.contains('nutrition-info-row-excluded'));
+          const sortable = rows.filter((r) => !r.classList.contains('nutrition-info-row-excluded'));
+
+          sortable.sort((a, b) => {
+            const aText = (a.cells[colIndex]?.textContent || '').trim().toLowerCase();
+            const bText = (b.cells[colIndex]?.textContent || '').trim().toLowerCase();
+            return ascending ? aText.localeCompare(bText) : bText.localeCompare(aText);
+          });
+
+          // Reset all sort indicators on this table's headers
+          table.querySelectorAll('th.th-sortable').forEach((h) => h.setAttribute('aria-sort', 'none'));
+          th.setAttribute('aria-sort', ascending ? 'ascending' : 'descending');
+          ascending = !ascending;
+
+          tbody.replaceChildren(...sortable, ...excluded);
+        });
+      });
+    }
+
+    wireSortableTable(document.getElementById('recipeIngredientsTable'));
+    wireSortableTable(document.getElementById('allIngredientsTable'));
   } else {
     detailedViewEl.innerHTML = '<p>Recipe not found. <a href="recipes-list.html">Back to recipes</a></p>';
   }
