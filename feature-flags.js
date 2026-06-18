@@ -12,7 +12,7 @@ window.featureFlags = {
   showComputedNutrition: {
     label: "Computed nutrition facts",
     description: "Show nutrition facts computed from structured ingredients, instead of (or alongside) the manually entered fields.",
-    default: false,
+    default: true,
   },
 
   servingSizeScaling: {
