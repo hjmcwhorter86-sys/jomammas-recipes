@@ -6,6 +6,7 @@
   <meta name="page-type" content="about" />
   <title>About • JoMama's Recipes</title>
   <link rel="stylesheet" href="styles.css" />
+  <link rel="preload" href="images/background-wood.png" as="image" type="image/png" />
 </head>
 <body class="about-page">
   <header class="header">
@@ -17,7 +18,7 @@
       </button>
       <div class="logo">
         <a href="index.html" class="logo-link">
-          <img src="images/jomammas-recipes-logo.png" alt="JoMamma's Recipes" class="logo-image" />
+          <img src="images/jomammas-recipes-logo.png" alt="JoMamma's Recipes" class="logo-image" fetchpriority="high" />
         </a>
       </div>
       <nav class="nav">
@@ -28,6 +29,10 @@
       <div class="header-actions">
         <input id="search" type="search" class="search-input" placeholder="Search recipes…" />
         <a href="recipes-list.html" class="view-all-button button-family button-primary">View All Categories</a>
+        <select id="unitSystemSelect" class="unit-system-select" aria-label="Units">
+          <option value="us">US</option>
+          <option value="metric">Metric</option>
+        </select>
       </div>
       <button class="search-icon-button" id="searchIconButton" aria-label="Open search" aria-expanded="false">
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -40,6 +45,13 @@
       <a href="index.html" class="mobile-menu-link">Home</a>
       <a href="recipes-list.html" class="mobile-menu-link">Recipes</a>
       <a href="about.html" class="mobile-menu-link">About</a>
+      <div class="mobile-menu-units">
+        <label for="unitSystemSelectMobile">Units</label>
+        <select id="unitSystemSelectMobile" class="unit-system-select">
+          <option value="us">US</option>
+          <option value="metric">Metric</option>
+        </select>
+      </div>
     </nav>
     <div class="mobile-search-container" id="mobileSearchContainer">
       <input id="mobile-search" type="search" class="mobile-search-input" placeholder="Search recipes…" />
@@ -68,11 +80,15 @@
         <a href="recipes-list.html">All Recipes</a>
         <a href="about.html" aria-current="page">About</a>
         <a href="index.html#categories">Categories</a>
+        <a href="flags.html" class="footer-flag-link" aria-label="Feature flags" title="Feature flags">🏳️‍🌈</a>
       </nav>
       <p class="site-footer-copy">© 2026 • easy printer-friendly recipes</p>
     </div>
   </footer>
 
+  <script src="feature-flags.js"></script>
+  <script src="flags-service.js"></script>
+  <script src="units-service.js"></script>
   <script src="app.js"></script>
 </body>
 </html>

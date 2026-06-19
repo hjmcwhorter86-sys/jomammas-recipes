@@ -42,19 +42,360 @@ function formatRecipeCategories(recipe, separator = ', ') {
   return getRecipeCategories(recipe).join(separator);
 }
 
+const NUTRITION_FIELDS = ['calories', 'protein', 'fat', 'fiber', 'carbs'];
+
 function renderNutritionSection(recipe) {
   const formatValue = (value) => (value === null || value === undefined || value === '') ? '—' : value;
+  const computedOn = !!window.flagsService?.isEnabled('showComputedNutrition');
+
+  let display;
+  if (computedOn) {
+    const result = computeRecipeNutrition(recipe);
+    const round = (value) => Math.round(value * 10) / 10;
+    const field = (key, suffix = '') => result.unknown.has(key) ? 'Unknown' : `${round(result.perServing[key])}${suffix}`;
+    display = {
+      calories: field('calories'),
+      protein: field('protein', 'g'),
+      carbs: field('carbs', 'g'),
+      netCarbs: field('netCarbs', 'g'),
+      fat: field('fat', 'g'),
+      fiber: field('fiber', 'g'),
+    };
+  } else {
+    display = {
+      calories: formatValue(recipe.calories),
+      protein: formatValue(recipe.protein),
+      carbs: formatValue(recipe.carbs),
+      netCarbs: '—',
+      fat: formatValue(recipe.fat),
+      fiber: formatValue(recipe.fiber),
+    };
+  }
+
+  // The info link only appears when computed nutrition is shown, since
+  // that's the data it lets reviewers fact-check.
+  const infoLink = computedOn
+    ? ` <a class="nutrition-info-link" href="nutrition-info.html?id=${recipe.id}" aria-label="Nutrition data, sources, and disclaimer" title="Nutrition data, sources, and disclaimer">ℹ️</a>`
+    : '';
+
   return `
           <div class="recipe-nutrition">
-            <h3>Nutrition (per serving)</h3>
+            <h3>Nutrition (per serving)${infoLink}</h3>
             <ul class="nutrition-list">
-              <li><strong>Calories:</strong> ${formatValue(recipe.calories)}</li>
-              <li><strong>Protein:</strong> ${formatValue(recipe.protein)}</li>
-              <li><strong>Carbs:</strong> ${formatValue(recipe.carbs)}</li>
-              <li><strong>Fat:</strong> ${formatValue(recipe.fat)}</li>
-              <li><strong>Fiber:</strong> ${formatValue(recipe.fiber)}</li>
+              <li><strong>Calories:</strong> ${display.calories}</li>
+              <li><strong>Protein:</strong> ${display.protein}</li>
+              <li><strong>Carbs:</strong> ${display.carbs}</li>
+              <li><strong>Net Carbs:</strong> ${display.netCarbs}</li>
+              <li><strong>Fat:</strong> ${display.fat}</li>
+              <li><strong>Fiber:</strong> ${display.fiber}</li>
             </ul>
           </div>`;
+}
+
+// Flattens both flat-array and {title, items}-section ingredient lists into
+// a single array of ingredient items.
+function flattenIngredients(ingredients) {
+  if (!Array.isArray(ingredients)) return [];
+  const flat = [];
+  ingredients.forEach((entry) => {
+    if (entry && typeof entry === 'object' && Array.isArray(entry.items)) {
+      flat.push(...entry.items);
+    } else {
+      flat.push(entry);
+    }
+  });
+  return flat;
+}
+
+// Normalizes an ingredient name for nutrition-database lookups: lowercases,
+// spells out "&" as "and", treats hyphens as spaces, drops commas, and
+// collapses whitespace. This consolidates near-duplicate ingredient name
+// variants (e.g. "half-and-half" / "half & half" / "half and half") onto a
+// single database entry.
+function normalizeIngredientName(name) {
+  return (name || '')
+    .trim()
+    .toLowerCase()
+    .replace(/&/g, 'and')
+    .replace(/-/g, ' ')
+    .replace(/,/g, '')
+    .replace(/\s+/g, ' ')
+    .trim();
+}
+
+// Looks up an ingredient name in window.ingredientNutrition, normalizing the
+// name first and falling back to a naive singular form (e.g. "eggs" -> "egg")
+// when there's no exact match.
+function getIngredientNutritionEntry(name) {
+  const db = window.ingredientNutrition || {};
+  const key = normalizeIngredientName(name);
+  if (db[key]) return { key, entry: db[key] };
+  if (key.endsWith('s') && db[key.slice(0, -1)]) {
+    const singular = key.slice(0, -1);
+    return { key: singular, entry: db[singular] };
+  }
+  return null;
+}
+
+// Converts a structured ingredient item's quantity into grams (or, for
+// liquids tracked per-100ml, milliliters), using window.unitConversions.
+// Returns null if the unit can't be resolved against the nutrition entry.
+function getIngredientAmount(item, key, entry) {
+  const qty = (item.qtyMax !== null && item.qtyMax !== undefined)
+    ? (item.qty + item.qtyMax) / 2
+    : item.qty;
+  if (qty === null || qty === undefined) return null;
+
+  const unit = item.unit;
+  const conversions = window.unitConversions || {};
+
+  if (!unit) {
+    const perUnit = entry.unitWeights?.[key];
+    return perUnit ? { grams: qty * perUnit } : null;
+  }
+
+  if (conversions.mass?.units?.[unit]) {
+    return { grams: qty * conversions.mass.units[unit].toBase };
+  }
+
+  if (conversions.volume?.units?.[unit]) {
+    const ml = qty * conversions.volume.units[unit].toBase;
+    if (entry.per === '100ml') return { ml };
+    const density = conversions.densities?.[key];
+    return density ? { grams: ml * density } : null;
+  }
+
+  if (conversions.countUnits?.[unit]) {
+    const perUnit = entry.unitWeights?.[unit];
+    return perUnit ? { grams: qty * perUnit } : null;
+  }
+
+  return null;
+}
+
+// Resolves a single structured ingredient item against the nutrition
+// database, returning its matched entry, key, and a per-100g/100ml scale
+// factor — or null if the ingredient isn't in the database or its unit
+// can't be converted.
+function resolveIngredientNutrition(item) {
+  const match = getIngredientNutritionEntry(item.name);
+  if (!match) return null;
+  const { key, entry } = match;
+  const amount = getIngredientAmount(item, key, entry);
+  if (!amount) return null;
+  const factor = entry.per === '100ml'
+    ? (amount.ml || 0) / 100
+    : (amount.grams || 0) / 100;
+  if (!factor) return null;
+  return { key, entry, factor };
+}
+
+// Computes per-serving nutrition totals from a recipe's structured
+// ingredients and window.ingredientNutrition.
+//
+// Non-quantifiable items (qty: null, e.g. "salt and pepper to taste") and
+// items marked optional:true are excluded from both the totals and the
+// completeness check — optional items may get an opt-in include/exclude
+// toggle in a future update.
+//
+// `unknown` lists which per-serving fields couldn't be computed. Every
+// ingredientNutrition entry covers all five macros together, so if ANY
+// remaining (required, quantified) ingredient isn't in the database or
+// can't be unit-converted, ALL fields are marked unknown.
+function computeRecipeNutrition(recipe) {
+  const items = flattenIngredients(recipe.ingredients).filter(
+    (item) => item && typeof item === 'object' && item.qty !== null && item.qty !== undefined && !item.optional && item.name
+  );
+
+  const totals = { calories: 0, protein: 0, fat: 0, fiber: 0, carbs: 0 };
+  let allResolved = items.length > 0;
+  let allVerified = true;
+
+  items.forEach((item) => {
+    const resolved = resolveIngredientNutrition(item);
+    if (!resolved) {
+      allResolved = false;
+      return;
+    }
+    NUTRITION_FIELDS.forEach((field) => {
+      totals[field] += resolved.entry[field] * resolved.factor;
+    });
+    if (!resolved.entry.verified) allVerified = false;
+  });
+
+  const unknown = new Set();
+  if (!allResolved) {
+    [...NUTRITION_FIELDS, 'netCarbs'].forEach((field) => unknown.add(field));
+  }
+
+  const servings = parseFloat(recipe.servings) || 1;
+  return {
+    allResolved,
+    allVerified,
+    unknown,
+    perServing: {
+      calories: totals.calories / servings,
+      protein: totals.protein / servings,
+      fat: totals.fat / servings,
+      fiber: totals.fiber / servings,
+      carbs: totals.carbs / servings,
+      netCarbs: (totals.carbs - totals.fiber) / servings,
+    },
+  };
+}
+
+// Renders the per-recipe nutrition info page: a disclaimer plus a table of
+// every ingredient's matched nutrition data (or why it's excluded/missing),
+// so the computed nutrition numbers can be fact-checked and corrected.
+// Returns the short "Source" cell value: unverified entries are flagged as
+// Claude-estimated (see the unverified-note disclaimer for the explanation);
+// verified entries show their real source note.
+function sourceLabel(entry) {
+  if (!entry.verified) return 'Claude*';
+  return entry.source || '—';
+}
+
+// Returns a label for an ingredient: its name plus any notes, with an
+// asterisk if its nutrition entry (if any) is unverified.
+function ingredientNameLabel(item, entry) {
+  let label = item.name + (item.notes ? ` (${item.notes})` : '');
+  if (entry && !entry.verified) label += ' *';
+  return label;
+}
+
+function renderNutritionInfoSection(recipe) {
+  const items = flattenIngredients(recipe.ingredients).filter((item) => item && typeof item === 'object');
+  const servings = parseFloat(recipe.servings) || 1;
+  const round = (value) => Math.round(value * 10) / 10;
+
+  const rows = items.map((item) => {
+    if (item.qty === null || item.qty === undefined) {
+      return { label: ingredientNameLabel(item, null), note: 'Not quantifiable — excluded from totals.' };
+    }
+
+    if (item.optional) {
+      return { label: ingredientNameLabel(item, null), note: 'Optional — currently excluded from totals.' };
+    }
+
+    const resolved = resolveIngredientNutrition(item);
+    if (!resolved) {
+      const match = getIngredientNutritionEntry(item.name);
+      if (!match) return { label: ingredientNameLabel(item, null), note: 'Not in the nutrition database yet.' };
+      return { label: ingredientNameLabel(item, match.entry), note: `Unit "${item.unit || '(none)'}" not supported for "${match.key}".` };
+    }
+
+    const { entry, factor } = resolved;
+    return {
+      label: ingredientNameLabel(item, entry),
+      entry,
+      calories: round(entry.calories * factor / servings),
+      protein: round(entry.protein * factor / servings),
+      fat: round(entry.fat * factor / servings),
+      fiber: round(entry.fiber * factor / servings),
+      carbs: round(entry.carbs * factor / servings),
+    };
+  });
+
+  const allIngredientRows = Object.entries(window.ingredientNutrition || {}).map(([key, entry]) => ({
+    label: key + (entry.verified ? '' : ' *'),
+    entry,
+    per: entry.per === '100ml' ? '100ml' : '100g',
+  }));
+
+  const hasUnverified = rows.some((row) => row.entry && !row.entry.verified);
+  const allHasUnverified = allIngredientRows.some((row) => !row.entry.verified);
+
+  const unverifiedNote = `
+      <p class="nutrition-disclaimer nutrition-unverified-note">
+        * These ingredient values were looked up and estimated by Claude and
+        have not yet been double-checked. They may be inaccurate — corrections
+        are welcome.
+      </p>`;
+
+  return `
+    <div class="detail-controls">
+      <button class="back-btn button-family button-secondary" onclick="window.location.href='recipe-detail.html?id=${recipe.id}'">← Back to ${recipe.title}</button>
+    </div>
+    <article class="recipe-detail nutrition-info-page">
+      <h1>Nutrition Info: ${recipe.title}</h1>
+      <p class="nutrition-disclaimer">
+        These values are rough estimates calculated from a public ingredient
+        nutrition database. They are not a substitute for medical or
+        professional dietary advice. Quantities are approximate, brands and
+        preparation vary, and some ingredients aren't in the database yet —
+        use this as a starting point, not a guarantee.
+      </p>
+      <div class="detail-controls">
+        <button class="back-btn button-family button-secondary" id="toggleAllIngredientsBtn">Show All Ingredients</button>
+      </div>
+      <div id="recipeIngredientsTable">
+        <div class="nutrition-info-table-wrapper">
+          <table class="nutrition-info-table">
+            <thead>
+              <tr>
+                <th class="th-sortable" data-col="0">Ingredient</th>
+                <th>Calories</th>
+                <th>Protein</th>
+                <th>Fat</th>
+                <th>Fiber</th>
+                <th>Carbs</th>
+                <th class="th-sortable" data-col="6">Source</th>
+              </tr>
+            </thead>
+            <tbody>
+              ${rows.map((row) => row.entry ? `
+              <tr>
+                <td>${row.label}</td>
+                <td>${row.calories}</td>
+                <td>${row.protein}g</td>
+                <td>${row.fat}g</td>
+                <td>${row.fiber}g</td>
+                <td>${row.carbs}g</td>
+                <td>${sourceLabel(row.entry)}</td>
+              </tr>` : `
+              <tr class="nutrition-info-row-excluded">
+                <td>${row.label}</td>
+                <td colspan="6">${row.note}</td>
+              </tr>`).join('')}
+            </tbody>
+          </table>
+        </div>
+        ${hasUnverified ? unverifiedNote : ''}
+      </div>
+      <div id="allIngredientsTable" hidden>
+        <div class="nutrition-info-table-wrapper">
+          <table class="nutrition-info-table">
+            <thead>
+              <tr>
+                <th class="th-sortable" data-col="0">Ingredient</th>
+                <th>Per</th>
+                <th>Calories</th>
+                <th>Protein</th>
+                <th>Fat</th>
+                <th>Fiber</th>
+                <th>Carbs</th>
+                <th class="th-sortable" data-col="7">Source</th>
+              </tr>
+            </thead>
+            <tbody>
+              ${allIngredientRows.map((row) => `
+              <tr>
+                <td>${row.label}</td>
+                <td>${row.per}</td>
+                <td>${row.entry.calories}</td>
+                <td>${row.entry.protein}g</td>
+                <td>${row.entry.fat}g</td>
+                <td>${row.entry.fiber}g</td>
+                <td>${row.entry.carbs}g</td>
+                <td>${sourceLabel(row.entry)}</td>
+              </tr>`).join('')}
+            </tbody>
+          </table>
+        </div>
+        ${allHasUnverified ? unverifiedNote : ''}
+      </div>
+    </article>
+  `;
 }
 
 function getRecipeImageUrl(recipe) {
@@ -66,6 +407,136 @@ function getRecipeImageUrl(recipe) {
   return normalizedPath || 'images/no-photo.jpg';
 }
 
+// Returns the full-quality original image for recipe detail pages. Originals
+// are preserved in images/originals/ by scripts/optimize-images.js; the
+// main images/ copies are compressed thumbnails.
+function getRecipeOriginalImageUrl(recipe) {
+  const thumbPath = getRecipeImageUrl(recipe);
+  return thumbPath.replace(/^images\//, 'images/originals/');
+}
+
+// Maps decimal fractions to their unicode glyphs for ingredient quantity display.
+const QUANTITY_FRACTION_MAP = [
+  [0.125, '⅛'],
+  [0.25, '¼'],
+  [0.333, '⅓'],
+  [0.5, '½'],
+  [0.667, '⅔'],
+  [0.75, '¾'],
+  [0.875, '⅞'],
+];
+
+// Formats a quantity (and optional range) as "1¼", "½–¾", "~2", etc.
+function formatQuantityDisplay(qty, qtyMax, approx) {
+  if (qty === null || qty === undefined) return '';
+
+  const formatOne = (value) => {
+    const whole = Math.floor(value);
+    const frac = value - whole;
+    if (frac === 0) return String(whole);
+    const match = QUANTITY_FRACTION_MAP.find(([dec]) => Math.abs(dec - frac) < 0.02);
+    const fracStr = match ? match[1] : parseFloat(frac.toFixed(2)).toString().slice(1);
+    return whole > 0 ? `${whole}${fracStr}` : fracStr;
+  };
+
+  let result = formatOne(qty);
+  if (qtyMax !== null && qtyMax !== undefined) {
+    result += `–${formatOne(qtyMax)}`;
+  }
+  return approx ? `~${result}` : result;
+}
+
+// Looks up the singular/plural display form of a unit based on quantity.
+function getUnitDisplay(unit, qty, qtyMax) {
+  if (!unit) return '';
+
+  const conversions = window.unitConversions || {};
+  const tables = [conversions.volume?.units, conversions.mass?.units, conversions.countUnits];
+  const entry = tables.find((table) => table && table[unit])?.[unit];
+
+  const isPlural = (qtyMax !== null && qtyMax !== undefined) ? true : qty !== 1;
+  if (entry && isPlural && entry.plural) return entry.plural;
+  return unit;
+}
+
+// Converts a quantity/unit to the active US/Metric unit system (see
+// units-service.js and data/units.js -> displayUnits), for mass and volume
+// units only. Count units (clove, slice, ...) and unitless items pass
+// through unchanged.
+function convertQuantityForDisplay(qty, qtyMax, unit) {
+  const original = { qty, qtyMax, unit };
+  if (!unit || qty === null || qty === undefined) return original;
+
+  const conversions = window.unitConversions || {};
+  const system = window.unitsService?.getSystem() || 'us';
+
+  let category = null;
+  if (conversions.mass?.units?.[unit]) category = 'mass';
+  else if (conversions.volume?.units?.[unit]) category = 'volume';
+  else return original;
+
+  const targets = conversions.displayUnits?.[system]?.[category];
+  if (!targets) return original;
+
+  const sourceToBase = conversions[category].units[unit].toBase;
+  const convertOne = (value) => {
+    if (value === null || value === undefined) return value;
+    const base = value * sourceToBase;
+    const target = targets.find((t) => base < t.maxBase) || targets[targets.length - 1];
+    const targetToBase = conversions[category].units[target.unit].toBase;
+    return { value: Math.round((base / targetToBase) * 100) / 100, unit: target.unit };
+  };
+
+  const convertedQty = convertOne(qty);
+  const convertedQtyMax = convertOne(qtyMax);
+  return {
+    qty: convertedQty.value,
+    qtyMax: convertedQtyMax ? convertedQtyMax.value : (qtyMax ?? null),
+    unit: convertedQty.unit,
+  };
+}
+
+// Builds the display string for one ingredient entry (structured object or legacy string).
+function renderIngredientLine(item) {
+  if (typeof item === 'string') {
+    return item;
+  }
+  if (!item || typeof item !== 'object') {
+    return '';
+  }
+  if (item.display) {
+    return item.display;
+  }
+
+  const parts = [];
+  if (item.qty !== null && item.qty !== undefined) {
+    const { qty, qtyMax, unit } = convertQuantityForDisplay(item.qty, item.qtyMax, item.unit);
+    parts.push(formatQuantityDisplay(qty, qtyMax, item.approx));
+    if (unit) parts.push(getUnitDisplay(unit, qty, qtyMax));
+  }
+  parts.push(item.name);
+
+  let line = parts.join(' ');
+  if (item.notes) line += ` (${item.notes})`;
+
+  const hasAlt = (item.altQty !== null && item.altQty !== undefined) || item.altUnit || item.altName;
+  if (hasAlt) {
+    const altParts = [];
+    if (item.altQty !== null && item.altQty !== undefined) {
+      const { qty: altQty, unit: altUnit } = convertQuantityForDisplay(item.altQty, null, item.altUnit);
+      altParts.push(formatQuantityDisplay(altQty, null, false));
+      if (altUnit) altParts.push(getUnitDisplay(altUnit, altQty, null));
+    } else if (item.altUnit) {
+      altParts.push(item.altUnit);
+    }
+    if (item.altName) altParts.push(item.altName);
+    line += ` (or ${altParts.join(' ')})`;
+  }
+
+  return line;
+}
+
+
 function renderIngredientsMarkup(ingredients) {
   if (!Array.isArray(ingredients) || ingredients.length === 0) {
     return '';
@@ -75,12 +546,16 @@ function renderIngredientsMarkup(ingredients) {
     entry && typeof entry === 'object' && !Array.isArray(entry) && Array.isArray(entry.items)
   ));
 
+  const isRenderable = (item) => (
+    item !== null && item !== undefined && !(typeof item === 'string' && !item.trim())
+  );
+
   if (!hasStructuredSections) {
     return `
       <ul class="ingredients-list">
         ${ingredients
-          .filter((item) => typeof item === 'string' && item.trim())
-          .map((item) => `<li>${item}</li>`)
+          .filter(isRenderable)
+          .map((item) => `<li>${renderIngredientLine(item)}</li>`)
           .join('')}
       </ul>
     `;
@@ -95,7 +570,7 @@ function renderIngredientsMarkup(ingredients) {
 
         const title = typeof entry.title === 'string' ? entry.title.trim() : '';
         const items = Array.isArray(entry.items)
-          ? entry.items.filter((item) => typeof item === 'string' && item.trim())
+          ? entry.items.filter(isRenderable)
           : [];
 
         if (items.length === 0) {
@@ -106,7 +581,7 @@ function renderIngredientsMarkup(ingredients) {
           <section class="ingredient-group">
             ${title ? `<h3 class="ingredient-group-title">${title}</h3>` : ''}
             <ul class="ingredients-list">
-              ${items.map((item) => `<li>${item}</li>`).join('')}
+              ${items.map((item) => `<li>${renderIngredientLine(item)}</li>`).join('')}
             </ul>
           </section>
         `;
@@ -145,6 +620,19 @@ if (hamburgerMenu && mobileMenu) {
       hamburgerMenu.classList.remove('active');
       mobileMenu.classList.remove('active');
       hamburgerMenu.setAttribute('aria-expanded', 'false');
+    });
+  });
+}
+
+// Units system selector (US / Metric), present in the header on every page
+if (window.unitsService) {
+  const unitSelects = document.querySelectorAll('.unit-system-select');
+  const currentSystem = window.unitsService.getSystem();
+  unitSelects.forEach((select) => {
+    select.value = currentSystem;
+    select.addEventListener('change', () => {
+      window.unitsService.setSystem(select.value);
+      location.reload();
     });
   });
 }
@@ -315,6 +803,10 @@ if (pageType === 'about') {
   setSeo('About', 'This website was made for cooking quick and easy recipes with no fluff or distractions.');
 }
 
+if (pageType === 'flags') {
+  setSeo('Feature Flags', 'Turn experimental features on or off in this browser.');
+}
+
 const recipesEl = document.getElementById("recipes");
 const searchEl = document.getElementById("search");
 const detailedViewEl = document.getElementById("detailed-view");
@@ -349,7 +841,7 @@ if (newestEl) {
 
   newestEl.innerHTML = newest.map(r => `
     <a class="newest-card" href="recipe-detail.html?id=${r.id}">
-      <img src="${getRecipeImageUrl(r)}" alt="${r.title}" class="newest-card-image">
+      <img src="${getRecipeImageUrl(r)}" alt="${r.title}" class="newest-card-image" loading="lazy">
       <div class="newest-card-inner">
         <h3>${r.title}</h3>
         <p>${r.description}</p>
@@ -387,7 +879,7 @@ if (popularEl) {
     return `
     <a class="newest-card" href="recipe-detail.html?id=${r.id}">
       <div class="newest-card-image-wrapper">
-        <img src="${getRecipeImageUrl(r)}" alt="${r.title}" class="newest-card-image">
+        <img src="${getRecipeImageUrl(r)}" alt="${r.title}" class="newest-card-image" loading="lazy">
         ${badgeText ? `<span class="recipe-badge">${badgeText}</span>` : ''}
       </div>
       <div class="newest-card-inner">
@@ -456,7 +948,7 @@ if (pageType === 'list' && recipesEl && searchEl) {
       return `
         <a href="recipe-detail.html?id=${(r.id)}" class="card recipe-card">
           <div class="recipe-card-image-wrapper">
-            <img src="${imageUrl}" alt="${r.title}" class="recipe-card-image" />
+            <img src="${imageUrl}" alt="${r.title}" class="recipe-card-image" loading="lazy" />
           </div>
           <div class="recipe-card-content">
             <h3>${r.title}</h3>
@@ -511,7 +1003,7 @@ if (pageType === 'list' && recipesEl && searchEl) {
         <p class="cook-mode-status" id="cookModeStatus" aria-live="polite"></p>
         ${recipe.tags && Array.isArray(recipe.tags) && recipe.tags.length > 0 ? `<div class="recipe-tags">${recipe.tags.map(t => `<span class="tag">${t}</span>`).join('')}</div>` : ''}
         ${recipe.servings ? `<div class="recipe-servings"><strong>Servings:</strong> ${recipe.servings}</div>` : ''}
-        <div class="recipe-image-outer"><img src="${getRecipeImageUrl(recipe)}" alt="${recipe.title}" class="recipe-image" id="recipe-image-zoom" style="cursor: zoom-in;"></div>
+        <div class="recipe-image-outer"><img src="${getRecipeOriginalImageUrl(recipe)}" alt="${recipe.title}" class="recipe-image" id="recipe-image-zoom" style="cursor: zoom-in;"></div>
         <div class="recipe-content-wrapper">
           ${hasIngredients ? `
             <section class="recipe-section">
@@ -715,7 +1207,7 @@ if (pageType === 'detail' && detailedViewEl) {
         <p class="cook-mode-status" id="cookModeStatus" aria-live="polite"></p>
         ${recipe.tags && Array.isArray(recipe.tags) && recipe.tags.length > 0 ? `<div class="recipe-tags">${recipe.tags.map(t => `<span class="tag">${t}</span>`).join('')}</div>` : ''}
         ${recipe.servings ? `<div class="recipe-servings"><strong>Servings:</strong> ${recipe.servings}</div>` : ''}
-        <div class="recipe-image-outer"><img src="${getRecipeImageUrl(recipe)}" alt="${recipe.title}" class="recipe-image" id="recipe-image-zoom" style="cursor: zoom-in;"></div>
+        <div class="recipe-image-outer"><img src="${getRecipeOriginalImageUrl(recipe)}" alt="${recipe.title}" class="recipe-image" id="recipe-image-zoom" style="cursor: zoom-in;"></div>
         <div class="recipe-content-wrapper">
           ${hasIngredients ? `
             <section class="recipe-section">
@@ -827,6 +1319,69 @@ if (pageType === 'detail' && detailedViewEl) {
     } else {
       detailedViewEl.innerHTML = '<p>Recipe not found. <a href="recipes-list.html">Back to recipes</a></p>';
     }
+  }
+}
+
+// If we're on the nutrition info page, render the per-recipe ingredient
+// nutrition breakdown and disclaimer.
+if (pageType === 'nutrition-info' && detailedViewEl) {
+  const urlParams = new URLSearchParams(window.location.search);
+  const recipeId = urlParams.get('id');
+  const recipe = recipes.find(r => (r.id) === recipeId);
+
+  if (recipe) {
+    setSeo(`Nutrition Info: ${recipe.title}`, 'Ingredient nutrition data, sources, and disclaimer for this recipe.');
+    detailedViewEl.innerHTML = renderNutritionInfoSection(recipe);
+
+    const toggleBtn = document.getElementById('toggleAllIngredientsBtn');
+    const recipeTable = document.getElementById('recipeIngredientsTable');
+    const allTable = document.getElementById('allIngredientsTable');
+    if (toggleBtn && recipeTable && allTable) {
+      toggleBtn.addEventListener('click', () => {
+        const showingAll = !allTable.hidden;
+        allTable.hidden = showingAll;
+        recipeTable.hidden = !showingAll;
+        toggleBtn.textContent = showingAll ? 'Show All Ingredients' : "Show This Recipe's Ingredients";
+      });
+    }
+
+    // Wire sortable column headers: clicking Ingredient or Source th sorts
+    // the tbody rows alphabetically; clicking again reverses the order.
+    // Excluded rows (colspan note rows) stay at the bottom.
+    function wireSortableTable(tableEl) {
+      if (!tableEl) return;
+      const table = tableEl.querySelector('table');
+      if (!table) return;
+      table.querySelectorAll('th.th-sortable').forEach((th) => {
+        const colIndex = parseInt(th.dataset.col, 10);
+        let ascending = true;
+        th.setAttribute('aria-sort', 'none');
+        th.addEventListener('click', () => {
+          const tbody = table.querySelector('tbody');
+          const rows = Array.from(tbody.querySelectorAll('tr'));
+          const excluded = rows.filter((r) => r.classList.contains('nutrition-info-row-excluded'));
+          const sortable = rows.filter((r) => !r.classList.contains('nutrition-info-row-excluded'));
+
+          sortable.sort((a, b) => {
+            const aText = (a.cells[colIndex]?.textContent || '').trim().toLowerCase();
+            const bText = (b.cells[colIndex]?.textContent || '').trim().toLowerCase();
+            return ascending ? aText.localeCompare(bText) : bText.localeCompare(aText);
+          });
+
+          // Reset all sort indicators on this table's headers
+          table.querySelectorAll('th.th-sortable').forEach((h) => h.setAttribute('aria-sort', 'none'));
+          th.setAttribute('aria-sort', ascending ? 'ascending' : 'descending');
+          ascending = !ascending;
+
+          tbody.replaceChildren(...sortable, ...excluded);
+        });
+      });
+    }
+
+    wireSortableTable(document.getElementById('recipeIngredientsTable'));
+    wireSortableTable(document.getElementById('allIngredientsTable'));
+  } else {
+    detailedViewEl.innerHTML = '<p>Recipe not found. <a href="recipes-list.html">Back to recipes</a></p>';
   }
 }
 

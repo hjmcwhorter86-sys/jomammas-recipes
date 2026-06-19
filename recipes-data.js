@@ -1,4 +1,33 @@
-﻿window.recipes = [
+﻿// Structured ingredient shape used throughout this file. Each ingredient
+// in `ingredients` (or `items` within a `{title, items}` section) is an
+// object with these fields:
+//
+//   qty:      number | null  - quantity (null = non-quantifiable, e.g.
+//                               "salt and pepper to taste")
+//   qtyMax:   number | null  - set only for ranges, e.g. "½–¾ cup" =>
+//                               qty: 0.5, qtyMax: 0.75
+//   unit:     string | null  - canonical singular unit matching
+//                               data/units.js (or null for count items
+//                               like "2 eggs")
+//   name:     string         - ingredient name/description, used for
+//                               nutrition lookups
+//   notes:    string | null  - prep/description text with NO surrounding
+//                               punctuation; the renderer always wraps it
+//                               as " (notes)"
+//   approx:   boolean        - true prepends "~" to the displayed quantity
+//   optional: boolean        - metadata only; "Optional:"/"(optional)"
+//                               wording stays in name/notes as written
+//   altQty/altUnit/altName:   only for genuine alternatives with their own
+//                               measured quantity, e.g.
+//                               "4½ oz parmesan (or 3 oz mozzarella)"
+//   display:  string | null  - escape hatch: if set, render verbatim and
+//                               ignore the fields above for display
+//
+// Quantities are stored as decimals and normalized to unicode fractions
+// for display (e.g. 1.25 -> "1¼", 0.333 -> "⅓") via formatQuantityDisplay
+// in app.js. Units are pluralized for display based on data/units.js.
+
+window.recipes = [
   {
   id: "cornflake-chicken-tenders",
   title: "Bang Bang Cornflake Chicken Tenders",
@@ -15,21 +44,21 @@
   tags: ["air fryer", "chicken", "sweet heat", "family favorite"],
 
   ingredients: [
-    "600 g chicken tenders (about 12)",
-    "2 eggs",
-    "60 g flour",
-    "100 g cornflakes, crushed",
-    "2 tsp garlic powder",
-    "2 tsp onion powder",
-    "Salt and pepper, to taste",
-    "Cooking oil spray (~20 sprays)",
+    { qty: 600, unit: "g", name: "chicken tenders", notes: "about 12" },
+    { qty: 2, unit: null, name: "eggs" },
+    { qty: 60, unit: "g", name: "flour" },
+    { qty: 100, unit: "g", name: "cornflakes", notes: "crushed" },
+    { qty: 2, unit: "tsp", name: "garlic powder" },
+    { qty: 2, unit: "tsp", name: "onion powder" },
+    { qty: null, unit: null, name: "Salt and pepper, to taste" },
+    { qty: null, unit: null, name: "Cooking oil spray", notes: "~20 sprays" },
 
-    "200 g 0% fat Greek yogurt",
-    "60 g sweet chili sauce",
-    "2 tsp sriracha (or to taste)",
-    "40 g honey",
+    { qty: 200, unit: "g", name: "0% fat Greek yogurt" },
+    { qty: 60, unit: "g", name: "sweet chili sauce" },
+    { qty: 2, unit: "tsp", name: "sriracha", notes: "or to taste" },
+    { qty: 40, unit: "g", name: "honey" },
 
-    "Optional: extra sweet chili sauce for brushing (about 5 g per tender)"
+    { qty: null, unit: null, name: "Optional: extra sweet chili sauce for brushing", notes: "about 5 g per tender", optional: true }
   ],
 
   steps: [
@@ -65,24 +94,24 @@
   tags: ["pasta", "high protein", "family dinner", "comfort food"],
 
   ingredients: [
-    "2 lbs thin-sliced boneless skinless chicken breast",
-    "1¼ tsp kosher salt",
-    "¾ tsp black pepper",
-    "¾ tsp garlic powder",
-    "¾ tsp paprika",
-    "1½ tsp light butter or light margarine (Smart Balance)",
+    { qty: 2, unit: "lb", name: "thin-sliced boneless skinless chicken breast" },
+    { qty: 1.25, unit: "tsp", name: "kosher salt" },
+    { qty: 0.75, unit: "tsp", name: "black pepper" },
+    { qty: 0.75, unit: "tsp", name: "garlic powder" },
+    { qty: 0.75, unit: "tsp", name: "paprika" },
+    { qty: 1.5, unit: "tsp", name: "light butter", notes: "or light margarine, Smart Balance" },
 
-    "12 oz protein pasta (Barilla Protein+, Goodles, etc.)",
+    { qty: 12, unit: "oz", name: "protein pasta", notes: "Barilla Protein+, Goodles, etc." },
 
-    "2 cups 1% milk",
-    "1¼ tsp sodium citrate",
-    "3 tbsp light butter or margarine",
-    "4½ oz reduced-fat parmesan, finely grated (or 3 oz parm + 1½ oz reduced-fat mozzarella)",
-    "3 cloves garlic, minced",
-    "Black pepper, to taste",
-    "Optional: tiny pinch nutmeg",
+    { qty: 2, unit: "cup", name: "1% milk" },
+    { qty: 1.25, unit: "tsp", name: "sodium citrate" },
+    { qty: 3, unit: "tbsp", name: "light butter", notes: "or margarine" },
+    { qty: 4.5, unit: "oz", name: "reduced-fat parmesan", notes: "finely grated", display: "4½ oz reduced-fat parmesan, finely grated (or 3 oz parm + 1½ oz reduced-fat mozzarella)" },
+    { qty: 3, unit: "clove", name: "garlic", notes: "minced" },
+    { qty: null, unit: null, name: "Black pepper, to taste" },
+    { qty: null, unit: null, name: "Optional: tiny pinch nutmeg", optional: true },
 
-    "Optional add-ins: broccoli, peas, spinach, or roasted Brussels sprouts"
+    { qty: null, unit: null, name: "Optional add-ins: broccoli, peas, spinach, or roasted Brussels sprouts", optional: true }
   ],
 
   steps: [
@@ -118,18 +147,18 @@
   tags: ["queso", "dip", "cheese", "party"],
 
   ingredients: [
-    "1 cup skim milk",
-    "¼ cup half-and-half",
-    "1 tbsp light margarine (Smart Balance)",
-    "1 tsp sodium citrate",
-    "8 oz pepper jack cheese, freshly shredded",
-    "2–3 tbsp diced pickled jalapeños (to taste)",
-    "Black pepper, to taste",
+    { qty: 1, unit: "cup", name: "skim milk" },
+    { qty: 0.25, unit: "cup", name: "half-and-half" },
+    { qty: 1, unit: "tbsp", name: "light margarine", notes: "Smart Balance" },
+    { qty: 1, unit: "tsp", name: "sodium citrate" },
+    { qty: 8, unit: "oz", name: "pepper jack cheese", notes: "freshly shredded" },
+    { qty: 2, qtyMax: 3, unit: "tbsp", name: "diced pickled jalapeños", notes: "to taste" },
+    { qty: null, unit: null, name: "Black pepper, to taste" },
 
-    "Pinch dark Mexican chili powder",
-    "Pinch ancho chili powder",
-    "Pinch cayenne pepper",
-    "Small pinch salt (optional; adjust to taste)"
+    { qty: null, unit: null, name: "Pinch dark Mexican chili powder" },
+    { qty: null, unit: null, name: "Pinch ancho chili powder" },
+    { qty: null, unit: null, name: "Pinch cayenne pepper" },
+    { qty: null, unit: null, name: "Small pinch salt", notes: "optional; adjust to taste", optional: true }
   ],
 
   steps: [
@@ -161,11 +190,11 @@
   fat: null,
   fiber: null,
   ingredients: [
-  "1 cup low-fat cottage cheese",
-  "1 cup plain nonfat Greek yogurt",
-  "1 box sugar-free cheesecake or vanilla pudding mix",
-  "1 scoop vanilla protein powder",
-  "1–2 tbsp Jordan’s Skinny Syrup Vanilla or Vanilla Caramel. You can also use a sugar-free sweetener of your choice.",
+  { qty: 1, unit: "cup", name: "low-fat cottage cheese" },
+  { qty: 1, unit: "cup", name: "plain nonfat Greek yogurt" },
+  { qty: 1, unit: null, name: "box sugar-free cheesecake or vanilla pudding mix" },
+  { qty: 1, unit: null, name: "scoop vanilla protein powder" },
+  { qty: 1, qtyMax: 2, unit: "tbsp", name: "Jordan's Skinny Syrup Vanilla or Vanilla Caramel", notes: "you can also use a sugar-free sweetener of your choice" },
 ],
 steps: [
   "Blend cottage cheese until completely smooth.",
@@ -196,20 +225,20 @@ tags: ["dessert", "high protein"]
   tags: ["beef", "skillet", "comfort food", "weeknight"],
 
   ingredients: [
-    "1 lb lean ground beef",
-    "1/3 cup seasoned bread crumbs",
-    "2 tsp ketchup",
-    "1 tsp mustard",
-    "1 tsp Worcestershire sauce",
-    "1/2 tsp garlic powder",
-    "1/2 tsp onion powder",
-    "Salt and pepper, to taste",
-    "1 tbsp olive oil",
+    { qty: 1, unit: "lb", name: "lean ground beef" },
+    { qty: 1/3, unit: "cup", name: "seasoned bread crumbs" },
+    { qty: 2, unit: "tsp", name: "ketchup" },
+    { qty: 1, unit: "tsp", name: "mustard" },
+    { qty: 1, unit: "tsp", name: "Worcestershire sauce" },
+    { qty: 0.5, unit: "tsp", name: "garlic powder" },
+    { qty: 0.5, unit: "tsp", name: "onion powder" },
+    { qty: null, unit: null, name: "Salt and pepper, to taste" },
+    { qty: 1, unit: "tbsp", name: "olive oil" },
 
-    "2 packets brown gravy mix",
-    "2 cups hot water",
-    "1 tsp ketchup (for gravy)",
-    "1/2 tsp Worcestershire sauce (for gravy)"
+    { qty: 2, unit: null, name: "packets brown gravy mix" },
+    { qty: 2, unit: "cup", name: "hot water" },
+    { qty: 1, unit: "tsp", name: "ketchup", notes: "for gravy" },
+    { qty: 0.5, unit: "tsp", name: "Worcestershire sauce", notes: "for gravy" }
   ],
 
   steps: [
@@ -243,15 +272,15 @@ tags: ["dessert", "high protein"]
   tags: ["seafood", "soup", "easy", "weeknight", "comfort food"],
 
   ingredients: [
-    "2 cups half & half or milk",
-    "1 cup water",
-    "2 Tbsp dry white wine",
-    "1½ Tbsp Better Than Bouillon Seasoned Lobster Base",
-    "3 Tbsp flour",
-    "2 Tbsp tomato paste",
-    "¼ tsp paprika",
-    "½ cup minced lobster meat or langoustine tail meat",
-    "Fresh herbs (parsley or chives)"
+    { qty: 2, unit: "cup", name: "half & half", notes: "or milk" },
+    { qty: 1, unit: "cup", name: "water" },
+    { qty: 2, unit: "tbsp", name: "dry white wine" },
+    { qty: 1.5, unit: "tbsp", name: "Better Than Bouillon Seasoned Lobster Base" },
+    { qty: 3, unit: "tbsp", name: "flour" },
+    { qty: 2, unit: "tbsp", name: "tomato paste" },
+    { qty: 0.25, unit: "tsp", name: "paprika" },
+    { qty: 0.5, unit: "cup", name: "minced lobster meat", notes: "or langoustine tail meat" },
+    { qty: null, unit: null, name: "Fresh herbs", notes: "parsley or chives" }
   ],
 
   steps: [
@@ -282,19 +311,19 @@ tags: ["dessert", "high protein"]
   protein: "~38g",
 
   ingredients: [
-    "1.5 lbs boneless skinless chicken breast, cut into 1-inch cubes",
-    "2 tbsp cornstarch",
-    "1 tbsp flour (optional, for extra crispness)",
-    "1 tsp kosher salt",
-    "1/2 tsp garlic powder",
-    "1–2 tsp avocado oil (or light spray)",
-    "1/2–2/3 cup Iron Kitchen General Tso’s sauce (enough to coat without drowning)",
+    { qty: 1.5, unit: "lb", name: "boneless skinless chicken breast", notes: "cut into 1-inch cubes" },
+    { qty: 2, unit: "tbsp", name: "cornstarch" },
+    { qty: 1, unit: "tbsp", name: "flour", notes: "optional, for extra crispness", optional: true },
+    { qty: 1, unit: "tsp", name: "kosher salt" },
+    { qty: 0.5, unit: "tsp", name: "garlic powder" },
+    { qty: 1, qtyMax: 2, unit: "tsp", name: "avocado oil", notes: "or light spray" },
+    { qty: 0.5, qtyMax: 2/3, unit: "cup", name: "Iron Kitchen General Tso's sauce", notes: "enough to coat without drowning" },
 
-    "Optional: steamed broccoli florets",
-    "Optional: bell pepper strips",
-    "Optional: snow peas or snap peas",
-    "Optional for serving: brown rice",
-    "Optional garnish: sesame seeds, sliced green onions"
+    { qty: null, unit: null, name: "Optional: steamed broccoli florets", optional: true },
+    { qty: null, unit: null, name: "Optional: bell pepper strips", optional: true },
+    { qty: null, unit: null, name: "Optional: snow peas or snap peas", optional: true },
+    { qty: null, unit: null, name: "Optional for serving: brown rice", optional: true },
+    { qty: null, unit: null, name: "Optional garnish: sesame seeds, sliced green onions", optional: true }
   ],
 
   steps: [
@@ -330,17 +359,17 @@ tags: ["dessert", "high protein"]
   protein: "~49g per serving",
 
   ingredients: [
-    "1.25–1.5 lbs thin-sliced boneless skinless chicken breast",
-    "1/2 cup Italian-style breadcrumbs (or panko + Italian seasoning)",
-    "1/4 cup grated parmesan",
-    "1 tsp garlic powder",
-    "1/2 tsp onion powder",
-    "Salt & pepper, to taste",
-    "2 eggs, whisked",
-    "Cooking spray",
-    "~1 cup marinara (Rao’s or whatever red sauce speaks to your soul)",
-    "3/4–1 cup reduced-fat shredded mozzarella",
-    "Extra parmesan for sprinkling",
+    { qty: 1.25, qtyMax: 1.5, unit: "lb", name: "thin-sliced boneless skinless chicken breast" },
+    { qty: 0.5, unit: "cup", name: "Italian-style breadcrumbs", notes: "or panko + Italian seasoning" },
+    { qty: 0.25, unit: "cup", name: "grated parmesan" },
+    { qty: 1, unit: "tsp", name: "garlic powder" },
+    { qty: 0.5, unit: "tsp", name: "onion powder" },
+    { qty: null, unit: null, name: "Salt & pepper, to taste" },
+    { qty: 2, unit: null, name: "eggs", notes: "whisked" },
+    { qty: null, unit: null, name: "Cooking spray" },
+    { qty: 1, unit: "cup", name: "marinara", notes: "Rao's or whatever red sauce speaks to your soul", approx: true },
+    { qty: 0.75, qtyMax: 1, unit: "cup", name: "reduced-fat shredded mozzarella" },
+    { qty: null, unit: null, name: "Extra parmesan for sprinkling" },
   ],
 
   steps: [
@@ -373,16 +402,16 @@ tags: ["dessert", "high protein"]
   protein: "~52g per serving",
 
   ingredients: [
-    "3 tbsp unsalted butter, melted (plus more for greasing the pan)",
-    "4 cups shredded rotisserie chicken",
-    "8 oz cream cheese, at room temperature",
-    "2 cups shredded cheddar",
-    "1 cup Buffalo-style hot sauce (plus more for serving)",
-    "1 bunch scallions, thinly sliced (white and green parts separated)",
-    "1/4 tsp ground cumin",
-    "10 corn or flour tortillas",
-    "2 tbsp crumbled blue cheese",
-    "2 tbsp ranch or blue cheese dressing"
+    { qty: 3, unit: "tbsp", name: "unsalted butter", notes: "melted, plus more for greasing the pan" },
+    { qty: 4, unit: "cup", name: "shredded rotisserie chicken" },
+    { qty: 8, unit: "oz", name: "cream cheese", notes: "at room temperature" },
+    { qty: 2, unit: "cup", name: "shredded cheddar" },
+    { qty: 1, unit: "cup", name: "Buffalo-style hot sauce", notes: "plus more for serving" },
+    { qty: 1, unit: "bunch", name: "scallions", notes: "thinly sliced, white and green parts separated" },
+    { qty: 0.25, unit: "tsp", name: "ground cumin" },
+    { qty: 10, unit: null, name: "corn or flour tortillas" },
+    { qty: 2, unit: "tbsp", name: "crumbled blue cheese" },
+    { qty: 2, unit: "tbsp", name: "ranch or blue cheese dressing" }
   ],
 
   steps: [
@@ -419,25 +448,25 @@ tags: ["dessert", "high protein"]
   protein: "~68g per fuly loaded potato",
 
   ingredients: [
-    "4 large russet potatoes (jumbo if you’re going full steakhouse mode)",
-    "1–2 tbsp olive oil",
-    "1–1½ tsp kosher salt (for skin)",
-    "Optional: freshly cracked black pepper",
+    { qty: 4, unit: null, name: "large russet potatoes", notes: "jumbo if you're going full steakhouse mode" },
+    { qty: 1, qtyMax: 2, unit: "tbsp", name: "olive oil" },
+    { qty: 1, qtyMax: 1.5, unit: "tsp", name: "kosher salt", notes: "for skin" },
+    { qty: null, unit: null, name: "Optional: freshly cracked black pepper", optional: true },
 
-    "1½–2 lbs boneless skinless chicken breasts",
-    "1 tsp kosher salt",
-    "½ tsp black pepper",
-    "1 tsp garlic powder",
-    "1 tsp smoked paprika",
-    "¾–1 cup Sweet Baby Ray’s Sugar-Free BBQ Sauce (to taste)",
+    { qty: 1.5, qtyMax: 2, unit: "lb", name: "boneless skinless chicken breasts" },
+    { qty: 1, unit: "tsp", name: "kosher salt" },
+    { qty: 0.5, unit: "tsp", name: "black pepper" },
+    { qty: 1, unit: "tsp", name: "garlic powder" },
+    { qty: 1, unit: "tsp", name: "smoked paprika" },
+    { qty: 0.75, qtyMax: 1, unit: "cup", name: "Sweet Baby Ray's Sugar-Free BBQ Sauce", notes: "to taste" },
 
-    "Butter or light spread",
-    "Light sour cream or plain Greek yogurt",
-    "Reduced-fat shredded cheese",
-    "Crispy bacon pieces",
-    "Fresh chives, sliced",
-    "Extra salt & pepper",
-    "Hot sauce"
+    { qty: null, unit: null, name: "Butter or light spread" },
+    { qty: null, unit: null, name: "Light sour cream or plain Greek yogurt" },
+    { qty: null, unit: null, name: "Reduced-fat shredded cheese" },
+    { qty: null, unit: null, name: "Crispy bacon pieces" },
+    { qty: null, unit: null, name: "Fresh chives", notes: "sliced" },
+    { qty: null, unit: null, name: "Extra salt & pepper" },
+    { qty: null, unit: null, name: "Hot sauce" }
   ],
 
   steps: [
@@ -478,20 +507,20 @@ tags: ["dessert", "high protein"]
   protein: "~44g per serving",
 
   ingredients: [
-    "4 boneless, skinless chicken breasts",
-    "2 teaspoons olive oil",
-    "1 shallot, finely diced",
-    "3 cloves garlic, minced",
-    "2 cups fresh spinach",
-    "1/4 cup sun-dried tomatoes, chopped (or <a href=\"recipe-detail.html?id=oven-blistered-cherry-tomatoes\">oven blistered tomatoes</a>)",
-    "1/2 cup reduced-sodium chicken broth",
-    "1/2 cup white cooking wine",
-    "3 oz reduced-fat cream cheese",
-    "1/4 cup freshly grated Parmesan",
-    "1 teaspoon Italian seasoning, divided",
-    "1/2 teaspoon garlic powder",
-    "1/4 teaspoon red pepper flakes (optional)",
-    "Salt and pepper, to taste"
+    { qty: 4, unit: null, name: "boneless, skinless chicken breasts" },
+    { qty: 2, unit: "tsp", name: "olive oil" },
+    { qty: 1, unit: null, name: "shallot", notes: "finely diced" },
+    { qty: 3, unit: "clove", name: "garlic", notes: "minced" },
+    { qty: 2, unit: "cup", name: "fresh spinach" },
+    { qty: 0.25, unit: "cup", name: "sun-dried tomatoes", notes: "chopped", display: "1/4 cup sun-dried tomatoes, chopped (or <a href=\"recipe-detail.html?id=oven-blistered-cherry-tomatoes\">oven blistered tomatoes</a>)" },
+    { qty: 0.5, unit: "cup", name: "reduced-sodium chicken broth" },
+    { qty: 0.5, unit: "cup", name: "white cooking wine" },
+    { qty: 3, unit: "oz", name: "reduced-fat cream cheese" },
+    { qty: 0.25, unit: "cup", name: "freshly grated Parmesan" },
+    { qty: 1, unit: "tsp", name: "Italian seasoning", notes: "divided" },
+    { qty: 0.5, unit: "tsp", name: "garlic powder" },
+    { qty: 0.25, unit: "tsp", name: "red pepper flakes", notes: "optional", optional: true },
+    { qty: null, unit: null, name: "Salt and pepper, to taste" }
   ],
 
   steps: [
@@ -525,20 +554,20 @@ tags: ["dessert", "high protein"]
   protein: "~45g per serving",
 
   ingredients: [
-    "1 box protein pasta, I use spaghetti (14–15 oz)",
-    "1 bag frozen stir-fry vegetables (12–16 oz)",
-    "1½–2 lbs <a href=\"recipe-detail.html?id=seared-chicken-pieces\">chicken breast, cooked & sliced</a>",
-    "2 tsp avocado oil or light butter",
-    "3–4 cloves garlic, minced",
-    "Optional: 1 tsp grated ginger",
-    "⅓ cup low-sodium soy sauce",
-    "3 tbsp oyster sauce",
-    "2–3 tbsp hoisin sauce",
-    "1½ tbsp sesame oil",
-    "1½ tbsp cornstarch",
-    "1 cup chicken broth (or half broth, half reserved pasta water)",
-    "A splash of rice vinegar",
-    "A drizzle of Sriracha (optional)"
+    { qty: 1, unit: null, name: "box protein pasta, I use spaghetti", notes: "14–15 oz" },
+    { qty: 1, unit: null, name: "bag frozen stir-fry vegetables", notes: "12–16 oz" },
+    { qty: 1.5, qtyMax: 2, unit: "lb", name: "chicken breast, cooked & sliced", display: "1½–2 lbs <a href=\"recipe-detail.html?id=seared-chicken-pieces\">chicken breast, cooked & sliced</a>" },
+    { qty: 2, unit: "tsp", name: "avocado oil", notes: "or light butter" },
+    { qty: 3, qtyMax: 4, unit: "clove", name: "garlic", notes: "minced" },
+    { qty: 1, unit: "tsp", name: "grated ginger", optional: true, display: "Optional: 1 tsp grated ginger" },
+    { qty: 1/3, unit: "cup", name: "low-sodium soy sauce" },
+    { qty: 3, unit: "tbsp", name: "oyster sauce" },
+    { qty: 2, qtyMax: 3, unit: "tbsp", name: "hoisin sauce" },
+    { qty: 1.5, unit: "tbsp", name: "sesame oil" },
+    { qty: 1.5, unit: "tbsp", name: "cornstarch" },
+    { qty: 1, unit: "cup", name: "chicken broth", notes: "or half broth, half reserved pasta water" },
+    { qty: null, unit: null, name: "A splash of rice vinegar" },
+    { qty: null, unit: null, name: "A drizzle of Sriracha", notes: "optional", optional: true }
   ],
 
   steps: [
@@ -569,16 +598,16 @@ tags: ["dessert", "high protein"]
   protein: "~38g per serving",
 
   ingredients: [
-    "12 oz Barilla Protein Plus elbow macaroni or penne pasta",
-    "16 oz full-fat cottage cheese",
-    "1/2 cup buffalo sauce",
-    "2 cups shredded cooked chicken",
-    "1/4 cup milk",
-    "2 tbsp ranch seasoning",
-    "1 cup shredded cheddar cheese",
-    "1 cup shredded mozzarella cheese",
-    "1 tbsp butter, melted (or light margarine)",
-    "1/3 cup panko breadcrumbs"
+    { qty: 12, unit: "oz", name: "Barilla Protein Plus elbow macaroni or penne pasta" },
+    { qty: 16, unit: "oz", name: "full-fat cottage cheese" },
+    { qty: 0.5, unit: "cup", name: "buffalo sauce" },
+    { qty: 2, unit: "cup", name: "shredded cooked chicken" },
+    { qty: 0.25, unit: "cup", name: "milk" },
+    { qty: 2, unit: "tbsp", name: "ranch seasoning" },
+    { qty: 1, unit: "cup", name: "shredded cheddar cheese" },
+    { qty: 1, unit: "cup", name: "shredded mozzarella cheese" },
+    { qty: 1, unit: "tbsp", name: "butter", notes: "melted, or light margarine" },
+    { qty: 1/3, unit: "cup", name: "panko breadcrumbs" }
   ],
 
   steps: [
@@ -610,12 +639,12 @@ tags: ["dessert", "high protein"]
   protein: "~8g per serving",
 
   ingredients: [
-    "3 cans refrigerated buttermilk biscuits (regular, not flaky layers)",
-    "1 cup granulated sugar",
-    "2 tsp cinnamon",
-    "½ cup butter (1 stick)",
-    "¾ cup brown sugar",
-    "Optional: ½–1 cup chopped pecans or walnuts"
+    { qty: 3, unit: "can", name: "refrigerated buttermilk biscuits", notes: "regular, not flaky layers" },
+    { qty: 1, unit: "cup", name: "granulated sugar" },
+    { qty: 2, unit: "tsp", name: "cinnamon" },
+    { qty: 0.5, unit: "cup", name: "butter", notes: "1 stick" },
+    { qty: 0.75, unit: "cup", name: "brown sugar" },
+    { qty: 0.5, qtyMax: 1, unit: "cup", name: "chopped pecans or walnuts", optional: true, display: "Optional: ½–1 cup chopped pecans or walnuts" }
   ],
 
   steps: [
@@ -645,13 +674,13 @@ tags: ["dessert", "high protein"]
   tags: ["high protein", "low calorie", "chicken", "how to", "Kitchen Basics"],
 
   ingredients: [
-    "1 pound of boneless, skinless chicken breasts",
-    "1/2 teaspoon kosher salt",
-    "1/4 teaspoon black pepper, or to taste",
-    "1/4 teaspoon onion powder",
-    "1/4 teaspoon garlic powder",
-    "1/4 teaspoon smoked paprika",
-    "1 or 2 tablespoons avocado oil or oil of your choice"
+    { qty: 1, unit: "lb", name: "boneless, skinless chicken breasts" },
+    { qty: 0.5, unit: "tsp", name: "kosher salt" },
+    { qty: 0.25, unit: "tsp", name: "black pepper", notes: "or to taste" },
+    { qty: 0.25, unit: "tsp", name: "onion powder" },
+    { qty: 0.25, unit: "tsp", name: "garlic powder" },
+    { qty: 0.25, unit: "tsp", name: "smoked paprika" },
+    { qty: 1, qtyMax: 2, unit: "tbsp", name: "avocado oil", notes: "or oil of your choice" }
   ],
 
   steps: [
@@ -680,12 +709,12 @@ tags: ["dessert", "high protein"]
   tags: ["low calorie", "vegetables", "sides", "how to", "Kitchen Basics"],
 
   ingredients: [
-    "1–2 cups cherry or grape tomatoes (whole)",
-    "1–2 teaspoons olive oil (just enough to coat)",
-    "¼ teaspoon kosher salt",
-    "Fresh cracked black pepper",
-    "Optional flavor boosters (pick one or mix lightly): pinch garlic powder, tiny pinch Italian seasoning, pinch crushed red pepper flakes",
-    "Optional finish: splash of balsamic or squeeze of lemon"
+    { qty: 1, qtyMax: 2, unit: "cup", name: "cherry or grape tomatoes", notes: "whole" },
+    { qty: 1, qtyMax: 2, unit: "tsp", name: "olive oil", notes: "just enough to coat" },
+    { qty: 0.25, unit: "tsp", name: "kosher salt" },
+    { qty: null, unit: null, name: "Fresh cracked black pepper" },
+    { qty: null, unit: null, name: "Optional flavor boosters (pick one or mix lightly): pinch garlic powder, tiny pinch Italian seasoning, pinch crushed red pepper flakes", optional: true },
+    { qty: null, unit: null, name: "Optional finish: splash of balsamic or squeeze of lemon", optional: true }
   ],
 
   steps: [
@@ -712,13 +741,13 @@ tags: ["dessert", "high protein"]
   tags: ["chocolate", "dessert", "brownies"],
 
   ingredients: [
-    "2 cups granulated sugar",
-    "4 eggs, room temperature",
-    "1 cup salted butter, melted and slightly cooled",
-    "½ tsp vanilla extract",
-    "⅔ cup cocoa powder",
-    "¾ cup all-purpose flour",
-    "¼ tsp salt"
+    { qty: 2, unit: "cup", name: "granulated sugar" },
+    { qty: 4, unit: null, name: "eggs", notes: "room temperature" },
+    { qty: 1, unit: "cup", name: "salted butter", notes: "melted and slightly cooled" },
+    { qty: 0.5, unit: "tsp", name: "vanilla extract" },
+    { qty: 2/3, unit: "cup", name: "cocoa powder" },
+    { qty: 0.75, unit: "cup", name: "all-purpose flour" },
+    { qty: 0.25, unit: "tsp", name: "salt" }
   ],
 
   steps: [
@@ -748,23 +777,23 @@ tags: ["dessert", "high protein"]
   tags: ["chicken", "slow cooker", "easy"],
 
   ingredients: [
-    "1.5–2 lbs boneless skinless chicken thighs",
-    "1 small yellow onion, finely diced",
-    "3 cloves garlic, minced",
-    "1 tbsp fresh grated ginger (or 1/2 tsp ground ginger)",
-    "1 (15 oz) can tomato sauce",
-    "1 (6 oz) can tomato paste",
-    "1 cup chicken broth",
-    "1 tbsp garam masala",
-    "1 tsp curry powder",
-    "1 tsp smoked paprika",
-    "1/2–1 tsp chili powder (adjust heat)",
-    "1 tsp kosher salt",
-    "1/2 tsp black pepper",
-    "1 tbsp butter",
-    "1/2–3/4 cup heavy cream, OR 1/2 cup half-and-half + 2 tbsp Greek yogurt",
-    "Optional: 1/2 tsp sugar (only if sauce tastes too acidic)",
-    "Optional garnish: fresh cilantro"
+    { qty: 1.5, qtyMax: 2, unit: "lb", name: "boneless skinless chicken thighs" },
+    { qty: 1, unit: null, name: "small yellow onion", notes: "finely diced" },
+    { qty: 3, unit: "clove", name: "garlic", notes: "minced" },
+    { qty: 1, unit: "tbsp", name: "fresh grated ginger", notes: "or 1/2 tsp ground ginger" },
+    { qty: 15, unit: "oz", name: "tomato sauce", notes: "1 can", display: "1 (15 oz) can tomato sauce" },
+    { qty: 6, unit: "oz", name: "tomato paste", notes: "1 can", display: "1 (6 oz) can tomato paste" },
+    { qty: 1, unit: "cup", name: "chicken broth" },
+    { qty: 1, unit: "tbsp", name: "garam masala" },
+    { qty: 1, unit: "tsp", name: "curry powder" },
+    { qty: 1, unit: "tsp", name: "smoked paprika" },
+    { qty: 0.5, qtyMax: 1, unit: "tsp", name: "chili powder", notes: "adjust heat" },
+    { qty: 1, unit: "tsp", name: "kosher salt" },
+    { qty: 0.5, unit: "tsp", name: "black pepper" },
+    { qty: 1, unit: "tbsp", name: "butter" },
+    { qty: 0.5, qtyMax: 0.75, unit: "cup", name: "heavy cream", notes: "OR 1/2 cup half-and-half + 2 tbsp Greek yogurt", display: "1/2–3/4 cup heavy cream, OR 1/2 cup half-and-half + 2 tbsp Greek yogurt" },
+    { qty: 0.5, unit: "tsp", name: "sugar", notes: "only if sauce tastes too acidic", optional: true, display: "Optional: 1/2 tsp sugar (only if sauce tastes too acidic)" },
+    { qty: null, unit: null, name: "Optional garnish: fresh cilantro", optional: true }
   ],
 
   steps: [
@@ -800,12 +829,12 @@ tags: ["dessert", "high protein"]
   tags: ["turkey", "easy", "lean", "pasta"],
 
   ingredients: [
-    "1 box Barilla Protein Plus pasta",
-    "1 jar garlic vodka sauce",
-    "1 lb ground Italian-style turkey",
-    "1/4 cup half-and-half",
-    "Freshly grated Parmesan cheese, to taste",
-    "Optional garnish: chopped parsley"
+    { qty: 1, unit: null, name: "box Barilla Protein Plus pasta" },
+    { qty: 1, unit: null, name: "jar garlic vodka sauce" },
+    { qty: 1, unit: "lb", name: "ground Italian-style turkey" },
+    { qty: 0.25, unit: "cup", name: "half-and-half" },
+    { qty: null, unit: null, name: "Freshly grated Parmesan cheese, to taste" },
+    { qty: null, unit: null, name: "Optional garnish: chopped parsley", optional: true }
   ],
 
   steps: [
@@ -834,10 +863,10 @@ tags: ["dessert", "high protein"]
   tags: ["rice", "rice cooker", "side dishes"],
 
   ingredients: [
-    "2 cups dry basmati rice",
-    "3 cups water",
-    "1 tsp kosher salt",
-    "1 tsp butter or olive oil"
+    { qty: 2, unit: "cup", name: "dry basmati rice" },
+    { qty: 3, unit: "cup", name: "water" },
+    { qty: 1, unit: "tsp", name: "kosher salt" },
+    { qty: 1, unit: "tsp", name: "butter", notes: "or olive oil" }
   ],
 
   steps: [
@@ -865,26 +894,26 @@ tags: ["dessert", "high protein"]
   tags: ["soup", "protein", "ground beef"],
 
   ingredients: [
-    "1 pound 93-96% lean ground beef (or lean ground turkey)",
-    "1 tsp kosher salt",
-    "3/4 tsp black pepper",
-    "1 tsp smoked paprika",
-    "1 1/2 tsp garlic powder",
-    "1 tsp onion powder",
-    "1 1/2 medium yellow onions, diced",
-    "3 cloves garlic, minced",
-    "1 green bell pepper, finely diced",
-    "1 (29 oz) can tomato sauce",
-    "1 (28 oz) can diced tomatoes, undrained",
-    "3 tbsp tomato paste",
-    "4 cups beef broth",
-    "1 tbsp Worcestershire sauce",
-    "1 tsp Italian seasoning",
-    "1/2 tsp crushed red pepper flakes (or to taste)",
-    "Optional: a few dashes hot sauce",
-    "9 oz protein pasta (Barilla Protein+ elbows or rotini)",
-    "1 tsp red wine vinegar",
-    "Optional garnish: chopped parsley or reduced-fat cheese"
+    { qty: 1, unit: "lb", name: "93-96% lean ground beef", notes: "or lean ground turkey" },
+    { qty: 1, unit: "tsp", name: "kosher salt" },
+    { qty: 0.75, unit: "tsp", name: "black pepper" },
+    { qty: 1, unit: "tsp", name: "smoked paprika" },
+    { qty: 1.5, unit: "tsp", name: "garlic powder" },
+    { qty: 1, unit: "tsp", name: "onion powder" },
+    { qty: 1.5, unit: null, name: "medium yellow onions", notes: "diced" },
+    { qty: 3, unit: "clove", name: "garlic", notes: "minced" },
+    { qty: 1, unit: null, name: "green bell pepper", notes: "finely diced" },
+    { qty: 29, unit: "oz", name: "tomato sauce", notes: "1 can", display: "1 (29 oz) can tomato sauce" },
+    { qty: 28, unit: "oz", name: "diced tomatoes", notes: "1 can, undrained", display: "1 (28 oz) can diced tomatoes, undrained" },
+    { qty: 3, unit: "tbsp", name: "tomato paste" },
+    { qty: 4, unit: "cup", name: "beef broth" },
+    { qty: 1, unit: "tbsp", name: "Worcestershire sauce" },
+    { qty: 1, unit: "tsp", name: "Italian seasoning" },
+    { qty: 0.5, unit: "tsp", name: "crushed red pepper flakes", notes: "or to taste" },
+    { qty: null, unit: null, name: "Optional: a few dashes hot sauce", optional: true },
+    { qty: 9, unit: "oz", name: "protein pasta", notes: "Barilla Protein+ elbows or rotini" },
+    { qty: 1, unit: "tsp", name: "red wine vinegar" },
+    { qty: null, unit: null, name: "Optional garnish: chopped parsley or reduced-fat cheese", optional: true }
   ],
 
   steps: [
@@ -913,16 +942,16 @@ tags: ["dessert", "high protein"]
   tags: ["chicken", "protein", "easy", "weeknight"],
 
   ingredients: [
-    "2 lbs boneless skinless chicken thighs (about 8–10 thighs)",
-    "¼ cup Dijon mustard",
-    "3 tbsp honey",
-    "1½ tbsp olive oil",
-    "1 tbsp apple cider vinegar (or lemon juice)",
-    "1 tsp kosher salt",
-    "½ tsp black pepper",
-    "1 tsp smoked paprika",
-    "Optional: ½ tsp garlic powder",
-    "Optional: pinch dried thyme or rosemary"
+    { qty: 2, unit: "lb", name: "boneless skinless chicken thighs", notes: "about 8–10 thighs" },
+    { qty: 0.25, unit: "cup", name: "Dijon mustard" },
+    { qty: 3, unit: "tbsp", name: "honey" },
+    { qty: 1.5, unit: "tbsp", name: "olive oil" },
+    { qty: 1, unit: "tbsp", name: "apple cider vinegar", notes: "or lemon juice" },
+    { qty: 1, unit: "tsp", name: "kosher salt" },
+    { qty: 0.5, unit: "tsp", name: "black pepper" },
+    { qty: 1, unit: "tsp", name: "smoked paprika" },
+    { qty: 0.5, unit: "tsp", name: "garlic powder", optional: true, display: "Optional: ½ tsp garlic powder" },
+    { qty: null, unit: null, name: "Optional: pinch dried thyme or rosemary", optional: true }
   ],
 
   steps: [
@@ -949,13 +978,13 @@ tags: ["dessert", "high protein"]
   tags: ["chicken", "protein", "easy", "weeknight", "pizza", "fast"],
 
   ingredients: [
-    "1 Golden Home Ultra Thin Protein Pizza Crust",
-    "Sugar-free or low-sugar BBQ sauce (Ray's No Sugar Added works great)",
-    "Reduced-fat mozzarella cheese, shredded",
-    "Cooked chicken breast, diced or shredded",
-    "Pickled jalapeños, sliced (to taste)",
-    "Red onion, thinly sliced",
-    "Pineapple chunks (optional)"
+    { qty: 1, unit: null, name: "Golden Home Ultra Thin Protein Pizza Crust" },
+    { qty: null, unit: null, name: "Sugar-free or low-sugar BBQ sauce", notes: "Ray's No Sugar Added works great" },
+    { qty: null, unit: null, name: "Reduced-fat mozzarella cheese", notes: "shredded" },
+    { qty: null, unit: null, name: "Cooked chicken breast", notes: "diced or shredded" },
+    { qty: null, unit: null, name: "Pickled jalapeños", notes: "sliced, to taste" },
+    { qty: null, unit: null, name: "Red onion", notes: "thinly sliced" },
+    { qty: null, unit: null, name: "Pineapple chunks", notes: "optional", optional: true }
   ],
 
   steps: [
@@ -984,23 +1013,23 @@ tags: ["dessert", "high protein"]
   tags: ["pasta", "meatless", "easy", "weeknight", "spicy", "fast", "low calorie"],
 
   ingredients: [
-    "12 oz spaghetti or penne pasta (protein pasta works great)",
-    "3 tbsp olive oil",
-    "6 cloves garlic, thinly sliced",
-    "2–3 tsp crushed red pepper flakes (adjust to your heat tolerance)",
-    "1 tbsp Calabrian chili paste (optional)",
-    "1½ tbsp tomato paste",
-    "1 anchovy fillet or 1 tsp Worcestershire sauce",
-    "1 (28 oz) can crushed tomatoes",
-    "1 tsp kosher salt (start here)",
-    "½ tsp black pepper",
-    "1 parmesan rind",
-    "¼ tsp sugar (optional, only if tomatoes taste harsh)",
-    "½ cup reserved pasta water",
-    "2 tbsp fresh grated parmesan",
-    "1 tbsp butter or light butter (optional for richness)",
-    "Squeeze of lemon or splash of red wine vinegar",
-    "Fresh parsley or basil"
+    { qty: 12, unit: "oz", name: "spaghetti or penne pasta", notes: "protein pasta works great" },
+    { qty: 3, unit: "tbsp", name: "olive oil" },
+    { qty: 6, unit: "clove", name: "garlic", notes: "thinly sliced" },
+    { qty: 2, qtyMax: 3, unit: "tsp", name: "crushed red pepper flakes", notes: "adjust to your heat tolerance" },
+    { qty: 1, unit: "tbsp", name: "Calabrian chili paste", notes: "optional", optional: true },
+    { qty: 1.5, unit: "tbsp", name: "tomato paste" },
+    { qty: 1, unit: null, name: "anchovy fillet", notes: "or 1 tsp Worcestershire sauce" },
+    { qty: 28, unit: "oz", name: "crushed tomatoes", notes: "1 can", display: "1 (28 oz) can crushed tomatoes" },
+    { qty: 1, unit: "tsp", name: "kosher salt", notes: "start here" },
+    { qty: 0.5, unit: "tsp", name: "black pepper" },
+    { qty: 1, unit: null, name: "parmesan rind" },
+    { qty: 0.25, unit: "tsp", name: "sugar", notes: "optional, only if tomatoes taste harsh", optional: true },
+    { qty: 0.5, unit: "cup", name: "reserved pasta water" },
+    { qty: 2, unit: "tbsp", name: "fresh grated parmesan" },
+    { qty: 1, unit: "tbsp", name: "butter or light butter", notes: "optional for richness", optional: true },
+    { qty: null, unit: null, name: "Squeeze of lemon or splash of red wine vinegar" },
+    { qty: null, unit: null, name: "Fresh parsley or basil" }
   ],
 
   steps: [
@@ -1030,17 +1059,17 @@ tags: ["dessert", "high protein"]
   tags: ["shrimp", "seafood", "easy", "weeknight", "fast", "low calorie"],
 
   ingredients: [
-    "2 lbs large shrimp, peeled and deveined",
-    "2 tbsp real butter, melted",
-    "1 tbsp light margarine spread, melted",
-    "2–3 tbsp dry white wine (pinot grigio, sauvignon blanc, etc.)",
-    "4–5 cloves garlic, minced",
-    "½ tsp kosher salt",
-    "½ tsp black pepper",
-    "¼–½ tsp red pepper flakes (to taste)",
-    "Zest of 1 lemon",
-    "Juice of ½–1 lemon",
-    "1 tbsp chopped parsley (optional)"
+    { qty: 2, unit: "lb", name: "large shrimp", notes: "peeled and deveined" },
+    { qty: 2, unit: "tbsp", name: "real butter", notes: "melted" },
+    { qty: 1, unit: "tbsp", name: "light margarine spread", notes: "melted" },
+    { qty: 2, qtyMax: 3, unit: "tbsp", name: "dry white wine", notes: "pinot grigio, sauvignon blanc, etc." },
+    { qty: 4, qtyMax: 5, unit: "clove", name: "garlic", notes: "minced" },
+    { qty: 0.5, unit: "tsp", name: "kosher salt" },
+    { qty: 0.5, unit: "tsp", name: "black pepper" },
+    { qty: 0.25, qtyMax: 0.5, unit: "tsp", name: "red pepper flakes", notes: "to taste" },
+    { qty: null, unit: null, name: "Zest of 1 lemon" },
+    { qty: null, unit: null, name: "Juice of ½–1 lemon" },
+    { qty: 1, unit: "tbsp", name: "chopped parsley", notes: "optional", optional: true }
   ],
 
   steps: [
@@ -1067,15 +1096,15 @@ tags: ["dessert", "high protein"]
   tags: ["soup", "tomato", "easy", "weeknight", "fast", "low calorie", "comfort food"],
 
   ingredients: [
-    "6 tablespoons light butter spread",
-    "1 46 oz bottle of tomato juice",
-    "2–3 tbsp chicken base (like Better Than Bouillon)",
-    "2 cans diced tomatoes",
-    "4 tbsp sugar",
-    "Salt and pepper to taste",
-    "1 cup cooking sherry",
-    "1½ cups half and half",
-    "Chopped fresh parsley and basil, for topping"
+    { qty: 6, unit: "tbsp", name: "light butter spread" },
+    { qty: 46, unit: "oz", name: "tomato juice", notes: "1 bottle", display: "1 46 oz bottle of tomato juice" },
+    { qty: 2, qtyMax: 3, unit: "tbsp", name: "chicken base", notes: "like Better Than Bouillon" },
+    { qty: 2, unit: "can", name: "diced tomatoes" },
+    { qty: 4, unit: "tbsp", name: "sugar" },
+    { qty: null, unit: null, name: "Salt and pepper to taste" },
+    { qty: 1, unit: "cup", name: "cooking sherry" },
+    { qty: 1.5, unit: "cup", name: "half and half" },
+    { qty: null, unit: null, name: "Chopped fresh parsley and basil", notes: "for topping" }
   ],
 
   steps: [
@@ -1106,32 +1135,32 @@ tags: ["dessert", "high protein"]
   tags: ["beef", "slow cooker", "birria", "mexican", "chuck roast", "comfort food", "spicy"],
 
   ingredients: [
-    "3.5 lbs chuck roast",
-    "2 tsp salt (plus 1 tsp more to adjust consommé at the end)",
-    "1 tsp black pepper",
-    "2 tbsp vegetable oil",
+    { qty: 3.5, unit: "lb", name: "chuck roast" },
+    { qty: 2, unit: "tsp", name: "salt", notes: "plus 1 tsp more to adjust consommé at the end" },
+    { qty: 1, unit: "tsp", name: "black pepper" },
+    { qty: 2, unit: "tbsp", name: "vegetable oil" },
 
-    "4 dried guajillo chiles, stems and seeds removed",
-    "3 dried ancho chiles, stems and seeds removed",
-    "2 chipotle peppers in adobo sauce",
-    "6 garlic cloves",
-    "1 white onion, roughly chopped",
-    "2 roma tomatoes, halved",
-    "2 tbsp apple cider vinegar",
-    "2 tsp ground cumin",
-    "1 tsp dried oregano (Mexican oregano if you can find it)",
-    "¼ tsp ground cinnamon",
-    "2 cups beef broth, divided",
+    { qty: 4, unit: null, name: "dried guajillo chiles", notes: "stems and seeds removed" },
+    { qty: 3, unit: null, name: "dried ancho chiles", notes: "stems and seeds removed" },
+    { qty: 2, unit: null, name: "chipotle peppers in adobo sauce" },
+    { qty: 6, unit: "clove", name: "garlic" },
+    { qty: 1, unit: null, name: "white onion", notes: "roughly chopped" },
+    { qty: 2, unit: null, name: "roma tomatoes", notes: "halved" },
+    { qty: 2, unit: "tbsp", name: "apple cider vinegar" },
+    { qty: 2, unit: "tsp", name: "ground cumin" },
+    { qty: 1, unit: "tsp", name: "dried oregano", notes: "Mexican oregano if you can find it" },
+    { qty: 0.25, unit: "tsp", name: "ground cinnamon" },
+    { qty: 2, unit: "cup", name: "beef broth", notes: "divided" },
 
-    "2 bay leaves",
+    { qty: 2, unit: null, name: "bay leaves" },
 
-    "Cooked Mexican rice, for serving",
-    "Warm tortillas, for serving",
-    "Diced white onion, for serving",
-    "Fresh cilantro, for serving",
-    "Lime wedges, for serving",
-    "Crumbled cotija cheese, for serving",
-    "Pico de gallo, for serving"
+    { qty: null, unit: null, name: "Cooked Mexican rice", notes: "for serving" },
+    { qty: null, unit: null, name: "Warm tortillas", notes: "for serving" },
+    { qty: null, unit: null, name: "Diced white onion", notes: "for serving" },
+    { qty: null, unit: null, name: "Fresh cilantro", notes: "for serving" },
+    { qty: null, unit: null, name: "Lime wedges", notes: "for serving" },
+    { qty: null, unit: null, name: "Crumbled cotija cheese", notes: "for serving" },
+    { qty: null, unit: null, name: "Pico de gallo", notes: "for serving" }
   ],
 
   steps: [
@@ -1168,18 +1197,18 @@ tags: ["dessert", "high protein"]
   tags: ["mexican", "corn", "side dish", "vegetarian", "snack", "street food"],
 
   ingredients: [
-    "6 ears of corn, kernels cut off (or 4.5 cups frozen corn, thawed and patted very dry)",
-    "3 tbsp butter",
-    "3 garlic cloves, minced (or ¾ tsp garlic powder in a pinch)",
-    "⅓ cup mayonnaise",
-    "⅓ cup sour cream",
-    "1 tsp chili powder",
-    "½ tsp smoked paprika",
-    "¼ tsp cayenne pepper (adjust to taste)",
-    "½ tsp salt",
-    "Juice of 3 limes",
-    "½ cup cotija cheese, crumbled (queso fresco works great if you can't find cotija)",
-    "¼ cup fresh cilantro, chopped"
+    { qty: 6, unit: null, name: "ears of corn", notes: "kernels cut off, or 4.5 cups frozen corn thawed and patted very dry" },
+    { qty: 3, unit: "tbsp", name: "butter" },
+    { qty: 3, unit: "clove", name: "garlic", notes: "minced, or ¾ tsp garlic powder in a pinch" },
+    { qty: 0.333, unit: "cup", name: "mayonnaise" },
+    { qty: 0.333, unit: "cup", name: "sour cream" },
+    { qty: 1, unit: "tsp", name: "chili powder" },
+    { qty: 0.5, unit: "tsp", name: "smoked paprika" },
+    { qty: 0.25, unit: "tsp", name: "cayenne pepper", notes: "adjust to taste" },
+    { qty: 0.5, unit: "tsp", name: "salt" },
+    { qty: 3, unit: null, name: "limes", notes: "juiced" },
+    { qty: 0.5, unit: "cup", name: "cotija cheese", notes: "crumbled, queso fresco works great if you can't find cotija" },
+    { qty: 0.25, unit: "cup", name: "fresh cilantro", notes: "chopped" }
   ],
 
   steps: [
@@ -1216,59 +1245,59 @@ tags: ["dessert", "high protein"]
     {
       title: "The Beef",
       items: [
-        "2 lbs ground beef (80/20)",
-        "1 tbsp vegetable oil"
+        { qty: 2, unit: "lb", name: "ground beef (80/20)" },
+        { qty: 1, unit: "tbsp", name: "vegetable oil" }
       ]
     },
     {
       title: "The Sauce",
       items: [
-        "6 tbsp soy sauce (plus 2 tsp)",
-        "4 tbsp brown sugar",
-        "1½ tbsp toasted sesame oil",
-        "6 garlic cloves, minced",
-        "1½ tsp fresh ginger, grated (or ¾ tsp ground ginger)",
-        "¾ tsp red pepper flakes",
-        "2 tsp gochujang paste"
+        { qty: 6, unit: "tbsp", name: "soy sauce", notes: "plus 2 tsp" },
+        { qty: 4, unit: "tbsp", name: "brown sugar" },
+        { qty: 1.5, unit: "tbsp", name: "toasted sesame oil" },
+        { qty: 6, unit: "clove", name: "garlic", notes: "minced" },
+        { qty: 1.5, unit: "tsp", name: "fresh ginger", notes: "grated, or ¾ tsp ground ginger" },
+        { qty: 0.75, unit: "tsp", name: "red pepper flakes" },
+        { qty: 2, unit: "tsp", name: "gochujang paste" }
       ]
     },
     {
       title: "The Rice",
       items: [
-        "2.5 cups jasmine rice",
-        "1.5 cups chicken broth",
-        "1.25 cups water",
-        "½ tsp toasted sesame oil",
-        "¾ tsp salt",
-        "1 tsp rice vinegar (stirred in after cooking)"
+        { qty: 2.5, unit: "cup", name: "jasmine rice" },
+        { qty: 1.5, unit: "cup", name: "chicken broth" },
+        { qty: 1.25, unit: "cup", name: "water" },
+        { qty: 0.5, unit: "tsp", name: "toasted sesame oil" },
+        { qty: 0.75, unit: "tsp", name: "salt" },
+        { qty: 1, unit: "tsp", name: "rice vinegar", notes: "stirred in after cooking" }
       ]
     },
     {
       title: "Pickled Carrots",
       items: [
-        "4 medium carrots, peeled and julienned",
-        "1 cup rice vinegar",
-        "2 tsp sugar",
-        "1 tsp salt",
-        "½ cup water",
-        "Pinch of red pepper flakes (optional)"
+        { qty: 4, unit: null, name: "medium carrots", notes: "peeled and julienned" },
+        { qty: 1, unit: "cup", name: "rice vinegar" },
+        { qty: 2, unit: "tsp", name: "sugar" },
+        { qty: 1, unit: "tsp", name: "salt" },
+        { qty: 0.5, unit: "cup", name: "water" },
+        { qty: null, unit: null, name: "Pinch of red pepper flakes", optional: true }
       ]
     },
     {
       title: "Vinegar Cucumbers",
       items: [
-        "1 mini cucumber, thinly sliced",
-        "1 tbsp rice vinegar",
-        "¼ tsp sugar",
-        "Pinch of salt",
-        "Tiny drizzle of toasted sesame oil"
+        { qty: 1, unit: null, name: "mini cucumber", notes: "thinly sliced" },
+        { qty: 1, unit: "tbsp", name: "rice vinegar" },
+        { qty: 0.25, unit: "tsp", name: "sugar" },
+        { qty: null, unit: null, name: "Pinch of salt" },
+        { qty: null, unit: null, name: "Tiny drizzle of toasted sesame oil" }
       ]
     },
     {
       title: "Toppings",
       items: [
-        "4 green onions, sliced",
-        "1 tbsp sesame seeds"
+        { qty: 4, unit: null, name: "green onions", notes: "sliced" },
+        { qty: 1, unit: "tbsp", name: "sesame seeds" }
       ]
     }
   ],
@@ -1308,24 +1337,24 @@ tags: ["dessert", "high protein"]
   tags: ["shrimp", "Korean", "spicy", "weeknight", "seafood"],
 
   ingredients: [
-    "2 lbs large shrimp, peeled and deveined (21-25 count)",
-    "¾ tsp kosher salt",
-    "¼ tsp black pepper",
-    "2 tbsp neutral oil (avocado or vegetable)",
+    { qty: 2, unit: "lb", name: "large shrimp", notes: "peeled and deveined, 21-25 count" },
+    { qty: 0.75, unit: "tsp", name: "kosher salt" },
+    { qty: 0.25, unit: "tsp", name: "black pepper" },
+    { qty: 2, unit: "tbsp", name: "neutral oil", notes: "avocado or vegetable" },
 
-    "3 tbsp gochujang (Korean chili paste)",
-    "2 tbsp soy sauce",
-    "1 tbsp honey",
-    "1 tbsp rice vinegar",
-    "1 tsp sesame oil",
+    { qty: 3, unit: "tbsp", name: "gochujang", notes: "Korean chili paste" },
+    { qty: 2, unit: "tbsp", name: "soy sauce" },
+    { qty: 1, unit: "tbsp", name: "honey" },
+    { qty: 1, unit: "tbsp", name: "rice vinegar" },
+    { qty: 1, unit: "tsp", name: "sesame oil" },
 
-    "4 tbsp unsalted butter",
-    "6 garlic cloves, minced",
-    "1 tbsp fresh ginger, grated",
+    { qty: 4, unit: "tbsp", name: "unsalted butter" },
+    { qty: 6, unit: "clove", name: "garlic", notes: "minced" },
+    { qty: 1, unit: "tbsp", name: "fresh ginger", notes: "grated" },
 
-    "6 cups cooked jasmine rice",
-    "4 green onions, thinly sliced",
-    "1 tbsp sesame seeds"
+    { qty: 6, unit: "cup", name: "cooked jasmine rice" },
+    { qty: 4, unit: null, name: "green onions", notes: "thinly sliced" },
+    { qty: 1, unit: "tbsp", name: "sesame seeds" }
   ],
 
   steps: [
@@ -1364,33 +1393,33 @@ tags: ["dessert", "high protein"]
     {
       title: "For the Chicken",
       items: [
-        "1.8 lbs raw chicken breast, cut into cubes",
-        "1½ tsp salt",
-        "1 tsp black pepper",
-        "1 tsp chilli flakes (optional)",
-        "1½ tsp garlic powder",
-        "1½ tsp onion powder",
-        "1½ tsp paprika or smoked paprika",
-        "2 tsp olive oil",
-        "2 tbsp light butter (for cooking)",
-        "1 tbsp light butter (finishing, split between batches)",
-        "2 tsp minced garlic",
-        "2 tbsp honey (1 tbsp per batch)",
-        "1 tbsp fresh chopped parsley"
+        { qty: 1.8, unit: "lb", name: "raw chicken breast", notes: "cut into cubes" },
+        { qty: 1.5, unit: "tsp", name: "salt" },
+        { qty: 1, unit: "tsp", name: "black pepper" },
+        { qty: 1, unit: "tsp", name: "chilli flakes", optional: true },
+        { qty: 1.5, unit: "tsp", name: "garlic powder" },
+        { qty: 1.5, unit: "tsp", name: "onion powder" },
+        { qty: 1.5, unit: "tsp", name: "paprika", notes: "or smoked paprika" },
+        { qty: 2, unit: "tsp", name: "olive oil" },
+        { qty: 2, unit: "tbsp", name: "light butter", notes: "for cooking" },
+        { qty: 1, unit: "tbsp", name: "light butter", notes: "finishing, split between batches" },
+        { qty: 2, unit: "tsp", name: "minced garlic" },
+        { qty: 2, unit: "tbsp", name: "honey", notes: "1 tbsp per batch" },
+        { qty: 1, unit: "tbsp", name: "fresh chopped parsley" }
       ]
     },
     {
       title: "For the Mac and Cheese",
       items: [
-        "3 cups macaroni or pasta of choice (uncooked)",
-        "1½ tbsp minced garlic",
-        "2 cups skim milk",
-        "1 cup light cream cheese / Philadelphia (one full 8oz block)",
-        "5 oz low fat cheddar cheese, shredded",
-        "1½ tsp salt (or to taste)",
-        "¾ tsp black pepper",
-        "1½ tsp smoked paprika",
-        "¾ tsp nutmeg"
+        { qty: 3, unit: "cup", name: "macaroni or pasta of choice", notes: "uncooked" },
+        { qty: 1.5, unit: "tbsp", name: "minced garlic" },
+        { qty: 2, unit: "cup", name: "skim milk" },
+        { qty: 1, unit: "cup", name: "light cream cheese / Philadelphia", notes: "one full 8oz block" },
+        { qty: 5, unit: "oz", name: "low fat cheddar cheese", notes: "shredded" },
+        { qty: 1.5, unit: "tsp", name: "salt", notes: "or to taste" },
+        { qty: 0.75, unit: "tsp", name: "black pepper" },
+        { qty: 1.5, unit: "tsp", name: "smoked paprika" },
+        { qty: 0.75, unit: "tsp", name: "nutmeg" }
       ]
     }
   ],
