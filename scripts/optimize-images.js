@@ -17,23 +17,10 @@
 const sharp = require('sharp');
 const fs = require('fs');
 const path = require('path');
+const { isSiteAsset, MAX_RECIPE_PHOTO_WIDTH } = require('./image-config');
 
 const IMAGES_DIR = path.join(__dirname, '..', 'images');
 const ORIGINALS_DIR = path.join(IMAGES_DIR, 'originals');
-
-// Images that are recipe photos (resize + compress).
-// Everything else (category icons, backgrounds, mascot, logo) gets compress only.
-const SITE_ASSET_PREFIXES = [
-  'background-',
-  'hero-background-',
-  'category-',
-  'mascot',
-  'jomammas-recipes-logo',
-  'jo-mamma-kitchen',
-  'no-photo',
-];
-const isSiteAsset = (filename) =>
-  SITE_ASSET_PREFIXES.some((prefix) => filename.startsWith(prefix));
 
 async function optimizeImages() {
   fs.mkdirSync(ORIGINALS_DIR, { recursive: true });
@@ -65,7 +52,7 @@ async function optimizeImages() {
 
     if (!isSiteAsset(file)) {
       // Recipe photo: cap at 800px wide (fine for 320px float on detail page)
-      pipeline = pipeline.resize(800, null, { withoutEnlargement: true });
+      pipeline = pipeline.resize(MAX_RECIPE_PHOTO_WIDTH, null, { withoutEnlargement: true });
     }
 
     if (ext === '.jpg' || ext === '.jpeg') {

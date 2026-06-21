@@ -1455,7 +1455,6 @@ body{
   align-items: center;
   justify-content: center;
   gap: var(--space-3);
-  background-color: #ece8de;
   background-image: url("images/hero-background-lace-doily.png");
   background-size: auto 100%;
   background-position: center;
