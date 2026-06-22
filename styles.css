@@ -1979,6 +1979,186 @@ body.about-page {
   cursor: default;
 }
 
+/* Kitchen Basics guide pages (e.g. kitchen-basics-oils-fats.html) */
+.kitchen-basics-page h2 {
+  margin: 0 0 var(--space-2-5);
+  font-size: var(--font-size-lg);
+  font-weight: 700;
+  color: var(--color-teal);
+}
+
+.kb-tabs {
+  margin-top: var(--space-5);
+}
+
+.kb-tablist {
+  display: flex;
+  gap: var(--space-2);
+  flex-wrap: wrap;
+  border-bottom: 1px solid var(--color-border);
+  padding-bottom: var(--space-3);
+  margin-bottom: var(--space-5);
+}
+
+.kb-tab {
+  padding: var(--space-2) var(--space-3-5);
+  border-radius: var(--radius-pill);
+  border: 1px solid var(--color-border);
+  background: var(--color-surface-strong);
+  color: var(--color-text);
+  cursor: pointer;
+  font-size: var(--font-size-sm);
+  font-weight: 600;
+  white-space: nowrap;
+  transition: all 0.2s ease;
+}
+
+.kb-tab:hover {
+  border-color: var(--color-teal);
+}
+
+.kb-tab[aria-selected="true"] {
+  background: var(--color-teal);
+  color: var(--color-surface-strong);
+  border-color: var(--color-teal);
+}
+
+.kb-panel p {
+  font-size: var(--font-size-md);
+  line-height: 1.6;
+  color: var(--color-text-muted);
+  max-width: 70ch;
+  margin: 0 0 var(--space-4);
+}
+
+.kb-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2-5);
+  margin-top: var(--space-4);
+}
+
+.kb-row {
+  display: grid;
+  grid-template-columns: minmax(160px, 1fr) auto;
+  gap: var(--space-1) var(--space-4);
+  align-items: baseline;
+  padding: var(--space-3) var(--space-3-5);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+}
+
+.kb-row-name {
+  font-weight: 700;
+  grid-column: 1;
+}
+
+.kb-row-value {
+  font-weight: 600;
+  color: var(--color-teal);
+  text-align: right;
+  grid-column: 2;
+}
+
+.kb-row-note {
+  grid-column: 1 / -1;
+  font-size: var(--font-size-sm);
+  color: var(--color-text-muted);
+}
+
+.kb-row-bar {
+  grid-template-columns: minmax(160px, 1fr) auto;
+}
+
+.kb-bar-track {
+  grid-column: 1 / -1;
+  height: 8px;
+  border-radius: var(--radius-pill);
+  background: rgba(4, 140, 127, 0.12);
+  overflow: hidden;
+}
+
+.kb-bar-fill {
+  height: 100%;
+  background: var(--color-teal);
+  border-radius: var(--radius-pill);
+}
+
+.kb-card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: var(--space-4);
+  margin-top: var(--space-4);
+}
+
+.kb-card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  padding: var(--space-4);
+}
+
+.kb-card h3 {
+  margin: 0 0 var(--space-2);
+  font-size: var(--font-size-mdplus);
+}
+
+.kb-card-description {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-muted);
+  line-height: 1.55;
+  margin: 0 0 var(--space-3);
+}
+
+.kb-card-stats {
+  margin: 0 0 var(--space-3);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1-5);
+}
+
+.kb-card-stats div {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--space-2);
+  font-size: var(--font-size-xs);
+  border-top: 1px solid var(--color-border);
+  padding-top: var(--space-1-5);
+}
+
+.kb-card-stats dt {
+  font-weight: 600;
+  color: var(--color-text-muted);
+}
+
+.kb-card-stats dd {
+  margin: 0;
+  text-align: right;
+}
+
+.kb-card-bestfor {
+  display: flex;
+  gap: var(--space-1-5);
+  flex-wrap: wrap;
+}
+
+@media (max-width: 600px) {
+  .kb-row,
+  .kb-row-bar {
+    grid-template-columns: 1fr;
+  }
+
+  .kb-row-value {
+    text-align: left;
+  }
+
+  .kb-card-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
 @media (max-width: 600px) {
   .flag-row {
     flex-direction: column;

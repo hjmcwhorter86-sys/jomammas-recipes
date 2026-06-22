@@ -1,6 +1,17 @@
 // JoMama Recipes Site - Heather's macro-friendly comfort food collection
 
-const recipes = window.recipes || [];
+const recipes = [...(window.recipes || []), ...(window.kitchenBasicsGuides || [])];
+
+// Recipes only (excludes Kitchen Basics guides) — used wherever the result
+// must link into the ingredients/steps recipe-detail flow, like prev/next
+// navigation, since guides have no detail page of their own.
+const navigableRecipes = recipes.filter((r) => r.type !== 'guide');
+
+// Cards for guides link to their own standalone page; recipe cards link into
+// recipe-detail.html as usual.
+function getRecipeUrl(recipe) {
+  return recipe.type === 'guide' && recipe.url ? recipe.url : `recipe-detail.html?id=${recipe.id}`;
+}
 
 function normalizeCategoryValue(value) {
   return (value || '').trim().toLowerCase();
@@ -807,6 +818,10 @@ if (pageType === 'flags') {
   setSeo('Feature Flags', 'Turn experimental features on or off in this browser.');
 }
 
+if (pageType === 'kitchen-basics-oils-fats') {
+  setSeo('Kitchen Basics: Oils & Fats', 'Smoke points, flavor strength, and a healthy-fat spectrum for oils, butter, ghee, and more.');
+}
+
 const recipesEl = document.getElementById("recipes");
 const searchEl = document.getElementById("search");
 const detailedViewEl = document.getElementById("detailed-view");
@@ -834,13 +849,13 @@ if (searchEl && pageType !== 'list') {
 // Homepage: render newest recipes into #newest when present
 const newestEl = document.getElementById('newest');
 if (newestEl) {
-  const newest = [...recipes]
+  const newest = navigableRecipes
     .filter(r => r.dateAdded)
     .sort((a, b) => new Date(b.dateAdded) - new Date(a.dateAdded))
     .slice(0, 4);
 
   newestEl.innerHTML = newest.map(r => `
-    <a class="newest-card" href="recipe-detail.html?id=${r.id}">
+    <a class="newest-card" href="${getRecipeUrl(r)}">
       <img src="${getRecipeImageUrl(r)}" alt="${r.title}" class="newest-card-image" loading="lazy">
       <div class="newest-card-inner">
         <h3>${r.title}</h3>
@@ -877,7 +892,7 @@ if (popularEl) {
   popularEl.innerHTML = popular.map(r => {
     const badgeText = getBadgeText(r);
     return `
-    <a class="newest-card" href="recipe-detail.html?id=${r.id}">
+    <a class="newest-card" href="${getRecipeUrl(r)}">
       <div class="newest-card-image-wrapper">
         <img src="${getRecipeImageUrl(r)}" alt="${r.title}" class="newest-card-image" loading="lazy">
         ${badgeText ? `<span class="recipe-badge">${badgeText}</span>` : ''}
@@ -946,7 +961,7 @@ if (pageType === 'list' && recipesEl && searchEl) {
       if (r.protein && r.protein.trim()) metaItems.push(`<span class="meta-item">${r.protein}</span>`);
       
       return `
-        <a href="recipe-detail.html?id=${(r.id)}" class="card recipe-card">
+        <a href="${getRecipeUrl(r)}" class="card recipe-card">
           <div class="recipe-card-image-wrapper">
             <img src="${imageUrl}" alt="${r.title}" class="recipe-card-image" loading="lazy" />
           </div>
@@ -977,9 +992,9 @@ if (pageType === 'list' && recipesEl && searchEl) {
     const isIncomplete = !hasIngredients || !hasSteps;
     
     // Find current recipe index for Previous/Next navigation
-    const currentIndex = recipes.findIndex(r => r.id === recipe.id);
-    const prevRecipe = currentIndex > 0 ? recipes[currentIndex - 1] : null;
-    const nextRecipe = currentIndex < recipes.length - 1 ? recipes[currentIndex + 1] : null;
+    const currentIndex = navigableRecipes.findIndex(r => r.id === recipe.id);
+    const prevRecipe = currentIndex > 0 ? navigableRecipes[currentIndex - 1] : null;
+    const nextRecipe = currentIndex < navigableRecipes.length - 1 ? navigableRecipes[currentIndex + 1] : null;
     
     // Helper to safely render notes (can be array or string for backwards compatibility)
     const notesArray = Array.isArray(recipe.notes) ? recipe.notes : (recipe.notes ? [recipe.notes] : []);
@@ -1181,9 +1196,9 @@ if (pageType === 'detail' && detailedViewEl) {
     const isIncomplete = !hasIngredients || !hasSteps;
     
     // Find current recipe index for Previous/Next navigation
-    const currentIndex = recipes.findIndex(r => r.id === recipe.id);
-    const prevRecipe = currentIndex > 0 ? recipes[currentIndex - 1] : null;
-    const nextRecipe = currentIndex < recipes.length - 1 ? recipes[currentIndex + 1] : null;
+    const currentIndex = navigableRecipes.findIndex(r => r.id === recipe.id);
+    const prevRecipe = currentIndex > 0 ? navigableRecipes[currentIndex - 1] : null;
+    const nextRecipe = currentIndex < navigableRecipes.length - 1 ? navigableRecipes[currentIndex + 1] : null;
     
     // Helper to safely render notes (can be array or string for backwards compatibility)
     const notesArray = Array.isArray(recipe.notes) ? recipe.notes : (recipe.notes ? [recipe.notes] : []);

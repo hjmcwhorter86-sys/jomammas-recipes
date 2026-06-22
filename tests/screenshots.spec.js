@@ -146,3 +146,35 @@ test.describe('Nutrition info page', () => {
     await shoot(page, 'nutrition-info-korean-beef-bowls', testInfo.project.name, 'all-ingredients');
   });
 });
+
+test.describe('Kitchen Basics: Oils & Fats page', () => {
+  test('main (smoke point tab)', async ({ page }, testInfo) => {
+    await page.goto('/kitchen-basics-oils-fats.html');
+    await shoot(page, 'kitchen-basics-oils-fats', testInfo.project.name, 'main');
+  });
+
+  test('flavor tab', async ({ page }, testInfo) => {
+    await page.goto('/kitchen-basics-oils-fats.html');
+    await page.locator('#kbTab-flavor').click();
+    await shoot(page, 'kitchen-basics-oils-fats', testInfo.project.name, 'flavor-tab');
+  });
+
+  test('nutrition tab', async ({ page }, testInfo) => {
+    await page.goto('/kitchen-basics-oils-fats.html');
+    await page.locator('#kbTab-nutrition').click();
+    await shoot(page, 'kitchen-basics-oils-fats', testInfo.project.name, 'nutrition-tab');
+  });
+
+  test('all oils tab', async ({ page }, testInfo) => {
+    await page.goto('/kitchen-basics-oils-fats.html');
+    await page.locator('#kbTab-all').click();
+    await shoot(page, 'kitchen-basics-oils-fats', testInfo.project.name, 'all-oils-tab');
+  });
+});
+
+test.describe('Kitchen Basics category', () => {
+  test('shows the Oils & Fats guide card', async ({ page }, testInfo) => {
+    await page.goto('/recipes-list.html?category=Kitchen%20Basics');
+    await shoot(page, 'recipes-list-kitchen-basics', testInfo.project.name, 'main');
+  });
+});
