@@ -2039,6 +2039,15 @@ body.about-page {
   color: var(--color-teal);
 }
 
+.kb-hero-image {
+  display: block;
+  width: 100%;
+  max-width: 600px;
+  margin: var(--space-5) auto 0;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+}
+
 .kb-tabs {
   margin-top: var(--space-5);
 }
@@ -2196,6 +2205,18 @@ body.about-page {
   flex-wrap: wrap;
 }
 
+.kb-panel-nav {
+  display: flex;
+  gap: var(--space-3);
+  margin-top: var(--space-5);
+  padding-top: var(--space-4);
+  border-top: 1px solid var(--color-border);
+}
+
+.kb-panel-nav-next {
+  margin-left: auto;
+}
+
 @media (max-width: 600px) {
   .kb-row,
   .kb-row-bar {
@@ -2208,6 +2229,14 @@ body.about-page {
 
   .kb-card-grid {
     grid-template-columns: 1fr;
+  }
+
+  .kb-panel-nav {
+    flex-direction: column;
+  }
+
+  .kb-panel-nav-next {
+    margin-left: 0;
   }
 }
 

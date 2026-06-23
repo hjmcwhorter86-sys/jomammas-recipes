@@ -258,6 +258,37 @@ function kbInitTabs() {
     });
   });
 
+  // Prev/next buttons at the bottom of each panel, so people can read
+  // straight through topic by topic instead of scrolling back up to the
+  // tablist each time.
+  tabs.forEach((tab, index) => {
+    const panel = document.getElementById(tab.getAttribute('aria-controls'));
+    const prevTab = tabs[index - 1];
+    const nextTab = tabs[index + 1];
+    if (!panel || (!prevTab && !nextTab)) return;
+
+    const nav = document.createElement('div');
+    nav.className = 'kb-panel-nav';
+
+    function addNavButton(targetTab, label, direction) {
+      const btn = document.createElement('button');
+      btn.type = 'button';
+      btn.className = `button-family button-secondary kb-panel-nav-btn kb-panel-nav-${direction}`;
+      btn.textContent = label;
+      btn.addEventListener('click', () => {
+        selectTab(targetTab);
+        targetTab.focus();
+        document.querySelector('.kb-tabs').scrollIntoView({ behavior: 'smooth', block: 'start' });
+      });
+      nav.appendChild(btn);
+    }
+
+    if (prevTab) addNavButton(prevTab, `← Previous: ${prevTab.textContent}`, 'prev');
+    if (nextTab) addNavButton(nextTab, `Next: ${nextTab.textContent} →`, 'next');
+
+    panel.appendChild(nav);
+  });
+
   // Lets links from elsewhere on the site (e.g. an ingredient's "why this
   // matters" link) open straight to a specific tab via #flavor, #nutrition, etc.
   const linkedTab = tabs.find((t) => t.dataset.tab === location.hash.slice(1));
