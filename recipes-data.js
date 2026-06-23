@@ -22,6 +22,16 @@
 //                               "4½ oz parmesan (or 3 oz mozzarella)"
 //   display:  string | null  - escape hatch: if set, render verbatim and
 //                               ignore the fields above for display
+//   note:     string | null  - short explanation of *why* this specific
+//                               ingredient/quantity matters (e.g. "low heat,
+//                               adds flavor"); shown as the tooltip/label for
+//                               guideLink below. Only set when there's a real
+//                               story to tell — not every ingredient needs one.
+//   guideLink: { guideId, tab } | null - links this ingredient to a Kitchen
+//                               Basics guide (see data/kitchen-basics-guides.js
+//                               for guideId values and kitchen-basics.js for
+//                               tab names). Renders a small "?" after the
+//                               ingredient that opens the guide to that tab.
 //
 // Quantities are stored as decimals and normalized to unicode fractions
 // for display (e.g. 1.25 -> "1¼", 0.333 -> "⅓") via formatQuantityDisplay
@@ -1472,7 +1482,13 @@ tags: ["dessert", "high protein"]
       title: "For the Sear",
       items: [
         "1 tbsp unsalted butter",
-        "1½ tbsp olive oil"
+        {
+          qty: 1.5,
+          unit: "tbsp",
+          name: "olive oil",
+          note: "Pairing it with butter lets the sear go hotter without scorching, while still keeping that buttery flavor — swap in plain butter or a neutral oil and you'll lose one or the other.",
+          guideLink: { guideId: "oils-and-fats", tab: "smoke" },
+        },
       ]
     },
     {

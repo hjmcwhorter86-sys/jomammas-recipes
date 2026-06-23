@@ -257,6 +257,11 @@ function kbInitTabs() {
       selectTab(tabs[nextIndex]);
     });
   });
+
+  // Lets links from elsewhere on the site (e.g. an ingredient's "why this
+  // matters" link) open straight to a specific tab via #flavor, #nutrition, etc.
+  const linkedTab = tabs.find((t) => t.dataset.tab === location.hash.slice(1));
+  if (linkedTab) selectTab(linkedTab);
 }
 
 kbInit();

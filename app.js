@@ -13,6 +13,15 @@ function getRecipeUrl(recipe) {
   return recipe.type === 'guide' && recipe.url ? recipe.url : `recipe-detail.html?id=${recipe.id}`;
 }
 
+// Resolves an ingredient's `guideLink: { guideId, tab }` to a URL, looking
+// up the target guide's page by id so ingredients don't hardcode page paths.
+function getGuideLinkUrl(guideLink) {
+  if (!guideLink || !guideLink.guideId) return null;
+  const guide = (window.kitchenBasicsGuides || []).find((g) => g.id === guideLink.guideId);
+  if (!guide || !guide.url) return null;
+  return guideLink.tab ? `${guide.url}#${guideLink.tab}` : guide.url;
+}
+
 function normalizeCategoryValue(value) {
   return (value || '').trim().toLowerCase();
 }
@@ -542,6 +551,14 @@ function renderIngredientLine(item) {
     }
     if (item.altName) altParts.push(item.altName);
     line += ` (or ${altParts.join(' ')})`;
+  }
+
+  if (item.guideLink) {
+    const url = getGuideLinkUrl(item.guideLink);
+    if (url) {
+      const label = item.note ? `Why this ingredient: ${item.note}` : 'Learn more';
+      line += ` <a class="ingredient-guide-link" href="${url}" title="${label}" aria-label="${label}">?</a>`;
+    }
   }
 
   return line;

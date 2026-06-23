@@ -1338,6 +1338,28 @@ body{
   font-size: var(--font-size-md);
 }
 
+.ingredient-guide-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 16px;
+  height: 16px;
+  margin-left: 4px;
+  border-radius: 50%;
+  background: var(--color-teal);
+  color: #fff;
+  font-size: 11px;
+  font-weight: 700;
+  line-height: 1;
+  text-decoration: none;
+  vertical-align: super;
+}
+
+.ingredient-guide-link:hover,
+.ingredient-guide-link:focus-visible {
+  background: var(--color-gold);
+}
+
 .steps-list {
   list-style: decimal;
   margin: 0;
