@@ -1345,19 +1345,49 @@ body{
   width: 16px;
   height: 16px;
   margin-left: 4px;
+  border: none;
   border-radius: 50%;
   background: var(--color-teal);
   color: #fff;
   font-size: 11px;
   font-weight: 700;
   line-height: 1;
-  text-decoration: none;
   vertical-align: super;
+  cursor: pointer;
+  padding: 0;
 }
 
 .ingredient-guide-link:hover,
-.ingredient-guide-link:focus-visible {
+.ingredient-guide-link:focus-visible,
+.ingredient-guide-link[aria-expanded="true"] {
   background: var(--color-gold);
+}
+
+.ingredient-guide-popover {
+  position: absolute;
+  z-index: 50;
+  max-width: 280px;
+  padding: var(--space-3);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-md);
+  font-size: var(--font-size-sm);
+  line-height: 1.5;
+}
+
+.ingredient-guide-popover p {
+  margin: 0 0 var(--space-2);
+}
+
+.ingredient-guide-popover a {
+  font-weight: 700;
+  color: var(--color-teal);
+  text-decoration: none;
+}
+
+.ingredient-guide-popover a:hover {
+  text-decoration: underline;
 }
 
 .steps-list {

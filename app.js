@@ -556,8 +556,8 @@ function renderIngredientLine(item) {
   if (item.guideLink) {
     const url = getGuideLinkUrl(item.guideLink);
     if (url) {
-      const label = item.note ? `Why this ingredient: ${item.note}` : 'Learn more';
-      line += ` <a class="ingredient-guide-link" href="${url}" title="${label}" aria-label="${label}">?</a>`;
+      const note = item.note || 'See the Kitchen Basics guide for more on this.';
+      line += ` <button type="button" class="ingredient-guide-link" data-note="${note}" data-url="${url}" aria-expanded="false" aria-label="Why this ingredient">?</button>`;
     }
   }
 
@@ -617,6 +617,61 @@ function renderIngredientsMarkup(ingredients) {
     </div>
   `;
 }
+
+// Popover for the ingredient "?" guide-link badges (see renderIngredientLine).
+// One shared element rather than one per badge, since ingredient lists are
+// re-rendered dynamically and badges come and go with them.
+let ingredientGuidePopover = null;
+let ingredientGuidePopoverButton = null;
+
+function closeIngredientGuidePopover() {
+  if (ingredientGuidePopoverButton) ingredientGuidePopoverButton.setAttribute('aria-expanded', 'false');
+  if (ingredientGuidePopover) ingredientGuidePopover.remove();
+  ingredientGuidePopover = null;
+  ingredientGuidePopoverButton = null;
+}
+
+function openIngredientGuidePopover(button) {
+  closeIngredientGuidePopover();
+
+  const popover = document.createElement('div');
+  popover.className = 'ingredient-guide-popover';
+  popover.setAttribute('role', 'tooltip');
+  popover.innerHTML = `
+    <p>${button.dataset.note}</p>
+    <a href="${button.dataset.url}">Read more →</a>
+  `;
+  document.body.appendChild(popover);
+
+  const rect = button.getBoundingClientRect();
+  const maxLeft = window.scrollX + document.documentElement.clientWidth - popover.offsetWidth - 8;
+  popover.style.top = `${rect.bottom + window.scrollY + 6}px`;
+  popover.style.left = `${Math.min(rect.left + window.scrollX, Math.max(maxLeft, window.scrollX + 8))}px`;
+
+  button.setAttribute('aria-expanded', 'true');
+  ingredientGuidePopover = popover;
+  ingredientGuidePopoverButton = button;
+}
+
+document.addEventListener('click', (event) => {
+  const button = event.target.closest('.ingredient-guide-link');
+  if (button) {
+    event.preventDefault();
+    if (ingredientGuidePopoverButton === button) {
+      closeIngredientGuidePopover();
+    } else {
+      openIngredientGuidePopover(button);
+    }
+    return;
+  }
+  if (ingredientGuidePopover && !ingredientGuidePopover.contains(event.target)) {
+    closeIngredientGuidePopover();
+  }
+});
+
+document.addEventListener('keydown', (event) => {
+  if (event.key === 'Escape') closeIngredientGuidePopover();
+});
 
 // Detect page type from meta tag
 const pageType = document.querySelector('meta[name="page-type"]')?.getAttribute('content') || 'home';
