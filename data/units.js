@@ -139,6 +139,9 @@ window.unitConversions = {
     "nutmeg": 0.45,
     "granulated sugar": 0.85,
     "vegetable oil": 0.92,
+    "sweet onion": 0.64,
+    "white pepper": 0.45,
+    "scallions": 0.45,
   },
 
   // Preferred display units for the US/Metric units toggle (units-service.js).
