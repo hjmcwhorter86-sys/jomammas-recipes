@@ -443,8 +443,8 @@ window.ingredientNutrition = {
     fiber: 0,
     carbs: 0,
     unitWeights: {},
-    verified: false,
-    source: "Estimated by Claude (typical USDA FoodData Central / brand-label values), unverified — pending user review"
+    verified: true,
+    source: "Filippo Berio Extra Virgin Olive Oil label: 120 cal / 14g fat / 0g carbs / 0g protein per 1 tbsp (15mL), per user-provided photo. Per-100g value is the standard 884 cal / 100g fat for culinary oils, consistent with the label within its rounding."
   },
   "packets brown gravy mix": {
     per: "100g",
@@ -542,8 +542,8 @@ window.ingredientNutrition = {
     fiber: 0,
     carbs: 0,
     unitWeights: {},
-    verified: false,
-    source: "Estimated by Claude (typical USDA FoodData Central / brand-label values), unverified — pending user review"
+    verified: true,
+    source: "Great Value Refined Avocado Oil label: 130 cal / 14g fat / 0g carbs / 0g protein per 1 tbsp (15mL), per user-provided photo. Per-100g value is the standard 884 cal / 100g fat for culinary oils (label's 130 is brand rounding of 14g fat)."
   },
   "iron kitchen general tso's sauce": {
     per: "100g",
@@ -855,14 +855,14 @@ window.ingredientNutrition = {
   },
   "chicken broth": {
     per: "100ml",
-    calories: 8,
-    protein: 1,
-    fat: 0.3,
+    calories: 2,
+    protein: 0.4,
+    fat: 0,
     fiber: 0,
-    carbs: 0.5,
+    carbs: 0,
     unitWeights: {},
-    verified: false,
-    source: "Estimated by Claude (typical USDA FoodData Central / brand-label values), unverified — pending user review"
+    verified: true,
+    source: "Great Value Chicken Broth (regular) label: 5 cal / 0g fat / 0g carbs / 1g protein per 1 cup (240mL), per user-provided photo"
   },
   "full fat cottage cheese": {
     per: "100g",
@@ -1367,8 +1367,8 @@ window.ingredientNutrition = {
     fiber: 0,
     carbs: 0,
     unitWeights: {},
-    verified: false,
-    source: "Estimated by Claude (typical USDA FoodData Central / brand-label values), unverified — pending user review"
+    verified: true,
+    source: "Great Value Vegetable Oil label: 120 cal / 14g fat / 0g carbs / 0g protein per 1 tbsp (14g), per user-provided photo. Per-100g value is the standard 884 cal / 100g fat for culinary oils."
   },
   "dried guajillo chiles": {
     per: "100g",
