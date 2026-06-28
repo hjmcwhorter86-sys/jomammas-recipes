@@ -73,14 +73,14 @@ window.ingredientNutrition = {
 
   "egg": {
     per: "100g",
-    calories: 143,
-    protein: 13,
-    fat: 10,
+    calories: 120,
+    protein: 12,
+    fat: 8,
     fiber: 0,
-    carbs: 1.1,
+    carbs: 0,
     unitWeights: { egg: 50 },
-    verified: false,
-    source: "USDA, 1 large egg ~ 50g edible portion"
+    verified: true,
+    source: "Eggland's Best large eggs label: 60 cal / 4g fat / 6g protein / 0g carbs per 1 egg (50g), per user-provided photo"
   },
 
   "garlic": {
@@ -602,14 +602,14 @@ window.ingredientNutrition = {
   },
   "unsalted butter": {
     per: "100g",
-    calories: 717,
-    protein: 0.9,
-    fat: 81,
+    calories: 714,
+    protein: 0,
+    fat: 78.6,
     fiber: 0,
-    carbs: 0.1,
+    carbs: 0,
     unitWeights: {},
-    verified: false,
-    source: "Estimated by Claude (typical USDA FoodData Central / brand-label values), unverified — pending user review"
+    verified: true,
+    source: "Great Value unsalted butter (blue box) label: 100 cal / 11g fat / 0g carbs / 0g protein per 1 tbsp (14g), per user-provided photo"
   },
   "cream cheese": {
     per: "100g",
@@ -987,14 +987,14 @@ window.ingredientNutrition = {
   },
   "salted butter": {
     per: "100g",
-    calories: 717,
-    protein: 0.9,
-    fat: 81,
+    calories: 714,
+    protein: 0,
+    fat: 78.6,
     fiber: 0,
-    carbs: 0.1,
+    carbs: 0,
     unitWeights: {},
-    verified: false,
-    source: "Estimated by Claude (typical USDA FoodData Central / brand-label values), unverified — pending user review"
+    verified: true,
+    source: "Great Value salted butter (red box) label: 100 cal / 11g fat / 0g carbs / 0g protein per 1 tbsp (14g), per user-provided photo"
   },
   "vanilla extract": {
     per: "100ml",
