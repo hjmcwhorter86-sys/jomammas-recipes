@@ -1986,4 +1986,37 @@ window.ingredientNutrition = {
     verified: false,
     source: "Estimated by Claude (typical USDA FoodData Central / brand-label values), unverified — pending user review"
   },
+  "bacon": {
+    per: "100g",
+    calories: 461.5,
+    protein: 38.5,
+    fat: 34.6,
+    fiber: 0,
+    carbs: 0,
+    unitWeights: { slice: 6.5 },
+    verified: true,
+    source: "Oscar Mayer Original Center Cut Bacon nutrition label (2 skillet-cooked slices = 13g serving), per user-provided photo"
+  },
+  "sweet onion": {
+    per: "100g",
+    calories: 40,
+    protein: 1.1,
+    fat: 0.1,
+    fiber: 1.7,
+    carbs: 9.3,
+    unitWeights: {},
+    verified: false,
+    source: "Estimated by Claude (typical USDA FoodData Central / brand-label values), unverified — pending user review"
+  },
+  "white pepper": {
+    per: "100g",
+    calories: 296,
+    protein: 10.4,
+    fat: 2.1,
+    fiber: 26.2,
+    carbs: 68.6,
+    unitWeights: {},
+    verified: false,
+    source: "Estimated by Claude (typical USDA FoodData Central / brand-label values), unverified — pending user review"
+  },
 };
