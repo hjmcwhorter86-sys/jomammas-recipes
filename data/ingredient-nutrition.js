@@ -305,14 +305,14 @@ window.ingredientNutrition = {
   },
   "light margarine": {
     per: "100g",
-    calories: 320,
+    calories: 250,
     protein: 0,
-    fat: 36,
+    fat: 28.6,
     fiber: 0,
     carbs: 0,
     unitWeights: {},
-    verified: false,
-    source: "Estimated by Claude (typical USDA FoodData Central / brand-label values), unverified — pending user review"
+    verified: true,
+    source: "I Can't Believe It's Not Butter! Light buttery spread (27% oils) label: 35 cal / 4g fat / 0g carbs / 0g protein per 1 tbsp (14g), per user-provided photo"
   },
   "pepper jack cheese": {
     per: "100g",

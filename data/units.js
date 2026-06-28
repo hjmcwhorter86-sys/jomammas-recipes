@@ -58,7 +58,7 @@ window.unitConversions = {
     "paprika": 0.46,
     "light butter": 0.96,
     "sodium citrate": 0.9,
-    "light margarine": 0.96,
+    "light margarine": 0.95,
     "diced pickled jalapeños": 1,
     "low fat cottage cheese": 0.955,
     "nonfat greek yogurt": 1.035,
