@@ -1602,4 +1602,76 @@ tags: ["dessert", "high protein"]
   ]
 },
 
+  {
+  id: "bold-shrimp-scampi-with-angel-hair",
+  title: "Bold Shrimp Scampi with Angel Hair",
+  description: "Big garlic energy, properly saucy pasta, and just enough heat to keep things interesting.",
+  image: "images/no-photo.jpg",
+  category: "Seafood",
+  dateAdded: "2026-06-28",
+  carbs: null,
+  fat: null,
+  fiber: null,
+  calories: "",
+  protein: "",
+  servings: "6",
+  tags: ["shrimp", "seafood", "pasta", "garlic", "weeknight dinner"],
+
+  ingredients: [
+    {
+      title: "For the Shrimp",
+      items: [
+        { qty: 1.5, unit: "lb", name: "large shrimp", notes: "peeled and deveined" },
+        { qty: 0.5, unit: "tsp", name: "garlic powder" },
+        { qty: null, unit: null, name: "Salt and black pepper, to taste" }
+      ]
+    },
+    {
+      title: "For the Sauce and Pasta",
+      items: [
+        { qty: 12, unit: "oz", name: "angel hair pasta" },
+        { qty: 4, unit: "tbsp", name: "unsalted butter" },
+        { qty: 3, unit: "tbsp", name: "olive oil" },
+        { qty: 10, unit: "clove", name: "garlic", notes: "minced" },
+        { qty: 1, unit: null, name: "small yellow onion", notes: "finely diced" },
+        { qty: 1, unit: "tsp", name: "red pepper flakes" },
+        { qty: 1, unit: "cup", name: "dry white wine" },
+        { qty: 1/3, unit: "cup", name: "lemon juice", notes: "from about 2 lemons", approx: true },
+        { qty: 0.5, unit: "tsp", name: "worcestershire sauce" },
+        { qty: 1, unit: "tsp", name: "hot sauce", notes: "such as Tabasco or Frank's" },
+        { qty: 1, unit: "tsp", name: "salt" },
+        { qty: 0.75, unit: "tsp", name: "black pepper" },
+        { qty: 0.5, unit: "cup", name: "reserved pasta water" }
+      ]
+    },
+    {
+      title: "To Finish",
+      items: [
+        { qty: 0.25, unit: "cup", name: "fresh chopped parsley" },
+        { qty: 0.25, unit: "cup", name: "grated parmesan", notes: "optional", optional: true }
+      ]
+    }
+  ],
+
+  steps: [
+    "Season the shrimp: Pat shrimp dry with paper towels — wet shrimp steam instead of sear. Toss with garlic powder, a pinch of salt, and a pinch of black pepper. Set aside.",
+    "Cook the pasta: Bring a large pot of heavily salted water to a boil. Cook angel hair until just shy of al dente — it'll finish in the sauce. Before draining, scoop out at least 1/2 cup of pasta water. Drain and set pasta aside.",
+    "Sear the shrimp: Heat olive oil in a large skillet over medium-high until shimmering. Add shrimp in a single layer — don't crowd them. Sear 60–90 seconds per side until they just start to get color but are NOT fully cooked through. Pull them out onto a plate and set aside.",
+    "Bloom the butter and pepper flakes: Reduce heat to medium. Add butter to the same pan. Once foamy, add red pepper flakes and stir for 30 seconds until sizzling and fragrant.",
+    "Build the aromatics: Add onion and all 10 cloves of minced garlic. Cook, stirring frequently, for 3–4 minutes until the onion is translucent and the garlic is golden and fragrant — not brown.",
+    "Reduce the wine: Pour in the white wine and turn heat to medium-high. Let it reduce by about half, stirring occasionally — about 4–5 minutes. You want the alcohol smell gone and the sauce visibly thickened.",
+    "Add worcestershire and lemon: Reduce heat to medium. Stir in the worcestershire sauce and hot sauce, then add the lemon juice. Taste and adjust salt and pepper before the shrimp go back in.",
+    "Finish the shrimp and pasta: Reduce heat to low. Add the drained pasta directly to the pan and toss to coat, adding splashes of reserved pasta water as needed to make the sauce glossy and clingy. Nestle the seared shrimp back in and toss everything together for about 1 minute until the shrimp are just cooked through.",
+    "Serve: Plate immediately and top with fresh parsley and a light sprinkle of parmesan if using. Scampi waits for no one."
+  ],
+
+  notes: [
+    "The pasta water is non-negotiable. The starch is what makes the sauce glossy and clingy instead of thin and soupy. Don't skip scooping it out before you drain.",
+    "Worcestershire is the secret weapon. Half a teaspoon sounds like nothing, but it adds a savory backbone that makes everything taste more intensely like itself. You won't detect it — you'll just wonder why this tastes better than other scampis.",
+    "Wine: Use something you'd drink. Pinot Grigio or Sauvignon Blanc are ideal. Avoid anything labeled \"cooking wine.\"",
+    "Heat level: As written this is medium — noticeable but not aggressive. Pull the red pepper flakes back to 1/2 tsp if you're cooking for heat-sensitive folks.",
+    "Don't overcook the shrimp. Pull them from the sear before they're fully done — they finish in the sauce. Overcooked shrimp are rubbery and sad."
+  ]
+},
+
 ];
