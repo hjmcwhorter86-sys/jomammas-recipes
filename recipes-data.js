@@ -1606,7 +1606,7 @@ tags: ["dessert", "high protein"]
   id: "bold-shrimp-scampi-with-angel-hair",
   title: "Bold Shrimp Scampi with Angel Hair",
   description: "Big garlic energy, properly saucy pasta, and just enough heat to keep things interesting.",
-  image: "images/no-photo.jpg",
+  image: "images/shrimp-scampi.png",
   category: "Seafood",
   dateAdded: "2026-06-28",
   carbs: null,
