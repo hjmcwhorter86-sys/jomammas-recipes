@@ -1413,7 +1413,7 @@ tags: ["dessert", "high protein"]
         { qty: 2, unit: "tsp", name: "olive oil" },
         { qty: 2, unit: "tbsp", name: "light butter", notes: "for cooking" },
         { qty: 1, unit: "tbsp", name: "light butter", notes: "finishing, split between batches" },
-        { qty: 2, unit: "tsp", name: "garlic", notes: "minced" },
+        { qty: 2, unit: "tsp", name: "jarred minced garlic" },
         { qty: 2, unit: "tbsp", name: "honey", notes: "1 tbsp per batch" },
         { qty: 1, unit: "tbsp", name: "fresh chopped parsley" }
       ]
@@ -1422,7 +1422,7 @@ tags: ["dessert", "high protein"]
       title: "For the Mac and Cheese",
       items: [
         { qty: 3, unit: "cup", name: "macaroni", notes: "uncooked, or pasta of choice" },
-        { qty: 1.5, unit: "tbsp", name: "garlic", notes: "minced" },
+        { qty: 1.5, unit: "tbsp", name: "jarred minced garlic" },
         { qty: 2, unit: "cup", name: "skim milk" },
         { qty: 1, unit: "cup", name: "light cream cheese", notes: "Philadelphia, one full 8oz block" },
         { qty: 5, unit: "oz", name: "low fat cheddar cheese", notes: "shredded" },

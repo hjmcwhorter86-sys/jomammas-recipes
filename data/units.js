@@ -119,6 +119,7 @@ window.unitConversions = {
     "gochujang": 1.22,
     "cooked jasmine rice": 0.67,
     "garlic": 0.91,
+    "jarred minced garlic": 1.0,
     "fresh chopped parsley": 0.26,
     "macaroni": 0.42,
     "light cream cheese": 0.98,

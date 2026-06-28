@@ -92,7 +92,18 @@ window.ingredientNutrition = {
     carbs: 31,
     unitWeights: { clove: 3 },
     verified: false,
-    source: "USDA"
+    source: "USDA — fresh garlic (cloves). Jarred minced garlic is a separate, more dilute entry."
+  },
+  "jarred minced garlic": {
+    per: "100g",
+    calories: 100,
+    protein: 0,
+    fat: 0,
+    fiber: 0,
+    carbs: 20,
+    unitWeights: {},
+    verified: true,
+    source: "Great Value Minced Garlic (jarred) label: 5 cal / 0g fat / 0g protein per 1 tsp (5g); carbs ~1g/serving derived from the 5 cal (label carb line was partly obscured). Per user-provided photo."
   },
   "chicken breast": {
     per: "100g",
