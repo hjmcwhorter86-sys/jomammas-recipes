@@ -1530,7 +1530,7 @@ tags: ["dessert", "high protein"]
   id: "smothered-chicken",
   title: "Smothered Chicken",
   description: "Southern comfort done right — bold spiced chicken seared golden, then finished in a rich, bacony pan gravy.",
-  image: "images/no-photo.jpg",
+  image: "images/smothered-chicken.png",
   category: "Chicken",
   dateAdded: "2026-06-28",
   carbs: null,
