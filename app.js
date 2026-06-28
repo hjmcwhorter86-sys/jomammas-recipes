@@ -1026,12 +1026,7 @@ if (pageType === 'list' && recipesEl && searchEl) {
     recipesEl.innerHTML = list.map(r => {
       // Use recipe image or fallback to placeholder
       const imageUrl = getRecipeImageUrl(r);
-      
-      // Build meta items for the meta row
-      let metaItems = [];
-      if (r.calories && r.calories.trim()) metaItems.push(`<span class="meta-item">${r.calories}</span>`);
-      if (r.protein && r.protein.trim()) metaItems.push(`<span class="meta-item">${r.protein}</span>`);
-      
+
       return `
         <a href="${getRecipeUrl(r)}" class="card recipe-card">
           <div class="recipe-card-image-wrapper">
@@ -1042,7 +1037,6 @@ if (pageType === 'list' && recipesEl && searchEl) {
             <p>${r.description}</p>
             <div class="recipe-meta-row">
               <span class="category-pill">${formatRecipeCategories(r)}</span>
-              ${metaItems.length > 0 ? `<div class="recipe-meta-items">${metaItems.join(' • ')}</div>` : ''}
             </div>
             <div class="tags">
               ${r.tags.map(t => `<span class="tag">${t}</span>`).join("")}
