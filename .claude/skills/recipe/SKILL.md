@@ -102,18 +102,21 @@ committed and pushed.
    between logical ingredient groups, trailing comma after the closing
    `}`).
 
-10. **Regenerate screenshots.** Adding a recipe changes the home page
-    ("Newest Recipes") and the recipes list page. Run `npm run screenshots`
-    and stage whatever PNG diffs result, per this repo's CLAUDE.md rule
-    that any rendering change needs updated screenshots in the commit.
+10. **Spot-check rendering — do NOT run the full screenshot suite.** Adding
+    a recipe changes the home page ("Newest Recipes"), the recipes list
+    page, and the new recipe's detail page. Open those in a browser and
+    confirm the new recipe renders correctly. Do **not** run
+    `npm run screenshots` locally — it's slow, and the
+    `.github/workflows/screenshots.yml` CI workflow regenerates and commits
+    the PNGs automatically on every PR (see this repo's CLAUDE.md).
 
 11. **Show the user the final structured recipe** (ingredients, steps,
     category, any new nutrition entries you added and their sources)
     before committing, so they can correct anything before it's recorded.
 
 12. **Commit and push** — the new recipe, any new/updated nutrition
-    entries, the new images, and the regenerated screenshots together, in
-    one commit, to the current branch.
+    entries, and the new images together, in one commit, to the current
+    branch. (No screenshots — CI regenerates and commits those on the PR.)
 
 13. **Summarize**: recipe id/title, category, image source (photo vs.
     fallback), and any new ingredient nutrition entries added along with
