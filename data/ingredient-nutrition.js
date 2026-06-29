@@ -107,14 +107,14 @@ window.ingredientNutrition = {
   },
   "chicken breast": {
     per: "100g",
-    calories: 120,
-    protein: 22.5,
-    fat: 2.6,
+    calories: 98,
+    protein: 22.3,
+    fat: 0.9,
     fiber: 0,
     carbs: 0,
     unitWeights: { "chicken breast": 170 },
-    verified: false,
-    source: "Estimated by Claude (typical USDA FoodData Central / brand-label values), unverified — pending user review"
+    verified: true,
+    source: "Perdue thin-sliced boneless skinless chicken breast label: 110 cal / 1g fat / 0g carbs / 25g protein per 4 oz (112g), per user-provided photo. User confirms same per-lb values as any boneless skinless breast."
   },
   "chicken tenders": {
     per: "100g",
@@ -157,8 +157,8 @@ window.ingredientNutrition = {
     fiber: 9,
     carbs: 72.7,
     unitWeights: {},
-    verified: false,
-    source: "Estimated by Claude (typical USDA FoodData Central / brand-label values), unverified — pending user review"
+    verified: true,
+    source: "USDA reference, garlic powder (~331 cal/100g, negligible at recipe amounts). User opted not to label-check."
   },
   "onion powder": {
     per: "100g",
@@ -168,8 +168,8 @@ window.ingredientNutrition = {
     fiber: 15.2,
     carbs: 79.1,
     unitWeights: {},
-    verified: false,
-    source: "Estimated by Claude (typical USDA FoodData Central / brand-label values), unverified — pending user review"
+    verified: true,
+    source: "USDA reference, onion powder (~341 cal/100g, negligible at recipe amounts). User opted not to label-check."
   },
   "sweet chili sauce": {
     per: "100g",
@@ -212,8 +212,8 @@ window.ingredientNutrition = {
     fiber: 0,
     carbs: 0,
     unitWeights: {},
-    verified: false,
-    source: "Estimated by Claude (typical USDA FoodData Central / brand-label values), unverified — pending user review"
+    verified: true,
+    source: "Sodium chloride — 0 calories/macros. User-confirmed."
   },
   "black pepper": {
     per: "100g",
@@ -223,8 +223,8 @@ window.ingredientNutrition = {
     fiber: 25.3,
     carbs: 64,
     unitWeights: {},
-    verified: false,
-    source: "Estimated by Claude (typical USDA FoodData Central / brand-label values), unverified — pending user review"
+    verified: true,
+    source: "USDA reference, ground black pepper (~251 cal/100g but ~3 cal per tsp — negligible at recipe amounts). User opted not to label-check."
   },
   "paprika": {
     per: "100g",
@@ -234,8 +234,8 @@ window.ingredientNutrition = {
     fiber: 35,
     carbs: 54,
     unitWeights: {},
-    verified: false,
-    source: "Estimated by Claude (typical USDA FoodData Central / brand-label values), unverified — pending user review"
+    verified: true,
+    source: "USDA reference, paprika (~282 cal/100g, negligible at recipe amounts). User opted not to label-check."
   },
   "light butter": {
     per: "100g",
@@ -250,14 +250,14 @@ window.ingredientNutrition = {
   },
   "protein pasta": {
     per: "100g",
-    calories: 360,
-    protein: 22,
-    fat: 2.5,
-    fiber: 9,
-    carbs: 60,
+    calories: 340,
+    protein: 17,
+    fat: 2,
+    fiber: 10,
+    carbs: 68,
     unitWeights: {},
-    verified: false,
-    source: "Estimated by Claude (typical USDA FoodData Central / brand-label values), unverified — pending user review"
+    verified: true,
+    source: "Barilla Protein+ pasta label (angel hair & penne, identical): per 100g 340 cal / 17g protein / 2g fat / 10g fiber / 68g carbs, per user-provided photo"
   },
   "1% milk": {
     per: "100ml",
@@ -305,14 +305,14 @@ window.ingredientNutrition = {
   },
   "half and half": {
     per: "100ml",
-    calories: 130,
-    protein: 3,
-    fat: 11.5,
+    calories: 133,
+    protein: 3.3,
+    fat: 11.7,
     fiber: 0,
-    carbs: 4.3,
+    carbs: 3.3,
     unitWeights: {},
-    verified: false,
-    source: "Estimated by Claude (typical USDA FoodData Central / brand-label values), unverified — pending user review"
+    verified: true,
+    source: "Great Value Half & Half label: 40 cal / 3.5g fat / 1g carbs / 1g protein per 2 tbsp (30mL), per user-provided photo"
   },
   "light margarine": {
     per: "100g",
@@ -707,8 +707,8 @@ window.ingredientNutrition = {
     fiber: 35,
     carbs: 54,
     unitWeights: {},
-    verified: false,
-    source: "Estimated by Claude (typical USDA FoodData Central / brand-label values), unverified — pending user review"
+    verified: true,
+    source: "USDA reference, smoked paprika (~282 cal/100g, negligible at recipe amounts). User opted not to label-check."
   },
   "sweet baby ray's sugar free bbq sauce": {
     per: "100g",
@@ -1037,8 +1037,8 @@ window.ingredientNutrition = {
     fiber: 0,
     carbs: 0,
     unitWeights: {},
-    verified: false,
-    source: "Estimated by Claude (typical USDA FoodData Central / brand-label values), unverified — pending user review"
+    verified: true,
+    source: "Table salt (sodium chloride) — 0 calories/macros. User-confirmed."
   },
   "boneless skinless chicken thighs": {
     per: "100g",
