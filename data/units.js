@@ -49,7 +49,7 @@ window.unitConversions = {
   // data/ingredient-nutrition.js.
   densities: {
     "honey": 1.42,
-    "flour": 0.53,
+    "flour": 0.51,
     "garlic powder": 0.61,
     "onion powder": 0.49,
     "sriracha": 1,
@@ -66,7 +66,7 @@ window.unitConversions = {
     "mustard": 1,
     "olive oil": 0.92,
     "better than bouillon seasoned lobster base": 1.15,
-    "tomato paste": 1.08,
+    "tomato paste": 1.12,
     "minced lobster meat": 0.63,
     "cornstarch": 0.54,
     "avocado oil": 0.92,
@@ -104,7 +104,7 @@ window.unitConversions = {
     "dijon mustard": 1.06,
     "red pepper flakes": 0.45,
     "chicken base": 1.15,
-    "sugar": 0.85,
+    "sugar": 0.81,
     "dried oregano": 0.2,
     "mayonnaise": 0.93,
     "sour cream": 0.97,

@@ -235,7 +235,7 @@ tags: ["dessert", "high protein"]
   tags: ["beef", "skillet", "comfort food", "weeknight"],
 
   ingredients: [
-    { qty: 1, unit: "lb", name: "lean ground beef" },
+    { qty: 1, unit: "lb", name: "ground beef (93/7)" },
     { qty: 1/3, unit: "cup", name: "Italian-style breadcrumbs" },
     { qty: 2, unit: "tsp", name: "ketchup" },
     { qty: 1, unit: "tsp", name: "mustard" },
@@ -904,7 +904,7 @@ tags: ["dessert", "high protein"]
   tags: ["soup", "protein", "ground beef"],
 
   ingredients: [
-    { qty: 1, unit: "lb", name: "93-96% lean ground beef", notes: "or lean ground turkey" },
+    { qty: 1, unit: "lb", name: "ground beef (93/7)", notes: "or lean ground turkey" },
     { qty: 1, unit: "tsp", name: "kosher salt" },
     { qty: 0.75, unit: "tsp", name: "black pepper" },
     { qty: 1, unit: "tsp", name: "smoked paprika" },
@@ -1255,7 +1255,7 @@ tags: ["dessert", "high protein"]
     {
       title: "The Beef",
       items: [
-        { qty: 2, unit: "lb", name: "ground beef (80/20)" },
+        { qty: 2, unit: "lb", name: "ground beef (93/7)" },
         { qty: 1, unit: "tbsp", name: "vegetable oil" }
       ]
     },

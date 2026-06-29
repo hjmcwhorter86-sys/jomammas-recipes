@@ -59,16 +59,16 @@
 //    visually flagged (e.g. with an asterisk) until verified.
 // ---------------------------------------------------------------------------
 window.ingredientNutrition = {
-  "ground beef (80/20)": {
+  "ground beef (93/7)": {
     per: "100g",
-    calories: 254,
-    protein: 17,
-    fat: 20,
+    calories: 152,
+    protein: 20.5,
+    fat: 7.1,
     fiber: 0,
     carbs: 0,
     unitWeights: {},
-    verified: false,
-    source: "USDA FoodData Central, raw 80/20 ground beef"
+    verified: true,
+    source: "93/7 lean ground beef label: 170 cal / 8g fat / 0g carbs / 23g protein per 4 oz (112g), per user-provided photo. Canonical for all ground beef per user (recipes standardize on lean 93/7)."
   },
 
   "egg": {
@@ -129,14 +129,14 @@ window.ingredientNutrition = {
   },
   "flour": {
     per: "100g",
-    calories: 364,
+    calories: 367,
     protein: 10,
-    fat: 1,
+    fat: 0,
     fiber: 2.7,
-    carbs: 76,
+    carbs: 76.7,
     unitWeights: {},
-    verified: false,
-    source: "Estimated by Claude (typical USDA FoodData Central / brand-label values), unverified — pending user review"
+    verified: true,
+    source: "Bleached all-purpose wheat flour label: 110 cal / 0g fat / 23g carbs / <1g fiber / 3g protein per 1/4 cup (30g), per user-provided photo (fiber ~2.7g/100g per USDA, label rounds to <1g/serving)"
   },
   "cornflakes": {
     per: "100g",
@@ -402,17 +402,6 @@ window.ingredientNutrition = {
     verified: false,
     source: "Estimated by Claude (typical USDA FoodData Central / brand-label values), unverified — pending user review"
   },
-  "lean ground beef": {
-    per: "100g",
-    calories: 152,
-    protein: 22,
-    fat: 7,
-    fiber: 0,
-    carbs: 0,
-    unitWeights: {},
-    verified: false,
-    source: "Estimated by Claude (typical USDA FoodData Central / brand-label values), unverified — pending user review"
-  },
   "ketchup": {
     per: "100g",
     calories: 112,
@@ -514,14 +503,14 @@ window.ingredientNutrition = {
   },
   "tomato paste": {
     per: "100g",
-    calories: 82,
-    protein: 4.3,
-    fat: 0.5,
-    fiber: 4.6,
-    carbs: 18.9,
+    calories: 91,
+    protein: 3,
+    fat: 0,
+    fiber: 3,
+    carbs: 18.2,
     unitWeights: {},
-    verified: false,
-    source: "Estimated by Claude (typical USDA FoodData Central / brand-label values), unverified — pending user review"
+    verified: true,
+    source: "Great Value Tomato Paste label: 30 cal / 0g fat / 6g carbs / 1g fiber / 1g protein per 2 tbsp (33g), per user-provided photo"
   },
   "minced lobster meat": {
     per: "100g",
@@ -1150,17 +1139,6 @@ window.ingredientNutrition = {
     verified: false,
     source: "Estimated by Claude (typical USDA FoodData Central / brand-label values), unverified — pending user review"
   },
-  "93 96% lean ground beef": {
-    per: "100g",
-    calories: 145,
-    protein: 22,
-    fat: 6,
-    fiber: 0,
-    carbs: 0,
-    unitWeights: {},
-    verified: false,
-    source: "Estimated by Claude (typical USDA FoodData Central / brand-label values), unverified — pending user review"
-  },
   "medium yellow onions": {
     per: "100g",
     calories: 40,
@@ -1339,14 +1317,14 @@ window.ingredientNutrition = {
   },
   "sugar": {
     per: "100g",
-    calories: 387,
+    calories: 375,
     protein: 0,
     fat: 0,
     fiber: 0,
     carbs: 100,
     unitWeights: {},
-    verified: false,
-    source: "Estimated by Claude (typical USDA FoodData Central / brand-label values), unverified — pending user review"
+    verified: true,
+    source: "Granulated sugar label: 30 cal / 8g total carbs (all sugar) / 0g everything else per 2 tsp (8g), per user-provided photo"
   },
   "cooking sherry": {
     per: "100ml",
