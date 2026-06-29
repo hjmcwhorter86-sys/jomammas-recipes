@@ -1103,6 +1103,7 @@ tags: ["dessert", "high protein"]
   fiber: null,
   calories: "250 calories per serving",
   protein: "4g",
+  servings: "6",
   tags: ["soup", "tomato", "easy", "weeknight", "fast", "low calorie", "comfort food"],
 
   ingredients: [
