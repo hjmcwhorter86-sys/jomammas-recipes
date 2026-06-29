@@ -1256,7 +1256,7 @@ tags: ["dessert", "high protein"]
     {
       title: "The Beef",
       items: [
-        { qty: 2, unit: "lb", name: "ground beef (80/20)" },
+        { qty: 2, unit: "lb", name: "lean ground beef" },
         { qty: 1, unit: "tbsp", name: "vegetable oil" }
       ]
     },
