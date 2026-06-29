@@ -195,14 +195,14 @@ window.ingredientNutrition = {
   },
   "honey": {
     per: "100g",
-    calories: 304,
-    protein: 0.3,
+    calories: 286,
+    protein: 0,
     fat: 0,
-    fiber: 0.2,
-    carbs: 82.4,
+    fiber: 0,
+    carbs: 81,
     unitWeights: {},
-    verified: false,
-    source: "Estimated by Claude (typical USDA FoodData Central / brand-label values), unverified — pending user review"
+    verified: true,
+    source: "Great Value honey label: 60 cal / 0g fat / 17g carbs / 0g protein per 1 tbsp (21g), per user-provided photo"
   },
   "kosher salt": {
     per: "100g",
@@ -569,14 +569,14 @@ window.ingredientNutrition = {
   },
   "parmesan": {
     per: "100g",
-    calories: 431,
-    protein: 38,
-    fat: 29,
+    calories: 393,
+    protein: 32.1,
+    fat: 25,
     fiber: 0,
-    carbs: 4.1,
+    carbs: 3.6,
     unitWeights: {},
-    verified: false,
-    source: "Estimated by Claude (typical USDA FoodData Central / brand-label values), unverified — pending user review"
+    verified: true,
+    source: "BelGioioso Parmesan (block, grated by user) label: 110 cal / 7g fat / 1g carbs / 9g protein per 1in cube (28g), per user-provided photo"
   },
   "marinara": {
     per: "100ml",
@@ -591,14 +591,14 @@ window.ingredientNutrition = {
   },
   "reduced fat shredded mozzarella": {
     per: "100g",
-    calories: 280,
-    protein: 28,
-    fat: 18,
+    calories: 286,
+    protein: 21.4,
+    fat: 21.4,
     fiber: 0,
-    carbs: 3,
+    carbs: 7.1,
     unitWeights: {},
-    verified: false,
-    source: "Estimated by Claude (typical USDA FoodData Central / brand-label values), unverified — pending user review"
+    verified: true,
+    source: "Reduced-fat low-moisture part-skim shredded mozzarella label: 80 cal / 6g fat / 2g carbs / 6g protein per 1/4 cup (28g), per user-provided photo"
   },
   "unsalted butter": {
     per: "100g",
@@ -624,14 +624,14 @@ window.ingredientNutrition = {
   },
   "shredded cheddar": {
     per: "100g",
-    calories: 403,
+    calories: 393,
     protein: 25,
-    fat: 33,
+    fat: 32.1,
     fiber: 0,
-    carbs: 1.3,
+    carbs: 3.6,
     unitWeights: {},
-    verified: false,
-    source: "Estimated by Claude (typical USDA FoodData Central / brand-label values), unverified — pending user review"
+    verified: true,
+    source: "Great Value mild shredded cheddar label: 110 cal / 9g fat / 1g carbs / 7g protein per 1/3 cup (28g), per user-provided photo"
   },
   "ground cumin": {
     per: "100g",
@@ -921,14 +921,14 @@ window.ingredientNutrition = {
   },
   "shredded mozzarella cheese": {
     per: "100g",
-    calories: 300,
-    protein: 22,
-    fat: 22,
+    calories: 393,
+    protein: 25,
+    fat: 32.1,
     fiber: 0,
-    carbs: 2.2,
+    carbs: 3.6,
     unitWeights: {},
-    verified: false,
-    source: "Estimated by Claude (typical USDA FoodData Central / brand-label values), unverified — pending user review"
+    verified: true,
+    source: "Regular low-moisture part-skim shredded mozzarella label: 110 cal / 9g fat / 1g carbs / 7g protein per 1/3 cup (28g), per user-provided photo"
   },
   "panko breadcrumbs": {
     per: "100g",
