@@ -901,6 +901,7 @@ tags: ["dessert", "high protein"]
   fiber: null,
   calories: "265",
   protein: "24 g",
+  servings: "6",
   tags: ["soup", "protein", "ground beef"],
 
   ingredients: [
