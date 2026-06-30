@@ -1755,4 +1755,37 @@ window.ingredientNutrition = {
     verified: false,
     source: "Estimated by Claude (typical Tabasco/Frank's RedHot style hot sauce label values), unverified — pending user review"
   },
+  "white american cheese": {
+    per: "100g",
+    calories: 357,
+    protein: 17.9,
+    fat: 25,
+    fiber: 0,
+    carbs: 7.1,
+    unitWeights: {},
+    verified: true,
+    source: "Land O Lakes White Pasteurized Process American Cheese Product label: 100 cal / 7g fat / 2g carbs / 0g fiber / 5g protein per 2 slices (28g), per user-provided photo"
+  },
+  "evaporated milk": {
+    per: "100ml",
+    calories: 133,
+    protein: 6.7,
+    fat: 6.7,
+    fiber: 0,
+    carbs: 10,
+    unitWeights: {},
+    verified: true,
+    source: "Great Value Evaporated Milk label: 40 cal / 2g fat / 3g carbs / 0g fiber / 2g protein per 2 tbsp (30mL), per user-provided photo"
+  },
+  "hatch green chiles": {
+    per: "100g",
+    calories: 33,
+    protein: 0,
+    fat: 0,
+    fiber: 0,
+    carbs: 6.7,
+    unitWeights: {},
+    verified: true,
+    source: "Hatch Select Chopped Green Chiles Mild label: 10 cal / 0g fat / 2g carbs / 0g fiber / 0g protein per 2 tbsp (30g), per user-provided photo"
+  },
 };
