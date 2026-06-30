@@ -731,7 +731,7 @@ tags: ["dessert", "high protein"]
   steps: [
     "Heat oven to 425°F (hot is key for blistering, not sad wrinkling).",
     "Toss tomatoes whole with olive oil, salt, pepper, and any optional seasoning.",
-    "Spread on a sheet pan in one layer (don’t crowd — give those babies breathing room).",
+    "Spread on a sheet pan in one layer (don’t crowd them; give those babies breathing room).",
     "Roast 15–20 minutes, shaking the pan once halfway."
   ]
 },
@@ -980,7 +980,7 @@ tags: ["dessert", "high protein"]
 {
   id: "bbq-chicken-protein-pizza",
   title: "BBQ Chicken Protein Pizza",
-  description: "Sweet, smoky, cheesy, and protein-packed — pizza night without the regret.",
+  description: "Sweet, smoky, cheesy, and protein-packed. Pizza night without the regret.",
   image: "images/bbq-chicken-protein-pizza.png",
   category: "Chicken",
   dateAdded: "2026-03-26",
@@ -1028,7 +1028,7 @@ tags: ["dessert", "high protein"]
   tags: ["pasta", "meatless", "easy", "weeknight", "spicy", "fast", "low calorie"],
 
   ingredients: [
-    { qty: 12, unit: "oz", name: "penne", notes: "or pasta of choice — protein pasta works great" },
+    { qty: 12, unit: "oz", name: "penne", notes: "or pasta of choice; protein pasta works great" },
     { qty: 3, unit: "tbsp", name: "olive oil" },
     { qty: 6, unit: "clove", name: "garlic", notes: "thinly sliced" },
     { qty: 2, qtyMax: 3, unit: "tsp", name: "red pepper flakes", notes: "adjust to your heat tolerance" },
@@ -1100,7 +1100,7 @@ tags: ["dessert", "high protein"]
   {
   id: "creamy-sherry-tomato-soup",
   title: "Creamy Tomato Soup with Sherry",
-  description: "A lightened-up version of a classic creamy tomato soup—lower in fat than traditional recipes, but still rich and comforting.",
+  description: "A lightened-up version of a classic creamy tomato soup, lower in fat than traditional recipes, but still rich and comforting.",
   image: "images/no-photo.jpg",
   category: "Soup",
   dateAdded: "2026-04-05",
@@ -1181,11 +1181,11 @@ tags: ["dessert", "high protein"]
   ],
 
   steps: [
-    "Toast the chiles: Tear open the guajillo and ancho chiles, removing stems and seeds. Toast in a dry skillet over medium heat for about 30 seconds per side — just until fragrant, not burnt. Place in a bowl, cover with hot water, and soak 15–20 minutes until softened.",
-    "Season and sear the roast: Cut the chuck roast into 3–4 large chunks. Season all over with 2 tsp salt and the black pepper. Heat vegetable oil in a large skillet over high heat and sear 2–3 minutes per side until deeply browned. Don't skip this step — it builds the flavor base. Transfer to the slow cooker.",
-    "Blend the chile sauce: Drain the soaked chiles and add to a blender with the chipotle peppers, garlic, onion, tomatoes, apple cider vinegar, cumin, oregano, cinnamon, and 1 cup of beef broth. Blend until very smooth. Taste — it should be bold, smoky, and slightly spicy.",
-    "Load the slow cooker: Pour the chile sauce over the seared beef. Add the remaining 1 cup of beef broth and tuck in the bay leaves. The liquid should come about halfway up the meat — that's perfect.",
-    "Cook on LOW for 6–7 hours. Start checking around the 6-hour mark — the meat is done when it shreds easily with two forks. Switch to keep warm if it finishes early; it only gets better.",
+    "Toast the chiles: Tear open the guajillo and ancho chiles, removing stems and seeds. Toast in a dry skillet over medium heat for about 30 seconds per side, just until fragrant, not burnt. Place in a bowl, cover with hot water, and soak 15–20 minutes until softened.",
+    "Season and sear the roast: Cut the chuck roast into 3–4 large chunks. Season all over with 2 tsp salt and the black pepper. Heat vegetable oil in a large skillet over high heat and sear 2–3 minutes per side until deeply browned. Don't skip this step; it builds the flavor base. Transfer to the slow cooker.",
+    "Blend the chile sauce: Drain the soaked chiles and add to a blender with the chipotle peppers, garlic, onion, tomatoes, apple cider vinegar, cumin, oregano, cinnamon, and 1 cup of beef broth. Blend until very smooth. It should be bold, smoky, and slightly spicy.",
+    "Load the slow cooker: Pour the chile sauce over the seared beef. Add the remaining 1 cup of beef broth and tuck in the bay leaves. The liquid should come about halfway up the meat. That's perfect.",
+    "Cook on LOW for 6–7 hours. Start checking around the 6-hour mark; the meat is done when it shreds easily with two forks. Switch to keep warm if it finishes early; it only gets better.",
     "Remove the bay leaves. Pull the beef chunks out and shred with two forks, then return the meat to the pot and stir back into the broth. Taste the consommé and add up to 1 tsp salt if needed. Serve the consommé alongside in small bowls for sipping or ladling over the bowl."
   ],
 
