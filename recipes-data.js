@@ -214,7 +214,8 @@ steps: [
 notes: [
   "Too thick? Add a splash of milk.",
   "Too loose? Add a bit more Greek yogurt or a pinch more pudding mix.",
-  "Top with fresh berries, crushed graham crackers, or sugar-free caramel sauce."
+  "Top with fresh berries, crushed graham crackers, or sugar-free caramel sauce.",
+  "For optional extra flavor, drizzle with sugar-free caramel or sugar-free chocolate syrup."
 ],
 tags: ["dessert", "high protein"]
 },
