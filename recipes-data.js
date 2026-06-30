@@ -302,7 +302,7 @@ tags: ["dessert", "high protein"]
   notes: [
     "Great with grilled cheese or crusty bread.",
     "For extra richness, swap part of the milk for heavy cream.",
-    "For extra protein, stir in a spoon of greek yogurt off-heat before serving or add extra minced lobster meat on top."
+    "Top with extra minced lobster meat for a heartier bowl."
   ]
 },
 
