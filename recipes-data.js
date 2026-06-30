@@ -1071,6 +1071,7 @@ tags: ["dessert", "high protein"]
   fiber: null,
   calories: "200 calories per serving",
   protein: "25 g",
+  servings: 4,
   tags: ["shrimp", "seafood", "easy", "weeknight", "fast", "low calorie"],
 
   ingredients: [
