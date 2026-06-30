@@ -1732,7 +1732,8 @@ tags: ["dessert", "high protein"]
     "Lower the heat and add the cheeses gradually, stirring constantly until fully melted and smooth.",
     "Stir in the Hatch green chiles and all seasonings. Taste and adjust.",
     "Fold in the browned chorizo, or keep it separate for people to add themselves.",
-    "Keep warm on low heat, splashing in extra evaporated milk if it thickens too much."
+    "Keep warm on low heat, splashing in extra evaporated milk if it thickens too much.",
+    "Serve with optional toppings like salsa, extra jalapeños, fresh cilantro, or pico de gallo."
   ],
 
   notes: [
