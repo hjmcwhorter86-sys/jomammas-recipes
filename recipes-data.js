@@ -313,6 +313,7 @@ tags: ["dessert", "high protein"]
   image: "images/air-fryer-general-tsos-chicken.png",
   category: "Chicken",
   dateAdded: "2026-02-11",
+  servings: "4",
   carbs: null,
   fat: null,
   fiber: null,
