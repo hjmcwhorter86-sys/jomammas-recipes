@@ -1,7 +1,7 @@
 name: GitHub Pages PR Preview
 
 # Deploys every PR's static files to a per-PR subfolder on the `gh-pages`
-# branch (pr-preview/pr-<number>/) and comments the preview URL on the PR.
+# branch (pr-preview/pr-<number>/) and keeps a live status comment on the PR.
 # Cleans the subfolder up again when the PR closes.
 #
 # This is a from-scratch replacement for third-party preview-deploy actions
@@ -34,6 +34,31 @@ jobs:
       contents: write
       pull-requests: write
     steps:
+      - name: Post "building" status comment
+        id: comment
+        env:
+          GH_TOKEN: ${{ github.token }}
+          PR_NUMBER: ${{ github.event.pull_request.number }}
+          REPO: ${{ github.repository }}
+        run: |
+          set -euo pipefail
+
+          MARKER="<!-- gh-pages-preview-comment -->"
+          RUN_URL="https://github.com/${REPO}/actions/runs/${GITHUB_RUN_ID}"
+          BODY=$(printf '%s\n# 🏗️ Preview building... 🚧\n\n[View build log](%s)' "$MARKER" "$RUN_URL")
+
+          COMMENT_ID=$(gh api "repos/${REPO}/issues/${PR_NUMBER}/comments" --paginate \
+            --jq ".[] | select(.body | startswith(\"$MARKER\")) | .id" | head -n1)
+
+          if [ -n "$COMMENT_ID" ]; then
+            gh api -X PATCH "repos/${REPO}/issues/comments/${COMMENT_ID}" -f body="$BODY" > /dev/null
+          else
+            COMMENT_ID=$(gh api -X POST "repos/${REPO}/issues/${PR_NUMBER}/comments" \
+              -f body="$BODY" --jq '.id')
+          fi
+
+          echo "comment_id=${COMMENT_ID}" >> "$GITHUB_OUTPUT"
+
       - uses: actions/checkout@v4
         with:
           ref: ${{ github.event.pull_request.head.sha }}
@@ -90,27 +115,42 @@ jobs:
             git push origin gh-pages
           fi
 
-      - name: Comment preview link on PR
+      - name: Update comment with deploy result
+        if: always()
         env:
           GH_TOKEN: ${{ github.token }}
           PR_NUMBER: ${{ github.event.pull_request.number }}
           REPO: ${{ github.repository }}
+          COMMENT_ID: ${{ steps.comment.outputs.comment_id }}
+          JOB_STATUS: ${{ job.status }}
         run: |
           set -euo pipefail
 
+          MARKER="<!-- gh-pages-preview-comment -->"
+          RUN_URL="https://github.com/${REPO}/actions/runs/${GITHUB_RUN_ID}"
           OWNER="${REPO%%/*}"
           NAME="${REPO#*/}"
           PREVIEW_URL="https://${OWNER}.github.io/${NAME}/pr-preview/pr-${PR_NUMBER}/"
-          MARKER="<!-- gh-pages-preview-comment -->"
-          BODY=$(printf '%s\n🔍 **GitHub Pages preview:** %s\n\nUpdated for commit `%s`.' "$MARKER" "$PREVIEW_URL" "${GITHUB_SHA:0:7}")
 
-          COMMENT_ID=$(gh api "repos/${REPO}/issues/${PR_NUMBER}/comments" --paginate \
-            --jq ".[] | select(.body | startswith(\"$MARKER\")) | .id" | head -n1)
+          if [ "$JOB_STATUS" = "success" ]; then
+            BODY=$(printf '%s\n# 🚀 Preview deployed! 🥳\n\n**[View preview](%s)**\n\nUpdated for commit `%s` · [Build log](%s)' \
+              "$MARKER" "$PREVIEW_URL" "${GITHUB_SHA:0:7}" "$RUN_URL")
+          else
+            BODY=$(printf '%s\n# ❌ Preview build/deploy failed! 😵\n\n[View build log](%s)' \
+              "$MARKER" "$RUN_URL")
+          fi
 
+          # Use the ID captured in the first step; fall back to searching if it wasn't set
           if [ -n "$COMMENT_ID" ]; then
             gh api -X PATCH "repos/${REPO}/issues/comments/${COMMENT_ID}" -f body="$BODY" > /dev/null
           else
-            gh api -X POST "repos/${REPO}/issues/${PR_NUMBER}/comments" -f body="$BODY" > /dev/null
+            COMMENT_ID=$(gh api "repos/${REPO}/issues/${PR_NUMBER}/comments" --paginate \
+              --jq ".[] | select(.body | startswith(\"$MARKER\")) | .id" | head -n1)
+            if [ -n "$COMMENT_ID" ]; then
+              gh api -X PATCH "repos/${REPO}/issues/comments/${COMMENT_ID}" -f body="$BODY" > /dev/null
+            else
+              gh api -X POST "repos/${REPO}/issues/${PR_NUMBER}/comments" -f body="$BODY" > /dev/null
+            fi
           fi
 
   cleanup-preview:
@@ -151,7 +191,7 @@ jobs:
             git push origin gh-pages
           fi
 
-      - name: Note preview removal on PR
+      - name: Update comment to note preview removed
         env:
           GH_TOKEN: ${{ github.token }}
           PR_NUMBER: ${{ github.event.pull_request.number }}
@@ -160,7 +200,7 @@ jobs:
           set -euo pipefail
 
           MARKER="<!-- gh-pages-preview-comment -->"
-          BODY=$(printf '%s\n🔍 GitHub Pages preview for this PR has been removed.' "$MARKER")
+          BODY=$(printf '%s\n# 🔍 Preview removed\n\nThis PR is closed — the GitHub Pages preview has been cleaned up.' "$MARKER")
 
           COMMENT_ID=$(gh api "repos/${REPO}/issues/${PR_NUMBER}/comments" --paginate \
             --jq ".[] | select(.body | startswith(\"$MARKER\")) | .id" | head -n1)
