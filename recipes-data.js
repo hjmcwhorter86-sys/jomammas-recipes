@@ -1190,7 +1190,7 @@ tags: ["dessert", "high protein"]
   ],
 
   notes: [
-    "On the dried chiles: Guajillo = mild, fruity, slightly tangy. Ancho = dark, rich, chocolate-y. Chipotle in adobo = smoky heat. All three together is what makes birria taste like birria — don't substitute with chili powder. Look for dried chiles in the Hispanic foods aisle at Walmart or order online.",
+    "On the dried chiles: Guajillo = mild, fruity, slightly tangy. Ancho = dark, rich, chocolate-y. Chipotle in adobo = smoky heat. All three together is what makes birria taste like birria. Don't substitute with chili powder. Look for dried chiles in the Hispanic foods aisle at Walmart or order online.",
     "Hot-running slow cooker: If your slow cooker runs hot, start checking at 5.5–6 hours rather than waiting the full 7.",
     "Serving as bowls: Rice on the bottom, shredded beef on top, ladle consommé over everything. Top with diced onion, cilantro, cotija, and a squeeze of lime.",
     "For birria tacos: Dip tortillas briefly in the consommé, fill with shredded beef, and crisp in a hot skillet. Mind-blowing.",
@@ -1201,7 +1201,7 @@ tags: ["dessert", "high protein"]
 {
   id: "esquites-mexican-street-corn",
   title: "Esquites (Mexican Street Corn in a Cup)",
-  description: "Mexican street corn in a cup — charred corn kernels coated in a creamy, tangy, spiced sauce and topped with cotija and fresh lime. Bold enough to steal the show.",
+  description: "Mexican street corn in a cup: charred corn kernels coated in a creamy, tangy, spiced sauce and topped with cotija and fresh lime. Bold enough to steal the show.",
   image: "images/esquites.png",
   category: "Snacks & Sides",
   dateAdded: "2026-05-29",
@@ -1229,15 +1229,15 @@ tags: ["dessert", "high protein"]
   ],
 
   steps: [
-    "Heat a large cast iron skillet or heavy pan over HIGH heat until very hot. Add the butter and let it melt. Add the corn in a single layer — don't stir for 2 minutes to let it char. Then stir and let it char another 2 minutes. You want some kernels to get dark and almost smoky. Work in two batches if needed so the corn chars instead of steams.",
+    "Heat a large cast iron skillet or heavy pan over HIGH heat until very hot. Add the butter and let it melt. Add the corn in a single layer and don't stir for 2 minutes to let it char. Then stir and let it char another 2 minutes. You want some kernels to get dark and almost smoky. Work in two batches if needed so the corn chars instead of steams.",
     "Reduce heat to medium. Push the corn to the sides and add the garlic to the center. Sauté 30 seconds until fragrant, then stir into the corn. (If using garlic powder, skip this step and add it with the sauce instead.)",
     "Remove pan from heat. Stir in the mayonnaise, sour cream, chili powder, smoked paprika, cayenne, salt, and lime juice. Stir until everything is coated and creamy.",
     "Transfer to a serving bowl. Top with cotija (or queso fresco) and fresh cilantro. Serve warm with extra lime wedges and chili powder on the side so everyone can adjust their own heat level."
   ],
 
   notes: [
-    "Frozen corn works great — just make sure to thaw it first and pat it as dry as possible with paper towels before it hits the pan. Wet corn steams instead of chars and you'll miss out on those smoky caramelized bits that make this dish.",
-    "On the cheese: Cotija is the traditional choice — look for it in the Hispanic foods aisle. Queso fresco is a slightly milder, creamier substitute that works beautifully. In a real pinch, parmesan will do.",
+    "Frozen corn works great. Just make sure to thaw it first and pat it as dry as possible with paper towels before it hits the pan. Wet corn steams instead of chars and you'll miss out on those smoky caramelized bits that make this dish.",
+    "On the cheese: Cotija is the traditional choice. Look for it in the Hispanic foods aisle. Queso fresco is a slightly milder, creamier substitute that works beautifully. In a real pinch, parmesan will do.",
     "Make it spicier: Add a diced jalapeño when you sauté the garlic, or finish with a drizzle of hot sauce.",
     "Pairs perfectly with: Birria chuck roast, tacos, grilled chicken, or honestly anything off the grill."
   ]
@@ -1320,18 +1320,18 @@ tags: ["dessert", "high protein"]
   ],
 
   steps: [
-    "Warm a quart-sized Mason jar by rinsing with hot tap water. Combine rice vinegar, water, sugar, salt, and red pepper flakes in a small saucepan or microwave-safe cup. Heat until steaming and sugar is dissolved — about 90 seconds in the microwave. Pack julienned carrots tightly into the jar, pour hot brine over them, and let sit at room temperature for 20–30 minutes.",
+    "Warm a quart-sized Mason jar by rinsing with hot tap water. Combine rice vinegar, water, sugar, salt, and red pepper flakes in a small saucepan or microwave-safe cup. Heat until steaming and sugar is dissolved, about 90 seconds in the microwave. Pack julienned carrots tightly into the jar, pour hot brine over them, and let sit at room temperature for 20–30 minutes.",
     "Thinly slice the cucumber and toss with rice vinegar, sugar, salt, and a tiny drizzle of sesame oil. Let sit at least 10 minutes before serving.",
     "Rinse jasmine rice until water runs mostly clear. Add to rice cooker with chicken broth, water, sesame oil, and salt. Cook on the white rice setting. When done, fluff with a fork and stir in the rice vinegar.",
-    "Whisk together soy sauce, brown sugar, sesame oil, ginger, red pepper flakes, and gochujang paste in a small bowl. Taste — it should be salty, slightly sweet, and have a little heat.",
+    "Whisk together soy sauce, brown sugar, sesame oil, ginger, red pepper flakes, and gochujang paste in a small bowl. Taste; it should be salty, slightly sweet, and have a little heat.",
     "Heat vegetable oil in a large skillet over medium-high heat. Add ground beef and break it apart. Cook until browned and no longer pink, about 5–6 minutes. Drain excess grease if needed.",
     "Push the beef to the sides of the pan and add minced garlic to the center. Sauté 30 seconds until fragrant, then stir into the beef. Pour the sauce over everything and stir to coat. Cook another 1–2 minutes until the sauce absorbs slightly.",
     "Spoon rice into bowls, top with the beef mixture. Add pickled carrots and cucumbers on the side. Garnish with green onions and sesame seeds. Serve immediately."
   ],
 
   notes: [
-    "The gochujang upgrade: Adding 2 tsp of gochujang paste to the sauce takes this from great to exceptional. It adds a deep fermented heat that red pepper flakes alone can't replicate. Don't skip it if you can find it — it's usually in the Asian foods aisle.",
-    "On the pickled carrots: The hot brine on thinly julienned carrots works faster than you'd think — 20–30 minutes at room temp is all you need. They'll keep in the fridge for up to a week and are great on tacos, sandwiches, or as a snack.",
+    "The gochujang upgrade: Adding 2 tsp of gochujang paste to the sauce takes this from great to exceptional. It adds a deep fermented heat that red pepper flakes alone can't replicate. Don't skip it if you can find it; it's usually in the Asian foods aisle.",
+    "On the pickled carrots: The hot brine on thinly julienned carrots works faster than you'd think; 20–30 minutes at room temp is all you need. They'll keep in the fridge for up to a week and are great on tacos, sandwiches, or as a snack.",
     "Rice tip: Cooking the jasmine rice in a mix of chicken broth and water with a splash of sesame oil makes it taste intentional rather than just a vehicle for the beef. The rice vinegar stirred in at the end brightens everything up.",
     "Toppings that take it further: A fried egg on top is chef's kiss. Sriracha mayo (sriracha + mayo) drizzled over the bowl is also fantastic.",
     "Leftovers: The beef reheats really well. Store separately from rice for best texture."
