@@ -1,0 +1,170 @@
+name: GitHub Pages PR Preview
+
+# Deploys every PR's static files to a per-PR subfolder on the `gh-pages`
+# branch (pr-preview/pr-<number>/) and comments the preview URL on the PR.
+# Cleans the subfolder up again when the PR closes.
+#
+# This is a from-scratch replacement for third-party preview-deploy actions
+# (e.g. JamesIves/github-pages-deploy-action) so we have no marketplace
+# dependencies — just actions/checkout, plain git, rsync, and the gh CLI
+# that's preinstalled on GitHub-hosted runners.
+#
+# One-time setup required: in repo Settings > Pages, set the source to
+# "Deploy from a branch" -> gh-pages -> / (root). The first run of this
+# workflow creates the gh-pages branch; the Pages source can be pointed at
+# it any time after that.
+#
+# Note: PRs from forks run with a read-only GITHUB_TOKEN, so the push step
+# will fail for fork PRs. That matches this repo's normal contribution flow
+# (branches pushed directly to this repo), not fork PRs.
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened, closed]
+
+concurrency:
+  group: gh-pages-preview-deploy
+  cancel-in-progress: false
+
+jobs:
+  deploy-preview:
+    if: github.event.action != 'closed'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
+          fetch-depth: 1
+
+      - name: Publish preview to gh-pages
+        env:
+          PR_NUMBER: ${{ github.event.pull_request.number }}
+          WORKTREE_DIR: ${{ runner.temp }}/gh-pages
+        run: |
+          set -euo pipefail
+
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+
+          if git fetch origin gh-pages; then
+            git worktree add -B gh-pages "$WORKTREE_DIR" origin/gh-pages
+          else
+            git worktree add --detach "$WORKTREE_DIR"
+            git -C "$WORKTREE_DIR" checkout --orphan gh-pages
+            git -C "$WORKTREE_DIR" rm -rf . > /dev/null
+          fi
+
+          DEST_DIR="$WORKTREE_DIR/pr-preview/pr-$PR_NUMBER"
+          rm -rf "$DEST_DIR"
+          mkdir -p "$DEST_DIR"
+
+          rsync -a \
+            --exclude '.git' \
+            --exclude '.github' \
+            --exclude '.claude' \
+            --exclude 'node_modules' \
+            --exclude 'tests' \
+            --exclude 'screenshots' \
+            --exclude 'scripts' \
+            --exclude 'playwright-report' \
+            --exclude 'test-results' \
+            --exclude 'pr-preview' \
+            --exclude '*.md' \
+            --exclude 'package.json' \
+            --exclude 'package-lock.json' \
+            --exclude 'playwright.config.js' \
+            --exclude 'serve.json' \
+            "$GITHUB_WORKSPACE"/ "$DEST_DIR"/
+
+          touch "$WORKTREE_DIR/.nojekyll"
+
+          cd "$WORKTREE_DIR"
+          git add -A
+          if git diff --cached --quiet; then
+            echo "No preview changes for PR #$PR_NUMBER"
+          else
+            git commit -m "Preview deploy for PR #$PR_NUMBER (${GITHUB_SHA:0:7})"
+            git push origin gh-pages
+          fi
+
+      - name: Comment preview link on PR
+        env:
+          GH_TOKEN: ${{ github.token }}
+          PR_NUMBER: ${{ github.event.pull_request.number }}
+          REPO: ${{ github.repository }}
+        run: |
+          set -euo pipefail
+
+          OWNER="${REPO%%/*}"
+          NAME="${REPO#*/}"
+          PREVIEW_URL="https://${OWNER}.github.io/${NAME}/pr-preview/pr-${PR_NUMBER}/"
+          MARKER="<!-- gh-pages-preview-comment -->"
+          BODY=$(printf '%s\n🔍 **GitHub Pages preview:** %s\n\nUpdated for commit `%s`.' "$MARKER" "$PREVIEW_URL" "${GITHUB_SHA:0:7}")
+
+          COMMENT_ID=$(gh api "repos/${REPO}/issues/${PR_NUMBER}/comments" --paginate \
+            --jq ".[] | select(.body | startswith(\"$MARKER\")) | .id" | head -n1)
+
+          if [ -n "$COMMENT_ID" ]; then
+            gh api -X PATCH "repos/${REPO}/issues/comments/${COMMENT_ID}" -f body="$BODY" > /dev/null
+          else
+            gh api -X POST "repos/${REPO}/issues/${PR_NUMBER}/comments" -f body="$BODY" > /dev/null
+          fi
+
+  cleanup-preview:
+    if: github.event.action == 'closed'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - name: Remove preview from gh-pages
+        env:
+          PR_NUMBER: ${{ github.event.pull_request.number }}
+          WORKTREE_DIR: ${{ runner.temp }}/gh-pages
+        run: |
+          set -euo pipefail
+
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+
+          if ! git fetch origin gh-pages; then
+            echo "gh-pages branch does not exist yet, nothing to clean up"
+            exit 0
+          fi
+
+          git worktree add -B gh-pages "$WORKTREE_DIR" origin/gh-pages
+          rm -rf "$WORKTREE_DIR/pr-preview/pr-$PR_NUMBER"
+
+          cd "$WORKTREE_DIR"
+          git add -A
+          if git diff --cached --quiet; then
+            echo "Nothing to remove for PR #$PR_NUMBER"
+          else
+            git commit -m "Remove preview for closed PR #$PR_NUMBER"
+            git push origin gh-pages
+          fi
+
+      - name: Note preview removal on PR
+        env:
+          GH_TOKEN: ${{ github.token }}
+          PR_NUMBER: ${{ github.event.pull_request.number }}
+          REPO: ${{ github.repository }}
+        run: |
+          set -euo pipefail
+
+          MARKER="<!-- gh-pages-preview-comment -->"
+          BODY=$(printf '%s\n🔍 GitHub Pages preview for this PR has been removed.' "$MARKER")
+
+          COMMENT_ID=$(gh api "repos/${REPO}/issues/${PR_NUMBER}/comments" --paginate \
+            --jq ".[] | select(.body | startswith(\"$MARKER\")) | .id" | head -n1)
+
+          if [ -n "$COMMENT_ID" ]; then
+            gh api -X PATCH "repos/${REPO}/issues/comments/${COMMENT_ID}" -f body="$BODY" > /dev/null
+          fi
