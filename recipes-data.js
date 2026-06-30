@@ -41,7 +41,7 @@ window.recipes = [
   {
   id: "cornflake-chicken-tenders",
   title: "Bang Bang Cornflake Chicken Tenders",
-  description: "Crispy air-fried cornflake chicken with sweet-heat bang bang sauce — fast, crunchy, and family-approved.",
+  description: "Crispy air-fried cornflake chicken with sweet-heat bang bang sauce. Fast, crunchy, and family-approved.",
   image: "images/cornflake-chicken-tenders-air-fry.png",
   category: "Chicken",
   dateAdded: "2026-02-04",
@@ -91,7 +91,7 @@ window.recipes = [
   {
   id: "light-chicken-alfredo-pasta",
   title: "Lightened-Up Chicken Alfredo (Protein Pasta Edition)",
-  description: "Silky, glossy Alfredo vibes with lighter ingredients and big protein energy — feeds the whole family.",
+  description: "Silky, glossy Alfredo vibes with lighter ingredients and big protein energy. Feeds the whole family.",
   image: "images/light-chicken-alfredo.jpg",
   category: "Pasta",
   dateAdded: "2026-02-04",
@@ -135,7 +135,7 @@ window.recipes = [
   ],
 
   notes: [
-    "Pasta water fixes everything — thin with a splash or thicken with a brief simmer.",
+    "Pasta water fixes everything: thin with a splash or thicken with a brief simmer.",
     "Optional protein boost: stir in 1–2 tbsp Greek yogurt off-heat.",
     "Leftovers reheat well with a splash of milk."
   ]
@@ -144,7 +144,7 @@ window.recipes = [
   {
   id: "pepper-jack-queso",
   title: "Sodium Citrate Pepper Jack Queso (Eva’s Chili-Spiced Version)",
-  description: "Ultra-smooth, pourable queso made with real cheese, light dairy, and sodium citrate — kid-approved but flavor-forward.",
+  description: "Ultra-smooth, pourable queso made with real cheese, light dairy, and sodium citrate. Kid-approved but flavor-forward.",
   image: "images/sodium-citrate-queso-dip.png",
   category: "Snacks & Sides",
   dateAdded: "2026-02-04",
@@ -183,7 +183,7 @@ window.recipes = [
   notes: [
     "For thicker queso, reduce skim milk to ¾ cup.",
     "For looser queso, add 1–2 tbsp skim milk when reheating.",
-    "No flour or cornstarch needed — sodium citrate handles emulsification."
+    "No flour or cornstarch needed; sodium citrate handles emulsification."
   ]
 }
 ,{
@@ -222,7 +222,7 @@ tags: ["dessert", "high protein"]
 { 
   id: "skillet-salisbury-steak",
   title: "Easy Skillet Salisbury Steak",
-  description: "Classic comfort food with a tangy gravy twist — fast, cozy, and family-approved.",
+  description: "Classic comfort food with a tangy gravy twist. Fast, cozy, and family-approved.",
   image: "images/salisbury-steak.png",
   category: "Beef",
   dateAdded: "2026-02-04",
@@ -269,7 +269,7 @@ tags: ["dessert", "high protein"]
 {
   id: "quick-lobster-bisque",
   title: "Quick Lobster Bisque",
-  description: "Creamy, cozy lobster bisque made fast with Better Than Bouillon — rich flavor without the restaurant fuss.",
+  description: "Creamy, cozy lobster bisque made fast with Better Than Bouillon. Rich flavor without the restaurant fuss.",
   image: "images/quick-lobster-bisque.png",
   category: ["Soup", "Seafood"],
   dateAdded: "2026-02-11",
@@ -309,7 +309,7 @@ tags: ["dessert", "high protein"]
 {
   id: "air-fryer-general-tsos-chicken",
   title: "Air Fryer General Tso’s Chicken",
-  description: "Crispy, saucy, and lighter than takeout — perfect for a quick weeknight Asian-inspired dinner.",
+  description: "Crispy, saucy, and lighter than takeout. Perfect for a quick weeknight Asian-inspired dinner.",
   image: "images/air-fryer-general-tsos-chicken.png",
   category: "Chicken",
   dateAdded: "2026-02-11",
@@ -444,7 +444,7 @@ tags: ["dessert", "high protein"]
 {
   id: "bbq-chicken-baked-potatoes",
   title: "BBQ Chicken Baked Potatoes",
-  description: "Build-your-own BBQ chicken potato bar — easy weeknight comfort food.",
+  description: "Build-your-own BBQ chicken potato bar. Easy weeknight comfort food.",
   image: "images/bbq-chicken-baked-potatoes.jpg",
   category: ["Slow Cooker", "Chicken"],
   dateAdded: "2026-02-12",
