@@ -1139,7 +1139,7 @@ tags: ["dessert", "high protein"]
 {
   id: "birria-chuck-roast",
   title: "Birria-Style Chuck Roast",
-  description: "Deeply spiced, fall-apart chuck roast slow cooked in a rich chile broth — bold, smoky, and worth every minute. Serve over rice with consommé or stuff into tacos.",
+  description: "Deeply spiced, fall-apart chuck roast slow cooked in a rich chile broth. It's bold, smoky, and delicious. Serve over rice with consommé or stuff into tacos.",
   image: "images/birria-chuck-roast.png",
   category: ["Beef", "Slow Cooker"],
   dateAdded: "2026-05-22",
