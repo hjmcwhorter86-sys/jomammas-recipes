@@ -681,6 +681,7 @@ tags: ["dessert", "high protein"]
   carbs: null,
   fat: null,
   fiber: null,
+  servings: "4",
   tags: ["high protein", "low calorie", "chicken", "how to", "Kitchen Basics"],
 
   ingredients: [
@@ -696,7 +697,7 @@ tags: ["dessert", "high protein"]
   steps: [
     "Cut chicken into bite sized pieces.",
     "Heat oil over medium-high heat in a skillet or cast iron pan.",
-    "Add chicken pieces to hot pan in a single, uncrowded layer. (I usually let my pan heat up for 5 minutes or so before adding chicken).",
+    "Add chicken pieces to hot pan in a single, uncrowded layer.",
     "Let the chicken pieces sear on one side, without disruption, for about 3-4 minutes or until a nice brown color is achieved.",
     "With tongs, flip the pieces over and cook for another 3 minutes.",
     "Check that chicken is cooked to 165°F using a food themometer.",
