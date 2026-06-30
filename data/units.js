@@ -137,7 +137,7 @@ window.unitConversions = {
   displayUnits: {
     us: {
       mass:   [ { unit: "oz", maxBase: 453.592 }, { unit: "lb", maxBase: Infinity } ],
-      volume: [ { unit: "tsp", maxBase: 14.7868 }, { unit: "tbsp", maxBase: 236.588 }, { unit: "cup", maxBase: Infinity } ],
+      volume: [ { unit: "tsp", maxBase: 14.7868 }, { unit: "tbsp", maxBase: 59.1471 }, { unit: "cup", maxBase: Infinity } ],
     },
     metric: {
       mass:   [ { unit: "g", maxBase: 1000 }, { unit: "kg", maxBase: Infinity } ],

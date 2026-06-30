@@ -1722,4 +1722,37 @@ window.ingredientNutrition = {
     verified: false,
     source: "Estimated by Claude (typical USDA FoodData Central / brand-label values), unverified — pending user review"
   },
+  "angel hair pasta": {
+    per: "100g",
+    calories: 371,
+    protein: 13,
+    fat: 1.5,
+    fiber: 3.2,
+    carbs: 75,
+    unitWeights: {},
+    verified: false,
+    source: "Estimated by Claude (typical USDA FoodData Central / brand-label values for dry pasta), unverified — pending user review"
+  },
+  "lemon juice": {
+    per: "100ml",
+    calories: 22,
+    protein: 0.4,
+    fat: 0.2,
+    fiber: 0.3,
+    carbs: 6.9,
+    unitWeights: {},
+    verified: false,
+    source: "Estimated by Claude (typical USDA FoodData Central / brand-label values), unverified — pending user review"
+  },
+  "hot sauce": {
+    per: "100ml",
+    calories: 12,
+    protein: 0.5,
+    fat: 0.4,
+    fiber: 0.4,
+    carbs: 2,
+    unitWeights: {},
+    verified: false,
+    source: "Estimated by Claude (typical Tabasco/Frank's RedHot style hot sauce label values), unverified — pending user review"
+  },
 };

@@ -30,6 +30,13 @@
 - Preview changes by opening `index.html` directly in a web browser (no server or build process required)
 - No package managers, linters, or test runners configured
 
+## Image Workflow (Required)
+- Recipe detail pages intentionally load full-quality images from `images/originals/` via `getRecipeOriginalImageUrl()` in `app.js`.
+- For any new or replaced recipe photo under `images/`, always run `npm run optimize-images` before finishing.
+- The utility is `optimizeImages()` in `scripts/optimize-images.js`; it copies originals into `images/originals/` and writes optimized/resized versions back to `images/`.
+- If this step is skipped, detail pages can show broken images even when the thumbnail exists.
+- For recipe creation/update tasks, follow the image steps in `.claude/skills/recipe/SKILL.md` (especially the image processing step).
+
 ## Examples
 - **Adding a recipe:** Append a new object to the `recipes` array in `app.js`
 - **Modifying search logic:** Update the conditions in `filterRecipes(q)` function
@@ -47,3 +54,4 @@
 - No hidden build steps, environment setup, or deployment processes
 - Recipes data includes placeholders like "~?" for unknown nutritional values
 - Tags are used for categorization and are searchable
+- After image or rendering-impacting changes, regenerate screenshots with `npm run screenshots` per `CLAUDE.md`.
