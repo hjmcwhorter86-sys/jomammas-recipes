@@ -871,6 +871,7 @@ tags: ["dessert", "high protein"]
   carbs: null,
   fat: null,
   fiber: null,
+  servings: "6",
   tags: ["rice", "rice cooker", "side dishes"],
 
   ingredients: [
