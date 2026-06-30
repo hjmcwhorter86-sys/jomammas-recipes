@@ -398,7 +398,7 @@ tags: ["dessert", "high protein"]
 {
   id: "buffalo-chicken-enchiladas",
   title: "Buffalo Chicken Enchiladas",
-  description: "Spicy chicken enchiladas perfect for a weeknight meal to feed a large family.",
+  description: "Spicy chicken enchiladas perfect for a weeknight meal",
   image: "images/buffalo-chicken-enchiladas.jpg",
   category: "Chicken",
   dateAdded: "2026-02-11",
