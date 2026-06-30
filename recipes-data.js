@@ -952,6 +952,7 @@ tags: ["dessert", "high protein"]
   fiber: null,
   calories: "520 per 2 chicken thighs",
   protein: "52 g",
+  servings: "5",
   tags: ["chicken", "protein", "easy", "weeknight"],
 
   ingredients: [
