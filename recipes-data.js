@@ -836,7 +836,7 @@ tags: ["dessert", "high protein"]
   carbs: null,
   fat: null,
   fiber: null,
-  servings: "4-6",
+  servings: "6",
   tags: ["turkey", "easy", "lean", "pasta"],
 
   ingredients: [
