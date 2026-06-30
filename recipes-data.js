@@ -1019,6 +1019,7 @@ tags: ["dessert", "high protein"]
   image: "images/quick-pasta-arrabbiata.png",
   category: "Pasta",
   dateAdded: "2026-04-02",
+  servings: "4",
   carbs: null,
   fat: null,
   fiber: null,
