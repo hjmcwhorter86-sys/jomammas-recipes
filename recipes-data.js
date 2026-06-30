@@ -468,7 +468,7 @@ tags: ["dessert", "high protein"]
     { qty: 0.5, unit: "tsp", name: "black pepper" },
     { qty: 1, unit: "tsp", name: "garlic powder" },
     { qty: 1, unit: "tsp", name: "smoked paprika" },
-    { qty: 0.75, qtyMax: 1, unit: "cup", name: "Sweet Baby Ray's Sugar-Free BBQ Sauce", notes: "to taste" },
+    { qty: 0.5, unit: "cup", name: "Sweet Baby Ray's Sugar-Free BBQ Sauce", notes: "or to taste" },
 
     { qty: null, unit: null, name: "Butter or light spread" },
     { qty: null, unit: null, name: "Light sour cream or plain Greek yogurt" },
