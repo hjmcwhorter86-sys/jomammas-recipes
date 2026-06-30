@@ -1676,4 +1676,70 @@ tags: ["dessert", "high protein"]
   ]
 },
 
+  {
+  id: "nacho-bar-queso",
+  title: "Nacho Bar Queso (BWW Hatch Chile Copycat)",
+  description: "A smooth, pourable queso loaded with Hatch green chiles — copycat-style from Buffalo Wild Wings, with optional chorizo for the meat lovers.",
+  image: "images/no-photo.jpg",
+  category: "Snacks & Sides",
+  dateAdded: "2026-06-30",
+  carbs: null,
+  fat: null,
+  fiber: null,
+  calories: "",
+  protein: "",
+  servings: "6",
+  tags: ["queso", "dip", "cheese", "hatch chile", "party", "copycat"],
+
+  ingredients: [
+    {
+      title: "Cheese Base",
+      items: [
+        { qty: 16, unit: "oz", name: "white American cheese", notes: "cubed" },
+        { qty: 8, unit: "oz", name: "pepper jack cheese", notes: "shredded" }
+      ]
+    },
+    {
+      title: "Liquid + Stabilizer",
+      items: [
+        { qty: 18, unit: "fl oz", name: "evaporated milk", notes: "about 1½ cans" },
+        { qty: 1.5, unit: "tbsp", name: "cornstarch" }
+      ]
+    },
+    {
+      title: "Flavor",
+      items: [
+        { qty: 1, unit: "cup", name: "Hatch green chiles", notes: "drained and lightly sautéed" },
+        { qty: 0.75, unit: "tsp", name: "kosher salt" },
+        { qty: 0.5, unit: "tsp", name: "garlic powder" },
+        { qty: 0.5, unit: "tsp", name: "onion powder" },
+        { qty: 1, unit: "tsp", name: "smoked paprika" },
+        { qty: 1, unit: "tsp", name: "ground cumin" },
+        { qty: null, unit: null, name: "Optional: splash of jalapeño brine", optional: true }
+      ]
+    },
+    {
+      title: "Chorizo (Cooked Separately)",
+      items: [
+        { qty: 12, qtyMax: 16, unit: "oz", name: "chorizo", notes: "browned and drained", optional: true }
+      ]
+    }
+  ],
+
+  steps: [
+    "Cold whisk the cornstarch into the evaporated milk until smooth.",
+    "Heat gently in a saucepan over medium-low until steaming — do not boil.",
+    "Lower the heat and add the cheeses gradually, stirring constantly until fully melted and smooth.",
+    "Stir in the Hatch green chiles and all seasonings. Taste and adjust.",
+    "Fold in the browned chorizo, or keep it separate for people to add themselves.",
+    "Keep warm on low heat, splashing in extra evaporated milk if it thickens too much."
+  ],
+
+  notes: [
+    "Use freshly cubed white American deli cheese for the smoothest melt — pre-packaged slices work but may be slightly grainier.",
+    "Sauté the Hatch chiles briefly in a dry pan before adding to drive off excess moisture and deepen their flavor.",
+    "A splash of jalapeño brine at the end brightens everything without adding visible heat."
+  ]
+},
+
 ];
