@@ -59,28 +59,28 @@
 //    visually flagged (e.g. with an asterisk) until verified.
 // ---------------------------------------------------------------------------
 window.ingredientNutrition = {
-  "ground beef (80/20)": {
+  "ground beef (93/7)": {
     per: "100g",
-    calories: 254,
-    protein: 17,
-    fat: 20,
+    calories: 152,
+    protein: 20.5,
+    fat: 7.1,
     fiber: 0,
     carbs: 0,
     unitWeights: {},
-    verified: false,
-    source: "USDA FoodData Central, raw 80/20 ground beef"
+    verified: true,
+    source: "93/7 lean ground beef label: 170 cal / 8g fat / 0g carbs / 23g protein per 4 oz (112g), per user-provided photo. Canonical for all ground beef per user (recipes standardize on lean 93/7)."
   },
 
   "egg": {
     per: "100g",
-    calories: 143,
-    protein: 13,
-    fat: 10,
+    calories: 120,
+    protein: 12,
+    fat: 8,
     fiber: 0,
-    carbs: 1.1,
+    carbs: 0,
     unitWeights: { egg: 50 },
-    verified: false,
-    source: "USDA, 1 large egg ~ 50g edible portion"
+    verified: true,
+    source: "Eggland's Best large eggs label: 60 cal / 4g fat / 6g protein / 0g carbs per 1 egg (50g), per user-provided photo"
   },
 
   "garlic": {
@@ -92,18 +92,29 @@ window.ingredientNutrition = {
     carbs: 31,
     unitWeights: { clove: 3 },
     verified: false,
-    source: "USDA"
+    source: "USDA — fresh garlic (cloves). Jarred minced garlic is a separate, more dilute entry."
   },
-  "boneless skinless chicken breast": {
+  "jarred minced garlic": {
     per: "100g",
-    calories: 120,
-    protein: 22.5,
-    fat: 2.6,
+    calories: 100,
+    protein: 0,
+    fat: 0,
+    fiber: 0,
+    carbs: 20,
+    unitWeights: {},
+    verified: true,
+    source: "Great Value Minced Garlic (jarred) label: 5 cal / 0g fat / 0g protein per 1 tsp (5g); carbs ~1g/serving derived from the 5 cal (label carb line was partly obscured). Per user-provided photo."
+  },
+  "chicken breast": {
+    per: "100g",
+    calories: 98,
+    protein: 22.3,
+    fat: 0.9,
     fiber: 0,
     carbs: 0,
-    unitWeights: { "boneless skinless chicken breast": 170 },
-    verified: false,
-    source: "Estimated by Claude (typical USDA FoodData Central / brand-label values), unverified — pending user review"
+    unitWeights: { "chicken breast": 170 },
+    verified: true,
+    source: "Perdue thin-sliced boneless skinless chicken breast label: 110 cal / 1g fat / 0g carbs / 25g protein per 4 oz (112g), per user-provided photo. User confirms same per-lb values as any boneless skinless breast."
   },
   "chicken tenders": {
     per: "100g",
@@ -118,14 +129,14 @@ window.ingredientNutrition = {
   },
   "flour": {
     per: "100g",
-    calories: 364,
+    calories: 367,
     protein: 10,
-    fat: 1,
+    fat: 0,
     fiber: 2.7,
-    carbs: 76,
+    carbs: 76.7,
     unitWeights: {},
-    verified: false,
-    source: "Estimated by Claude (typical USDA FoodData Central / brand-label values), unverified — pending user review"
+    verified: true,
+    source: "Bleached all-purpose wheat flour label: 110 cal / 0g fat / 23g carbs / <1g fiber / 3g protein per 1/4 cup (30g), per user-provided photo (fiber ~2.7g/100g per USDA, label rounds to <1g/serving)"
   },
   "cornflakes": {
     per: "100g",
@@ -146,8 +157,8 @@ window.ingredientNutrition = {
     fiber: 9,
     carbs: 72.7,
     unitWeights: {},
-    verified: false,
-    source: "Estimated by Claude (typical USDA FoodData Central / brand-label values), unverified — pending user review"
+    verified: true,
+    source: "USDA reference, garlic powder (~331 cal/100g, negligible at recipe amounts). User opted not to label-check."
   },
   "onion powder": {
     per: "100g",
@@ -157,19 +168,8 @@ window.ingredientNutrition = {
     fiber: 15.2,
     carbs: 79.1,
     unitWeights: {},
-    verified: false,
-    source: "Estimated by Claude (typical USDA FoodData Central / brand-label values), unverified — pending user review"
-  },
-  "0% fat greek yogurt": {
-    per: "100g",
-    calories: 59,
-    protein: 10,
-    fat: 0.4,
-    fiber: 0,
-    carbs: 3.6,
-    unitWeights: {},
-    verified: false,
-    source: "Estimated by Claude (typical USDA FoodData Central / brand-label values), unverified — pending user review"
+    verified: true,
+    source: "USDA reference, onion powder (~341 cal/100g, negligible at recipe amounts). User opted not to label-check."
   },
   "sweet chili sauce": {
     per: "100g",
@@ -195,25 +195,14 @@ window.ingredientNutrition = {
   },
   "honey": {
     per: "100g",
-    calories: 304,
-    protein: 0.3,
+    calories: 286,
+    protein: 0,
     fat: 0,
-    fiber: 0.2,
-    carbs: 82.4,
-    unitWeights: {},
-    verified: false,
-    source: "Estimated by Claude (typical USDA FoodData Central / brand-label values), unverified — pending user review"
-  },
-  "thin sliced boneless skinless chicken breast": {
-    per: "100g",
-    calories: 120,
-    protein: 22.5,
-    fat: 2.6,
     fiber: 0,
-    carbs: 0,
+    carbs: 81,
     unitWeights: {},
-    verified: false,
-    source: "Estimated by Claude (typical USDA FoodData Central / brand-label values), unverified — pending user review"
+    verified: true,
+    source: "Great Value honey label: 60 cal / 0g fat / 17g carbs / 0g protein per 1 tbsp (21g), per user-provided photo"
   },
   "kosher salt": {
     per: "100g",
@@ -223,8 +212,8 @@ window.ingredientNutrition = {
     fiber: 0,
     carbs: 0,
     unitWeights: {},
-    verified: false,
-    source: "Estimated by Claude (typical USDA FoodData Central / brand-label values), unverified — pending user review"
+    verified: true,
+    source: "Sodium chloride — 0 calories/macros. User-confirmed."
   },
   "black pepper": {
     per: "100g",
@@ -234,8 +223,8 @@ window.ingredientNutrition = {
     fiber: 25.3,
     carbs: 64,
     unitWeights: {},
-    verified: false,
-    source: "Estimated by Claude (typical USDA FoodData Central / brand-label values), unverified — pending user review"
+    verified: true,
+    source: "USDA reference, ground black pepper (~251 cal/100g but ~3 cal per tsp — negligible at recipe amounts). User opted not to label-check."
   },
   "paprika": {
     per: "100g",
@@ -245,8 +234,8 @@ window.ingredientNutrition = {
     fiber: 35,
     carbs: 54,
     unitWeights: {},
-    verified: false,
-    source: "Estimated by Claude (typical USDA FoodData Central / brand-label values), unverified — pending user review"
+    verified: true,
+    source: "USDA reference, paprika (~282 cal/100g, negligible at recipe amounts). User opted not to label-check."
   },
   "light butter": {
     per: "100g",
@@ -261,14 +250,14 @@ window.ingredientNutrition = {
   },
   "protein pasta": {
     per: "100g",
-    calories: 360,
-    protein: 22,
-    fat: 2.5,
-    fiber: 9,
-    carbs: 60,
+    calories: 340,
+    protein: 17,
+    fat: 2,
+    fiber: 10,
+    carbs: 68,
     unitWeights: {},
-    verified: false,
-    source: "Estimated by Claude (typical USDA FoodData Central / brand-label values), unverified — pending user review"
+    verified: true,
+    source: "Barilla Protein+ pasta label (angel hair & penne, identical): per 100g 340 cal / 17g protein / 2g fat / 10g fiber / 68g carbs, per user-provided photo"
   },
   "1% milk": {
     per: "100ml",
@@ -316,25 +305,25 @@ window.ingredientNutrition = {
   },
   "half and half": {
     per: "100ml",
-    calories: 130,
-    protein: 3,
-    fat: 11.5,
+    calories: 133,
+    protein: 3.3,
+    fat: 11.7,
     fiber: 0,
-    carbs: 4.3,
+    carbs: 3.3,
     unitWeights: {},
-    verified: false,
-    source: "Estimated by Claude (typical USDA FoodData Central / brand-label values), unverified — pending user review"
+    verified: true,
+    source: "Great Value Half & Half label: 40 cal / 3.5g fat / 1g carbs / 1g protein per 2 tbsp (30mL), per user-provided photo"
   },
   "light margarine": {
     per: "100g",
-    calories: 320,
+    calories: 250,
     protein: 0,
-    fat: 36,
+    fat: 28.6,
     fiber: 0,
     carbs: 0,
     unitWeights: {},
-    verified: false,
-    source: "Estimated by Claude (typical USDA FoodData Central / brand-label values), unverified — pending user review"
+    verified: true,
+    source: "I Can't Believe It's Not Butter! Light buttery spread (27% oils) label: 35 cal / 4g fat / 0g carbs / 0g protein per 1 tbsp (14g), per user-provided photo"
   },
   "pepper jack cheese": {
     per: "100g",
@@ -369,7 +358,7 @@ window.ingredientNutrition = {
     verified: false,
     source: "Estimated by Claude (typical USDA FoodData Central / brand-label values), unverified — pending user review"
   },
-  "plain nonfat greek yogurt": {
+  "nonfat greek yogurt": {
     per: "100g",
     calories: 59,
     protein: 10,
@@ -409,28 +398,6 @@ window.ingredientNutrition = {
     fat: 0,
     fiber: 0,
     carbs: 2,
-    unitWeights: {},
-    verified: false,
-    source: "Estimated by Claude (typical USDA FoodData Central / brand-label values), unverified — pending user review"
-  },
-  "lean ground beef": {
-    per: "100g",
-    calories: 152,
-    protein: 22,
-    fat: 7,
-    fiber: 0,
-    carbs: 0,
-    unitWeights: {},
-    verified: false,
-    source: "Estimated by Claude (typical USDA FoodData Central / brand-label values), unverified — pending user review"
-  },
-  "seasoned bread crumbs": {
-    per: "100g",
-    calories: 395,
-    protein: 12,
-    fat: 5,
-    fiber: 3.5,
-    carbs: 72,
     unitWeights: {},
     verified: false,
     source: "Estimated by Claude (typical USDA FoodData Central / brand-label values), unverified — pending user review"
@@ -476,8 +443,8 @@ window.ingredientNutrition = {
     fiber: 0,
     carbs: 0,
     unitWeights: {},
-    verified: false,
-    source: "Estimated by Claude (typical USDA FoodData Central / brand-label values), unverified — pending user review"
+    verified: true,
+    source: "Filippo Berio Extra Virgin Olive Oil label: 120 cal / 14g fat / 0g carbs / 0g protein per 1 tbsp (15mL), per user-provided photo. Per-100g value is the standard 884 cal / 100g fat for culinary oils, consistent with the label within its rounding."
   },
   "packets brown gravy mix": {
     per: "100g",
@@ -536,14 +503,14 @@ window.ingredientNutrition = {
   },
   "tomato paste": {
     per: "100g",
-    calories: 82,
-    protein: 4.3,
-    fat: 0.5,
-    fiber: 4.6,
-    carbs: 18.9,
+    calories: 91,
+    protein: 3,
+    fat: 0,
+    fiber: 3,
+    carbs: 18.2,
     unitWeights: {},
-    verified: false,
-    source: "Estimated by Claude (typical USDA FoodData Central / brand-label values), unverified — pending user review"
+    verified: true,
+    source: "Great Value Tomato Paste label: 30 cal / 0g fat / 6g carbs / 1g fiber / 1g protein per 2 tbsp (33g), per user-provided photo"
   },
   "minced lobster meat": {
     per: "100g",
@@ -575,8 +542,8 @@ window.ingredientNutrition = {
     fiber: 0,
     carbs: 0,
     unitWeights: {},
-    verified: false,
-    source: "Estimated by Claude (typical USDA FoodData Central / brand-label values), unverified — pending user review"
+    verified: true,
+    source: "Great Value Refined Avocado Oil label: 130 cal / 14g fat / 0g carbs / 0g protein per 1 tbsp (15mL), per user-provided photo. Per-100g value is the standard 884 cal / 100g fat for culinary oils (label's 130 is brand rounding of 14g fat)."
   },
   "iron kitchen general tso's sauce": {
     per: "100g",
@@ -600,16 +567,16 @@ window.ingredientNutrition = {
     verified: false,
     source: "Estimated by Claude (typical USDA FoodData Central / brand-label values), unverified — pending user review"
   },
-  "grated parmesan": {
+  "parmesan": {
     per: "100g",
-    calories: 431,
-    protein: 38,
-    fat: 29,
+    calories: 393,
+    protein: 32.1,
+    fat: 25,
     fiber: 0,
-    carbs: 4.1,
+    carbs: 3.6,
     unitWeights: {},
-    verified: false,
-    source: "Estimated by Claude (typical USDA FoodData Central / brand-label values), unverified — pending user review"
+    verified: true,
+    source: "BelGioioso Parmesan (block, grated by user) label: 110 cal / 7g fat / 1g carbs / 9g protein per 1in cube (28g), per user-provided photo"
   },
   "marinara": {
     per: "100ml",
@@ -624,36 +591,25 @@ window.ingredientNutrition = {
   },
   "reduced fat shredded mozzarella": {
     per: "100g",
-    calories: 280,
-    protein: 28,
-    fat: 18,
+    calories: 286,
+    protein: 21.4,
+    fat: 21.4,
     fiber: 0,
-    carbs: 3,
+    carbs: 7.1,
     unitWeights: {},
-    verified: false,
-    source: "Estimated by Claude (typical USDA FoodData Central / brand-label values), unverified — pending user review"
+    verified: true,
+    source: "Reduced-fat low-moisture part-skim shredded mozzarella label: 80 cal / 6g fat / 2g carbs / 6g protein per 1/4 cup (28g), per user-provided photo"
   },
   "unsalted butter": {
     per: "100g",
-    calories: 717,
-    protein: 0.9,
-    fat: 81,
-    fiber: 0,
-    carbs: 0.1,
-    unitWeights: {},
-    verified: false,
-    source: "Estimated by Claude (typical USDA FoodData Central / brand-label values), unverified — pending user review"
-  },
-  "shredded rotisserie chicken": {
-    per: "100g",
-    calories: 190,
-    protein: 25,
-    fat: 9,
+    calories: 714,
+    protein: 0,
+    fat: 78.6,
     fiber: 0,
     carbs: 0,
     unitWeights: {},
-    verified: false,
-    source: "Estimated by Claude (typical USDA FoodData Central / brand-label values), unverified — pending user review"
+    verified: true,
+    source: "Great Value unsalted butter (blue box) label: 100 cal / 11g fat / 0g carbs / 0g protein per 1 tbsp (14g), per user-provided photo"
   },
   "cream cheese": {
     per: "100g",
@@ -668,36 +624,14 @@ window.ingredientNutrition = {
   },
   "shredded cheddar": {
     per: "100g",
-    calories: 403,
+    calories: 393,
     protein: 25,
-    fat: 33,
+    fat: 32.1,
     fiber: 0,
-    carbs: 1.3,
+    carbs: 3.6,
     unitWeights: {},
-    verified: false,
-    source: "Estimated by Claude (typical USDA FoodData Central / brand-label values), unverified — pending user review"
-  },
-  "buffalo style hot sauce": {
-    per: "100ml",
-    calories: 15,
-    protein: 0.5,
-    fat: 1,
-    fiber: 0,
-    carbs: 1,
-    unitWeights: {},
-    verified: false,
-    source: "Estimated by Claude (typical USDA FoodData Central / brand-label values), unverified — pending user review"
-  },
-  "scallions": {
-    per: "100g",
-    calories: 32,
-    protein: 1.8,
-    fat: 0.2,
-    fiber: 2.6,
-    carbs: 7.3,
-    unitWeights: { "bunch": 90 },
-    verified: false,
-    source: "Estimated by Claude (typical USDA FoodData Central / brand-label values), unverified — pending user review"
+    verified: true,
+    source: "Great Value mild shredded cheddar label: 110 cal / 9g fat / 1g carbs / 7g protein per 1/3 cup (28g), per user-provided photo"
   },
   "ground cumin": {
     per: "100g",
@@ -762,8 +696,8 @@ window.ingredientNutrition = {
     fiber: 35,
     carbs: 54,
     unitWeights: {},
-    verified: false,
-    source: "Estimated by Claude (typical USDA FoodData Central / brand-label values), unverified — pending user review"
+    verified: true,
+    source: "USDA reference, smoked paprika (~282 cal/100g, negligible at recipe amounts). User opted not to label-check."
   },
   "sweet baby ray's sugar free bbq sauce": {
     per: "100g",
@@ -831,24 +765,13 @@ window.ingredientNutrition = {
     verified: false,
     source: "Estimated by Claude (typical USDA FoodData Central / brand-label values), unverified — pending user review"
   },
-  "reduced fat cream cheese": {
+  "light cream cheese": {
     per: "100g",
     calories: 220,
     protein: 8,
     fat: 19,
     fiber: 0,
     carbs: 5,
-    unitWeights: {},
-    verified: false,
-    source: "Estimated by Claude (typical USDA FoodData Central / brand-label values), unverified — pending user review"
-  },
-  "freshly grated parmesan": {
-    per: "100g",
-    calories: 431,
-    protein: 38,
-    fat: 29,
-    fiber: 0,
-    carbs: 4.1,
     unitWeights: {},
     verified: false,
     source: "Estimated by Claude (typical USDA FoodData Central / brand-label values), unverified — pending user review"
@@ -861,17 +784,6 @@ window.ingredientNutrition = {
     fiber: 28,
     carbs: 50,
     unitWeights: {},
-    verified: false,
-    source: "Estimated by Claude (typical USDA FoodData Central / brand-label values), unverified — pending user review"
-  },
-  "box protein pasta i use spaghetti": {
-    per: "100g",
-    calories: 360,
-    protein: 22,
-    fat: 2.5,
-    fiber: 9,
-    carbs: 60,
-    unitWeights: { "box protein pasta i use spaghetti": 411 },
     verified: false,
     source: "Estimated by Claude (typical USDA FoodData Central / brand-label values), unverified — pending user review"
   },
@@ -943,25 +855,14 @@ window.ingredientNutrition = {
   },
   "chicken broth": {
     per: "100ml",
-    calories: 8,
-    protein: 1,
-    fat: 0.3,
+    calories: 2,
+    protein: 0.4,
+    fat: 0,
     fiber: 0,
-    carbs: 0.5,
+    carbs: 0,
     unitWeights: {},
-    verified: false,
-    source: "Estimated by Claude (typical USDA FoodData Central / brand-label values), unverified — pending user review"
-  },
-  "barilla protein plus elbow macaroni or penne pasta": {
-    per: "100g",
-    calories: 360,
-    protein: 22,
-    fat: 2.5,
-    fiber: 9,
-    carbs: 60,
-    unitWeights: {},
-    verified: false,
-    source: "Estimated by Claude (typical USDA FoodData Central / brand-label values), unverified — pending user review"
+    verified: true,
+    source: "Great Value Chicken Broth (regular) label: 5 cal / 0g fat / 0g carbs / 1g protein per 1 cup (240mL), per user-provided photo"
   },
   "full fat cottage cheese": {
     per: "100g",
@@ -1018,38 +919,16 @@ window.ingredientNutrition = {
     verified: false,
     source: "Estimated by Claude (typical USDA FoodData Central / brand-label values), unverified — pending user review"
   },
-  "shredded cheddar cheese": {
-    per: "100g",
-    calories: 403,
-    protein: 25,
-    fat: 33,
-    fiber: 0,
-    carbs: 1.3,
-    unitWeights: {},
-    verified: false,
-    source: "Estimated by Claude (typical USDA FoodData Central / brand-label values), unverified — pending user review"
-  },
   "shredded mozzarella cheese": {
     per: "100g",
-    calories: 300,
-    protein: 22,
-    fat: 22,
+    calories: 393,
+    protein: 25,
+    fat: 32.1,
     fiber: 0,
-    carbs: 2.2,
+    carbs: 3.6,
     unitWeights: {},
-    verified: false,
-    source: "Estimated by Claude (typical USDA FoodData Central / brand-label values), unverified — pending user review"
-  },
-  "butter": {
-    per: "100g",
-    calories: 717,
-    protein: 0.9,
-    fat: 81,
-    fiber: 0,
-    carbs: 0.1,
-    unitWeights: {},
-    verified: false,
-    source: "Estimated by Claude (typical USDA FoodData Central / brand-label values), unverified — pending user review"
+    verified: true,
+    source: "Regular low-moisture part-skim shredded mozzarella label: 110 cal / 9g fat / 1g carbs / 7g protein per 1/3 cup (28g), per user-provided photo"
   },
   "panko breadcrumbs": {
     per: "100g",
@@ -1070,17 +949,6 @@ window.ingredientNutrition = {
     fiber: 1,
     carbs: 42,
     unitWeights: { "can": 340 },
-    verified: false,
-    source: "Estimated by Claude (typical USDA FoodData Central / brand-label values), unverified — pending user review"
-  },
-  "granulated sugar": {
-    per: "100g",
-    calories: 387,
-    protein: 0,
-    fat: 0,
-    fiber: 0,
-    carbs: 100,
-    unitWeights: {},
     verified: false,
     source: "Estimated by Claude (typical USDA FoodData Central / brand-label values), unverified — pending user review"
   },
@@ -1119,14 +987,14 @@ window.ingredientNutrition = {
   },
   "salted butter": {
     per: "100g",
-    calories: 717,
-    protein: 0.9,
-    fat: 81,
+    calories: 714,
+    protein: 0,
+    fat: 78.6,
     fiber: 0,
-    carbs: 0.1,
+    carbs: 0,
     unitWeights: {},
-    verified: false,
-    source: "Estimated by Claude (typical USDA FoodData Central / brand-label values), unverified — pending user review"
+    verified: true,
+    source: "Great Value salted butter (red box) label: 100 cal / 11g fat / 0g carbs / 0g protein per 1 tbsp (14g), per user-provided photo"
   },
   "vanilla extract": {
     per: "100ml",
@@ -1150,17 +1018,6 @@ window.ingredientNutrition = {
     verified: false,
     source: "Estimated by Claude (typical USDA FoodData Central / brand-label values), unverified — pending user review"
   },
-  "all purpose flour": {
-    per: "100g",
-    calories: 364,
-    protein: 10,
-    fat: 1,
-    fiber: 2.7,
-    carbs: 76,
-    unitWeights: {},
-    verified: false,
-    source: "Estimated by Claude (typical USDA FoodData Central / brand-label values), unverified — pending user review"
-  },
   "salt": {
     per: "100g",
     calories: 0,
@@ -1169,8 +1026,8 @@ window.ingredientNutrition = {
     fiber: 0,
     carbs: 0,
     unitWeights: {},
-    verified: false,
-    source: "Estimated by Claude (typical USDA FoodData Central / brand-label values), unverified — pending user review"
+    verified: true,
+    source: "Table salt (sodium chloride) — 0 calories/macros. User-confirmed."
   },
   "boneless skinless chicken thighs": {
     per: "100g",
@@ -1191,17 +1048,6 @@ window.ingredientNutrition = {
     fiber: 1.7,
     carbs: 9.3,
     unitWeights: { "small yellow onion": 110 },
-    verified: false,
-    source: "Estimated by Claude (typical USDA FoodData Central / brand-label values), unverified — pending user review"
-  },
-  "fresh grated ginger": {
-    per: "100g",
-    calories: 80,
-    protein: 1.8,
-    fat: 0.8,
-    fiber: 2,
-    carbs: 18,
-    unitWeights: {},
     verified: false,
     source: "Estimated by Claude (typical USDA FoodData Central / brand-label values), unverified — pending user review"
   },
@@ -1260,17 +1106,6 @@ window.ingredientNutrition = {
     verified: false,
     source: "Estimated by Claude (typical USDA FoodData Central / brand-label values), unverified — pending user review"
   },
-  "box barilla protein plus pasta": {
-    per: "100g",
-    calories: 360,
-    protein: 22,
-    fat: 2.5,
-    fiber: 9,
-    carbs: 60,
-    unitWeights: { "box barilla protein plus pasta": 411 },
-    verified: false,
-    source: "Estimated by Claude (typical USDA FoodData Central / brand-label values), unverified — pending user review"
-  },
   "jar garlic vodka sauce": {
     per: "100g",
     calories: 70,
@@ -1300,17 +1135,6 @@ window.ingredientNutrition = {
     fat: 0.7,
     fiber: 1.3,
     carbs: 78,
-    unitWeights: {},
-    verified: false,
-    source: "Estimated by Claude (typical USDA FoodData Central / brand-label values), unverified — pending user review"
-  },
-  "93 96% lean ground beef": {
-    per: "100g",
-    calories: 145,
-    protein: 22,
-    fat: 6,
-    fiber: 0,
-    carbs: 0,
     unitWeights: {},
     verified: false,
     source: "Estimated by Claude (typical USDA FoodData Central / brand-label values), unverified — pending user review"
@@ -1359,17 +1183,6 @@ window.ingredientNutrition = {
     verified: false,
     source: "Estimated by Claude (typical USDA FoodData Central / brand-label values), unverified — pending user review"
   },
-  "crushed red pepper flakes": {
-    per: "100g",
-    calories: 318,
-    protein: 12,
-    fat: 17.3,
-    fiber: 34.8,
-    carbs: 56.6,
-    unitWeights: {},
-    verified: false,
-    source: "Estimated by Claude (typical USDA FoodData Central / brand-label values), unverified — pending user review"
-  },
   "red wine vinegar": {
     per: "100ml",
     calories: 19,
@@ -1414,7 +1227,7 @@ window.ingredientNutrition = {
     verified: false,
     source: "Estimated by Claude (typical USDA FoodData Central / brand-label values), unverified — pending user review"
   },
-  "spaghetti or penne pasta": {
+  "penne": {
     per: "100g",
     calories: 371,
     protein: 13,
@@ -1447,17 +1260,6 @@ window.ingredientNutrition = {
     verified: false,
     source: "Estimated by Claude (typical USDA FoodData Central / brand-label values), unverified — pending user review"
   },
-  "parmesan rind": {
-    per: "100g",
-    calories: 431,
-    protein: 38,
-    fat: 29,
-    fiber: 0,
-    carbs: 4.1,
-    unitWeights: { "parmesan rind": 30 },
-    verified: false,
-    source: "Estimated by Claude (typical USDA FoodData Central / brand-label values), unverified — pending user review"
-  },
   "reserved pasta water": {
     per: "100ml",
     calories: 0,
@@ -1465,17 +1267,6 @@ window.ingredientNutrition = {
     fat: 0,
     fiber: 0,
     carbs: 0,
-    unitWeights: {},
-    verified: false,
-    source: "Estimated by Claude (typical USDA FoodData Central / brand-label values), unverified — pending user review"
-  },
-  "fresh grated parmesan": {
-    per: "100g",
-    calories: 431,
-    protein: 38,
-    fat: 29,
-    fiber: 0,
-    carbs: 4.1,
     unitWeights: {},
     verified: false,
     source: "Estimated by Claude (typical USDA FoodData Central / brand-label values), unverified — pending user review"
@@ -1491,28 +1282,6 @@ window.ingredientNutrition = {
     verified: false,
     source: "Estimated by Claude (typical USDA FoodData Central / brand-label values), unverified — pending user review"
   },
-  "real butter": {
-    per: "100g",
-    calories: 717,
-    protein: 0.9,
-    fat: 81,
-    fiber: 0,
-    carbs: 0.1,
-    unitWeights: {},
-    verified: false,
-    source: "Estimated by Claude (typical USDA FoodData Central / brand-label values), unverified — pending user review"
-  },
-  "light margarine spread": {
-    per: "100g",
-    calories: 320,
-    protein: 0,
-    fat: 36,
-    fiber: 0,
-    carbs: 0,
-    unitWeights: {},
-    verified: false,
-    source: "Estimated by Claude (typical USDA FoodData Central / brand-label values), unverified — pending user review"
-  },
   "red pepper flakes": {
     per: "100g",
     calories: 318,
@@ -1520,17 +1289,6 @@ window.ingredientNutrition = {
     fat: 17.3,
     fiber: 34.8,
     carbs: 56.6,
-    unitWeights: {},
-    verified: false,
-    source: "Estimated by Claude (typical USDA FoodData Central / brand-label values), unverified — pending user review"
-  },
-  "light butter spread": {
-    per: "100g",
-    calories: 357,
-    protein: 1,
-    fat: 40,
-    fiber: 0,
-    carbs: 1,
     unitWeights: {},
     verified: false,
     source: "Estimated by Claude (typical USDA FoodData Central / brand-label values), unverified — pending user review"
@@ -1559,14 +1317,14 @@ window.ingredientNutrition = {
   },
   "sugar": {
     per: "100g",
-    calories: 387,
+    calories: 375,
     protein: 0,
     fat: 0,
     fiber: 0,
     carbs: 100,
     unitWeights: {},
-    verified: false,
-    source: "Estimated by Claude (typical USDA FoodData Central / brand-label values), unverified — pending user review"
+    verified: true,
+    source: "Granulated sugar label: 30 cal / 8g total carbs (all sugar) / 0g everything else per 2 tsp (8g), per user-provided photo"
   },
   "cooking sherry": {
     per: "100ml",
@@ -1598,8 +1356,8 @@ window.ingredientNutrition = {
     fiber: 0,
     carbs: 0,
     unitWeights: {},
-    verified: false,
-    source: "Estimated by Claude (typical USDA FoodData Central / brand-label values), unverified — pending user review"
+    verified: true,
+    source: "Great Value Vegetable Oil label: 120 cal / 14g fat / 0g carbs / 0g protein per 1 tbsp (14g), per user-provided photo. Per-100g value is the standard 884 cal / 100g fat for culinary oils."
   },
   "dried guajillo chiles": {
     per: "100g",
@@ -1663,17 +1421,6 @@ window.ingredientNutrition = {
     fat: 4.3,
     fiber: 43,
     carbs: 69,
-    unitWeights: {},
-    verified: false,
-    source: "Estimated by Claude (typical USDA FoodData Central / brand-label values), unverified — pending user review"
-  },
-  "ground cinnamon": {
-    per: "100g",
-    calories: 247,
-    protein: 4,
-    fat: 1.2,
-    fiber: 53,
-    carbs: 81,
     unitWeights: {},
     verified: false,
     source: "Estimated by Claude (typical USDA FoodData Central / brand-label values), unverified — pending user review"
@@ -1799,17 +1546,6 @@ window.ingredientNutrition = {
     verified: false,
     source: "Estimated by Claude (typical USDA FoodData Central / brand-label values), unverified — pending user review"
   },
-  "gochujang paste": {
-    per: "100g",
-    calories: 170,
-    protein: 4,
-    fat: 1.5,
-    fiber: 4,
-    carbs: 35,
-    unitWeights: {},
-    verified: false,
-    source: "Estimated by Claude (typical USDA FoodData Central / brand-label values), unverified — pending user review"
-  },
   "jasmine rice": {
     per: "100g",
     calories: 365,
@@ -1861,7 +1597,7 @@ window.ingredientNutrition = {
     fat: 0.2,
     fiber: 2.6,
     carbs: 7.3,
-    unitWeights: { "green onions": 15 },
+    unitWeights: { "green onions": 15, "bunch": 90 },
     verified: false,
     source: "Estimated by Claude (typical USDA FoodData Central / brand-label values), unverified — pending user review"
   },
@@ -1909,28 +1645,6 @@ window.ingredientNutrition = {
     verified: false,
     source: "Estimated by Claude (typical USDA FoodData Central / brand-label values), unverified — pending user review"
   },
-  "raw chicken breast": {
-    per: "100g",
-    calories: 120,
-    protein: 22.5,
-    fat: 2.6,
-    fiber: 0,
-    carbs: 0,
-    unitWeights: {},
-    verified: false,
-    source: "Estimated by Claude (typical USDA FoodData Central / brand-label values), unverified — pending user review"
-  },
-  "minced garlic": {
-    per: "100g",
-    calories: 149,
-    protein: 6.4,
-    fat: 0.5,
-    fiber: 2.1,
-    carbs: 31,
-    unitWeights: {},
-    verified: false,
-    source: "Estimated by Claude (typical USDA FoodData Central / brand-label values), unverified — pending user review"
-  },
   "fresh chopped parsley": {
     per: "100g",
     calories: 36,
@@ -1942,24 +1656,13 @@ window.ingredientNutrition = {
     verified: false,
     source: "Estimated by Claude (typical USDA FoodData Central / brand-label values), unverified — pending user review"
   },
-  "macaroni or pasta of choice": {
+  "macaroni": {
     per: "100g",
     calories: 371,
     protein: 13,
     fat: 1.5,
     fiber: 3.2,
     carbs: 75,
-    unitWeights: {},
-    verified: false,
-    source: "Estimated by Claude (typical USDA FoodData Central / brand-label values), unverified — pending user review"
-  },
-  "light cream cheese / philadelphia": {
-    per: "100g",
-    calories: 220,
-    protein: 8,
-    fat: 19,
-    fiber: 0,
-    carbs: 5,
     unitWeights: {},
     verified: false,
     source: "Estimated by Claude (typical USDA FoodData Central / brand-label values), unverified — pending user review"
