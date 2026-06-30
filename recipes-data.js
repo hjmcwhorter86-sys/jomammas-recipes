@@ -391,8 +391,7 @@ tags: ["dessert", "high protein"]
   ],
 
   notes: [
-    "Want it extra crispy? Add 1 tbsp cornstarch to the breadcrumb mix.",
-    "Ethan loved this one (major mom victory)."
+    "Want it extra crispy? Add 1 tbsp cornstarch to the breadcrumb mix."
   ]
 },
 
