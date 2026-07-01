@@ -1493,7 +1493,7 @@ tags: ["dessert", "high protein"]
           qty: 1.5,
           unit: "tbsp",
           name: "olive oil",
-          note: "Pairing it with butter lets the sear go hotter without scorching, while still keeping that buttery flavor — swap in plain butter or a neutral oil and you'll lose one or the other.",
+          note: "Pairing it with butter lets the sear go hotter without scorching, while still keeping that buttery flavor. Swap in plain butter or a neutral oil and you'll lose one or the other.",
           guideLink: { guideId: "oils-and-fats", tab: "smoke" },
         },
       ]
@@ -1527,7 +1527,7 @@ tags: ["dessert", "high protein"]
 
   notes: [
     "Pat the chicken dry before dredging so the flour sticks evenly and you get a proper sear instead of steaming.",
-    "The finishing butter is optional but makes the sauce glossy and restaurant-rich — don't skip it if you can help it.",
+    "The finishing butter is optional but makes the sauce glossy and restaurant-rich. Don't skip it if you can help it.",
     "If the sauce breaks (looks greasy or separated), pull it fully off heat and whisk in a splash of cold cream or broth.",
     "White cooking wine has added salt, so taste before salting the sauce further."
   ]
@@ -1536,7 +1536,7 @@ tags: ["dessert", "high protein"]
 {
   id: "smothered-chicken",
   title: "Smothered Chicken",
-  description: "Southern comfort done right — bold spiced chicken seared golden, then finished in a rich, bacony pan gravy.",
+  description: "Southern comfort done right: bold spiced chicken seared golden, then finished in a rich, bacony pan gravy.",
   image: "images/smothered-chicken.png",
   category: "Chicken",
   dateAdded: "2026-06-28",
@@ -1593,17 +1593,17 @@ tags: ["dessert", "high protein"]
 
   steps: [
     "Make the dredge: Stir together the flour, 2 tsp salt, garlic powder, smoked paprika, onion powder, black pepper, white pepper, and cayenne in a shallow bowl. Reserve 3 Tbsp of this mixture for the gravy. Dredge the chicken in the remaining flour mixture and set aside.",
-    "Sear the chicken: Heat avocado oil in a large skillet over medium. Working in batches, sear chicken about 2 minutes per side — just until golden. They'll finish cooking in the gravy, so pull them when golden, not fully cooked. Remove to a plate.",
-    "Cook the bacon: Add bacon to the pan drippings and cook over medium, stirring occasionally, until browned and crisp, about 4–5 minutes. Remove bacon with a slotted spoon to a paper towel-lined plate. Reserve half the bacon for garnish; set the other half aside to stir into the gravy. If the pan looks dry after removing the bacon, leave any remaining searing oil in — don't drain it.",
+    "Sear the chicken: Heat avocado oil in a large skillet over medium. Working in batches, sear chicken about 2 minutes per side, just until golden. They'll finish cooking in the gravy, so pull them when golden, not fully cooked. Remove to a plate.",
+    "Cook the bacon: Add bacon to the pan drippings and cook over medium, stirring occasionally, until browned and crisp, about 4–5 minutes. Remove bacon with a slotted spoon to a paper towel-lined plate. Reserve half the bacon for garnish; set the other half aside to stir into the gravy. If the pan looks dry after removing the bacon, leave any remaining searing oil in. Don't drain it.",
     "Build the base: Cook onion in the drippings over medium until softened, about 3 minutes. Add garlic and cook until fragrant, about 1 minute.",
-    "Make the gravy: Add the reserved 3 Tbsp flour mixture to the skillet and stir constantly for about 2 minutes until the raw flour smell is gone. Slowly whisk in chicken broth, then half and half, then Worcestershire sauce. Cook over medium-high, whisking constantly, until thickened — about 4–5 minutes. Stir in the remaining 3/4 tsp salt and taste.",
+    "Make the gravy: Add the reserved 3 Tbsp flour mixture to the skillet and stir constantly for about 2 minutes until the raw flour smell is gone. Slowly whisk in chicken broth, then half and half, then Worcestershire sauce. Cook over medium-high, whisking constantly, until thickened, about 4–5 minutes. Stir in the remaining 3/4 tsp salt and taste.",
     "Finish the chicken: Nestle chicken back into the gravy and cook uncovered for 2–3 minutes, until cooked through and gravy clings to the chicken. Stir in the reserved half of the bacon. Remove from heat and swirl in the butter.",
     "Serve: Garnish with remaining bacon and sliced scallions. Serve over mashed potatoes or rice."
   ],
 
   notes: [
-    "Don't cover the pan during the final simmer — keeping it open lets the gravy tighten and cling rather than steam the chicken.",
-    "Thin-sliced breasts cook fast. Pull from the sear when golden, not fully cooked — they'll finish in 2–3 minutes in the gravy.",
+    "Don't cover the pan during the final simmer; keeping it open lets the gravy tighten and cling rather than steam the chicken.",
+    "Thin-sliced breasts cook fast. Pull from the sear when golden, not fully cooked; they'll finish in 2–3 minutes in the gravy.",
     "If your bacon renders less fat than expected, just leave the avocado oil from searing in the pan rather than draining it.",
     "Serve over mashed potatoes or rice to catch every bit of that gravy."
   ]
