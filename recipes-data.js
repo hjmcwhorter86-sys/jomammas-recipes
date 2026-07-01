@@ -60,15 +60,11 @@ window.recipes = [
     { qty: 100, unit: "g", name: "cornflakes", notes: "crushed" },
     { qty: 2, unit: "tsp", name: "garlic powder" },
     { qty: 2, unit: "tsp", name: "onion powder" },
-    { qty: null, unit: null, name: "Salt and pepper, to taste" },
+    { qty: 0.5, unit: "tsp", name: "Salt", display: "Salt: ½ tsp, or to taste" },
+    { qty: 0.25, unit: "tsp", name: "Black pepper", display: "Black pepper: ¼ tsp, or to taste" },
     { qty: null, unit: null, name: "Cooking oil spray", notes: "~20 sprays" },
 
-    { qty: 200, unit: "g", name: "nonfat Greek yogurt" },
-    { qty: 60, unit: "g", name: "sweet chili sauce" },
-    { qty: 2, unit: "tsp", name: "sriracha", notes: "or to taste" },
-    { qty: 40, unit: "g", name: "honey" },
-
-    { qty: null, unit: null, name: "Optional: extra sweet chili sauce for brushing", notes: "about 5 g per tender", optional: true }
+    { qty: null, unit: null, name: "Sweet chili sauce, for brushing", notes: "about 5 g per tender", display: "Sweet chili sauce, for brushing (about 5 g per tender)" }
   ],
 
   steps: [
@@ -77,13 +73,11 @@ window.recipes = [
     "Dredge each tender in flour, then egg, then cornflakes. Press flakes firmly onto chicken.",
     "Place tenders in air fryer basket and spray lightly with cooking oil.",
     "Air fry at 200°C / 390°F for 15 minutes, flipping halfway if needed, until golden and cooked through.",
-    "In a bowl, mix Greek yogurt, sweet chili sauce, sriracha, and honey to make bang bang sauce.",
-    "Optional extra-saucy mode: brush a little sweet chili sauce on each cooked tender, then dip into bang bang sauce."
+    "Brush a little sweet chili sauce on each cooked tender, then dip into bang bang sauce."
   ],
 
   notes: [
     "For ultra crunch, really press the cornflakes onto the chicken.",
-    "Bang bang sauce keeps 3–4 days in the fridge.",
     "Great for wraps, salads, or snack plates."
   ]
 },
