@@ -1629,7 +1629,8 @@ tags: ["dessert", "high protein"]
       items: [
         { qty: 1.5, unit: "lb", name: "large shrimp", notes: "peeled and deveined" },
         { qty: 0.5, unit: "tsp", name: "garlic powder" },
-        { qty: null, unit: null, name: "Salt and black pepper, to taste" }
+        { qty: 0.25, unit: "tsp", name: "salt", notes: "or to taste" },
+        { qty: 0.25, unit: "tsp", name: "black pepper", notes: "or to taste" }
       ]
     },
     {
@@ -1668,7 +1669,7 @@ tags: ["dessert", "high protein"]
     "Reduce the wine: Pour in the white wine and turn heat to medium-high. Let it reduce by about half, stirring occasionally, about 4–5 minutes. You want the alcohol smell gone and the sauce visibly thickened.",
     "Add worcestershire and lemon: Reduce heat to medium. Stir in the worcestershire sauce and hot sauce, then add the lemon juice. Taste and adjust salt and pepper before the shrimp go back in.",
     "Finish the shrimp and pasta: Reduce heat to low. Add the drained pasta directly to the pan and toss to coat, adding splashes of reserved pasta water as needed to make the sauce glossy and clingy. Nestle the seared shrimp back in and toss everything together for about 1 minute until the shrimp are just cooked through.",
-    "Serve: Plate immediately and top with fresh parsley and a light sprinkle of parmesan if using. Scampi waits for no one."
+    "Serve: Plate immediately and top with fresh parsley and a light sprinkle of parmesan if using."
   ],
 
   notes: [
