@@ -1269,7 +1269,7 @@ tags: ["dessert", "high protein"]
     {
       title: "The Sauce",
       items: [
-        { qty: 6, unit: "tbsp", name: "soy sauce", notes: "plus 2 tsp" },
+        { qty: 1/3, unit: "cup", name: "soy sauce", notes: "plus 4 tsp" },
         { qty: 4, unit: "tbsp", name: "brown sugar" },
         { qty: 1.5, unit: "tbsp", name: "toasted sesame oil" },
         { qty: 6, unit: "clove", name: "garlic", notes: "minced" },
