@@ -1661,12 +1661,12 @@ tags: ["dessert", "high protein"]
   ],
 
   steps: [
-    "Season the shrimp: Pat shrimp dry with paper towels — wet shrimp steam instead of sear. Toss with garlic powder, a pinch of salt, and a pinch of black pepper. Set aside.",
-    "Cook the pasta: Bring a large pot of heavily salted water to a boil. Cook angel hair until just shy of al dente — it'll finish in the sauce. Before draining, scoop out at least 1/2 cup of pasta water. Drain and set pasta aside.",
-    "Sear the shrimp: Heat olive oil in a large skillet over medium-high until shimmering. Add shrimp in a single layer — don't crowd them. Sear 60–90 seconds per side until they just start to get color but are NOT fully cooked through. Pull them out onto a plate and set aside.",
+    "Season the shrimp: Pat shrimp dry with paper towels; wet shrimp steam instead of sear. Toss with garlic powder, a pinch of salt, and a pinch of black pepper. Set aside.",
+    "Cook the pasta: Bring a large pot of heavily salted water to a boil. Cook angel hair until just shy of al dente; it'll finish in the sauce. Before draining, scoop out at least 1/2 cup of pasta water. Drain and set pasta aside.",
+    "Sear the shrimp: Heat olive oil in a large skillet over medium-high until shimmering. Add shrimp in a single layer. Don't crowd them. Sear 60–90 seconds per side until they just start to get color but are NOT fully cooked through. Pull them out onto a plate and set aside.",
     "Bloom the butter and pepper flakes: Reduce heat to medium. Add butter to the same pan. Once foamy, add red pepper flakes and stir for 30 seconds until sizzling and fragrant.",
-    "Build the aromatics: Add onion and all 10 cloves of minced garlic. Cook, stirring frequently, for 3–4 minutes until the onion is translucent and the garlic is golden and fragrant — not brown.",
-    "Reduce the wine: Pour in the white wine and turn heat to medium-high. Let it reduce by about half, stirring occasionally — about 4–5 minutes. You want the alcohol smell gone and the sauce visibly thickened.",
+    "Build the aromatics: Add onion and all 10 cloves of minced garlic. Cook, stirring frequently, for 3–4 minutes until the onion is translucent and the garlic is golden and fragrant, not brown.",
+    "Reduce the wine: Pour in the white wine and turn heat to medium-high. Let it reduce by about half, stirring occasionally, about 4–5 minutes. You want the alcohol smell gone and the sauce visibly thickened.",
     "Add worcestershire and lemon: Reduce heat to medium. Stir in the worcestershire sauce and hot sauce, then add the lemon juice. Taste and adjust salt and pepper before the shrimp go back in.",
     "Finish the shrimp and pasta: Reduce heat to low. Add the drained pasta directly to the pan and toss to coat, adding splashes of reserved pasta water as needed to make the sauce glossy and clingy. Nestle the seared shrimp back in and toss everything together for about 1 minute until the shrimp are just cooked through.",
     "Serve: Plate immediately and top with fresh parsley and a light sprinkle of parmesan if using. Scampi waits for no one."
@@ -1674,17 +1674,17 @@ tags: ["dessert", "high protein"]
 
   notes: [
     "The pasta water is non-negotiable. The starch is what makes the sauce glossy and clingy instead of thin and soupy. Don't skip scooping it out before you drain.",
-    "Worcestershire is the secret weapon. Half a teaspoon sounds like nothing, but it adds a savory backbone that makes everything taste more intensely like itself. You won't detect it — you'll just wonder why this tastes better than other scampis.",
+    "Worcestershire is the secret weapon. Half a teaspoon sounds like nothing, but it adds a savory backbone that makes everything taste more intensely like itself. You won't detect it; you'll just wonder why this tastes better than other scampis.",
     "Wine: Use something you'd drink. Pinot Grigio or Sauvignon Blanc are ideal. Avoid anything labeled \"cooking wine.\"",
-    "Heat level: As written this is medium — noticeable but not aggressive. Pull the red pepper flakes back to 1/2 tsp if you're cooking for heat-sensitive folks.",
-    "Don't overcook the shrimp. Pull them from the sear before they're fully done — they finish in the sauce. Overcooked shrimp are rubbery and sad."
+    "Heat level: As written this is medium, noticeable but not aggressive. Pull the red pepper flakes back to 1/2 tsp if you're cooking for heat-sensitive folks.",
+    "Don't overcook the shrimp. Pull them from the sear before they're fully done; they finish in the sauce. Overcooked shrimp are rubbery and sad."
   ]
 },
 
   {
   id: "nacho-bar-queso",
   title: "Nacho Bar Queso (BWW Hatch Chile Copycat)",
-  description: "A smooth, pourable queso loaded with Hatch green chiles — copycat-style from Buffalo Wild Wings, with optional chorizo for the meat lovers.",
+  description: "A smooth, pourable queso loaded with Hatch green chiles, copycat-style from Buffalo Wild Wings, with optional chorizo for the meat lovers.",
   image: "images/no-photo.jpg",
   category: "Snacks & Sides",
   dateAdded: "2026-06-30",
@@ -1733,7 +1733,7 @@ tags: ["dessert", "high protein"]
 
   steps: [
     "Cold whisk the cornstarch into the evaporated milk until smooth.",
-    "Heat gently in a saucepan over medium-low until steaming — do not boil.",
+    "Heat gently in a saucepan over medium-low until steaming; do not boil.",
     "Lower the heat and add the cheeses gradually, stirring constantly until fully melted and smooth.",
     "Stir in the Hatch green chiles and all seasonings. Taste and adjust.",
     "Fold in the browned chorizo, or keep it separate for people to add themselves.",
@@ -1742,7 +1742,7 @@ tags: ["dessert", "high protein"]
   ],
 
   notes: [
-    "Use freshly cubed white American deli cheese for the smoothest melt — pre-packaged slices work but may be slightly grainier.",
+    "Use freshly cubed white American deli cheese for the smoothest melt; pre-packaged slices work but may be slightly grainier.",
     "Sauté the Hatch chiles briefly in a dry pan before adding to drive off excess moisture and deepen their flavor.",
     "A splash of jalapeño brine at the end brightens everything without adding visible heat."
   ]
