@@ -1410,19 +1410,19 @@ tags: ["dessert", "high protein"]
     {
       title: "For the Chicken",
       items: [
-        { qty: 1.8, unit: "lb", name: "chicken breast", notes: "cut into cubes" },
-        { qty: 1.5, unit: "tsp", name: "salt" },
-        { qty: 1, unit: "tsp", name: "black pepper" },
-        { qty: 1, unit: "tsp", name: "chilli flakes", optional: true },
-        { qty: 1.5, unit: "tsp", name: "garlic powder" },
-        { qty: 1.5, unit: "tsp", name: "onion powder" },
-        { qty: 1.5, unit: "tsp", name: "paprika", notes: "or smoked paprika" },
-        { qty: 2, unit: "tsp", name: "olive oil" },
-        { qty: 2, unit: "tbsp", name: "light butter", notes: "for cooking" },
-        { qty: 1, unit: "tbsp", name: "light butter", notes: "finishing, split between batches" },
-        { qty: 2, unit: "tsp", name: "jarred minced garlic" },
-        { qty: 2, unit: "tbsp", name: "honey", notes: "1 tbsp per batch" },
-        { qty: 1, unit: "tbsp", name: "fresh chopped parsley" }
+        { qty: 2.7, unit: "lb", name: "chicken breast", notes: "cut into cubes" },
+        { qty: 2.25, unit: "tsp", name: "salt" },
+        { qty: 1.5, unit: "tsp", name: "black pepper" },
+        { qty: 1.5, unit: "tsp", name: "chilli flakes", optional: true },
+        { qty: 2.25, unit: "tsp", name: "garlic powder" },
+        { qty: 2.25, unit: "tsp", name: "onion powder" },
+        { qty: 2.25, unit: "tsp", name: "paprika", notes: "or smoked paprika" },
+        { qty: 1, unit: "tbsp", name: "olive oil" },
+        { qty: 3, unit: "tbsp", name: "light butter", notes: "for cooking" },
+        { qty: 1.5, unit: "tbsp", name: "light butter", notes: "finishing, split between batches" },
+        { qty: 1, unit: "tbsp", name: "jarred minced garlic" },
+        { qty: 3, unit: "tbsp", name: "honey", notes: "1½ tbsp per batch" },
+        { qty: 1.5, unit: "tbsp", name: "fresh chopped parsley" }
       ]
     },
     {
@@ -1445,15 +1445,14 @@ tags: ["dessert", "high protein"]
     "Season the chicken: toss chicken cubes with salt, pepper, chilli flakes, garlic powder, onion powder, paprika, and olive oil until evenly coated.",
     "Cook batch 1: heat a pan over medium heat. Add half the cooking butter. Once melted, add the first batch of chicken. Don't overcrowd the pan. Cook 4–5 minutes on one side until golden brown.",
     "Flip and cook the other side 3–4 more minutes.",
-    "Lower the heat. Add half the finishing butter, half the minced garlic, and 1 tbsp honey. Stir until well coated and sticky. Set aside.",
-    "Repeat the cooking and glazing steps with the second batch of chicken, using the remaining butter, garlic, and 1 tbsp honey.",
+    "Lower the heat. Add half the finishing butter, half the minced garlic, and 1½ tbsp honey. Stir until well coated and sticky. Set aside.",
+    "Repeat the cooking and glazing steps with the second batch of chicken, using the remaining butter, garlic, and 1½ tbsp honey.",
     "Cook the pasta according to package directions. Drain and set aside.",
     "In the same pan used for the chicken (don't wipe it out; that residual butter is flavor!), cook the minced garlic over medium-low heat for 2 minutes until fragrant. Add milk, cream cheese, salt, pepper, smoked paprika, and nutmeg. Stir until completely smooth. If needed, transfer to a larger pot.",
     "Lower the heat before adding shredded cheddar. Stir until melted. Add cooked pasta and mix well. Serve topped with the honey garlic chicken and fresh parsley. Enjoy!"
   ],
 
   notes: [
-    "Chicken serves 4. Mac and cheese is scaled to 1.5x to serve 5–6 (one person skipping the chicken).",
     "The cream cheese at 1.5x works out to basically one full 8oz Philadelphia block.",
     "Cook chicken in two batches for best browning."
   ]
