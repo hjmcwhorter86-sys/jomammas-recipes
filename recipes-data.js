@@ -521,7 +521,8 @@ tags: ["dessert", "high protein"]
     { qty: 1, unit: "tsp", name: "Italian seasoning", notes: "divided" },
     { qty: 0.5, unit: "tsp", name: "garlic powder" },
     { qty: 0.25, unit: "tsp", name: "red pepper flakes", notes: "optional", optional: true },
-    { qty: null, unit: null, name: "Salt and pepper, to taste" }
+    { qty: 0.75, unit: "tsp", name: "salt", notes: "or to taste" },
+    { qty: 0.25, unit: "tsp", name: "black pepper", notes: "to taste" }
   ],
 
   steps: [
