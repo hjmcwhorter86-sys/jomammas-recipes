@@ -1502,7 +1502,8 @@ tags: ["dessert", "high protein"]
         "½ cup heavy cream",
         "¼ tsp red pepper flakes",
         "1 tbsp cold unsalted butter, for finishing",
-        "Salt and pepper to taste",
+        "⅛ tsp salt, or to taste",
+        "⅛ tsp black pepper, to taste",
         "Fresh parsley, for garnish"
       ]
     }
