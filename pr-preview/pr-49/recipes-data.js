@@ -41,7 +41,7 @@ window.recipes = [
   {
   id: "cornflake-chicken-tenders",
   title: "Bang Bang Cornflake Chicken Tenders",
-  description: "Crispy air-fried cornflake chicken with sweet-heat bang bang sauce — fast, crunchy, and family-approved.",
+  description: "Crispy air-fried cornflake chicken with sweet-heat bang bang sauce. Fast, crunchy, and family-approved.",
   image: "images/cornflake-chicken-tenders-air-fry.png",
   category: "Chicken",
   dateAdded: "2026-02-04",
@@ -91,7 +91,7 @@ window.recipes = [
   {
   id: "light-chicken-alfredo-pasta",
   title: "Lightened-Up Chicken Alfredo (Protein Pasta Edition)",
-  description: "Silky, glossy Alfredo vibes with lighter ingredients and big protein energy — feeds the whole family.",
+  description: "Silky, glossy Alfredo vibes with lighter ingredients and big protein energy. Feeds the whole family.",
   image: "images/light-chicken-alfredo.jpg",
   category: "Pasta",
   dateAdded: "2026-02-04",
@@ -135,7 +135,7 @@ window.recipes = [
   ],
 
   notes: [
-    "Pasta water fixes everything — thin with a splash or thicken with a brief simmer.",
+    "Pasta water fixes everything: thin with a splash or thicken with a brief simmer.",
     "Optional protein boost: stir in 1–2 tbsp Greek yogurt off-heat.",
     "Leftovers reheat well with a splash of milk."
   ]
@@ -144,7 +144,7 @@ window.recipes = [
   {
   id: "pepper-jack-queso",
   title: "Sodium Citrate Pepper Jack Queso (Eva’s Chili-Spiced Version)",
-  description: "Ultra-smooth, pourable queso made with real cheese, light dairy, and sodium citrate — kid-approved but flavor-forward.",
+  description: "Ultra-smooth, pourable queso made with real cheese, light dairy, and sodium citrate. Kid-approved but flavor-forward.",
   image: "images/sodium-citrate-queso-dip.png",
   category: "Snacks & Sides",
   dateAdded: "2026-02-04",
@@ -183,7 +183,7 @@ window.recipes = [
   notes: [
     "For thicker queso, reduce skim milk to ¾ cup.",
     "For looser queso, add 1–2 tbsp skim milk when reheating.",
-    "No flour or cornstarch needed — sodium citrate handles emulsification."
+    "No flour or cornstarch needed; sodium citrate handles emulsification."
   ]
 }
 ,{
@@ -222,7 +222,7 @@ tags: ["dessert", "high protein"]
 { 
   id: "skillet-salisbury-steak",
   title: "Easy Skillet Salisbury Steak",
-  description: "Classic comfort food with a tangy gravy twist — fast, cozy, and family-approved.",
+  description: "Classic comfort food with a tangy gravy twist. Fast, cozy, and family-approved.",
   image: "images/salisbury-steak.png",
   category: "Beef",
   dateAdded: "2026-02-04",
@@ -269,7 +269,7 @@ tags: ["dessert", "high protein"]
 {
   id: "quick-lobster-bisque",
   title: "Quick Lobster Bisque",
-  description: "Creamy, cozy lobster bisque made fast with Better Than Bouillon — rich flavor without the restaurant fuss.",
+  description: "Creamy, cozy lobster bisque made fast with Better Than Bouillon. Rich flavor without the restaurant fuss.",
   image: "images/quick-lobster-bisque.png",
   category: ["Soup", "Seafood"],
   dateAdded: "2026-02-11",
@@ -309,7 +309,7 @@ tags: ["dessert", "high protein"]
 {
   id: "air-fryer-general-tsos-chicken",
   title: "Air Fryer General Tso’s Chicken",
-  description: "Crispy, saucy, and lighter than takeout — perfect for a quick weeknight Asian-inspired dinner.",
+  description: "Crispy, saucy, and lighter than takeout. Perfect for a quick weeknight Asian-inspired dinner.",
   image: "images/air-fryer-general-tsos-chicken.png",
   category: "Chicken",
   dateAdded: "2026-02-11",
@@ -444,7 +444,7 @@ tags: ["dessert", "high protein"]
 {
   id: "bbq-chicken-baked-potatoes",
   title: "BBQ Chicken Baked Potatoes",
-  description: "Build-your-own BBQ chicken potato bar — easy weeknight comfort food.",
+  description: "Build-your-own BBQ chicken potato bar. Easy weeknight comfort food.",
   image: "images/bbq-chicken-baked-potatoes.jpg",
   category: ["Slow Cooker", "Chicken"],
   dateAdded: "2026-02-12",
@@ -731,7 +731,7 @@ tags: ["dessert", "high protein"]
   steps: [
     "Heat oven to 425°F (hot is key for blistering, not sad wrinkling).",
     "Toss tomatoes whole with olive oil, salt, pepper, and any optional seasoning.",
-    "Spread on a sheet pan in one layer (don’t crowd — give those babies breathing room).",
+    "Spread on a sheet pan in one layer (don’t crowd them; give those babies breathing room).",
     "Roast 15–20 minutes, shaking the pan once halfway."
   ]
 },
@@ -871,6 +871,7 @@ tags: ["dessert", "high protein"]
   carbs: null,
   fat: null,
   fiber: null,
+  servings: "6",
   tags: ["rice", "rice cooker", "side dishes"],
 
   ingredients: [
@@ -951,6 +952,7 @@ tags: ["dessert", "high protein"]
   fiber: null,
   calories: "520 per 2 chicken thighs",
   protein: "52 g",
+  servings: "5",
   tags: ["chicken", "protein", "easy", "weeknight"],
 
   ingredients: [
@@ -978,7 +980,7 @@ tags: ["dessert", "high protein"]
 {
   id: "bbq-chicken-protein-pizza",
   title: "BBQ Chicken Protein Pizza",
-  description: "Sweet, smoky, cheesy, and protein-packed — pizza night without the regret.",
+  description: "Sweet, smoky, cheesy, and protein-packed. Pizza night without the regret.",
   image: "images/bbq-chicken-protein-pizza.png",
   category: "Chicken",
   dateAdded: "2026-03-26",
@@ -1017,6 +1019,7 @@ tags: ["dessert", "high protein"]
   image: "images/quick-pasta-arrabbiata.png",
   category: "Pasta",
   dateAdded: "2026-04-02",
+  servings: "4",
   carbs: null,
   fat: null,
   fiber: null,
@@ -1025,7 +1028,7 @@ tags: ["dessert", "high protein"]
   tags: ["pasta", "meatless", "easy", "weeknight", "spicy", "fast", "low calorie"],
 
   ingredients: [
-    { qty: 12, unit: "oz", name: "penne", notes: "or pasta of choice — protein pasta works great" },
+    { qty: 12, unit: "oz", name: "penne", notes: "or pasta of choice; protein pasta works great" },
     { qty: 3, unit: "tbsp", name: "olive oil" },
     { qty: 6, unit: "clove", name: "garlic", notes: "thinly sliced" },
     { qty: 2, qtyMax: 3, unit: "tsp", name: "red pepper flakes", notes: "adjust to your heat tolerance" },
@@ -1068,6 +1071,7 @@ tags: ["dessert", "high protein"]
   fiber: null,
   calories: "200 calories per serving",
   protein: "25 g",
+  servings: 4,
   tags: ["shrimp", "seafood", "easy", "weeknight", "fast", "low calorie"],
 
   ingredients: [
@@ -1096,7 +1100,7 @@ tags: ["dessert", "high protein"]
   {
   id: "creamy-sherry-tomato-soup",
   title: "Creamy Tomato Soup with Sherry",
-  description: "A lightened-up version of a classic creamy tomato soup—lower in fat than traditional recipes, but still rich and comforting.",
+  description: "A lightened-up version of a classic creamy tomato soup, lower in fat than traditional recipes, but still rich and comforting.",
   image: "images/no-photo.jpg",
   category: "Soup",
   dateAdded: "2026-04-05",
@@ -1135,7 +1139,7 @@ tags: ["dessert", "high protein"]
 {
   id: "birria-chuck-roast",
   title: "Birria-Style Chuck Roast",
-  description: "Deeply spiced, fall-apart chuck roast slow cooked in a rich chile broth — bold, smoky, and worth every minute. Serve over rice with consommé or stuff into tacos.",
+  description: "Deeply spiced, fall-apart chuck roast slow cooked in a rich chile broth. It's bold, smoky, and delicious. Serve over rice with consommé or stuff into tacos.",
   image: "images/birria-chuck-roast.png",
   category: ["Beef", "Slow Cooker"],
   dateAdded: "2026-05-22",
@@ -1177,16 +1181,16 @@ tags: ["dessert", "high protein"]
   ],
 
   steps: [
-    "Toast the chiles: Tear open the guajillo and ancho chiles, removing stems and seeds. Toast in a dry skillet over medium heat for about 30 seconds per side — just until fragrant, not burnt. Place in a bowl, cover with hot water, and soak 15–20 minutes until softened.",
-    "Season and sear the roast: Cut the chuck roast into 3–4 large chunks. Season all over with 2 tsp salt and the black pepper. Heat vegetable oil in a large skillet over high heat and sear 2–3 minutes per side until deeply browned. Don't skip this step — it builds the flavor base. Transfer to the slow cooker.",
-    "Blend the chile sauce: Drain the soaked chiles and add to a blender with the chipotle peppers, garlic, onion, tomatoes, apple cider vinegar, cumin, oregano, cinnamon, and 1 cup of beef broth. Blend until very smooth. Taste — it should be bold, smoky, and slightly spicy.",
-    "Load the slow cooker: Pour the chile sauce over the seared beef. Add the remaining 1 cup of beef broth and tuck in the bay leaves. The liquid should come about halfway up the meat — that's perfect.",
-    "Cook on LOW for 6–7 hours. Start checking around the 6-hour mark — the meat is done when it shreds easily with two forks. Switch to keep warm if it finishes early; it only gets better.",
+    "Toast the chiles: Tear open the guajillo and ancho chiles, removing stems and seeds. Toast in a dry skillet over medium heat for about 30 seconds per side, just until fragrant, not burnt. Place in a bowl, cover with hot water, and soak 15–20 minutes until softened.",
+    "Season and sear the roast: Cut the chuck roast into 3–4 large chunks. Season all over with 2 tsp salt and the black pepper. Heat vegetable oil in a large skillet over high heat and sear 2–3 minutes per side until deeply browned. Don't skip this step; it builds the flavor base. Transfer to the slow cooker.",
+    "Blend the chile sauce: Drain the soaked chiles and add to a blender with the chipotle peppers, garlic, onion, tomatoes, apple cider vinegar, cumin, oregano, cinnamon, and 1 cup of beef broth. Blend until very smooth. It should be bold, smoky, and slightly spicy.",
+    "Load the slow cooker: Pour the chile sauce over the seared beef. Add the remaining 1 cup of beef broth and tuck in the bay leaves. The liquid should come about halfway up the meat. That's perfect.",
+    "Cook on LOW for 6–7 hours. Start checking around the 6-hour mark; the meat is done when it shreds easily with two forks. Switch to keep warm if it finishes early; it only gets better.",
     "Remove the bay leaves. Pull the beef chunks out and shred with two forks, then return the meat to the pot and stir back into the broth. Taste the consommé and add up to 1 tsp salt if needed. Serve the consommé alongside in small bowls for sipping or ladling over the bowl."
   ],
 
   notes: [
-    "On the dried chiles: Guajillo = mild, fruity, slightly tangy. Ancho = dark, rich, chocolate-y. Chipotle in adobo = smoky heat. All three together is what makes birria taste like birria — don't substitute with chili powder. Look for dried chiles in the Hispanic foods aisle at Walmart or order online.",
+    "On the dried chiles: Guajillo = mild, fruity, slightly tangy. Ancho = dark, rich, chocolate-y. Chipotle in adobo = smoky heat. All three together is what makes birria taste like birria. Don't substitute with chili powder. Look for dried chiles in the Hispanic foods aisle at Walmart or order online.",
     "Hot-running slow cooker: If your slow cooker runs hot, start checking at 5.5–6 hours rather than waiting the full 7.",
     "Serving as bowls: Rice on the bottom, shredded beef on top, ladle consommé over everything. Top with diced onion, cilantro, cotija, and a squeeze of lime.",
     "For birria tacos: Dip tortillas briefly in the consommé, fill with shredded beef, and crisp in a hot skillet. Mind-blowing.",
@@ -1197,7 +1201,7 @@ tags: ["dessert", "high protein"]
 {
   id: "esquites-mexican-street-corn",
   title: "Esquites (Mexican Street Corn in a Cup)",
-  description: "Mexican street corn in a cup — charred corn kernels coated in a creamy, tangy, spiced sauce and topped with cotija and fresh lime. Bold enough to steal the show.",
+  description: "Mexican street corn in a cup: charred corn kernels coated in a creamy, tangy, spiced sauce and topped with cotija and fresh lime. Bold enough to steal the show.",
   image: "images/esquites.png",
   category: "Snacks & Sides",
   dateAdded: "2026-05-29",
@@ -1225,15 +1229,15 @@ tags: ["dessert", "high protein"]
   ],
 
   steps: [
-    "Heat a large cast iron skillet or heavy pan over HIGH heat until very hot. Add the butter and let it melt. Add the corn in a single layer — don't stir for 2 minutes to let it char. Then stir and let it char another 2 minutes. You want some kernels to get dark and almost smoky. Work in two batches if needed so the corn chars instead of steams.",
+    "Heat a large cast iron skillet or heavy pan over HIGH heat until very hot. Add the butter and let it melt. Add the corn in a single layer and don't stir for 2 minutes to let it char. Then stir and let it char another 2 minutes. You want some kernels to get dark and almost smoky. Work in two batches if needed so the corn chars instead of steams.",
     "Reduce heat to medium. Push the corn to the sides and add the garlic to the center. Sauté 30 seconds until fragrant, then stir into the corn. (If using garlic powder, skip this step and add it with the sauce instead.)",
     "Remove pan from heat. Stir in the mayonnaise, sour cream, chili powder, smoked paprika, cayenne, salt, and lime juice. Stir until everything is coated and creamy.",
     "Transfer to a serving bowl. Top with cotija (or queso fresco) and fresh cilantro. Serve warm with extra lime wedges and chili powder on the side so everyone can adjust their own heat level."
   ],
 
   notes: [
-    "Frozen corn works great — just make sure to thaw it first and pat it as dry as possible with paper towels before it hits the pan. Wet corn steams instead of chars and you'll miss out on those smoky caramelized bits that make this dish.",
-    "On the cheese: Cotija is the traditional choice — look for it in the Hispanic foods aisle. Queso fresco is a slightly milder, creamier substitute that works beautifully. In a real pinch, parmesan will do.",
+    "Frozen corn works great. Just make sure to thaw it first and pat it as dry as possible with paper towels before it hits the pan. Wet corn steams instead of chars and you'll miss out on those smoky caramelized bits that make this dish.",
+    "On the cheese: Cotija is the traditional choice. Look for it in the Hispanic foods aisle. Queso fresco is a slightly milder, creamier substitute that works beautifully. In a real pinch, parmesan will do.",
     "Make it spicier: Add a diced jalapeño when you sauté the garlic, or finish with a drizzle of hot sauce.",
     "Pairs perfectly with: Birria chuck roast, tacos, grilled chicken, or honestly anything off the grill."
   ]
@@ -1316,18 +1320,18 @@ tags: ["dessert", "high protein"]
   ],
 
   steps: [
-    "Warm a quart-sized Mason jar by rinsing with hot tap water. Combine rice vinegar, water, sugar, salt, and red pepper flakes in a small saucepan or microwave-safe cup. Heat until steaming and sugar is dissolved — about 90 seconds in the microwave. Pack julienned carrots tightly into the jar, pour hot brine over them, and let sit at room temperature for 20–30 minutes.",
+    "Warm a quart-sized Mason jar by rinsing with hot tap water. Combine rice vinegar, water, sugar, salt, and red pepper flakes in a small saucepan or microwave-safe cup. Heat until steaming and sugar is dissolved, about 90 seconds in the microwave. Pack julienned carrots tightly into the jar, pour hot brine over them, and let sit at room temperature for 20–30 minutes.",
     "Thinly slice the cucumber and toss with rice vinegar, sugar, salt, and a tiny drizzle of sesame oil. Let sit at least 10 minutes before serving.",
     "Rinse jasmine rice until water runs mostly clear. Add to rice cooker with chicken broth, water, sesame oil, and salt. Cook on the white rice setting. When done, fluff with a fork and stir in the rice vinegar.",
-    "Whisk together soy sauce, brown sugar, sesame oil, ginger, red pepper flakes, and gochujang paste in a small bowl. Taste — it should be salty, slightly sweet, and have a little heat.",
+    "Whisk together soy sauce, brown sugar, sesame oil, ginger, red pepper flakes, and gochujang paste in a small bowl. Taste; it should be salty, slightly sweet, and have a little heat.",
     "Heat vegetable oil in a large skillet over medium-high heat. Add ground beef and break it apart. Cook until browned and no longer pink, about 5–6 minutes. Drain excess grease if needed.",
     "Push the beef to the sides of the pan and add minced garlic to the center. Sauté 30 seconds until fragrant, then stir into the beef. Pour the sauce over everything and stir to coat. Cook another 1–2 minutes until the sauce absorbs slightly.",
     "Spoon rice into bowls, top with the beef mixture. Add pickled carrots and cucumbers on the side. Garnish with green onions and sesame seeds. Serve immediately."
   ],
 
   notes: [
-    "The gochujang upgrade: Adding 2 tsp of gochujang paste to the sauce takes this from great to exceptional. It adds a deep fermented heat that red pepper flakes alone can't replicate. Don't skip it if you can find it — it's usually in the Asian foods aisle.",
-    "On the pickled carrots: The hot brine on thinly julienned carrots works faster than you'd think — 20–30 minutes at room temp is all you need. They'll keep in the fridge for up to a week and are great on tacos, sandwiches, or as a snack.",
+    "The gochujang upgrade: Adding 2 tsp of gochujang paste to the sauce takes this from great to exceptional. It adds a deep fermented heat that red pepper flakes alone can't replicate. Don't skip it if you can find it; it's usually in the Asian foods aisle.",
+    "On the pickled carrots: The hot brine on thinly julienned carrots works faster than you'd think; 20–30 minutes at room temp is all you need. They'll keep in the fridge for up to a week and are great on tacos, sandwiches, or as a snack.",
     "Rice tip: Cooking the jasmine rice in a mix of chicken broth and water with a splash of sesame oil makes it taste intentional rather than just a vehicle for the beef. The rice vinegar stirred in at the end brightens everything up.",
     "Toppings that take it further: A fried egg on top is chef's kiss. Sriracha mayo (sriracha + mayo) drizzled over the bowl is also fantastic.",
     "Leftovers: The beef reheats really well. Store separately from rice for best texture."
@@ -1337,7 +1341,7 @@ tags: ["dessert", "high protein"]
   {
   id: "gochujang-butter-shrimp",
   title: "Gochujang Butter Shrimp",
-  description: "Spicy, glossy, and deeply savory — this weeknight shrimp comes together in under 30 minutes but tastes like you actually tried. Serve over steamed rice and try not to lick the pan.",
+  description: "Spicy, glossy, and deeply savory. This weeknight shrimp comes together in under 30 minutes but tastes like you actually tried. Serve over steamed rice and try not to lick the pan.",
   image: "images/gochujang-butter-shrimp.png",
   category: "Seafood",
   dateAdded: "2026-05-29",
@@ -1371,17 +1375,17 @@ tags: ["dessert", "high protein"]
   ],
 
   steps: [
-    "Pat shrimp very dry with paper towels — wet shrimp steam instead of caramelize. Season with salt and pepper.",
+    "Pat shrimp very dry with paper towels; wet shrimp steam instead of caramelize. Season with salt and pepper.",
     "In a small bowl, whisk together gochujang, soy sauce, honey, rice vinegar, and sesame oil. Set aside before the shrimp hit the pan.",
     "Heat oil in a large skillet or wok over high heat until shimmering. Add shrimp in a single layer (work in batches if needed) and cook 60-90 seconds per side until just pink and slightly charred at the edges. Remove shrimp and set aside.",
-    "Reduce heat to medium. Add butter to the same pan. Once melted, add garlic and ginger and cook for 60 seconds until fragrant — don't let the garlic burn.",
-    "Pour the sauce mixture into the pan and let it bubble and reduce for about 90 seconds, stirring constantly, until it thickens and looks glossy. Add the shrimp back in and toss to coat. Pull off heat immediately — shrimp go rubbery fast.",
+    "Reduce heat to medium. Add butter to the same pan. Once melted, add garlic and ginger and cook for 60 seconds until fragrant. Don't let the garlic burn.",
+    "Pour the sauce mixture into the pan and let it bubble and reduce for about 90 seconds, stirring constantly, until it thickens and looks glossy. Add the shrimp back in and toss to coat. Pull off heat immediately; shrimp go rubbery fast.",
     "Spoon over jasmine rice and top with green onions and sesame seeds. Serve immediately."
   ],
 
   notes: [
-    "Heat level: 3 tbsp gochujang is medium-spicy. Go 2 tbsp for sensitive eaters, 4 tbsp if you want to feel it. Brands vary — Bibigo is milder, Mother-in-Law's runs hotter.",
-    "Don't overcook the shrimp. Pull them out of the sear when they're just turning pink — they'll finish in the sauce. Overcooked shrimp are the only way this dish goes wrong.",
+    "Heat level: 3 tbsp gochujang is medium-spicy. Go 2 tbsp for sensitive eaters, 4 tbsp if you want to feel it. Brands vary; Bibigo is milder, Mother-in-Law's runs hotter.",
+    "Don't overcook the shrimp. Pull them out of the sear when they're just turning pink; they'll finish in the sauce. Overcooked shrimp are the only way this dish goes wrong.",
     "Additions that work great: Sliced snap peas or bok choy tossed in with the sauce, or a jammy soft-boiled egg on the side.",
     "Flavorful rice tip: Butter-toast the dry rice for 2-3 minutes before adding liquid, cook in low-sodium chicken broth instead of water, then finish with a splash of soy sauce and a drizzle of sesame oil when you fluff it."
   ]
@@ -1439,18 +1443,18 @@ tags: ["dessert", "high protein"]
 
   steps: [
     "Season the chicken: toss chicken cubes with salt, pepper, chilli flakes, garlic powder, onion powder, paprika, and olive oil until evenly coated.",
-    "Cook batch 1: heat a pan over medium heat. Add half the cooking butter. Once melted, add the first batch of chicken — don't overcrowd the pan. Cook 4–5 minutes on one side until golden brown.",
+    "Cook batch 1: heat a pan over medium heat. Add half the cooking butter. Once melted, add the first batch of chicken. Don't overcrowd the pan. Cook 4–5 minutes on one side until golden brown.",
     "Flip and cook the other side 3–4 more minutes.",
     "Lower the heat. Add half the finishing butter, half the minced garlic, and 1 tbsp honey. Stir until well coated and sticky. Set aside.",
     "Repeat the cooking and glazing steps with the second batch of chicken, using the remaining butter, garlic, and 1 tbsp honey.",
     "Cook the pasta according to package directions. Drain and set aside.",
-    "In the same pan used for the chicken (don't wipe it out — that residual butter is flavor!), cook the minced garlic over medium-low heat for 2 minutes until fragrant. Add milk, cream cheese, salt, pepper, smoked paprika, and nutmeg. Stir until completely smooth. If needed, transfer to a larger pot.",
+    "In the same pan used for the chicken (don't wipe it out; that residual butter is flavor!), cook the minced garlic over medium-low heat for 2 minutes until fragrant. Add milk, cream cheese, salt, pepper, smoked paprika, and nutmeg. Stir until completely smooth. If needed, transfer to a larger pot.",
     "Lower the heat before adding shredded cheddar. Stir until melted. Add cooked pasta and mix well. Serve topped with the honey garlic chicken and fresh parsley. Enjoy!"
   ],
 
   notes: [
     "Chicken serves 4. Mac and cheese is scaled to 1.5x to serve 5–6 (one person skipping the chicken).",
-    "The cream cheese at 1.5x works out to basically one full 8oz Philadelphia block — convenient!",
+    "The cream cheese at 1.5x works out to basically one full 8oz Philadelphia block.",
     "Cook chicken in two batches for best browning."
   ]
 },
@@ -1489,7 +1493,7 @@ tags: ["dessert", "high protein"]
           qty: 1.5,
           unit: "tbsp",
           name: "olive oil",
-          note: "Pairing it with butter lets the sear go hotter without scorching, while still keeping that buttery flavor — swap in plain butter or a neutral oil and you'll lose one or the other.",
+          note: "Pairing it with butter lets the sear go hotter without scorching, while still keeping that buttery flavor. Swap in plain butter or a neutral oil and you'll lose one or the other.",
           guideLink: { guideId: "oils-and-fats", tab: "smoke" },
         },
       ]
@@ -1523,7 +1527,7 @@ tags: ["dessert", "high protein"]
 
   notes: [
     "Pat the chicken dry before dredging so the flour sticks evenly and you get a proper sear instead of steaming.",
-    "The finishing butter is optional but makes the sauce glossy and restaurant-rich — don't skip it if you can help it.",
+    "The finishing butter is optional but makes the sauce glossy and restaurant-rich. Don't skip it if you can help it.",
     "If the sauce breaks (looks greasy or separated), pull it fully off heat and whisk in a splash of cold cream or broth.",
     "White cooking wine has added salt, so taste before salting the sauce further."
   ]
@@ -1532,7 +1536,7 @@ tags: ["dessert", "high protein"]
 {
   id: "smothered-chicken",
   title: "Smothered Chicken",
-  description: "Southern comfort done right — bold spiced chicken seared golden, then finished in a rich, bacony pan gravy.",
+  description: "Southern comfort done right: bold spiced chicken seared golden, then finished in a rich, bacony pan gravy.",
   image: "images/smothered-chicken.png",
   category: "Chicken",
   dateAdded: "2026-06-28",
@@ -1589,17 +1593,17 @@ tags: ["dessert", "high protein"]
 
   steps: [
     "Make the dredge: Stir together the flour, 2 tsp salt, garlic powder, smoked paprika, onion powder, black pepper, white pepper, and cayenne in a shallow bowl. Reserve 3 Tbsp of this mixture for the gravy. Dredge the chicken in the remaining flour mixture and set aside.",
-    "Sear the chicken: Heat avocado oil in a large skillet over medium. Working in batches, sear chicken about 2 minutes per side — just until golden. They'll finish cooking in the gravy, so pull them when golden, not fully cooked. Remove to a plate.",
-    "Cook the bacon: Add bacon to the pan drippings and cook over medium, stirring occasionally, until browned and crisp, about 4–5 minutes. Remove bacon with a slotted spoon to a paper towel-lined plate. Reserve half the bacon for garnish; set the other half aside to stir into the gravy. If the pan looks dry after removing the bacon, leave any remaining searing oil in — don't drain it.",
+    "Sear the chicken: Heat avocado oil in a large skillet over medium. Working in batches, sear chicken about 2 minutes per side, just until golden. They'll finish cooking in the gravy, so pull them when golden, not fully cooked. Remove to a plate.",
+    "Cook the bacon: Add bacon to the pan drippings and cook over medium, stirring occasionally, until browned and crisp, about 4–5 minutes. Remove bacon with a slotted spoon to a paper towel-lined plate. Reserve half the bacon for garnish; set the other half aside to stir into the gravy. If the pan looks dry after removing the bacon, leave any remaining searing oil in. Don't drain it.",
     "Build the base: Cook onion in the drippings over medium until softened, about 3 minutes. Add garlic and cook until fragrant, about 1 minute.",
-    "Make the gravy: Add the reserved 3 Tbsp flour mixture to the skillet and stir constantly for about 2 minutes until the raw flour smell is gone. Slowly whisk in chicken broth, then half and half, then Worcestershire sauce. Cook over medium-high, whisking constantly, until thickened — about 4–5 minutes. Stir in the remaining 3/4 tsp salt and taste.",
+    "Make the gravy: Add the reserved 3 Tbsp flour mixture to the skillet and stir constantly for about 2 minutes until the raw flour smell is gone. Slowly whisk in chicken broth, then half and half, then Worcestershire sauce. Cook over medium-high, whisking constantly, until thickened, about 4–5 minutes. Stir in the remaining 3/4 tsp salt and taste.",
     "Finish the chicken: Nestle chicken back into the gravy and cook uncovered for 2–3 minutes, until cooked through and gravy clings to the chicken. Stir in the reserved half of the bacon. Remove from heat and swirl in the butter.",
     "Serve: Garnish with remaining bacon and sliced scallions. Serve over mashed potatoes or rice."
   ],
 
   notes: [
-    "Don't cover the pan during the final simmer — keeping it open lets the gravy tighten and cling rather than steam the chicken.",
-    "Thin-sliced breasts cook fast. Pull from the sear when golden, not fully cooked — they'll finish in 2–3 minutes in the gravy.",
+    "Don't cover the pan during the final simmer; keeping it open lets the gravy tighten and cling rather than steam the chicken.",
+    "Thin-sliced breasts cook fast. Pull from the sear when golden, not fully cooked; they'll finish in 2–3 minutes in the gravy.",
     "If your bacon renders less fat than expected, just leave the avocado oil from searing in the pan rather than draining it.",
     "Serve over mashed potatoes or rice to catch every bit of that gravy."
   ]
@@ -1657,12 +1661,12 @@ tags: ["dessert", "high protein"]
   ],
 
   steps: [
-    "Season the shrimp: Pat shrimp dry with paper towels — wet shrimp steam instead of sear. Toss with garlic powder, a pinch of salt, and a pinch of black pepper. Set aside.",
-    "Cook the pasta: Bring a large pot of heavily salted water to a boil. Cook angel hair until just shy of al dente — it'll finish in the sauce. Before draining, scoop out at least 1/2 cup of pasta water. Drain and set pasta aside.",
-    "Sear the shrimp: Heat olive oil in a large skillet over medium-high until shimmering. Add shrimp in a single layer — don't crowd them. Sear 60–90 seconds per side until they just start to get color but are NOT fully cooked through. Pull them out onto a plate and set aside.",
+    "Season the shrimp: Pat shrimp dry with paper towels; wet shrimp steam instead of sear. Toss with garlic powder, a pinch of salt, and a pinch of black pepper. Set aside.",
+    "Cook the pasta: Bring a large pot of heavily salted water to a boil. Cook angel hair until just shy of al dente; it'll finish in the sauce. Before draining, scoop out at least 1/2 cup of pasta water. Drain and set pasta aside.",
+    "Sear the shrimp: Heat olive oil in a large skillet over medium-high until shimmering. Add shrimp in a single layer. Don't crowd them. Sear 60–90 seconds per side until they just start to get color but are NOT fully cooked through. Pull them out onto a plate and set aside.",
     "Bloom the butter and pepper flakes: Reduce heat to medium. Add butter to the same pan. Once foamy, add red pepper flakes and stir for 30 seconds until sizzling and fragrant.",
-    "Build the aromatics: Add onion and all 10 cloves of minced garlic. Cook, stirring frequently, for 3–4 minutes until the onion is translucent and the garlic is golden and fragrant — not brown.",
-    "Reduce the wine: Pour in the white wine and turn heat to medium-high. Let it reduce by about half, stirring occasionally — about 4–5 minutes. You want the alcohol smell gone and the sauce visibly thickened.",
+    "Build the aromatics: Add onion and all 10 cloves of minced garlic. Cook, stirring frequently, for 3–4 minutes until the onion is translucent and the garlic is golden and fragrant, not brown.",
+    "Reduce the wine: Pour in the white wine and turn heat to medium-high. Let it reduce by about half, stirring occasionally, about 4–5 minutes. You want the alcohol smell gone and the sauce visibly thickened.",
     "Add worcestershire and lemon: Reduce heat to medium. Stir in the worcestershire sauce and hot sauce, then add the lemon juice. Taste and adjust salt and pepper before the shrimp go back in.",
     "Finish the shrimp and pasta: Reduce heat to low. Add the drained pasta directly to the pan and toss to coat, adding splashes of reserved pasta water as needed to make the sauce glossy and clingy. Nestle the seared shrimp back in and toss everything together for about 1 minute until the shrimp are just cooked through.",
     "Serve: Plate immediately and top with fresh parsley and a light sprinkle of parmesan if using. Scampi waits for no one."
@@ -1670,17 +1674,17 @@ tags: ["dessert", "high protein"]
 
   notes: [
     "The pasta water is non-negotiable. The starch is what makes the sauce glossy and clingy instead of thin and soupy. Don't skip scooping it out before you drain.",
-    "Worcestershire is the secret weapon. Half a teaspoon sounds like nothing, but it adds a savory backbone that makes everything taste more intensely like itself. You won't detect it — you'll just wonder why this tastes better than other scampis.",
+    "Worcestershire is the secret weapon. Half a teaspoon sounds like nothing, but it adds a savory backbone that makes everything taste more intensely like itself. You won't detect it; you'll just wonder why this tastes better than other scampis.",
     "Wine: Use something you'd drink. Pinot Grigio or Sauvignon Blanc are ideal. Avoid anything labeled \"cooking wine.\"",
-    "Heat level: As written this is medium — noticeable but not aggressive. Pull the red pepper flakes back to 1/2 tsp if you're cooking for heat-sensitive folks.",
-    "Don't overcook the shrimp. Pull them from the sear before they're fully done — they finish in the sauce. Overcooked shrimp are rubbery and sad."
+    "Heat level: As written this is medium, noticeable but not aggressive. Pull the red pepper flakes back to 1/2 tsp if you're cooking for heat-sensitive folks.",
+    "Don't overcook the shrimp. Pull them from the sear before they're fully done; they finish in the sauce. Overcooked shrimp are rubbery and sad."
   ]
 },
 
   {
   id: "nacho-bar-queso",
   title: "Nacho Bar Queso (BWW Hatch Chile Copycat)",
-  description: "A smooth, pourable queso loaded with Hatch green chiles — copycat-style from Buffalo Wild Wings, with optional chorizo for the meat lovers.",
+  description: "A smooth, pourable queso loaded with Hatch green chiles, copycat-style from Buffalo Wild Wings, with optional chorizo for the meat lovers.",
   image: "images/no-photo.jpg",
   category: "Snacks & Sides",
   dateAdded: "2026-06-30",
@@ -1729,7 +1733,7 @@ tags: ["dessert", "high protein"]
 
   steps: [
     "Cold whisk the cornstarch into the evaporated milk until smooth.",
-    "Heat gently in a saucepan over medium-low until steaming — do not boil.",
+    "Heat gently in a saucepan over medium-low until steaming; do not boil.",
     "Lower the heat and add the cheeses gradually, stirring constantly until fully melted and smooth.",
     "Stir in the Hatch green chiles and all seasonings. Taste and adjust.",
     "Fold in the browned chorizo, or keep it separate for people to add themselves.",
@@ -1738,7 +1742,7 @@ tags: ["dessert", "high protein"]
   ],
 
   notes: [
-    "Use freshly cubed white American deli cheese for the smoothest melt — pre-packaged slices work but may be slightly grainier.",
+    "Use freshly cubed white American deli cheese for the smoothest melt; pre-packaged slices work but may be slightly grainier.",
     "Sauté the Hatch chiles briefly in a dry pan before adding to drive off excess moisture and deepen their flavor.",
     "A splash of jalapeño brine at the end brightens everything without adding visible heat."
   ]
