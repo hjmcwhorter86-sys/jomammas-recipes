@@ -521,7 +521,8 @@ tags: ["dessert", "high protein"]
     { qty: 1, unit: "tsp", name: "Italian seasoning", notes: "divided" },
     { qty: 0.5, unit: "tsp", name: "garlic powder" },
     { qty: 0.25, unit: "tsp", name: "red pepper flakes", notes: "optional", optional: true },
-    { qty: null, unit: null, name: "Salt and pepper, to taste" }
+    { qty: 0.75, unit: "tsp", name: "salt", notes: "or to taste" },
+    { qty: 0.25, unit: "tsp", name: "black pepper", notes: "to taste" }
   ],
 
   steps: [
@@ -1109,7 +1110,8 @@ tags: ["dessert", "high protein"]
     { qty: 2, qtyMax: 3, unit: "tbsp", name: "chicken base", notes: "like Better Than Bouillon" },
     { qty: 2, unit: "can", name: "diced tomatoes" },
     { qty: 4, unit: "tbsp", name: "sugar" },
-    { qty: null, unit: null, name: "Salt and pepper to taste" },
+    { qty: 0.25, unit: "tsp", name: "salt", notes: "or to taste" },
+    { qty: 0.25, unit: "tsp", name: "black pepper", notes: "to taste" },
     { qty: 1, unit: "cup", name: "cooking sherry" },
     { qty: 1.5, unit: "cup", name: "half and half" },
     { qty: null, unit: null, name: "Chopped fresh parsley and basil", notes: "for topping" }
@@ -1500,7 +1502,8 @@ tags: ["dessert", "high protein"]
         "½ cup heavy cream",
         "¼ tsp red pepper flakes",
         "1 tbsp cold unsalted butter, for finishing",
-        "Salt and pepper to taste",
+        "⅛ tsp salt, or to taste",
+        "⅛ tsp black pepper, to taste",
         "Fresh parsley, for garnish"
       ]
     }
