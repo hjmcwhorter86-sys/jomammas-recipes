@@ -237,7 +237,8 @@ tags: ["dessert", "high protein"]
     { qty: 1, unit: "tsp", name: "Worcestershire sauce" },
     { qty: 0.5, unit: "tsp", name: "garlic powder" },
     { qty: 0.5, unit: "tsp", name: "onion powder" },
-    { qty: null, unit: null, name: "Salt and pepper, to taste" },
+    { qty: 0.5, unit: "tsp", name: "salt" },
+    { qty: 0.25, unit: "tsp", name: "black pepper" },
     { qty: 1, unit: "tbsp", name: "olive oil" },
 
     { qty: 2, unit: null, name: "packets brown gravy mix" },
@@ -249,7 +250,7 @@ tags: ["dessert", "high protein"]
   steps: [
     "Combine ground beef, bread crumbs, ketchup, mustard, Worcestershire, garlic powder, onion powder, salt, and pepper in a large bowl. Mix gently by hand.",
     "Heat olive oil in a large skillet over medium heat.",
-    "Form meat mixture into patties and cook on both sides until no longer pink.",
+    "Form meat mixture into patties and then cook on both sides, 4-5 minutes per side,  until no longer pink.",
     "Lower heat to low.",
     "Whisk gravy mix with hot water until smooth, then whisk in ketchup and Worcestershire.",
     "Pour gravy over patties and let simmer until heated through and thickened."
