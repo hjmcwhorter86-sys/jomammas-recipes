@@ -86,7 +86,7 @@ window.recipes = [
   {
   id: "light-chicken-alfredo-pasta",
   title: "Lightened-Up Chicken Alfredo (Protein Pasta Edition)",
-  description: "Silky, glossy Alfredo vibes with lighter ingredients and big protein energy. Feeds the whole family.",
+  description: "Silky, glossy Alfredo vibes with lighter ingredients and big protein energy.",
   image: "images/light-chicken-alfredo.jpg",
   category: "Pasta",
   dateAdded: "2026-02-04",
@@ -121,7 +121,7 @@ window.recipes = [
 
   steps: [
     "Cook pasta in well-salted water. Reserve about ¾ cup pasta water, then drain.",
-    "Heat light butter in a large skillet or Dutch oven over medium-high. Season chicken and sear (in batches if needed) until golden and cooked through. Remove to a plate.",
+    "Heat light butter in a large skillet or Dutch oven over medium-high. Season chicken with kosher salt, pepper, garlic powder, and paprika then sear (in batches if needed) until golden and cooked through (about 3-4 minutes per side or until a food thermometer reads 165 degrees). Remove to a plate.",
     "Lower heat to medium-low. Add garlic and sauté about 30 seconds.",
     "Pour in milk and warm gently (do not boil). Whisk in sodium citrate until dissolved. Stir in light butter until melted.",
     "Reduce heat to low. Gradually add cheese, stirring constantly until smooth and glossy.",
@@ -130,7 +130,7 @@ window.recipes = [
   ],
 
   notes: [
-    "Pasta water fixes everything: thin with a splash or thicken with a brief simmer.",
+    "Pasta water fixes everything. Thin the sauce with a splash or thicken with a brief simmer.",
     "Optional protein boost: stir in 1–2 tbsp Greek yogurt off-heat.",
     "Leftovers reheat well with a splash of milk."
   ]
