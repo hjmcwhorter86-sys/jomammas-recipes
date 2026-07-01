@@ -2,7 +2,10 @@ name: GitHub Pages PR Preview
 
 # Deploys every PR's static files to a per-PR subfolder on the `gh-pages`
 # branch (pr-preview/pr-<number>/) and keeps a live status comment on the PR.
-# Cleans the subfolder up again when the PR closes.
+# Cleans the subfolder up again when the PR closes. On push to `main`, also
+# deploys the site to the root of `gh-pages` (everything outside
+# pr-preview/) so the base Pages URL serves the current site instead of the
+# preview-environment landing page.
 #
 # This is a from-scratch replacement for third-party preview-deploy actions
 # (e.g. JamesIves/github-pages-deploy-action) so we have no marketplace
@@ -21,6 +24,8 @@ name: GitHub Pages PR Preview
 on:
   pull_request:
     types: [opened, synchronize, reopened, closed]
+  push:
+    branches: [main]
 
 concurrency:
   group: gh-pages-preview-deploy
@@ -28,7 +33,7 @@ concurrency:
 
 jobs:
   deploy-preview:
-    if: github.event.action != 'closed'
+    if: github.event_name == 'pull_request' && github.event.action != 'closed'
     runs-on: ubuntu-latest
     permissions:
       contents: write
@@ -154,7 +159,7 @@ jobs:
           fi
 
   cleanup-preview:
-    if: github.event.action == 'closed'
+    if: github.event_name == 'pull_request' && github.event.action == 'closed'
     runs-on: ubuntu-latest
     permissions:
       contents: write
@@ -207,4 +212,64 @@ jobs:
 
           if [ -n "$COMMENT_ID" ]; then
             gh api -X PATCH "repos/${REPO}/issues/comments/${COMMENT_ID}" -f body="$BODY" > /dev/null
+          fi
+
+  deploy-root:
+    if: github.event_name == 'push'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - name: Publish site to gh-pages root
+        env:
+          WORKTREE_DIR: ${{ runner.temp }}/gh-pages
+        run: |
+          set -euo pipefail
+
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+
+          if git fetch origin gh-pages; then
+            git worktree add -B gh-pages "$WORKTREE_DIR" origin/gh-pages
+          else
+            git worktree add --detach "$WORKTREE_DIR"
+            git -C "$WORKTREE_DIR" checkout --orphan gh-pages
+            git -C "$WORKTREE_DIR" rm -rf . > /dev/null
+          fi
+
+          # Clear the root, but leave each PR's pr-preview/ subfolder alone.
+          find "$WORKTREE_DIR" -mindepth 1 -maxdepth 1 \
+            ! -name '.git' ! -name 'pr-preview' -exec rm -rf {} +
+
+          rsync -a \
+            --exclude '.git' \
+            --exclude '.github' \
+            --exclude '.claude' \
+            --exclude 'node_modules' \
+            --exclude 'tests' \
+            --exclude 'screenshots' \
+            --exclude 'scripts' \
+            --exclude 'playwright-report' \
+            --exclude 'test-results' \
+            --exclude 'pr-preview' \
+            --exclude '*.md' \
+            --exclude 'package.json' \
+            --exclude 'package-lock.json' \
+            --exclude 'playwright.config.js' \
+            --exclude 'serve.json' \
+            "$GITHUB_WORKSPACE"/ "$WORKTREE_DIR"/
+
+          touch "$WORKTREE_DIR/.nojekyll"
+
+          cd "$WORKTREE_DIR"
+          git add -A
+          if git diff --cached --quiet; then
+            echo "No root changes to deploy"
+          else
+            git commit -m "Deploy site to gh-pages root (${GITHUB_SHA:0:7})"
+            git push origin gh-pages
           fi
