@@ -489,12 +489,6 @@ tags: ["dessert", "high protein"]
     "Slice potatoes open and fluff insides with a fork. Season lightly.",
     "Add butter or yogurt/sour cream, then spoon BBQ chicken over top.",
     "Let everyone customize with cheese, bacon, chives, hot sauce, and serve immediately."
-  ],
-
-  notes: [
-    "Keep it lighter with Greek yogurt, reduced-fat cheese, and skipping bacon.",
-    "Going indulgent? Load it like a steakhouse and live your best life.",
-    "For smaller portions, use medium russets and about 4 oz chicken per potato."
   ]
 },
 
