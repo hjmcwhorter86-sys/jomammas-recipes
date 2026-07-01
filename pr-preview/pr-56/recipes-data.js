@@ -121,7 +121,7 @@ window.recipes = [
 
   steps: [
     "Cook pasta in well-salted water. Reserve about ¾ cup pasta water, then drain.",
-    "Heat light butter in a large skillet or Dutch oven over medium-high. Season chicken and sear (in batches if needed) until golden and cooked through. Remove to a plate.",
+    "Heat light butter in a large skillet or Dutch oven over medium-high. Season chicken with kosher salt, pepper, garlic powder, and paprika then sear (in batches if needed) until golden and cooked through (about 3-4 minutes per side or until a food thermometer reads 165 degrees). Remove to a plate.",
     "Lower heat to medium-low. Add garlic and sauté about 30 seconds.",
     "Pour in milk and warm gently (do not boil). Whisk in sodium citrate until dissolved. Stir in light butter until melted.",
     "Reduce heat to low. Gradually add cheese, stirring constantly until smooth and glossy.",
