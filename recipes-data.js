@@ -64,7 +64,8 @@ window.recipes = [
     { qty: 0.25, unit: "tsp", name: "Black pepper", display: "Black pepper: ¼ tsp, or to taste" },
     { qty: null, unit: null, name: "Cooking oil spray", notes: "~20 sprays" },
 
-    { qty: null, unit: null, name: "Sweet chili sauce, for brushing", notes: "about 5 g per tender", display: "Sweet chili sauce, for brushing (about 5 g per tender)" }
+    { qty: null, unit: null, name: "Sweet chili sauce, for brushing", notes: "about 5 g per tender", display: "Sweet chili sauce, for brushing (about 5 g per tender)" },
+    { qty: null, unit: null, name: "Bang bang sauce, store bought or homemade" }
   ],
 
   steps: [
