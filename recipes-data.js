@@ -1341,7 +1341,7 @@ tags: ["dessert", "high protein"]
   {
   id: "gochujang-butter-shrimp",
   title: "Gochujang Butter Shrimp",
-  description: "Spicy, glossy, and deeply savory — this weeknight shrimp comes together in under 30 minutes but tastes like you actually tried. Serve over steamed rice and try not to lick the pan.",
+  description: "Spicy, glossy, and deeply savory. This weeknight shrimp comes together in under 30 minutes but tastes like you actually tried. Serve over steamed rice and try not to lick the pan.",
   image: "images/gochujang-butter-shrimp.png",
   category: "Seafood",
   dateAdded: "2026-05-29",
@@ -1375,17 +1375,17 @@ tags: ["dessert", "high protein"]
   ],
 
   steps: [
-    "Pat shrimp very dry with paper towels — wet shrimp steam instead of caramelize. Season with salt and pepper.",
+    "Pat shrimp very dry with paper towels; wet shrimp steam instead of caramelize. Season with salt and pepper.",
     "In a small bowl, whisk together gochujang, soy sauce, honey, rice vinegar, and sesame oil. Set aside before the shrimp hit the pan.",
     "Heat oil in a large skillet or wok over high heat until shimmering. Add shrimp in a single layer (work in batches if needed) and cook 60-90 seconds per side until just pink and slightly charred at the edges. Remove shrimp and set aside.",
-    "Reduce heat to medium. Add butter to the same pan. Once melted, add garlic and ginger and cook for 60 seconds until fragrant — don't let the garlic burn.",
-    "Pour the sauce mixture into the pan and let it bubble and reduce for about 90 seconds, stirring constantly, until it thickens and looks glossy. Add the shrimp back in and toss to coat. Pull off heat immediately — shrimp go rubbery fast.",
+    "Reduce heat to medium. Add butter to the same pan. Once melted, add garlic and ginger and cook for 60 seconds until fragrant. Don't let the garlic burn.",
+    "Pour the sauce mixture into the pan and let it bubble and reduce for about 90 seconds, stirring constantly, until it thickens and looks glossy. Add the shrimp back in and toss to coat. Pull off heat immediately; shrimp go rubbery fast.",
     "Spoon over jasmine rice and top with green onions and sesame seeds. Serve immediately."
   ],
 
   notes: [
-    "Heat level: 3 tbsp gochujang is medium-spicy. Go 2 tbsp for sensitive eaters, 4 tbsp if you want to feel it. Brands vary — Bibigo is milder, Mother-in-Law's runs hotter.",
-    "Don't overcook the shrimp. Pull them out of the sear when they're just turning pink — they'll finish in the sauce. Overcooked shrimp are the only way this dish goes wrong.",
+    "Heat level: 3 tbsp gochujang is medium-spicy. Go 2 tbsp for sensitive eaters, 4 tbsp if you want to feel it. Brands vary; Bibigo is milder, Mother-in-Law's runs hotter.",
+    "Don't overcook the shrimp. Pull them out of the sear when they're just turning pink; they'll finish in the sauce. Overcooked shrimp are the only way this dish goes wrong.",
     "Additions that work great: Sliced snap peas or bok choy tossed in with the sauce, or a jammy soft-boiled egg on the side.",
     "Flavorful rice tip: Butter-toast the dry rice for 2-3 minutes before adding liquid, cook in low-sodium chicken broth instead of water, then finish with a splash of soy sauce and a drizzle of sesame oil when you fluff it."
   ]
@@ -1443,18 +1443,18 @@ tags: ["dessert", "high protein"]
 
   steps: [
     "Season the chicken: toss chicken cubes with salt, pepper, chilli flakes, garlic powder, onion powder, paprika, and olive oil until evenly coated.",
-    "Cook batch 1: heat a pan over medium heat. Add half the cooking butter. Once melted, add the first batch of chicken — don't overcrowd the pan. Cook 4–5 minutes on one side until golden brown.",
+    "Cook batch 1: heat a pan over medium heat. Add half the cooking butter. Once melted, add the first batch of chicken. Don't overcrowd the pan. Cook 4–5 minutes on one side until golden brown.",
     "Flip and cook the other side 3–4 more minutes.",
     "Lower the heat. Add half the finishing butter, half the minced garlic, and 1 tbsp honey. Stir until well coated and sticky. Set aside.",
     "Repeat the cooking and glazing steps with the second batch of chicken, using the remaining butter, garlic, and 1 tbsp honey.",
     "Cook the pasta according to package directions. Drain and set aside.",
-    "In the same pan used for the chicken (don't wipe it out — that residual butter is flavor!), cook the minced garlic over medium-low heat for 2 minutes until fragrant. Add milk, cream cheese, salt, pepper, smoked paprika, and nutmeg. Stir until completely smooth. If needed, transfer to a larger pot.",
+    "In the same pan used for the chicken (don't wipe it out; that residual butter is flavor!), cook the minced garlic over medium-low heat for 2 minutes until fragrant. Add milk, cream cheese, salt, pepper, smoked paprika, and nutmeg. Stir until completely smooth. If needed, transfer to a larger pot.",
     "Lower the heat before adding shredded cheddar. Stir until melted. Add cooked pasta and mix well. Serve topped with the honey garlic chicken and fresh parsley. Enjoy!"
   ],
 
   notes: [
     "Chicken serves 4. Mac and cheese is scaled to 1.5x to serve 5–6 (one person skipping the chicken).",
-    "The cream cheese at 1.5x works out to basically one full 8oz Philadelphia block — convenient!",
+    "The cream cheese at 1.5x works out to basically one full 8oz Philadelphia block.",
     "Cook chicken in two batches for best browning."
   ]
 },
