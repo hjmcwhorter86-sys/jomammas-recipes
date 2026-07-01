@@ -371,7 +371,8 @@ tags: ["dessert", "high protein"]
     { qty: 0.25, unit: "cup", name: "parmesan", notes: "grated" },
     { qty: 1, unit: "tsp", name: "garlic powder" },
     { qty: 0.5, unit: "tsp", name: "onion powder" },
-    { qty: null, unit: null, name: "Salt & pepper, to taste" },
+    { qty: 0.5, unit: "tsp", name: "salt" },
+    { qty: 0.25, unit: "tsp", name: "black pepper" },
     { qty: 2, unit: null, name: "eggs", notes: "whisked" },
     { qty: null, unit: null, name: "Cooking spray" },
     { qty: 1, unit: "cup", name: "marinara", notes: "Rao's or whatever red sauce speaks to your soul", approx: true },
@@ -380,7 +381,7 @@ tags: ["dessert", "high protein"]
   ],
 
   steps: [
-    "Bread the chicken: Set up two bowls. Bowl 1: whisked eggs. Bowl 2: breadcrumbs + parmesan + garlic powder + onion powder + salt & pepper. Dip chicken in egg, then press into breadcrumb mix to coat.",
+    "Bread the chicken: Set up two bowls. Bowl 1: whisked eggs. Bowl 2: breadcrumbs + parmesan + garlic powder + onion powder + salt + black pepper. Dip chicken in egg, then press into breadcrumb mix to coat.",
     "Air fry: Preheat air fryer to 390°F. Spray basket and tops of chicken lightly. Cook 6–7 minutes, flip, spray again, then cook 5–6 minutes more until golden and cooked through.",
     "Parm it up: Spoon marinara over each piece. Top with mozzarella + extra parm. Air fry 2–3 minutes until cheese melts and bubbles.",
     "Serve: Plate chicken over spaghetti squash (or protein pasta). Optional garnish: basil, parsley, and crushed red pepper."
