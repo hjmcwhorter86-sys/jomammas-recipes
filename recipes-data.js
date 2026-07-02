@@ -50,7 +50,7 @@ window.recipes = [
   fiber: null,
   calories: "",
   protein: "",
-  servings: "4-6",
+  servings: "6",
   tags: ["air fryer", "chicken", "sweet heat", "family favorite"],
 
   ingredients: [
@@ -274,7 +274,7 @@ tags: ["dessert", "high protein"]
   fiber: null,
   calories: "~185 per serving",
   protein: "~9g per serving",
-  servings: "4-6",
+  servings: "6",
   tags: ["seafood", "soup", "easy", "weeknight", "comfort food"],
 
   ingredients: [
@@ -776,7 +776,7 @@ tags: ["dessert", "high protein"]
   carbs: null,
   fat: null,
   fiber: null,
-  servings: "4-6",
+  servings: "6",
   tags: ["chicken", "slow cooker", "easy"],
 
   ingredients: [
@@ -1396,7 +1396,7 @@ tags: ["dessert", "high protein"]
   fiber: null,
   calories: "",
   protein: "",
-  servings: "5-6",
+  servings: "5",
   tags: ["chicken", "pasta", "mac and cheese", "comfort food", "family dinner"],
 
   ingredients: [
