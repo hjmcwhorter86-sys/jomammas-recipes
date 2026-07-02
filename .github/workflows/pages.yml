@@ -1,21 +1,22 @@
-name: GitHub Pages PR Preview
+name: Deploy to GitHub Pages
 
-# Deploys every PR's static files to a per-PR subfolder on the `gh-pages`
-# branch (pr-preview/pr-<number>/) and keeps a live status comment on the PR.
-# Cleans the subfolder up again when the PR closes. On push to `main`, also
-# deploys the site to the root of `gh-pages` (everything outside
-# pr-preview/) so the base Pages URL serves the current site instead of the
-# preview-environment landing page.
+# Single workflow for both PR previews and production.
 #
-# This is a from-scratch replacement for third-party preview-deploy actions
-# (e.g. JamesIves/github-pages-deploy-action) so we have no marketplace
-# dependencies — just actions/checkout, plain git, rsync, and the gh CLI
-# that's preinstalled on GitHub-hosted runners.
+# GitHub Pages source must be set to "GitHub Actions" (Settings > Pages >
+# Build and deployment > Source) for this to work — NOT "Deploy from a
+# branch". With "Deploy from a branch", GitHub auto-triggers its own
+# deployment on every push to that branch and cancels older queued ones in
+# favor of newer ones with no way for us to opt out — which meant a burst
+# of PR preview churn could (and did) starve/cancel the production
+# deployment indefinitely. Actions-based deployment lets this workflow own
+# the concurrency group below (`cancel-in-progress: false`), so every
+# deploy — preview or prod — queues in order instead of getting raced out.
 #
-# One-time setup required: in repo Settings > Pages, set the source to
-# "Deploy from a branch" -> gh-pages -> / (root). The first run of this
-# workflow creates the gh-pages branch; the Pages source can be pointed at
-# it any time after that.
+# The `gh-pages` branch is kept, but only as durable storage for the
+# accumulated site tree (root + each PR's pr-preview/pr-<number>/
+# subfolder) between runs — it is no longer the thing Pages actually
+# serves. Each run rebuilds that tree, pushes it to `gh-pages` for the
+# next run to build on, then publishes it via actions/deploy-pages.
 #
 # Note: PRs from forks run with a read-only GITHUB_TOKEN, so the push step
 # will fail for fork PRs. That matches this repo's normal contribution flow
@@ -28,16 +29,21 @@ on:
     branches: [main]
 
 concurrency:
-  group: gh-pages-preview-deploy
+  group: pages
   cancel-in-progress: false
 
+permissions:
+  contents: write
+  pull-requests: write
+  pages: write
+  id-token: write
+
 jobs:
-  deploy-preview:
+  publish-preview:
     if: github.event_name == 'pull_request' && github.event.action != 'closed'
     runs-on: ubuntu-latest
-    permissions:
-      contents: write
-      pull-requests: write
+    outputs:
+      comment_id: ${{ steps.comment.outputs.comment_id }}
     steps:
       - name: Post "building" status comment
         id: comment
@@ -69,7 +75,7 @@ jobs:
           ref: ${{ github.event.pull_request.head.sha }}
           fetch-depth: 1
 
-      - name: Publish preview to gh-pages
+      - name: Merge preview into gh-pages tree
         env:
           PR_NUMBER: ${{ github.event.pull_request.number }}
           WORKTREE_DIR: ${{ runner.temp }}/gh-pages
@@ -120,56 +126,21 @@ jobs:
             git push origin gh-pages
           fi
 
-      - name: Update comment with deploy result
-        if: always()
-        env:
-          GH_TOKEN: ${{ github.token }}
-          PR_NUMBER: ${{ github.event.pull_request.number }}
-          REPO: ${{ github.repository }}
-          COMMENT_ID: ${{ steps.comment.outputs.comment_id }}
-          JOB_STATUS: ${{ job.status }}
-        run: |
-          set -euo pipefail
-
-          MARKER="<!-- gh-pages-preview-comment -->"
-          RUN_URL="https://github.com/${REPO}/actions/runs/${GITHUB_RUN_ID}"
-          OWNER="${REPO%%/*}"
-          NAME="${REPO#*/}"
-          PREVIEW_URL="https://${OWNER}.github.io/${NAME}/pr-preview/pr-${PR_NUMBER}/"
-
-          if [ "$JOB_STATUS" = "success" ]; then
-            BODY=$(printf '%s\n# 🚀 Preview deployed! 🥳\n\n**[View preview](%s)**\n\nUpdated for commit `%s` · [Build log](%s)' \
-              "$MARKER" "$PREVIEW_URL" "${GITHUB_SHA:0:7}" "$RUN_URL")
-          else
-            BODY=$(printf '%s\n# ❌ Preview build/deploy failed! 😵\n\n[View build log](%s)' \
-              "$MARKER" "$RUN_URL")
-          fi
-
-          # Use the ID captured in the first step; fall back to searching if it wasn't set
-          if [ -n "$COMMENT_ID" ]; then
-            gh api -X PATCH "repos/${REPO}/issues/comments/${COMMENT_ID}" -f body="$BODY" > /dev/null
-          else
-            COMMENT_ID=$(gh api "repos/${REPO}/issues/${PR_NUMBER}/comments" --paginate \
-              --jq ".[] | select(.body | startswith(\"$MARKER\")) | .id" | head -n1)
-            if [ -n "$COMMENT_ID" ]; then
-              gh api -X PATCH "repos/${REPO}/issues/comments/${COMMENT_ID}" -f body="$BODY" > /dev/null
-            else
-              gh api -X POST "repos/${REPO}/issues/${PR_NUMBER}/comments" -f body="$BODY" > /dev/null
-            fi
-          fi
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: ${{ runner.temp }}/gh-pages
 
   cleanup-preview:
     if: github.event_name == 'pull_request' && github.event.action == 'closed'
     runs-on: ubuntu-latest
-    permissions:
-      contents: write
-      pull-requests: write
     steps:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 1
 
-      - name: Remove preview from gh-pages
+      - name: Remove preview from gh-pages tree
+        id: remove
         env:
           PR_NUMBER: ${{ github.event.pull_request.number }}
           WORKTREE_DIR: ${{ runner.temp }}/gh-pages
@@ -181,6 +152,7 @@ jobs:
 
           if ! git fetch origin gh-pages; then
             echo "gh-pages branch does not exist yet, nothing to clean up"
+            echo "changed=false" >> "$GITHUB_OUTPUT"
             exit 0
           fi
 
@@ -191,10 +163,18 @@ jobs:
           git add -A
           if git diff --cached --quiet; then
             echo "Nothing to remove for PR #$PR_NUMBER"
+            echo "changed=false" >> "$GITHUB_OUTPUT"
           else
             git commit -m "Remove preview for closed PR #$PR_NUMBER"
             git push origin gh-pages
+            echo "changed=true" >> "$GITHUB_OUTPUT"
           fi
+
+      - name: Upload Pages artifact
+        if: steps.remove.outputs.changed == 'true'
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: ${{ runner.temp }}/gh-pages
 
       - name: Update comment to note preview removed
         env:
@@ -214,17 +194,15 @@ jobs:
             gh api -X PATCH "repos/${REPO}/issues/comments/${COMMENT_ID}" -f body="$BODY" > /dev/null
           fi
 
-  deploy-root:
+  publish-root:
     if: github.event_name == 'push'
     runs-on: ubuntu-latest
-    permissions:
-      contents: write
     steps:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 1
 
-      - name: Publish site to gh-pages root
+      - name: Merge production content into gh-pages tree
         env:
           WORKTREE_DIR: ${{ runner.temp }}/gh-pages
         run: |
@@ -272,4 +250,66 @@ jobs:
           else
             git commit -m "Deploy site to gh-pages root (${GITHUB_SHA:0:7})"
             git push origin gh-pages
+          fi
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: ${{ runner.temp }}/gh-pages
+
+  deploy:
+    needs: [publish-preview, cleanup-preview, publish-root]
+    if: |
+      always() &&
+      (needs.publish-preview.result == 'success' ||
+       needs.cleanup-preview.result == 'success' ||
+       needs.publish-root.result == 'success')
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v5
+
+  update-preview-comment:
+    needs: [publish-preview, deploy]
+    if: always() && needs.publish-preview.result != 'skipped'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Update comment with deploy result
+        env:
+          GH_TOKEN: ${{ github.token }}
+          PR_NUMBER: ${{ github.event.pull_request.number }}
+          REPO: ${{ github.repository }}
+          COMMENT_ID: ${{ needs.publish-preview.outputs.comment_id }}
+          DEPLOY_RESULT: ${{ needs.deploy.result }}
+        run: |
+          set -euo pipefail
+
+          MARKER="<!-- gh-pages-preview-comment -->"
+          RUN_URL="https://github.com/${REPO}/actions/runs/${GITHUB_RUN_ID}"
+          OWNER="${REPO%%/*}"
+          NAME="${REPO#*/}"
+          PREVIEW_URL="https://${OWNER}.github.io/${NAME}/pr-preview/pr-${PR_NUMBER}/"
+
+          if [ "$DEPLOY_RESULT" = "success" ]; then
+            BODY=$(printf '%s\n# 🚀 Preview deployed! 🥳\n\n**[View preview](%s)**\n\nUpdated for commit `%s` · [Build log](%s)' \
+              "$MARKER" "$PREVIEW_URL" "${GITHUB_SHA:0:7}" "$RUN_URL")
+          else
+            BODY=$(printf '%s\n# ❌ Preview build/deploy failed! 😵\n\n[View build log](%s)' \
+              "$MARKER" "$RUN_URL")
+          fi
+
+          if [ -n "$COMMENT_ID" ]; then
+            gh api -X PATCH "repos/${REPO}/issues/comments/${COMMENT_ID}" -f body="$BODY" > /dev/null
+          else
+            COMMENT_ID=$(gh api "repos/${REPO}/issues/${PR_NUMBER}/comments" --paginate \
+              --jq ".[] | select(.body | startswith(\"$MARKER\")) | .id" | head -n1)
+            if [ -n "$COMMENT_ID" ]; then
+              gh api -X PATCH "repos/${REPO}/issues/comments/${COMMENT_ID}" -f body="$BODY" > /dev/null
+            else
+              gh api -X POST "repos/${REPO}/issues/${PR_NUMBER}/comments" -f body="$BODY" > /dev/null
+            fi
           fi
