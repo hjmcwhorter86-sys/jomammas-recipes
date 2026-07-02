@@ -184,7 +184,7 @@ window.recipes = [
 ,{
   id: "protein-cheesecake-jars",
   title: "Protein Cheesecake Jars",
-  description: "No-bake high-protein cheesecake jars for dessert wins.",
+  description: "No-bake high-protein cheesecake jars that you can feel good about eating. Dessert vibes with low calories and a good boost of protein.",
   image: "images/cheesecake-jars.png",
   calories: "~135 per jar",
   protein: "~18g per jar",
