@@ -8,9 +8,11 @@ Static HTML/CSS/JS recipe site (no build tooling, no framework). Pages
 (`index.html`, `recipes-list.html`, `recipe-detail.html`, `about.html`,
 `flags.html`) load shared scripts via `<script>` tags:
 `feature-flags.js`, `flags-service.js`, `data/units.js`,
-`data/ingredient-nutrition.js`, `recipes-data.js`, `app.js`. The site is
-deployed via Netlify directly from this repo — there is no separate build
-step.
+`data/ingredient-nutrition.js`, `recipes-data.js`, `app.js`. There is no
+separate build step. Production deploys to GitHub Pages on every merge to
+`main` via `.github/workflows/pages.yml`, which also publishes a
+`pr-preview/pr-<number>/` subfolder deploy for each open PR. See that
+workflow's header comment for the deployment architecture.
 
 ## Visual review screenshots — let CI handle the full suite
 
