@@ -943,8 +943,8 @@ const popularEl = document.getElementById('popular');
 if (popularEl) {
   const popularRecipeIds = [
     "light-tuscan-chicken",
-    "light-chicken-alfredo-pasta",
-    "air-fryer-general-tsos-chicken",
+    "birria-chuck-roast",
+    "gochujang-butter-shrimp",
     "protein-cheesecake-jars"
   ];
 
