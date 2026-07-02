@@ -1701,7 +1701,7 @@ tags: ["dessert", "high protein"]
     {
       title: "Liquid + Stabilizer",
       items: [
-        { qty: 18, unit: "fl oz", name: "evaporated milk", notes: "about 1½ cans" },
+        { qty: 18, unit: "fl oz", name: "evaporated milk" },
         { qty: 1.5, unit: "tbsp", name: "cornstarch" }
       ]
     },
