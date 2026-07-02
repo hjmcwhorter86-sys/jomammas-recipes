@@ -1720,7 +1720,7 @@ tags: ["dessert", "high protein"]
     {
       title: "Chorizo (Cooked Separately)",
       items: [
-        { qty: 12, qtyMax: 16, unit: "oz", name: "chorizo", notes: "browned and drained", optional: true }
+        { qty: 18, unit: "oz", name: "chorizo", notes: "browned and drained", optional: true }
       ]
     }
   ],
