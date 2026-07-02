@@ -685,13 +685,19 @@ function setupServingsControl(recipe) {
   if (!input || !decrementBtn || !incrementBtn || !container) return;
 
   const applyServings = (value) => {
-    const newServings = Math.max(1, Math.round(value) || originalServings);
+    const rounded = Math.round(value);
+    const newServings = Math.max(1, Number.isFinite(rounded) ? rounded : originalServings);
     input.value = newServings;
     container.innerHTML = renderIngredientsMarkup(scaleIngredients(recipe.ingredients, newServings / originalServings));
   };
 
-  decrementBtn.addEventListener('click', () => applyServings((parseFloat(input.value) || originalServings) - 1));
-  incrementBtn.addEventListener('click', () => applyServings((parseFloat(input.value) || originalServings) + 1));
+  const currentValue = () => {
+    const parsed = parseFloat(input.value);
+    return Number.isFinite(parsed) ? parsed : originalServings;
+  };
+
+  decrementBtn.addEventListener('click', () => applyServings(currentValue() - 1));
+  incrementBtn.addEventListener('click', () => applyServings(currentValue() + 1));
   input.addEventListener('change', () => applyServings(parseFloat(input.value)));
 }
 
