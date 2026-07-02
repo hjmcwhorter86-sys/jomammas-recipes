@@ -645,14 +645,14 @@ function scaleIngredients(ingredients, factor) {
 }
 
 // Renders the "Servings" line: plain text normally, or an interactive
-// stepper (behind the servingSizeScaling flag) when the recipe has a
-// numeric serving count and structured ingredients to scale.
+// stepper when the recipe has a numeric serving count and structured
+// ingredients to scale.
 function renderServingsControl(recipe) {
   if (!recipe.servings) return '';
 
   const originalServings = parseFloat(recipe.servings);
   const hasIngredients = Array.isArray(recipe.ingredients) && recipe.ingredients.length > 0;
-  const scalingEnabled = window.flagsService?.isEnabled('servingSizeScaling') && Number.isFinite(originalServings) && hasIngredients;
+  const scalingEnabled = Number.isFinite(originalServings) && hasIngredients;
 
   if (!scalingEnabled) {
     return `<div class="recipe-servings"><strong>Servings:</strong> ${recipe.servings}</div>`;
@@ -673,10 +673,10 @@ function renderServingsControl(recipe) {
 // Wires up the servings stepper rendered by renderServingsControl: on any
 // change, re-renders #ingredientsContainer with ingredient quantities
 // scaled relative to the recipe's original serving count. No-ops if the
-// control wasn't rendered (flag off, no servings, or no ingredients).
+// control wasn't rendered (no servings, or no ingredients).
 function setupServingsControl(recipe) {
   const originalServings = parseFloat(recipe.servings);
-  if (!window.flagsService?.isEnabled('servingSizeScaling') || !Number.isFinite(originalServings)) return;
+  if (!Number.isFinite(originalServings)) return;
 
   const input = document.getElementById('servingsInput');
   const decrementBtn = document.getElementById('servingsDecrement');

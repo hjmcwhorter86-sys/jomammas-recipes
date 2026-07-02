@@ -14,10 +14,4 @@ window.featureFlags = {
     description: "Show nutrition facts computed from structured ingredients, instead of (or alongside) the manually entered fields.",
     default: true,
   },
-
-  servingSizeScaling: {
-    label: "Serving size scaling",
-    description: "Let visitors change a recipe's serving count on the detail page and scale ingredient quantities accordingly.",
-    default: false,
-  },
 };
