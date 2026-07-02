@@ -618,6 +618,89 @@ function renderIngredientsMarkup(ingredients) {
   `;
 }
 
+// Multiplies a single ingredient's qty/qtyMax/altQty by `factor`, leaving
+// everything else (including any curated `display` override, which ignores
+// qty entirely when rendered) untouched. Non-numeric qty (null, "to taste",
+// etc.) passes through unscaled.
+function scaleIngredientItem(item, factor) {
+  if (!item || typeof item !== 'object' || Array.isArray(item)) return item;
+  const scaled = { ...item };
+  if (typeof item.qty === 'number') scaled.qty = Math.round(item.qty * factor * 100) / 100;
+  if (typeof item.qtyMax === 'number') scaled.qtyMax = Math.round(item.qtyMax * factor * 100) / 100;
+  if (typeof item.altQty === 'number') scaled.altQty = Math.round(item.altQty * factor * 100) / 100;
+  return scaled;
+}
+
+// Scales every ingredient's quantity by `factor`, handling both the flat
+// ingredient-list shape and the sectioned `{ title, items }` shape that
+// renderIngredientsMarkup supports.
+function scaleIngredients(ingredients, factor) {
+  if (!Array.isArray(ingredients) || factor === 1) return ingredients;
+  return ingredients.map((entry) => {
+    if (entry && typeof entry === 'object' && !Array.isArray(entry) && Array.isArray(entry.items)) {
+      return { ...entry, items: entry.items.map((item) => scaleIngredientItem(item, factor)) };
+    }
+    return scaleIngredientItem(entry, factor);
+  });
+}
+
+// Renders the "Servings" line: plain text normally, or an interactive
+// stepper (behind the servingSizeScaling flag) when the recipe has a
+// numeric serving count and structured ingredients to scale.
+function renderServingsControl(recipe) {
+  if (!recipe.servings) return '';
+
+  const originalServings = parseFloat(recipe.servings);
+  const hasIngredients = Array.isArray(recipe.ingredients) && recipe.ingredients.length > 0;
+  const scalingEnabled = window.flagsService?.isEnabled('servingSizeScaling') && Number.isFinite(originalServings) && hasIngredients;
+
+  if (!scalingEnabled) {
+    return `<div class="recipe-servings"><strong>Servings:</strong> ${recipe.servings}</div>`;
+  }
+
+  return `
+    <div class="recipe-servings">
+      <strong>Servings:</strong>
+      <div class="servings-control">
+        <button type="button" class="servings-btn" id="servingsDecrement" aria-label="Decrease servings">−</button>
+        <input type="number" id="servingsInput" class="servings-input" value="${originalServings}" min="1" step="1" inputmode="numeric" aria-label="Number of servings" />
+        <button type="button" class="servings-btn" id="servingsIncrement" aria-label="Increase servings">+</button>
+      </div>
+    </div>
+  `;
+}
+
+// Wires up the servings stepper rendered by renderServingsControl: on any
+// change, re-renders #ingredientsContainer with ingredient quantities
+// scaled relative to the recipe's original serving count. No-ops if the
+// control wasn't rendered (flag off, no servings, or no ingredients).
+function setupServingsControl(recipe) {
+  const originalServings = parseFloat(recipe.servings);
+  if (!window.flagsService?.isEnabled('servingSizeScaling') || !Number.isFinite(originalServings)) return;
+
+  const input = document.getElementById('servingsInput');
+  const decrementBtn = document.getElementById('servingsDecrement');
+  const incrementBtn = document.getElementById('servingsIncrement');
+  const container = document.getElementById('ingredientsContainer');
+  if (!input || !decrementBtn || !incrementBtn || !container) return;
+
+  const applyServings = (value) => {
+    const rounded = Math.round(value);
+    const newServings = Math.max(1, Number.isFinite(rounded) ? rounded : originalServings);
+    input.value = newServings;
+    container.innerHTML = renderIngredientsMarkup(scaleIngredients(recipe.ingredients, newServings / originalServings));
+  };
+
+  const currentValue = () => {
+    const parsed = parseFloat(input.value);
+    return Number.isFinite(parsed) ? parsed : originalServings;
+  };
+
+  decrementBtn.addEventListener('click', () => applyServings(currentValue() - 1));
+  incrementBtn.addEventListener('click', () => applyServings(currentValue() + 1));
+  input.addEventListener('change', () => applyServings(parseFloat(input.value)));
+}
+
 // Popover for the ingredient "?" guide-link badges (see renderIngredientLine).
 // One shared element rather than one per badge, since ingredient lists are
 // re-rendered dynamically and badges come and go with them.
@@ -1083,13 +1166,13 @@ if (pageType === 'list' && recipesEl && searchEl) {
         ${renderNutritionSection(recipe)}
         <p class="cook-mode-status" id="cookModeStatus" aria-live="polite"></p>
         ${recipe.tags && Array.isArray(recipe.tags) && recipe.tags.length > 0 ? `<div class="recipe-tags">${recipe.tags.map(t => `<span class="tag">${t}</span>`).join('')}</div>` : ''}
-        ${recipe.servings ? `<div class="recipe-servings"><strong>Servings:</strong> ${recipe.servings}</div>` : ''}
+        ${renderServingsControl(recipe)}
         <div class="recipe-image-outer"><img src="${getRecipeOriginalImageUrl(recipe)}" alt="${recipe.title}" class="recipe-image" id="recipe-image-zoom" style="cursor: zoom-in;"></div>
         <div class="recipe-content-wrapper">
           ${hasIngredients ? `
             <section class="recipe-section">
               <h2>Ingredients</h2>
-              ${renderIngredientsMarkup(recipe.ingredients)}
+              <div id="ingredientsContainer">${renderIngredientsMarkup(recipe.ingredients)}</div>
             </section>
           ` : '<p class="incomplete-warning">Ingredients data incomplete</p>'}
         </div>
@@ -1151,6 +1234,7 @@ if (pageType === 'list' && recipesEl && searchEl) {
     }
 
     setupCookModeControl();
+    setupServingsControl(recipe);
   }
 
   function fallbackCopy(url) {
@@ -1287,13 +1371,13 @@ if (pageType === 'detail' && detailedViewEl) {
         ${renderNutritionSection(recipe)}
         <p class="cook-mode-status" id="cookModeStatus" aria-live="polite"></p>
         ${recipe.tags && Array.isArray(recipe.tags) && recipe.tags.length > 0 ? `<div class="recipe-tags">${recipe.tags.map(t => `<span class="tag">${t}</span>`).join('')}</div>` : ''}
-        ${recipe.servings ? `<div class="recipe-servings"><strong>Servings:</strong> ${recipe.servings}</div>` : ''}
+        ${renderServingsControl(recipe)}
         <div class="recipe-image-outer"><img src="${getRecipeOriginalImageUrl(recipe)}" alt="${recipe.title}" class="recipe-image" id="recipe-image-zoom" style="cursor: zoom-in;"></div>
         <div class="recipe-content-wrapper">
           ${hasIngredients ? `
             <section class="recipe-section">
               <h2>Ingredients</h2>
-              ${renderIngredientsMarkup(recipe.ingredients)}
+              <div id="ingredientsContainer">${renderIngredientsMarkup(recipe.ingredients)}</div>
             </section>
           ` : '<p class="incomplete-warning">Ingredients data incomplete</p>'}
         </div>
@@ -1354,6 +1438,7 @@ if (pageType === 'detail' && detailedViewEl) {
     }
 
     setupCookModeControl();
+    setupServingsControl(recipe);
   }
 
   function fallbackCopy(url) {
