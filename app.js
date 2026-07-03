@@ -1245,7 +1245,11 @@ if (pageType === 'list' && recipesEl && searchEl) {
   }
 
   function filterRecipes(q, category = 'All') {
-    let list = recipes;
+    let list = [...recipes].sort((a, b) => {
+      if (!a.dateAdded) return 1;
+      if (!b.dateAdded) return -1;
+      return new Date(b.dateAdded) - new Date(a.dateAdded);
+    });
     if (category !== 'All') {
       const normalizedCategory = normalizeCategoryValue(category);
       list = list.filter((recipe) => getRecipeCategories(recipe)
