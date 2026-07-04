@@ -1679,7 +1679,7 @@ tags: ["dessert", "high protein"]
   id: "nacho-bar-queso",
   title: "Nacho Bar Queso (BWW Hatch Chile Copycat)",
   description: "A smooth, pourable queso loaded with Hatch green chiles, copycat-style from Buffalo Wild Wings, with optional chorizo for the meat lovers.",
-  image: "images/no-photo.jpg",
+  image: "images/nacho-bar-queso.png",
   category: "Snacks & Sides",
   dateAdded: "2026-06-30",
   carbs: null,
