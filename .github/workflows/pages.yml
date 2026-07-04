@@ -257,11 +257,23 @@ jobs:
 
   deploy:
     needs: [publish-preview, cleanup-preview, publish-root]
+    # A PR merge fires both `pull_request: closed` (cleanup-preview) and
+    # `push` (publish-root) for the same commit, each in its own workflow
+    # run. Both would otherwise call actions/deploy-pages for that same
+    # commit, and the second one reliably fails ("Deployment failed, try
+    # again later") since GitHub Pages doesn't like two deployments for an
+    # identical build version in quick succession. So skip this job on the
+    # cleanup-preview path when the PR was actually merged — the push
+    # event's publish-root deploy already covers that commit (including
+    # this run's preview-removal commit, once queued behind it via the
+    # `pages` concurrency group). Only deploy from cleanup-preview alone
+    # when the PR was closed without merging, since then no push event
+    # will pick up the removal.
     if: |
       always() &&
       (needs.publish-preview.result == 'success' ||
-       needs.cleanup-preview.result == 'success' ||
-       needs.publish-root.result == 'success')
+       needs.publish-root.result == 'success' ||
+       (needs.cleanup-preview.result == 'success' && github.event.pull_request.merged != true))
     runs-on: ubuntu-latest
     environment:
       name: github-pages
