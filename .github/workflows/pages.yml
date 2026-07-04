@@ -103,7 +103,6 @@ jobs:
             --exclude '.claude' \
             --exclude 'node_modules' \
             --exclude 'tests' \
-            --exclude 'screenshots' \
             --exclude 'scripts' \
             --exclude 'playwright-report' \
             --exclude 'test-results' \
@@ -229,7 +228,6 @@ jobs:
             --exclude '.claude' \
             --exclude 'node_modules' \
             --exclude 'tests' \
-            --exclude 'screenshots' \
             --exclude 'scripts' \
             --exclude 'playwright-report' \
             --exclude 'test-results' \

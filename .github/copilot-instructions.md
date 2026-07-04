@@ -54,4 +54,4 @@
 - No hidden build steps, environment setup, or deployment processes
 - Recipes data includes placeholders like "~?" for unknown nutritional values
 - Tags are used for categorization and are searchable
-- After image or rendering-impacting changes, regenerate screenshots with `npm run screenshots` per `CLAUDE.md`.
+- After image or rendering-impacting changes, spot-check the affected page(s) in a browser.
