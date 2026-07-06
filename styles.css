@@ -952,7 +952,7 @@ body{
   background: rgba(4, 140, 127, 0.1);
   border: 1px solid rgba(4, 140, 127, 0.35);
   border-radius: var(--radius-md);
-  color: var(--color-teal);
+  color: var(--color-text);
   text-decoration: none;
   font-weight: 600;
   transition: all 0.2s ease;
