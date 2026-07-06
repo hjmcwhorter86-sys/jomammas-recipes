@@ -45,6 +45,17 @@ npm run screenshots
 and any changed PNGs under `screenshots/` can be staged alongside your code
 change — but CI will produce them regardless.
 
+## styles.css cache-busting
+
+Every page loads `styles.css` with a `?v=N` query string (e.g.
+`styles.css?v=2`). GitHub Pages serves static files with no cache-busting
+of its own, and browsers (mobile Safari/Chrome especially) can keep
+serving a stale cached copy of `styles.css` indefinitely otherwise —
+visitors who loaded the site before a CSS change may not see it until
+their cache expires. **Whenever you edit `styles.css`, bump the `?v=N` on
+the `<link rel="stylesheet">` tag in every HTML page** (currently 9 files)
+so the new stylesheet is fetched fresh instead of read from cache.
+
 ## Feature flags
 
 `window.flagsService.isEnabled('flagName')` checks `feature-flags.js`
