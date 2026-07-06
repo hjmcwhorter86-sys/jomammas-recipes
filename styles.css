@@ -938,6 +938,31 @@ body{
 }
 
 /* Browse by Category section */
+/* Homepage banner promoting Adrien's Baking Corner */
+.abc-banner {
+  max-width: 1000px;
+  margin: 0 auto var(--space-5);
+  padding: var(--space-3) var(--space-4);
+}
+
+.abc-banner-link {
+  display: block;
+  text-align: center;
+  padding: var(--space-3) var(--space-4);
+  background: rgba(4, 140, 127, 0.1);
+  border: 1px solid rgba(4, 140, 127, 0.35);
+  border-radius: var(--radius-md);
+  color: var(--color-teal);
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+
+.abc-banner-link:hover {
+  background: rgba(4, 140, 127, 0.16);
+  transform: translateY(-1px);
+}
+
 .category-section {
   max-width: 1000px;
   margin: 0 auto;
@@ -1594,6 +1619,14 @@ body{
   flex-shrink: 0;
 }
 
+/* Placeholder mascot for pages without a custom hero image yet (e.g. Adrien's
+   Baking Corner) — an emoji standing in until real artwork is ready. */
+.hero-emoji-placeholder {
+  font-size: 160px;
+  line-height: 1;
+  flex-shrink: 0;
+}
+
 .hero-right {
   max-width: 520px;
   flex: 0 1 520px;
@@ -1800,6 +1833,34 @@ body.about-page {
 
 .incomplete-message p {
   margin: 0;
+}
+
+/* Adrien's Baking Corner: "Adrien's Notes" callout box */
+.adrien-notes-callout {
+  padding: var(--space-4) var(--space-5);
+  background: rgba(212, 160, 23, 0.12);
+  border: 1px solid rgba(212, 160, 23, 0.4);
+  border-radius: var(--radius-md);
+}
+
+.adrien-notes-callout h2 {
+  margin: 0 0 8px;
+  font-size: var(--font-size-lg);
+  font-weight: 700;
+  line-height: 1.25;
+}
+
+.adrien-notes-callout p {
+  margin: 0;
+  line-height: 1.6;
+}
+
+/* Friendly placeholder text for empty recipe grids */
+.section-empty-state {
+  text-align: center;
+  color: var(--color-text-muted);
+  font-size: var(--font-size-md);
+  padding: var(--space-5) 0;
 }
 
 /* Image zoom modal styles */
