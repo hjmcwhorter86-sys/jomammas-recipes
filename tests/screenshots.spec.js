@@ -85,6 +85,13 @@ test.describe('About page', () => {
   });
 });
 
+test.describe("Adrien's Baking Corner", () => {
+  test('main', async ({ page }, testInfo) => {
+    await page.goto('/abc.html');
+    await shoot(page, 'abc', testInfo.project.name, 'main');
+  });
+});
+
 test.describe('Flags page', () => {
   test('main', async ({ page }, testInfo) => {
     await page.goto('/flags.html');
