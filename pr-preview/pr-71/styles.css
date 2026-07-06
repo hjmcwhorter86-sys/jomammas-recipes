@@ -949,17 +949,17 @@ body{
   display: block;
   text-align: center;
   padding: var(--space-3) var(--space-4);
-  background: rgba(212, 160, 23, 0.12);
-  border: 1px solid rgba(212, 160, 23, 0.4);
+  background: rgba(4, 140, 127, 0.1);
+  border: 1px solid rgba(4, 140, 127, 0.35);
   border-radius: var(--radius-md);
-  color: var(--color-text);
+  color: var(--color-teal);
   text-decoration: none;
   font-weight: 600;
   transition: all 0.2s ease;
 }
 
 .abc-banner-link:hover {
-  border-color: var(--color-gold);
+  background: rgba(4, 140, 127, 0.16);
   transform: translateY(-1px);
 }
 
