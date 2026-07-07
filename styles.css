@@ -1659,6 +1659,12 @@ body{
     width: 120px;
   }
 
+  /* Adrien's Baking Corner has much longer intro text than the homepage,
+     so there's no room for the placeholder emoji on small screens. */
+  .hero-emoji-placeholder {
+    display: none;
+  }
+
   .hero-right {
     max-width: 100%;
     flex: 0 1 auto;
