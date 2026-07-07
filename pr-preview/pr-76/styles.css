@@ -1644,7 +1644,7 @@ body{
   }
 
   .hero h1 {
-    font-size: var(--font-size-2xl);
+    font-size: var(--font-size-xl2);
   }
 
   .hero p {
@@ -1657,7 +1657,7 @@ body{
   }
 
   .hero-mascot {
-    width: 72px;
+    width: 104px;
   }
 
   .hero-right {
