@@ -756,14 +756,14 @@ window.ingredientNutrition = {
   },
   "white cooking wine": {
     per: "100ml",
-    calories: 82,
-    protein: 0.1,
+    calories: 66.7,
+    protein: 0,
     fat: 0,
     fiber: 0,
-    carbs: 2.6,
+    carbs: 0,
     unitWeights: {},
-    verified: false,
-    source: "Estimated by Claude (typical USDA FoodData Central / brand-label values), unverified — pending user review"
+    verified: true,
+    source: "Holland House White Cooking Wine label: 20 cal / 0g fat / 0g carbs / 0g protein per 2 tbsp (30mL), per user-provided photo"
   },
   "light cream cheese": {
     per: "100g",
