@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="page-type" content="kitchen-basics-oils-fats" />
+  <title>Kitchen Basics: Oils & Fats • JoMama's Recipes</title>
+  <link rel="stylesheet" href="styles.css?v=4" />
+  <link rel="preload" href="images/background-wood.png" as="image" type="image/png" />
+</head>
+<body>
+  <header class="header">
+    <div class="header-top">
+      <button class="hamburger-menu" id="hamburgerMenu" aria-label="Toggle menu" aria-expanded="false">
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+      </button>
+      <div class="logo">
+        <a href="index.html" class="logo-link">
+          <img src="images/jomammas-recipes-logo.png" alt="JoMamma's Recipes" class="logo-image" fetchpriority="high" />
+        </a>
+      </div>
+      <nav class="nav">
+        <a href="index.html">Home</a>
+        <a href="recipes-list.html" class="recipes-link">Recipes</a>
+        <a href="about.html">About</a>
+        <a href="abc.html">Adrien's Baking Corner</a>
+      </nav>
+      <div class="header-actions">
+        <input id="search" type="search" class="search-input" placeholder="Search recipes…" />
+        <a href="recipes-list.html" class="view-all-button button-family button-primary">View All Categories</a>
+        <select id="unitSystemSelect" class="unit-system-select" aria-label="Units">
+          <option value="us">US</option>
+          <option value="metric">Metric</option>
+        </select>
+      </div>
+      <button class="search-icon-button" id="searchIconButton" aria-label="Open search" aria-expanded="false">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="11" cy="11" r="8"></circle>
+          <path d="m21 21-4.35-4.35"></path>
+        </svg>
+      </button>
+    </div>
+    <nav class="mobile-menu" id="mobileMenu">
+      <a href="index.html" class="mobile-menu-link">Home</a>
+      <a href="recipes-list.html" class="mobile-menu-link">Recipes</a>
+      <a href="about.html" class="mobile-menu-link">About</a>
+      <a href="abc.html" class="mobile-menu-link">Adrien's Baking Corner</a>
+      <div class="mobile-menu-units">
+        <label for="unitSystemSelectMobile">Units</label>
+        <select id="unitSystemSelectMobile" class="unit-system-select">
+          <option value="us">US</option>
+          <option value="metric">Metric</option>
+        </select>
+      </div>
+    </nav>
+    <div class="mobile-search-container" id="mobileSearchContainer">
+      <input id="mobile-search" type="search" class="mobile-search-input" placeholder="Search recipes…" />
+    </div>
+  </header>
+
+  <main id="detailed-view">
+    <div class="detail-controls">
+      <button class="back-btn button-family button-secondary" onclick="window.location.href='recipes-list.html?category=Kitchen%20Basics'">← Back to Kitchen Basics</button>
+    </div>
+    <article class="recipe-detail kitchen-basics-page">
+      <h1>Oils & Fats 101</h1>
+      <p class="recipe-description">Every fat in your kitchen is doing three things at once: handling heat, carrying flavor, and bringing its own nutrition profile to the plate. This primer walks through all three, then rounds up the details on every oil, butter, and fat worth keeping in the kitchen.</p>
+      <img src="images/fats-and-oils.png" alt="A selection of cooking oils, butter, and other fats" class="kb-hero-image" />
+
+      <div class="kb-tabs">
+        <div class="kb-tablist" role="tablist" aria-label="Oils & fats topics">
+          <button type="button" class="kb-tab" id="kbTab-smoke" role="tab" aria-selected="true" aria-controls="kbPanel-smoke" data-tab="smoke">Smoke Point</button>
+          <button type="button" class="kb-tab" id="kbTab-flavor" role="tab" aria-selected="false" aria-controls="kbPanel-flavor" tabindex="-1" data-tab="flavor">Flavor</button>
+          <button type="button" class="kb-tab" id="kbTab-nutrition" role="tab" aria-selected="false" aria-controls="kbPanel-nutrition" tabindex="-1" data-tab="nutrition">Nutrition</button>
+          <button type="button" class="kb-tab" id="kbTab-all" role="tab" aria-selected="false" aria-controls="kbPanel-all" tabindex="-1" data-tab="all">All Oils & Fats</button>
+        </div>
+
+        <div class="kb-panel" id="kbPanel-smoke" role="tabpanel" aria-labelledby="kbTab-smoke" tabindex="0">
+          <h2>What is smoke point?</h2>
+          <p>Smoke point is the temperature at which a fat starts to break down and visibly smoke. Past that point, it releases compounds that taste bitter and burnt, and the fat degrades faster the next time you reuse it. Refining strips out the impurities (proteins, water, tiny particulates) that lower a fat's smoke point, which is why a refined oil — light olive oil instead of extra virgin, for example — can take more heat than its unrefined counterpart. The rule of thumb: match the fat to the method. Searing and deep frying call for a high smoke point; gentle sautéing, dressings, and finishing drizzles can use a lower one.</p>
+          <div class="kb-list" id="kbSmokeList"></div>
+        </div>
+
+        <div class="kb-panel" id="kbPanel-flavor" role="tabpanel" aria-labelledby="kbTab-flavor" tabindex="0" hidden>
+          <h2>Mild vs. strong</h2>
+          <p>Fat is a flavor ingredient, not just a cooking medium. Neutral oils — canola, grapeseed, sunflower, refined oils — get out of the way and let everything else in the dish lead, which is what you want for baking, frying delicate foods, or anywhere else you don't want the fat competing for attention. Bolder fats like extra virgin olive oil, toasted sesame oil, or butter bring their own taste to the table, so save them for when you want that flavor to be part of the dish — a peppery olive oil finishing a salad, or sesame oil rounding out a stir-fry. As a rule, the stronger the flavor, the more it belongs off the heat: high temperatures cook off (and can even burn away) the delicate aromatics that make a bold fat worth using.</p>
+          <div class="kb-list" id="kbFlavorList"></div>
+        </div>
+
+        <div class="kb-panel" id="kbPanel-nutrition" role="tabpanel" aria-labelledby="kbTab-nutrition" tabindex="0" hidden>
+          <h2>A spectrum of fats</h2>
+          <p>Every fat is a mix of saturated, monounsaturated, and polyunsaturated fatty acids in different ratios — the more unsaturated, the more liquid it is at room temperature, which is why olive oil pours and butter doesn't. Mainstream dietary guidance generally favors fats higher in unsaturated fat (most plant oils) over those higher in saturated fat (butter, ghee, lard, coconut oil), and recommends moderation across the board rather than cutting out any one fat entirely.</p>
+          <p class="nutrition-disclaimer">This is a simplified overview, not medical advice — individual needs vary, percentages are approximate and vary by brand and source, and the bigger picture (how a fat is used, what it replaces, your overall diet) matters more than any single ingredient.</p>
+          <div class="kb-list" id="kbNutritionList"></div>
+        </div>
+
+        <div class="kb-panel" id="kbPanel-all" role="tabpanel" aria-labelledby="kbTab-all" tabindex="0" hidden>
+          <h2>Every oil & fat, in detail</h2>
+          <div class="kb-card-grid" id="kbAllGrid"></div>
+        </div>
+      </div>
+    </article>
+  </main>
+
+  <footer class="site-footer" aria-label="Site footer">
+    <div class="site-footer-inner">
+      <div class="site-footer-brand">
+        <h2>JoMamma's Recipes</h2>
+        <p>Ad free recipes for everyone to enjoy</p>
+      </div>
+      <nav class="site-footer-nav" aria-label="Footer navigation">
+        <a href="index.html">Home</a>
+        <a href="recipes-list.html">All Recipes</a>
+        <a href="about.html">About</a>
+        <a href="index.html#categories">Categories</a>
+        <a href="abc.html">Adrien's Baking Corner</a>
+        <a href="flags.html" class="footer-flag-link" aria-label="Feature flags" title="Feature flags">🏳️‍🌈</a>
+      </nav>
+      <p class="site-footer-copy">© 2026 • easy printer-friendly recipes</p>
+    </div>
+  </footer>
+
+  <script src="feature-flags.js"></script>
+  <script src="flags-service.js"></script>
+  <script src="units-service.js"></script>
+  <script src="app.js"></script>
+  <script src="kitchen-basics.js"></script>
+</body>
+</html>
