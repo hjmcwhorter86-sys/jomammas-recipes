@@ -1788,4 +1788,15 @@ window.ingredientNutrition = {
     verified: true,
     source: "Hatch Select Chopped Green Chiles Mild label: 10 cal / 0g fat / 2g carbs / 0g fiber / 0g protein per 2 tbsp (30g), per user-provided photo"
   },
+  "capers": {
+    per: "100g",
+    calories: 0,
+    protein: 0,
+    fat: 0,
+    fiber: 0,
+    carbs: 0,
+    unitWeights: {},
+    verified: true,
+    source: "Great Value Non-Pareil Capers label: 0 cal / 0g fat / 0g carbs / 0g protein per 2 tbsp (15g), per user-provided photo"
+  },
 };

@@ -129,6 +129,7 @@ window.unitConversions = {
     "white pepper": 0.45,
     "green onions": 0.45,
     "hatch green chiles": 1.0,
+    "capers": 0.51,
   },
 
   // Preferred display units for the US/Metric units toggle (units-service.js).
