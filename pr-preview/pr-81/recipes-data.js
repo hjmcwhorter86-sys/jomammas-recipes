@@ -50,7 +50,7 @@ window.recipes = [
   fiber: null,
   calories: "",
   protein: "",
-  servings: "4-6",
+  servings: "6",
   tags: ["air fryer", "chicken", "sweet heat", "family favorite"],
 
   ingredients: [
@@ -184,7 +184,7 @@ window.recipes = [
 ,{
   id: "protein-cheesecake-jars",
   title: "Protein Cheesecake Jars",
-  description: "No-bake high-protein cheesecake jars for dessert wins.",
+  description: "No-bake high-protein cheesecake jars that you can feel good about eating. Dessert vibes with low calories and a good boost of protein.",
   image: "images/cheesecake-jars.png",
   calories: "~135 per jar",
   protein: "~18g per jar",
@@ -274,7 +274,7 @@ tags: ["dessert", "high protein"]
   fiber: null,
   calories: "~185 per serving",
   protein: "~9g per serving",
-  servings: "4-6",
+  servings: "6",
   tags: ["seafood", "soup", "easy", "weeknight", "comfort food"],
 
   ingredients: [
@@ -776,7 +776,7 @@ tags: ["dessert", "high protein"]
   carbs: null,
   fat: null,
   fiber: null,
-  servings: "4-6",
+  servings: "6",
   tags: ["chicken", "slow cooker", "easy"],
 
   ingredients: [
@@ -1396,7 +1396,7 @@ tags: ["dessert", "high protein"]
   fiber: null,
   calories: "",
   protein: "",
-  servings: "5-6",
+  servings: "5",
   tags: ["chicken", "pasta", "mac and cheese", "comfort food", "family dinner"],
 
   ingredients: [
@@ -1679,7 +1679,7 @@ tags: ["dessert", "high protein"]
   id: "nacho-bar-queso",
   title: "Nacho Bar Queso (BWW Hatch Chile Copycat)",
   description: "A smooth, pourable queso loaded with Hatch green chiles, copycat-style from Buffalo Wild Wings, with optional chorizo for the meat lovers.",
-  image: "images/no-photo.jpg",
+  image: "images/nacho-bar-queso.png",
   category: "Snacks & Sides",
   dateAdded: "2026-06-30",
   carbs: null,
@@ -1701,7 +1701,7 @@ tags: ["dessert", "high protein"]
     {
       title: "Liquid + Stabilizer",
       items: [
-        { qty: 18, unit: "fl oz", name: "evaporated milk", notes: "about 1½ cans" },
+        { qty: 18, unit: "fl oz", name: "evaporated milk" },
         { qty: 1.5, unit: "tbsp", name: "cornstarch" }
       ]
     },
@@ -1720,7 +1720,7 @@ tags: ["dessert", "high protein"]
     {
       title: "Chorizo (Cooked Separately)",
       items: [
-        { qty: 12, qtyMax: 16, unit: "oz", name: "chorizo", notes: "browned and drained", optional: true }
+        { qty: 18, unit: "oz", name: "chorizo", notes: "browned and drained", optional: true }
       ]
     }
   ],
@@ -1739,6 +1739,45 @@ tags: ["dessert", "high protein"]
     "Use freshly cubed white American deli cheese for the smoothest melt; pre-packaged slices work but may be slightly grainier.",
     "Sauté the Hatch chiles briefly in a dry pan before adding to drive off excess moisture and deepen their flavor.",
     "A splash of jalapeño brine at the end brightens everything without adding visible heat."
+  ]
+},
+
+  {
+  id: "sawmill-gravy-pork",
+  title: "Sawmill Gravy (Pork)",
+  description: "Classic Southern sawmill gravy made with pork breakfast sausage, butter, and whole milk. It's a rich, peppery gravy served over warm biscuits.",
+  image: "images/sawmill-gravy-pork.png",
+  category: "Pork",
+  dateAdded: "2026-07-07",
+  carbs: null,
+  fat: null,
+  fiber: null,
+  calories: "",
+  protein: "",
+  servings: "6",
+  tags: ["gravy", "sausage", "breakfast", "southern", "biscuits and gravy"],
+
+  ingredients: [
+    { qty: 1, unit: "lb", name: "pork breakfast sausage", notes: "regular or hot" },
+    { qty: 2, unit: "tbsp", name: "unsalted butter" },
+    { qty: 0.25, unit: "cup", name: "flour", notes: "all-purpose" },
+    { qty: 3, unit: "cup", name: "whole milk" },
+    { qty: 0.5, unit: "tsp", name: "kosher salt", notes: "adjust to taste" },
+    { qty: 1, unit: "tsp", name: "black pepper" },
+    { qty: 0.25, unit: "tsp", name: "garlic powder", notes: "optional", optional: true },
+    { qty: null, unit: null, name: "Pinch of cayenne pepper", notes: "optional, for kick", optional: true }
+  ],
+
+  steps: [
+    "Brown the sausage: Heat a skillet over medium heat. Add the sausage and cook, breaking it up with a spoon, until browned and crumbly, about 7-8 minutes.",
+    "Make the roux: Add the butter to the skillet and let it melt into the sausage fat. Sprinkle the flour over everything, stir, and cook 1-2 minutes until it smells toasty and coats the meat evenly.",
+    "Add the milk: Slowly pour in the whole milk, whisking constantly to work out lumps. Keep the heat at medium so it doesn't scorch.",
+    "Season and simmer: Add salt, pepper, and garlic powder (and cayenne if using). Simmer 6-8 minutes, stirring often, until thick enough to coat the back of a spoon; it will thicken more as it sits.",
+    "Serve over warm biscuits."
+  ],
+
+  notes: [
+    "The gravy thickens more as it cools, so pull it off the heat while it still looks a touch thinner than you want."
   ]
 },
 

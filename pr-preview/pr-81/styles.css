@@ -938,6 +938,44 @@ body{
 }
 
 /* Browse by Category section */
+/* Homepage banner promoting Adrien's Baking Corner */
+.abc-banner {
+  max-width: 1000px;
+  margin: 0 auto var(--space-5);
+  padding: var(--space-3) var(--space-4);
+}
+
+.abc-banner-link {
+  display: block;
+  text-align: center;
+  padding: var(--space-3) var(--space-4);
+  background: rgba(4, 140, 127, 0.1);
+  border: 1px solid rgba(4, 140, 127, 0.35);
+  border-radius: var(--radius-md);
+  color: var(--color-text);
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+
+.abc-banner-link:hover {
+  background: rgba(4, 140, 127, 0.16);
+  transform: translateY(-1px);
+}
+
+/* Non-clickable variant used for the ABC "coming soon" notice */
+.abc-banner-message {
+  display: block;
+  text-align: center;
+  margin: 0;
+  padding: var(--space-3) var(--space-4);
+  background: rgba(4, 140, 127, 0.1);
+  border: 1px solid rgba(4, 140, 127, 0.35);
+  border-radius: var(--radius-md);
+  color: var(--color-text);
+  font-weight: 600;
+}
+
 .category-section {
   max-width: 1000px;
   margin: 0 auto;
@@ -1162,6 +1200,70 @@ body{
   margin-bottom: 28px;
   font-size: 16px;
   line-height: 1.5;
+}
+
+.servings-control {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  margin-left: var(--space-2);
+  vertical-align: middle;
+}
+
+.servings-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--color-border);
+  background: #fff;
+  color: var(--color-teal);
+  font-size: var(--font-size-md);
+  font-weight: 700;
+  line-height: 1;
+  cursor: pointer;
+  transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+.servings-btn:hover {
+  background-color: rgba(4, 140, 127, 0.1);
+  border-color: var(--color-teal);
+}
+
+.servings-btn:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(4, 140, 127, 0.28);
+}
+
+.servings-input {
+  width: 48px;
+  padding: var(--space-1-5) var(--space-2);
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--color-border);
+  text-align: center;
+  font-size: var(--font-size-smd);
+  font-family: inherit;
+  color: var(--color-text);
+}
+
+.servings-input:focus {
+  border-color: var(--color-teal);
+  box-shadow: 0 0 0 3px rgba(4, 140, 127, 0.15);
+  outline: none;
+}
+
+/* Hide the number input's spinner arrows for a cleaner stepper look;
+   the servings-btn +/- buttons are the intended controls. */
+.servings-input::-webkit-outer-spin-button,
+.servings-input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.servings-input[type="number"] {
+  -moz-appearance: textfield;
 }
 
 .recipe-nutrition {
@@ -1414,8 +1516,17 @@ body{
   .recipe-nav,
   .image-modal,
   .print-recipe-btn,
-  .cook-mode-btn {
+  .cook-mode-btn,
+  .servings-btn {
     display: none !important;
+  }
+
+  .servings-input {
+    border: none;
+    padding: 0;
+    width: auto;
+    text-align: left;
+    color: inherit;
   }
 
   body {
@@ -1521,6 +1632,14 @@ body{
   flex-shrink: 0;
 }
 
+/* Placeholder mascot for pages without a custom hero image yet (e.g. Adrien's
+   Baking Corner) — an emoji standing in until real artwork is ready. */
+.hero-emoji-placeholder {
+  font-size: 160px;
+  line-height: 1;
+  flex-shrink: 0;
+}
+
 .hero-right {
   max-width: 520px;
   flex: 0 1 520px;
@@ -1531,8 +1650,11 @@ body{
 
 @media (max-width: 768px) {
   .hero {
+    height: 330px;
     margin: -10px auto var(--space-1-5);
+    flex-direction: column;
     justify-content: center;
+    gap: var(--space-1);
     text-align: center;
     padding: 0 var(--space-4);
   }
@@ -1546,11 +1668,14 @@ body{
     font-size: var(--font-size-lg-mobile);
   }
 
-  .hero-left {
-    display: none;
+  .hero-mascot {
+    width: 148px;
+    margin-top: -32px;
   }
 
-  .hero-mascot {
+  /* Adrien's Baking Corner has much longer intro text than the homepage,
+     so there's no room for the placeholder emoji on small screens. */
+  .hero-emoji-placeholder {
     display: none;
   }
 
@@ -1727,6 +1852,34 @@ body.about-page {
 
 .incomplete-message p {
   margin: 0;
+}
+
+/* Adrien's Baking Corner: "Adrien's Notes" callout box */
+.adrien-notes-callout {
+  padding: var(--space-4) var(--space-5);
+  background: rgba(212, 160, 23, 0.12);
+  border: 1px solid rgba(212, 160, 23, 0.4);
+  border-radius: var(--radius-md);
+}
+
+.adrien-notes-callout h2 {
+  margin: 0 0 8px;
+  font-size: var(--font-size-lg);
+  font-weight: 700;
+  line-height: 1.25;
+}
+
+.adrien-notes-callout p {
+  margin: 0;
+  line-height: 1.6;
+}
+
+/* Friendly placeholder text for empty recipe grids */
+.section-empty-state {
+  text-align: center;
+  color: var(--color-text-muted);
+  font-size: var(--font-size-md);
+  padding: var(--space-5) 0;
 }
 
 /* Image zoom modal styles */

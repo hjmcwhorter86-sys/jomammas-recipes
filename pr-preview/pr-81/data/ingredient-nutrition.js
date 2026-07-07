@@ -908,6 +908,28 @@ window.ingredientNutrition = {
     verified: false,
     source: "Estimated by Claude (typical USDA FoodData Central / brand-label values), unverified — pending user review"
   },
+  "whole milk": {
+    per: "100ml",
+    calories: 61,
+    protein: 3.2,
+    fat: 3.3,
+    fiber: 0,
+    carbs: 4.8,
+    unitWeights: {},
+    verified: false,
+    source: "Estimated by Claude (USDA FoodData Central, whole milk 3.25% milkfat), unverified — pending user review"
+  },
+  "pork breakfast sausage": {
+    per: "100g",
+    calories: 375,
+    protein: 16.1,
+    fat: 33.9,
+    fiber: 0,
+    carbs: 3.6,
+    unitWeights: {},
+    verified: true,
+    source: "Jimmy Dean Premium Pork Regular Breakfast Sausage Roll label: 210 cal / 19g fat / 0g fiber / 2g carb / 9g protein per 2oz cooked (56g) serving, per user-provided photo"
+  },
   "ranch seasoning": {
     per: "100g",
     calories: 350,
