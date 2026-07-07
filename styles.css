@@ -1669,7 +1669,8 @@ body{
   }
 
   .hero-mascot {
-    width: 120px;
+    width: 148px;
+    margin-top: -32px;
   }
 
   /* Adrien's Baking Corner has much longer intro text than the homepage,
