@@ -1470,17 +1470,17 @@ tags: ["dessert", "high protein"]
     {
       title: "For the Chicken",
       items: [
-        "2 lbs boneless skinless chicken breast, pounded or sliced into thin cutlets",
-        "⅓ cup all-purpose flour",
-        "2 tsp garlic powder",
-        "1½ tsp kosher salt",
-        "½ tsp black pepper"
+        { qty: 2, unit: "lb", name: "chicken breast", notes: "pounded or sliced into thin cutlets" },
+        { qty: 1/3, unit: "cup", name: "flour", notes: "all-purpose" },
+        { qty: 2, unit: "tsp", name: "garlic powder" },
+        { qty: 1.5, unit: "tsp", name: "kosher salt" },
+        { qty: 0.5, unit: "tsp", name: "black pepper" }
       ]
     },
     {
       title: "For the Sear",
       items: [
-        "1 tbsp unsalted butter",
+        { qty: 1, unit: "tbsp", name: "unsalted butter" },
         {
           qty: 1.5,
           unit: "tbsp",
@@ -1493,18 +1493,18 @@ tags: ["dessert", "high protein"]
     {
       title: "For the Sauce",
       items: [
-        "¼ cup white cooking wine",
-        "½ cup chicken broth",
-        "⅓ cup fresh lemon juice (about 3 lemons)",
-        "4 tbsp unsalted butter",
-        "3 garlic cloves, minced",
-        "¼ cup brined capers, drained",
-        "½ cup heavy cream",
-        "¼ tsp red pepper flakes",
-        "1 tbsp cold unsalted butter, for finishing",
-        "⅛ tsp salt, or to taste",
-        "⅛ tsp black pepper, to taste",
-        "Fresh parsley, for garnish"
+        { qty: 0.25, unit: "cup", name: "white cooking wine" },
+        { qty: 0.5, unit: "cup", name: "chicken broth" },
+        { qty: 1/3, unit: "cup", name: "lemon juice", notes: "about 3 lemons", approx: true },
+        { qty: 4, unit: "tbsp", name: "unsalted butter" },
+        { qty: 3, unit: "clove", name: "garlic", notes: "minced" },
+        { qty: 0.25, unit: "cup", name: "capers", notes: "brined, drained" },
+        { qty: 0.5, unit: "cup", name: "heavy cream" },
+        { qty: 0.25, unit: "tsp", name: "red pepper flakes" },
+        { qty: 1, unit: "tbsp", name: "unsalted butter", notes: "cold, for finishing" },
+        { qty: 0.125, unit: "tsp", name: "salt", notes: "or to taste" },
+        { qty: 0.125, unit: "tsp", name: "black pepper", notes: "to taste" },
+        { qty: null, unit: null, name: "Fresh parsley, for garnish" }
       ]
     }
   ],
