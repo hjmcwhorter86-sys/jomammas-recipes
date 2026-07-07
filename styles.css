@@ -963,6 +963,19 @@ body{
   transform: translateY(-1px);
 }
 
+/* Non-clickable variant used for the ABC "coming soon" notice */
+.abc-banner-message {
+  display: block;
+  text-align: center;
+  margin: 0;
+  padding: var(--space-3) var(--space-4);
+  background: rgba(4, 140, 127, 0.1);
+  border: 1px solid rgba(4, 140, 127, 0.35);
+  border-radius: var(--radius-md);
+  color: var(--color-text);
+  font-weight: 600;
+}
+
 .category-section {
   max-width: 1000px;
   margin: 0 auto;
