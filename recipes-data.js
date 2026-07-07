@@ -1745,7 +1745,7 @@ tags: ["dessert", "high protein"]
   {
   id: "sawmill-gravy-pork",
   title: "Sawmill Gravy (Pork)",
-  description: "Classic Southern sawmill gravy made with pork breakfast sausage, butter, and whole milk — a rich, peppery gravy served over warm biscuits.",
+  description: "Classic Southern sawmill gravy made with pork breakfast sausage, butter, and whole milk. It's a rich, peppery gravy served over warm biscuits.",
   image: "images/sawmill-gravy-pork.png",
   category: "Pork",
   dateAdded: "2026-07-07",
