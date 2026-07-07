@@ -1637,8 +1637,11 @@ body{
 
 @media (max-width: 768px) {
   .hero {
+    height: 330px;
     margin: -10px auto var(--space-1-5);
+    flex-direction: column;
     justify-content: center;
+    gap: var(--space-1);
     text-align: center;
     padding: 0 var(--space-4);
   }
@@ -1652,12 +1655,8 @@ body{
     font-size: var(--font-size-lg-mobile);
   }
 
-  .hero-left {
-    display: none;
-  }
-
   .hero-mascot {
-    display: none;
+    width: 120px;
   }
 
   .hero-right {
