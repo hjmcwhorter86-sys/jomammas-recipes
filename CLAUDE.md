@@ -8,9 +8,11 @@ Static HTML/CSS/JS recipe site (no build tooling, no framework). Pages
 (`index.html`, `recipes-list.html`, `recipe-detail.html`, `about.html`,
 `flags.html`) load shared scripts via `<script>` tags:
 `feature-flags.js`, `flags-service.js`, `data/units.js`,
-`data/ingredient-nutrition.js`, `recipes-data.js`, `app.js`. The site is
-deployed via Netlify directly from this repo — there is no separate build
-step.
+`data/ingredient-nutrition.js`, `recipes-data.js`, `app.js`. There is no
+separate build step. Production deploys to GitHub Pages on every merge to
+`main` via `.github/workflows/pages.yml`, which also publishes a
+`pr-preview/pr-<number>/` subfolder deploy for each open PR. See that
+workflow's header comment for the deployment architecture.
 
 ## Visual review screenshots — let CI handle the full suite
 
@@ -42,6 +44,17 @@ npm run screenshots
 
 and any changed PNGs under `screenshots/` can be staged alongside your code
 change — but CI will produce them regardless.
+
+## styles.css cache-busting
+
+Every page loads `styles.css` with a `?v=N` query string (e.g.
+`styles.css?v=2`). GitHub Pages serves static files with no cache-busting
+of its own, and browsers (mobile Safari/Chrome especially) can keep
+serving a stale cached copy of `styles.css` indefinitely otherwise —
+visitors who loaded the site before a CSS change may not see it until
+their cache expires. **Whenever you edit `styles.css`, bump the `?v=N` on
+the `<link rel="stylesheet">` tag in every HTML page** (currently 9 files)
+so the new stylesheet is fetched fresh instead of read from cache.
 
 ## Feature flags
 
