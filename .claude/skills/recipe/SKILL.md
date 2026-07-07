@@ -72,12 +72,12 @@ than the rest of this skill describes. When that's the case:
    every existing `id` in `recipes-data.js`; if it collides, disambiguate
    (e.g. `-2`).
 
-4. **Pick `category`** from the fixed existing set: Chicken, Beef, Pasta,
-   Seafood, Dessert, Soup, Breakfast, Slow Cooker, Snacks & Sides, Kitchen
-   Basics (each has a matching `images/category-*.png` icon — there's no
-   mechanism in this skill to add a new category icon, so only suggest a
-   new category if truly nothing fits, and confirm with the user first
-   since it needs follow-up work).
+4. **Pick `category`** from the fixed existing set: Chicken, Beef, Pork,
+   Pasta, Seafood, Dessert, Soup, Breakfast, Slow Cooker, Snacks & Sides,
+   Kitchen Basics (each has a matching `images/category-*.png` icon —
+   there's no mechanism in this skill to add a new category icon, so only
+   suggest a new category if truly nothing fits, and confirm with the user
+   first since it needs follow-up work).
 
 5. **Check every quantified ingredient against the nutrition database.**
    For each ingredient with a non-null `qty`, normalize its name the same
