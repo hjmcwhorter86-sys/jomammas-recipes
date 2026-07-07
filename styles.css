@@ -1637,7 +1637,7 @@ body{
 
 @media (max-width: 768px) {
   .hero {
-    height: 300px;
+    height: 330px;
     margin: -10px auto var(--space-1-5);
     flex-direction: column;
     justify-content: center;
@@ -1655,7 +1655,7 @@ body{
   }
 
   .hero-mascot {
-    width: 95px;
+    width: 120px;
   }
 
   .hero-right {
