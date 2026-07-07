@@ -1653,18 +1653,18 @@ body{
   }
 
   .hero-left {
-    display: none;
+    flex-shrink: 0;
   }
 
   .hero-mascot {
-    display: none;
+    width: 72px;
   }
 
   .hero-right {
     max-width: 100%;
     flex: 0 1 auto;
-    text-align: center;
-    margin: 0 auto;
+    text-align: left;
+    margin: 0;
   }
 }
 @media (max-width: 768px) {
