@@ -1742,4 +1742,43 @@ tags: ["dessert", "high protein"]
   ]
 },
 
+  {
+  id: "sawmill-gravy-pork",
+  title: "Sawmill Gravy (Pork)",
+  description: "Classic Southern sawmill gravy made with pork breakfast sausage, butter, and whole milk. It's a rich, peppery gravy served over warm biscuits.",
+  image: "images/sawmill-gravy-pork.png",
+  category: "Pork",
+  dateAdded: "2026-07-07",
+  carbs: null,
+  fat: null,
+  fiber: null,
+  calories: "",
+  protein: "",
+  servings: "6",
+  tags: ["gravy", "sausage", "breakfast", "southern", "biscuits and gravy"],
+
+  ingredients: [
+    { qty: 1, unit: "lb", name: "pork breakfast sausage", notes: "regular or hot" },
+    { qty: 2, unit: "tbsp", name: "unsalted butter" },
+    { qty: 0.25, unit: "cup", name: "flour", notes: "all-purpose" },
+    { qty: 3, unit: "cup", name: "whole milk" },
+    { qty: 0.5, unit: "tsp", name: "kosher salt", notes: "adjust to taste" },
+    { qty: 1, unit: "tsp", name: "black pepper" },
+    { qty: 0.25, unit: "tsp", name: "garlic powder", notes: "optional", optional: true },
+    { qty: null, unit: null, name: "Pinch of cayenne pepper", notes: "optional, for kick", optional: true }
+  ],
+
+  steps: [
+    "Brown the sausage: Heat a skillet over medium heat. Add the sausage and cook, breaking it up with a spoon, until browned and crumbly, about 7-8 minutes.",
+    "Make the roux: Add the butter to the skillet and let it melt into the sausage fat. Sprinkle the flour over everything, stir, and cook 1-2 minutes until it smells toasty and coats the meat evenly.",
+    "Add the milk: Slowly pour in the whole milk, whisking constantly to work out lumps. Keep the heat at medium so it doesn't scorch.",
+    "Season and simmer: Add salt, pepper, and garlic powder (and cayenne if using). Simmer 6-8 minutes, stirring often, until thick enough to coat the back of a spoon; it will thicken more as it sits.",
+    "Serve over warm biscuits."
+  ],
+
+  notes: [
+    "The gravy thickens more as it cools, so pull it off the heat while it still looks a touch thinner than you want."
+  ]
+},
+
 ];
