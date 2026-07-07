@@ -1641,6 +1641,7 @@ body{
     margin: -10px auto var(--space-1-5);
     flex-direction: column;
     justify-content: center;
+    gap: var(--space-1);
     text-align: center;
     padding: 0 var(--space-4);
   }
