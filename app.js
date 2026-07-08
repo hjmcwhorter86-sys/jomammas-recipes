@@ -1016,7 +1016,7 @@ if (searchEl && pageType !== 'list') {
 const newestEl = document.getElementById('newest');
 if (newestEl) {
   const newest = navigableRecipes
-    .filter(r => r.dateAdded)
+    .filter(r => r.dateAdded && !r.excludeFromNewest)
     .sort((a, b) => new Date(b.dateAdded) - new Date(a.dateAdded))
     .slice(0, 4);
 

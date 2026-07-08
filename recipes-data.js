@@ -1781,4 +1781,43 @@ tags: ["dessert", "high protein"]
   ]
 },
 
+  {
+  id: "slow-cooked-shredded-chicken",
+  title: "Slow Cooked Shredded Chicken",
+  description: "An easy, hands-off way to make seasoned shredded chicken for casseroles, tacos, salads, or anywhere you need a versatile cooked chicken base.",
+  image: "images/no-photo.jpg",
+  category: ["Kitchen Basics", "Chicken"],
+  dateAdded: "2026-07-08",
+  excludeFromNewest: true,
+  carbs: null,
+  fat: null,
+  fiber: null,
+  calories: "",
+  protein: "",
+  servings: "6 cups shredded",
+  tags: ["chicken", "meal prep", "slow cooker", "kitchen basics", "shredded chicken"],
+
+  ingredients: [
+    { qty: 2.5, qtyMax: 3, unit: "lb", name: "chicken breast", notes: "boneless, skinless" },
+    { qty: 1.5, unit: "tsp", name: "kosher salt" },
+    { qty: 0.5, unit: "tsp", name: "black pepper" },
+    { qty: 1, unit: "tsp", name: "garlic powder" },
+    { qty: 1, unit: "tsp", name: "onion powder" },
+    { qty: null, unit: null, name: "Pinch of paprika" },
+    { qty: 2, unit: "tbsp", name: "unsalted butter", notes: "cut into pats" }
+  ],
+
+  steps: [
+    "Place the chicken breasts in the bottom of the crockpot in a single layer.",
+    "Season evenly with the kosher salt, black pepper, garlic powder, onion powder, and paprika. Dot the top of the chicken with the pats of butter.",
+    "Cover and cook on low for 2 hours if your crockpot runs hot, or 3-4 hours for a standard crockpot, until the chicken reaches an internal temperature of 165 degrees and shreds easily with a fork.",
+    "Remove the chicken from the crockpot and let rest for 5-10 minutes.",
+    "Shred using a stand mixer fitted with the paddle attachment on low speed, or shred by hand with two forks. If desired, spoon a little of the cooking liquid back over the shredded chicken to keep it moist."
+  ],
+
+  notes: [
+    "No photo yet — using a placeholder image until one is added."
+  ]
+},
+
 ];
