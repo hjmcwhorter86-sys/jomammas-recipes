@@ -89,10 +89,10 @@ window.ingredientNutrition = {
     protein: 6.4,
     fat: 0.5,
     fiber: 2.1,
-    carbs: 31,
+    carbs: 33.1,
     unitWeights: { clove: 3 },
-    verified: false,
-    source: "USDA — fresh garlic (cloves). Jarred minced garlic is a separate, more dilute entry."
+    verified: true,
+    source: "USDA FoodData Central, raw garlic — confirmed by user (fresh cloves, no commercial label applies). Jarred minced garlic is a separate, more dilute entry."
   },
   "jarred minced garlic": {
     per: "100g",
@@ -756,14 +756,14 @@ window.ingredientNutrition = {
   },
   "white cooking wine": {
     per: "100ml",
-    calories: 82,
-    protein: 0.1,
+    calories: 66.7,
+    protein: 0,
     fat: 0,
     fiber: 0,
-    carbs: 2.6,
+    carbs: 0,
     unitWeights: {},
-    verified: false,
-    source: "Estimated by Claude (typical USDA FoodData Central / brand-label values), unverified — pending user review"
+    verified: true,
+    source: "Holland House White Cooking Wine label: 20 cal / 0g fat / 0g carbs / 0g protein per 2 tbsp (30mL), per user-provided photo"
   },
   "light cream cheese": {
     per: "100g",
@@ -1119,14 +1119,14 @@ window.ingredientNutrition = {
   },
   "heavy cream": {
     per: "100ml",
-    calories: 340,
-    protein: 2.1,
-    fat: 36,
+    calories: 333.3,
+    protein: 0,
+    fat: 33.3,
     fiber: 0,
-    carbs: 2.8,
+    carbs: 6.7,
     unitWeights: {},
-    verified: false,
-    source: "Estimated by Claude (typical USDA FoodData Central / brand-label values), unverified — pending user review"
+    verified: true,
+    source: "Great Value Heavy Whipping Cream label: 50 cal / 5g fat / 1g carbs / 0g protein per 1 tbsp (15mL), per user-provided photo"
   },
   "jar garlic vodka sauce": {
     per: "100g",
@@ -1306,14 +1306,14 @@ window.ingredientNutrition = {
   },
   "red pepper flakes": {
     per: "100g",
-    calories: 318,
-    protein: 12,
-    fat: 17.3,
-    fiber: 34.8,
-    carbs: 56.6,
+    calories: 333.3,
+    protein: 16.7,
+    fat: 16.7,
+    fiber: 38.9,
+    carbs: 61.1,
     unitWeights: {},
-    verified: false,
-    source: "Estimated by Claude (typical USDA FoodData Central / brand-label values), unverified — pending user review"
+    verified: true,
+    source: "Crushed Red Pepper label: 6 cal / 0.3g fat / 1.1g carbs / 0.7g fiber / 0.3g protein per 1 tbsp (1.8g), per user-provided photo"
   },
   "tomato juice": {
     per: "100g",
@@ -1763,8 +1763,8 @@ window.ingredientNutrition = {
     fiber: 0.3,
     carbs: 6.9,
     unitWeights: {},
-    verified: false,
-    source: "Estimated by Claude (typical USDA FoodData Central / brand-label values), unverified — pending user review"
+    verified: true,
+    source: "USDA FoodData Central, raw lemon juice — confirmed by user (fresh-squeezed, no commercial label applies)"
   },
   "hot sauce": {
     per: "100ml",
@@ -1809,5 +1809,16 @@ window.ingredientNutrition = {
     unitWeights: {},
     verified: true,
     source: "Hatch Select Chopped Green Chiles Mild label: 10 cal / 0g fat / 2g carbs / 0g fiber / 0g protein per 2 tbsp (30g), per user-provided photo"
+  },
+  "capers": {
+    per: "100g",
+    calories: 0,
+    protein: 0,
+    fat: 0,
+    fiber: 0,
+    carbs: 0,
+    unitWeights: {},
+    verified: true,
+    source: "Great Value Non-Pareil Capers label: 0 cal / 0g fat / 0g carbs / 0g protein per 2 tbsp (15g), per user-provided photo"
   },
 };
