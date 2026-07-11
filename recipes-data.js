@@ -653,7 +653,7 @@ tags: ["dessert", "high protein"]
     "Preheat oven to 350°F. Grease a bundt pan very well (butter plus spray works best).",
     "Open biscuit cans and cut each biscuit into quarters. Place pieces in a large bowl.",
     "In a separate bowl, mix granulated sugar and cinnamon. Toss biscuit pieces in cinnamon sugar until fully coated. Add nuts here if using.",
-    "Drop coated biscuit pieces into the prepared bundt pan. No need to layer neatly.",
+    "Drop coated biscuit pieces into the prepared bundt pan, layer neatly or don't, your choice.",
     "In a saucepan or microwave-safe bowl, melt butter. Stir in brown sugar and heat just until gently bubbling.",
     "Pour butter-sugar mixture evenly over biscuits in the pan.",
     "Bake for 35–40 minutes until deep golden and bubbly on top.",
