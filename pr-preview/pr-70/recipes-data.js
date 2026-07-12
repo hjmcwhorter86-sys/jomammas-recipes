@@ -653,7 +653,7 @@ tags: ["dessert", "high protein"]
     "Preheat oven to 350°F. Grease a bundt pan very well (butter plus spray works best).",
     "Open biscuit cans and cut each biscuit into quarters. Place pieces in a large bowl.",
     "In a separate bowl, mix granulated sugar and cinnamon. Toss biscuit pieces in cinnamon sugar until fully coated. Add nuts here if using.",
-    "Drop coated biscuit pieces into the prepared bundt pan. No need to layer neatly.",
+    "Drop coated biscuit pieces into the prepared bundt pan, layer neatly or don't, your choice.",
     "In a saucepan or microwave-safe bowl, melt butter. Stir in brown sugar and heat just until gently bubbling.",
     "Pour butter-sugar mixture evenly over biscuits in the pan.",
     "Bake for 35–40 minutes until deep golden and bubbly on top.",
@@ -1470,17 +1470,17 @@ tags: ["dessert", "high protein"]
     {
       title: "For the Chicken",
       items: [
-        "2 lbs boneless skinless chicken breast, pounded or sliced into thin cutlets",
-        "⅓ cup all-purpose flour",
-        "2 tsp garlic powder",
-        "1½ tsp kosher salt",
-        "½ tsp black pepper"
+        { qty: 2, unit: "lb", name: "chicken breast", notes: "pounded or sliced into thin cutlets" },
+        { qty: 1/3, unit: "cup", name: "flour", notes: "all-purpose" },
+        { qty: 2, unit: "tsp", name: "garlic powder" },
+        { qty: 1.5, unit: "tsp", name: "kosher salt" },
+        { qty: 0.5, unit: "tsp", name: "black pepper" }
       ]
     },
     {
       title: "For the Sear",
       items: [
-        "1 tbsp unsalted butter",
+        { qty: 1, unit: "tbsp", name: "unsalted butter" },
         {
           qty: 1.5,
           unit: "tbsp",
@@ -1493,18 +1493,18 @@ tags: ["dessert", "high protein"]
     {
       title: "For the Sauce",
       items: [
-        "¼ cup white cooking wine",
-        "½ cup chicken broth",
-        "⅓ cup fresh lemon juice (about 3 lemons)",
-        "4 tbsp unsalted butter",
-        "3 garlic cloves, minced",
-        "¼ cup brined capers, drained",
-        "½ cup heavy cream",
-        "¼ tsp red pepper flakes",
-        "1 tbsp cold unsalted butter, for finishing",
-        "⅛ tsp salt, or to taste",
-        "⅛ tsp black pepper, to taste",
-        "Fresh parsley, for garnish"
+        { qty: 0.25, unit: "cup", name: "white cooking wine" },
+        { qty: 0.5, unit: "cup", name: "chicken broth" },
+        { qty: 1/3, unit: "cup", name: "lemon juice", notes: "about 3 lemons", approx: true },
+        { qty: 4, unit: "tbsp", name: "unsalted butter" },
+        { qty: 3, unit: "clove", name: "garlic", notes: "minced" },
+        { qty: 0.25, unit: "cup", name: "capers", notes: "brined, drained" },
+        { qty: 0.5, unit: "cup", name: "heavy cream" },
+        { qty: 0.25, unit: "tsp", name: "red pepper flakes" },
+        { qty: 1, unit: "tbsp", name: "unsalted butter", notes: "cold, for finishing" },
+        { qty: 0.125, unit: "tsp", name: "salt", notes: "or to taste" },
+        { qty: 0.125, unit: "tsp", name: "black pepper", notes: "to taste" },
+        { qty: null, unit: null, name: "Fresh parsley, for garnish" }
       ]
     }
   ],
@@ -1739,6 +1739,84 @@ tags: ["dessert", "high protein"]
     "Use freshly cubed white American deli cheese for the smoothest melt; pre-packaged slices work but may be slightly grainier.",
     "Sauté the Hatch chiles briefly in a dry pan before adding to drive off excess moisture and deepen their flavor.",
     "A splash of jalapeño brine at the end brightens everything without adding visible heat."
+  ]
+},
+
+  {
+  id: "sawmill-gravy-pork",
+  title: "Sawmill Gravy (Pork)",
+  description: "Classic Southern sawmill gravy made with pork breakfast sausage, butter, and whole milk. It's a rich, peppery gravy served over warm biscuits.",
+  image: "images/sawmill-gravy-pork.png",
+  category: "Pork",
+  dateAdded: "2026-07-07",
+  carbs: null,
+  fat: null,
+  fiber: null,
+  calories: "",
+  protein: "",
+  servings: "6",
+  tags: ["gravy", "sausage", "breakfast", "southern", "biscuits and gravy"],
+
+  ingredients: [
+    { qty: 1, unit: "lb", name: "pork breakfast sausage", notes: "regular or hot" },
+    { qty: 2, unit: "tbsp", name: "unsalted butter" },
+    { qty: 0.25, unit: "cup", name: "flour", notes: "all-purpose" },
+    { qty: 3, unit: "cup", name: "whole milk" },
+    { qty: 0.5, unit: "tsp", name: "kosher salt", notes: "adjust to taste" },
+    { qty: 1, unit: "tsp", name: "black pepper" },
+    { qty: 0.25, unit: "tsp", name: "garlic powder", notes: "optional", optional: true },
+    { qty: null, unit: null, name: "Pinch of cayenne pepper", notes: "optional, for kick", optional: true }
+  ],
+
+  steps: [
+    "Brown the sausage: Heat a skillet over medium heat. Add the sausage and cook, breaking it up with a spoon, until browned and crumbly, about 7-8 minutes.",
+    "Make the roux: Add the butter to the skillet and let it melt into the sausage fat. Sprinkle the flour over everything, stir, and cook 1-2 minutes until it smells toasty and coats the meat evenly.",
+    "Add the milk: Slowly pour in the whole milk, whisking constantly to work out lumps. Keep the heat at medium so it doesn't scorch.",
+    "Season and simmer: Add salt, pepper, and garlic powder (and cayenne if using). Simmer 6-8 minutes, stirring often, until thick enough to coat the back of a spoon; it will thicken more as it sits.",
+    "Serve over warm biscuits."
+  ],
+
+  notes: [
+    "The gravy thickens more as it cools, so pull it off the heat while it still looks a touch thinner than you want."
+  ]
+},
+
+  {
+  id: "slow-cooked-shredded-chicken",
+  title: "Slow Cooked Shredded Chicken",
+  description: "An easy, hands-off way to make seasoned shredded chicken for casseroles, tacos, salads, or anywhere you need a versatile cooked chicken base.",
+  image: "images/no-photo.jpg",
+  category: ["Kitchen Basics", "Chicken"],
+  dateAdded: "2026-07-08",
+  excludeFromNewest: true,
+  carbs: null,
+  fat: null,
+  fiber: null,
+  calories: "",
+  protein: "",
+  servings: "6 cups shredded",
+  tags: ["chicken", "meal prep", "slow cooker", "kitchen basics", "shredded chicken"],
+
+  ingredients: [
+    { qty: 2.5, qtyMax: 3, unit: "lb", name: "chicken breast", notes: "boneless, skinless" },
+    { qty: 1.5, unit: "tsp", name: "kosher salt" },
+    { qty: 0.5, unit: "tsp", name: "black pepper" },
+    { qty: 1, unit: "tsp", name: "garlic powder" },
+    { qty: 1, unit: "tsp", name: "onion powder" },
+    { qty: null, unit: null, name: "Pinch of paprika" },
+    { qty: 2, unit: "tbsp", name: "unsalted butter", notes: "cut into pats" }
+  ],
+
+  steps: [
+    "Place the chicken breasts in the bottom of the crockpot in a single layer.",
+    "Season evenly with the kosher salt, black pepper, garlic powder, onion powder, and paprika. Dot the top of the chicken with the pats of butter.",
+    "Cover and cook on low for 2 hours if your crockpot runs hot, or 3-4 hours for a standard crockpot, until the chicken reaches an internal temperature of 165 degrees and shreds easily with a fork.",
+    "Remove the chicken from the crockpot and let rest for 5-10 minutes.",
+    "Shred using a stand mixer fitted with the paddle attachment on low speed, or shred by hand with two forks. If desired, spoon a little of the cooking liquid back over the shredded chicken to keep it moist."
+  ],
+
+  notes: [
+    "No photo yet — using a placeholder image until one is added."
   ]
 },
 

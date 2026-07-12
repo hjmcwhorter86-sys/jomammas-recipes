@@ -1,6 +1,6 @@
 // JoMama Recipes Site - Heather's macro-friendly comfort food collection
 
-const recipes = [...(window.recipes || []), ...(window.kitchenBasicsGuides || [])];
+const recipes = [...(window.recipes || []), ...(window.kitchenBasicsGuides || []), ...(window.adrienRecipes || [])];
 
 // Recipes only (excludes Kitchen Basics guides) — used wherever the result
 // must link into the ingredients/steps recipe-detail flow, like prev/next
@@ -10,7 +10,9 @@ const navigableRecipes = recipes.filter((r) => r.type !== 'guide');
 // Cards for guides link to their own standalone page; recipe cards link into
 // recipe-detail.html as usual.
 function getRecipeUrl(recipe) {
-  return recipe.type === 'guide' && recipe.url ? recipe.url : `recipe-detail.html?id=${recipe.id}`;
+  if (recipe.type === 'guide' && recipe.url) return recipe.url;
+  const detailPage = isAdrienPage ? 'abc-recipe-detail.html' : 'recipe-detail.html';
+  return `${detailPage}?id=${recipe.id}`;
 }
 
 // Resolves an ingredient's `guideLink: { guideId, tab }` to a URL, looking
@@ -759,6 +761,11 @@ document.addEventListener('keydown', (event) => {
 // Detect page type from meta tag
 const pageType = document.querySelector('meta[name="page-type"]')?.getAttribute('content') || 'home';
 
+// True on Adrien's Baking Corner pages (abc.html, abc-recipe-detail.html),
+// which load adrien-recipes-data.js instead of recipes-data.js and need
+// their own detail-page links so they never point back into the main site.
+const isAdrienPage = pageType === 'abc' || pageType === 'abc-detail';
+
 // Hamburger Menu Toggle
 const hamburgerMenu = document.getElementById('hamburgerMenu');
 const mobileMenu = document.getElementById('mobileMenu');
@@ -977,6 +984,10 @@ if (pageType === 'kitchen-basics-oils-fats') {
   setSeo('Kitchen Basics: Oils & Fats', 'Smoke points, flavor strength, and a healthy-fat spectrum for oils, butter, ghee, and more.');
 }
 
+if (pageType === 'abc') {
+  setSeo("Adrien's Baking Corner", "Adrien's beginner baking recipes, with notes on what worked and what didn't.");
+}
+
 const recipesEl = document.getElementById("recipes");
 const searchEl = document.getElementById("search");
 const detailedViewEl = document.getElementById("detailed-view");
@@ -1005,7 +1016,7 @@ if (searchEl && pageType !== 'list') {
 const newestEl = document.getElementById('newest');
 if (newestEl) {
   const newest = navigableRecipes
-    .filter(r => r.dateAdded)
+    .filter(r => r.dateAdded && !r.excludeFromNewest)
     .sort((a, b) => new Date(b.dateAdded) - new Date(a.dateAdded))
     .slice(0, 4);
 
@@ -1019,6 +1030,11 @@ if (newestEl) {
       </div>
     </a>
   `).join('');
+
+  // Adrien's Baking Corner: friendly empty state until he's posted a bake.
+  if (pageType === 'abc' && newest.length === 0) {
+    newestEl.innerHTML = '<p class="section-empty-state">No bakes posted yet — check back soon!</p>';
+  }
 }
 
 // Homepage: render popular recipes into #popular when present
@@ -1488,6 +1504,169 @@ if (pageType === 'detail' && detailedViewEl) {
       }, 0);
     } else {
       detailedViewEl.innerHTML = '<p>Recipe not found. <a href="recipes-list.html">Back to recipes</a></p>';
+    }
+  }
+}
+
+// Adrien's Baking Corner recipe detail page. Mirrors the 'detail' block
+// above, but links back into abc.html / abc-recipe-detail.html instead of
+// the main site, and adds the optional "Adrien's Notes" callout.
+if (pageType === 'abc-detail' && detailedViewEl) {
+  function renderDetailedView(recipe) {
+    setSeo(recipe.title, recipe.description || '');
+
+    // Validate recipe has required fields
+    const hasIngredients = Array.isArray(recipe.ingredients) && recipe.ingredients.length > 0;
+    const hasSteps = Array.isArray(recipe.steps) && recipe.steps.length > 0;
+    const isIncomplete = !hasIngredients || !hasSteps;
+
+    // Find current recipe index for Previous/Next navigation
+    const currentIndex = navigableRecipes.findIndex(r => r.id === recipe.id);
+    const prevRecipe = currentIndex > 0 ? navigableRecipes[currentIndex - 1] : null;
+    const nextRecipe = currentIndex < navigableRecipes.length - 1 ? navigableRecipes[currentIndex + 1] : null;
+
+    // Helper to safely render notes (can be array or string for backwards compatibility)
+    const notesArray = Array.isArray(recipe.notes) ? recipe.notes : (recipe.notes ? [recipe.notes] : []);
+
+    detailedViewEl.innerHTML = `
+      <div class="detail-controls">
+        <button class="back-btn button-family button-secondary" onclick="window.location.href='abc.html'">← Back to Adrien's Baking Corner</button>
+        <button class="copy-link-btn button-family button-secondary" id="copyLinkBtn">Copy Link</button>
+      </div>
+      <article class="recipe-detail">
+        <h1>${recipe.title}</h1>
+        <p class="recipe-description">${recipe.description}</p>
+        <div class="recipe-meta">
+          <div class="meta-primary">
+            <span class="badge">${formatRecipeCategories(recipe, ' • ')}</span>
+            <button class="print-recipe-btn button-family button-primary" id="printRecipeBtn" type="button">Print Recipe</button>
+            <button class="cook-mode-btn button-family button-secondary" id="cookModeBtn" type="button" aria-pressed="false">Cook Mode: Off</button>
+          </div>
+        </div>
+        ${renderNutritionSection(recipe)}
+        <p class="cook-mode-status" id="cookModeStatus" aria-live="polite"></p>
+        ${recipe.tags && Array.isArray(recipe.tags) && recipe.tags.length > 0 ? `<div class="recipe-tags">${recipe.tags.map(t => `<span class="tag">${t}</span>`).join('')}</div>` : ''}
+        ${renderServingsControl(recipe)}
+        <div class="recipe-image-outer"><img src="${getRecipeOriginalImageUrl(recipe)}" alt="${recipe.title}" class="recipe-image" id="recipe-image-zoom" style="cursor: zoom-in;"></div>
+        <div class="recipe-content-wrapper">
+          ${hasIngredients ? `
+            <section class="recipe-section">
+              <h2>Ingredients</h2>
+              <div id="ingredientsContainer">${renderIngredientsMarkup(recipe.ingredients)}</div>
+            </section>
+          ` : '<p class="incomplete-warning">Ingredients data incomplete</p>'}
+        </div>
+        ${hasSteps ? `
+          <section class="recipe-section">
+            <h2>Instructions</h2>
+            <ol class="steps-list">
+              ${recipe.steps.map(s => `<li>${s}</li>`).join('')}
+            </ol>
+          </section>
+        ` : '<p class="incomplete-warning">Instructions data incomplete</p>'}
+        ${notesArray.length > 0 ? `
+          <section class="recipe-section">
+            <h2>Notes</h2>
+            <ul class="notes-list">
+              ${notesArray.map(n => `<li>${n}</li>`).join('')}
+            </ul>
+          </section>
+        ` : ''}
+        ${recipe.adrienNotes ? `
+          <section class="recipe-section">
+            <div class="adrien-notes-callout">
+              <h2>📝 Adrien's Notes</h2>
+              <p>${recipe.adrienNotes}</p>
+            </div>
+          </section>
+        ` : ''}
+        ${isIncomplete ? `<div class="incomplete-message"><p><strong>⚠️ Recipe data incomplete:</strong> This recipe is missing ingredients or instructions. Please check back later or contact the maintainer.</p></div>` : ''}
+      </article>
+      <div class="recipe-nav">
+        ${prevRecipe ? `<a href="abc-recipe-detail.html?id=${(prevRecipe.id)}" class="nav-btn prev-btn">← ${prevRecipe.title}</a>` : ''}
+        ${nextRecipe ? `<a href="abc-recipe-detail.html?id=${(nextRecipe.id)}" class="nav-btn next-btn">${nextRecipe.title} →</a>` : ''}
+      </div>
+      <div id="imageModal" class="image-modal">
+        <span class="image-modal-close">&times;</span>
+        <img class="image-modal-content" id="modalImage" src="" alt="">
+      </div>
+    `;
+
+    // Attach copy link button handler
+    const copyBtn = document.getElementById('copyLinkBtn');
+    if (copyBtn) {
+      copyBtn.addEventListener('click', () => {
+        const url = window.location.href;
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+          navigator.clipboard.writeText(url).then(() => {
+            const originalText = copyBtn.textContent;
+            copyBtn.textContent = 'Copied!';
+            setTimeout(() => {
+              copyBtn.textContent = originalText;
+            }, 1500);
+          }).catch(() => {
+            fallbackCopy(url);
+          });
+        } else {
+          fallbackCopy(url);
+        }
+      });
+    }
+
+    const printBtn = document.getElementById('printRecipeBtn');
+    if (printBtn) {
+      printBtn.addEventListener('click', () => {
+        window.print();
+      });
+    }
+
+    setupCookModeControl();
+    setupServingsControl(recipe);
+  }
+
+  function fallbackCopy(url) {
+    const userInput = prompt('Copy the link below:', url);
+    if (userInput !== null) {
+      // User clicked OK, text is already in the prompt for selection
+    }
+  }
+
+  // Read recipe ID from URL and render detail view
+  const urlParams = new URLSearchParams(window.location.search);
+  const recipeId = urlParams.get('id');
+
+  if (recipeId) {
+    const recipe = recipes.find(r => (r.id) === recipeId);
+    if (recipe) {
+      renderDetailedView(recipe);
+
+      // Setup image zoom modal
+      setTimeout(() => {
+        const imageZoom = document.getElementById('recipe-image-zoom');
+        const modal = document.getElementById('imageModal');
+        const modalImg = document.getElementById('modalImage');
+        const closeBtn = document.querySelector('.image-modal-close');
+
+        if (imageZoom && modal && modalImg && closeBtn) {
+          imageZoom.addEventListener('click', () => {
+            modal.style.display = 'flex';
+            modalImg.src = imageZoom.src;
+            modalImg.alt = imageZoom.alt;
+          });
+
+          closeBtn.addEventListener('click', () => {
+            modal.style.display = 'none';
+          });
+
+          modal.addEventListener('click', (e) => {
+            if (e.target === modal) {
+              modal.style.display = 'none';
+            }
+          });
+        }
+      }, 0);
+    } else {
+      detailedViewEl.innerHTML = '<p>Recipe not found. <a href="abc.html">Back to Adrien\'s Baking Corner</a></p>';
     }
   }
 }
