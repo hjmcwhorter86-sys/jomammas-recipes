@@ -1,6 +1,6 @@
 ---
 name: recipe
-description: Add a new recipe to the site from a photo of the dish, rough/messy notes, and an optional source link. Cleans the notes up into the site's structured ingredient format, processes the photo, fills in any missing ingredient nutrition data, and publishes the result.
+description: Add a new recipe to the site from a photo of the dish, rough/messy notes, and an optional source link. Cleans the notes up into the site's structured ingredient format, processes the photo, fills in any missing ingredient nutrition data, and publishes the result. Also handles recipes for Adrien's Baking Corner (ABC) when the request says so.
 argument-hint: [rough notes, ingredient list, steps — however messy] [optional: source URL]
 ---
 
@@ -9,6 +9,30 @@ argument-hint: [rough notes, ingredient list, steps — however messy] [optional
 Turns a quick phone-dump (photo of the finished dish + rough notes, maybe a
 source link) into a fully structured recipe entry in `recipes-data.js`,
 committed and pushed.
+
+## Adrien's Baking Corner (ABC)
+
+If the request says this recipe belongs on Adrien's Baking Corner — phrases
+like "add this to ABC", "this is for Adrien's Baking Corner", "add this to
+Adrien's page" — it's a different recipe, target file, and category list
+than the rest of this skill describes. When that's the case:
+
+- Append to `window.adrienRecipes` in `adrien-recipes-data.js` instead of
+  `recipes-data.js`. Same ingredient/recipe object shape (see that file's
+  top comment), plus the optional `adrienNotes` field (string) for Adrien's
+  own beginner tips/what-went-wrong notes — only set it if the user actually
+  gives you something to put there.
+- `category` comes from ABC's own list: Cookies, Breads, Cakes & Cupcakes,
+  Pies & Tarts, Fails & Fixes. There's no `images/category-*.png` icon for
+  these yet — the category tiles on `abc.html` currently use emoji
+  placeholders, so a new category here doesn't need a matching image.
+- Recipe images still get processed the same way (steps 3 and 8 below), but
+  the detail page is `abc-recipe-detail.html?id=<id>`, not
+  `recipe-detail.html` — don't link to the main site's detail page.
+- Spot-check on `abc.html` and `abc-recipe-detail.html`, not
+  `recipes-list.html`/`recipe-detail.html` — this recipe won't appear there.
+- If the request doesn't mention ABC/Adrien at all, default to the regular
+  flow below (main site, `recipes-data.js`).
 
 ## Inputs
 
@@ -48,12 +72,12 @@ committed and pushed.
    every existing `id` in `recipes-data.js`; if it collides, disambiguate
    (e.g. `-2`).
 
-4. **Pick `category`** from the fixed existing set: Chicken, Beef, Pasta,
-   Seafood, Dessert, Soup, Breakfast, Slow Cooker, Snacks & Sides, Kitchen
-   Basics (each has a matching `images/category-*.png` icon — there's no
-   mechanism in this skill to add a new category icon, so only suggest a
-   new category if truly nothing fits, and confirm with the user first
-   since it needs follow-up work).
+4. **Pick `category`** from the fixed existing set: Chicken, Beef, Pork,
+   Pasta, Seafood, Dessert, Soup, Breakfast, Slow Cooker, Snacks & Sides,
+   Kitchen Basics (each has a matching `images/category-*.png` icon —
+   there's no mechanism in this skill to add a new category icon, so only
+   suggest a new category if truly nothing fits, and confirm with the user
+   first since it needs follow-up work).
 
 5. **Check every quantified ingredient against the nutrition database.**
    For each ingredient with a non-null `qty`, normalize its name the same
