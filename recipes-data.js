@@ -1820,4 +1820,70 @@ tags: ["dessert", "high protein"]
   ]
 },
 
+{
+  id: "chicken-cordon-bleu-casserole",
+  title: "Chicken Cordon Bleu Casserole",
+  description: "A creamy, cheesy twist on the classic. Layers of chicken and ham under a mustard-Swiss sauce, topped with garlic panko and baked until golden.",
+  image: "images/cordon-bleu-casserole.jpg",
+  category: "Chicken",
+  dateAdded: "2026-07-13",
+  carbs: null,
+  fat: null,
+  fiber: null,
+  calories: "",
+  protein: "",
+  servings: "8",
+  tags: ["chicken", "casserole", "ham", "cordon bleu", "cheese sauce", "comfort food"],
+
+  ingredients: [
+    {
+      title: "Chicken & Ham",
+      items: [
+        { qty: 5.5, unit: "cup", name: "shredded cooked chicken", notes: "slow cooked or rotisserie, your choice — see the <a href=\"recipe-detail.html?id=slow-cooked-shredded-chicken\">slow cooked shredded chicken recipe</a>" },
+        { qty: 2, unit: "cup", name: "ham", notes: "cubed" },
+        { qty: null, unit: null, name: "Black pepper, to taste" }
+      ]
+    },
+    {
+      title: "Cheese Sauce",
+      items: [
+        { qty: 4, unit: "tbsp", name: "unsalted butter" },
+        { qty: 0.25, unit: "cup", name: "flour", notes: "all-purpose" },
+        { qty: 0.25, unit: "cup", name: "dry white wine", notes: "such as Sauvignon Blanc or Pinot Grigio" },
+        { qty: 1.75, unit: "cup", name: "milk" },
+        { qty: 2, unit: "clove", name: "garlic", notes: "minced" },
+        { qty: 1, unit: "tbsp", name: "dijon mustard" },
+        { qty: 1, unit: "tbsp", name: "lemon juice" },
+        { qty: 0.5, unit: "tsp", name: "garlic powder" },
+        { qty: 0.25, unit: "tsp", name: "black pepper" },
+        { qty: null, unit: null, name: "Pinch of freshly grated nutmeg" },
+        { qty: 0.5, unit: "tsp", name: "salt", notes: "plus more to taste" },
+        { qty: 5, unit: "oz", name: "swiss cheese", notes: "shredded, about 1¼ cups" },
+        { qty: 0.25, unit: "cup", name: "parmesan", notes: "grated" }
+      ]
+    },
+    {
+      title: "Panko Topping",
+      items: [
+        { qty: 1, unit: "cup", name: "panko breadcrumbs" },
+        { qty: 2, unit: "tbsp", name: "unsalted butter", notes: "melted" },
+        { qty: 2, unit: "tbsp", name: "parmesan", notes: "grated" },
+        { qty: null, unit: null, name: "Pinch of garlic powder" },
+        { qty: null, unit: null, name: "Fresh thyme or parsley, for garnish", optional: true }
+      ]
+    }
+  ],
+
+  steps: [
+    "Preheat oven to 350°F and spray a 9x13 casserole dish with cooking spray.",
+    "Sear the cubed ham in a hot skillet for 2-3 minutes until lightly caramelized. Set aside.",
+    "Layer the chicken on the bottom of the casserole dish and season lightly with black pepper. Layer the seared ham on top.",
+    "For the cheese sauce, melt the butter in a saucepan over medium heat. Sprinkle the flour on top and cook for 1-2 minutes, stirring, until the mixture is dry and clumpy. Add the minced garlic and cook for 30 seconds until fragrant. Pour in the wine and let it bubble for 30-60 seconds to cook off the raw alcohol.",
+    "Whisk in the milk slowly. Add the mustard, lemon juice, garlic powder, black pepper, nutmeg, and salt. Simmer for 3-5 minutes, whisking constantly, until the mixture thickens.",
+    "Remove from heat and stir in the Swiss and Parmesan cheese gradually until melted and smooth. Taste and add more salt if needed. If the sauce seems too thick, thin it out with a splash of extra milk, a tablespoon at a time, until pourable. Pour evenly over the chicken and ham.",
+    "For the panko topping, combine the panko, melted butter, Parmesan, and garlic powder in a small bowl. Sprinkle over the casserole.",
+    "Bake uncovered for 30-35 minutes, until the breadcrumbs are golden brown and the casserole is bubbly. Let cool for 5-10 minutes. Garnish with fresh thyme or parsley if using, then serve."
+  ]
+},
+
 ];
