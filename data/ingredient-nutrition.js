@@ -1821,4 +1821,26 @@ window.ingredientNutrition = {
     verified: true,
     source: "Great Value Non-Pareil Capers label: 0 cal / 0g fat / 0g carbs / 0g protein per 2 tbsp (15g), per user-provided photo"
   },
+  "ham": {
+    per: "100g",
+    calories: 145,
+    protein: 21,
+    fat: 6,
+    fiber: 0,
+    carbs: 1.5,
+    unitWeights: {},
+    verified: false,
+    source: "Estimated by Claude (USDA FoodData Central, cured cooked ham ~11% fat), unverified — pending user review"
+  },
+  "swiss cheese": {
+    per: "100g",
+    calories: 380,
+    protein: 26.9,
+    fat: 27.8,
+    fiber: 0,
+    carbs: 5.4,
+    unitWeights: {},
+    verified: false,
+    source: "Estimated by Claude (typical USDA FoodData Central / brand-label values), unverified — pending user review"
+  },
 };
