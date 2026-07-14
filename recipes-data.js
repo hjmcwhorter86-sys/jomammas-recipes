@@ -1810,7 +1810,7 @@ tags: ["dessert", "high protein"]
   steps: [
     "Place the chicken breasts in the bottom of the crockpot in a single layer.",
     "Season evenly with the kosher salt, black pepper, garlic powder, onion powder, and paprika. Dot the top of the chicken with the pats of butter.",
-    "Cover and cook on low for 2 hours if your crockpot runs hot, or 3-4 hours for a standard crockpot, until the chicken reaches an internal temperature of 165 degrees and shreds easily with a fork.",
+    "Cover and cook on low for 3-4 hours or until the chicken's internal temperature reaches 165 degrees and it shreds easily with a fork.",
     "Remove the chicken from the crockpot and let rest for 5-10 minutes.",
     "Shred using a stand mixer fitted with the paddle attachment on low speed, or shred by hand with two forks. If desired, spoon a little of the cooking liquid back over the shredded chicken to keep it moist."
   ],
