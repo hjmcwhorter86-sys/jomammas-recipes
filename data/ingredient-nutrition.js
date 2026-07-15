@@ -1843,4 +1843,15 @@ window.ingredientNutrition = {
     verified: false,
     source: "Estimated by Claude (typical USDA FoodData Central / brand-label values), unverified — pending user review"
   },
+  "active dry yeast": {
+    per: "100g",
+    calories: 0,
+    protein: 0,
+    fat: 0,
+    fiber: 0,
+    carbs: 0,
+    unitWeights: { packet: 7 },
+    verified: true,
+    source: "Fleischmann's Active Dry Yeast label: 0 cal / 0g fat / 0g total carb / 0g protein per 1/4 tsp (0.9g) serving, all values round to 0 at that serving size; 1 packet = 1/4 oz (7g), per user-provided photo"
+  },
 };

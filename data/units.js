@@ -41,6 +41,7 @@ window.unitConversions = {
     can:   { plural: "cans" },
     stick: { plural: "sticks" },
     bunch: { plural: "bunches" },
+    packet: { plural: "packets" },
   },
 
   // Ingredient-specific densities (grams per milliliter), for converting a
