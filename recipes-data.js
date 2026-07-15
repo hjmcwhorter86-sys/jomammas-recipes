@@ -1566,8 +1566,8 @@ tags: ["dessert", "high protein"]
       title: "The Gravy",
       items: [
         { qty: 3, unit: "slice", name: "bacon", notes: "center cut, chopped" },
-        { qty: 0.5, unit: "cup", name: "sweet onion", notes: "finely chopped, from 1 small onion" },
-        { qty: 1.5, unit: "tbsp", name: "garlic", notes: "minced, from about 4 cloves" },
+        { qty: 0.5, unit: "cup", name: "sweet onion", notes: "finely chopped" },
+        { qty: 1.5, unit: "tbsp", name: "garlic", notes: "minced" },
         { qty: 1.5, unit: "cup", name: "chicken broth" },
         { qty: 0.5, unit: "cup", name: "half and half" },
         { qty: 1, unit: "tsp", name: "Worcestershire sauce" },
