@@ -1854,4 +1854,16 @@ window.ingredientNutrition = {
     verified: true,
     source: "Fleischmann's Active Dry Yeast label: 0 cal / 0g fat / 0g total carb / 0g protein per 1/4 tsp (0.9g) serving, all values round to 0 at that serving size; 1 packet = 1/4 oz (7g), per user-provided photo"
   },
+
+  "pork tenderloin": {
+    per: "100g",
+    calories: 116,
+    protein: 20.5,
+    fat: 3.6,
+    fiber: 0,
+    carbs: 0,
+    unitWeights: {},
+    verified: true,
+    source: "Smithfield Pork Tenderloin label: 130 cal / 4g fat / 0g fiber / 0g carb / 23g protein per 4 oz (112g) raw serving, per user-provided photo"
+  },
 };

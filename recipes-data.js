@@ -1885,4 +1885,49 @@ tags: ["dessert", "high protein"]
   ]
 },
 
+  {
+  id: "garlic-brown-sugar-pork-tenderloin",
+  title: "Garlic Brown Sugar Pork Tenderloin",
+  description: "Dry brined, seared, then oven roasted with a sticky garlic brown sugar glaze spooned right over the top.",
+  image: "images/garlic-brown-sugar-pork-tenderloin.png",
+  category: "Pork",
+  dateAdded: "2026-07-15",
+  carbs: null,
+  fat: null,
+  fiber: null,
+  calories: "",
+  protein: "",
+  servings: "4",
+  tags: ["pork", "tenderloin", "garlic", "brown sugar", "skillet", "oven roasted"],
+
+  ingredients: [
+    { qty: 1, qtyMax: 1.5, unit: "lb", name: "pork tenderloin" },
+    { qty: 1, unit: "tsp", name: "kosher salt", notes: "for dry brine" },
+    { qty: 5, unit: "clove", name: "garlic", notes: "minced" },
+    { qty: 3, unit: "tbsp", name: "brown sugar" },
+    { qty: 1, unit: "tbsp", name: "smoked paprika" },
+    { qty: 1, unit: "tsp", name: "black pepper" },
+    { qty: 0.25, unit: "tsp", name: "cayenne pepper", notes: "optional, for heat", optional: true },
+    { qty: 2, unit: "tbsp", name: "olive oil" },
+    { qty: 2, unit: "tbsp", name: "unsalted butter" },
+    { qty: 1, unit: "tbsp", name: "low sodium soy sauce" },
+    { qty: 0.25, unit: "cup", name: "chicken broth" }
+  ],
+
+  steps: [
+    "Dry brine ahead of time: pat the pork completely dry with paper towels, then rub all over with the kosher salt. Place uncovered on a plate or rack in the fridge for 1 to 4 hours (up to overnight if prepping the night before).",
+    "When ready to cook, remove the pork from the fridge and pat dry again. Preheat the oven to 400°F.",
+    "Mix the brown sugar, smoked paprika, black pepper, and cayenne in a small bowl. Rub all over the pork.",
+    "Heat the olive oil in an oven-safe skillet (cast iron is great) over medium-high heat. Sear the pork on all sides until deep golden brown, about 2 minutes per side (about 8 minutes total). If it doesn't fit in the pan, cut it in half crosswise into two shorter pieces rather than letting it curl.",
+    "Reduce heat to medium. Add the garlic and butter to the pan, spooning the melted butter over the pork for about 1 minute. Don't let the garlic burn.",
+    "Pour in the soy sauce and chicken broth, scraping up the browned bits from the bottom of the pan.",
+    "Transfer the whole skillet to the oven. Roast about 15 minutes, until internal temp hits 140-145°F at the thickest part.",
+    "Remove from the oven, tent with foil, and rest 5 minutes. Spoon the pan sauce over the top before slicing."
+  ],
+
+  notes: [
+    "Pull it at 140-145°F — carryover heat during resting brings it up those last few degrees without drying it out. A meat thermometer makes this foolproof."
+  ]
+},
+
 ];
