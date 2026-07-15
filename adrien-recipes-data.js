@@ -17,8 +17,8 @@ window.adrienRecipes = [
   {
     id: "adriens-white-bread",
     title: "Adrien's White Bread",
-    description: "A soft, golden white sandwich loaf kneaded in the stand mixer — Adrien's first bread recipe on the corner.",
-    servings: "2 loaves (9x5 pans)",
+    description: "A soft, golden white sandwich loaf kneaded in the stand mixer. It's Adrien's first bread recipe on the corner.",
+    servings: "24",
     category: "Breads",
     image: "images/adriens-white-bread.png",
     dateAdded: "2026-07-15",
