@@ -986,6 +986,12 @@ if (pageType === 'kitchen-basics-oils-fats') {
 
 if (pageType === 'abc') {
   setSeo("Adrien's Baking Corner", "Adrien's beginner baking recipes, with notes on what worked and what didn't.");
+
+  // Hide the "coming soon" banner once Adrien has posted a bake.
+  const abcBannerEl = document.getElementById('abcBanner');
+  if (abcBannerEl && (window.adrienRecipes || []).length > 0) {
+    abcBannerEl.remove();
+  }
 }
 
 const recipesEl = document.getElementById("recipes");
