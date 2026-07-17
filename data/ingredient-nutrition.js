@@ -1866,4 +1866,26 @@ window.ingredientNutrition = {
     verified: true,
     source: "Smithfield Pork Tenderloin label: 130 cal / 4g fat / 0g fiber / 0g carb / 23g protein per 4 oz (112g) raw serving, per user-provided photo"
   },
+  "spaghetti": {
+    per: "100g",
+    calories: 371,
+    protein: 13,
+    fat: 1.5,
+    fiber: 3.2,
+    carbs: 75,
+    unitWeights: {},
+    verified: false,
+    source: "Estimated by Claude (typical USDA FoodData Central / brand-label values for dry pasta), unverified, pending user review"
+  },
+  "egg yolk": {
+    per: "100g",
+    calories: 322,
+    protein: 15.9,
+    fat: 26.5,
+    fiber: 0,
+    carbs: 3.6,
+    unitWeights: { "egg yolk": 17 },
+    verified: false,
+    source: "Estimated by Claude (typical USDA FoodData Central values for raw egg yolk, 1 large yolk ≈ 17g), unverified, pending user review"
+  },
 };
