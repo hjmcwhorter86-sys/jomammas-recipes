@@ -1930,4 +1930,48 @@ tags: ["dessert", "high protein"]
   ]
 },
 
+  {
+  id: "spaghetti-carbonara",
+  title: "Spaghetti Carbonara",
+  description: "Guanciale and a mix of Pecorino Romano and Parmesan are the traditional choices for carbonara, but this recipe works great if you don't have the more authentic ingredients available at your local grocery store. Bacon and Parmesan bring you most of the way there, and the double boiler method keeps the eggs silky instead of scrambled.",
+  image: "images/no-photo.jpg",
+  category: ["Pasta", "Pork"],
+  dateAdded: "2026-07-17",
+  carbs: null,
+  fat: null,
+  fiber: null,
+  calories: "",
+  protein: "",
+  servings: "4",
+  tags: ["pasta", "carbonara", "bacon", "italian", "comfort food"],
+
+  ingredients: [
+    { qty: 1, unit: "lb", name: "spaghetti" },
+    { qty: 8, unit: "oz", name: "bacon", display: "8 oz thick cut bacon, cut into small strips (lardons)" },
+    { qty: 2, unit: null, name: "eggs", display: "2 whole eggs" },
+    { qty: 3, unit: null, name: "egg yolks" },
+    { qty: 1.5, unit: "cup", name: "Parmesan", display: "1½ cups finely grated Parmesan (a mix of Parmesan and Asiago also works well)" },
+    { qty: null, unit: null, name: "Fresh black pepper, coarsely ground, to taste" },
+    { qty: null, unit: null, name: "Reserved pasta water" },
+    { qty: null, unit: null, name: "Salt for pasta water" }
+  ],
+
+  steps: [
+    "Bring a large pot of salted water to a boil for the pasta.",
+    "While it heats, cook the bacon in a skillet over medium heat until crisp and the fat has rendered. Remove the bacon with a slotted spoon and set it aside. Leave the fat in the pan and set the pan aside.",
+    "Cook the spaghetti until just shy of al dente. It will finish cooking in the sauce.",
+    "Using tongs, transfer the pasta directly from the pot into the skillet with the pork fat, reserving about 1 cup of pasta water. Stir the pasta in the fat over low heat for about a minute so it soaks up flavor, then remove the pan from the heat entirely.",
+    "While the pasta rests off heat, whisk the eggs, yolks, grated cheese, and a generous amount of black pepper together in a metal or heatproof glass bowl.",
+    "Set the bowl over the still-hot pasta pot, using it as a double boiler. Don't let the bowl touch the water. Whisk slowly and constantly until the mixture warms slightly and the cheese starts to melt into a smooth, thick sauce.",
+    "Remove the bowl from the pot. Add the pasta from the skillet into the bowl with the sauce, tossing constantly with tongs so the residual heat cooks the eggs gently without scrambling them.",
+    "Add the reserved bacon and a splash of pasta water as needed, tossing until the sauce turns glossy and coats the noodles evenly.",
+    "Finish with more black pepper and extra grated cheese on top."
+  ],
+
+  notes: [
+    "Using 2 whole eggs plus 3 yolks instead of all whole eggs gives the sauce more richness and body without adding extra water from the whites.",
+    "Thick cut bacon renders more fat and gives a heartier bite than center cut, getting closer to guanciale's texture. Pancetta is a closer substitute than bacon if you can find it locally."
+  ]
+},
+
 ];
