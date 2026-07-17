@@ -1934,7 +1934,7 @@ tags: ["dessert", "high protein"]
   id: "spaghetti-carbonara",
   title: "Spaghetti Carbonara",
   description: "Guanciale and a mix of Pecorino Romano and Parmesan are the traditional choices for carbonara, but this recipe works great if you don't have the more authentic ingredients available at your local grocery store. Bacon and Parmesan bring you most of the way there, and the double boiler method keeps the eggs silky instead of scrambled.",
-  image: "images/no-photo.jpg",
+  image: "images/spaghetti-carbonara.png",
   category: ["Pasta", "Pork"],
   dateAdded: "2026-07-17",
   carbs: null,
