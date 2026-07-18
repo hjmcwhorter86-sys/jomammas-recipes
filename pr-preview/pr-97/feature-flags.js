@@ -1,0 +1,22 @@
+// Feature flag registry for JoMama's Recipes.
+//
+// Each entry is a flag and its default state. The default is what
+// everyone gets unless they've flipped a personal override on the flags
+// page (flags.html). "Rolling out" a feature means changing its default to
+// `true` here; once everyone's on it, delete the flag and the code path it
+// gates.
+//
+// Don't read this object directly in app code — use
+// window.flagsService.isEnabled('flagName'), which layers in overrides.
+window.featureFlags = {
+  showComputedNutrition: {
+    label: "Computed nutrition facts",
+    description: "Show nutrition facts computed from structured ingredients, instead of (or alongside) the manually entered fields.",
+    default: true,
+  },
+  nutritionPanelView: {
+    label: "Condensed nutrition panel",
+    description: "Show a condensed, color-coded stat panel instead of the plain nutrition list on the recipe detail page.",
+    default: false,
+  },
+};
