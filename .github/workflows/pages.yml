@@ -103,7 +103,6 @@ jobs:
             --exclude '.claude' \
             --exclude 'node_modules' \
             --exclude 'tests' \
-            --exclude 'screenshots' \
             --exclude 'scripts' \
             --exclude 'playwright-report' \
             --exclude 'test-results' \
@@ -134,6 +133,8 @@ jobs:
   cleanup-preview:
     if: github.event_name == 'pull_request' && github.event.action == 'closed'
     runs-on: ubuntu-latest
+    outputs:
+      changed: ${{ steps.remove.outputs.changed }}
     steps:
       - uses: actions/checkout@v4
         with:
@@ -229,7 +230,6 @@ jobs:
             --exclude '.claude' \
             --exclude 'node_modules' \
             --exclude 'tests' \
-            --exclude 'screenshots' \
             --exclude 'scripts' \
             --exclude 'playwright-report' \
             --exclude 'test-results' \
@@ -259,18 +259,63 @@ jobs:
 
   deploy:
     needs: [publish-preview, cleanup-preview, publish-root]
+    # A PR merge fires both `pull_request: closed` (cleanup-preview) and
+    # `push` (publish-root) for the same commit, each in its own workflow
+    # run. Both would otherwise call actions/deploy-pages for that same
+    # commit, and the second one reliably fails ("Deployment failed, try
+    # again later") since GitHub Pages doesn't like two deployments for an
+    # identical build version in quick succession. So skip this job on the
+    # cleanup-preview path when the PR was actually merged — the push
+    # event's publish-root deploy already covers that commit (including
+    # this run's preview-removal commit, once queued behind it via the
+    # `pages` concurrency group). Only deploy from cleanup-preview alone
+    # when the PR was closed without merging, since then no push event
+    # will pick up the removal.
+    #
+    # cleanup-preview only uploads a Pages artifact when it actually
+    # changed something (its `changed` output) — it can succeed without
+    # uploading (e.g. nothing to remove), and deploy-pages has no artifact
+    # to deploy in that case. So gate on `outputs.changed`, not just
+    # `result == 'success'`.
     if: |
       always() &&
       (needs.publish-preview.result == 'success' ||
-       needs.cleanup-preview.result == 'success' ||
-       needs.publish-root.result == 'success')
+       needs.publish-root.result == 'success' ||
+       (needs.cleanup-preview.outputs.changed == 'true' && github.event.pull_request.merged != true))
     runs-on: ubuntu-latest
     environment:
       name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
+      url: ${{ steps.deploy1.outputs.page_url || steps.deploy2.outputs.page_url || steps.deploy3.outputs.page_url }}
     steps:
-      - name: Deploy to GitHub Pages
-        id: deployment
+      # actions/deploy-pages occasionally gets a hard "Deployment failed,
+      # try again later." from GitHub's Pages backend within seconds of
+      # creating the deployment — a transient server-side rejection, not a
+      # timeout, so the action's own status-polling retry (error_count /
+      # reporting_interval) doesn't help. A fresh attempt usually succeeds,
+      # so retry natively here rather than requiring a manual "re-run
+      # failed jobs" click each time.
+      - name: Deploy to GitHub Pages (attempt 1)
+        id: deploy1
+        uses: actions/deploy-pages@v5
+        continue-on-error: true
+
+      - name: Wait before retry
+        if: steps.deploy1.outcome == 'failure'
+        run: sleep 15
+
+      - name: Deploy to GitHub Pages (attempt 2)
+        id: deploy2
+        if: steps.deploy1.outcome == 'failure'
+        uses: actions/deploy-pages@v5
+        continue-on-error: true
+
+      - name: Wait before final retry
+        if: steps.deploy1.outcome == 'failure' && steps.deploy2.outcome == 'failure'
+        run: sleep 30
+
+      - name: Deploy to GitHub Pages (attempt 3)
+        id: deploy3
+        if: steps.deploy1.outcome == 'failure' && steps.deploy2.outcome == 'failure'
         uses: actions/deploy-pages@v5
 
   update-preview-comment:

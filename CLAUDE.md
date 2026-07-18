@@ -14,36 +14,14 @@ separate build step. Production deploys to GitHub Pages on every merge to
 `pr-preview/pr-<number>/` subfolder deploy for each open PR. See that
 workflow's header comment for the deployment architecture.
 
-## Visual review screenshots — let CI handle the full suite
+## Visual review
 
-This repo has a Playwright screenshot suite (`tests/screenshots.spec.js`)
-that captures the core pages, a few representative recipe layouts, and key
-interactive states at mobile and desktop sizes, saving PNGs into
-`screenshots/`.
-
-**You do not need to run the full screenshot suite locally.** It's slow
-(install + every page at mobile and desktop), and a GitHub Actions workflow
-(`.github/workflows/screenshots.yml`) regenerates and commits these PNGs
-automatically on every PR — so reviewers still get the before/after
-`screenshots/` diff in the PR's Files tab without you regenerating them by
-hand. Treat the screenshot suite as primarily a CI step.
-
-What's expected locally instead: when a change could affect rendering,
-open the affected page(s) in a browser and confirm the specific thing you
-changed actually renders correctly. That targeted spot-check is enough —
-no need to capture or commit PNGs yourself.
-
-If you ever do want to regenerate the whole suite locally (rarely
-necessary), it's:
-
-```bash
-npm install
-npx playwright install --with-deps chromium
-npm run screenshots
-```
-
-and any changed PNGs under `screenshots/` can be staged alongside your code
-change — but CI will produce them regardless.
+There is no automated screenshot suite — it was removed as noise-generating
+(regenerated the whole gallery on every PR regardless of relevance, and
+some of it was non-deterministic besides). When a change could affect
+rendering, open the affected page(s) in a browser and confirm the specific
+thing you changed actually renders correctly. `tests/perf.spec.js` remains
+for automated perf-regression checks.
 
 ## styles.css cache-busting
 
@@ -61,4 +39,4 @@ so the new stylesheet is fetched fresh instead of read from cache.
 `window.flagsService.isEnabled('flagName')` checks `feature-flags.js`
 defaults plus any per-browser override set via `flags.html`. When adding a
 flag-gated feature, spot-check it in the browser both with the flag on and
-off (CI captures the screenshots).
+off.

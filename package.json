@@ -2,7 +2,6 @@
   "name": "jomammas-recipes",
   "private": true,
   "scripts": {
-    "screenshots": "playwright test",
     "optimize-images": "node scripts/optimize-images.js",
     "check-images": "node scripts/check-images-optimized.js"
   },

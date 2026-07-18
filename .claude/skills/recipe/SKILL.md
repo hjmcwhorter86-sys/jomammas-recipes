@@ -126,13 +126,10 @@ than the rest of this skill describes. When that's the case:
    between logical ingredient groups, trailing comma after the closing
    `}`).
 
-10. **Spot-check rendering — do NOT run the full screenshot suite.** Adding
-    a recipe changes the home page ("Newest Recipes"), the recipes list
-    page, and the new recipe's detail page. Open those in a browser and
-    confirm the new recipe renders correctly. Do **not** run
-    `npm run screenshots` locally — it's slow, and the
-    `.github/workflows/screenshots.yml` CI workflow regenerates and commits
-    the PNGs automatically on every PR (see this repo's CLAUDE.md).
+10. **Spot-check rendering.** Adding a recipe changes the home page
+    ("Newest Recipes"), the recipes list page, and the new recipe's detail
+    page. Open those in a browser and confirm the new recipe renders
+    correctly.
 
 11. **Show the user the final structured recipe** (ingredients, steps,
     category, any new nutrition entries you added and their sources)
@@ -140,7 +137,7 @@ than the rest of this skill describes. When that's the case:
 
 12. **Commit and push** — the new recipe, any new/updated nutrition
     entries, and the new images together, in one commit, to the current
-    branch. (No screenshots — CI regenerates and commits those on the PR.)
+    branch.
 
 13. **Summarize**: recipe id/title, category, image source (photo vs.
     fallback), and any new ingredient nutrition entries added along with

@@ -77,14 +77,12 @@ product's page online.
    the specific product if one is visible/given, even though the key
    itself stays generic.
 
-9. **Regenerate screenshots.** This entry can change computed nutrition on
-   any recipe that uses this ingredient — including the three recipes with
-   dedicated detail-page screenshots. Run `npm run screenshots` and stage
-   whatever PNG diffs result, per this repo's CLAUDE.md rule.
+9. **Spot-check rendering.** This entry can change computed nutrition on
+   any recipe that uses this ingredient. Open one of those recipes' detail
+   pages in a browser and confirm the nutrition numbers render correctly.
 
 10. **Commit and push** the `data/ingredient-nutrition.js` change (and any
-    `data/units.js` density addition, and regenerated screenshots)
-    together, to the current branch.
+    `data/units.js` density addition) together, to the current branch.
 
 11. **Summarize**: the key used, the values added/changed, the source, and
     — if you can tell from a quick scan of `recipes-data.js` — which
