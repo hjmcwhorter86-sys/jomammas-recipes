@@ -1180,10 +1180,49 @@ body{
   flex-wrap: wrap;
 }
 
+.recipe-meta--panel {
+  align-items: flex-start;
+  gap: var(--space-2-5);
+}
+
 .meta-primary {
   display: inline-flex;
   align-items: center;
+  flex-wrap: wrap;
   gap: var(--space-2-5);
+}
+
+.btn-icon {
+  font-size: 1em;
+}
+
+.info-tooltip {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 22px;
+  height: 22px;
+  font-size: 13px;
+  line-height: 1;
+  cursor: help;
+}
+
+.info-tooltip:focus-visible {
+  outline: 2px solid var(--color-teal);
+  outline-offset: 2px;
+  border-radius: var(--radius-sm);
+}
+
+@media (max-width: 480px) {
+  .recipe-meta--panel .btn-label {
+    display: none;
+  }
+
+  .recipe-meta--panel .print-recipe-btn,
+  .recipe-meta--panel .cook-mode-btn {
+    padding: var(--space-2);
+    gap: 0;
+  }
 }
 
 .badge {
@@ -1301,9 +1340,15 @@ body{
   font-size: 16px;
 }
 
+.recipe-nutrition--panel {
+  flex: 1 1 240px;
+  max-width: 280px;
+  margin: 0 0 0 auto;
+}
+
 .nutrition-panel-grid {
   display: grid;
-  gap: var(--space-2-5);
+  gap: var(--space-1-5);
   --nutrition-calories: #b5541a;
   --nutrition-calories-bg: #fbe9db;
   --nutrition-carbs: #7a4fa3;
@@ -1317,13 +1362,14 @@ body{
 .nutrition-panel-macros {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: var(--space-2-5);
+  gap: var(--space-1-5);
 }
 
 .nutrition-stat {
-  border-radius: var(--radius-md);
-  padding: var(--space-3) var(--space-2) var(--space-2-5);
-  min-height: 88px;
+  position: relative;
+  border-radius: var(--radius-sm);
+  padding: var(--space-1-5) var(--space-1);
+  min-height: 56px;
   text-align: center;
   display: flex;
   flex-direction: column;
@@ -1331,27 +1377,27 @@ body{
 }
 
 .nutrition-stat-label {
-  font-size: var(--font-size-2xs);
+  font-size: 10px;
   font-weight: 700;
-  letter-spacing: 0.04em;
+  letter-spacing: 0.03em;
   text-transform: uppercase;
   opacity: 0.75;
-  margin-bottom: var(--space-1);
+  margin-bottom: 2px;
 }
 
 .nutrition-stat-value {
-  font-size: 22px;
+  font-size: 17px;
   font-weight: 800;
   line-height: 1.1;
 }
 
 .nutrition-stat-unit {
-  font-size: var(--font-size-smd);
+  font-size: var(--font-size-2xs);
   font-weight: 600;
 }
 
 .nutrition-stat-sub {
-  font-size: var(--font-size-2xs);
+  font-size: 10px;
   font-weight: 600;
   opacity: 0.65;
   margin-top: 2px;
@@ -1360,6 +1406,16 @@ body{
 .nutrition-stat-calories {
   background: var(--nutrition-calories-bg);
   color: var(--nutrition-calories);
+  padding-right: 22px;
+}
+
+.nutrition-stat-calories .nutrition-info-link {
+  position: absolute;
+  top: 4px;
+  right: 4px;
+  margin-left: 0;
+  font-size: 12px;
+  line-height: 1;
 }
 
 .nutrition-stat-carbs {
@@ -1368,7 +1424,7 @@ body{
 }
 
 .nutrition-stat-carbs .nutrition-stat-value {
-  font-size: 26px;
+  font-size: 19px;
 }
 
 .nutrition-stat-protein {
@@ -1601,6 +1657,7 @@ body{
   .header,
   .detail-controls,
   .cook-mode-status,
+  .info-tooltip,
   .recipe-nav,
   .image-modal,
   .print-recipe-btn,
