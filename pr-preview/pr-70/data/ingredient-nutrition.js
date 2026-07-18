@@ -1821,4 +1821,71 @@ window.ingredientNutrition = {
     verified: true,
     source: "Great Value Non-Pareil Capers label: 0 cal / 0g fat / 0g carbs / 0g protein per 2 tbsp (15g), per user-provided photo"
   },
+  "ham": {
+    per: "100g",
+    calories: 145,
+    protein: 21,
+    fat: 6,
+    fiber: 0,
+    carbs: 1.5,
+    unitWeights: {},
+    verified: false,
+    source: "Estimated by Claude (USDA FoodData Central, cured cooked ham ~11% fat), unverified — pending user review"
+  },
+  "swiss cheese": {
+    per: "100g",
+    calories: 380,
+    protein: 26.9,
+    fat: 27.8,
+    fiber: 0,
+    carbs: 5.4,
+    unitWeights: {},
+    verified: false,
+    source: "Estimated by Claude (typical USDA FoodData Central / brand-label values), unverified — pending user review"
+  },
+  "active dry yeast": {
+    per: "100g",
+    calories: 0,
+    protein: 0,
+    fat: 0,
+    fiber: 0,
+    carbs: 0,
+    unitWeights: { packet: 7 },
+    verified: true,
+    source: "Fleischmann's Active Dry Yeast label: 0 cal / 0g fat / 0g total carb / 0g protein per 1/4 tsp (0.9g) serving, all values round to 0 at that serving size; 1 packet = 1/4 oz (7g), per user-provided photo"
+  },
+
+  "pork tenderloin": {
+    per: "100g",
+    calories: 116,
+    protein: 20.5,
+    fat: 3.6,
+    fiber: 0,
+    carbs: 0,
+    unitWeights: {},
+    verified: true,
+    source: "Smithfield Pork Tenderloin label: 130 cal / 4g fat / 0g fiber / 0g carb / 23g protein per 4 oz (112g) raw serving, per user-provided photo"
+  },
+  "spaghetti": {
+    per: "100g",
+    calories: 371,
+    protein: 13,
+    fat: 1.5,
+    fiber: 3.2,
+    carbs: 75,
+    unitWeights: {},
+    verified: false,
+    source: "Estimated by Claude (typical USDA FoodData Central / brand-label values for dry pasta), unverified, pending user review"
+  },
+  "egg yolk": {
+    per: "100g",
+    calories: 322,
+    protein: 15.9,
+    fat: 26.5,
+    fiber: 0,
+    carbs: 3.6,
+    unitWeights: { "egg yolk": 17 },
+    verified: false,
+    source: "Estimated by Claude (typical USDA FoodData Central values for raw egg yolk, 1 large yolk ≈ 17g), unverified, pending user review"
+  },
 };
