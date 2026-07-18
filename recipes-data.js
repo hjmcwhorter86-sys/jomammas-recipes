@@ -54,7 +54,7 @@ window.recipes = [
   tags: ["air fryer", "chicken", "sweet heat", "family favorite"],
 
   ingredients: [
-    { qty: 600, unit: "g", name: "chicken tenders", notes: "about 12" },
+    { qty: 600, unit: "g", name: "chicken tenders" },
     { qty: 2, unit: null, name: "eggs" },
     { qty: 60, unit: "g", name: "flour" },
     { qty: 100, unit: "g", name: "cornflakes", notes: "crushed" },
@@ -556,7 +556,7 @@ tags: ["dessert", "high protein"]
   protein: "~45g per serving",
 
   ingredients: [
-    { qty: 411, unit: "g", name: "protein pasta", notes: "1 box (~14–15 oz), I use spaghetti" },
+    { qty: 411, unit: "g", name: "protein pasta", notes: "I use spaghetti" },
     { qty: 1, unit: null, name: "bag frozen stir-fry vegetables", notes: "12–16 oz" },
     { qty: 1.5, qtyMax: 2, unit: "lb", name: "chicken breast, cooked & sliced", display: "1½–2 lbs <a href=\"recipe-detail.html?id=seared-chicken-pieces\">chicken breast, cooked & sliced</a>" },
     { qty: 2, unit: "tsp", name: "avocado oil", notes: "or light butter" },
@@ -644,7 +644,7 @@ tags: ["dessert", "high protein"]
     { qty: 3, unit: "can", name: "refrigerated buttermilk biscuits", notes: "regular, not flaky layers" },
     { qty: 1, unit: "cup", name: "sugar", notes: "granulated" },
     { qty: 2, unit: "tsp", name: "cinnamon" },
-    { qty: 0.5, unit: "cup", name: "unsalted butter", notes: "1 stick" },
+    { qty: 0.5, unit: "cup", name: "unsalted butter" },
     { qty: 0.75, unit: "cup", name: "brown sugar" },
     { qty: 0.5, qtyMax: 1, unit: "cup", name: "chopped pecans or walnuts", optional: true, display: "Optional: ½–1 cup chopped pecans or walnuts" }
   ],
@@ -783,7 +783,7 @@ tags: ["dessert", "high protein"]
     { qty: 1.5, qtyMax: 2, unit: "lb", name: "boneless skinless chicken thighs" },
     { qty: 1, unit: null, name: "small yellow onion", notes: "finely diced" },
     { qty: 3, unit: "clove", name: "garlic", notes: "minced" },
-    { qty: 1, unit: "tbsp", name: "fresh ginger", notes: "grated, or 1/2 tsp ground ginger" },
+    { qty: 1, unit: "tbsp", name: "fresh ginger", notes: "grated", altQty: 0.5, altUnit: "tsp", altName: "ground ginger" },
     { qty: 15, unit: "oz", name: "tomato sauce", notes: "1 can", display: "1 (15 oz) can tomato sauce" },
     { qty: 6, unit: "oz", name: "tomato paste", notes: "1 can", display: "1 (6 oz) can tomato paste" },
     { qty: 1, unit: "cup", name: "chicken broth" },
@@ -832,7 +832,7 @@ tags: ["dessert", "high protein"]
   tags: ["turkey", "easy", "lean", "pasta"],
 
   ingredients: [
-    { qty: 411, unit: "g", name: "protein pasta", notes: "1 box (Barilla Protein+)" },
+    { qty: 411, unit: "g", name: "protein pasta", notes: "Barilla Protein+" },
     { qty: 1, unit: null, name: "jar garlic vodka sauce" },
     { qty: 1, unit: "lb", name: "ground Italian-style turkey" },
     { qty: 0.25, unit: "cup", name: "half-and-half" },
@@ -948,7 +948,7 @@ tags: ["dessert", "high protein"]
   tags: ["chicken", "protein", "easy", "weeknight"],
 
   ingredients: [
-    { qty: 2, unit: "lb", name: "boneless skinless chicken thighs", notes: "about 8–10 thighs" },
+    { qty: 2, unit: "lb", name: "boneless skinless chicken thighs" },
     { qty: 0.25, unit: "cup", name: "Dijon mustard" },
     { qty: 3, unit: "tbsp", name: "honey" },
     { qty: 1.5, unit: "tbsp", name: "olive oil" },
@@ -1026,7 +1026,7 @@ tags: ["dessert", "high protein"]
     { qty: 2, qtyMax: 3, unit: "tsp", name: "red pepper flakes", notes: "adjust to your heat tolerance" },
     { qty: 1, unit: "tbsp", name: "Calabrian chili paste", notes: "optional", optional: true },
     { qty: 1.5, unit: "tbsp", name: "tomato paste" },
-    { qty: 1, unit: null, name: "anchovy fillet", notes: "or 1 tsp Worcestershire sauce" },
+    { qty: 1, unit: null, name: "anchovy fillet", altQty: 1, altUnit: "tsp", altName: "Worcestershire sauce" },
     { qty: 28, unit: "oz", name: "crushed tomatoes", notes: "1 can", display: "1 (28 oz) can crushed tomatoes" },
     { qty: 1, unit: "tsp", name: "kosher salt", notes: "start here" },
     { qty: 0.5, unit: "tsp", name: "black pepper" },
@@ -1207,9 +1207,9 @@ tags: ["dessert", "high protein"]
   tags: ["mexican", "corn", "side dish", "vegetarian", "snack", "street food"],
 
   ingredients: [
-    { qty: 6, unit: null, name: "ears of corn", notes: "kernels cut off, or 4.5 cups frozen corn thawed and patted very dry" },
+    { qty: 6, unit: null, name: "ears of corn", notes: "kernels cut off", altQty: 4.5, altUnit: "cup", altName: "frozen corn, thawed and patted very dry" },
     { qty: 3, unit: "tbsp", name: "unsalted butter" },
-    { qty: 3, unit: "clove", name: "garlic", notes: "minced, or ¾ tsp garlic powder in a pinch" },
+    { qty: 3, unit: "clove", name: "garlic", notes: "minced", altQty: 0.75, altUnit: "tsp", altName: "garlic powder, in a pinch" },
     { qty: 0.333, unit: "cup", name: "mayonnaise" },
     { qty: 0.333, unit: "cup", name: "sour cream" },
     { qty: 1, unit: "tsp", name: "chili powder" },
@@ -1262,11 +1262,11 @@ tags: ["dessert", "high protein"]
     {
       title: "The Sauce",
       items: [
-        { qty: 1/3, unit: "cup", name: "soy sauce", notes: "plus 4 tsp" },
+        { qty: 6.667, unit: "tbsp", name: "soy sauce" },
         { qty: 4, unit: "tbsp", name: "brown sugar" },
         { qty: 1.5, unit: "tbsp", name: "toasted sesame oil" },
         { qty: 6, unit: "clove", name: "garlic", notes: "minced" },
-        { qty: 1.5, unit: "tsp", name: "fresh ginger", notes: "grated, or ¾ tsp ground ginger" },
+        { qty: 1.5, unit: "tsp", name: "fresh ginger", notes: "grated", altQty: 0.75, altUnit: "tsp", altName: "ground ginger" },
         { qty: 0.75, unit: "tsp", name: "red pepper flakes" },
         { qty: 2, unit: "tsp", name: "gochujang" }
       ]
@@ -1414,7 +1414,7 @@ tags: ["dessert", "high protein"]
         { qty: 3, unit: "tbsp", name: "light butter", notes: "for cooking" },
         { qty: 1.5, unit: "tbsp", name: "light butter", notes: "finishing, split between batches" },
         { qty: 1, unit: "tbsp", name: "jarred minced garlic" },
-        { qty: 3, unit: "tbsp", name: "honey", notes: "1½ tbsp per batch" },
+        { qty: 3, unit: "tbsp", name: "honey", notes: "split evenly between batches" },
         { qty: 1.5, unit: "tbsp", name: "fresh chopped parsley" }
       ]
     },
@@ -1424,7 +1424,7 @@ tags: ["dessert", "high protein"]
         { qty: 3, unit: "cup", name: "macaroni", notes: "uncooked, or pasta of choice" },
         { qty: 1.5, unit: "tbsp", name: "jarred minced garlic" },
         { qty: 2, unit: "cup", name: "skim milk" },
-        { qty: 1, unit: "cup", name: "light cream cheese", notes: "Philadelphia, one full 8oz block" },
+        { qty: 1, unit: "cup", name: "light cream cheese", notes: "Philadelphia" },
         { qty: 5, unit: "oz", name: "low fat cheddar cheese", notes: "shredded" },
         { qty: 1.5, unit: "tsp", name: "salt", notes: "or to taste" },
         { qty: 0.75, unit: "tsp", name: "black pepper" },
@@ -1446,7 +1446,6 @@ tags: ["dessert", "high protein"]
   ],
 
   notes: [
-    "The cream cheese at 1.5x works out to basically one full 8oz Philadelphia block.",
     "Cook chicken in two batches for best browning."
   ]
 },
@@ -1495,7 +1494,7 @@ tags: ["dessert", "high protein"]
       items: [
         { qty: 0.25, unit: "cup", name: "white cooking wine" },
         { qty: 0.5, unit: "cup", name: "chicken broth" },
-        { qty: 1/3, unit: "cup", name: "lemon juice", notes: "about 3 lemons", approx: true },
+        { qty: 1/3, unit: "cup", name: "lemon juice", approx: true },
         { qty: 4, unit: "tbsp", name: "unsalted butter" },
         { qty: 3, unit: "clove", name: "garlic", notes: "minced" },
         { qty: 0.25, unit: "cup", name: "capers", notes: "brined, drained" },
@@ -1566,8 +1565,8 @@ tags: ["dessert", "high protein"]
       title: "The Gravy",
       items: [
         { qty: 3, unit: "slice", name: "bacon", notes: "center cut, chopped" },
-        { qty: 0.5, unit: "cup", name: "sweet onion", notes: "finely chopped, from 1 small onion" },
-        { qty: 1.5, unit: "tbsp", name: "garlic", notes: "minced, from about 4 cloves" },
+        { qty: 0.5, unit: "cup", name: "sweet onion", notes: "finely chopped" },
+        { qty: 1.5, unit: "tbsp", name: "garlic", notes: "minced" },
         { qty: 1.5, unit: "cup", name: "chicken broth" },
         { qty: 0.5, unit: "cup", name: "half and half" },
         { qty: 1, unit: "tsp", name: "Worcestershire sauce" },
@@ -1637,7 +1636,7 @@ tags: ["dessert", "high protein"]
         { qty: 1, unit: null, name: "small yellow onion", notes: "finely diced" },
         { qty: 1, unit: "tsp", name: "red pepper flakes" },
         { qty: 1, unit: "cup", name: "dry white wine" },
-        { qty: 1/3, unit: "cup", name: "lemon juice", notes: "from about 2 lemons", approx: true },
+        { qty: 1/3, unit: "cup", name: "lemon juice", approx: true },
         { qty: 0.5, unit: "tsp", name: "worcestershire sauce" },
         { qty: 1, unit: "tsp", name: "hot sauce", notes: "such as Tabasco or Frank's" },
         { qty: 1, unit: "tsp", name: "salt" },
@@ -1720,7 +1719,7 @@ tags: ["dessert", "high protein"]
     {
       title: "Chorizo (Cooked Separately)",
       items: [
-        { qty: 18, unit: "oz", name: "chorizo", notes: "browned and drained", optional: true }
+        { qty: 16, unit: "oz", name: "chorizo", notes: "browned and drained", optional: true }
       ]
     }
   ],
@@ -1810,13 +1809,168 @@ tags: ["dessert", "high protein"]
   steps: [
     "Place the chicken breasts in the bottom of the crockpot in a single layer.",
     "Season evenly with the kosher salt, black pepper, garlic powder, onion powder, and paprika. Dot the top of the chicken with the pats of butter.",
-    "Cover and cook on low for 2 hours if your crockpot runs hot, or 3-4 hours for a standard crockpot, until the chicken reaches an internal temperature of 165 degrees and shreds easily with a fork.",
+    "Cover and cook on low for 3-4 hours or until the chicken's internal temperature reaches 165 degrees and it shreds easily with a fork.",
     "Remove the chicken from the crockpot and let rest for 5-10 minutes.",
     "Shred using a stand mixer fitted with the paddle attachment on low speed, or shred by hand with two forks. If desired, spoon a little of the cooking liquid back over the shredded chicken to keep it moist."
   ],
 
   notes: [
     "No photo yet — using a placeholder image until one is added."
+  ]
+},
+
+{
+  id: "chicken-cordon-bleu-casserole",
+  title: "Chicken Cordon Bleu Casserole",
+  description: "A creamy, cheesy twist on the classic. Layers of chicken and ham under a mustard-Swiss sauce, topped with garlic panko and baked until golden.",
+  image: "images/cordon-bleu-casserole.jpg",
+  category: "Chicken",
+  dateAdded: "2026-07-13",
+  carbs: null,
+  fat: null,
+  fiber: null,
+  calories: "",
+  protein: "",
+  servings: "8",
+  tags: ["chicken", "casserole", "ham", "cordon bleu", "cheese sauce", "comfort food"],
+
+  ingredients: [
+    {
+      title: "Chicken & Ham",
+      items: [
+        { qty: 5.5, unit: "cup", name: "shredded cooked chicken", notes: "slow cooked or rotisserie, your choice — see the <a href=\"recipe-detail.html?id=slow-cooked-shredded-chicken\">slow cooked shredded chicken recipe</a>" },
+        { qty: 2, unit: "cup", name: "ham", notes: "cubed" },
+        { qty: null, unit: null, name: "Black pepper, to taste" }
+      ]
+    },
+    {
+      title: "Cheese Sauce",
+      items: [
+        { qty: 4, unit: "tbsp", name: "unsalted butter" },
+        { qty: 0.25, unit: "cup", name: "flour", notes: "all-purpose" },
+        { qty: 0.25, unit: "cup", name: "dry white wine", notes: "such as Sauvignon Blanc or Pinot Grigio" },
+        { qty: 1.75, unit: "cup", name: "milk" },
+        { qty: 2, unit: "clove", name: "garlic", notes: "minced" },
+        { qty: 1, unit: "tbsp", name: "dijon mustard" },
+        { qty: 1, unit: "tbsp", name: "lemon juice" },
+        { qty: 0.5, unit: "tsp", name: "garlic powder" },
+        { qty: 0.25, unit: "tsp", name: "black pepper" },
+        { qty: null, unit: null, name: "Pinch of freshly grated nutmeg" },
+        { qty: 0.5, unit: "tsp", name: "salt", notes: "plus more to taste" },
+        { qty: 5, unit: "oz", name: "swiss cheese", notes: "shredded" },
+        { qty: 0.25, unit: "cup", name: "parmesan", notes: "grated" }
+      ]
+    },
+    {
+      title: "Panko Topping",
+      items: [
+        { qty: 1, unit: "cup", name: "panko breadcrumbs" },
+        { qty: 2, unit: "tbsp", name: "unsalted butter", notes: "melted" },
+        { qty: 2, unit: "tbsp", name: "parmesan", notes: "grated" },
+        { qty: null, unit: null, name: "Pinch of garlic powder" },
+        { qty: null, unit: null, name: "Fresh thyme or parsley, for garnish", optional: true }
+      ]
+    }
+  ],
+
+  steps: [
+    "Preheat oven to 350°F and spray a 9x13 casserole dish with cooking spray.",
+    "Sear the cubed ham in a hot skillet for 2-3 minutes until lightly caramelized. Set aside.",
+    "Layer the chicken on the bottom of the casserole dish and season lightly with black pepper. Layer the seared ham on top.",
+    "For the cheese sauce, melt the butter in a saucepan over medium heat. Sprinkle the flour on top and cook for 1-2 minutes, stirring, until the mixture is dry and clumpy. Add the minced garlic and cook for 30 seconds until fragrant. Pour in the wine and let it bubble for 30-60 seconds to cook off the raw alcohol.",
+    "Whisk in the milk slowly. Add the mustard, lemon juice, garlic powder, black pepper, nutmeg, and salt. Simmer for 3-5 minutes, whisking constantly, until the mixture thickens.",
+    "Remove from heat and stir in the Swiss and Parmesan cheese gradually until melted and smooth. Taste and add more salt if needed. If the sauce seems too thick, thin it out with a splash of extra milk, a tablespoon at a time, until pourable. Pour evenly over the chicken and ham.",
+    "For the panko topping, combine the panko, melted butter, Parmesan, and garlic powder in a small bowl. Sprinkle over the casserole.",
+    "Bake uncovered for 30-35 minutes, until the breadcrumbs are golden brown and the casserole is bubbly. Let cool for 5-10 minutes. Garnish with fresh thyme or parsley if using, then serve."
+  ]
+},
+
+  {
+  id: "garlic-brown-sugar-pork-tenderloin",
+  title: "Garlic Brown Sugar Pork Tenderloin",
+  description: "Dry brined, seared, then oven roasted with a sticky garlic brown sugar glaze spooned right over the top.",
+  image: "images/garlic-brown-sugar-pork-tenderloin.png",
+  category: "Pork",
+  dateAdded: "2026-07-15",
+  carbs: null,
+  fat: null,
+  fiber: null,
+  calories: "",
+  protein: "",
+  servings: "4",
+  tags: ["pork", "tenderloin", "garlic", "brown sugar", "skillet", "oven roasted"],
+
+  ingredients: [
+    { qty: 1, qtyMax: 1.5, unit: "lb", name: "pork tenderloin" },
+    { qty: 1, unit: "tsp", name: "kosher salt", notes: "for dry brine" },
+    { qty: 5, unit: "clove", name: "garlic", notes: "minced" },
+    { qty: 3, unit: "tbsp", name: "brown sugar" },
+    { qty: 1, unit: "tbsp", name: "smoked paprika" },
+    { qty: 1, unit: "tsp", name: "black pepper" },
+    { qty: 0.25, unit: "tsp", name: "cayenne pepper", notes: "optional, for heat", optional: true },
+    { qty: 2, unit: "tbsp", name: "olive oil" },
+    { qty: 2, unit: "tbsp", name: "unsalted butter" },
+    { qty: 1, unit: "tbsp", name: "low sodium soy sauce" },
+    { qty: 0.25, unit: "cup", name: "chicken broth" }
+  ],
+
+  steps: [
+    "Dry brine ahead of time: pat the pork completely dry with paper towels, then rub all over with the kosher salt. Place uncovered on a plate or rack in the fridge for 1 to 4 hours (up to overnight if prepping the night before).",
+    "When ready to cook, remove the pork from the fridge and pat dry again. Preheat the oven to 400°F.",
+    "Mix the brown sugar, smoked paprika, black pepper, and cayenne in a small bowl. Rub all over the pork.",
+    "Heat the olive oil in an oven-safe skillet (cast iron is great) over medium-high heat. Sear the pork on all sides until deep golden brown, about 2 minutes per side (about 8 minutes total). If it doesn't fit in the pan, cut it in half crosswise into two shorter pieces rather than letting it curl.",
+    "Reduce heat to medium. Add the garlic and butter to the pan, spooning the melted butter over the pork for about 1 minute. Don't let the garlic burn.",
+    "Pour in the soy sauce and chicken broth, scraping up the browned bits from the bottom of the pan.",
+    "Transfer the whole skillet to the oven. Roast about 15 minutes, until internal temp hits 140-145°F at the thickest part.",
+    "Remove from the oven, tent with foil, and rest 5 minutes. Spoon the pan sauce over the top before slicing."
+  ],
+
+  notes: [
+    "Pull it at 140-145°F — carryover heat during resting brings it up those last few degrees without drying it out. A meat thermometer makes this foolproof."
+  ]
+},
+
+  {
+  id: "spaghetti-carbonara",
+  title: "Spaghetti Carbonara",
+  description: "Guanciale and a mix of Pecorino Romano and Parmesan are the traditional choices for carbonara, but this recipe works great if you don't have the more authentic ingredients available at your local grocery store. Bacon and Parmesan bring you most of the way there, and the double boiler method keeps the eggs silky instead of scrambled.",
+  image: "images/spaghetti-carbonara.png",
+  category: ["Pasta", "Pork"],
+  dateAdded: "2026-07-17",
+  carbs: null,
+  fat: null,
+  fiber: null,
+  calories: "",
+  protein: "",
+  servings: "4",
+  tags: ["pasta", "carbonara", "bacon", "italian", "comfort food"],
+
+  ingredients: [
+    { qty: 1, unit: "lb", name: "spaghetti" },
+    { qty: 8, unit: "oz", name: "bacon", display: "8 oz thick cut bacon, cut into small strips (lardons)" },
+    { qty: 2, unit: null, name: "eggs", display: "2 whole eggs" },
+    { qty: 3, unit: null, name: "egg yolks" },
+    { qty: 1.5, unit: "cup", name: "Parmesan", display: "1½ cups finely grated Parmesan (a mix of Parmesan and Asiago also works well)" },
+    { qty: null, unit: null, name: "Fresh black pepper, coarsely ground, to taste" },
+    { qty: null, unit: null, name: "Reserved pasta water" },
+    { qty: null, unit: null, name: "Salt for pasta water" }
+  ],
+
+  steps: [
+    "Bring a large pot of salted water to a boil for the pasta.",
+    "While it heats, cook the bacon in a skillet over medium heat until crisp and the fat has rendered. Remove the bacon with a slotted spoon and set it aside. Leave the fat in the pan and set the pan aside.",
+    "Cook the spaghetti until just shy of al dente. It will finish cooking in the sauce.",
+    "Using tongs, transfer the pasta directly from the pot into the skillet with the pork fat, reserving about 1 cup of pasta water. Stir the pasta in the fat over low heat for about a minute so it soaks up flavor, then remove the pan from the heat entirely.",
+    "While the pasta rests off heat, whisk the eggs, yolks, grated cheese, and a generous amount of black pepper together in a metal or heatproof glass bowl.",
+    "Set the bowl over the still-hot pasta pot, using it as a double boiler. Don't let the bowl touch the water. Whisk slowly and constantly until the mixture warms slightly and the cheese starts to melt into a smooth, thick sauce.",
+    "Remove the bowl from the pot. Add the pasta from the skillet into the bowl with the sauce, tossing constantly with tongs so the residual heat cooks the eggs gently without scrambling them.",
+    "Add the reserved bacon and a splash of pasta water as needed, tossing until the sauce turns glossy and coats the noodles evenly.",
+    "Finish with more black pepper and extra grated cheese on top."
+  ],
+
+  notes: [
+    "Using 2 whole eggs plus 3 yolks instead of all whole eggs gives the sauce more richness and body without adding extra water from the whites.",
+    "Thick cut bacon renders more fat and gives a heartier bite than center cut, getting closer to guanciale's texture. Pancetta is a closer substitute than bacon if you can find it locally."
   ]
 },
 

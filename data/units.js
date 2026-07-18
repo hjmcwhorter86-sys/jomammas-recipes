@@ -41,6 +41,7 @@ window.unitConversions = {
     can:   { plural: "cans" },
     stick: { plural: "sticks" },
     bunch: { plural: "bunches" },
+    packet: { plural: "packets" },
   },
 
   // Ingredient-specific densities (grams per milliliter), for converting a
@@ -130,6 +131,7 @@ window.unitConversions = {
     "green onions": 0.45,
     "hatch green chiles": 1.0,
     "capers": 0.51,
+    "ham": 0.59,
   },
 
   // Preferred display units for the US/Metric units toggle (units-service.js).
