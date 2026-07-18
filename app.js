@@ -67,32 +67,33 @@ function formatRecipeCategories(recipe, separator = ', ') {
 const NUTRITION_FIELDS = ['calories', 'protein', 'fat', 'fiber', 'carbs'];
 
 function renderNutritionSection(recipe) {
-  const formatValue = (value) => (value === null || value === undefined || value === '') ? '—' : value;
   const computedOn = !!window.flagsService?.isEnabled('showComputedNutrition');
+  const panelOn = !!window.flagsService?.isEnabled('nutritionPanelView');
+  const round = (value) => Math.round(value * 10) / 10;
 
-  let display;
+  // Raw per-serving numbers (or null when missing/unknown), shared by both
+  // the plain list and the condensed panel below.
+  let raw;
   if (computedOn) {
     const result = computeRecipeNutrition(recipe);
-    const round = (value) => Math.round(value * 10) / 10;
-    const field = (key, suffix = '') => result.unknown.has(key) ? 'Unknown' : `${round(result.perServing[key])}${suffix}`;
-    display = {
-      calories: field('calories'),
-      protein: field('protein', 'g'),
-      carbs: field('carbs', 'g'),
-      netCarbs: field('netCarbs', 'g'),
-      fat: field('fat', 'g'),
-      fiber: field('fiber', 'g'),
-    };
+    raw = {};
+    [...NUTRITION_FIELDS, 'netCarbs'].forEach((key) => {
+      raw[key] = result.unknown.has(key) ? null : round(result.perServing[key]);
+    });
   } else {
-    display = {
-      calories: formatValue(recipe.calories),
-      protein: formatValue(recipe.protein),
-      carbs: formatValue(recipe.carbs),
-      netCarbs: '—',
-      fat: formatValue(recipe.fat),
-      fiber: formatValue(recipe.fiber),
+    const num = (value) => (value === null || value === undefined || value === '') ? null : value;
+    raw = {
+      calories: num(recipe.calories),
+      protein: num(recipe.protein),
+      carbs: num(recipe.carbs),
+      netCarbs: null,
+      fat: num(recipe.fat),
+      fiber: num(recipe.fiber),
     };
   }
+
+  const missingText = (key) => raw[key] === null ? (computedOn ? 'Unknown' : '—') : null;
+  const listText = (key, suffix = '') => missingText(key) ?? `${raw[key]}${suffix}`;
 
   // The info link only appears when computed nutrition is shown, since
   // that's the data it lets reviewers fact-check.
@@ -100,16 +101,54 @@ function renderNutritionSection(recipe) {
     ? ` <a class="nutrition-info-link" href="nutrition-info.html?id=${recipe.id}" aria-label="Nutrition data, sources, and disclaimer" title="Nutrition data, sources, and disclaimer">ℹ️</a>`
     : '';
 
+  if (panelOn) {
+    const panelText = (key, suffix = '') => missingText(key) ?? `${raw[key]}<span class="nutrition-stat-unit">${suffix}</span>`;
+    // Net carbs (and its subtraction breakdown) only exist once computed
+    // nutrition has resolved every ingredient; a manually entered recipe
+    // only has gross carbs, so the tile falls back to that instead.
+    const carbsKey = computedOn ? 'netCarbs' : 'carbs';
+    const carbsLabel = computedOn ? 'Net Carbs' : 'Carbs';
+    const carbsSub = (computedOn && raw.carbs !== null && raw.fiber !== null && raw.netCarbs !== null)
+      ? `<div class="nutrition-stat-sub">${raw.carbs} − ${raw.fiber}</div>`
+      : '';
+
+    return `
+          <div class="recipe-nutrition">
+            <h3>Nutrition (per serving)${infoLink}</h3>
+            <div class="nutrition-panel-grid">
+              <div class="nutrition-stat nutrition-stat-calories">
+                <div class="nutrition-stat-label">Calories</div>
+                <div class="nutrition-stat-value">${panelText('calories')}</div>
+              </div>
+              <div class="nutrition-panel-macros">
+                <div class="nutrition-stat nutrition-stat-carbs">
+                  <div class="nutrition-stat-label">${carbsLabel}</div>
+                  <div class="nutrition-stat-value">${panelText(carbsKey, 'g')}</div>
+                  ${carbsSub}
+                </div>
+                <div class="nutrition-stat nutrition-stat-protein">
+                  <div class="nutrition-stat-label">Protein</div>
+                  <div class="nutrition-stat-value">${panelText('protein', 'g')}</div>
+                </div>
+                <div class="nutrition-stat nutrition-stat-fat">
+                  <div class="nutrition-stat-label">Fat</div>
+                  <div class="nutrition-stat-value">${panelText('fat', 'g')}</div>
+                </div>
+              </div>
+            </div>
+          </div>`;
+  }
+
   return `
           <div class="recipe-nutrition">
             <h3>Nutrition (per serving)${infoLink}</h3>
             <ul class="nutrition-list">
-              <li><strong>Calories:</strong> ${display.calories}</li>
-              <li><strong>Protein:</strong> ${display.protein}</li>
-              <li><strong>Carbs:</strong> ${display.carbs}</li>
-              <li><strong>Net Carbs:</strong> ${display.netCarbs}</li>
-              <li><strong>Fat:</strong> ${display.fat}</li>
-              <li><strong>Fiber:</strong> ${display.fiber}</li>
+              <li><strong>Calories:</strong> ${listText('calories')}</li>
+              <li><strong>Protein:</strong> ${listText('protein', 'g')}</li>
+              <li><strong>Carbs:</strong> ${listText('carbs', 'g')}</li>
+              <li><strong>Net Carbs:</strong> ${listText('netCarbs', 'g')}</li>
+              <li><strong>Fat:</strong> ${listText('fat', 'g')}</li>
+              <li><strong>Fiber:</strong> ${listText('fiber', 'g')}</li>
             </ul>
           </div>`;
 }

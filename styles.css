@@ -1301,6 +1301,86 @@ body{
   font-size: 16px;
 }
 
+.nutrition-panel-grid {
+  display: grid;
+  gap: var(--space-2-5);
+  --nutrition-calories: #b5541a;
+  --nutrition-calories-bg: #fbe9db;
+  --nutrition-carbs: #7a4fa3;
+  --nutrition-carbs-bg: #f0e6f7;
+  --nutrition-protein: #0f7a5c;
+  --nutrition-protein-bg: #e4f3ec;
+  --nutrition-fat: #995900;
+  --nutrition-fat-bg: #fbf3d6;
+}
+
+.nutrition-panel-macros {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-2-5);
+}
+
+.nutrition-stat {
+  border-radius: var(--radius-md);
+  padding: var(--space-3) var(--space-2) var(--space-2-5);
+  min-height: 88px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.nutrition-stat-label {
+  font-size: var(--font-size-2xs);
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  opacity: 0.75;
+  margin-bottom: var(--space-1);
+}
+
+.nutrition-stat-value {
+  font-size: 22px;
+  font-weight: 800;
+  line-height: 1.1;
+}
+
+.nutrition-stat-unit {
+  font-size: var(--font-size-smd);
+  font-weight: 600;
+}
+
+.nutrition-stat-sub {
+  font-size: var(--font-size-2xs);
+  font-weight: 600;
+  opacity: 0.65;
+  margin-top: 2px;
+}
+
+.nutrition-stat-calories {
+  background: var(--nutrition-calories-bg);
+  color: var(--nutrition-calories);
+}
+
+.nutrition-stat-carbs {
+  background: var(--nutrition-carbs-bg);
+  color: var(--nutrition-carbs);
+}
+
+.nutrition-stat-carbs .nutrition-stat-value {
+  font-size: 26px;
+}
+
+.nutrition-stat-protein {
+  background: var(--nutrition-protein-bg);
+  color: var(--nutrition-protein);
+}
+
+.nutrition-stat-fat {
+  background: var(--nutrition-fat-bg);
+  color: var(--nutrition-fat);
+}
+
 .nutrition-disclaimer {
   font-size: var(--font-size-sm);
   color: var(--color-text-muted);
