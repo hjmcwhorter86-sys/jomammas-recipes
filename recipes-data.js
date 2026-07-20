@@ -1950,7 +1950,7 @@ tags: ["dessert", "high protein"]
     { qty: 8, unit: "oz", name: "bacon", display: "8 oz thick cut bacon, cut into small strips (lardons)" },
     { qty: 2, unit: null, name: "eggs", display: "2 whole eggs" },
     { qty: 3, unit: null, name: "egg yolks" },
-    { qty: 1.5, unit: "cup", name: "Parmesan", display: "1½ cups finely grated Parmesan (a mix of Parmesan and Asiago also works well)" },
+    { qty: 1.5, unit: "cup", name: "Parmesan", display: "1½ cups freshly grated Parmesan (a mix of Parmesan and Asiago also works well)" },
     { qty: null, unit: null, name: "Fresh black pepper, coarsely ground, to taste" },
     { qty: null, unit: null, name: "Reserved pasta water" },
     { qty: null, unit: null, name: "Salt for pasta water" }
