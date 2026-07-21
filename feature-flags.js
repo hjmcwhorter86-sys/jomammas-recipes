@@ -14,4 +14,9 @@ window.featureFlags = {
     description: "Show nutrition facts computed from structured ingredients, instead of (or alongside) the manually entered fields.",
     default: true,
   },
+  nutritionPanelView: {
+    label: "Condensed nutrition panel",
+    description: "Show a condensed, color-coded stat panel instead of the plain nutrition list on the recipe detail page.",
+    default: false,
+  },
 };

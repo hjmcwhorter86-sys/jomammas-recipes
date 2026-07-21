@@ -67,32 +67,33 @@ function formatRecipeCategories(recipe, separator = ', ') {
 const NUTRITION_FIELDS = ['calories', 'protein', 'fat', 'fiber', 'carbs'];
 
 function renderNutritionSection(recipe) {
-  const formatValue = (value) => (value === null || value === undefined || value === '') ? '—' : value;
   const computedOn = !!window.flagsService?.isEnabled('showComputedNutrition');
+  const panelOn = !!window.flagsService?.isEnabled('nutritionPanelView');
+  const round = (value) => Math.round(value * 10) / 10;
 
-  let display;
+  // Raw per-serving numbers (or null when missing/unknown), shared by both
+  // the plain list and the condensed panel below.
+  let raw;
   if (computedOn) {
     const result = computeRecipeNutrition(recipe);
-    const round = (value) => Math.round(value * 10) / 10;
-    const field = (key, suffix = '') => result.unknown.has(key) ? 'Unknown' : `${round(result.perServing[key])}${suffix}`;
-    display = {
-      calories: field('calories'),
-      protein: field('protein', 'g'),
-      carbs: field('carbs', 'g'),
-      netCarbs: field('netCarbs', 'g'),
-      fat: field('fat', 'g'),
-      fiber: field('fiber', 'g'),
-    };
+    raw = {};
+    [...NUTRITION_FIELDS, 'netCarbs'].forEach((key) => {
+      raw[key] = result.unknown.has(key) ? null : round(result.perServing[key]);
+    });
   } else {
-    display = {
-      calories: formatValue(recipe.calories),
-      protein: formatValue(recipe.protein),
-      carbs: formatValue(recipe.carbs),
-      netCarbs: '—',
-      fat: formatValue(recipe.fat),
-      fiber: formatValue(recipe.fiber),
+    const num = (value) => (value === null || value === undefined || value === '') ? null : value;
+    raw = {
+      calories: num(recipe.calories),
+      protein: num(recipe.protein),
+      carbs: num(recipe.carbs),
+      netCarbs: null,
+      fat: num(recipe.fat),
+      fiber: num(recipe.fiber),
     };
   }
+
+  const missingText = (key) => raw[key] === null ? (computedOn ? 'Unknown' : '—') : null;
+  const listText = (key, suffix = '') => missingText(key) ?? `${raw[key]}${suffix}`;
 
   // The info link only appears when computed nutrition is shown, since
   // that's the data it lets reviewers fact-check.
@@ -100,18 +101,99 @@ function renderNutritionSection(recipe) {
     ? ` <a class="nutrition-info-link" href="nutrition-info.html?id=${recipe.id}" aria-label="Nutrition data, sources, and disclaimer" title="Nutrition data, sources, and disclaimer">ℹ️</a>`
     : '';
 
+  if (panelOn) {
+    // Rounded to whole numbers here (unlike the list view's one-decimal
+    // figures) — the panel trades precision for staying glanceable at a
+    // fraction of the width.
+    const panelText = (key, suffix = '') => missingText(key) ?? `${Math.round(raw[key])}${suffix ? `<span class="nutrition-stat-unit">${suffix}</span>` : ''}`;
+    // Net carbs (and its subtraction breakdown) only exist once computed
+    // nutrition has resolved every ingredient; a manually entered recipe
+    // only has gross carbs, so the tile falls back to that instead.
+    const carbsKey = computedOn ? 'netCarbs' : 'carbs';
+    const carbsLabel = computedOn ? 'Net Carbs' : 'Carbs';
+    const carbsSub = (computedOn && raw.carbs !== null && raw.fiber !== null && raw.netCarbs !== null)
+      ? `<div class="nutrition-stat-sub">${Math.round(raw.carbs)} − ${Math.round(raw.fiber)}</div>`
+      : '';
+
+    return `
+          <div class="recipe-nutrition recipe-nutrition--panel">
+            <div class="nutrition-panel-grid">
+              <div class="nutrition-stat nutrition-stat-calories">
+                ${infoLink}
+                <div class="nutrition-stat-label">Calories</div>
+                <div class="nutrition-stat-value">${panelText('calories')}</div>
+                <div class="nutrition-stat-sub">per serving</div>
+              </div>
+              <div class="nutrition-panel-macros">
+                <div class="nutrition-stat nutrition-stat-carbs">
+                  <div class="nutrition-stat-label">${carbsLabel}</div>
+                  <div class="nutrition-stat-value">${panelText(carbsKey, 'g')}</div>
+                  ${carbsSub}
+                </div>
+                <div class="nutrition-stat nutrition-stat-protein">
+                  <div class="nutrition-stat-label">Protein</div>
+                  <div class="nutrition-stat-value">${panelText('protein', 'g')}</div>
+                </div>
+                <div class="nutrition-stat nutrition-stat-fat">
+                  <div class="nutrition-stat-label">Fat</div>
+                  <div class="nutrition-stat-value">${panelText('fat', 'g')}</div>
+                </div>
+              </div>
+            </div>
+          </div>`;
+  }
+
   return `
           <div class="recipe-nutrition">
             <h3>Nutrition (per serving)${infoLink}</h3>
             <ul class="nutrition-list">
-              <li><strong>Calories:</strong> ${display.calories}</li>
-              <li><strong>Protein:</strong> ${display.protein}</li>
-              <li><strong>Carbs:</strong> ${display.carbs}</li>
-              <li><strong>Net Carbs:</strong> ${display.netCarbs}</li>
-              <li><strong>Fat:</strong> ${display.fat}</li>
-              <li><strong>Fiber:</strong> ${display.fiber}</li>
+              <li><strong>Calories:</strong> ${listText('calories')}</li>
+              <li><strong>Protein:</strong> ${listText('protein', 'g')}</li>
+              <li><strong>Carbs:</strong> ${listText('carbs', 'g')}</li>
+              <li><strong>Net Carbs:</strong> ${listText('netCarbs', 'g')}</li>
+              <li><strong>Fat:</strong> ${listText('fat', 'g')}</li>
+              <li><strong>Fiber:</strong> ${listText('fiber', 'g')}</li>
             </ul>
           </div>`;
+}
+
+// Renders the category badge, print/cook-mode buttons, and nutrition
+// section together, since the condensed panel view needs them laid out as
+// one flex row (buttons left, nutrition floated right) while the plain
+// list view keeps its original stacked layout. Shared by all three
+// recipe-detail templates below so the flag check and markup live in one
+// place.
+function renderRecipeMetaSection(recipe) {
+  const panelOn = !!window.flagsService?.isEnabled('nutritionPanelView');
+  const categoryBadge = `<span class="badge">${formatRecipeCategories(recipe, ' • ')}</span>`;
+
+  if (!panelOn) {
+    return `
+        <div class="recipe-meta">
+          <div class="meta-primary">
+            ${categoryBadge}
+            <button class="print-recipe-btn button-family button-primary" id="printRecipeBtn" type="button">Print Recipe</button>
+            <button class="cook-mode-btn button-family button-secondary" id="cookModeBtn" type="button" aria-pressed="false">Cook Mode: Off</button>
+          </div>
+        </div>
+        ${renderNutritionSection(recipe)}
+        <p class="cook-mode-status" id="cookModeStatus" aria-live="polite"></p>`;
+  }
+
+  return `
+        <div class="recipe-meta recipe-meta--panel">
+          <div class="meta-primary">
+            ${categoryBadge}
+            <button class="print-recipe-btn button-family button-primary" id="printRecipeBtn" type="button" aria-label="Print Recipe">
+              <span class="btn-icon" aria-hidden="true">🖨️</span><span class="btn-label">Print Recipe</span>
+            </button>
+            <button class="cook-mode-btn button-family button-secondary" id="cookModeBtn" type="button" aria-pressed="false" aria-label="Cook Mode: Off">
+              <span class="btn-icon" aria-hidden="true">☕</span><span class="btn-label">Cook Mode: Off</span>
+            </button>
+            <span class="info-tooltip" id="cookModeStatus" tabindex="0" title="Turn on cook mode to keep your screen awake while cooking.">ℹ️</span>
+          </div>
+          ${renderNutritionSection(recipe)}
+        </div>`;
 }
 
 // Flattens both flat-array and {title, items}-section ingredient lists into
@@ -855,31 +937,53 @@ function updateCookModeUI() {
 
   if (!cookModeBtn || !cookModeStatus) return;
 
+  // The panel view swaps the button's plain text for an icon + .btn-label
+  // span, and the status paragraph for a hover/focus tooltip — set
+  // whichever shape is actually in the DOM instead of assuming one.
+  const cookModeLabel = cookModeBtn.querySelector('.btn-label');
+  const setLabel = (text) => {
+    if (cookModeLabel) {
+      cookModeLabel.textContent = text;
+      cookModeBtn.setAttribute('aria-label', text);
+    } else {
+      cookModeBtn.textContent = text;
+    }
+  };
+  const isTooltip = cookModeStatus.classList.contains('info-tooltip');
+  const setStatus = (text) => {
+    if (isTooltip) {
+      cookModeStatus.title = text;
+      cookModeStatus.setAttribute('aria-label', text);
+    } else {
+      cookModeStatus.textContent = text;
+    }
+  };
+
   if (!supported) {
-    cookModeBtn.textContent = 'Cook Mode Unavailable';
+    setLabel('Cook Mode Unavailable');
     cookModeBtn.disabled = true;
     cookModeBtn.classList.remove('is-active');
     cookModeBtn.setAttribute('aria-pressed', 'false');
-    cookModeStatus.textContent = 'Cook mode is not supported on this browser/device.';
+    setStatus('Cook mode is not supported on this browser/device.');
     return;
   }
 
   const isActive = cookModeEnabled && !!cookWakeLockSentinel;
-  cookModeBtn.textContent = isActive ? 'Cook Mode: On' : 'Cook Mode: Off';
+  setLabel(isActive ? 'Cook Mode: On' : 'Cook Mode: Off');
   cookModeBtn.classList.toggle('is-active', isActive);
   cookModeBtn.setAttribute('aria-pressed', isActive ? 'true' : 'false');
 
   if (isActive) {
-    cookModeStatus.textContent = 'Your screen will stay awake while this tab is active.';
+    setStatus('Your screen will stay awake while this tab is active.');
     return;
   }
 
   if (cookModeEnabled && document.visibilityState !== 'visible') {
-    cookModeStatus.textContent = 'Return to this tab to resume cook mode.';
+    setStatus('Return to this tab to resume cook mode.');
     return;
   }
 
-  cookModeStatus.textContent = 'Turn on cook mode to keep your screen awake while cooking.';
+  setStatus('Turn on cook mode to keep your screen awake while cooking.');
 }
 
 async function requestCookWakeLock() {
@@ -1178,15 +1282,7 @@ if (pageType === 'list' && recipesEl && searchEl) {
       <article class="recipe-detail">
         <h1>${recipe.title}</h1>
         <p class="recipe-description">${recipe.description}</p>
-        <div class="recipe-meta">
-          <div class="meta-primary">
-            <span class="badge">${formatRecipeCategories(recipe, ' • ')}</span>
-            <button class="print-recipe-btn button-family button-primary" id="printRecipeBtn" type="button">Print Recipe</button>
-            <button class="cook-mode-btn button-family button-secondary" id="cookModeBtn" type="button" aria-pressed="false">Cook Mode: Off</button>
-          </div>
-        </div>
-        ${renderNutritionSection(recipe)}
-        <p class="cook-mode-status" id="cookModeStatus" aria-live="polite"></p>
+        ${renderRecipeMetaSection(recipe)}
         ${recipe.tags && Array.isArray(recipe.tags) && recipe.tags.length > 0 ? `<div class="recipe-tags">${recipe.tags.map(t => `<span class="tag">${t}</span>`).join('')}</div>` : ''}
         ${renderServingsControl(recipe)}
         <div class="recipe-image-outer"><img src="${getRecipeOriginalImageUrl(recipe)}" alt="${recipe.title}" class="recipe-image" id="recipe-image-zoom" style="cursor: zoom-in;"></div>
@@ -1387,15 +1483,7 @@ if (pageType === 'detail' && detailedViewEl) {
       <article class="recipe-detail">
         <h1>${recipe.title}</h1>
         <p class="recipe-description">${recipe.description}</p>
-        <div class="recipe-meta">
-          <div class="meta-primary">
-            <span class="badge">${formatRecipeCategories(recipe, ' • ')}</span>
-            <button class="print-recipe-btn button-family button-primary" id="printRecipeBtn" type="button">Print Recipe</button>
-            <button class="cook-mode-btn button-family button-secondary" id="cookModeBtn" type="button" aria-pressed="false">Cook Mode: Off</button>
-          </div>
-        </div>
-        ${renderNutritionSection(recipe)}
-        <p class="cook-mode-status" id="cookModeStatus" aria-live="polite"></p>
+        ${renderRecipeMetaSection(recipe)}
         ${recipe.tags && Array.isArray(recipe.tags) && recipe.tags.length > 0 ? `<div class="recipe-tags">${recipe.tags.map(t => `<span class="tag">${t}</span>`).join('')}</div>` : ''}
         ${renderServingsControl(recipe)}
         <div class="recipe-image-outer"><img src="${getRecipeOriginalImageUrl(recipe)}" alt="${recipe.title}" class="recipe-image" id="recipe-image-zoom" style="cursor: zoom-in;"></div>
@@ -1542,15 +1630,7 @@ if (pageType === 'abc-detail' && detailedViewEl) {
       <article class="recipe-detail">
         <h1>${recipe.title}</h1>
         <p class="recipe-description">${recipe.description}</p>
-        <div class="recipe-meta">
-          <div class="meta-primary">
-            <span class="badge">${formatRecipeCategories(recipe, ' • ')}</span>
-            <button class="print-recipe-btn button-family button-primary" id="printRecipeBtn" type="button">Print Recipe</button>
-            <button class="cook-mode-btn button-family button-secondary" id="cookModeBtn" type="button" aria-pressed="false">Cook Mode: Off</button>
-          </div>
-        </div>
-        ${renderNutritionSection(recipe)}
-        <p class="cook-mode-status" id="cookModeStatus" aria-live="polite"></p>
+        ${renderRecipeMetaSection(recipe)}
         ${recipe.tags && Array.isArray(recipe.tags) && recipe.tags.length > 0 ? `<div class="recipe-tags">${recipe.tags.map(t => `<span class="tag">${t}</span>`).join('')}</div>` : ''}
         ${renderServingsControl(recipe)}
         <div class="recipe-image-outer"><img src="${getRecipeOriginalImageUrl(recipe)}" alt="${recipe.title}" class="recipe-image" id="recipe-image-zoom" style="cursor: zoom-in;"></div>
