@@ -1974,4 +1974,48 @@ tags: ["dessert", "high protein"]
   ]
 },
 
+  {
+  id: "salsa-joes",
+  title: "Salsa Joes",
+  description: "Smoky, tangy, and just the right amount of heat, these picante-sauce sloppy joes come together in 20 minutes for a fast, satisfying weeknight dinner.",
+  image: "images/salsa-joes.png",
+  category: "Beef",
+  dateAdded: "2026-07-22",
+  carbs: null,
+  fat: null,
+  fiber: null,
+  calories: "",
+  protein: "",
+  servings: "6",
+  tags: ["beef", "ground beef", "sandwich", "sloppy joe", "quick", "weeknight", "spicy"],
+
+  ingredients: [
+    { qty: 1.25, unit: "lb", name: "ground beef (93/7)" },
+    { qty: 16, unit: "oz", name: "picante sauce", notes: "medium, 1 jar", display: "1 (16 oz) jar picante sauce, medium" },
+    { qty: 1, unit: "tbsp", name: "brown sugar", notes: "packed, light" },
+    { qty: 1, unit: "tbsp", name: "yellow mustard" },
+    { qty: 0.25, unit: "tsp", name: "smoked paprika" },
+    { qty: 0.25, unit: "tsp", name: "chili powder" },
+
+    { qty: 1, unit: "tsp", name: "adobo sauce", notes: "from a can of chipotle peppers", optional: true, display: "Optional: 1 tsp adobo sauce (from a can of chipotle peppers)" },
+    { qty: 0.25, unit: "cup", name: "green onions", optional: true, display: "Optional: 1/4 cup green onion (scallion)" },
+
+    { qty: 6, unit: null, name: "hamburger buns", notes: "butter buns, split" },
+    { qty: 6, unit: "slice", name: "pepper jack cheese" },
+    { qty: null, unit: null, name: "Sliced jalapenos", optional: true, display: "Optional: sliced jalapenos" }
+  ],
+
+  steps: [
+    "Cook the ground beef in a 12-inch skillet over medium-high heat until well browned, stirring often to separate the meat. Pour off any fat.",
+    "Stir in the picante sauce, mustard, brown sugar, smoked paprika, chili powder, adobo sauce, and green onions, if desired. Cook until hot and bubbling.",
+    "Reduce the heat, cover, and cook 5 minutes.",
+    "Place a slice of pepper jack cheese on each top bun. Toast the buns (toaster oven on the toast setting, or under the broiler) until the buns are golden and the cheese is melted.",
+    "Divide the beef mixture evenly among the bottom buns, top with the melted cheese buns, and add jalapenos if desired."
+  ],
+
+  notes: [
+    "No adobo sauce on hand, or not a chipotle fan? Leave it out — the recipe is still good without it."
+  ]
+},
+
 ];

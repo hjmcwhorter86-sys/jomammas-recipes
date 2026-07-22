@@ -332,7 +332,7 @@ window.ingredientNutrition = {
     fat: 27,
     fiber: 0,
     carbs: 1,
-    unitWeights: {},
+    unitWeights: { slice: 28 },
     verified: false,
     source: "Estimated by Claude (typical USDA FoodData Central / brand-label values), unverified — pending user review"
   },
@@ -1887,5 +1887,38 @@ window.ingredientNutrition = {
     unitWeights: { "egg yolk": 17 },
     verified: false,
     source: "Estimated by Claude (typical USDA FoodData Central values for raw egg yolk, 1 large yolk ≈ 17g), unverified, pending user review"
+  },
+  "picante sauce": {
+    per: "100g",
+    calories: 33,
+    protein: 0,
+    fat: 0,
+    fiber: 3.3,
+    carbs: 10,
+    unitWeights: {},
+    verified: true,
+    source: "Pace Picante Sauce, Medium label: 10 cal / 0g fat / 0g protein / ~1g fiber / ~3g carbs per 2 tbsp (30ml) serving, per user-confirmed brand."
+  },
+  "yellow mustard": {
+    per: "100g",
+    calories: 66,
+    protein: 4,
+    fat: 4,
+    fiber: 3.3,
+    carbs: 6,
+    unitWeights: {},
+    verified: false,
+    source: "Estimated by Claude (typical USDA FoodData Central / brand-label values for prepared yellow mustard), unverified — pending user review"
+  },
+  "hamburger bun": {
+    per: "100g",
+    calories: 263,
+    protein: 8.8,
+    fat: 2.6,
+    fiber: 0.9,
+    carbs: 52.6,
+    unitWeights: { "hamburger bun": 57 },
+    verified: true,
+    source: "Nature's Own Butter Buns label: 150 cal / 1.5g fat / 5g protein / <1g fiber / 30g carbs per 1 bun (57g), per user-provided photo."
   },
 };

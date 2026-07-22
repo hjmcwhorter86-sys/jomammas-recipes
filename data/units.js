@@ -65,6 +65,7 @@ window.unitConversions = {
     "nonfat greek yogurt": 1.035,
     "ketchup": 1.05,
     "mustard": 1,
+    "yellow mustard": 1,
     "olive oil": 0.92,
     "better than bouillon seasoned lobster base": 1.15,
     "tomato paste": 1.12,
