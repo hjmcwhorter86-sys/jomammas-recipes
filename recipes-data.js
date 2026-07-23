@@ -86,7 +86,7 @@ window.recipes = [
   {
   id: "light-chicken-alfredo-pasta",
   title: "Lightened-Up Chicken Alfredo (Protein Pasta Edition)",
-  description: "Silky, glossy Alfredo vibes with lighter ingredients and big protein energy.",
+  description: "Silky, glossy Alfredo vibes with lighter ingredients and big protein energy. Sodium citrate is an emulsifier that makes the cheese sauce fast and fool-proof with no need to make a roux.",
   image: "images/light-chicken-alfredo.jpg",
   category: "Pasta",
   dateAdded: "2026-02-04",
@@ -131,7 +131,6 @@ window.recipes = [
 
   notes: [
     "Pasta water fixes everything. Thin the sauce with a splash or thicken with a brief simmer.",
-    "Optional protein boost: stir in 1–2 tbsp Greek yogurt off-heat.",
     "Leftovers reheat well with a splash of milk."
   ]
 },
