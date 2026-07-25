@@ -3,18 +3,18 @@ name: Deploy to GitHub Pages
 # Single workflow for both PR previews and production.
 #
 # GitHub Pages source must be set to "GitHub Actions" (Settings > Pages >
-# Build and deployment > Source) for this to work — NOT "Deploy from a
+# Build and deployment > Source) for this to work, NOT "Deploy from a
 # branch". With "Deploy from a branch", GitHub auto-triggers its own
 # deployment on every push to that branch and cancels older queued ones in
-# favor of newer ones with no way for us to opt out — which meant a burst
+# favor of newer ones with no way for us to opt out, which meant a burst
 # of PR preview churn could (and did) starve/cancel the production
 # deployment indefinitely. Actions-based deployment lets this workflow own
 # the concurrency group below (`cancel-in-progress: false`), so every
-# deploy — preview or prod — queues in order instead of getting raced out.
+# deploy (preview or prod) queues in order instead of getting raced out.
 #
 # The `gh-pages` branch is kept, but only as durable storage for the
 # accumulated site tree (root + each PR's pr-preview/pr-<number>/
-# subfolder) between runs — it is no longer the thing Pages actually
+# subfolder) between runs; it is no longer the thing Pages actually
 # serves. Each run rebuilds that tree, pushes it to `gh-pages` for the
 # next run to build on, then publishes it via actions/deploy-pages.
 #
@@ -186,7 +186,7 @@ jobs:
           set -euo pipefail
 
           MARKER="<!-- gh-pages-preview-comment -->"
-          BODY=$(printf '%s\n# 🔍 Preview removed\n\nThis PR is closed — the GitHub Pages preview has been cleaned up.' "$MARKER")
+          BODY=$(printf '%s\n# 🔍 Preview removed\n\nThis PR is closed; the GitHub Pages preview has been cleaned up.' "$MARKER")
 
           COMMENT_ID=$(gh api "repos/${REPO}/issues/${PR_NUMBER}/comments" --paginate \
             --jq ".[] | select(.body | startswith(\"$MARKER\")) | .id" | head -n1)
@@ -265,7 +265,7 @@ jobs:
     # commit, and the second one reliably fails ("Deployment failed, try
     # again later") since GitHub Pages doesn't like two deployments for an
     # identical build version in quick succession. So skip this job on the
-    # cleanup-preview path when the PR was actually merged — the push
+    # cleanup-preview path when the PR was actually merged; the push
     # event's publish-root deploy already covers that commit (including
     # this run's preview-removal commit, once queued behind it via the
     # `pages` concurrency group). Only deploy from cleanup-preview alone
@@ -273,7 +273,7 @@ jobs:
     # will pick up the removal.
     #
     # cleanup-preview only uploads a Pages artifact when it actually
-    # changed something (its `changed` output) — it can succeed without
+    # changed something (its `changed` output); it can succeed without
     # uploading (e.g. nothing to remove), and deploy-pages has no artifact
     # to deploy in that case. So gate on `outputs.changed`, not just
     # `result == 'success'`.
@@ -289,7 +289,7 @@ jobs:
     steps:
       # actions/deploy-pages occasionally gets a hard "Deployment failed,
       # try again later." from GitHub's Pages backend within seconds of
-      # creating the deployment — a transient server-side rejection, not a
+      # creating the deployment: a transient server-side rejection, not a
       # timeout, so the action's own status-polling retry (error_count /
       # reporting_interval) doesn't help. A fresh attempt usually succeeds,
       # so retry natively here rather than requiring a manual "re-run

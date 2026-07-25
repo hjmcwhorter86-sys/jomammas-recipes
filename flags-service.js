@@ -33,7 +33,7 @@ window.flagsService = {
   },
 
   // Returns all flags with their default, any override, and effective
-  // value — used to render the flags page.
+  // value; used to render the flags page.
   getAll() {
     return Object.entries(window.featureFlags || {}).map(([key, flag]) => {
       const override = readFlagOverride(key);

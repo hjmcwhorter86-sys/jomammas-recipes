@@ -6,7 +6,7 @@
 // `true` here; once everyone's on it, delete the flag and the code path it
 // gates.
 //
-// Don't read this object directly in app code — use
+// Don't read this object directly in app code; use
 // window.flagsService.isEnabled('flagName'), which layers in overrides.
 window.featureFlags = {
   showComputedNutrition: {

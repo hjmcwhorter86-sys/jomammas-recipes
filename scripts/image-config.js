@@ -1,5 +1,5 @@
 // Shared config between scripts/optimize-images.js and
-// scripts/check-images-optimized.js — keep the site-asset rule in one place
+// scripts/check-images-optimized.js; keep the site-asset rule in one place
 // so the CI check can't drift from what the optimizer actually does.
 
 // Images that are recipe photos (resize + compress).

@@ -806,7 +806,7 @@ h3 {
   margin: var(--space-4) 0 0;
 }
 
-/* Mobile categories section — hidden on desktop, shown on mobile */
+/* Mobile categories section: hidden on desktop, shown on mobile */
 @media (min-width: 769px) {
   .mobile-categories {
     display: none;
@@ -1641,7 +1641,7 @@ body{
 }
 
 /* Placeholder mascot for pages without a custom hero image yet (e.g. Adrien's
-   Baking Corner) — an emoji standing in until real artwork is ready. */
+   Baking Corner); an emoji standing in until real artwork is ready. */
 .hero-emoji-placeholder {
   font-size: 160px;
   line-height: 1;

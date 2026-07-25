@@ -11,7 +11,7 @@
 //
 // This file is loaded only on abc.html and abc-recipe-detail.html, so these
 // recipes stay separate from the main site's recipes-list.html, search, and
-// homepage — they only ever appear on Adrien's own pages.
+// homepage; they only ever appear on Adrien's own pages.
 
 window.adrienRecipes = [
   {
