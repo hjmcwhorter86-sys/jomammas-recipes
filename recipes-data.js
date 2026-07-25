@@ -2020,7 +2020,7 @@ tags: ["dessert", "high protein"]
 {
   id: "fiesta-chicken-salad",
   title: "Fiesta Chicken Salad",
-  description: "Seared taco-seasoned chicken over crisp greens with a creamy salsa ranch dressing, tortilla strips, and fiesta cheese — big flavor, light on calories.",
+  description: "Seared taco-seasoned chicken over crisp greens with a creamy salsa ranch dressing, tortilla strips, and fiesta cheese. Big flavor, light on calories.",
   image: "images/fiesta-chicken-salad.png",
   category: ["Chicken", "Low Calorie"],
   dateAdded: "2026-07-25",
