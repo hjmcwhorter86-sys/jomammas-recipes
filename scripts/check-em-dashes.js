@@ -9,10 +9,11 @@
 const { execSync } = require('child_process');
 const fs = require('fs');
 
-// Binary/generated file types git happens to track; scanning them for a
-// text glyph is pointless and can produce noisy coincidental matches.
+// Binary file types git happens to track; scanning them for a text glyph
+// is pointless and can produce noisy coincidental matches. SVG is
+// deliberately not in this list: it's XML text, not binary.
 const SKIP_EXTENSIONS = new Set([
-  '.png', '.jpg', '.jpeg', '.gif', '.ico', '.webp', '.svg',
+  '.png', '.jpg', '.jpeg', '.gif', '.ico', '.webp',
   '.woff', '.woff2', '.ttf', '.eot',
 ]);
 
@@ -34,7 +35,7 @@ function checkEmDashes() {
   const problems = [];
 
   for (const file of trackedFiles()) {
-    if (hasSkippedExtension(file) || file === 'package-lock.json') continue;
+    if (hasSkippedExtension(file)) continue;
     if (!fs.existsSync(file)) continue; // deleted-but-staged, nothing to check
 
     const content = fs.readFileSync(file, 'utf8');
