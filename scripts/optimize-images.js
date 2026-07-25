@@ -59,7 +59,7 @@ async function optimizeImages() {
       await pipeline.jpeg({ quality: 80, mozjpeg: true }).toFile(tmpPath);
     } else {
       // PNG with lossy quantisation (requires libimagequant; falls back to
-      // lossless if not available — still saves some bytes via level 9).
+      // lossless if not available; still saves some bytes via level 9).
       await pipeline
         .png({ quality: 80, compressionLevel: 9, effort: 10 })
         .toFile(tmpPath);

@@ -92,7 +92,7 @@ window.ingredientNutrition = {
     carbs: 33.1,
     unitWeights: { clove: 3 },
     verified: true,
-    source: "USDA FoodData Central, raw garlic — confirmed by user (fresh cloves, no commercial label applies). Jarred minced garlic is a separate, more dilute entry."
+    source: "USDA FoodData Central, raw garlic, confirmed by user (fresh cloves, no commercial label applies). Jarred minced garlic is a separate, more dilute entry."
   },
   "jarred minced garlic": {
     per: "100g",
@@ -125,7 +125,7 @@ window.ingredientNutrition = {
     carbs: 0,
     unitWeights: {},
     verified: false,
-    source: "Estimated by Claude (typical USDA FoodData Central / brand-label values), unverified — pending user review"
+    source: "Estimated by Claude (typical USDA FoodData Central / brand-label values), unverified, pending user review"
   },
   "flour": {
     per: "100g",
@@ -147,7 +147,7 @@ window.ingredientNutrition = {
     carbs: 84,
     unitWeights: {},
     verified: false,
-    source: "Estimated by Claude (typical USDA FoodData Central / brand-label values), unverified — pending user review"
+    source: "Estimated by Claude (typical USDA FoodData Central / brand-label values), unverified, pending user review"
   },
   "garlic powder": {
     per: "100g",
@@ -180,7 +180,7 @@ window.ingredientNutrition = {
     carbs: 49,
     unitWeights: {},
     verified: false,
-    source: "Estimated by Claude (typical USDA FoodData Central / brand-label values), unverified — pending user review"
+    source: "Estimated by Claude (typical USDA FoodData Central / brand-label values), unverified, pending user review"
   },
   "sriracha": {
     per: "100g",
@@ -191,7 +191,7 @@ window.ingredientNutrition = {
     carbs: 19,
     unitWeights: {},
     verified: false,
-    source: "Estimated by Claude (typical USDA FoodData Central / brand-label values), unverified — pending user review"
+    source: "Estimated by Claude (typical USDA FoodData Central / brand-label values), unverified, pending user review"
   },
   "honey": {
     per: "100g",
@@ -213,7 +213,7 @@ window.ingredientNutrition = {
     carbs: 0,
     unitWeights: {},
     verified: true,
-    source: "Sodium chloride — 0 calories/macros. User-confirmed."
+    source: "Sodium chloride: 0 calories/macros. User-confirmed."
   },
   "black pepper": {
     per: "100g",
@@ -224,7 +224,7 @@ window.ingredientNutrition = {
     carbs: 64,
     unitWeights: {},
     verified: true,
-    source: "USDA reference, ground black pepper (~251 cal/100g but ~3 cal per tsp — negligible at recipe amounts). User opted not to label-check."
+    source: "USDA reference, ground black pepper (~251 cal/100g but ~3 cal per tsp, negligible at recipe amounts). User opted not to label-check."
   },
   "paprika": {
     per: "100g",
@@ -246,7 +246,7 @@ window.ingredientNutrition = {
     carbs: 1,
     unitWeights: {},
     verified: false,
-    source: "Estimated by Claude (typical USDA FoodData Central / brand-label values), unverified — pending user review"
+    source: "Estimated by Claude (typical USDA FoodData Central / brand-label values), unverified, pending user review"
   },
   "protein pasta": {
     per: "100g",
@@ -268,7 +268,7 @@ window.ingredientNutrition = {
     carbs: 5,
     unitWeights: {},
     verified: false,
-    source: "Estimated by Claude (typical USDA FoodData Central / brand-label values), unverified — pending user review"
+    source: "Estimated by Claude (typical USDA FoodData Central / brand-label values), unverified, pending user review"
   },
   "sodium citrate": {
     per: "100g",
@@ -279,7 +279,7 @@ window.ingredientNutrition = {
     carbs: 0,
     unitWeights: {},
     verified: false,
-    source: "Estimated by Claude (typical USDA FoodData Central / brand-label values), unverified — pending user review"
+    source: "Estimated by Claude (typical USDA FoodData Central / brand-label values), unverified, pending user review"
   },
   "reduced fat parmesan": {
     per: "100g",
@@ -290,7 +290,7 @@ window.ingredientNutrition = {
     carbs: 4,
     unitWeights: {},
     verified: false,
-    source: "Estimated by Claude (typical USDA FoodData Central / brand-label values), unverified — pending user review"
+    source: "Estimated by Claude (typical USDA FoodData Central / brand-label values), unverified, pending user review"
   },
   "skim milk": {
     per: "100ml",
@@ -301,7 +301,7 @@ window.ingredientNutrition = {
     carbs: 5,
     unitWeights: {},
     verified: false,
-    source: "Estimated by Claude (typical USDA FoodData Central / brand-label values), unverified — pending user review"
+    source: "Estimated by Claude (typical USDA FoodData Central / brand-label values), unverified, pending user review"
   },
   "half and half": {
     per: "100ml",
@@ -334,7 +334,7 @@ window.ingredientNutrition = {
     carbs: 1,
     unitWeights: { slice: 28 },
     verified: false,
-    source: "Estimated by Claude (typical USDA FoodData Central / brand-label values), unverified — pending user review"
+    source: "Estimated by Claude (typical USDA FoodData Central / brand-label values), unverified, pending user review"
   },
   "diced pickled jalapeños": {
     per: "100g",
@@ -345,7 +345,7 @@ window.ingredientNutrition = {
     carbs: 3,
     unitWeights: {},
     verified: false,
-    source: "Estimated by Claude (typical USDA FoodData Central / brand-label values), unverified — pending user review"
+    source: "Estimated by Claude (typical USDA FoodData Central / brand-label values), unverified, pending user review"
   },
   "low fat cottage cheese": {
     per: "100g",
@@ -356,7 +356,7 @@ window.ingredientNutrition = {
     carbs: 4,
     unitWeights: {},
     verified: false,
-    source: "Estimated by Claude (typical USDA FoodData Central / brand-label values), unverified — pending user review"
+    source: "Estimated by Claude (typical USDA FoodData Central / brand-label values), unverified, pending user review"
   },
   "nonfat greek yogurt": {
     per: "100g",
@@ -367,7 +367,7 @@ window.ingredientNutrition = {
     carbs: 3.6,
     unitWeights: {},
     verified: false,
-    source: "Estimated by Claude (typical USDA FoodData Central / brand-label values), unverified — pending user review"
+    source: "Estimated by Claude (typical USDA FoodData Central / brand-label values), unverified, pending user review"
   },
   "box sugar free cheesecake or vanilla pudding mix": {
     per: "100g",
@@ -378,7 +378,7 @@ window.ingredientNutrition = {
     carbs: 76,
     unitWeights: { "box sugar free cheesecake or vanilla pudding mix": 26 },
     verified: false,
-    source: "Estimated by Claude (typical USDA FoodData Central / brand-label values), unverified — pending user review"
+    source: "Estimated by Claude (typical USDA FoodData Central / brand-label values), unverified, pending user review"
   },
   "scoop vanilla protein powder": {
     per: "100g",
@@ -389,7 +389,7 @@ window.ingredientNutrition = {
     carbs: 8,
     unitWeights: { "scoop vanilla protein powder": 30 },
     verified: false,
-    source: "Estimated by Claude (typical USDA FoodData Central / brand-label values), unverified — pending user review"
+    source: "Estimated by Claude (typical USDA FoodData Central / brand-label values), unverified, pending user review"
   },
   "jordan's skinny syrup vanilla or vanilla caramel": {
     per: "100ml",
@@ -400,7 +400,7 @@ window.ingredientNutrition = {
     carbs: 2,
     unitWeights: {},
     verified: false,
-    source: "Estimated by Claude (typical USDA FoodData Central / brand-label values), unverified — pending user review"
+    source: "Estimated by Claude (typical USDA FoodData Central / brand-label values), unverified, pending user review"
   },
   "ketchup": {
     per: "100g",
@@ -411,7 +411,7 @@ window.ingredientNutrition = {
     carbs: 27,
     unitWeights: {},
     verified: false,
-    source: "Estimated by Claude (typical USDA FoodData Central / brand-label values), unverified — pending user review"
+    source: "Estimated by Claude (typical USDA FoodData Central / brand-label values), unverified, pending user review"
   },
   "mustard": {
     per: "100g",
@@ -422,7 +422,7 @@ window.ingredientNutrition = {
     carbs: 6,
     unitWeights: {},
     verified: false,
-    source: "Estimated by Claude (typical USDA FoodData Central / brand-label values), unverified — pending user review"
+    source: "Estimated by Claude (typical USDA FoodData Central / brand-label values), unverified, pending user review"
   },
   "worcestershire sauce": {
     per: "100ml",
@@ -433,7 +433,7 @@ window.ingredientNutrition = {
     carbs: 19.5,
     unitWeights: {},
     verified: false,
-    source: "Estimated by Claude (typical USDA FoodData Central / brand-label values), unverified — pending user review"
+    source: "Estimated by Claude (typical USDA FoodData Central / brand-label values), unverified, pending user review"
   },
   "olive oil": {
     per: "100g",
@@ -455,7 +455,7 @@ window.ingredientNutrition = {
     carbs: 64,
     unitWeights: { "packets brown gravy mix": 25 },
     verified: false,
-    source: "Estimated by Claude (typical USDA FoodData Central / brand-label values), unverified — pending user review"
+    source: "Estimated by Claude (typical USDA FoodData Central / brand-label values), unverified, pending user review"
   },
   "hot water": {
     per: "100ml",
@@ -466,7 +466,7 @@ window.ingredientNutrition = {
     carbs: 0,
     unitWeights: {},
     verified: false,
-    source: "Estimated by Claude (typical USDA FoodData Central / brand-label values), unverified — pending user review"
+    source: "Estimated by Claude (typical USDA FoodData Central / brand-label values), unverified, pending user review"
   },
   "water": {
     per: "100ml",
@@ -477,7 +477,7 @@ window.ingredientNutrition = {
     carbs: 0,
     unitWeights: {},
     verified: false,
-    source: "Estimated by Claude (typical USDA FoodData Central / brand-label values), unverified — pending user review"
+    source: "Estimated by Claude (typical USDA FoodData Central / brand-label values), unverified, pending user review"
   },
   "dry white wine": {
     per: "100ml",
@@ -488,7 +488,7 @@ window.ingredientNutrition = {
     carbs: 2.6,
     unitWeights: {},
     verified: false,
-    source: "Estimated by Claude (typical USDA FoodData Central / brand-label values), unverified — pending user review"
+    source: "Estimated by Claude (typical USDA FoodData Central / brand-label values), unverified, pending user review"
   },
   "better than bouillon seasoned lobster base": {
     per: "100g",
@@ -499,7 +499,7 @@ window.ingredientNutrition = {
     carbs: 10,
     unitWeights: {},
     verified: false,
-    source: "Estimated by Claude (typical USDA FoodData Central / brand-label values), unverified — pending user review"
+    source: "Estimated by Claude (typical USDA FoodData Central / brand-label values), unverified, pending user review"
   },
   "tomato paste": {
     per: "100g",
@@ -521,7 +521,7 @@ window.ingredientNutrition = {
     carbs: 0,
     unitWeights: {},
     verified: false,
-    source: "Estimated by Claude (typical USDA FoodData Central / brand-label values), unverified — pending user review"
+    source: "Estimated by Claude (typical USDA FoodData Central / brand-label values), unverified, pending user review"
   },
   "cornstarch": {
     per: "100g",
@@ -532,7 +532,7 @@ window.ingredientNutrition = {
     carbs: 91.3,
     unitWeights: {},
     verified: false,
-    source: "Estimated by Claude (typical USDA FoodData Central / brand-label values), unverified — pending user review"
+    source: "Estimated by Claude (typical USDA FoodData Central / brand-label values), unverified, pending user review"
   },
   "avocado oil": {
     per: "100g",
@@ -554,7 +554,7 @@ window.ingredientNutrition = {
     carbs: 33,
     unitWeights: {},
     verified: false,
-    source: "Estimated by Claude (typical USDA FoodData Central / brand-label values), unverified — pending user review"
+    source: "Estimated by Claude (typical USDA FoodData Central / brand-label values), unverified, pending user review"
   },
   "italian style breadcrumbs": {
     per: "100g",
@@ -565,7 +565,7 @@ window.ingredientNutrition = {
     carbs: 72,
     unitWeights: {},
     verified: false,
-    source: "Estimated by Claude (typical USDA FoodData Central / brand-label values), unverified — pending user review"
+    source: "Estimated by Claude (typical USDA FoodData Central / brand-label values), unverified, pending user review"
   },
   "parmesan": {
     per: "100g",
@@ -587,7 +587,7 @@ window.ingredientNutrition = {
     carbs: 7,
     unitWeights: {},
     verified: false,
-    source: "Estimated by Claude (typical USDA FoodData Central / brand-label values), unverified — pending user review"
+    source: "Estimated by Claude (typical USDA FoodData Central / brand-label values), unverified, pending user review"
   },
   "reduced fat shredded mozzarella": {
     per: "100g",
@@ -620,7 +620,7 @@ window.ingredientNutrition = {
     carbs: 4,
     unitWeights: {},
     verified: false,
-    source: "Estimated by Claude (typical USDA FoodData Central / brand-label values), unverified — pending user review"
+    source: "Estimated by Claude (typical USDA FoodData Central / brand-label values), unverified, pending user review"
   },
   "shredded cheddar": {
     per: "100g",
@@ -642,7 +642,7 @@ window.ingredientNutrition = {
     carbs: 44.2,
     unitWeights: {},
     verified: false,
-    source: "Estimated by Claude (typical USDA FoodData Central / brand-label values), unverified — pending user review"
+    source: "Estimated by Claude (typical USDA FoodData Central / brand-label values), unverified, pending user review"
   },
   "corn or flour tortillas": {
     per: "100g",
@@ -653,7 +653,7 @@ window.ingredientNutrition = {
     carbs: 36.7,
     unitWeights: { "corn or flour tortillas": 45 },
     verified: false,
-    source: "Estimated by Claude (typical USDA FoodData Central / brand-label values), unverified — pending user review"
+    source: "Estimated by Claude (typical USDA FoodData Central / brand-label values), unverified, pending user review"
   },
   "crumbled blue cheese": {
     per: "100g",
@@ -664,7 +664,7 @@ window.ingredientNutrition = {
     carbs: 2.3,
     unitWeights: {},
     verified: false,
-    source: "Estimated by Claude (typical USDA FoodData Central / brand-label values), unverified — pending user review"
+    source: "Estimated by Claude (typical USDA FoodData Central / brand-label values), unverified, pending user review"
   },
   "ranch or blue cheese dressing": {
     per: "100g",
@@ -675,7 +675,7 @@ window.ingredientNutrition = {
     carbs: 5,
     unitWeights: {},
     verified: false,
-    source: "Estimated by Claude (typical USDA FoodData Central / brand-label values), unverified — pending user review"
+    source: "Estimated by Claude (typical USDA FoodData Central / brand-label values), unverified, pending user review"
   },
   "large russet potatoes": {
     per: "100g",
@@ -686,7 +686,7 @@ window.ingredientNutrition = {
     carbs: 17.5,
     unitWeights: { "large russet potatoes": 300 },
     verified: false,
-    source: "Estimated by Claude (typical USDA FoodData Central / brand-label values), unverified — pending user review"
+    source: "Estimated by Claude (typical USDA FoodData Central / brand-label values), unverified, pending user review"
   },
   "smoked paprika": {
     per: "100g",
@@ -708,7 +708,7 @@ window.ingredientNutrition = {
     carbs: 12,
     unitWeights: {},
     verified: false,
-    source: "Estimated by Claude (typical USDA FoodData Central / brand-label values), unverified — pending user review"
+    source: "Estimated by Claude (typical USDA FoodData Central / brand-label values), unverified, pending user review"
   },
   "shallot": {
     per: "100g",
@@ -719,7 +719,7 @@ window.ingredientNutrition = {
     carbs: 16.8,
     unitWeights: { "shallot": 25 },
     verified: false,
-    source: "Estimated by Claude (typical USDA FoodData Central / brand-label values), unverified — pending user review"
+    source: "Estimated by Claude (typical USDA FoodData Central / brand-label values), unverified, pending user review"
   },
   "fresh spinach": {
     per: "100g",
@@ -730,7 +730,7 @@ window.ingredientNutrition = {
     carbs: 3.6,
     unitWeights: {},
     verified: false,
-    source: "Estimated by Claude (typical USDA FoodData Central / brand-label values), unverified — pending user review"
+    source: "Estimated by Claude (typical USDA FoodData Central / brand-label values), unverified, pending user review"
   },
   "sun dried tomatoes": {
     per: "100g",
@@ -741,7 +741,7 @@ window.ingredientNutrition = {
     carbs: 55.8,
     unitWeights: {},
     verified: false,
-    source: "Estimated by Claude (typical USDA FoodData Central / brand-label values), unverified — pending user review"
+    source: "Estimated by Claude (typical USDA FoodData Central / brand-label values), unverified, pending user review"
   },
   "reduced sodium chicken broth": {
     per: "100ml",
@@ -752,7 +752,7 @@ window.ingredientNutrition = {
     carbs: 0.5,
     unitWeights: {},
     verified: false,
-    source: "Estimated by Claude (typical USDA FoodData Central / brand-label values), unverified — pending user review"
+    source: "Estimated by Claude (typical USDA FoodData Central / brand-label values), unverified, pending user review"
   },
   "white cooking wine": {
     per: "100ml",
@@ -774,7 +774,7 @@ window.ingredientNutrition = {
     carbs: 5,
     unitWeights: {},
     verified: false,
-    source: "Estimated by Claude (typical USDA FoodData Central / brand-label values), unverified — pending user review"
+    source: "Estimated by Claude (typical USDA FoodData Central / brand-label values), unverified, pending user review"
   },
   "italian seasoning": {
     per: "100g",
@@ -785,7 +785,7 @@ window.ingredientNutrition = {
     carbs: 50,
     unitWeights: {},
     verified: false,
-    source: "Estimated by Claude (typical USDA FoodData Central / brand-label values), unverified — pending user review"
+    source: "Estimated by Claude (typical USDA FoodData Central / brand-label values), unverified, pending user review"
   },
   "bag frozen stir fry vegetables": {
     per: "100g",
@@ -796,7 +796,7 @@ window.ingredientNutrition = {
     carbs: 6,
     unitWeights: { "bag frozen stir fry vegetables": 450 },
     verified: false,
-    source: "Estimated by Claude (typical USDA FoodData Central / brand-label values), unverified — pending user review"
+    source: "Estimated by Claude (typical USDA FoodData Central / brand-label values), unverified, pending user review"
   },
   "chicken breast cooked and sliced": {
     per: "100g",
@@ -807,7 +807,7 @@ window.ingredientNutrition = {
     carbs: 0,
     unitWeights: {},
     verified: false,
-    source: "Estimated by Claude (typical USDA FoodData Central / brand-label values), unverified — pending user review"
+    source: "Estimated by Claude (typical USDA FoodData Central / brand-label values), unverified, pending user review"
   },
   "low sodium soy sauce": {
     per: "100ml",
@@ -818,7 +818,7 @@ window.ingredientNutrition = {
     carbs: 4.9,
     unitWeights: {},
     verified: false,
-    source: "Estimated by Claude (typical USDA FoodData Central / brand-label values), unverified — pending user review"
+    source: "Estimated by Claude (typical USDA FoodData Central / brand-label values), unverified, pending user review"
   },
   "oyster sauce": {
     per: "100g",
@@ -829,7 +829,7 @@ window.ingredientNutrition = {
     carbs: 11,
     unitWeights: {},
     verified: false,
-    source: "Estimated by Claude (typical USDA FoodData Central / brand-label values), unverified — pending user review"
+    source: "Estimated by Claude (typical USDA FoodData Central / brand-label values), unverified, pending user review"
   },
   "hoisin sauce": {
     per: "100g",
@@ -840,7 +840,7 @@ window.ingredientNutrition = {
     carbs: 44,
     unitWeights: {},
     verified: false,
-    source: "Estimated by Claude (typical USDA FoodData Central / brand-label values), unverified — pending user review"
+    source: "Estimated by Claude (typical USDA FoodData Central / brand-label values), unverified, pending user review"
   },
   "sesame oil": {
     per: "100g",
@@ -851,7 +851,7 @@ window.ingredientNutrition = {
     carbs: 0,
     unitWeights: {},
     verified: false,
-    source: "Estimated by Claude (typical USDA FoodData Central / brand-label values), unverified — pending user review"
+    source: "Estimated by Claude (typical USDA FoodData Central / brand-label values), unverified, pending user review"
   },
   "chicken broth": {
     per: "100ml",
@@ -873,7 +873,7 @@ window.ingredientNutrition = {
     carbs: 3.4,
     unitWeights: {},
     verified: false,
-    source: "Estimated by Claude (typical USDA FoodData Central / brand-label values), unverified — pending user review"
+    source: "Estimated by Claude (typical USDA FoodData Central / brand-label values), unverified, pending user review"
   },
   "buffalo sauce": {
     per: "100ml",
@@ -884,7 +884,7 @@ window.ingredientNutrition = {
     carbs: 1,
     unitWeights: {},
     verified: false,
-    source: "Estimated by Claude (typical USDA FoodData Central / brand-label values), unverified — pending user review"
+    source: "Estimated by Claude (typical USDA FoodData Central / brand-label values), unverified, pending user review"
   },
   "shredded cooked chicken": {
     per: "100g",
@@ -895,7 +895,7 @@ window.ingredientNutrition = {
     carbs: 0,
     unitWeights: {},
     verified: false,
-    source: "Estimated by Claude (typical USDA FoodData Central / brand-label values), unverified — pending user review"
+    source: "Estimated by Claude (typical USDA FoodData Central / brand-label values), unverified, pending user review"
   },
   "milk": {
     per: "100ml",
@@ -906,7 +906,7 @@ window.ingredientNutrition = {
     carbs: 4.9,
     unitWeights: {},
     verified: false,
-    source: "Estimated by Claude (typical USDA FoodData Central / brand-label values), unverified — pending user review"
+    source: "Estimated by Claude (typical USDA FoodData Central / brand-label values), unverified, pending user review"
   },
   "whole milk": {
     per: "100ml",
@@ -917,7 +917,7 @@ window.ingredientNutrition = {
     carbs: 4.8,
     unitWeights: {},
     verified: false,
-    source: "Estimated by Claude (USDA FoodData Central, whole milk 3.25% milkfat), unverified — pending user review"
+    source: "Estimated by Claude (USDA FoodData Central, whole milk 3.25% milkfat), unverified, pending user review"
   },
   "pork breakfast sausage": {
     per: "100g",
@@ -939,7 +939,7 @@ window.ingredientNutrition = {
     carbs: 65,
     unitWeights: {},
     verified: false,
-    source: "Estimated by Claude (typical USDA FoodData Central / brand-label values), unverified — pending user review"
+    source: "Estimated by Claude (typical USDA FoodData Central / brand-label values), unverified, pending user review"
   },
   "shredded mozzarella cheese": {
     per: "100g",
@@ -961,7 +961,7 @@ window.ingredientNutrition = {
     carbs: 76,
     unitWeights: {},
     verified: false,
-    source: "Estimated by Claude (typical USDA FoodData Central / brand-label values), unverified — pending user review"
+    source: "Estimated by Claude (typical USDA FoodData Central / brand-label values), unverified, pending user review"
   },
   "refrigerated buttermilk biscuits": {
     per: "100g",
@@ -972,7 +972,7 @@ window.ingredientNutrition = {
     carbs: 42,
     unitWeights: { "can": 340 },
     verified: false,
-    source: "Estimated by Claude (typical USDA FoodData Central / brand-label values), unverified — pending user review"
+    source: "Estimated by Claude (typical USDA FoodData Central / brand-label values), unverified, pending user review"
   },
   "cinnamon": {
     per: "100g",
@@ -983,7 +983,7 @@ window.ingredientNutrition = {
     carbs: 81,
     unitWeights: {},
     verified: false,
-    source: "Estimated by Claude (typical USDA FoodData Central / brand-label values), unverified — pending user review"
+    source: "Estimated by Claude (typical USDA FoodData Central / brand-label values), unverified, pending user review"
   },
   "brown sugar": {
     per: "100g",
@@ -994,7 +994,7 @@ window.ingredientNutrition = {
     carbs: 98,
     unitWeights: {},
     verified: false,
-    source: "Estimated by Claude (typical USDA FoodData Central / brand-label values), unverified — pending user review"
+    source: "Estimated by Claude (typical USDA FoodData Central / brand-label values), unverified, pending user review"
   },
   "cherry or grape tomatoes": {
     per: "100g",
@@ -1005,7 +1005,7 @@ window.ingredientNutrition = {
     carbs: 3.9,
     unitWeights: {},
     verified: false,
-    source: "Estimated by Claude (typical USDA FoodData Central / brand-label values), unverified — pending user review"
+    source: "Estimated by Claude (typical USDA FoodData Central / brand-label values), unverified, pending user review"
   },
   "salted butter": {
     per: "100g",
@@ -1027,7 +1027,7 @@ window.ingredientNutrition = {
     carbs: 12.7,
     unitWeights: {},
     verified: false,
-    source: "Estimated by Claude (typical USDA FoodData Central / brand-label values), unverified — pending user review"
+    source: "Estimated by Claude (typical USDA FoodData Central / brand-label values), unverified, pending user review"
   },
   "cocoa powder": {
     per: "100g",
@@ -1038,7 +1038,7 @@ window.ingredientNutrition = {
     carbs: 57.9,
     unitWeights: {},
     verified: false,
-    source: "Estimated by Claude (typical USDA FoodData Central / brand-label values), unverified — pending user review"
+    source: "Estimated by Claude (typical USDA FoodData Central / brand-label values), unverified, pending user review"
   },
   "salt": {
     per: "100g",
@@ -1049,7 +1049,7 @@ window.ingredientNutrition = {
     carbs: 0,
     unitWeights: {},
     verified: true,
-    source: "Table salt (sodium chloride) — 0 calories/macros. User-confirmed."
+    source: "Table salt (sodium chloride): 0 calories/macros. User-confirmed."
   },
   "boneless skinless chicken thighs": {
     per: "100g",
@@ -1060,7 +1060,7 @@ window.ingredientNutrition = {
     carbs: 0,
     unitWeights: {},
     verified: false,
-    source: "Estimated by Claude (typical USDA FoodData Central / brand-label values), unverified — pending user review"
+    source: "Estimated by Claude (typical USDA FoodData Central / brand-label values), unverified, pending user review"
   },
   "small yellow onion": {
     per: "100g",
@@ -1071,7 +1071,7 @@ window.ingredientNutrition = {
     carbs: 9.3,
     unitWeights: { "small yellow onion": 110 },
     verified: false,
-    source: "Estimated by Claude (typical USDA FoodData Central / brand-label values), unverified — pending user review"
+    source: "Estimated by Claude (typical USDA FoodData Central / brand-label values), unverified, pending user review"
   },
   "tomato sauce": {
     per: "100g",
@@ -1082,7 +1082,7 @@ window.ingredientNutrition = {
     carbs: 5,
     unitWeights: {},
     verified: false,
-    source: "Estimated by Claude (typical USDA FoodData Central / brand-label values), unverified — pending user review"
+    source: "Estimated by Claude (typical USDA FoodData Central / brand-label values), unverified, pending user review"
   },
   "garam masala": {
     per: "100g",
@@ -1093,7 +1093,7 @@ window.ingredientNutrition = {
     carbs: 56,
     unitWeights: {},
     verified: false,
-    source: "Estimated by Claude (typical USDA FoodData Central / brand-label values), unverified — pending user review"
+    source: "Estimated by Claude (typical USDA FoodData Central / brand-label values), unverified, pending user review"
   },
   "curry powder": {
     per: "100g",
@@ -1104,7 +1104,7 @@ window.ingredientNutrition = {
     carbs: 55.8,
     unitWeights: {},
     verified: false,
-    source: "Estimated by Claude (typical USDA FoodData Central / brand-label values), unverified — pending user review"
+    source: "Estimated by Claude (typical USDA FoodData Central / brand-label values), unverified, pending user review"
   },
   "chili powder": {
     per: "100g",
@@ -1115,7 +1115,7 @@ window.ingredientNutrition = {
     carbs: 50,
     unitWeights: {},
     verified: false,
-    source: "Estimated by Claude (typical USDA FoodData Central / brand-label values), unverified — pending user review"
+    source: "Estimated by Claude (typical USDA FoodData Central / brand-label values), unverified, pending user review"
   },
   "heavy cream": {
     per: "100ml",
@@ -1137,7 +1137,7 @@ window.ingredientNutrition = {
     carbs: 7,
     unitWeights: { "jar garlic vodka sauce": 680 },
     verified: false,
-    source: "Estimated by Claude (typical USDA FoodData Central / brand-label values), unverified — pending user review"
+    source: "Estimated by Claude (typical USDA FoodData Central / brand-label values), unverified, pending user review"
   },
   "ground italian style turkey": {
     per: "100g",
@@ -1148,7 +1148,7 @@ window.ingredientNutrition = {
     carbs: 2,
     unitWeights: {},
     verified: false,
-    source: "Estimated by Claude (typical USDA FoodData Central / brand-label values), unverified — pending user review"
+    source: "Estimated by Claude (typical USDA FoodData Central / brand-label values), unverified, pending user review"
   },
   "dry basmati rice": {
     per: "100g",
@@ -1159,7 +1159,7 @@ window.ingredientNutrition = {
     carbs: 78,
     unitWeights: {},
     verified: false,
-    source: "Estimated by Claude (typical USDA FoodData Central / brand-label values), unverified — pending user review"
+    source: "Estimated by Claude (typical USDA FoodData Central / brand-label values), unverified, pending user review"
   },
   "medium yellow onions": {
     per: "100g",
@@ -1170,7 +1170,7 @@ window.ingredientNutrition = {
     carbs: 9.3,
     unitWeights: { "medium yellow onions": 150 },
     verified: false,
-    source: "Estimated by Claude (typical USDA FoodData Central / brand-label values), unverified — pending user review"
+    source: "Estimated by Claude (typical USDA FoodData Central / brand-label values), unverified, pending user review"
   },
   "green bell pepper": {
     per: "100g",
@@ -1181,7 +1181,7 @@ window.ingredientNutrition = {
     carbs: 4.6,
     unitWeights: { "green bell pepper": 120 },
     verified: false,
-    source: "Estimated by Claude (typical USDA FoodData Central / brand-label values), unverified — pending user review"
+    source: "Estimated by Claude (typical USDA FoodData Central / brand-label values), unverified, pending user review"
   },
   "diced tomatoes": {
     per: "100g",
@@ -1192,7 +1192,7 @@ window.ingredientNutrition = {
     carbs: 4.3,
     unitWeights: { "can": 411 },
     verified: false,
-    source: "Estimated by Claude (typical USDA FoodData Central / brand-label values), unverified — pending user review"
+    source: "Estimated by Claude (typical USDA FoodData Central / brand-label values), unverified, pending user review"
   },
   "beef broth": {
     per: "100ml",
@@ -1203,7 +1203,7 @@ window.ingredientNutrition = {
     carbs: 0.2,
     unitWeights: {},
     verified: false,
-    source: "Estimated by Claude (typical USDA FoodData Central / brand-label values), unverified — pending user review"
+    source: "Estimated by Claude (typical USDA FoodData Central / brand-label values), unverified, pending user review"
   },
   "red wine vinegar": {
     per: "100ml",
@@ -1214,7 +1214,7 @@ window.ingredientNutrition = {
     carbs: 0.3,
     unitWeights: {},
     verified: false,
-    source: "Estimated by Claude (typical USDA FoodData Central / brand-label values), unverified — pending user review"
+    source: "Estimated by Claude (typical USDA FoodData Central / brand-label values), unverified, pending user review"
   },
   "dijon mustard": {
     per: "100g",
@@ -1225,7 +1225,7 @@ window.ingredientNutrition = {
     carbs: 6,
     unitWeights: {},
     verified: false,
-    source: "Estimated by Claude (typical USDA FoodData Central / brand-label values), unverified — pending user review"
+    source: "Estimated by Claude (typical USDA FoodData Central / brand-label values), unverified, pending user review"
   },
   "apple cider vinegar": {
     per: "100ml",
@@ -1236,7 +1236,7 @@ window.ingredientNutrition = {
     carbs: 0.9,
     unitWeights: {},
     verified: false,
-    source: "Estimated by Claude (typical USDA FoodData Central / brand-label values), unverified — pending user review"
+    source: "Estimated by Claude (typical USDA FoodData Central / brand-label values), unverified, pending user review"
   },
   "golden home ultra thin protein pizza crust": {
     per: "100g",
@@ -1247,7 +1247,7 @@ window.ingredientNutrition = {
     carbs: 40,
     unitWeights: { "golden home ultra thin protein pizza crust": 85 },
     verified: false,
-    source: "Estimated by Claude (typical USDA FoodData Central / brand-label values), unverified — pending user review"
+    source: "Estimated by Claude (typical USDA FoodData Central / brand-label values), unverified, pending user review"
   },
   "penne": {
     per: "100g",
@@ -1258,7 +1258,7 @@ window.ingredientNutrition = {
     carbs: 75,
     unitWeights: {},
     verified: false,
-    source: "Estimated by Claude (typical USDA FoodData Central / brand-label values), unverified — pending user review"
+    source: "Estimated by Claude (typical USDA FoodData Central / brand-label values), unverified, pending user review"
   },
   "anchovy fillet": {
     per: "100g",
@@ -1269,7 +1269,7 @@ window.ingredientNutrition = {
     carbs: 0,
     unitWeights: { "anchovy fillet": 4 },
     verified: false,
-    source: "Estimated by Claude (typical USDA FoodData Central / brand-label values), unverified — pending user review"
+    source: "Estimated by Claude (typical USDA FoodData Central / brand-label values), unverified, pending user review"
   },
   "crushed tomatoes": {
     per: "100g",
@@ -1280,7 +1280,7 @@ window.ingredientNutrition = {
     carbs: 7.3,
     unitWeights: {},
     verified: false,
-    source: "Estimated by Claude (typical USDA FoodData Central / brand-label values), unverified — pending user review"
+    source: "Estimated by Claude (typical USDA FoodData Central / brand-label values), unverified, pending user review"
   },
   "reserved pasta water": {
     per: "100ml",
@@ -1291,7 +1291,7 @@ window.ingredientNutrition = {
     carbs: 0,
     unitWeights: {},
     verified: false,
-    source: "Estimated by Claude (typical USDA FoodData Central / brand-label values), unverified — pending user review"
+    source: "Estimated by Claude (typical USDA FoodData Central / brand-label values), unverified, pending user review"
   },
   "large shrimp": {
     per: "100g",
@@ -1302,7 +1302,7 @@ window.ingredientNutrition = {
     carbs: 0.2,
     unitWeights: {},
     verified: false,
-    source: "Estimated by Claude (typical USDA FoodData Central / brand-label values), unverified — pending user review"
+    source: "Estimated by Claude (typical USDA FoodData Central / brand-label values), unverified, pending user review"
   },
   "red pepper flakes": {
     per: "100g",
@@ -1324,7 +1324,7 @@ window.ingredientNutrition = {
     carbs: 4.2,
     unitWeights: {},
     verified: false,
-    source: "Estimated by Claude (typical USDA FoodData Central / brand-label values), unverified — pending user review"
+    source: "Estimated by Claude (typical USDA FoodData Central / brand-label values), unverified, pending user review"
   },
   "chicken base": {
     per: "100g",
@@ -1335,7 +1335,7 @@ window.ingredientNutrition = {
     carbs: 10,
     unitWeights: {},
     verified: false,
-    source: "Estimated by Claude (typical USDA FoodData Central / brand-label values), unverified — pending user review"
+    source: "Estimated by Claude (typical USDA FoodData Central / brand-label values), unverified, pending user review"
   },
   "sugar": {
     per: "100g",
@@ -1357,7 +1357,7 @@ window.ingredientNutrition = {
     carbs: 3.5,
     unitWeights: {},
     verified: false,
-    source: "Estimated by Claude (typical USDA FoodData Central / brand-label values), unverified — pending user review"
+    source: "Estimated by Claude (typical USDA FoodData Central / brand-label values), unverified, pending user review"
   },
   "chuck roast": {
     per: "100g",
@@ -1368,7 +1368,7 @@ window.ingredientNutrition = {
     carbs: 0,
     unitWeights: {},
     verified: false,
-    source: "Estimated by Claude (typical USDA FoodData Central / brand-label values), unverified — pending user review"
+    source: "Estimated by Claude (typical USDA FoodData Central / brand-label values), unverified, pending user review"
   },
   "vegetable oil": {
     per: "100g",
@@ -1390,7 +1390,7 @@ window.ingredientNutrition = {
     carbs: 50,
     unitWeights: { "dried guajillo chiles": 8 },
     verified: false,
-    source: "Estimated by Claude (typical USDA FoodData Central / brand-label values), unverified — pending user review"
+    source: "Estimated by Claude (typical USDA FoodData Central / brand-label values), unverified, pending user review"
   },
   "dried ancho chiles": {
     per: "100g",
@@ -1401,7 +1401,7 @@ window.ingredientNutrition = {
     carbs: 50,
     unitWeights: { "dried ancho chiles": 12 },
     verified: false,
-    source: "Estimated by Claude (typical USDA FoodData Central / brand-label values), unverified — pending user review"
+    source: "Estimated by Claude (typical USDA FoodData Central / brand-label values), unverified, pending user review"
   },
   "chipotle peppers in adobo sauce": {
     per: "100g",
@@ -1412,7 +1412,7 @@ window.ingredientNutrition = {
     carbs: 16,
     unitWeights: { "chipotle peppers in adobo sauce": 12 },
     verified: false,
-    source: "Estimated by Claude (typical USDA FoodData Central / brand-label values), unverified — pending user review"
+    source: "Estimated by Claude (typical USDA FoodData Central / brand-label values), unverified, pending user review"
   },
   "white onion": {
     per: "100g",
@@ -1423,7 +1423,7 @@ window.ingredientNutrition = {
     carbs: 9.3,
     unitWeights: { "white onion": 150 },
     verified: false,
-    source: "Estimated by Claude (typical USDA FoodData Central / brand-label values), unverified — pending user review"
+    source: "Estimated by Claude (typical USDA FoodData Central / brand-label values), unverified, pending user review"
   },
   "roma tomatoes": {
     per: "100g",
@@ -1434,7 +1434,7 @@ window.ingredientNutrition = {
     carbs: 3.9,
     unitWeights: { "roma tomatoes": 62 },
     verified: false,
-    source: "Estimated by Claude (typical USDA FoodData Central / brand-label values), unverified — pending user review"
+    source: "Estimated by Claude (typical USDA FoodData Central / brand-label values), unverified, pending user review"
   },
   "dried oregano": {
     per: "100g",
@@ -1445,7 +1445,7 @@ window.ingredientNutrition = {
     carbs: 69,
     unitWeights: {},
     verified: false,
-    source: "Estimated by Claude (typical USDA FoodData Central / brand-label values), unverified — pending user review"
+    source: "Estimated by Claude (typical USDA FoodData Central / brand-label values), unverified, pending user review"
   },
   "bay leaves": {
     per: "100g",
@@ -1456,7 +1456,7 @@ window.ingredientNutrition = {
     carbs: 75,
     unitWeights: { "bay leaves": 0.2 },
     verified: false,
-    source: "Estimated by Claude (typical USDA FoodData Central / brand-label values), unverified — pending user review"
+    source: "Estimated by Claude (typical USDA FoodData Central / brand-label values), unverified, pending user review"
   },
   "ears of corn": {
     per: "100g",
@@ -1467,7 +1467,7 @@ window.ingredientNutrition = {
     carbs: 19,
     unitWeights: { "ears of corn": 90 },
     verified: false,
-    source: "Estimated by Claude (typical USDA FoodData Central / brand-label values), unverified — pending user review"
+    source: "Estimated by Claude (typical USDA FoodData Central / brand-label values), unverified, pending user review"
   },
   "mayonnaise": {
     per: "100g",
@@ -1478,7 +1478,7 @@ window.ingredientNutrition = {
     carbs: 0.6,
     unitWeights: {},
     verified: false,
-    source: "Estimated by Claude (typical USDA FoodData Central / brand-label values), unverified — pending user review"
+    source: "Estimated by Claude (typical USDA FoodData Central / brand-label values), unverified, pending user review"
   },
   "sour cream": {
     per: "100g",
@@ -1489,7 +1489,7 @@ window.ingredientNutrition = {
     carbs: 4.6,
     unitWeights: {},
     verified: false,
-    source: "Estimated by Claude (typical USDA FoodData Central / brand-label values), unverified — pending user review"
+    source: "Estimated by Claude (typical USDA FoodData Central / brand-label values), unverified, pending user review"
   },
   "cayenne pepper": {
     per: "100g",
@@ -1500,7 +1500,7 @@ window.ingredientNutrition = {
     carbs: 57,
     unitWeights: {},
     verified: false,
-    source: "Estimated by Claude (typical USDA FoodData Central / brand-label values), unverified — pending user review"
+    source: "Estimated by Claude (typical USDA FoodData Central / brand-label values), unverified, pending user review"
   },
   "limes": {
     per: "100g",
@@ -1511,7 +1511,7 @@ window.ingredientNutrition = {
     carbs: 10.5,
     unitWeights: { "limes": 67 },
     verified: false,
-    source: "Estimated by Claude (typical USDA FoodData Central / brand-label values), unverified — pending user review"
+    source: "Estimated by Claude (typical USDA FoodData Central / brand-label values), unverified, pending user review"
   },
   "cotija cheese": {
     per: "100g",
@@ -1522,7 +1522,7 @@ window.ingredientNutrition = {
     carbs: 3,
     unitWeights: {},
     verified: false,
-    source: "Estimated by Claude (typical USDA FoodData Central / brand-label values), unverified — pending user review"
+    source: "Estimated by Claude (typical USDA FoodData Central / brand-label values), unverified, pending user review"
   },
   "fresh cilantro": {
     per: "100g",
@@ -1533,7 +1533,7 @@ window.ingredientNutrition = {
     carbs: 3.7,
     unitWeights: {},
     verified: false,
-    source: "Estimated by Claude (typical USDA FoodData Central / brand-label values), unverified — pending user review"
+    source: "Estimated by Claude (typical USDA FoodData Central / brand-label values), unverified, pending user review"
   },
   "soy sauce": {
     per: "100ml",
@@ -1544,7 +1544,7 @@ window.ingredientNutrition = {
     carbs: 4.9,
     unitWeights: {},
     verified: false,
-    source: "Estimated by Claude (typical USDA FoodData Central / brand-label values), unverified — pending user review"
+    source: "Estimated by Claude (typical USDA FoodData Central / brand-label values), unverified, pending user review"
   },
   "toasted sesame oil": {
     per: "100g",
@@ -1555,7 +1555,7 @@ window.ingredientNutrition = {
     carbs: 0,
     unitWeights: {},
     verified: false,
-    source: "Estimated by Claude (typical USDA FoodData Central / brand-label values), unverified — pending user review"
+    source: "Estimated by Claude (typical USDA FoodData Central / brand-label values), unverified, pending user review"
   },
   "fresh ginger": {
     per: "100g",
@@ -1566,7 +1566,7 @@ window.ingredientNutrition = {
     carbs: 18,
     unitWeights: {},
     verified: false,
-    source: "Estimated by Claude (typical USDA FoodData Central / brand-label values), unverified — pending user review"
+    source: "Estimated by Claude (typical USDA FoodData Central / brand-label values), unverified, pending user review"
   },
   "jasmine rice": {
     per: "100g",
@@ -1577,7 +1577,7 @@ window.ingredientNutrition = {
     carbs: 80,
     unitWeights: {},
     verified: false,
-    source: "Estimated by Claude (typical USDA FoodData Central / brand-label values), unverified — pending user review"
+    source: "Estimated by Claude (typical USDA FoodData Central / brand-label values), unverified, pending user review"
   },
   "rice vinegar": {
     per: "100ml",
@@ -1588,7 +1588,7 @@ window.ingredientNutrition = {
     carbs: 0.3,
     unitWeights: {},
     verified: false,
-    source: "Estimated by Claude (typical USDA FoodData Central / brand-label values), unverified — pending user review"
+    source: "Estimated by Claude (typical USDA FoodData Central / brand-label values), unverified, pending user review"
   },
   "medium carrots": {
     per: "100g",
@@ -1599,7 +1599,7 @@ window.ingredientNutrition = {
     carbs: 10,
     unitWeights: { "medium carrots": 61 },
     verified: false,
-    source: "Estimated by Claude (typical USDA FoodData Central / brand-label values), unverified — pending user review"
+    source: "Estimated by Claude (typical USDA FoodData Central / brand-label values), unverified, pending user review"
   },
   "mini cucumber": {
     per: "100g",
@@ -1610,7 +1610,7 @@ window.ingredientNutrition = {
     carbs: 3.6,
     unitWeights: { "mini cucumber": 90 },
     verified: false,
-    source: "Estimated by Claude (typical USDA FoodData Central / brand-label values), unverified — pending user review"
+    source: "Estimated by Claude (typical USDA FoodData Central / brand-label values), unverified, pending user review"
   },
   "green onions": {
     per: "100g",
@@ -1621,7 +1621,7 @@ window.ingredientNutrition = {
     carbs: 7.3,
     unitWeights: { "green onions": 15, "bunch": 90 },
     verified: false,
-    source: "Estimated by Claude (typical USDA FoodData Central / brand-label values), unverified — pending user review"
+    source: "Estimated by Claude (typical USDA FoodData Central / brand-label values), unverified, pending user review"
   },
   "sesame seeds": {
     per: "100g",
@@ -1632,7 +1632,7 @@ window.ingredientNutrition = {
     carbs: 23.4,
     unitWeights: {},
     verified: false,
-    source: "Estimated by Claude (typical USDA FoodData Central / brand-label values), unverified — pending user review"
+    source: "Estimated by Claude (typical USDA FoodData Central / brand-label values), unverified, pending user review"
   },
   "neutral oil": {
     per: "100g",
@@ -1643,7 +1643,7 @@ window.ingredientNutrition = {
     carbs: 0,
     unitWeights: {},
     verified: false,
-    source: "Estimated by Claude (typical USDA FoodData Central / brand-label values), unverified — pending user review"
+    source: "Estimated by Claude (typical USDA FoodData Central / brand-label values), unverified, pending user review"
   },
   "gochujang": {
     per: "100g",
@@ -1654,7 +1654,7 @@ window.ingredientNutrition = {
     carbs: 35,
     unitWeights: {},
     verified: false,
-    source: "Estimated by Claude (typical USDA FoodData Central / brand-label values), unverified — pending user review"
+    source: "Estimated by Claude (typical USDA FoodData Central / brand-label values), unverified, pending user review"
   },
   "cooked jasmine rice": {
     per: "100g",
@@ -1665,7 +1665,7 @@ window.ingredientNutrition = {
     carbs: 28.2,
     unitWeights: {},
     verified: false,
-    source: "Estimated by Claude (typical USDA FoodData Central / brand-label values), unverified — pending user review"
+    source: "Estimated by Claude (typical USDA FoodData Central / brand-label values), unverified, pending user review"
   },
   "fresh chopped parsley": {
     per: "100g",
@@ -1676,7 +1676,7 @@ window.ingredientNutrition = {
     carbs: 6.3,
     unitWeights: {},
     verified: false,
-    source: "Estimated by Claude (typical USDA FoodData Central / brand-label values), unverified — pending user review"
+    source: "Estimated by Claude (typical USDA FoodData Central / brand-label values), unverified, pending user review"
   },
   "macaroni": {
     per: "100g",
@@ -1687,7 +1687,7 @@ window.ingredientNutrition = {
     carbs: 75,
     unitWeights: {},
     verified: false,
-    source: "Estimated by Claude (typical USDA FoodData Central / brand-label values), unverified — pending user review"
+    source: "Estimated by Claude (typical USDA FoodData Central / brand-label values), unverified, pending user review"
   },
   "low fat cheddar cheese": {
     per: "100g",
@@ -1698,7 +1698,7 @@ window.ingredientNutrition = {
     carbs: 2,
     unitWeights: {},
     verified: false,
-    source: "Estimated by Claude (typical USDA FoodData Central / brand-label values), unverified — pending user review"
+    source: "Estimated by Claude (typical USDA FoodData Central / brand-label values), unverified, pending user review"
   },
   "nutmeg": {
     per: "100g",
@@ -1709,7 +1709,7 @@ window.ingredientNutrition = {
     carbs: 28,
     unitWeights: {},
     verified: false,
-    source: "Estimated by Claude (typical USDA FoodData Central / brand-label values), unverified — pending user review"
+    source: "Estimated by Claude (typical USDA FoodData Central / brand-label values), unverified, pending user review"
   },
   "bacon": {
     per: "100g",
@@ -1731,7 +1731,7 @@ window.ingredientNutrition = {
     carbs: 9.3,
     unitWeights: {},
     verified: false,
-    source: "Estimated by Claude (typical USDA FoodData Central / brand-label values), unverified — pending user review"
+    source: "Estimated by Claude (typical USDA FoodData Central / brand-label values), unverified, pending user review"
   },
   "white pepper": {
     per: "100g",
@@ -1742,7 +1742,7 @@ window.ingredientNutrition = {
     carbs: 68.6,
     unitWeights: {},
     verified: false,
-    source: "Estimated by Claude (typical USDA FoodData Central / brand-label values), unverified — pending user review"
+    source: "Estimated by Claude (typical USDA FoodData Central / brand-label values), unverified, pending user review"
   },
   "angel hair pasta": {
     per: "100g",
@@ -1753,7 +1753,7 @@ window.ingredientNutrition = {
     carbs: 75,
     unitWeights: {},
     verified: false,
-    source: "Estimated by Claude (typical USDA FoodData Central / brand-label values for dry pasta), unverified — pending user review"
+    source: "Estimated by Claude (typical USDA FoodData Central / brand-label values for dry pasta), unverified, pending user review"
   },
   "lemon juice": {
     per: "100ml",
@@ -1764,7 +1764,7 @@ window.ingredientNutrition = {
     carbs: 6.9,
     unitWeights: {},
     verified: true,
-    source: "USDA FoodData Central, raw lemon juice — confirmed by user (fresh-squeezed, no commercial label applies)"
+    source: "USDA FoodData Central, raw lemon juice, confirmed by user (fresh-squeezed, no commercial label applies)"
   },
   "hot sauce": {
     per: "100ml",
@@ -1775,7 +1775,7 @@ window.ingredientNutrition = {
     carbs: 2,
     unitWeights: {},
     verified: false,
-    source: "Estimated by Claude (typical Tabasco/Frank's RedHot style hot sauce label values), unverified — pending user review"
+    source: "Estimated by Claude (typical Tabasco/Frank's RedHot style hot sauce label values), unverified, pending user review"
   },
   "white american cheese": {
     per: "100g",
@@ -1830,7 +1830,7 @@ window.ingredientNutrition = {
     carbs: 1.5,
     unitWeights: {},
     verified: false,
-    source: "Estimated by Claude (USDA FoodData Central, cured cooked ham ~11% fat), unverified — pending user review"
+    source: "Estimated by Claude (USDA FoodData Central, cured cooked ham ~11% fat), unverified, pending user review"
   },
   "swiss cheese": {
     per: "100g",
@@ -1841,7 +1841,7 @@ window.ingredientNutrition = {
     carbs: 5.4,
     unitWeights: {},
     verified: false,
-    source: "Estimated by Claude (typical USDA FoodData Central / brand-label values), unverified — pending user review"
+    source: "Estimated by Claude (typical USDA FoodData Central / brand-label values), unverified, pending user review"
   },
   "active dry yeast": {
     per: "100g",
@@ -1908,7 +1908,7 @@ window.ingredientNutrition = {
     carbs: 6,
     unitWeights: {},
     verified: false,
-    source: "Estimated by Claude (typical USDA FoodData Central / brand-label values for prepared yellow mustard), unverified — pending user review"
+    source: "Estimated by Claude (typical USDA FoodData Central / brand-label values for prepared yellow mustard), unverified, pending user review"
   },
   "hamburger bun": {
     per: "100g",

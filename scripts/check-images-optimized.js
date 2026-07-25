@@ -1,5 +1,5 @@
 // CI gate: fails if any image under images/ wasn't run through
-// `npm run optimize-images` — i.e. a recipe photo wider than the resize cap,
+// `npm run optimize-images`: i.e. a recipe photo wider than the resize cap,
 // or any image missing its images/originals/ backup.
 //
 // This is what would have caught the broken Creamy Chicken Piccata
@@ -48,7 +48,7 @@ async function checkImages() {
     process.exit(1);
   }
 
-  console.log(`Checked ${files.length} image(s) — all optimized.`);
+  console.log(`Checked ${files.length} image(s), all optimized.`);
 }
 
 checkImages().catch((err) => {

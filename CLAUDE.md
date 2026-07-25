@@ -16,7 +16,7 @@ workflow's header comment for the deployment architecture.
 
 ## Visual review
 
-There is no automated screenshot suite — it was removed as noise-generating
+There is no automated screenshot suite; it was removed as noise-generating
 (regenerated the whole gallery on every PR regardless of relevance, and
 some of it was non-deterministic besides). When a change could affect
 rendering, open the affected page(s) in a browser and confirm the specific
@@ -28,11 +28,22 @@ for automated perf-regression checks.
 Every page loads `styles.css` with a `?v=N` query string (e.g.
 `styles.css?v=2`). GitHub Pages serves static files with no cache-busting
 of its own, and browsers (mobile Safari/Chrome especially) can keep
-serving a stale cached copy of `styles.css` indefinitely otherwise —
+serving a stale cached copy of `styles.css` indefinitely otherwise;
 visitors who loaded the site before a CSS change may not see it until
 their cache expires. **Whenever you edit `styles.css`, bump the `?v=N` on
 the `<link rel="stylesheet">` tag in every HTML page** (currently 9 files)
 so the new stylesheet is fetched fresh instead of read from cache.
+
+## Em dashes are banned
+
+`scripts/check-em-dashes.js` fails the build (CI, via
+`.github/workflows/check-em-dashes.yml`) if the em dash character appears
+anywhere in a tracked text file. It also runs as a local pre-commit hook
+(`git config core.hooksPath githooks`, set automatically by `npm install`'s
+`prepare` script), so a commit containing one won't even go through. There
+is no allowlist or ignore mechanism; if a line needs an em dash, rewrite it
+with a comma, colon, semicolon, or parentheses instead. Run
+`npm run check-em-dashes` directly to check without committing.
 
 ## Feature flags
 

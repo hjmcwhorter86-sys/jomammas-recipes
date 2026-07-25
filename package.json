@@ -3,7 +3,9 @@
   "private": true,
   "scripts": {
     "optimize-images": "node scripts/optimize-images.js",
-    "check-images": "node scripts/check-images-optimized.js"
+    "check-images": "node scripts/check-images-optimized.js",
+    "check-em-dashes": "node scripts/check-em-dashes.js",
+    "prepare": "git config core.hooksPath githooks || true"
   },
   "devDependencies": {
     "@playwright/test": "^1.60.0",

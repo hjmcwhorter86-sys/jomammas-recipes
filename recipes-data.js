@@ -26,7 +26,7 @@
 //                               ingredient/quantity matters (e.g. "low heat,
 //                               adds flavor"); shown as the tooltip/label for
 //                               guideLink below. Only set when there's a real
-//                               story to tell — not every ingredient needs one.
+//                               story to tell: not every ingredient needs one.
 //   guideLink: { guideId, tab } | null - links this ingredient to a Kitchen
 //                               Basics guide (see data/kitchen-basics-guides.js
 //                               for guideId values and kitchen-basics.js for
@@ -1814,7 +1814,7 @@ tags: ["dessert", "high protein"]
   ],
 
   notes: [
-    "No photo yet — using a placeholder image until one is added."
+    "No photo yet: using a placeholder image until one is added."
   ]
 },
 
@@ -1837,7 +1837,7 @@ tags: ["dessert", "high protein"]
     {
       title: "Chicken & Ham",
       items: [
-        { qty: 5.5, unit: "cup", name: "shredded cooked chicken", notes: "slow cooked or rotisserie, your choice — see the <a href=\"recipe-detail.html?id=slow-cooked-shredded-chicken\">slow cooked shredded chicken recipe</a>" },
+        { qty: 5.5, unit: "cup", name: "shredded cooked chicken", notes: "slow cooked or rotisserie, your choice; see the <a href=\"recipe-detail.html?id=slow-cooked-shredded-chicken\">slow cooked shredded chicken recipe</a>" },
         { qty: 2, unit: "cup", name: "ham", notes: "cubed" },
         { qty: null, unit: null, name: "Black pepper, to taste" }
       ]
@@ -1925,7 +1925,7 @@ tags: ["dessert", "high protein"]
   ],
 
   notes: [
-    "Pull it at 140-145°F — carryover heat during resting brings it up those last few degrees without drying it out. A meat thermometer makes this foolproof."
+    "Pull it at 140-145°F: carryover heat during resting brings it up those last few degrees without drying it out. A meat thermometer makes this foolproof."
   ]
 },
 
@@ -2013,7 +2013,7 @@ tags: ["dessert", "high protein"]
   ],
 
   notes: [
-    "No adobo sauce on hand, or not a chipotle fan? Leave it out — the recipe is still good without it."
+    "No adobo sauce on hand, or not a chipotle fan? Leave it out; the recipe is still good without it."
   ]
 },
 
