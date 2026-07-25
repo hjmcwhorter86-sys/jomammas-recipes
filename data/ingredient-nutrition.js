@@ -1522,7 +1522,7 @@ window.ingredientNutrition = {
     carbs: 10.5,
     unitWeights: { "lime": 67 },
     verified: false,
-    source: "Estimated by Claude (typical USDA FoodData Central / brand-label values), unverified — pending user review"
+    source: "Estimated by Claude (typical USDA FoodData Central / brand-label values), unverified, pending user review"
   },
   "cotija cheese": {
     per: "100g",
