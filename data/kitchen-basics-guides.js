@@ -1,4 +1,4 @@
-// "Kitchen Basics" primer guides — reference pages that are too complex to fit
+// "Kitchen Basics" primer guides: reference pages that are too complex to fit
 // the recipe-card/recipe-detail model (no ingredients or steps), but should
 // still show up alongside recipes in the Kitchen Basics category grid.
 //
@@ -11,7 +11,7 @@ window.kitchenBasicsGuides = [
     type: "guide",
     url: "kitchen-basics-oils-fats.html",
     title: "Oils & Fats 101",
-    description: "Smoke points, flavor strength, and a healthy-fat spectrum — how to pick the right oil, butter, or fat for the job.",
+    description: "Smoke points, flavor strength, and a healthy-fat spectrum, how to pick the right oil, butter, or fat for the job.",
     image: "images/fats-and-oils.png",
     category: "Kitchen Basics",
     tags: ["guide", "oils", "fats", "how to", "Kitchen Basics"],

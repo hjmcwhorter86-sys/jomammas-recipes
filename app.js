@@ -2,7 +2,7 @@
 
 const recipes = [...(window.recipes || []), ...(window.kitchenBasicsGuides || []), ...(window.adrienRecipes || [])];
 
-// Recipes only (excludes Kitchen Basics guides) — used wherever the result
+// Recipes only (excludes Kitchen Basics guides); used wherever the result
 // must link into the ingredients/steps recipe-detail flow, like prev/next
 // navigation, since guides have no detail page of their own.
 const navigableRecipes = recipes.filter((r) => r.type !== 'guide');
@@ -67,7 +67,7 @@ function formatRecipeCategories(recipe, separator = ', ') {
 const NUTRITION_FIELDS = ['calories', 'protein', 'fat', 'fiber', 'carbs'];
 
 function renderNutritionSection(recipe) {
-  const formatValue = (value) => (value === null || value === undefined || value === '') ? '—' : value;
+  const formatValue = (value) => (value === null || value === undefined || value === '') ? 'N/A' : value;
   const computedOn = !!window.flagsService?.isEnabled('showComputedNutrition');
 
   let display;
@@ -88,7 +88,7 @@ function renderNutritionSection(recipe) {
       calories: formatValue(recipe.calories),
       protein: formatValue(recipe.protein),
       carbs: formatValue(recipe.carbs),
-      netCarbs: '—',
+      netCarbs: 'N/A',
       fat: formatValue(recipe.fat),
       fiber: formatValue(recipe.fiber),
     };
@@ -197,7 +197,7 @@ function getIngredientAmount(item, key, entry) {
 
 // Resolves a single structured ingredient item against the nutrition
 // database, returning its matched entry, key, and a per-100g/100ml scale
-// factor — or null if the ingredient isn't in the database or its unit
+// factor, or null if the ingredient isn't in the database or its unit
 // can't be converted.
 function resolveIngredientNutrition(item) {
   const match = getIngredientNutritionEntry(item.name);
@@ -217,7 +217,7 @@ function resolveIngredientNutrition(item) {
 //
 // Non-quantifiable items (qty: null, e.g. "salt and pepper to taste") and
 // items marked optional:true are excluded from both the totals and the
-// completeness check — optional items may get an opt-in include/exclude
+// completeness check: optional items may get an opt-in include/exclude
 // toggle in a future update.
 //
 // `unknown` lists which per-serving fields couldn't be computed. Every
@@ -274,7 +274,7 @@ function computeRecipeNutrition(recipe) {
 // verified entries show their real source note.
 function sourceLabel(entry) {
   if (!entry.verified) return 'Claude*';
-  return entry.source || '—';
+  return entry.source || 'N/A';
 }
 
 // Returns a label for an ingredient: its name plus any notes, with an
@@ -292,11 +292,11 @@ function renderNutritionInfoSection(recipe) {
 
   const rows = items.map((item) => {
     if (item.qty === null || item.qty === undefined) {
-      return { label: ingredientNameLabel(item, null), note: 'Not quantifiable — excluded from totals.' };
+      return { label: ingredientNameLabel(item, null), note: 'Not quantifiable: excluded from totals.' };
     }
 
     if (item.optional) {
-      return { label: ingredientNameLabel(item, null), note: 'Optional — currently excluded from totals.' };
+      return { label: ingredientNameLabel(item, null), note: 'Optional: currently excluded from totals.' };
     }
 
     const resolved = resolveIngredientNutrition(item);
@@ -330,7 +330,7 @@ function renderNutritionInfoSection(recipe) {
   const unverifiedNote = `
       <p class="nutrition-disclaimer nutrition-unverified-note">
         * These ingredient values were looked up and estimated by Claude and
-        have not yet been double-checked. They may be inaccurate — corrections
+        have not yet been double-checked. They may be inaccurate; corrections
         are welcome.
       </p>`;
 
@@ -344,7 +344,7 @@ function renderNutritionInfoSection(recipe) {
         These values are rough estimates calculated from a public ingredient
         nutrition database. They are not a substitute for medical or
         professional dietary advice. Quantities are approximate, brands and
-        preparation vary, and some ingredients aren't in the database yet —
+        preparation vary, and some ingredients aren't in the database yet;
         use this as a starting point, not a guarantee.
       </p>
       <div class="detail-controls">
@@ -1039,7 +1039,7 @@ if (newestEl) {
 
   // Adrien's Baking Corner: friendly empty state until he's posted a bake.
   if (pageType === 'abc' && newest.length === 0) {
-    newestEl.innerHTML = '<p class="section-empty-state">No bakes posted yet — check back soon!</p>';
+    newestEl.innerHTML = '<p class="section-empty-state">No bakes posted yet; check back soon!</p>';
   }
 }
 
