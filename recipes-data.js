@@ -2017,4 +2017,57 @@ tags: ["dessert", "high protein"]
   ]
 },
 
+{
+  id: "fiesta-chicken-salad",
+  title: "Fiesta Chicken Salad",
+  description: "Seared taco-seasoned chicken over crisp greens with a creamy salsa ranch dressing, tortilla strips, and fiesta cheese — big flavor, light on calories.",
+  image: "images/fiesta-chicken-salad.png",
+  category: ["Chicken", "Low Calorie"],
+  dateAdded: "2026-07-25",
+  carbs: null,
+  fat: null,
+  fiber: null,
+  calories: "",
+  protein: "",
+  servings: "4",
+  tags: ["chicken", "salad", "low calorie", "tex-mex", "weeknight"],
+
+  ingredients: [
+    { qty: 1, qtyMax: 1.5, unit: "lb", name: "chicken breast", notes: "thin sliced" },
+    { qty: 3, unit: "tbsp", name: "taco seasoning" },
+    { qty: 0.5, unit: "tsp", name: "salt" },
+    { qty: null, unit: null, name: "Avocado oil", notes: "small drizzle, for the chicken" },
+    { qty: 2, unit: "tsp", name: "olive oil", notes: "for the pan" },
+
+    { qty: 11, unit: "cup", name: "baby crispy green leaf lettuce", notes: "chopped" },
+    { qty: 4, unit: null, name: "roma tomatoes", notes: "diced" },
+    { qty: 1, unit: "cup", name: "reduced fat fiesta blend cheese" },
+    { qty: 1, unit: "cup", name: "crispy tortilla strips" },
+
+    { qty: 0.5, unit: "cup", name: "light ranch dressing" },
+    { qty: 0.5, unit: "cup", name: "salsa" },
+    { qty: 1, unit: null, name: "lime", notes: "juiced" },
+    { qty: 3, unit: "tbsp", name: "fresh cilantro", notes: "chopped", optional: true },
+
+    { qty: 1, unit: "cup", name: "black beans or corn", notes: "drained", optional: true },
+    { qty: 5, unit: "tbsp", name: "pico de gallo", notes: "store bought", optional: true },
+    { qty: 2, unit: "tbsp", name: "pickled jalapenos", optional: true }
+  ],
+
+  steps: [
+    "Season the chicken: in a ziplock bag, drizzle the chicken with a small amount of avocado oil, add the taco seasoning and salt, seal, and turn the bag over several times until evenly coated.",
+    "Sear the chicken: heat the olive oil in a pan over medium-high heat. Sear in two batches if needed so the chicken isn't crowded, 2 to 3 minutes per side, until it hits 165°F internally and has a good crust. Thin sliced breasts cook fast, so watch closely to avoid drying them out.",
+    "Rest and slice: move the chicken to a cutting board and let it rest 5 minutes before slicing, to keep it juicy.",
+    "Make the dressing: stir together the ranch dressing, salsa, and lime juice in a small bowl until smooth. Taste and adjust salsa to your heat preference.",
+    "Build the base: divide the lettuce, tomatoes, cheese, and tortilla strips between four bowls.",
+    "Add extras: if using, add the black beans or corn, pico de gallo, and pickled jalapenos now.",
+    "Top and dress: fan the sliced chicken over each salad, sprinkle with cilantro if using, and drizzle with the salsa ranch dressing."
+  ],
+
+  notes: [
+    "A squeeze of fresh lime in the dressing wakes up the salsa ranch and helps cut the richness of the cheese, so you can use less dressing overall.",
+    "For more crunch without more calories, swap half the tortilla strips for extra chopped lettuce."
+  ]
+},
+
 ];

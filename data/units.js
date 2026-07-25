@@ -133,6 +133,10 @@ window.unitConversions = {
     "hatch green chiles": 1.0,
     "capers": 0.51,
     "ham": 0.59,
+    "taco seasoning": 0.61,
+    "baby crispy green leaf lettuce": 0.136,
+    "reduced fat fiesta blend cheese": 0.47,
+    "crispy tortilla strips": 0.24,
   },
 
   // Preferred display units for the US/Metric units toggle (units-service.js).
