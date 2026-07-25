@@ -1513,6 +1513,17 @@ window.ingredientNutrition = {
     verified: false,
     source: "Estimated by Claude (typical USDA FoodData Central / brand-label values), unverified, pending user review"
   },
+  "lime": {
+    per: "100g",
+    calories: 30,
+    protein: 0.7,
+    fat: 0.2,
+    fiber: 2.8,
+    carbs: 10.5,
+    unitWeights: { "lime": 67 },
+    verified: false,
+    source: "Estimated by Claude (typical USDA FoodData Central / brand-label values), unverified, pending user review"
+  },
   "cotija cheese": {
     per: "100g",
     calories: 390,
@@ -1920,5 +1931,71 @@ window.ingredientNutrition = {
     unitWeights: { "hamburger bun": 57 },
     verified: true,
     source: "Nature's Own Butter Buns label: 150 cal / 1.5g fat / 5g protein / <1g fiber / 30g carbs per 1 bun (57g), per user-provided photo."
+  },
+  "taco seasoning": {
+    per: "100g",
+    calories: 333,
+    protein: 0,
+    fat: 0,
+    fiber: 0,
+    carbs: 67,
+    unitWeights: {},
+    verified: true,
+    source: "Ortega Taco Seasoning Mix label: 20 cal / 0g fat / 0g protein / 4g carbs per 2 tsp (6g) serving, per user-provided photo."
+  },
+  "baby crispy green leaf lettuce": {
+    per: "100g",
+    calories: 22,
+    protein: 0.9,
+    fat: 0,
+    fiber: 0.9,
+    carbs: 4.4,
+    unitWeights: {},
+    verified: true,
+    source: "Little Leaf Farms Baby Crispy Green Leaf label: 25 cal / 0g fat / 1g fiber / 5g carbs / 1g protein per 3.5 cups (113g) serving, per user-provided photo."
+  },
+  "reduced fat fiesta blend cheese": {
+    per: "100g",
+    calories: 321,
+    protein: 25,
+    fat: 21.4,
+    fiber: 0,
+    carbs: 7.1,
+    unitWeights: {},
+    verified: true,
+    source: "Great Value Reduced Fat Finely Shredded Fiesta Blend Cheese label: 90 cal / 6g fat / 2g carbs / 7g protein per 1/4 cup (28g) serving, per user-provided photo."
+  },
+  "crispy tortilla strips": {
+    per: "100g",
+    calories: 500,
+    protein: 0,
+    fat: 28.6,
+    fiber: 0,
+    carbs: 57.1,
+    unitWeights: {},
+    verified: true,
+    source: "Fresh Gourmet Tri-Color Tortilla Strips label: 35 cal / 2g fat / 4g carbs / 0g protein per 2 tbsp (7g) serving, per user-provided photo."
+  },
+  "light ranch dressing": {
+    per: "100ml",
+    calories: 267,
+    protein: 0,
+    fat: 23.3,
+    fiber: 0,
+    carbs: 10,
+    unitWeights: {},
+    verified: true,
+    source: "Great Value Light Ranch label: 80 cal / 7g fat / 0g fiber / 3g carbs / 0g protein per 2 tbsp (30ml) serving, per user-provided photo."
+  },
+  "salsa": {
+    per: "100ml",
+    calories: 33,
+    protein: 0,
+    fat: 0,
+    fiber: 3.3,
+    carbs: 6.7,
+    unitWeights: {},
+    verified: true,
+    source: "Pace Picante Sauce, Medium label (used as salsa in this recipe): 10 cal / 0g fat / 1g fiber / 2g carbs / 0g protein per 2 tbsp (30ml) serving, per user-provided photo."
   },
 };
