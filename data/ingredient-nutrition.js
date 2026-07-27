@@ -877,14 +877,14 @@ window.ingredientNutrition = {
   },
   "buffalo sauce": {
     per: "100ml",
-    calories: 15,
-    protein: 0.5,
-    fat: 1,
+    calories: 0,
+    protein: 0,
+    fat: 0,
     fiber: 0,
-    carbs: 1,
+    carbs: 0,
     unitWeights: {},
-    verified: false,
-    source: "Estimated by Claude (typical USDA FoodData Central / brand-label values), unverified, pending user review"
+    verified: true,
+    source: "Frank's RedHot Buffalo Wing Sauce label: 0 cal / 0g fat / 0g carbs / 0g protein per 1 tbsp (15mL), per user-provided photo"
   },
   "shredded cooked chicken": {
     per: "100g",
@@ -1997,5 +1997,16 @@ window.ingredientNutrition = {
     unitWeights: {},
     verified: true,
     source: "Pace Picante Sauce, Medium label (used as salsa in this recipe): 10 cal / 0g fat / 1g fiber / 2g carbs / 0g protein per 2 tbsp (30ml) serving, per user-provided photo."
+  },
+  "low carb tortilla": {
+    per: "100g",
+    calories: 155,
+    protein: 14.1,
+    fat: 8.5,
+    fiber: 39.4,
+    carbs: 45.1,
+    unitWeights: { "low carb tortilla": 71 },
+    verified: true,
+    source: "Mission Carb Balance Flour Tortilla (burrito size) label: 110 cal / 6g fat / 28g fiber / 32g carbs / 10g protein per 1 tortilla (71g), per user-provided photo."
   },
 };

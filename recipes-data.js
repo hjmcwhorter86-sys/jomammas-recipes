@@ -2070,4 +2070,65 @@ tags: ["dessert", "high protein"]
   ]
 },
 
+{
+  id: "buffalo-chicken-wraps",
+  title: "Slow Cooker Buffalo Chicken Wraps",
+  description: "Easy slow cooker buffalo chicken, wrapped up with ranch, cheese, fresh vegetables, and all the fixings.",
+  image: "images/buffalo-chicken-wraps.png",
+  category: ["Slow Cooker", "Chicken"],
+  dateAdded: "2026-07-27",
+  carbs: null,
+  fat: null,
+  fiber: null,
+  calories: "",
+  protein: "",
+  servings: "6",
+  tags: ["chicken", "slow cooker", "buffalo", "wraps", "easy"],
+
+  ingredients: [
+    {
+      title: "For the chicken",
+      items: [
+        { qty: 2, unit: "lb", name: "chicken breast", notes: "boneless, skinless, medium size" },
+        { qty: 1, unit: "tsp", name: "kosher salt" },
+        { qty: 0.25, unit: "tsp", name: "black pepper" },
+        { qty: 1, unit: "tsp", name: "garlic powder" },
+        { qty: 0.75, unit: "tsp", name: "onion powder" },
+        { qty: 0.5, unit: "tsp", name: "paprika" },
+        { qty: 1.5, unit: "tbsp", name: "unsalted butter", notes: "cut into pats" },
+        { qty: 0.75, qtyMax: 1, unit: "cup", name: "buffalo sauce", notes: "Frank's RedHot wing sauce, or more to taste" }
+      ]
+    },
+    {
+      title: "For the wraps",
+      items: [
+        { qty: 6, unit: null, name: "low carb tortillas", notes: "Mission Carb Balance, burrito size" },
+        { qty: null, unit: null, name: "light ranch dressing", notes: "for spreading" },
+        { qty: 1.5, unit: "cup", name: "reduced fat fiesta blend cheese", notes: "shredded" },
+        { qty: null, unit: null, name: "shredded lettuce" },
+        { qty: null, unit: null, name: "diced tomatoes" },
+        { qty: null, unit: null, name: "diced jalapenos" },
+        { qty: null, unit: null, name: "Optional: blue cheese crumbles", optional: true },
+        { qty: null, unit: null, name: "Optional: shredded carrots", optional: true }
+      ]
+    }
+  ],
+
+  steps: [
+    "Place the chicken breasts in the bottom of the crockpot in a single layer. Season evenly with the kosher salt, black pepper, garlic powder, onion powder, and paprika. Dot the top with the pats of butter.",
+    "Cover and cook on low for 2-4 hours, checking at the 2 hour mark since crockpots vary. Chicken is done when it reaches 165 degrees internally and shreds easily with a fork.",
+    "Remove the chicken and let rest for 5-10 minutes, then shred with a stand mixer on low or by hand with two forks.",
+    "Drain any excess cooking liquid from the crockpot, then return the shredded chicken to it.",
+    "Pour in the buffalo sauce and mix well to coat.",
+    "Set the crockpot to low and let the chicken warm through for about 30 minutes, stirring occasionally.",
+    "To assemble, spread a spoonful of light ranch on each tortilla and sprinkle with fiesta blend cheese.",
+    "Top with the buffalo chicken mixture, lettuce, diced tomatoes, and jalapenos. Add blue cheese crumbles or shredded carrots if desired.",
+    "Roll up and serve."
+  ],
+
+  notes: [
+    "Makes 6 wraps."
+  ]
+},
+
 ];
