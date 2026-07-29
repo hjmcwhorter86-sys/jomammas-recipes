@@ -138,7 +138,7 @@ window.recipes = [
   {
   id: "pepper-jack-queso",
   title: "Sodium Citrate Pepper Jack Queso (Eva’s Chili-Spiced Version)",
-  description: "Ultra-smooth, pourable queso made with real cheese, light dairy, and sodium citrate. Kid-approved but flavor-forward.",
+  description: "Ultra-smooth, pourable queso made with real cheese, and sodium citrate. Sodium citrate is an emulsifier that allows you to make this queso without a roux or processed cheese.",
   image: "images/sodium-citrate-queso-dip.png",
   category: "Snacks & Sides",
   dateAdded: "2026-02-04",
@@ -151,9 +151,9 @@ window.recipes = [
   tags: ["queso", "dip", "cheese", "party"],
 
   ingredients: [
-    { qty: 1, unit: "cup", name: "skim milk" },
+    { qty: 1, unit: "cup", name: "whole milk" },
     { qty: 0.25, unit: "cup", name: "half-and-half" },
-    { qty: 1, unit: "tbsp", name: "light margarine", notes: "Smart Balance" },
+    { qty: 1, unit: "tbsp", name: "salted butter" },
     { qty: 1, unit: "tsp", name: "sodium citrate" },
     { qty: 8, unit: "oz", name: "pepper jack cheese", notes: "freshly shredded" },
     { qty: 2, qtyMax: 3, unit: "tbsp", name: "diced pickled jalapeños", notes: "to taste" },
@@ -166,17 +166,17 @@ window.recipes = [
   ],
 
   steps: [
-    "In a saucepan over medium-low, add skim milk, half-and-half, margarine, and sodium citrate.",
-    "Whisk until margarine melts and sodium citrate is fully dissolved. Heat until hot and steamy (do not boil).",
+    "In a saucepan over medium-low, add whole milk, half-and-half, butter, and sodium citrate.",
+    "Whisk until butter melts and sodium citrate is fully dissolved. Heat until hot and steamy (do not boil).",
     "Reduce heat to low. Add shredded pepper jack gradually, whisking constantly until smooth and glossy.",
     "Stir in jalapeños, black pepper, and all seasonings.",
     "Taste and adjust heat or salt if needed.",
-    "Serve warm. Reheat gently with a splash of skim milk if it thickens."
+    "Serve warm. Reheat gently with a splash of whole milk if it thickens."
   ],
 
   notes: [
-    "For thicker queso, reduce skim milk to ¾ cup.",
-    "For looser queso, add 1–2 tbsp skim milk when reheating.",
+    "For thicker queso, reduce whole milk to ¾ cup.",
+    "For looser queso, add 1–2 tbsp whole milk when reheating.",
     "No flour or cornstarch needed; sodium citrate handles emulsification."
   ]
 }
