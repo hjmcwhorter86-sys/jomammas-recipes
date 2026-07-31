@@ -2131,4 +2131,62 @@ tags: ["dessert", "high protein"]
   ]
 },
 
+{
+  id: "slow-cooker-french-onion-soup",
+  title: "Slow Cooker French Onion Soup",
+  description: "Old school caramelized onions, patiently cooked to a deep amber and simmered in a rich beef broth, finished with a broiled Gruyere crouton top.",
+  image: "images/slow-cooker-french-onion-soup.png",
+  category: ["Soup", "Slow Cooker"],
+  dateAdded: "2026-07-31",
+  carbs: null,
+  fat: null,
+  fiber: null,
+  calories: "",
+  protein: "",
+  servings: "4",
+  tags: ["soup", "french onion soup", "slow cooker", "beef broth", "caramelized onions", "gruyere", "comfort food"],
+
+  ingredients: [
+    { qty: 2.75, unit: "lb", name: "yellow onions", notes: "sliced about ¼ inch thick, about 4 large" },
+    { qty: 2.667, unit: "tbsp", name: "unsalted butter" },
+    { qty: 1.333, unit: "tbsp", name: "olive oil" },
+    { qty: 0.667, unit: "tsp", name: "kosher salt" },
+    { qty: 0.667, unit: "tsp", name: "sugar" },
+    { qty: 2, unit: "clove", name: "garlic", notes: "minced" },
+    { qty: 2.667, unit: "tbsp", name: "dry sherry", notes: "for deglazing" },
+
+    { qty: 0.333, unit: "cup", name: "dry white wine" },
+    { qty: 5.333, unit: "cup", name: "beef broth", notes: "good quality, low sodium" },
+    { qty: 4, unit: "tsp", name: "Worcestershire sauce" },
+    { qty: 2, unit: "tsp", name: "soy sauce" },
+    { qty: 1, unit: "tsp", name: "balsamic vinegar" },
+    { qty: 3, unit: null, name: "fresh thyme sprigs", altQty: 0.5, altUnit: "tsp", altName: "dried thyme" },
+    { qty: 2, unit: null, name: "bay leaves" },
+    { qty: 0.333, unit: "tsp", name: "black pepper" },
+
+    { qty: 0.667, unit: null, name: "baguette", notes: "sliced into 1 inch rounds" },
+    { qty: 5.333, unit: "oz", name: "Gruyere cheese", notes: "grated" },
+    { qty: 2.667, unit: "tbsp", name: "Parmesan cheese", notes: "grated, optional", optional: true }
+  ],
+
+  steps: [
+    "Melt the butter with the olive oil in a large skillet or Dutch oven over medium heat. Add the onions, salt, and sugar.",
+    "Cook the onions, stirring only every 4 to 5 minutes and letting them sit undisturbed in between. They'll turn translucent, then start collapsing down in volume as they release water, about 15 to 20 minutes.",
+    "Once most of the liquid has cooked off, drop the heat to medium low. Keep cooking, stirring every 4 to 5 minutes and scraping up any browned bits on the bottom of the pan each time, until the onions turn golden, then deep amber, over the next 30 to 40 minutes. Don't rush this stage by raising the heat, or you'll scorch the onions instead of caramelizing them.",
+    "Stir in the garlic and cook 2 minutes more, until fragrant.",
+    "Pour in the sherry and scrape up every bit of browned fond on the bottom of the pan. Let it bubble for about 30 seconds, then transfer the onions and all the pan liquid to the slow cooker.",
+    "Add the wine, beef broth, Worcestershire sauce, soy sauce, balsamic vinegar, thyme, bay leaves, and pepper to the slow cooker. Stir to combine.",
+    "Cover and cook on low for 5 hours, or on high for 3 hours, until the broth is deeply flavored.",
+    "Remove the thyme stems and bay leaves. Taste and adjust salt and pepper as needed.",
+    "While the soup finishes, arrange the baguette slices in a single layer on a baking sheet and toast at 400F for 8 to 10 minutes, flipping once, until dry and lightly golden.",
+    "Set the broiler to high. Ladle the soup into oven safe bowls, float one or two toasted baguette slices on top of each, then pile on the Gruyere and a little Parmesan. Broil 2 to 3 minutes, watching closely, until the cheese is melted, bubbly, and browned in spots."
+  ],
+
+  notes: [
+    "Stir the onions only every 4 to 5 minutes once things get going, not constantly. Letting them sit between stirs is what develops the color.",
+    "Gruyere is the right cheese here, nutty and melts smooth. A little Parmesan on top adds sharpness to the broiled crust.",
+    "A baguette is traditional, but any sturdy, chewy white bread works as long as it's toasted dry first."
+  ]
+},
+
 ];

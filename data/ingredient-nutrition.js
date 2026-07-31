@@ -2009,4 +2009,70 @@ window.ingredientNutrition = {
     verified: true,
     source: "Mission Carb Balance Flour Tortilla (burrito size) label: 110 cal / 6g fat / 28g fiber / 32g carbs / 10g protein per 1 tortilla (71g), per user-provided photo."
   },
+  "yellow onions": {
+    per: "100g",
+    calories: 40,
+    protein: 1.1,
+    fat: 0.1,
+    fiber: 1.7,
+    carbs: 9.3,
+    unitWeights: {},
+    verified: false,
+    source: "Estimated by Claude (typical USDA FoodData Central / brand-label values), unverified, pending user review"
+  },
+  "dry sherry": {
+    per: "100ml",
+    calories: 116,
+    protein: 0.1,
+    fat: 0,
+    fiber: 0,
+    carbs: 1.4,
+    unitWeights: {},
+    verified: false,
+    source: "Estimated by Claude (typical USDA FoodData Central / brand-label values), unverified, pending user review"
+  },
+  "balsamic vinegar": {
+    per: "100ml",
+    calories: 88,
+    protein: 0.5,
+    fat: 0,
+    fiber: 0,
+    carbs: 17,
+    unitWeights: {},
+    verified: false,
+    source: "Estimated by Claude (typical USDA FoodData Central / brand-label values), unverified, pending user review"
+  },
+  "fresh thyme sprigs": {
+    per: "100g",
+    calories: 101,
+    protein: 5.6,
+    fat: 1.7,
+    fiber: 14,
+    carbs: 24.5,
+    unitWeights: { "fresh thyme sprigs": 1 },
+    verified: false,
+    source: "Estimated by Claude (typical USDA FoodData Central / brand-label values), unverified, pending user review"
+  },
+  "baguette": {
+    per: "100g",
+    calories: 270,
+    protein: 9,
+    fat: 1.7,
+    fiber: 2.4,
+    carbs: 55,
+    unitWeights: { "baguette": 250 },
+    verified: false,
+    source: "Estimated by Claude (typical USDA FoodData Central / brand-label values), unverified, pending user review"
+  },
+  "gruyere cheese": {
+    per: "100g",
+    calories: 413,
+    protein: 29.8,
+    fat: 32.3,
+    fiber: 0,
+    carbs: 0.4,
+    unitWeights: {},
+    verified: false,
+    source: "Estimated by Claude (typical USDA FoodData Central / brand-label values), unverified, pending user review"
+  },
 };
