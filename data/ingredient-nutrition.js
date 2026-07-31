@@ -2075,4 +2075,15 @@ window.ingredientNutrition = {
     verified: false,
     source: "Estimated by Claude (typical USDA FoodData Central / brand-label values), unverified, pending user review"
   },
+  "vidalia onions": {
+    per: "100g",
+    calories: 40,
+    protein: 1.1,
+    fat: 0.1,
+    fiber: 1.7,
+    carbs: 9.3,
+    unitWeights: {},
+    verified: false,
+    source: "Estimated by Claude (typical USDA FoodData Central / brand-label values for sweet onions), unverified, pending user review"
+  },
 };
