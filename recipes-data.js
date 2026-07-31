@@ -2156,7 +2156,7 @@ tags: ["dessert", "high protein"]
     { qty: 2.667, unit: "tbsp", name: "dry sherry", notes: "for deglazing" },
 
     { qty: 0.333, unit: "cup", name: "dry white wine" },
-    { qty: 5.333, unit: "cup", name: "beef broth", notes: "good quality, low sodium" },
+    { qty: 5.333, unit: "cup", name: "beef broth", notes: "good quality" },
     { qty: 4, unit: "tsp", name: "Worcestershire sauce" },
     { qty: 2, unit: "tsp", name: "soy sauce" },
     { qty: 1, unit: "tsp", name: "balsamic vinegar" },
