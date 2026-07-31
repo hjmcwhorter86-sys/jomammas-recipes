@@ -2147,7 +2147,7 @@ tags: ["dessert", "high protein"]
   tags: ["soup", "french onion soup", "slow cooker", "beef broth", "caramelized onions", "gruyere", "comfort food"],
 
   ingredients: [
-    { qty: 2.75, unit: "lb", name: "yellow onions", notes: "sliced about ¼ inch thick, about 4 large" },
+    { qty: 2.75, unit: "lb", name: "Vidalia onions", notes: "sliced about ¼ inch thick, about 4 large" },
     { qty: 2.667, unit: "tbsp", name: "unsalted butter" },
     { qty: 1.333, unit: "tbsp", name: "olive oil" },
     { qty: 0.667, unit: "tsp", name: "kosher salt" },
@@ -2156,7 +2156,7 @@ tags: ["dessert", "high protein"]
     { qty: 2.667, unit: "tbsp", name: "dry sherry", notes: "for deglazing" },
 
     { qty: 0.333, unit: "cup", name: "dry white wine" },
-    { qty: 5.333, unit: "cup", name: "beef broth", notes: "good quality, low sodium" },
+    { qty: 5.333, unit: "cup", name: "beef broth", notes: "good quality" },
     { qty: 4, unit: "tsp", name: "Worcestershire sauce" },
     { qty: 2, unit: "tsp", name: "soy sauce" },
     { qty: 1, unit: "tsp", name: "balsamic vinegar" },
@@ -2185,7 +2185,8 @@ tags: ["dessert", "high protein"]
   notes: [
     "Stir the onions only every 4 to 5 minutes once things get going, not constantly. Letting them sit between stirs is what develops the color.",
     "Gruyere is the right cheese here, nutty and melts smooth. A little Parmesan on top adds sharpness to the broiled crust.",
-    "A baguette is traditional, but any sturdy, chewy white bread works as long as it's toasted dry first."
+    "A baguette is traditional, but any sturdy, chewy white bread works as long as it's toasted dry first.",
+    "Vidalia onions bring extra sweetness to the caramelization, but regular yellow onions work fine if that's what you have."
   ]
 },
 
