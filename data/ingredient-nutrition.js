@@ -512,6 +512,17 @@ window.ingredientNutrition = {
     verified: true,
     source: "Great Value Tomato Paste label: 30 cal / 0g fat / 6g carbs / 1g fiber / 1g protein per 2 tbsp (33g), per user-provided photo"
   },
+  "chili seasoning": {
+    per: "100g",
+    calories: 278,
+    protein: 11.1,
+    fat: 5.6,
+    fiber: 22.2,
+    carbs: 55.6,
+    unitWeights: { packet: 35 },
+    verified: true,
+    source: "McCormick Chili Seasoning Mix (1.25 oz packet) label: 25 cal / 0.5g fat / 5g carbs / 2g fiber / 1g protein per 1 1/3 tbsp (9g) serving, about 4 servings per 1.25 oz (35g) packet, per user-provided photo"
+  },
   "minced lobster meat": {
     per: "100g",
     calories: 89,
@@ -1182,6 +1193,17 @@ window.ingredientNutrition = {
     unitWeights: { "green bell pepper": 120 },
     verified: false,
     source: "Estimated by Claude (typical USDA FoodData Central / brand-label values), unverified, pending user review"
+  },
+  "red bell pepper": {
+    per: "100g",
+    calories: 31,
+    protein: 1,
+    fat: 0.3,
+    fiber: 2.1,
+    carbs: 6,
+    unitWeights: { "red bell pepper": 120 },
+    verified: false,
+    source: "USDA FoodData Central, raw red bell pepper, per user approval to use standard USDA values (same sourcing style as green bell pepper entry), unverified, pending user review"
   },
   "diced tomatoes": {
     per: "100g",
