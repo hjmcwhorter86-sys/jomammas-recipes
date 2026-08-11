@@ -2190,4 +2190,56 @@ tags: ["dessert", "high protein"]
   ]
 },
 
+{
+  id: "low-calorie-chili-soup",
+  title: "Low Calorie Chili Soup",
+  description: "A lighter, brothier take with all the flavor of a good bowl of chili: lean ground beef, tomatoes, peppers, and onion simmered down for chili flavor in every spoonful without the heaviness.",
+  image: "images/low-calorie-chili-soup.png",
+  category: ["Beef", "Soup", "Low Calorie"],
+  dateAdded: "2026-08-11",
+  carbs: null,
+  fat: null,
+  fiber: null,
+  calories: "",
+  protein: "",
+  servings: "8",
+  tags: ["chili", "soup", "beef", "low calorie", "weeknight", "broth"],
+
+  ingredients: [
+    { qty: 2, unit: "lb", name: "ground beef (93/7)", notes: "lean" },
+    { qty: 2, unit: null, name: "medium yellow onions", notes: "chopped" },
+    { qty: 2, unit: null, name: "green bell peppers", notes: "chopped" },
+    { qty: 2, unit: null, name: "red bell peppers", notes: "chopped" },
+    { qty: 6, unit: "clove", name: "garlic", notes: "minced" },
+    { qty: 2, unit: "packet", name: "chili seasoning" },
+
+    { qty: 9, unit: "oz", name: "tomato paste", notes: "1 to 1½ small cans" },
+    { qty: 30, unit: "oz", name: "tomato sauce" },
+    { qty: 29, unit: "oz", name: "diced tomatoes", notes: "with juice" },
+    { qty: 3, qtyMax: 4, unit: "cup", name: "beef broth", notes: "low sodium" },
+    { qty: null, unit: null, name: "A splash of hot sauce" },
+    { qty: null, unit: null, name: "A splash of Worcestershire sauce" },
+
+    { qty: 1, unit: "tsp", name: "salt" },
+    { qty: 0.5, unit: "tsp", name: "black pepper" }
+  ],
+
+  steps: [
+    "Preheat a large pot or Dutch oven over medium-high heat. Add the ground beef, press it down into an even layer, and let it sit undisturbed for 2 to 3 minutes to get a good brown before breaking it up.",
+    "Add the onions and bell peppers to the pot with the beef. Cook, breaking up the meat as you go, until the beef is fully browned and the veggies start to soften, about 5 to 6 more minutes. Drain excess fat.",
+    "Stir in the garlic and cook until fragrant, about 1 minute.",
+    "Sprinkle in the chili seasoning packets and stir to coat everything evenly. Let it toast for about 30 seconds before adding liquid.",
+    "Add the tomato paste and stir until fully worked in, with no dry streaks.",
+    "Pour in the tomato sauce, diced tomatoes, and 3 cups of the broth. Add the hot sauce and Worcestershire sauce. Stir to combine.",
+    "Bring to a light boil, then reduce heat and simmer uncovered for 20 to 25 minutes, stirring occasionally.",
+    "Taste and season with salt and pepper. Add the remaining broth if you want it soupier."
+  ],
+
+  notes: [
+    "Swap in 93% lean ground turkey for an even lighter version, same method.",
+    "A small can of Rotel in place of the diced tomatoes adds more tomato punch without more calories.",
+    "Leftovers thicken in the fridge, so splash in a little broth or water when reheating."
+  ]
+},
+
 ];
