@@ -1183,6 +1183,17 @@ window.ingredientNutrition = {
     verified: false,
     source: "Estimated by Claude (typical USDA FoodData Central / brand-label values), unverified, pending user review"
   },
+  "red bell pepper": {
+    per: "100g",
+    calories: 31,
+    protein: 1,
+    fat: 0.3,
+    fiber: 2.1,
+    carbs: 6,
+    unitWeights: { "red bell pepper": 120 },
+    verified: false,
+    source: "USDA FoodData Central, raw red bell pepper, per user approval to use standard USDA values (same sourcing style as green bell pepper entry), unverified, pending user review"
+  },
   "diced tomatoes": {
     per: "100g",
     calories: 18,
