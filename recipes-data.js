@@ -2242,4 +2242,52 @@ tags: ["dessert", "high protein"]
   ]
 },
 
+{
+  id: "oven-bbq-chicken-thighs",
+  title: "Oven BBQ Chicken Thighs with Sugar Free Sauce",
+  description: "Oven baked boneless skinless chicken thighs, glazed with a no sugar added BBQ sauce for big BBQ flavor with fewer calories and sugar.",
+  image: "images/oven-bbq-chicken-thighs.png",
+  category: ["Chicken", "Low Calorie"],
+  dateAdded: "2026-08-14",
+  carbs: null,
+  fat: null,
+  fiber: null,
+  calories: "",
+  protein: "",
+  servings: "4",
+  tags: ["chicken", "bbq", "low calorie", "sugar free", "sheet pan", "weeknight"],
+
+  ingredients: [
+    { qty: 2, unit: "lb", name: "boneless skinless chicken thighs", notes: "6 thighs" },
+    { qty: 1, unit: "tsp", name: "garlic powder" },
+    { qty: 1, unit: "tsp", name: "onion powder" },
+    { qty: 1, unit: "tsp", name: "smoked paprika" },
+    { qty: 0.5, unit: "tsp", name: "salt" },
+    { qty: 0.5, unit: "tsp", name: "black pepper" },
+    { qty: 0.25, unit: "tsp", name: "cayenne pepper", notes: "for heat", optional: true },
+
+    { qty: 1, unit: "cup", name: "Sweet Baby Ray's Sugar Free BBQ sauce" },
+    { qty: 1, unit: "tbsp", name: "apple cider vinegar" },
+    { qty: 0.5, unit: "tsp", name: "smoked paprika" },
+    { qty: 0.25, unit: "tsp", name: "garlic powder" },
+    { qty: 1, unit: "tsp", name: "yellow mustard" },
+    { qty: null, unit: null, name: "hot sauce", notes: "to taste", optional: true }
+  ],
+
+  steps: [
+    "Preheat oven to 425°F. Line a sheet pan with foil for easy cleanup.",
+    "Pat the chicken thighs dry with a paper towel. Season both sides with garlic powder, onion powder, smoked paprika, salt, and pepper.",
+    "In a small bowl, whisk together the BBQ sauce, apple cider vinegar, smoked paprika, garlic powder, mustard, and hot sauce if using. Set aside.",
+    "Arrange the thighs on the sheet pan, leaving space between them so they roast instead of steam.",
+    "Bake for 20 minutes.",
+    "Pull the pan out and brush a layer of the doctored sauce on each thigh. Return to the oven for 10 more minutes.",
+    "Brush another light layer of sauce on top. Bake for a final 5 to 8 minutes, until the internal temperature hits 165°F and the sauce is starting to caramelize at the edges.",
+    "Let the chicken rest for 5 minutes before serving. Spoon any extra sauce from the pan over the top if you like."
+  ],
+
+  notes: [
+    "If you want a browned, sticky finish, switch the oven to broil for the last 1 to 2 minutes and watch closely so the sauce doesn't burn."
+  ]
+},
+
 ];
