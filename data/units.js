@@ -137,6 +137,8 @@ window.unitConversions = {
     "baby crispy green leaf lettuce": 0.136,
     "reduced fat fiesta blend cheese": 0.47,
     "crispy tortilla strips": 0.24,
+    "fresh thyme leaves": 0.2,
+    "fresh sage": 0.15,
   },
 
   // Preferred display units for the US/Metric units toggle (units-service.js).

@@ -2108,4 +2108,59 @@ window.ingredientNutrition = {
     verified: false,
     source: "Estimated by Claude (typical USDA FoodData Central / brand-label values for sweet onions), unverified, pending user review"
   },
+  "yellow onion": {
+    per: "100g",
+    calories: 40,
+    protein: 1.1,
+    fat: 0.1,
+    fiber: 1.7,
+    carbs: 9.3,
+    unitWeights: { "yellow onion": 150 },
+    verified: false,
+    source: "Estimated by Claude (typical USDA FoodData Central / brand-label values), unverified, pending user review"
+  },
+  "fresh thyme leaves": {
+    per: "100g",
+    calories: 101,
+    protein: 5.6,
+    fat: 1.7,
+    fiber: 14,
+    carbs: 24.5,
+    unitWeights: {},
+    verified: false,
+    source: "Estimated by Claude (typical USDA FoodData Central / brand-label values), unverified, pending user review"
+  },
+  "fresh sage": {
+    per: "100g",
+    calories: 100,
+    protein: 5,
+    fat: 1.6,
+    fiber: 13,
+    carbs: 24,
+    unitWeights: {},
+    verified: false,
+    source: "Estimated by Claude (USDA FoodData Central lists only dried/ground sage; approximated from comparable fresh culinary herb data such as fresh thyme, since fresh raw sage is not separately profiled), unverified, pending user review"
+  },
+  "box stove top stuffing mix chicken flavor": {
+    per: "100g",
+    calories: 393,
+    protein: 10.7,
+    fat: 3.6,
+    fiber: 1.8,
+    carbs: 75,
+    unitWeights: { "box stove top stuffing mix chicken flavor": 168 },
+    verified: true,
+    source: "Stove Top Stuffing Mix for Chicken (Kraft Heinz), 6 oz box label: 110 cal / 1g fat / 21g carbs (<1g fiber) / 3g protein per 1/6 box (28g) as packaged (dry mix, not prepared with butter), per user-provided photo. Box totals 6 servings x 28g = 168g."
+  },
+  "cream of chicken soup": {
+    per: "100ml",
+    calories: 100,
+    protein: 1.7,
+    fat: 6.7,
+    fiber: 0,
+    carbs: 7.5,
+    unitWeights: {},
+    verified: true,
+    source: "Campbell's Condensed Cream of Chicken Soup label: 120 cal / 8g fat / 9g carbs / 2g protein per 1/2 cup (120mL) condensed, per user-provided photo."
+  },
 };

@@ -2290,4 +2290,59 @@ tags: ["dessert", "high protein"]
   ]
 },
 
+{
+  id: "slow-cooker-chicken-and-stuffing",
+  title: "Slow Cooker Chicken and Stuffing",
+  description: "The classic dump-and-go comfort food, leveled up with sauteed onion and garlic, fresh herbs, and a splash of white wine for way more flavor.",
+  image: "images/slow-cooker-chicken-and-stuffing.png",
+  category: ["Chicken", "Slow Cooker"],
+  dateAdded: "2026-08-17",
+  carbs: null,
+  fat: null,
+  fiber: null,
+  calories: "",
+  protein: "",
+  servings: "6",
+  tags: ["chicken", "slow cooker", "stuffing", "comfort food", "dump and go", "weeknight"],
+
+  ingredients: [
+    { qty: 2, unit: "lb", name: "chicken breast", notes: "boneless skinless" },
+    { qty: 1, unit: "tsp", name: "kosher salt" },
+    { qty: 0.5, unit: "tsp", name: "black pepper" },
+    { qty: 1, unit: "tsp", name: "garlic powder" },
+
+    { qty: 4, unit: "tbsp", name: "unsalted butter", notes: "melted" },
+    { qty: 3, unit: "clove", name: "garlic", notes: "minced" },
+    { qty: 1, unit: null, name: "yellow onion", notes: "diced" },
+    { qty: 1, unit: "cup", name: "cream of chicken soup" },
+    { qty: 1, unit: "cup", name: "sour cream" },
+    { qty: 1, unit: "cup", name: "chicken broth" },
+    { qty: 0.25, unit: "cup", name: "dry white wine", notes: "or extra broth" },
+    { qty: 1, unit: "tsp", name: "fresh thyme leaves", altQty: 0.5, altUnit: "tsp", altName: "dried thyme" },
+    { qty: 1, unit: "tsp", name: "fresh sage", notes: "chopped", altQty: 0.5, altUnit: "tsp", altName: "dried sage" },
+
+    { qty: 2, unit: null, name: "box Stove Top stuffing mix, chicken flavor" },
+
+    { qty: 0.5, unit: "cup", name: "shredded cheddar", notes: "sharp", optional: true },
+    { qty: 2, unit: "tbsp", name: "fresh chopped parsley", notes: "for serving" }
+  ],
+
+  steps: [
+    "Pat the chicken breasts dry and season both sides with salt, pepper, and garlic powder. Lay them in the bottom of the slow cooker.",
+    "In a skillet over medium heat, melt the butter. Add the garlic and onion and cook until softened and fragrant, about 5 minutes. This step is the real flavor upgrade, don't skip it.",
+    "In a bowl, whisk together the cream of chicken soup, sour cream, chicken broth, and wine until smooth. Stir in the sauteed onion and garlic, thyme, and sage.",
+    "Pour the sauce mixture evenly over the chicken breasts in the slow cooker, making sure they're well coated.",
+    "Sprinkle both boxes of stuffing mix dry, right over the top. Do not stir it in yet, just let it sit on top like a blanket.",
+    "Cover and cook on low for 4 hours, or until the chicken is fork tender and shreds easily. Avoid lifting the lid early, it lets out heat and moisture the stuffing needs.",
+    "Once done, fluff the stuffing with a fork to mix it into the sauce. If using, sprinkle the cheddar over the top, cover, and let sit for 5 minutes until melted.",
+    "Shred the chicken right in the pot or remove and shred with a stand mixer. Top with parsley and serve hot."
+  ],
+
+  notes: [
+    "The sauteed onion and garlic plus fresh herbs are what take this from basic to actually tasting like something.",
+    "Cheddar is optional, it melts into the sauce and stuffing rather than sitting on top, so it adds richness without tasting like cheesy stuffing.",
+    "Leftovers reheat well with a splash of broth stirred in so it doesn't dry out."
+  ]
+},
+
 ];
