@@ -2108,4 +2108,37 @@ window.ingredientNutrition = {
     verified: false,
     source: "Estimated by Claude (typical USDA FoodData Central / brand-label values for sweet onions), unverified, pending user review"
   },
+  "yellow onion": {
+    per: "100g",
+    calories: 40,
+    protein: 1.1,
+    fat: 0.1,
+    fiber: 1.7,
+    carbs: 9.3,
+    unitWeights: { "yellow onion": 150 },
+    verified: false,
+    source: "Estimated by Claude (typical USDA FoodData Central / brand-label values), unverified, pending user review"
+  },
+  "fresh thyme leaves": {
+    per: "100g",
+    calories: 101,
+    protein: 5.6,
+    fat: 1.7,
+    fiber: 14,
+    carbs: 24.5,
+    unitWeights: {},
+    verified: false,
+    source: "Estimated by Claude (typical USDA FoodData Central / brand-label values), unverified, pending user review"
+  },
+  "fresh sage": {
+    per: "100g",
+    calories: 100,
+    protein: 5,
+    fat: 1.6,
+    fiber: 13,
+    carbs: 24,
+    unitWeights: {},
+    verified: false,
+    source: "Estimated by Claude (USDA FoodData Central lists only dried/ground sage; approximated from comparable fresh culinary herb data such as fresh thyme, since fresh raw sage is not separately profiled), unverified, pending user review"
+  },
 };
