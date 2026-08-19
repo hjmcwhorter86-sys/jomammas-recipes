@@ -2345,4 +2345,57 @@ tags: ["dessert", "high protein"]
   ]
 },
 
+{
+  id: "crunchwrap-casserole",
+  title: "Crunchwrap Casserole",
+  description: "All the crave-worthy layers of a Taco Bell Crunchwrap Supreme, stacked into an easy 9x13 casserole the whole family will fight over.",
+  image: "images/crunchwrap-casserole.png",
+  category: ["Beef"],
+  dateAdded: "2026-08-19",
+  carbs: null,
+  fat: null,
+  fiber: null,
+  calories: "",
+  protein: "",
+  servings: "6-8",
+  tags: ["beef", "casserole", "tex-mex", "taco", "kid friendly", "weeknight"],
+
+  ingredients: [
+    { qty: 2, unit: "lb", name: "ground beef (93/7)" },
+    { qty: 1, unit: null, name: "yellow onion", notes: "small, diced" },
+    { qty: 2, unit: "packet", name: "taco seasoning" },
+    { qty: null, unit: null, name: "water", notes: "use the empty taco seasoning packets to measure, about 2/3 cup total" },
+
+    { qty: 4, unit: "tbsp", name: "unsalted butter", notes: "melted, divided" },
+    { qty: 6, qtyMax: 7, unit: null, name: "large flour tortillas", notes: "divided" },
+
+    { qty: 0.5, unit: "can", name: "refried beans", optional: true },
+    { qty: 8, unit: "oz", name: "shredded cheese" },
+    { qty: 1, unit: "can", name: "Rotel", notes: "drained" },
+    { qty: 8, unit: "oz", name: "sour cream" },
+    { qty: 0.5, unit: "bag", name: "Doritos", notes: "crushed" },
+    { qty: 1, unit: "can", name: "nacho cheese sauce" }
+  ],
+
+  steps: [
+    "Preheat the oven to 375°F.",
+    "Brown the ground beef with the diced onion in a large skillet over medium heat, breaking it up as it cooks. Once cooked through, drain the grease.",
+    "Stir in the taco seasoning and water. Let simmer for a few minutes, then remove from heat.",
+    "Melt 2 tablespoons of the butter and brush it over the bottom of a 9x13 baking dish.",
+    "Line the bottom of the dish with 4 to 5 flour tortillas, letting the edges overlap.",
+    "If using, spread the refried beans evenly over the tortillas.",
+    "Layer on the shredded cheese, then the drained Rotel, then spread the sour cream over the top.",
+    "Scatter the crushed Doritos over the sour cream in an even layer.",
+    "Spread the nacho cheese sauce over the Doritos, then spoon the meat mixture on top and spread it out evenly.",
+    "Top with the remaining 2 tortillas and fold the edges of the bottom tortillas up and over them to seal.",
+    "Melt the remaining 2 tablespoons of butter and brush it over the top tortillas.",
+    "Bake for 30 minutes, until golden brown on top.",
+    "Let cool for about 10 minutes before slicing and serving."
+  ],
+
+  notes: [
+    "Top individual slices with diced tomatoes, sliced jalapenos, guacamole, and a drizzle of enchilada sauce for the full Crunchwrap experience, like in the photo."
+  ]
+},
+
 ];
