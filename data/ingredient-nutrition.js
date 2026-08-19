@@ -2212,7 +2212,7 @@ window.ingredientNutrition = {
     source: "Doritos Spicy Nacho Tortilla Chips (Sam's Club Mix and Match, 18.38 oz bag) label: 150 cal / 8g fat / 1g fiber / 18g carb / 2g protein per about 12 chips (28g), per user-provided photo."
   },
 
-  "nacho cheese sauce": {
+  "fritos jalapeño cheddar nacho cheese dip": {
     per: "100g",
     calories: 125,
     protein: 3.1,

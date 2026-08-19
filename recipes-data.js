@@ -2357,7 +2357,7 @@ tags: ["dessert", "high protein"]
   fiber: null,
   calories: "",
   protein: "",
-  servings: "6-8",
+  servings: "8",
   tags: ["beef", "casserole", "tex-mex", "taco", "kid friendly", "weeknight"],
 
   ingredients: [
@@ -2374,7 +2374,7 @@ tags: ["dessert", "high protein"]
     { qty: 1, unit: "can", name: "Rotel", notes: "drained" },
     { qty: 8, unit: "oz", name: "sour cream" },
     { qty: 0.5, unit: "bag", name: "Doritos", notes: "crushed" },
-    { qty: 1, unit: "can", name: "nacho cheese sauce" }
+    { qty: 1, unit: "can", name: "Fritos Jalapeño Cheddar Nacho Cheese Dip", notes: "9 oz" }
   ],
 
   steps: [
@@ -2386,7 +2386,7 @@ tags: ["dessert", "high protein"]
     "If using, spread the refried beans evenly over the tortillas.",
     "Layer on the shredded cheese, then the drained Rotel, then spread the sour cream over the top.",
     "Scatter the crushed Doritos over the sour cream in an even layer.",
-    "Spread the nacho cheese sauce over the Doritos, then spoon the meat mixture on top and spread it out evenly.",
+    "Spread the nacho cheese dip over the Doritos, then spoon the meat mixture on top and spread it out evenly.",
     "Top with the remaining 2 tortillas and fold the edges of the bottom tortillas up and over them to seal.",
     "Melt the remaining 2 tablespoons of butter and brush it over the top tortillas.",
     "Bake for 30 minutes, until golden brown on top.",
