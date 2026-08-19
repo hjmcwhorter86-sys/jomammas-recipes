@@ -1961,9 +1961,9 @@ window.ingredientNutrition = {
     fat: 0,
     fiber: 0,
     carbs: 67,
-    unitWeights: {},
+    unitWeights: { packet: 28 },
     verified: true,
-    source: "Ortega Taco Seasoning Mix label: 20 cal / 0g fat / 0g protein / 4g carbs per 2 tsp (6g) serving, per user-provided photo."
+    source: "Ortega Taco Seasoning Mix label: 20 cal / 0g fat / 0g protein / 4g carbs per 2 tsp (6g) serving, per user-provided photo. Packet weight (28g) is the standard 1 oz taco seasoning packet size, not separately confirmed by photo."
   },
   "baby crispy green leaf lettuce": {
     per: "100g",
@@ -2162,5 +2162,65 @@ window.ingredientNutrition = {
     unitWeights: {},
     verified: true,
     source: "Campbell's Condensed Cream of Chicken Soup label: 120 cal / 8g fat / 9g carbs / 2g protein per 1/2 cup (120mL) condensed, per user-provided photo."
+  },
+
+  "large flour tortilla": {
+    per: "100g",
+    calories: 296,
+    protein: 8.5,
+    fat: 6.3,
+    fiber: 1.4,
+    carbs: 49.3,
+    unitWeights: { "large flour tortilla": 71 },
+    verified: true,
+    source: "Mission Burrito Flour Tortillas (Large, 8ct) label: 210 cal / 4.5g fat / 1g fiber / 35g carb / 6g protein per 1 tortilla (71g), per user-provided photo."
+  },
+
+  "shredded cheese": {
+    per: "100g",
+    calories: 393,
+    protein: 21.4,
+    fat: 28.6,
+    fiber: 0,
+    carbs: 3.6,
+    unitWeights: {},
+    verified: true,
+    source: "Great Value Fiesta Blend Finely Shredded Cheese, 8 oz bag label: 110 cal / 8g fat / 0g fiber / 1g carb / 6g protein per 1/4 cup (28g), per user-provided photo."
+  },
+
+  "rotel": {
+    per: "100g",
+    calories: 20,
+    protein: 0.8,
+    fat: 0,
+    fiber: 1.6,
+    carbs: 4,
+    unitWeights: { can: 283 },
+    verified: true,
+    source: "Rotel Original Diced Tomatoes and Green Chiles label: 25 cal / 0g fat / 2g fiber / 5g carb / 1g protein per 1/2 cup (125g) serving, per user-provided photo. Standard can is 10 oz (283g) undrained; recipe uses it drained so the actual amount used is somewhat less than this."
+  },
+
+  "doritos": {
+    per: "100g",
+    calories: 536,
+    protein: 7.1,
+    fat: 28.6,
+    fiber: 3.6,
+    carbs: 64.3,
+    unitWeights: { bag: 521 },
+    verified: true,
+    source: "Doritos Spicy Nacho Tortilla Chips (Sam's Club Mix and Match, 18.38 oz bag) label: 150 cal / 8g fat / 1g fiber / 18g carb / 2g protein per about 12 chips (28g), per user-provided photo."
+  },
+
+  "fritos jalapeño cheddar nacho cheese dip": {
+    per: "100g",
+    calories: 125,
+    protein: 3.1,
+    fat: 7.8,
+    fiber: 0,
+    carbs: 9.4,
+    unitWeights: { can: 255 },
+    verified: true,
+    source: "Fritos Flavored Cheese Dip, Jalapeno Cheddar, 9 oz jar label: 40 cal / 2.5g fat / 0g fiber / 3g carb / <1g protein per 2 tbsp (32g) serving, per user-provided photo. Protein listed as 'less than 1g' on label; recorded here as 1g."
   },
 };
