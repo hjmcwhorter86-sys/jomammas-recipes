@@ -140,6 +140,7 @@ window.unitConversions = {
     "crispy tortilla strips": 0.24,
     "fresh thyme leaves": 0.2,
     "fresh sage": 0.15,
+    "yellow onion": 0.68,
   },
 
   // Preferred display units for the US/Metric units toggle (units-service.js).
