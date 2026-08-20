@@ -2398,4 +2398,62 @@ tags: ["dessert", "high protein"]
   ]
 },
 
+{
+  id: "balsamic-chicken-and-mushrooms",
+  title: "Balsamic Chicken and Mushrooms",
+  description: "Golden seared chicken cutlets simmered in a rich balsamic mushroom pan sauce, finished with fresh thyme and a squeeze of lemon.",
+  image: "images/balsamic-chicken-and-mushrooms.png",
+  category: ["Chicken"],
+  dateAdded: "2026-08-20",
+  carbs: null,
+  fat: null,
+  fiber: null,
+  calories: "",
+  protein: "",
+  servings: "4",
+  tags: ["chicken", "mushrooms", "balsamic", "skillet", "weeknight", "date night"],
+
+  ingredients: [
+    { qty: 4, unit: null, name: "chicken cutlets", notes: "5 to 6 oz each" },
+    { qty: 0.75, unit: "tsp", name: "kosher salt", notes: "divided" },
+    { qty: 0.5, unit: "tsp", name: "black pepper", notes: "divided" },
+
+    { qty: 1/3, unit: "cup", name: "flour", notes: "all-purpose" },
+    { qty: 0.5, unit: "tsp", name: "garlic powder" },
+    { qty: 0.5, unit: "tsp", name: "onion powder" },
+    { qty: 0.25, unit: "tsp", name: "smoked paprika" },
+
+    { qty: 6, unit: "tbsp", name: "unsalted butter", notes: "cut into pats, divided" },
+    { qty: 8, unit: "oz", name: "cremini mushrooms", notes: "sliced" },
+    { qty: 4, unit: "oz", name: "shiitake mushrooms", notes: "sliced, or use all cremini", optional: true },
+    { qty: 0.5, unit: "cup", name: "yellow onion", notes: "finely chopped" },
+    { qty: 4, unit: "clove", name: "garlic", notes: "minced" },
+    { qty: 1, unit: "tbsp", name: "tomato paste" },
+    { qty: 0.25, unit: "cup", name: "dry white wine", altQty: 0.25, altUnit: "cup", altName: "dry sherry" },
+    { qty: 4, unit: "tsp", name: "fresh thyme leaves", notes: "divided, plus more for garnish" },
+
+    { qty: 0.75, unit: "cup", name: "chicken broth" },
+    { qty: 2, unit: "tbsp", name: "balsamic vinegar" },
+    { qty: 1, unit: "tsp", name: "dijon mustard" },
+    { qty: null, unit: null, name: "red pepper flakes", notes: "pinch", optional: true },
+
+    { qty: null, unit: null, name: "fresh lemon juice", notes: "a squeeze, to finish" },
+    { qty: null, unit: null, name: "fresh chopped parsley", notes: "to finish" }
+  ],
+
+  steps: [
+    "Gather all ingredients.",
+    "Whisk together the flour, garlic powder, onion powder, smoked paprika, and 1/4 teaspoon of the black pepper in a shallow dish. Sprinkle the chicken with 1/4 teaspoon of the salt. Dredge chicken lightly in the seasoned flour, shaking off excess. Discard any remaining flour.",
+    "Heat 2 tablespoons butter in a large skillet over medium high. Cook chicken 3 to 4 minutes on each side until golden brown and cooked through (longer if cutlets are thick; slice thin if you can for even cooking). Brown in 2 batches if needed. Transfer chicken to a plate and keep warm.",
+    "Melt 1 tablespoon butter in the pan and add the mushrooms, onion, and remaining 1/2 teaspoon salt and 1/4 teaspoon black pepper. Cook until mushrooms are browned and have released their liquid, about 6 to 7 minutes. Stir in the tomato paste and cook 1 minute, letting it darken slightly. Add the garlic, 2 teaspoons of the thyme, and red pepper flakes if using, and cook 1 minute longer, until fragrant.",
+    "Pour in the wine and let it bubble and reduce for about 1 minute, scraping up any browned bits. Stir in the chicken broth, vinegar, and Dijon. Bring to a simmer and cook until the liquid has reduced by about half, 6 to 9 minutes, so the sauce is nicely concentrated. Whisk in the remaining 3 tablespoons butter until melted and smooth.",
+    "Add the chicken back to the sauce and cook 3 to 5 minutes until coated and warmed through. Off heat, stir in the remaining 2 teaspoons fresh thyme and a squeeze of lemon juice. Sprinkle with parsley and additional thyme, and serve immediately."
+  ],
+
+  notes: [
+    "Shiitake mushrooms are optional here; use all cremini if that's what you have on hand.",
+    "Pound thick cutlets to an even thickness (or slice thin) before dredging so they cook through evenly in the same 3 to 4 minutes per side."
+  ]
+},
+
 ];
