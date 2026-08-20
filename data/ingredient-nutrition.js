@@ -2223,4 +2223,40 @@ window.ingredientNutrition = {
     verified: true,
     source: "Fritos Flavored Cheese Dip, Jalapeno Cheddar, 9 oz jar label: 40 cal / 2.5g fat / 0g fiber / 3g carb / <1g protein per 2 tbsp (32g) serving, per user-provided photo. Protein listed as 'less than 1g' on label; recorded here as 1g."
   },
+
+  "chicken cutlets": {
+    per: "100g",
+    calories: 98,
+    protein: 22.3,
+    fat: 0.9,
+    fiber: 0,
+    carbs: 0,
+    unitWeights: { "chicken cutlets": 156 },
+    verified: true,
+    source: "Same product/nutrition as this file's verified 'chicken breast' entry (Perdue thin-sliced boneless skinless chicken breast label), per user confirmation that cutlets use identical values. Unit weight is the recipe's typical 5-6 oz cutlet averaged (~156g)."
+  },
+
+  "cremini mushrooms": {
+    per: "100g",
+    calories: 22.5,
+    protein: 2.5,
+    fat: 0,
+    fiber: 0.6,
+    carbs: 3.75,
+    unitWeights: { "cremini mushrooms": 20 },
+    verified: true,
+    source: "Mushroom Council nutrition label (crimini mushrooms) via user-provided photo: 18 cal / 0g fat / 3g carbs (0.48g fiber) / 2g protein per 4 mushrooms (80g) serving; converted to per 100g."
+  },
+
+  "shiitake mushrooms": {
+    per: "100g",
+    calories: 34,
+    protein: 2.24,
+    fat: 0.49,
+    fiber: 2.5,
+    carbs: 6.79,
+    unitWeights: {},
+    verified: false,
+    source: "Estimated by Claude (USDA FoodData Central, raw shiitake mushrooms), unverified, pending user review"
+  },
 };
