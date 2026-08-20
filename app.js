@@ -487,12 +487,22 @@ function getUnitDisplay(unit, qty, qtyMax) {
 // units-service.js and data/units.js -> displayUnits), for mass and volume
 // units only. Count units (clove, slice, ...) and unitless items pass
 // through unchanged.
+//
+// Recipes are already authored in US customary units (tsp/tbsp/cup,
+// oz/lb), so in US mode this returns the quantity exactly as written,
+// no re-bucketing into "whichever unit looks nicest" - a recipe that
+// says "6 Tbsp" should show "6 Tbsp", not get silently rewritten to
+// "0.38 cups". Conversion only kicks in for Metric, where there's no
+// author-chosen unit to preserve and a magnitude-based unit has to be
+// picked.
 function convertQuantityForDisplay(qty, qtyMax, unit) {
   const original = { qty, qtyMax, unit };
   if (!unit || qty === null || qty === undefined) return original;
 
-  const conversions = window.unitConversions || {};
   const system = window.unitsService?.getSystem() || 'us';
+  if (system === 'us') return original;
+
+  const conversions = window.unitConversions || {};
 
   let category = null;
   if (conversions.mass?.units?.[unit]) category = 'mass';
