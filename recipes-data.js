@@ -2456,4 +2456,53 @@ tags: ["dessert", "high protein"]
   ]
 },
 
+{
+  id: "the-dip",
+  title: "The Dip",
+  description: "A chili cheese dip with a seasoned cream cheese base, a Worcestershire-and-hot-sauce-spiked chili layer, fire roasted Rotel, and a fresh green onion finish.",
+  image: "images/the-dip.png",
+  category: ["Beef", "Snacks & Sides"],
+  dateAdded: "2026-08-21",
+  carbs: null,
+  fat: null,
+  fiber: null,
+  calories: "",
+  protein: "",
+  servings: "8",
+  tags: ["dip", "chili", "cheese", "appetizer", "game day", "party food"],
+
+  ingredients: [
+    { qty: 16, unit: "oz", name: "cream cheese", notes: "softened" },
+    { qty: 2, unit: "tbsp", name: "sour cream" },
+    { qty: 1, unit: "tsp", name: "chili powder" },
+    { qty: 0.5, unit: "tsp", name: "ground cumin" },
+    { qty: 0.5, unit: "tsp", name: "garlic powder" },
+
+    { qty: 15, unit: "oz", name: "chili", notes: "canned, with or without beans, your call" },
+    { qty: 1, unit: "tsp", name: "Worcestershire sauce" },
+    { qty: 1, unit: "tsp", name: "hot sauce", notes: "plus more for drizzling" },
+
+    { qty: 10, unit: "oz", name: "rotel", notes: "fire roasted, drained very well" },
+    { qty: 1, unit: "cup", name: "shredded cheddar", notes: "coarsely shredded" },
+    { qty: 1, unit: "cup", name: "monterey jack cheese", notes: "coarsely shredded" },
+
+    { qty: 2, unit: null, name: "green onions", notes: "sliced" },
+    { qty: null, unit: null, name: "jalapeño slices", notes: "optional, for topping", optional: true }
+  ],
+
+  steps: [
+    "Preheat oven to 350 F.",
+    "In a bowl, mix the cream cheese, sour cream, chili powder, cumin, and garlic powder with a fork until smooth. Spread evenly in an 8x8 casserole dish.",
+    "Stir the Worcestershire and hot sauce into the chili. Pour and spread over the cream cheese layer.",
+    "Stir about a cup of the shredded cheese into the chili layer to combine.",
+    "Drain the Rotel very well. Put it in a strainer and press out as much liquid as possible, then layer it over the chili. Top with the remaining cheese, sprinkled lightly.",
+    "Bake for 20 minutes, until bubbly. Then broil for a couple of minutes until the top gets a good brown color. Watch carefully so it doesn't burn.",
+    "Top with green onions and optional jalapeño slices. Drizzle with extra hot sauce if desired. Serve warm."
+  ],
+
+  notes: [
+    "Shred your own cheddar and Monterey Jack coarsely rather than using fine pre-shredded cheese; it melts looser and is easier to dip a chip into."
+  ]
+},
+
 ];
