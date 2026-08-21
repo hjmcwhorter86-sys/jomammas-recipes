@@ -2259,4 +2259,28 @@ window.ingredientNutrition = {
     verified: false,
     source: "Estimated by Claude (USDA FoodData Central, raw shiitake mushrooms), unverified, pending user review"
   },
+
+  "chili": {
+    per: "100g",
+    calories: 139.8,
+    protein: 6.8,
+    fat: 9.7,
+    fiber: 0.4,
+    carbs: 5.9,
+    unitWeights: {},
+    verified: true,
+    source: "Hormel Chili with Beef (Angus), No Beans, 14 oz can nutrition label: 330 cal / 23g fat / 1g fiber / 14g carb / 16g protein per 1 cup (236g) serving, per user-provided photo/screenshot."
+  },
+
+  "monterey jack cheese": {
+    per: "100g",
+    calories: 357.1,
+    protein: 25,
+    fat: 28.6,
+    fiber: 0,
+    carbs: 0,
+    unitWeights: {},
+    verified: true,
+    source: "Great Value Monterey Jack Block Cheese, 16 oz chunk label: 100 cal / 8g fat / 0g fiber / 0g carb / 7g protein per 1 oz (28g) serving, per user-provided photo."
+  },
 };
