@@ -1,0 +1,268 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="page-type" content="demo" />
+  <title>Grilled Cheese • Timer Demo • JoMama's Recipes</title>
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    /* Timer trigger — clickable time phrase */
+    .timer-trigger {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      cursor: pointer;
+      color: var(--color-teal);
+      text-decoration: underline dotted;
+      font-weight: 700;
+      border-radius: 4px;
+      padding: 0 2px;
+      transition: background 0.15s;
+    }
+    .timer-trigger:hover { background: rgba(4,140,127,0.1); }
+
+    /* Running state */
+    .timer-trigger.timer-running {
+      color: var(--color-gold);
+      text-decoration: none;
+      background: rgba(212,160,23,0.12);
+      padding: 2px 6px;
+      border-radius: 6px;
+      font-variant-numeric: tabular-nums;
+    }
+
+    /* Done/flash state */
+    .timer-trigger.timer-done {
+      color: var(--color-teal);
+      text-decoration: none;
+      background: rgba(4,140,127,0.15);
+      padding: 2px 6px;
+      border-radius: 6px;
+      animation: timerFlash 0.4s ease 3;
+    }
+
+    @keyframes timerFlash {
+      0%, 100% { background: rgba(4,140,127,0.15); color: var(--color-teal); }
+      50%       { background: var(--color-teal); color: #fff; }
+    }
+
+    /* Demo banner */
+    .demo-banner {
+      background: var(--color-gold);
+      color: #fff;
+      text-align: center;
+      padding: 8px 16px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      letter-spacing: 0.03em;
+    }
+  </style>
+</head>
+<body>
+  <header class="header">
+    <div class="header-top">
+      <button class="hamburger-menu" id="hamburgerMenu" aria-label="Toggle menu" aria-expanded="false">
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+      </button>
+      <div class="logo">
+        <a href="index.html" class="logo-link">
+          <img src="images/jomammas-recipes-logo.png" alt="JoMamma's Recipes" class="logo-image" />
+        </a>
+      </div>
+      <nav class="nav">
+        <a href="index.html">Home</a>
+        <a href="recipes-list.html" class="recipes-link">Recipes</a>
+        <a href="about.html">About</a>
+      </nav>
+      <div class="header-actions">
+        <input id="search" type="search" class="search-input" placeholder="Search recipes…" />
+        <a href="recipes-list.html" class="view-all-button button-family button-primary">View All Categories</a>
+      </div>
+      <button class="search-icon-button" id="searchIconButton" aria-label="Open search" aria-expanded="false">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="11" cy="11" r="8"></circle>
+          <path d="m21 21-4.35-4.35"></path>
+        </svg>
+      </button>
+    </div>
+    <nav class="mobile-menu" id="mobileMenu">
+      <a href="index.html" class="mobile-menu-link">Home</a>
+      <a href="recipes-list.html" class="mobile-menu-link">Recipes</a>
+      <a href="about.html" class="mobile-menu-link">About</a>
+    </nav>
+    <div class="mobile-search-container" id="mobileSearchContainer">
+      <input id="mobile-search" type="search" class="mobile-search-input" placeholder="Search recipes…" />
+    </div>
+  </header>
+
+  <div class="demo-banner">
+    ✨ Timer Feature Demo — click any teal time phrase to start a countdown
+  </div>
+
+  <main>
+    <div class="detail-actions">
+      <button class="back-btn button-family button-secondary" onclick="window.location.href='recipes-list.html'">← Back to Recipes</button>
+    </div>
+    <article class="recipe-detail">
+      <h1>Classic Grilled Cheese</h1>
+      <p class="recipe-description">The ultimate comfort sandwich — golden, crispy bread with perfectly melted cheese. Simple, satisfying, and ready in minutes.</p>
+      <div class="recipe-meta">
+        <div class="meta-primary">
+          <span class="badge">Demo</span>
+        </div>
+      </div>
+      <div class="recipe-tags">
+        <span class="tag">Quick</span>
+        <span class="tag">Comfort Food</span>
+        <span class="tag">Vegetarian</span>
+      </div>
+      <div class="recipe-servings"><strong>Servings:</strong> 1 sandwich</div>
+
+      <div class="recipe-content-wrapper">
+        <section class="recipe-section">
+          <h2>Ingredients</h2>
+          <ul class="ingredients-list">
+            <li>2 slices sturdy sandwich bread (sourdough or white)</li>
+            <li>1–2 tablespoons unsalted butter, softened</li>
+            <li>2–3 slices American or cheddar cheese (or a mix)</li>
+          </ul>
+        </section>
+      </div>
+
+      <section class="recipe-section">
+        <h2>Instructions</h2>
+        <ol class="steps-list">
+          <li>Spread softened butter evenly on one side of each bread slice and let rest for 1 minute so the butter soaks in.</li>
+          <li>Heat a skillet or griddle over medium-low heat for 2 minutes until evenly warmed.</li>
+          <li>Place one bread slice butter-side down in the skillet, layer on the cheese slices, then top with the second slice butter-side up. Press gently. Cook for 3 minutes without moving so a golden crust forms.</li>
+          <li>Peek at the bottom — it should be deep golden. Flip carefully and cook for another 2 minutes until the second side matches.</li>
+          <li>Remove from heat and let rest for 30 seconds before cutting so the cheese sets slightly and doesn't ooze everywhere.</li>
+        </ol>
+      </section>
+
+      <section class="recipe-section">
+        <h2>Notes</h2>
+        <ul class="notes-list">
+          <li>Low and slow is the secret — medium-low heat gives the cheese time to melt before the bread burns.</li>
+          <li>American cheese melts the most smoothly; sharp cheddar adds more flavor. A blend of both is a crowd-pleaser.</li>
+          <li>Cover the skillet with a lid for the first side to help the cheese melt faster.</li>
+        </ul>
+      </section>
+    </article>
+  </main>
+
+  <footer class="site-footer" aria-label="Site footer">
+    <div class="site-footer-inner">
+      <div class="site-footer-brand">
+        <h2>JoMamma's Recipes</h2>
+        <p>Ad free recipes for everyone to enjoy</p>
+      </div>
+      <nav class="site-footer-nav" aria-label="Footer navigation">
+        <a href="index.html">Home</a>
+        <a href="recipes-list.html">All Recipes</a>
+        <a href="about.html">About</a>
+        <a href="index.html#categories">Categories</a>
+      </nav>
+      <p class="site-footer-copy">© 2026 • easy printer-friendly recipes</p>
+    </div>
+  </footer>
+
+  <script src="app.js" defer></script>
+
+  <script>
+    // 1. Detect time phrases and wrap in clickable spans
+    function initTimers() {
+      const regex = /(\d+)\s*(hour|hours|minute|minutes|min|mins|second|seconds|sec|secs)/gi;
+      document.querySelectorAll('.steps-list li').forEach(li => {
+        li.innerHTML = li.innerHTML.replace(regex, (match, num, unit) => {
+          const n = parseInt(num);
+          const u = unit.toLowerCase();
+          const secs = u.startsWith('h') ? n * 3600 : u.startsWith('m') ? n * 60 : n;
+          return `<span class="timer-trigger" data-seconds="${secs}" data-label="${match}">&#x23F1; ${match}</span>`;
+        });
+      });
+      document.querySelectorAll('.timer-trigger').forEach(span => {
+        span.addEventListener('click', handleTimerClick);
+      });
+    }
+
+    // 2. Timer click handler
+    const activeTimers = new Map(); // span → intervalId
+
+    function handleTimerClick(e) {
+      const span = e.currentTarget;
+      if (activeTimers.has(span)) {
+        // Running → reset
+        clearInterval(activeTimers.get(span));
+        activeTimers.delete(span);
+        resetSpan(span);
+      } else if (span.classList.contains('timer-done')) {
+        resetSpan(span);
+      } else {
+        startTimer(span);
+      }
+    }
+
+    function startTimer(span) {
+      let remaining = parseInt(span.dataset.seconds);
+      span.classList.add('timer-running');
+      span.textContent = '\u25B6 ' + formatTime(remaining);
+
+      const id = setInterval(() => {
+        remaining--;
+        if (remaining <= 0) {
+          clearInterval(id);
+          activeTimers.delete(span);
+          finishTimer(span);
+        } else {
+          span.textContent = '\u25B6 ' + formatTime(remaining);
+        }
+      }, 1000);
+      activeTimers.set(span, id);
+    }
+
+    function finishTimer(span) {
+      span.classList.remove('timer-running');
+      span.classList.add('timer-done');
+      span.textContent = '\u2713 Done!';
+      playBeep();
+    }
+
+    function resetSpan(span) {
+      span.classList.remove('timer-running', 'timer-done');
+      span.textContent = '\u23F1 ' + span.dataset.label;
+    }
+
+    function formatTime(secs) {
+      const m = Math.floor(secs / 60).toString().padStart(2, '0');
+      const s = (secs % 60).toString().padStart(2, '0');
+      return `${m}:${s}`;
+    }
+
+    // 3. Web Audio API beep — two short tones
+    function playBeep() {
+      try {
+        const ctx = new (window.AudioContext || window.webkitAudioContext)();
+        [0, 0.25].forEach(offset => {
+          const osc = ctx.createOscillator();
+          const gain = ctx.createGain();
+          osc.connect(gain);
+          gain.connect(ctx.destination);
+          osc.frequency.value = 880;
+          gain.gain.setValueAtTime(0.4, ctx.currentTime + offset);
+          gain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + offset + 0.3);
+          osc.start(ctx.currentTime + offset);
+          osc.stop(ctx.currentTime + offset + 0.3);
+        });
+      } catch (e) {
+        // Audio not available — fail silently
+      }
+    }
+
+    document.addEventListener('DOMContentLoaded', initTimers);
+  </script>
+</body>
+</html>
