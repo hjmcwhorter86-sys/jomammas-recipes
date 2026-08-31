@@ -1603,7 +1603,7 @@ body{
 .hero {
   width: 100%;
   margin: -30px auto var(--space-2);
-  height: 280px;
+  min-height: 280px;
   padding: 0 var(--space-5);
   display: flex;
   align-items: center;
@@ -1622,6 +1622,7 @@ body{
   letter-spacing: -0.02em;
   color: var(--color-teal);
   font-family: "Times New Roman", Times, serif;
+  text-wrap: balance;
 }
 
 .hero p {
@@ -1658,7 +1659,7 @@ body{
 
 @media (max-width: 768px) {
   .hero {
-    height: 330px;
+    min-height: 330px;
     margin: -10px auto var(--space-1-5);
     flex-direction: column;
     justify-content: center;
@@ -1668,7 +1669,7 @@ body{
   }
 
   .hero h1 {
-    font-size: var(--font-size-2xl);
+    font-size: clamp(17px, 5.2vw, 22px);
   }
 
   .hero p {
