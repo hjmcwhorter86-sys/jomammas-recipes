@@ -2505,4 +2505,65 @@ tags: ["dessert", "high protein"]
   ]
 },
 
+{
+  id: "cheesy-volcano-meatball-subs",
+  title: "Cheesy Volcano Meatball Subs",
+  description: "Quick, cheesy meatball subs with a melty mozzarella surprise hidden inside, updated from an old Kraft recipe magazine for more flavor.",
+  image: "images/cheesy-volcano-meatball-subs.png",
+  category: "Beef",
+  dateAdded: "2026-09-11",
+  carbs: null,
+  fat: null,
+  fiber: null,
+  calories: "",
+  protein: "",
+  servings: "8",
+  tags: ["beef", "meatballs", "sandwich", "sub", "cheese", "kid-friendly", "weeknight"],
+
+  ingredients: [
+    {
+      title: "Meatballs",
+      items: [
+        { qty: 2, unit: "lb", name: "ground beef (93/7)", notes: "lean" },
+        { qty: 12, unit: null, name: "Ritz crackers", notes: "finely crushed" },
+        { qty: 0.5, unit: "cup", name: "parmesan", notes: "grated" },
+        { qty: 0.5, unit: "cup", name: "spaghetti sauce" },
+        { qty: 1.5, unit: "tsp", name: "garlic powder" },
+        { qty: 1, unit: "tsp", name: "kosher salt" },
+        { qty: 0.5, unit: "tsp", name: "black pepper" },
+        { qty: 1, unit: "tsp", name: "Italian seasoning" },
+        { qty: 0.5, unit: "tsp", name: "onion powder" },
+        { qty: 1, unit: "tsp", name: "Worcestershire sauce" },
+        { qty: 2, unit: "clove", name: "garlic", notes: "minced", optional: true },
+        { qty: 24, unit: null, name: "mozzarella cheese cubes" }
+      ]
+    },
+    {
+      title: "For Serving",
+      items: [
+        { qty: 1, unit: "cup", name: "spaghetti sauce" },
+        { qty: 8, unit: null, name: "hoagie rolls" }
+      ]
+    }
+  ],
+
+  steps: [
+    "Preheat oven to 400 F. Spray a large shallow baking pan with cooking spray.",
+    "In a large bowl, combine ground beef, crushed Ritz crackers, Parmesan, and 1/2 cup of the spaghetti sauce. Add garlic powder, kosher salt, black pepper, Italian seasoning, onion powder, Worcestershire sauce, and minced garlic if using. Mix until just combined; do not overwork the meat or the meatballs will be tough.",
+    "Shape the mixture into 24 meatballs, using about 2 tablespoons of meat each. Press one mozzarella cube deeply into the center of each meatball and seal the meat around it completely so the cheese is hidden inside.",
+    "Place meatballs 2 inches apart on the prepared baking pan.",
+    "Bake for 15 minutes, or until cooked through. The cheese inside will melt and may erupt slightly.",
+    "While the meatballs bake, heat the remaining 1 cup of spaghetti sauce in the microwave or in a sauce pan on the stove until warmed through.",
+    "Spoon sauce into each hoagie roll, fill with 3 meatballs, and serve immediately."
+  ],
+
+  notes: [
+    "Hoagie rolls hold up much better than hot dog buns for this recipe.",
+    "Toast the rolls under the broiler for 1 to 2 minutes before filling to prevent sogginess.",
+    "Use a spaghetti sauce you enjoy eating straight from the jar; it makes a noticeable difference.",
+    "Meatballs can be formed and refrigerated a few hours ahead of time.",
+    "Like extra cheese? Add a slice of mozzarella cheese to the hoagie rolls before toasting."
+  ]
+},
+
 ];

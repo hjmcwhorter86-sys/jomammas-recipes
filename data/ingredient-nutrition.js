@@ -2283,4 +2283,52 @@ window.ingredientNutrition = {
     verified: true,
     source: "Great Value Monterey Jack Block Cheese, 16 oz chunk label: 100 cal / 8g fat / 0g fiber / 0g carb / 7g protein per 1 oz (28g) serving, per user-provided photo."
   },
+
+  "ritz crackers": {
+    per: "100g",
+    calories: 500,
+    protein: 6.25,
+    fat: 28.1,
+    fiber: 0,
+    carbs: 62.5,
+    unitWeights: { "ritz crackers": 3.2 },
+    verified: true,
+    source: "RITZ Original Crackers label: 80 cal / 4.5g fat / 10g carb / 0g fiber / less than 1g protein (used 1g) per 5 crackers (16g) serving, per user-provided photo."
+  },
+
+  "spaghetti sauce": {
+    per: "100ml",
+    calories: 50,
+    protein: 1.7,
+    fat: 1.25,
+    fiber: 1.7,
+    carbs: 7.5,
+    unitWeights: {},
+    verified: true,
+    source: "The Pasta Queen Marinara Sauce label: 60 cal / 1.5g fat / 9g carb / 2g fiber / 2g protein per 1/2 cup (120g) serving, per user-provided photo."
+  },
+
+  "mozzarella cheese cubes": {
+    per: "100g",
+    calories: 254,
+    protein: 24.3,
+    fat: 15.9,
+    fiber: 0,
+    carbs: 2.8,
+    unitWeights: { "mozzarella cheese cubes": 14 },
+    verified: false,
+    source: "Estimated by Claude (USDA FoodData Central, part-skim mozzarella; ~14g per 1in cube), unverified, pending user review"
+  },
+
+  "hoagie rolls": {
+    per: "100g",
+    calories: 304,
+    protein: 11.6,
+    fat: 8.7,
+    fiber: 2.9,
+    carbs: 50.7,
+    unitWeights: { "hoagie rolls": 69 },
+    verified: true,
+    source: "Pepperidge Farm Bakery Classics Soft White with Sesame Seeds Hoagie Rolls label: 210 cal / 6g fat / 35g carb / 2g fiber / 8g protein per 1 roll (69g) serving, per user-provided photo."
+  },
 };
