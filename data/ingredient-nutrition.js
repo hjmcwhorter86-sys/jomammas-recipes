@@ -2283,4 +2283,52 @@ window.ingredientNutrition = {
     verified: true,
     source: "Great Value Monterey Jack Block Cheese, 16 oz chunk label: 100 cal / 8g fat / 0g fiber / 0g carb / 7g protein per 1 oz (28g) serving, per user-provided photo."
   },
+
+  "ritz crackers": {
+    per: "100g",
+    calories: 500,
+    protein: 6.25,
+    fat: 28,
+    fiber: 0,
+    carbs: 62.5,
+    unitWeights: { "ritz crackers": 3.2 },
+    verified: false,
+    source: "Estimated by Claude (typical Ritz crackers nutrition label: 80 cal / 4.5g fat / 10g carb / 1g protein per 5 crackers / 16g serving), unverified, pending user review"
+  },
+
+  "spaghetti sauce": {
+    per: "100ml",
+    calories: 60,
+    protein: 1.5,
+    fat: 2,
+    fiber: 2,
+    carbs: 10,
+    unitWeights: {},
+    verified: false,
+    source: "Estimated by Claude (typical jarred spaghetti sauce, USDA FoodData Central / brand-label values), unverified, pending user review"
+  },
+
+  "mozzarella cheese cubes": {
+    per: "100g",
+    calories: 254,
+    protein: 24.3,
+    fat: 15.9,
+    fiber: 0,
+    carbs: 2.8,
+    unitWeights: { "mozzarella cheese cubes": 14 },
+    verified: false,
+    source: "Estimated by Claude (USDA FoodData Central, part-skim mozzarella; ~14g per 1in cube), unverified, pending user review"
+  },
+
+  "hoagie rolls": {
+    per: "100g",
+    calories: 265,
+    protein: 9,
+    fat: 3,
+    fiber: 2,
+    carbs: 50,
+    unitWeights: { "hoagie rolls": 85 },
+    verified: false,
+    source: "Estimated by Claude (typical hoagie/sub roll, USDA FoodData Central / brand-label values, ~85g per roll), unverified, pending user review"
+  },
 };
