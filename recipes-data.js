@@ -2566,4 +2566,51 @@ tags: ["dessert", "high protein"]
   ]
 },
 
+  {
+  id: "crispy-chicken-fritta",
+  title: "Crispy Chicken Fritta (Olive Garden Style)",
+  description: "Golden, crispy-breaded chicken cutlets in the style of Olive Garden's Chicken Fritta, perfect draped over fettuccine Alfredo.",
+  image: "images/crispy-chicken-fritta.png",
+  category: "Chicken",
+  dateAdded: "2026-09-11",
+  carbs: null,
+  fat: null,
+  fiber: null,
+  calories: "",
+  protein: "",
+  servings: "4",
+  tags: ["chicken", "fried", "crispy", "italian", "breaded", "weeknight"],
+
+  ingredients: [
+    { qty: 2, unit: null, name: "chicken breast", notes: "boneless, butterflied into 4 pieces total" },
+    { qty: 0.5, unit: "tsp", name: "salt", notes: "for seasoning the chicken directly" },
+
+    { qty: 1.5, unit: "cup", name: "Italian style breadcrumbs" },
+    { qty: 0.25, unit: "cup", name: "flour" },
+    { qty: 0.333, unit: "cup", name: "parmesan", notes: "grated" },
+    { qty: 1, unit: "tsp", name: "garlic powder" },
+    { qty: 1, unit: "tsp", name: "onion powder" },
+    { qty: 0.5, unit: "tsp", name: "Italian seasoning", notes: "dried" },
+    { qty: 0.5, unit: "tsp", name: "salt", notes: "for the breading mix" },
+    { qty: 0.25, unit: "tsp", name: "black pepper" },
+    { qty: null, unit: null, name: "red pepper flakes", notes: "pinch", optional: true },
+
+    { qty: 1, unit: "cup", name: "milk" },
+    { qty: null, unit: null, name: "vegetable oil", notes: "about 3 cups, for frying; most drains off, see below for the absorbed portion counted in nutrition" },
+    { qty: 2, unit: "tbsp", name: "vegetable oil", display: "~2 tbsp vegetable oil, estimated absorbed into the coating during frying (counted toward nutrition)" }
+  ],
+
+  steps: [
+    "Pat the chicken dry and season both sides directly with the 1/2 tsp salt.",
+    "In a shallow dish, combine the breadcrumbs, flour, Parmesan, garlic powder, onion powder, Italian seasoning, salt, pepper, and red pepper flakes. Whisk well so the seasoning is evenly distributed. In a second shallow dish, add the milk.",
+    "Dredge each piece in the breadcrumb mixture, then dip into the milk, then back into the breadcrumb mixture, pressing firmly so it adheres. Repeat with all the chicken. Let it rest on a plate for 5 to 10 minutes before frying to help the coating set.",
+    "Heat the oil in a large skillet over medium-high heat, about 1 to 2 inches deep, until it shimmers (350°F if you've got a thermometer). Add the chicken and cook until deep golden brown and cooked through, about 4 to 5 minutes per side. Work in batches so you don't crowd the pan. Check for an internal temp of 165°F or clear juices when cut into the thickest piece.",
+    "Transfer to a paper towel lined plate or, better, a wire rack set over a baking sheet to keep the bottom crispy. Let rest a couple minutes before slicing and laying over your fettuccine Alfredo."
+  ],
+
+  notes: [
+    "Swap half the breadcrumbs for panko if you want it extra crispy, or pound the chicken thin instead of just butterflying for faster, more even cooking."
+  ]
+},
+
 ];
