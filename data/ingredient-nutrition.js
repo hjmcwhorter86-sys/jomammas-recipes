@@ -2288,24 +2288,24 @@ window.ingredientNutrition = {
     per: "100g",
     calories: 500,
     protein: 6.25,
-    fat: 28,
+    fat: 28.1,
     fiber: 0,
     carbs: 62.5,
     unitWeights: { "ritz crackers": 3.2 },
-    verified: false,
-    source: "Estimated by Claude (typical Ritz crackers nutrition label: 80 cal / 4.5g fat / 10g carb / 1g protein per 5 crackers / 16g serving), unverified, pending user review"
+    verified: true,
+    source: "RITZ Original Crackers label: 80 cal / 4.5g fat / 10g carb / 0g fiber / less than 1g protein (used 1g) per 5 crackers (16g) serving, per user-provided photo."
   },
 
   "spaghetti sauce": {
     per: "100ml",
-    calories: 60,
-    protein: 1.5,
-    fat: 2,
-    fiber: 2,
-    carbs: 10,
+    calories: 50,
+    protein: 1.7,
+    fat: 1.25,
+    fiber: 1.7,
+    carbs: 7.5,
     unitWeights: {},
-    verified: false,
-    source: "Estimated by Claude (typical jarred spaghetti sauce, USDA FoodData Central / brand-label values), unverified, pending user review"
+    verified: true,
+    source: "The Pasta Queen Marinara Sauce label: 60 cal / 1.5g fat / 9g carb / 2g fiber / 2g protein per 1/2 cup (120g) serving, per user-provided photo."
   },
 
   "mozzarella cheese cubes": {
@@ -2322,13 +2322,13 @@ window.ingredientNutrition = {
 
   "hoagie rolls": {
     per: "100g",
-    calories: 265,
-    protein: 9,
-    fat: 3,
-    fiber: 2,
-    carbs: 50,
-    unitWeights: { "hoagie rolls": 85 },
-    verified: false,
-    source: "Estimated by Claude (typical hoagie/sub roll, USDA FoodData Central / brand-label values, ~85g per roll), unverified, pending user review"
+    calories: 304,
+    protein: 11.6,
+    fat: 8.7,
+    fiber: 2.9,
+    carbs: 50.7,
+    unitWeights: { "hoagie rolls": 69 },
+    verified: true,
+    source: "Pepperidge Farm Bakery Classics Soft White with Sesame Seeds Hoagie Rolls label: 210 cal / 6g fat / 35g carb / 2g fiber / 8g protein per 1 roll (69g) serving, per user-provided photo."
   },
 };
