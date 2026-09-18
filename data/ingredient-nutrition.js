@@ -2376,7 +2376,7 @@ window.ingredientNutrition = {
     fiber: 0,
     carbs: 14,
     unitWeights: {},
-    verified: false,
-    source: "Estimated by Claude (USDA FoodData Central typical values for sweet dessert wine, which Marsala falls under), unverified, pending user review"
+    verified: true,
+    source: "Estimated by Claude (USDA FoodData Central typical values for sweet dessert wine, which Marsala falls under); user uses Taylor Marsala wine but no nutrition label was available, estimate accepted by user"
   },
 };
