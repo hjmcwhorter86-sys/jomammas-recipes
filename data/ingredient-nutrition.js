@@ -2334,25 +2334,25 @@ window.ingredientNutrition = {
 
   "fettuccine": {
     per: "100g",
-    calories: 371,
-    protein: 13,
-    fat: 1.5,
-    fiber: 3.2,
+    calories: 357,
+    protein: 12.5,
+    fat: 1.8,
+    fiber: 5.4,
     carbs: 75,
     unitWeights: {},
-    verified: false,
-    source: "Estimated by Claude (typical USDA FoodData Central / brand-label values for dry pasta), unverified, pending user review"
+    verified: true,
+    source: "Barilla Classic Fettuccine label: 200 cal / 1g fat / 42g carb / 3g fiber / 7g protein per about 2oz (56g) serving, 8 servings per 16oz box, per user-provided photo"
   },
 
   "cajun seasoning": {
     per: "100g",
-    calories: 246,
-    protein: 9.5,
-    fat: 5.3,
-    fiber: 18,
-    carbs: 46,
+    calories: 0,
+    protein: 0,
+    fat: 0,
+    fiber: 0,
+    carbs: 0,
     unitWeights: {},
-    verified: false,
-    source: "Estimated by Claude (typical USDA FoodData Central / brand-label values for salt-based cajun seasoning blends), unverified, pending user review"
+    verified: true,
+    source: "Slap Ya Mama (Walker & Sons) Original Cajun Seasoning label: 0 cal / 0g fat / 0g carbs / 0g protein per 1/4 tsp (1g) serving, per user-provided photo. Predominantly salt (310mg sodium per serving); calories/fat/carbs/protein round to 0 at this serving size."
   },
 };
