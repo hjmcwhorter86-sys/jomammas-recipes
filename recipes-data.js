@@ -2714,4 +2714,55 @@ tags: ["dessert", "high protein"]
   ]
 },
 
+  {
+  id: "chicken-marsala",
+  title: "Seared Chicken with Mushroom-Marsala Cream Sauce",
+  description: "Golden seared chicken cutlets smothered in a rich Marsala mushroom cream sauce, finished with parmesan and fresh parsley.",
+  image: "images/chicken-marsala.png",
+  category: ["Chicken"],
+  dateAdded: "2026-09-18",
+  carbs: null,
+  fat: null,
+  fiber: null,
+  calories: "",
+  protein: "",
+  servings: "4",
+  tags: ["chicken", "mushrooms", "marsala", "creamy", "weeknight dinner"],
+
+  ingredients: [
+    { qty: 6, unit: null, name: "chicken breasts", notes: "thin sliced" },
+    { qty: 1, unit: "tsp", name: "salt" },
+    { qty: 0.5, unit: "tsp", name: "black pepper" },
+    { qty: 0.5, unit: "tsp", name: "garlic powder" },
+    { qty: 1/3, unit: "cup", name: "flour", notes: "all-purpose, for dredging" },
+
+    { qty: 2, unit: "tbsp", name: "avocado oil" },
+    { qty: 4, unit: "tbsp", name: "unsalted butter", notes: "divided" },
+    { qty: 8, unit: "oz", name: "cremini mushrooms", notes: "sliced, or baby bella" },
+    { qty: 4, unit: "clove", name: "garlic", notes: "minced" },
+    { qty: 0.5, unit: "cup", name: "marsala wine" },
+    { qty: 0.75, unit: "cup", name: "chicken broth" },
+    { qty: 0.5, unit: "cup", name: "heavy cream" },
+    { qty: 1, unit: "tsp", name: "fresh thyme leaves", notes: "or 1/2 tsp dried" },
+    { qty: 0.25, unit: "cup", name: "parmesan", notes: "grated" },
+
+    { qty: 2, unit: "tbsp", name: "fresh chopped parsley", notes: "for garnish" }
+  ],
+
+  steps: [
+    "Season and dredge the chicken: Pat the chicken dry. Season both sides with salt, pepper, and garlic powder. Lightly dredge each piece in flour, shaking off the excess. This gives the sauce something to cling to later.",
+    "Sear the chicken: Heat the avocado oil and 2 tbsp of the butter in a large skillet over medium-high heat until shimmering. Sear the chicken in batches, 2 to 3 minutes per side, until golden and cooked through. Don't crowd the pan. Remove chicken to a plate and tent with foil. If searing in batches, let the pan reheat for 30 to 60 seconds between batches rather than adding extra butter or oil to compensate; a cooled pan, not a lack of fat, is usually why chicken sticks on the second batch, and extra butter here will make the finished sauce greasy.",
+    "Saute the mushrooms: Lower heat to medium. Add the remaining 2 tbsp butter to the same pan without wiping it out, those browned bits are flavor. Add the mushrooms and cook, stirring occasionally, until deeply golden, about 5 to 6 minutes.",
+    "Add garlic: Stir in the garlic and cook just until fragrant, about 30 seconds.",
+    "Deglaze with Marsala: Pour in the Marsala wine and scrape up all the browned bits from the bottom of the pan. Let it simmer and reduce by about half, 2 to 3 minutes.",
+    "Build the sauce: Add the chicken broth and thyme, bring to a simmer, then stir in the heavy cream. Once the cream is incorporated, remove the pan from the heat completely before adding the parmesan. Let the sauce sit off heat for 20 to 30 seconds to cool slightly, then add the parmesan a small handful at a time, whisking constantly and keeping the cheese moving the whole time it melts in. Return to low heat briefly to bring the sauce back to a simmer and thicken slightly, 3 to 4 minutes total. Taste and adjust salt and pepper.",
+    "Finish and serve: Return the chicken and any collected juices to the pan, spoon sauce over top, and let it warm through for a minute or two. Garnish with parsley and serve."
+  ],
+
+  notes: [
+    "If using cooking wine instead of real Marsala, hold back on added salt until the end, and consider a tiny splash of balsamic vinegar or a pinch of brown sugar to round out the flavor.",
+    "Great over noodles, mashed potatoes, Parmesan polenta, or crusty bread."
+  ]
+},
+
 ];
