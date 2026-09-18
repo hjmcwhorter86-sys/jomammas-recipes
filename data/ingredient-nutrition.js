@@ -2367,4 +2367,16 @@ window.ingredientNutrition = {
     verified: true,
     source: "No Yolks Original egg noodles label: 200 cal / 1g fat / 41g carb / 2g fiber / 8g protein per 1.5 cups (56g) dry serving, per user-provided photo"
   },
+
+  "marsala wine": {
+    per: "100ml",
+    calories: 165,
+    protein: 0.15,
+    fat: 0,
+    fiber: 0,
+    carbs: 14,
+    unitWeights: {},
+    verified: false,
+    source: "Estimated by Claude (USDA FoodData Central typical values for sweet dessert wine, which Marsala falls under), unverified, pending user review"
+  },
 };
