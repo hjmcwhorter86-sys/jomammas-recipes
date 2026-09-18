@@ -2355,4 +2355,16 @@ window.ingredientNutrition = {
     verified: true,
     source: "Slap Ya Mama (Walker & Sons) Original Cajun Seasoning label: 0 cal / 0g fat / 0g carbs / 0g protein per 1/4 tsp (1g) serving, per user-provided photo. Predominantly salt (310mg sodium per serving); calories/fat/carbs/protein round to 0 at this serving size."
   },
+
+  "egg noodles": {
+    per: "100g",
+    calories: 357,
+    protein: 14.3,
+    fat: 1.8,
+    fiber: 3.6,
+    carbs: 73.2,
+    unitWeights: {},
+    verified: true,
+    source: "No Yolks Original egg noodles label: 200 cal / 1g fat / 41g carb / 2g fiber / 8g protein per 1.5 cups (56g) dry serving, per user-provided photo"
+  },
 };
