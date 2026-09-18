@@ -83,6 +83,7 @@ window.unitConversions = {
     "crumbled blue cheese": 0.61,
     "ranch or blue cheese dressing": 1.01,
     "smoked paprika": 0.46,
+    "cajun seasoning": 0.48,
     "sweet baby ray's sugar free bbq sauce": 1.1,
     "fresh spinach": 0.127,
     "sun dried tomatoes": 0.23,
