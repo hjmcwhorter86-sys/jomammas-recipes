@@ -2331,4 +2331,28 @@ window.ingredientNutrition = {
     verified: true,
     source: "Pepperidge Farm Bakery Classics Soft White with Sesame Seeds Hoagie Rolls label: 210 cal / 6g fat / 35g carb / 2g fiber / 8g protein per 1 roll (69g) serving, per user-provided photo."
   },
+
+  "fettuccine": {
+    per: "100g",
+    calories: 371,
+    protein: 13,
+    fat: 1.5,
+    fiber: 3.2,
+    carbs: 75,
+    unitWeights: {},
+    verified: false,
+    source: "Estimated by Claude (typical USDA FoodData Central / brand-label values for dry pasta), unverified, pending user review"
+  },
+
+  "cajun seasoning": {
+    per: "100g",
+    calories: 246,
+    protein: 9.5,
+    fat: 5.3,
+    fiber: 18,
+    carbs: 46,
+    unitWeights: {},
+    verified: false,
+    source: "Estimated by Claude (typical USDA FoodData Central / brand-label values for salt-based cajun seasoning blends), unverified, pending user review"
+  },
 };

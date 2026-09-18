@@ -2613,4 +2613,56 @@ tags: ["dessert", "high protein"]
   ]
 },
 
+  {
+  id: "cajun-shrimp-pasta",
+  title: "Cajun Shrimp Pasta",
+  description: "Seared cajun shrimp tossed in a creamy parmesan sauce with just enough heat, ready faster than delivery.",
+  image: "images/cajun-shrimp-pasta.png",
+  category: ["Pasta", "Seafood"],
+  dateAdded: "2026-09-18",
+  carbs: null,
+  fat: null,
+  fiber: null,
+  calories: "",
+  protein: "",
+  servings: "4",
+  tags: ["shrimp", "seafood", "pasta", "cajun", "creamy", "weeknight dinner"],
+
+  ingredients: [
+    { qty: 1, unit: "lb", name: "large shrimp", notes: "peeled and deveined" },
+    { qty: 2, unit: "tsp", name: "cajun seasoning", notes: "divided" },
+
+    { qty: 8, unit: "oz", name: "fettuccine", notes: "or penne" },
+
+    { qty: 2, unit: "tbsp", name: "unsalted butter" },
+    { qty: 1, unit: "tbsp", name: "olive oil" },
+    { qty: 3, unit: "clove", name: "garlic", notes: "minced" },
+    { qty: 1, unit: "cup", name: "heavy cream" },
+    { qty: 0.5, unit: "cup", name: "chicken broth" },
+    { qty: 0.5, unit: "cup", name: "parmesan", notes: "freshly grated" },
+    { qty: 0.5, unit: "tsp", name: "smoked paprika" },
+    { qty: 0.25, qtyMax: 0.5, unit: "tsp", name: "cayenne pepper", notes: "or a few dashes hot sauce, to taste" },
+    { qty: null, unit: null, name: "Salt and pepper, to taste" },
+    { qty: 0.5, unit: "cup", name: "reserved pasta water" },
+
+    { qty: 2, unit: "tbsp", name: "fresh chopped parsley", notes: "for garnish" }
+  ],
+
+  steps: [
+    "Cook the pasta: Bring a large pot of salted water to a boil and cook the pasta according to package directions until al dente. Reserve 1/2 cup of pasta water, then drain.",
+    "Season the shrimp: Pat the shrimp dry and toss with 1 tsp of the cajun seasoning.",
+    "Sear the shrimp: Heat the olive oil in a large skillet over medium-high heat. Add the shrimp in a single layer and cook for about 1 to 2 minutes per side, just until pink and opaque. Remove to a plate and set aside. Don't overcook; they'll finish warming through later in the sauce.",
+    "Start the sauce: Lower the heat to medium and melt the butter in the same skillet, scraping up any browned bits. Add the garlic and cook for about 30 seconds, until fragrant.",
+    "Build the sauce: Stir in the remaining 1 tsp cajun seasoning, the smoked paprika, and the cayenne or hot sauce. Pour in the chicken broth and let it simmer for a minute, then stir in the heavy cream. Simmer for 3 to 4 minutes, until it starts to thicken slightly.",
+    "Add the cheese: Remove the pan from the heat completely before adding the parmesan. If you use HexClad or other similar pans, don't just lower the heat to low; those pans retain heat well and will still be hot enough to clump the cheese. Let the sauce sit off heat for 20 to 30 seconds to cool slightly, then add the parmesan a small handful at a time, whisking constantly and keeping the cheese moving the whole time it melts in. If it needs to warm back up after the cheese is fully incorporated, return it to low heat briefly.",
+    "Combine: Add the cooked pasta and shrimp back into the skillet and toss to coat. If the sauce is too thick, splash in some of the reserved pasta water until it loosens up.",
+    "Serve: Garnish with fresh parsley and serve immediately."
+  ],
+
+  notes: [
+    "For more heat, a shot of hot sauce stirred in at the end works great here.",
+    "This reheats fine on low heat; just add a splash of cream or broth to bring the sauce back together."
+  ]
+},
+
 ];
