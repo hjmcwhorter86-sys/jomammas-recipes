@@ -778,6 +778,13 @@ const pageType = document.querySelector('meta[name="page-type"]')?.getAttribute(
 // their own detail-page links so they never point back into the main site.
 const isAdrienPage = pageType === 'abc' || pageType === 'abc-detail';
 
+// Test Kitchen nav links (desktop + mobile) are hidden in the markup by
+// default and only shown once the wipRecipes flag is on, so the page never
+// shows up in the menu for a visitor who hasn't flipped it.
+document.querySelectorAll('.wip-nav-link').forEach((link) => {
+  link.style.display = window.flagsService?.isEnabled('wipRecipes') ? '' : 'none';
+});
+
 // Hamburger Menu Toggle
 const hamburgerMenu = document.getElementById('hamburgerMenu');
 const mobileMenu = document.getElementById('mobileMenu');
