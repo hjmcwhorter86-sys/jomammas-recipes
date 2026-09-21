@@ -5,6 +5,7 @@
     "optimize-images": "node scripts/optimize-images.js",
     "check-images": "node scripts/check-images-optimized.js",
     "check-em-dashes": "node scripts/check-em-dashes.js",
+    "check-css-version": "node scripts/check-css-version.js",
     "prepare": "git config core.hooksPath githooks || true"
   },
   "devDependencies": {
