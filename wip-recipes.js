@@ -29,10 +29,13 @@
     return `
       <section class="recipe-section wip-recipe-card">
         <h2>${recipe.title}</h2>
-        ${recipe.source ? `<p class="recipe-description">Source: ${recipe.source}</p>` : ''}
+        <p class="recipe-description">${[
+          recipe.servings ? `Serves ${recipe.servings}` : '',
+          recipe.source ? `Source: ${recipe.source}` : '',
+        ].filter(Boolean).join(' • ')}</p>
         ${ingredients.length ? `
           <h3>Ingredients</h3>
-          <ul class="ingredients-list">${ingredients.map((i) => `<li>${i}</li>`).join('')}</ul>
+          ${renderIngredients(ingredients)}
         ` : ''}
         ${steps.length ? `
           <h3>Steps</h3>
@@ -49,5 +52,18 @@
         ${recipe.notes ? `<p class="recipe-description">${recipe.notes}</p>` : ''}
       </section>
     `;
+  }
+
+  function renderIngredients(ingredients) {
+    const isSection = (entry) => entry && typeof entry === 'object' && Array.isArray(entry.items);
+    if (ingredients.some(isSection)) {
+      return ingredients.map((entry) => {
+        if (isSection(entry)) {
+          return `<h4>${entry.title}</h4><ul class="ingredients-list">${entry.items.map((i) => `<li>${i}</li>`).join('')}</ul>`;
+        }
+        return `<ul class="ingredients-list"><li>${entry}</li></ul>`;
+      }).join('');
+    }
+    return `<ul class="ingredients-list">${ingredients.map((i) => `<li>${i}</li>`).join('')}</ul>`;
   }
 })();
