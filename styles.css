@@ -397,7 +397,11 @@ h3 {
 }
 
 .mobile-menu.active {
-  max-height: 260px;
+  /* Was 260px, sized for 4 links; the content (5 links + the units
+     row) now measures ~262px and was getting clipped by overflow:
+     hidden above. Sized with headroom so one more menu link doesn't
+     silently clip again. */
+  max-height: 320px;
 }
 
 .mobile-menu-link {
