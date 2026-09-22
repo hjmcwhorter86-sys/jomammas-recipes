@@ -1,5 +1,9 @@
 #!/bin/sh
 # Installed via `git config core.hooksPath githooks` (set automatically by
-# `npm install`'s prepare script). Blocks commits containing em dashes.
+# `npm install`'s prepare script). Blocks commits containing em dashes or
+# a styles.css edit with no cache-busting version bump.
+set -e
 
-node "$(git rev-parse --show-toplevel)/scripts/check-em-dashes.js"
+ROOT="$(git rev-parse --show-toplevel)"
+node "$ROOT/scripts/check-em-dashes.js"
+node "$ROOT/scripts/check-css-version.js" HEAD

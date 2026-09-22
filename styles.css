@@ -397,7 +397,11 @@ h3 {
 }
 
 .mobile-menu.active {
-  max-height: 260px;
+  /* Was 260px, sized for 4 links; the content (5 links + the units
+     row) now measures ~262px and was getting clipped by overflow:
+     hidden above. Sized with headroom so one more menu link doesn't
+     silently clip again. */
+  max-height: 320px;
 }
 
 .mobile-menu-link {
@@ -1860,6 +1864,42 @@ body.about-page {
 
 .incomplete-message p {
   margin: 0;
+}
+
+/* Test Kitchen index: plain list of links to each WIP recipe */
+.wip-recipe-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.wip-recipe-list-link {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+  padding: var(--space-3) var(--space-4);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  text-decoration: none;
+  color: var(--color-text);
+  transition: background-color 0.2s ease;
+}
+
+.wip-recipe-list-link:hover {
+  background-color: rgba(4, 140, 127, 0.1);
+}
+
+.wip-recipe-list-title {
+  font-weight: 600;
+  font-size: var(--font-size-md);
+}
+
+.wip-recipe-list-meta {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-muted);
 }
 
 /* Adrien's Baking Corner: "Adrien's Notes" callout box */

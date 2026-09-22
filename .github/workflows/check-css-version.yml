@@ -1,0 +1,19 @@
+name: Check CSS Version
+
+on:
+  pull_request:
+
+jobs:
+  check-css-version:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          # Needs the PR base commit available locally to diff against.
+          fetch-depth: 0
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - run: npm run check-css-version -- ${{ github.event.pull_request.base.sha }}

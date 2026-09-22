@@ -14,4 +14,9 @@ window.featureFlags = {
     description: "Show nutrition facts computed from structured ingredients, instead of (or alongside) the manually entered fields.",
     default: true,
   },
+  wipRecipes: {
+    label: "Test Kitchen (work-in-progress recipes)",
+    description: "Turns on wip-recipes.html: recipes that have been tried but aren't finished, no photos, just what worked and what still needs fixing.",
+    default: false,
+  },
 };

@@ -3,12 +3,13 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="page-type" content="detail" />
-  <title>Recipe • JoMama's Recipes</title>
+  <meta name="page-type" content="wip-recipes" />
+  <meta name="robots" content="noindex, nofollow" />
+  <title>Test Kitchen • JoMama's Recipes</title>
   <link rel="stylesheet" href="styles.css?v=12" />
   <link rel="preload" href="images/background-wood.png" as="image" type="image/png" />
 </head>
-<body>
+<body class="about-page">
   <header class="header">
     <div class="header-top">
       <button class="hamburger-menu" id="hamburgerMenu" aria-label="Toggle menu" aria-expanded="false">
@@ -23,10 +24,10 @@
       </div>
       <nav class="nav">
         <a href="index.html">Home</a>
-        <a href="recipes-list.html" aria-current="page" class="recipes-link">Recipes</a>
+        <a href="recipes-list.html" class="recipes-link">Recipes</a>
         <a href="about.html">About</a>
         <a href="abc.html">Adrien's Baking Corner</a>
-        <a href="wip-recipes.html" class="wip-nav-link" style="display: none;">Test Kitchen</a>
+        <a href="wip-recipes.html" class="wip-nav-link" aria-current="page" style="display: none;">Test Kitchen</a>
       </nav>
       <div class="header-actions">
         <input id="search" type="search" class="search-input" placeholder="Search recipes…" />
@@ -62,7 +63,15 @@
     </div>
   </header>
 
-  <main id="detailed-view"></main>
+  <main id="detailed-view" class="about-view">
+    <article class="recipe-detail about-panel">
+      <h1>Test Kitchen</h1>
+      <p class="recipe-description">
+        Recipes that have actually been made but aren't finished: no photos, no polish, just what worked and what still needs fixing.
+      </p>
+      <div id="wipRecipesContent"></div>
+    </article>
+  </main>
 
   <footer class="site-footer" aria-label="Site footer">
     <div class="site-footer-inner">
@@ -85,11 +94,8 @@
   <script src="feature-flags.js"></script>
   <script src="flags-service.js"></script>
   <script src="units-service.js"></script>
-  <script src="data/units.js"></script>
-  <script src="data/ingredient-nutrition.js"></script>
-  <script src="recipes-data.js"></script>
-  <script src="data/kitchen-basics-guides.js"></script>
+  <script src="recipes-data-wip.js"></script>
   <script src="app.js"></script>
-
+  <script src="wip-recipes.js"></script>
 </body>
 </html>
