@@ -1882,6 +1882,32 @@ body.about-page {
   line-height: 1.6;
 }
 
+/* Test Kitchen: "work in progress" banner atop an in-progress recipe */
+.test-kitchen-banner {
+  padding: var(--space-3) var(--space-4);
+  margin-bottom: var(--space-4);
+  background: rgba(212, 160, 23, 0.14);
+  border: 1px dashed rgba(212, 160, 23, 0.75);
+  border-radius: var(--radius-md);
+  color: var(--color-text);
+  font-size: var(--font-size-sm);
+  line-height: 1.5;
+}
+
+.test-kitchen-banner strong {
+  display: block;
+  font-size: var(--font-size-md);
+  margin-bottom: 2px;
+}
+
+/* Short intro line under a homepage section heading (Test Kitchen) */
+.section-intro {
+  text-align: center;
+  color: var(--color-text-muted);
+  font-size: var(--font-size-sm);
+  margin: 0 auto var(--space-4);
+}
+
 /* Friendly placeholder text for empty recipe grids */
 .section-empty-state {
   text-align: center;

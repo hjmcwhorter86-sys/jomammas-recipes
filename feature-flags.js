@@ -14,4 +14,9 @@ window.featureFlags = {
     description: "Show nutrition facts computed from structured ingredients, instead of (or alongside) the manually entered fields.",
     default: true,
   },
+  showTestKitchen: {
+    label: "Test Kitchen",
+    description: "Show in-progress recipes (inProgress: true) in search, categories, and a Test Kitchen section on the homepage. Direct links to them work either way.",
+    default: false,
+  },
 };

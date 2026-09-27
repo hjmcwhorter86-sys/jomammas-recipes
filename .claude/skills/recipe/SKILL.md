@@ -34,6 +34,17 @@ than the rest of this skill describes. When that's the case:
 - If the request doesn't mention ABC/Adrien at all, default to the regular
   flow below (main site, `recipes-data.js`).
 
+## Test Kitchen (in-progress recipes)
+
+If the request says the recipe is still being tested ("add this to the
+test kitchen", "work in progress", "not final yet"), follow the regular
+flow below but add `inProgress: true` to the recipe object. Put what did
+or didn't work in `notes`. Such recipes only show up in browsing/search
+when the `showTestKitchen` flag is on, so spot-check on the homepage and
+list page with that flag on (flags.html), and give the user the direct
+`recipe-detail.html?id=<id>` link, which works either way. Promoting a
+recipe to final means removing `inProgress`.
+
 ## Inputs
 
 - Any image(s) attached to this message (usually a photo of the finished

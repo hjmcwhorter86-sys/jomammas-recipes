@@ -36,6 +36,14 @@
 // Quantities are stored as decimals and normalized to unicode fractions
 // for display (e.g. 1.25 -> "1¼", 0.333 -> "⅓") via formatQuantityDisplay
 // in app.js. Units are pluralized for display based on data/units.js.
+//
+// Recipe-level `inProgress: true` marks a Test Kitchen (work-in-progress)
+// recipe. It's optional and defaults to false, so finished recipes omit it.
+// In-progress recipes are hidden from search, categories, and homepage
+// lists unless the showTestKitchen flag is on (see feature-flags.js), but
+// their detail page always works from a direct link and shows a "work in
+// progress" banner. Use `notes` to track what did or didn't work. To promote
+// a recipe to final, delete the field (or set it to false).
 
 window.recipes = [
   {
