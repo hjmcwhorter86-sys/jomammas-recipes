@@ -1,4 +1,9 @@
 * { box-sizing: border-box; }
+
+/* Keep the hidden attribute authoritative even on elements whose class sets
+   display (e.g. .card is display: flex), so JS can hide/show with el.hidden. */
+[hidden] { display: none !important; }
+
 :root {
   --color-teal: #048c7f;
   --color-gold: #d4a017;
