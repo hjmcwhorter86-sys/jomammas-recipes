@@ -1788,6 +1788,17 @@ window.ingredientNutrition = {
     verified: false,
     source: "Estimated by Claude (typical USDA FoodData Central / brand-label values for dry pasta), unverified, pending user review"
   },
+  "lemon": {
+    per: "100g",
+    calories: 22,
+    protein: 0.4,
+    fat: 0.2,
+    fiber: 0.3,
+    carbs: 6.9,
+    unitWeights: { lemon: 48 },
+    verified: true,
+    source: "Juice of one whole lemon, for recipes that say \"1 lemon, juiced\". Macros mirror the verified \"lemon juice\" entry (USDA FoodData Central, raw lemon juice); ~48g of juice per medium lemon per USDA's typical yield. Approach approved by user."
+  },
   "lemon juice": {
     per: "100ml",
     calories: 22,
@@ -2378,5 +2389,29 @@ window.ingredientNutrition = {
     unitWeights: {},
     verified: true,
     source: "Estimated by Claude (USDA FoodData Central typical values for sweet dessert wine, which Marsala falls under); user uses Taylor Marsala wine but no nutrition label was available, estimate accepted by user"
+  },
+
+  "quick grits": {
+    per: "100g",
+    calories: 371,
+    protein: 8.8,
+    fat: 1.2,
+    fiber: 3.9,
+    carbs: 79.6,
+    unitWeights: {},
+    verified: false,
+    source: "Estimated by Claude (USDA FoodData Central, corn grits, white, regular and quick, enriched, dry), unverified, pending user label check"
+  },
+
+  "gouda": {
+    per: "100g",
+    calories: 356,
+    protein: 24.9,
+    fat: 27.4,
+    fiber: 0,
+    carbs: 2.2,
+    unitWeights: {},
+    verified: false,
+    source: "Estimated by Claude (USDA FoodData Central, gouda cheese), unverified, pending user label check (recipe uses sliced Gouda)"
   },
 };
