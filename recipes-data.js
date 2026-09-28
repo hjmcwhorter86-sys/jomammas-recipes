@@ -1335,7 +1335,7 @@ tags: ["dessert", "high protein"]
     "The gochujang upgrade: Adding 2 tsp of gochujang paste to the sauce takes this from great to exceptional. It adds a deep fermented heat that red pepper flakes alone can't replicate. Don't skip it if you can find it; it's usually in the Asian foods aisle.",
     "On the pickled carrots: The hot brine on thinly julienned carrots works faster than you'd think; 20–30 minutes at room temp is all you need. They'll keep in the fridge for up to a week and are great on tacos, sandwiches, or as a snack.",
     "Rice tip: Cooking the jasmine rice in a mix of chicken broth and water with a splash of sesame oil makes it taste intentional rather than just a vehicle for the beef. The rice vinegar stirred in at the end brightens everything up.",
-    "Toppings that take it further: A fried egg on top is chef's kiss. Sriracha mayo (sriracha + mayo) drizzled over the bowl is also fantastic.",
+    "Toppings that take it further: A fried egg on top is incredible. Sriracha mayo drizzled over the bowl is also delicious.",
     "Leftovers: The beef reheats really well. Store separately from rice for best texture."
   ]
 },
