@@ -2884,4 +2884,76 @@ tags: ["dessert", "high protein"]
   ]
 },
 
+  {
+  id: "creamy-cheesy-baked-spaghetti",
+  title: "Creamy Cheesy Baked Spaghetti",
+  description: "Buttery spaghetti tossed in garlic Parmesan Alfredo, layered with a meaty marinara and baked under a blanket of melty mozzarella. Also known online as TikTok spaghetti.",
+  image: "images/creamy-cheesy-baked-spaghetti.png",
+  category: ["Beef", "Pasta"],
+  dateAdded: "2026-09-28",
+  carbs: null,
+  fat: null,
+  fiber: null,
+  calories: "",
+  protein: "",
+  servings: "6",
+  tags: ["casserole", "baked pasta", "ground beef", "alfredo", "cheesy", "comfort food"],
+
+  ingredients: [
+    {
+      title: "The Meat Sauce",
+      items: [
+        { qty: 1, unit: "lb", name: "ground beef (93/7)" },
+        { qty: 1, unit: null, name: "yellow onion", notes: "diced" },
+        { qty: 1, unit: "tsp", name: "smoked paprika" },
+        { qty: 0.5, unit: "tsp", name: "garlic powder" },
+        { qty: 0.5, unit: "tsp", name: "salt", notes: "plus more to taste" },
+        { qty: 2.75, unit: "cup", approx: true, name: "marinara", notes: "one 24 oz jar, your favorite brand" }
+      ]
+    },
+    {
+      title: "The Noodles",
+      items: [
+        { qty: 1, unit: "lb", name: "spaghetti" },
+        { qty: 1, unit: "tbsp", name: "salt", notes: "for the pasta water" },
+        { qty: 1, unit: "tbsp", name: "salted butter", notes: "for tossing the noodles" }
+      ]
+    },
+    {
+      title: "The Alfredo Sauce",
+      items: [
+        { qty: 4, unit: "tbsp", name: "salted butter" },
+        { qty: 3, unit: "clove", name: "garlic", notes: "minced" },
+        { qty: 2, unit: "cup", name: "heavy cream" },
+        { qty: 2, unit: "cup", name: "parmesan", notes: "grated" },
+        { qty: 0.5, unit: "tsp", name: "salt", notes: "plus more to taste" }
+      ]
+    },
+    {
+      title: "The Topping",
+      items: [
+        { qty: 2, unit: "cup", name: "shredded mozzarella cheese" }
+      ]
+    }
+  ],
+
+  steps: [
+    "Preheat the oven to 350°F.",
+    "Brown the beef: In a large skillet over medium heat, cook the ground beef, onion, smoked paprika, garlic powder, and ½ tsp salt together, breaking up the beef, until the meat is browned and cooked through.",
+    "Add the marinara: Pour the marinara into the skillet and let the mixture simmer while you boil the noodles.",
+    "Cook the noodles: Bring a large pot of water to a boil, add the 1 tbsp salt, and cook the spaghetti according to package directions. Drain and toss with 1 tbsp salted butter.",
+    "Start the Alfredo: In a saucepan over medium heat, melt the 4 tbsp salted butter. Add the minced garlic and sauté for about 1 minute, until fragrant.",
+    "Finish the Alfredo: Reduce the heat to low. Add the heavy cream, then add the Parmesan gradually, a handful at a time, whisking constantly, until the cheese is fully melted and the sauce is smooth. Stir in ½ tsp salt, tasting and adjusting as needed. Keep it at a gentle simmer, not a boil.",
+    "Assemble: Place the buttered spaghetti in a glass casserole dish. Pour the Alfredo sauce over the noodles and mix well to coat. Spread the beef and marinara mixture evenly over the top.",
+    "Top: Sprinkle the mozzarella evenly over the top of the casserole.",
+    "Bake covered: Cover the dish with foil and bake for 20 minutes.",
+    "Bake uncovered: Remove the foil and bake for 5 more minutes, until the cheese is melted and bubbly. Leave it in layers or stir it all together, your choice. Let rest a few minutes before serving."
+  ],
+
+  notes: [
+    "A 24 oz jar of marinara is the standard size.",
+    "Freshly grated Parmesan melts smoother than pre-shredded."
+  ]
+},
+
 ];
