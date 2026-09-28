@@ -108,6 +108,7 @@ window.unitConversions = {
     "dijon mustard": 1.06,
     "red pepper flakes": 0.45,
     "chicken base": 1.15,
+    "quick grits": 0.66,
     "sugar": 0.81,
     "dried oregano": 0.2,
     "mayonnaise": 0.93,

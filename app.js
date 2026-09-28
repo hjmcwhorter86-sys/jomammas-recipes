@@ -1,11 +1,27 @@
 // JoMama Recipes Site - Heather's macro-friendly comfort food collection
 
+// Every recipe, including Test Kitchen (in-progress) ones. Use this only for
+// looking a recipe up by id, so a direct link to a Test Kitchen recipe
+// always works; anything that lists or browses recipes uses listedRecipes.
 const recipes = [...(window.recipes || []), ...(window.kitchenBasicsGuides || []), ...(window.adrienRecipes || [])];
+
+// Test Kitchen: a recipe with `inProgress: true` is a work in progress. It's
+// hidden from browsing/search unless the showTestKitchen flag is on, but its
+// detail page still renders (with a banner) for anyone who has the link.
+const TEST_KITCHEN_CATEGORY = 'Test Kitchen';
+const showTestKitchen = !!window.flagsService?.isEnabled('showTestKitchen');
+
+function isInProgress(recipe) {
+  return recipe?.inProgress === true;
+}
+
+// Recipes that show up in search, categories, and filters.
+const listedRecipes = recipes.filter((r) => showTestKitchen || !isInProgress(r));
 
 // Recipes only (excludes Kitchen Basics guides); used wherever the result
 // must link into the ingredients/steps recipe-detail flow, like prev/next
 // navigation, since guides have no detail page of their own.
-const navigableRecipes = recipes.filter((r) => r.type !== 'guide');
+const navigableRecipes = listedRecipes.filter((r) => r.type !== 'guide');
 
 // Cards for guides link to their own standalone page; recipe cards link into
 // recipe-detail.html as usual.
@@ -22,6 +38,17 @@ function getGuideLinkUrl(guideLink) {
   const guide = (window.kitchenBasicsGuides || []).find((g) => g.id === guideLink.guideId);
   if (!guide || !guide.url) return null;
   return guideLink.tab ? `${guide.url}#${guideLink.tab}` : guide.url;
+}
+
+// Banner shown at the top of an in-progress recipe's detail page.
+function renderTestKitchenBanner(recipe) {
+  if (!isInProgress(recipe)) return '';
+  return `
+    <div class="test-kitchen-banner" role="note">
+      <strong>🧪 Test Kitchen: work in progress.</strong>
+      This recipe is still being tested, so quantities and steps may change. Check the notes for what has and hasn't worked so far.
+    </div>
+  `;
 }
 
 function normalizeCategoryValue(value) {
@@ -43,6 +70,8 @@ function getRecipeCategories(recipe) {
 
   const deduped = [];
   const seen = new Set();
+  if (isInProgress(recipe)) categoryValues.push(TEST_KITCHEN_CATEGORY);
+
   categoryValues.forEach((value) => {
     if (typeof value !== 'string') return;
     const trimmed = value.trim();
@@ -1034,7 +1063,7 @@ if (searchEl && pageType !== 'list') {
 const newestEl = document.getElementById('newest');
 if (newestEl) {
   const newest = navigableRecipes
-    .filter(r => r.dateAdded && !r.excludeFromNewest)
+    .filter(r => r.dateAdded && !r.excludeFromNewest && !isInProgress(r))
     .sort((a, b) => new Date(b.dateAdded) - new Date(a.dateAdded))
     .slice(0, 4);
 
@@ -1055,6 +1084,31 @@ if (newestEl) {
   }
 }
 
+// Homepage: render in-progress recipes into the Test Kitchen section, which
+// stays hidden unless the showTestKitchen flag is on and there's something
+// in it.
+const testKitchenEl = document.getElementById('testKitchen');
+const testKitchenSectionEl = document.getElementById('testKitchenSection');
+if (testKitchenEl && testKitchenSectionEl && showTestKitchen) {
+  const inProgress = navigableRecipes
+    .filter(isInProgress)
+    .sort((a, b) => new Date(b.dateAdded || 0) - new Date(a.dateAdded || 0));
+
+  if (inProgress.length > 0) {
+    testKitchenEl.innerHTML = inProgress.map(r => `
+      <a class="newest-card" href="${getRecipeUrl(r)}">
+        <img src="${getRecipeImageUrl(r)}" alt="${r.title}" class="newest-card-image" loading="lazy">
+        <div class="newest-card-inner">
+          <h3>${r.title}</h3>
+          <p>${r.description}</p>
+          <div class="meta-small">${formatRecipeCategories(r)}</div>
+        </div>
+      </a>
+    `).join('');
+    testKitchenSectionEl.hidden = false;
+  }
+}
+
 // Homepage: render popular recipes into #popular when present
 const popularEl = document.getElementById('popular');
 if (popularEl) {
@@ -1067,7 +1121,7 @@ if (popularEl) {
 
   const popular = popularRecipeIds
     .map(id => recipes.find(r => r.id === id))
-    .filter(Boolean);
+    .filter(r => r && !isInProgress(r));
 
   // Helper function to get badge text for a recipe
   function getBadgeText(recipe) {
@@ -1098,7 +1152,7 @@ if (popularEl) {
 // If we're on the recipes list page, initialize recipes page functionality
 if (pageType === 'list' && recipesEl && searchEl) {
   const categoryMap = new Map();
-  recipes.flatMap(getRecipeCategories).forEach((category) => {
+  listedRecipes.flatMap(getRecipeCategories).forEach((category) => {
     const normalized = normalizeCategoryValue(category);
     if (!normalized || categoryMap.has(normalized)) return;
     categoryMap.set(normalized, category);
@@ -1177,7 +1231,7 @@ if (pageType === 'list' && recipesEl && searchEl) {
     // Find current recipe index for Previous/Next navigation
     const currentIndex = navigableRecipes.findIndex(r => r.id === recipe.id);
     const prevRecipe = currentIndex > 0 ? navigableRecipes[currentIndex - 1] : null;
-    const nextRecipe = currentIndex < navigableRecipes.length - 1 ? navigableRecipes[currentIndex + 1] : null;
+    const nextRecipe = currentIndex !== -1 && currentIndex < navigableRecipes.length - 1 ? navigableRecipes[currentIndex + 1] : null;
     
     // Helper to safely render notes (can be array or string for backwards compatibility)
     const notesArray = Array.isArray(recipe.notes) ? recipe.notes : (recipe.notes ? [recipe.notes] : []);
@@ -1188,6 +1242,7 @@ if (pageType === 'list' && recipesEl && searchEl) {
         <button class="copy-link-btn button-family button-secondary" id="copyLinkBtn">Copy Link</button>
       </div>
       <article class="recipe-detail">
+        ${renderTestKitchenBanner(recipe)}
         <h1>${recipe.title}</h1>
         <p class="recipe-description">${recipe.description}</p>
         <div class="recipe-meta">
@@ -1279,7 +1334,7 @@ if (pageType === 'list' && recipesEl && searchEl) {
   }
 
   function filterRecipes(q, category = 'All') {
-    let list = [...recipes].sort((a, b) => {
+    let list = [...listedRecipes].sort((a, b) => {
       if (!a.dateAdded) return 1;
       if (!b.dateAdded) return -1;
       return new Date(b.dateAdded) - new Date(a.dateAdded);
@@ -1386,7 +1441,7 @@ if (pageType === 'detail' && detailedViewEl) {
     // Find current recipe index for Previous/Next navigation
     const currentIndex = navigableRecipes.findIndex(r => r.id === recipe.id);
     const prevRecipe = currentIndex > 0 ? navigableRecipes[currentIndex - 1] : null;
-    const nextRecipe = currentIndex < navigableRecipes.length - 1 ? navigableRecipes[currentIndex + 1] : null;
+    const nextRecipe = currentIndex !== -1 && currentIndex < navigableRecipes.length - 1 ? navigableRecipes[currentIndex + 1] : null;
     
     // Helper to safely render notes (can be array or string for backwards compatibility)
     const notesArray = Array.isArray(recipe.notes) ? recipe.notes : (recipe.notes ? [recipe.notes] : []);
@@ -1397,6 +1452,7 @@ if (pageType === 'detail' && detailedViewEl) {
         <button class="copy-link-btn button-family button-secondary" id="copyLinkBtn">Copy Link</button>
       </div>
       <article class="recipe-detail">
+        ${renderTestKitchenBanner(recipe)}
         <h1>${recipe.title}</h1>
         <p class="recipe-description">${recipe.description}</p>
         <div class="recipe-meta">
@@ -1541,7 +1597,7 @@ if (pageType === 'abc-detail' && detailedViewEl) {
     // Find current recipe index for Previous/Next navigation
     const currentIndex = navigableRecipes.findIndex(r => r.id === recipe.id);
     const prevRecipe = currentIndex > 0 ? navigableRecipes[currentIndex - 1] : null;
-    const nextRecipe = currentIndex < navigableRecipes.length - 1 ? navigableRecipes[currentIndex + 1] : null;
+    const nextRecipe = currentIndex !== -1 && currentIndex < navigableRecipes.length - 1 ? navigableRecipes[currentIndex + 1] : null;
 
     // Helper to safely render notes (can be array or string for backwards compatibility)
     const notesArray = Array.isArray(recipe.notes) ? recipe.notes : (recipe.notes ? [recipe.notes] : []);
@@ -1552,6 +1608,7 @@ if (pageType === 'abc-detail' && detailedViewEl) {
         <button class="copy-link-btn button-family button-secondary" id="copyLinkBtn">Copy Link</button>
       </div>
       <article class="recipe-detail">
+        ${renderTestKitchenBanner(recipe)}
         <h1>${recipe.title}</h1>
         <p class="recipe-description">${recipe.description}</p>
         <div class="recipe-meta">

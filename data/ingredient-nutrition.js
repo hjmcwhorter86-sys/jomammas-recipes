@@ -1788,6 +1788,17 @@ window.ingredientNutrition = {
     verified: false,
     source: "Estimated by Claude (typical USDA FoodData Central / brand-label values for dry pasta), unverified, pending user review"
   },
+  "lemon": {
+    per: "100g",
+    calories: 22,
+    protein: 0.4,
+    fat: 0.2,
+    fiber: 0.3,
+    carbs: 6.9,
+    unitWeights: { lemon: 48 },
+    verified: true,
+    source: "Juice of one whole lemon, for recipes that say \"1 lemon, juiced\". Macros mirror the verified \"lemon juice\" entry (USDA FoodData Central, raw lemon juice); ~48g of juice per medium lemon per USDA's typical yield. Approach approved by user."
+  },
   "lemon juice": {
     per: "100ml",
     calories: 22,
@@ -2378,5 +2389,85 @@ window.ingredientNutrition = {
     unitWeights: {},
     verified: true,
     source: "Estimated by Claude (USDA FoodData Central typical values for sweet dessert wine, which Marsala falls under); user uses Taylor Marsala wine but no nutrition label was available, estimate accepted by user"
+  },
+
+  "quick grits": {
+    per: "100g",
+    calories: 371,
+    protein: 8.8,
+    fat: 1.2,
+    fiber: 3.9,
+    carbs: 79.6,
+    unitWeights: {},
+    verified: false,
+    source: "Estimated by Claude (USDA FoodData Central, corn grits, white, regular and quick, enriched, dry), unverified, pending user label check"
+  },
+
+  "gouda": {
+    per: "100g",
+    calories: 356,
+    protein: 24.9,
+    fat: 27.4,
+    fiber: 0,
+    carbs: 2.2,
+    unitWeights: {},
+    verified: false,
+    source: "Estimated by Claude (USDA FoodData Central, gouda cheese), unverified, pending user label check (recipe uses sliced Gouda)"
+  },
+
+  "deli roast beef": {
+    per: "100g",
+    calories: 125,
+    protein: 17.9,
+    fat: 5.4,
+    fiber: 0,
+    carbs: 1.8,
+    unitWeights: {},
+    verified: true,
+    source: "Hillshire Farm Ultra Thin Sliced Roast Beef (7 oz) label: 70 cal / 3g fat / 0g fiber / 1g carbs / 10g protein per 2 oz (56g), per user-provided photo."
+  },
+  "au jus gravy mix": {
+    per: "100g",
+    calories: 200,
+    protein: 0,
+    fat: 0,
+    fiber: 0,
+    carbs: 40,
+    unitWeights: { packet: 30 },
+    verified: true,
+    source: "McCormick Au Jus Gravy Mix label: 5 cal / 0g fat / 1g carbs / 0g protein per 1/2 tsp mix (2.5g), about 12 servings per packet (so ~30g per packet), per user-provided photo."
+  },
+  "cheddar cheese sauce": {
+    per: "100g",
+    calories: 129,
+    protein: 1.6,
+    fat: 8.1,
+    fiber: 0,
+    carbs: 9.7,
+    unitWeights: {},
+    verified: true,
+    source: "Great Value Stadium Style Cheddar Cheese Dip (15 oz) label: 40 cal / 2.5g fat / 0g fiber / 3g carbs / <1g protein (counted as 0.5g) per 2 tbsp (31g), per user-provided photo."
+  },
+  "onion sandwich bun": {
+    per: "100g",
+    calories: 283,
+    protein: 11.3,
+    fat: 4.7,
+    fiber: 1.9,
+    carbs: 52.8,
+    unitWeights: { "onion sandwich bun": 53 },
+    verified: true,
+    source: "Pepperidge Farm Onion with Poppy Seeds Hamburger Buns label: 150 cal / 2.5g fat / 1g fiber / 28g carbs / 6g protein per 1 bun (53g), per user-provided photo."
+  },
+  "country french dressing": {
+    per: "100ml",
+    calories: 473,
+    protein: 0,
+    fat: 40.6,
+    fiber: 0,
+    carbs: 33.8,
+    unitWeights: {},
+    verified: true,
+    source: "Ken's Steak House Country French with Orange Blossom Honey label: 140 cal / 12g fat / 0g fiber / 10g carbs / 0g protein per 2 tbsp (32g, ~29.6ml), per user-provided photo."
   },
 };

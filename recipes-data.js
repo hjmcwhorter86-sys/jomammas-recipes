@@ -36,6 +36,14 @@
 // Quantities are stored as decimals and normalized to unicode fractions
 // for display (e.g. 1.25 -> "1¼", 0.333 -> "⅓") via formatQuantityDisplay
 // in app.js. Units are pluralized for display based on data/units.js.
+//
+// Recipe-level `inProgress: true` marks a Test Kitchen (work-in-progress)
+// recipe. It's optional and defaults to false, so finished recipes omit it.
+// In-progress recipes are hidden from search, categories, and homepage
+// lists unless the showTestKitchen flag is on (see feature-flags.js), but
+// their detail page always works from a direct link and shows a "work in
+// progress" banner. Use `notes` to track what did or didn't work. To promote
+// a recipe to final, delete the field (or set it to false).
 
 window.recipes = [
   {
@@ -2762,6 +2770,117 @@ tags: ["dessert", "high protein"]
   notes: [
     "If using cooking wine instead of real Marsala, hold back on added salt until the end, and consider a tiny splash of balsamic vinegar or a pinch of brown sugar to round out the flavor.",
     "Great over noodles, mashed potatoes, Parmesan polenta, or crusty bread."
+  ]
+},
+
+  {
+  id: "cajun-shrimp-and-cheesy-grits",
+  inProgress: true,
+  title: "Cajun Shrimp and Cheesy Grits",
+  description: "Cajun-seasoned shrimp in a garlicky lemon parmesan cream sauce, spooned over cheesy Gouda and parmesan grits.",
+  image: "images/no-photo.jpg",
+  category: ["Seafood"],
+  dateAdded: "2026-09-27",
+  carbs: null,
+  fat: null,
+  fiber: null,
+  calories: "",
+  protein: "",
+  servings: "4",
+  tags: ["shrimp", "grits", "cajun", "creamy", "comfort food"],
+
+  ingredients: [
+    {
+      title: "Grits",
+      items: [
+        { qty: 1, unit: "cup", name: "quick grits" },
+        { qty: 3, unit: "cup", name: "water" },
+        { qty: 1, unit: "cup", name: "milk" },
+        { qty: 0.5, unit: "cup", name: "heavy cream" },
+        { qty: 2, unit: "tbsp", name: "unsalted butter" },
+        { qty: 0.75, unit: "cup", name: "parmesan", notes: "grated" },
+        { qty: 4, unit: "oz", name: "gouda", notes: "sliced, torn into pieces" },
+        { qty: 0.75, unit: "tsp", name: "salt" }
+      ]
+    },
+    {
+      title: "Shrimp",
+      items: [
+        { qty: 1, unit: "lb", name: "large shrimp", notes: "peeled and deveined, thawed" },
+        { qty: 1, unit: "tbsp", name: "cajun seasoning", notes: "use less if using a salty blend like Slap Ya Mama" },
+        { qty: 2, unit: "tbsp", name: "unsalted butter" },
+        { qty: 3, unit: "clove", name: "garlic", notes: "minced" },
+        { qty: 0.5, unit: "cup", name: "heavy cream" },
+        { qty: 0.25, unit: "cup", name: "parmesan", notes: "grated" },
+        { qty: 1, unit: null, name: "lemon", notes: "juiced" },
+        { qty: 2, unit: null, name: "green onions", notes: "sliced, for garnish" }
+      ]
+    }
+  ],
+
+  steps: [
+    "Season the shrimp: Pat the shrimp dry and toss with the Cajun seasoning in a bowl. Set aside while you start the grits.",
+    "Start the grits: In a saucepan, bring the water, milk, and salt to a boil. Whisk in the grits slowly to avoid clumps.",
+    "Simmer: Reduce heat to low and simmer, stirring often, until thick and creamy, about 7 minutes.",
+    "Make them cheesy: Stir in the heavy cream, the grits butter, parmesan, and Gouda until fully melted and smooth. Taste and add more salt if needed. Cover and keep warm on the lowest heat, stirring occasionally.",
+    "Sear the shrimp: Melt the shrimp butter in a large skillet over medium-high heat. Add the seasoned shrimp in a single layer and cook until pink and just opaque, about 3 minutes.",
+    "Add the garlic: Stir the garlic into the skillet for about 30 seconds until fragrant. Remove the shrimp to a plate.",
+    "Build the sauce: Pour the heavy cream into the same skillet, scraping up any browned bits. Simmer until it thickens slightly, about 2 minutes.",
+    "Finish: Stir in the parmesan until melted, then squeeze in the lemon juice. Return the shrimp to the skillet and toss to coat in the sauce.",
+    "Serve: Spoon the cheesy grits into bowls, top with shrimp and sauce, and scatter green onions on top."
+  ],
+
+  notes: [
+    "Test Kitchen: the shrimp and sauce are a keeper as written.",
+    "Test Kitchen: the grits came out soupy; too much liquid for the amount of cheese added. Rework the grits ratio next time.",
+    "Next attempt idea: start with Sunny Anderson's cheesy grits base instead and just swap in the shrimp from this recipe."
+  ]
+},
+
+  {
+  id: "copycat-arbys-beef-n-cheddar-sandwiches",
+  title: "Copycat Arby's Beef 'n Cheddar Sandwiches",
+  description: "Ultra-thin roast beef steamed in seasoned au jus, piled on onion buns with warm cheddar cheese sauce and a sweet drizzle of Country French dressing, just like the drive-thru favorite.",
+  image: "images/copycat-arbys-beef-n-cheddar-sandwiches.png",
+  category: ["Beef"],
+  dateAdded: "2026-09-28",
+  carbs: null,
+  fat: null,
+  fiber: null,
+  calories: "",
+  protein: "",
+  servings: "4",
+  tags: ["sandwich", "roast beef", "copycat", "cheddar", "quick"],
+
+  ingredients: [
+    { qty: 1, unit: "lb", name: "deli roast beef", notes: "thinly sliced; Hillshire Farm Ultra Thin is closest to Arby's texture" },
+    { qty: 1, unit: "packet", name: "au jus gravy mix", notes: "prepared per packet directions; you'll use about ¾ cup of it" },
+    { qty: 0.5, unit: "tsp", name: "garlic powder" },
+    { qty: 0.5, unit: "tsp", name: "onion powder" },
+
+    { qty: 15, unit: "oz", name: "cheddar cheese sauce", notes: "1 jar; Ricos nacho cheese, Gordon Food Service can, or Great Value Stadium Style" },
+    { qty: 4, unit: null, name: "onion sandwich buns" },
+    { qty: 8, unit: "tsp", approx: true, name: "Country French dressing", notes: "Ken's; about 2 tsp per sandwich, more to taste" },
+    { qty: null, unit: null, name: "Salt and pepper, to taste" }
+  ],
+
+  steps: [
+    "Preheat the oven to 350°F.",
+    "Make the au jus: Prepare the au jus gravy mix according to the packet directions (McCormick uses 3 cups water). Pour about ¾ cup of it into a skillet and bring to a simmer over medium heat. Keep the rest warm for dipping, or save it for another recipe.",
+    "Warm the beef: Add the roast beef to the simmering au jus and sprinkle in the garlic powder and onion powder. Cover and let steam for 3 to 5 minutes, just until warmed through and tender. Season with salt and pepper if needed.",
+    "Drain: Drain off the excess liquid.",
+    "Heat the cheese sauce: While the beef warms, microwave the cheese sauce in 30 second bursts, stirring between each, until smooth and hot.",
+    "Prep the buns: Split the onion buns. Spread cheese sauce generously on the bottom buns (or top and bottom if you're feeling extra cheesy). Drizzle the top buns with Country French dressing.",
+    "Build: Pile the warm roast beef high on the cheese-sauced bottom buns, then close the sandwiches.",
+    "Bake: Wrap each sandwich in foil and bake for 8 to 10 minutes, until heated through and the buns are slightly toasted.",
+    "Serve: Unwrap carefully and serve hot."
+  ],
+
+  notes: [
+    "Don't add the roast beef to the hot au jus until you're ready to build the sandwiches. Already-cooked deli roast beef turns rubbery fast if it sits in hot liquid too long.",
+    "Prep everything else first (cheese sauce warmed, buns split, dressing ready) so the beef goes in last.",
+    "Serve the leftover au jus on the side for dipping, French dip style, or save it for another recipe.",
+    "Sandwiches go great with store-bought Arby's sauce, Horsey sauce, and curly fries."
   ]
 },
 
