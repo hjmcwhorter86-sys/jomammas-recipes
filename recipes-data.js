@@ -1305,11 +1305,11 @@ tags: ["dessert", "high protein"]
     {
       title: "Vinegar Cucumbers",
       items: [
-        { qty: 1, unit: null, name: "mini cucumber", notes: "thinly sliced" },
-        { qty: 1, unit: "tbsp", name: "rice vinegar" },
-        { qty: 0.25, unit: "tsp", name: "sugar" },
-        { qty: null, unit: null, name: "Pinch of salt" },
-        { qty: null, unit: null, name: "Tiny drizzle of toasted sesame oil" }
+        { qty: 3, unit: null, name: "mini cucumbers", notes: "thinly sliced" },
+        { qty: 3, unit: "tbsp", name: "rice vinegar" },
+        { qty: 0.75, unit: "tsp", name: "sugar" },
+        { qty: null, unit: null, name: "Generous pinch of salt" },
+        { qty: null, unit: null, name: "Small drizzle of toasted sesame oil" }
       ]
     },
     {
@@ -1323,7 +1323,7 @@ tags: ["dessert", "high protein"]
 
   steps: [
     "Warm a quart-sized Mason jar by rinsing with hot tap water. Combine rice vinegar, water, sugar, salt, and red pepper flakes in a small saucepan or microwave-safe cup. Heat until steaming and sugar is dissolved, about 90 seconds in the microwave. Pack julienned carrots tightly into the jar, pour hot brine over them, and let sit at room temperature for 20–30 minutes.",
-    "Thinly slice the cucumber and toss with rice vinegar, sugar, salt, and a tiny drizzle of sesame oil. Let sit at least 10 minutes before serving.",
+    "Thinly slice the cucumbers and toss with rice vinegar, sugar, salt, and a small drizzle of sesame oil. Let sit at least 10 minutes before serving.",
     "Rinse jasmine rice until water runs mostly clear. Add to rice cooker with chicken broth, water, sesame oil, and salt. Cook on the white rice setting. When done, fluff with a fork and stir in the rice vinegar.",
     "Whisk together soy sauce, brown sugar, sesame oil, ginger, red pepper flakes, and gochujang paste in a small bowl. Taste; it should be salty, slightly sweet, and have a little heat.",
     "Heat vegetable oil in a large skillet over medium-high heat. Add ground beef and break it apart. Cook until browned and no longer pink, about 5–6 minutes. Drain excess grease if needed.",
