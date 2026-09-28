@@ -1017,6 +1017,10 @@ if (pageType === 'about') {
   setSeo('About', 'This website was made for cooking quick and easy recipes with no fluff or distractions.');
 }
 
+if (pageType === 'ai-use') {
+  setSeo('How I Use AI', 'A note on how this site and its recipes are made, with a little help from AI.');
+}
+
 if (pageType === 'flags') {
   setSeo('Feature Flags', 'Turn experimental features on or off in this browser.');
 }
