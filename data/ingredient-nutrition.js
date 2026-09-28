@@ -2414,4 +2414,60 @@ window.ingredientNutrition = {
     verified: false,
     source: "Estimated by Claude (USDA FoodData Central, gouda cheese), unverified, pending user label check (recipe uses sliced Gouda)"
   },
+
+  "deli roast beef": {
+    per: "100g",
+    calories: 125,
+    protein: 17.9,
+    fat: 5.4,
+    fiber: 0,
+    carbs: 1.8,
+    unitWeights: {},
+    verified: true,
+    source: "Hillshire Farm Ultra Thin Sliced Roast Beef (7 oz) label: 70 cal / 3g fat / 0g fiber / 1g carbs / 10g protein per 2 oz (56g), per user-provided photo."
+  },
+  "au jus gravy mix": {
+    per: "100g",
+    calories: 200,
+    protein: 0,
+    fat: 0,
+    fiber: 0,
+    carbs: 40,
+    unitWeights: { packet: 30 },
+    verified: true,
+    source: "McCormick Au Jus Gravy Mix label: 5 cal / 0g fat / 1g carbs / 0g protein per 1/2 tsp mix (2.5g), about 12 servings per packet (so ~30g per packet), per user-provided photo."
+  },
+  "cheddar cheese sauce": {
+    per: "100g",
+    calories: 129,
+    protein: 1.6,
+    fat: 8.1,
+    fiber: 0,
+    carbs: 9.7,
+    unitWeights: {},
+    verified: true,
+    source: "Great Value Stadium Style Cheddar Cheese Dip (15 oz) label: 40 cal / 2.5g fat / 0g fiber / 3g carbs / <1g protein (counted as 0.5g) per 2 tbsp (31g), per user-provided photo."
+  },
+  "onion sandwich bun": {
+    per: "100g",
+    calories: 283,
+    protein: 11.3,
+    fat: 4.7,
+    fiber: 1.9,
+    carbs: 52.8,
+    unitWeights: { "onion sandwich bun": 53 },
+    verified: true,
+    source: "Pepperidge Farm Onion with Poppy Seeds Hamburger Buns label: 150 cal / 2.5g fat / 1g fiber / 28g carbs / 6g protein per 1 bun (53g), per user-provided photo."
+  },
+  "country french dressing": {
+    per: "100ml",
+    calories: 473,
+    protein: 0,
+    fat: 40.6,
+    fiber: 0,
+    carbs: 33.8,
+    unitWeights: {},
+    verified: true,
+    source: "Ken's Steak House Country French with Orange Blossom Honey label: 140 cal / 12g fat / 0g fiber / 10g carbs / 0g protein per 2 tbsp (32g, ~29.6ml), per user-provided photo."
+  },
 };

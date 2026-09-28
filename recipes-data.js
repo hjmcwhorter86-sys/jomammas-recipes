@@ -2837,4 +2837,50 @@ tags: ["dessert", "high protein"]
   ]
 },
 
+  {
+  id: "copycat-arbys-beef-n-cheddar-sandwiches",
+  title: "Copycat Arby's Beef 'n Cheddar Sandwiches",
+  description: "Ultra-thin roast beef steamed in seasoned au jus, piled on onion buns with warm cheddar cheese sauce and a sweet drizzle of Country French dressing, just like the drive-thru favorite.",
+  image: "images/copycat-arbys-beef-n-cheddar-sandwiches.png",
+  category: ["Beef"],
+  dateAdded: "2026-09-28",
+  carbs: null,
+  fat: null,
+  fiber: null,
+  calories: "",
+  protein: "",
+  servings: "4",
+  tags: ["sandwich", "roast beef", "copycat", "cheddar", "quick"],
+
+  ingredients: [
+    { qty: 1, unit: "lb", name: "deli roast beef", notes: "thinly sliced; Hillshire Farm Ultra Thin is closest to Arby's texture" },
+    { qty: 1, unit: "packet", name: "au jus gravy mix", notes: "prepared with about ¾ cup water" },
+    { qty: 0.5, unit: "tsp", name: "garlic powder" },
+    { qty: 0.5, unit: "tsp", name: "onion powder" },
+
+    { qty: 15, unit: "oz", name: "cheddar cheese sauce", notes: "1 jar; Ricos nacho cheese, Gordon Food Service can, or Great Value Stadium Style" },
+    { qty: 4, unit: null, name: "onion sandwich buns" },
+    { qty: 8, unit: "tsp", approx: true, name: "Country French dressing", notes: "Ken's; about 2 tsp per sandwich, more to taste" },
+    { qty: null, unit: null, name: "Salt and pepper, to taste" }
+  ],
+
+  steps: [
+    "Preheat the oven to 350°F.",
+    "Make the au jus: Prepare the au jus gravy mix according to the packet directions, using about ¾ cup water. Bring to a simmer in a skillet over medium heat.",
+    "Warm the beef: Add the roast beef to the simmering au jus and sprinkle in the garlic powder and onion powder. Cover and let steam for 3 to 5 minutes, just until warmed through and tender. Season with salt and pepper if needed.",
+    "Drain: Drain off the excess liquid.",
+    "Heat the cheese sauce: While the beef warms, microwave the cheese sauce in 30 second bursts, stirring between each, until smooth and hot.",
+    "Prep the buns: Split the onion buns. Spread cheese sauce generously on the bottom buns (or top and bottom if you're feeling extra cheesy). Drizzle the top buns with Country French dressing.",
+    "Build: Pile the warm roast beef high on the cheese-sauced bottom buns, then close the sandwiches.",
+    "Bake: Wrap each sandwich in foil and bake for 8 to 10 minutes, until heated through and the buns are slightly toasted.",
+    "Serve: Unwrap carefully and serve hot."
+  ],
+
+  notes: [
+    "Don't add the roast beef to the hot au jus until you're ready to build the sandwiches. Already-cooked deli roast beef turns rubbery fast if it sits in hot liquid too long.",
+    "Prep everything else first (cheese sauce warmed, buns split, dressing ready) so the beef goes in last.",
+    "Sandwiches go great with store-bought Arby's sauce, Horsey sauce, and curly fries."
+  ]
+},
+
 ];
