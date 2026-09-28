@@ -2958,4 +2958,52 @@ tags: ["dessert", "high protein"]
   ]
 },
 
+{
+  id: "creamy-ritz-chicken-casserole",
+  title: "Creamy Ritz Chicken Casserole",
+  description: "Creamy, buttery chicken casserole with a crispy onion and Ritz cracker topping for rich flavor and crunch.",
+  image: "images/no-photo.jpg",
+  category: ["Chicken"],
+  dateAdded: "2026-09-28",
+  inProgress: true,
+  carbs: null,
+  fat: null,
+  fiber: null,
+  calories: "",
+  protein: "",
+  servings: "6",
+  tags: ["casserole", "chicken", "ritz", "creamy", "comfort food", "baked"],
+
+  ingredients: [
+    { qty: 3, unit: "cup", name: "shredded cooked chicken", notes: "breast, shredded or diced" },
+    { qty: 1, unit: "cup", name: "sour cream" },
+    { qty: 1.25, unit: "cup", approx: true, name: "cream of chicken soup", notes: "one 10.5 oz can" },
+    { qty: 1.5, unit: "cup", name: "shredded cheddar", notes: "sharp" },
+    { qty: 0.5, unit: "tsp", name: "garlic powder" },
+    { qty: 0.5, unit: "tsp", name: "onion powder" },
+    { qty: 0.25, unit: "tsp", name: "black pepper" },
+
+    { qty: 1.5, unit: "cup", name: "Ritz crackers", notes: "crushed" },
+    { qty: 4, unit: "tbsp", name: "salted butter", notes: "melted" },
+    { qty: 0.75, unit: "cup", name: "crispy fried onions" },
+    { qty: 1, unit: "tbsp", name: "fresh chives", notes: "chopped, for topping" }
+  ],
+
+  steps: [
+    "Preheat your oven to 350°F. Lightly grease a 9x13 inch baking dish.",
+    "In a large bowl, stir together the chicken, sour cream, cream of chicken soup, cheddar cheese, garlic powder, onion powder, and black pepper until well combined.",
+    "Spread the chicken mixture evenly into the prepared baking dish.",
+    "In a small bowl, mix the crushed Ritz crackers with the melted butter until evenly coated. Stir in the crispy fried onions, crushing them lightly with your hands as you add them.",
+    "Scatter the cracker and onion topping evenly over the chicken mixture.",
+    "Bake for about 30 minutes, until bubbly around the edges and the topping is golden brown.",
+    "Let the casserole rest for 5 minutes, then sprinkle with chives and serve, ideally over rice or egg noodles."
+  ],
+
+  notes: [
+    "Test Kitchen: work in progress, not final yet.",
+    "Rice or egg noodles underneath soak up the sauce nicely.",
+    "Leftovers keep about 4 days in the fridge, and the topping crisps back up fine under the broiler for a minute or two."
+  ]
+},
+
 ];

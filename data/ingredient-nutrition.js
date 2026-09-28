@@ -2470,4 +2470,26 @@ window.ingredientNutrition = {
     verified: true,
     source: "Ken's Steak House Country French with Orange Blossom Honey label: 140 cal / 12g fat / 0g fiber / 10g carbs / 0g protein per 2 tbsp (32g, ~29.6ml), per user-provided photo."
   },
+  "crispy fried onions": {
+    per: "100g",
+    calories: 643,
+    protein: 0,
+    fat: 50,
+    fiber: 0,
+    carbs: 42.9,
+    unitWeights: {},
+    verified: true,
+    source: "French's Crispy Fried Onions label: 45 cal / 3.5g fat / 3g carbs / 0g fiber / 0g protein per 2 tbsp (7g), per user-provided photo."
+  },
+  "fresh chives": {
+    per: "100g",
+    calories: 0,
+    protein: 0,
+    fat: 0,
+    fiber: 0,
+    carbs: 0,
+    unitWeights: {},
+    verified: true,
+    source: "Melissa's Produce chives label: 0 cal / 0g fat / 0g carbs / 0g fiber / 0g protein per 1 1/2 tbsp (4.5g), per user-provided photo. Label values are rounded down; negligible at garnish quantities."
+  },
 };
