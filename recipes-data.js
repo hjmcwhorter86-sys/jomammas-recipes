@@ -292,7 +292,7 @@ tags: ["dessert", "high protein"]
     { qty: 3, unit: "tbsp", name: "flour" },
     { qty: 2, unit: "tbsp", name: "tomato paste" },
     { qty: 0.25, unit: "tsp", name: "paprika" },
-    { qty: 0.5, unit: "cup", name: "minced lobster meat", notes: "or langoustine tail meat" },
+    { qty: 0.5, unit: "cup", name: "minced lobster meat", notes: "must be cooked lobster meat, not raw; or cooked langoustine tail meat" },
     { qty: null, unit: null, name: "Fresh herbs", notes: "parsley or chives" }
   ],
 
