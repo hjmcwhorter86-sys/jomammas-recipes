@@ -144,6 +144,9 @@ window.unitConversions = {
     "fresh sage": 0.15,
     "yellow onion": 0.68,
     "monterey jack cheese": 0.48,
+    "ritz crackers": 0.36,
+    "crispy fried onions": 0.24,
+    "fresh chives": 0.2,
   },
 
   // Preferred display units for the US/Metric units toggle (units-service.js).
