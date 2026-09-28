@@ -2879,7 +2879,7 @@ tags: ["dessert", "high protein"]
   notes: [
     "Don't add the roast beef to the hot au jus until you're ready to build the sandwiches. Already-cooked deli roast beef turns rubbery fast if it sits in hot liquid too long.",
     "Prep everything else first (cheese sauce warmed, buns split, dressing ready) so the beef goes in last.",
-    "Leftover au jus makes a great dip for the sandwiches, French dip style, or save it for another recipe.",
+    "Serve the leftover au jus on the side for dipping, French dip style, or save it for another recipe.",
     "Sandwiches go great with store-bought Arby's sauce, Horsey sauce, and curly fries."
   ]
 },
