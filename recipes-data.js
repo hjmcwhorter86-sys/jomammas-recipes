@@ -2854,7 +2854,7 @@ tags: ["dessert", "high protein"]
 
   ingredients: [
     { qty: 1, unit: "lb", name: "deli roast beef", notes: "thinly sliced; Hillshire Farm Ultra Thin is closest to Arby's texture" },
-    { qty: 1, unit: "packet", name: "au jus gravy mix", notes: "prepared with about ¾ cup water" },
+    { qty: 1, unit: "packet", name: "au jus gravy mix", notes: "prepared per packet directions; you'll use about ¾ cup of it" },
     { qty: 0.5, unit: "tsp", name: "garlic powder" },
     { qty: 0.5, unit: "tsp", name: "onion powder" },
 
@@ -2866,7 +2866,7 @@ tags: ["dessert", "high protein"]
 
   steps: [
     "Preheat the oven to 350°F.",
-    "Make the au jus: Prepare the au jus gravy mix according to the packet directions, using about ¾ cup water. Bring to a simmer in a skillet over medium heat.",
+    "Make the au jus: Prepare the au jus gravy mix according to the packet directions (McCormick uses 3 cups water). Pour about ¾ cup of it into a skillet and bring to a simmer over medium heat. Keep the rest warm for dipping, or save it for another recipe.",
     "Warm the beef: Add the roast beef to the simmering au jus and sprinkle in the garlic powder and onion powder. Cover and let steam for 3 to 5 minutes, just until warmed through and tender. Season with salt and pepper if needed.",
     "Drain: Drain off the excess liquid.",
     "Heat the cheese sauce: While the beef warms, microwave the cheese sauce in 30 second bursts, stirring between each, until smooth and hot.",
@@ -2879,6 +2879,7 @@ tags: ["dessert", "high protein"]
   notes: [
     "Don't add the roast beef to the hot au jus until you're ready to build the sandwiches. Already-cooked deli roast beef turns rubbery fast if it sits in hot liquid too long.",
     "Prep everything else first (cheese sauce warmed, buns split, dressing ready) so the beef goes in last.",
+    "Leftover au jus makes a great dip for the sandwiches, French dip style, or save it for another recipe.",
     "Sandwiches go great with store-bought Arby's sauce, Horsey sauce, and curly fries."
   ]
 },
