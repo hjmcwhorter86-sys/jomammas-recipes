@@ -2962,10 +2962,9 @@ tags: ["dessert", "high protein"]
   id: "creamy-ritz-chicken-casserole",
   title: "Creamy Ritz Chicken Casserole",
   description: "Creamy, buttery chicken casserole with a crispy onion and Ritz cracker topping for rich flavor and crunch.",
-  image: "images/no-photo.jpg",
+  image: "images/creamy-ritz-chicken-casserole.png",
   category: ["Chicken"],
-  dateAdded: "2026-09-28",
-  inProgress: true,
+  dateAdded: "2026-09-29",
   carbs: null,
   fat: null,
   fiber: null,
@@ -3000,7 +2999,6 @@ tags: ["dessert", "high protein"]
   ],
 
   notes: [
-    "Test Kitchen: work in progress, not final yet.",
     "Rice or egg noodles underneath soak up the sauce nicely.",
     "Leftovers keep about 4 days in the fridge, and the topping crisps back up fine under the broiler for a minute or two."
   ]
