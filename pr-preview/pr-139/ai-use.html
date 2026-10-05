@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="page-type" content="ai-use" />
+  <title>AI Use • JoMama's Recipes</title>
+  <link rel="stylesheet" href="styles.css?v=12" />
+  <link rel="preload" href="images/background-wood.png" as="image" type="image/png" />
+</head>
+<body class="about-page">
+  <header class="header">
+    <div class="header-top">
+      <button class="hamburger-menu" id="hamburgerMenu" aria-label="Toggle menu" aria-expanded="false">
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+      </button>
+      <div class="logo">
+        <a href="index.html" class="logo-link">
+          <img src="images/jomammas-recipes-logo.png" alt="JoMamma's Recipes" class="logo-image" fetchpriority="high" />
+        </a>
+      </div>
+      <nav class="nav">
+        <a href="index.html">Home</a>
+        <a href="recipes-list.html" class="recipes-link">Recipes</a>
+        <a href="about.html">About</a>
+        <a href="abc.html">Adrien's Baking Corner</a>
+      </nav>
+      <div class="header-actions">
+        <input id="search" type="search" class="search-input" placeholder="Search recipes…" />
+        <a href="recipes-list.html" class="view-all-button button-family button-primary">View All Categories</a>
+        <select id="unitSystemSelect" class="unit-system-select" aria-label="Units">
+          <option value="us">US</option>
+          <option value="metric">Metric</option>
+        </select>
+      </div>
+      <button class="search-icon-button" id="searchIconButton" aria-label="Open search" aria-expanded="false">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="11" cy="11" r="8"></circle>
+          <path d="m21 21-4.35-4.35"></path>
+        </svg>
+      </button>
+    </div>
+    <nav class="mobile-menu" id="mobileMenu">
+      <a href="index.html" class="mobile-menu-link">Home</a>
+      <a href="recipes-list.html" class="mobile-menu-link">Recipes</a>
+      <a href="about.html" class="mobile-menu-link">About</a>
+      <a href="abc.html" class="mobile-menu-link">Adrien's Baking Corner</a>
+      <div class="mobile-menu-units">
+        <label for="unitSystemSelectMobile">Units</label>
+        <select id="unitSystemSelectMobile" class="unit-system-select">
+          <option value="us">US</option>
+          <option value="metric">Metric</option>
+        </select>
+      </div>
+    </nav>
+    <div class="mobile-search-container" id="mobileSearchContainer">
+      <input id="mobile-search" type="search" class="mobile-search-input" placeholder="Search recipes…" />
+    </div>
+  </header>
+
+  <main id="detailed-view" class="about-view">
+    <article class="recipe-detail about-panel">
+      <h1>A Note on How This Site Was Built 🤖</h1>
+      <img src="images/mascot.png" alt="JoMamma mascot" class="about-mascot" />
+      <p class="recipe-description">I'm a mother of four and a full-time caregiver to my adult son with special needs. I am not a software engineer, and my free time is basically non-existent. So learning to build a website from scratch was never going to happen.</p>
+      <p class="recipe-description">What I do have is a pile of recipes I love and a strong opinion that finding them shouldn't involve ads, a 2,000-word story about someone's grandmother's porch, or a page that refuses to load while dinner burns.</p>
+      <p class="recipe-description">So this site is my little corner of the internet for me, my friends, and my family.</p>
+      <p class="recipe-description">Here's how it gets made. I use AI tools to help build the site itself and to help develop the recipes. I show up with an idea, the ingredients I want to use, and the direction I'm craving, and AI helps me turn that into a written recipe.</p>
+      <p class="recipe-description">Then the real work happens in my kitchen. I cook every recipe myself, photograph it, and only post it once I've actually eaten it and loved it. Sometimes I get a ratio or a flavor wrong (it happens!), and I rework it until it's right. Anything that doesn't pass the first time goes to The Test Kitchen, where I keep track of what went wrong and what I'll fix next time.</p>
+      <p class="recipe-description">If this site helps other people on their cooking journey, that's wonderful. If it never leaves my circle, it's already done its job. Think of it as an old-fashioned recipe book, just online and with fewer stains.</p>
+      <p class="recipe-description">Hope you enjoy!</p>
+    </article>
+  </main>
+
+  <footer class="site-footer" aria-label="Site footer">
+    <div class="site-footer-inner">
+      <div class="site-footer-brand">
+        <h2>JoMamma's Recipes</h2>
+        <p>Ad free recipes for everyone to enjoy</p>
+      </div>
+      <nav class="site-footer-nav" aria-label="Footer navigation">
+        <a href="index.html">Home</a>
+        <a href="recipes-list.html">All Recipes</a>
+        <a href="about.html">About</a>
+        <a href="index.html#categories">Categories</a>
+        <a href="abc.html">Adrien's Baking Corner</a>
+        <a href="ai-use.html" aria-current="page">🤖 How I Use AI</a>
+        <a href="flags.html" class="footer-flag-link" aria-label="Feature flags" title="Feature flags">🏳️‍🌈</a>
+      </nav>
+      <p class="site-footer-copy">© 2026 • easy printer-friendly recipes</p>
+    </div>
+  </footer>
+
+  <script src="feature-flags.js"></script>
+  <script src="flags-service.js"></script>
+  <script src="units-service.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
