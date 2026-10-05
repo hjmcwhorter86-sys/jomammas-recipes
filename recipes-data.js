@@ -2230,25 +2230,27 @@ tags: ["dessert", "high protein"]
     { qty: null, unit: null, name: "A splash of hot sauce" },
     { qty: null, unit: null, name: "A splash of Worcestershire sauce" },
 
-    { qty: 1, unit: "tsp", name: "salt" },
+    { qty: 1.5, unit: "tsp", name: "kosher salt", notes: "for cooking" },
+    { qty: 1, unit: "tsp", name: "kosher salt", notes: "to finish, plus more to taste" },
     { qty: 0.5, unit: "tsp", name: "black pepper" }
   ],
 
   steps: [
     "Preheat a large pot or Dutch oven over medium-high heat. Add the ground beef, press it down into an even layer, and let it sit undisturbed for 2 to 3 minutes to get a good brown before breaking it up.",
-    "Add the onions and bell peppers to the pot with the beef. Cook, breaking up the meat as you go, until the beef is fully browned and the veggies start to soften, about 5 to 6 more minutes. Drain excess fat.",
+    "Add the onions and bell peppers to the pot with the beef. Sprinkle with 1½ tsp of the kosher salt. Cook, breaking up the meat as you go, until the beef is fully browned and the veggies start to soften, about 5 to 6 more minutes. Drain excess fat.",
     "Stir in the garlic and cook until fragrant, about 1 minute.",
     "Sprinkle in the chili seasoning packets and stir to coat everything evenly. Let it toast for about 30 seconds before adding liquid.",
     "Add the tomato paste and stir until fully worked in, with no dry streaks.",
     "Pour in the tomato sauce, diced tomatoes, and 3 cups of the broth. Add the hot sauce and Worcestershire sauce. Stir to combine.",
     "Bring to a light boil, then reduce heat and simmer uncovered for 20 to 25 minutes, stirring occasionally.",
-    "Taste and season with salt and pepper. Add the remaining broth if you want it soupier."
+    "Taste and season with the remaining salt and the pepper. Start with 1 tsp salt, then add more if needed. Add the remaining broth if you want it soupier."
   ],
 
   notes: [
     "Swap in 93% lean ground turkey for an even lighter version, same method.",
     "A small can of Rotel in place of the diced tomatoes adds more tomato punch without more calories.",
-    "Leftovers thicken in the fridge, so splash in a little broth or water when reheating."
+    "Leftovers thicken in the fridge, so splash in a little broth or water when reheating.",
+    "Chili seasoning packets and broth vary a lot in sodium, so always taste before the final salt. Kosher salt is less dense than table salt, so if you use table salt, cut each amount by about a third."
   ]
 },
 
