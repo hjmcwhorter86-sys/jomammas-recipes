@@ -2231,7 +2231,7 @@ tags: ["dessert", "high protein"]
     { qty: null, unit: null, name: "A splash of Worcestershire sauce" },
 
     { qty: 1.5, unit: "tsp", name: "kosher salt", notes: "for cooking" },
-    { qty: 1, unit: "tsp", name: "kosher salt", notes: "to finish, plus more to taste" },
+    { qty: 1, qtyMax: 1.5, unit: "tsp", name: "kosher salt", notes: "to finish" },
     { qty: 0.5, unit: "tsp", name: "black pepper" }
   ],
 
@@ -2243,7 +2243,7 @@ tags: ["dessert", "high protein"]
     "Add the tomato paste and stir until fully worked in, with no dry streaks.",
     "Pour in the tomato sauce, diced tomatoes, and 3 cups of the broth. Add the hot sauce and Worcestershire sauce. Stir to combine.",
     "Bring to a light boil, then reduce heat and simmer uncovered for 20 to 25 minutes, stirring occasionally.",
-    "Taste and season with the remaining salt and the pepper. Start with 1 tsp salt, then add more if needed. Add the remaining broth if you want it soupier."
+    "Taste and season with the remaining salt and the pepper. Start with 1 tsp salt, then add up to ½ tsp more if needed. Add the remaining broth if you want it soupier."
   ],
 
   notes: [
