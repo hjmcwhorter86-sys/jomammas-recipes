@@ -2485,7 +2485,7 @@ tags: ["dessert", "high protein"]
 
   ingredients: [
     { qty: 16, unit: "oz", name: "cream cheese", notes: "softened" },
-    { qty: 2, unit: "tbsp", name: "sour cream" },
+    { qty: 1, unit: "tbsp", name: "sour cream" },
     { qty: 1, unit: "tsp", name: "chili powder" },
     { qty: 0.5, unit: "tsp", name: "ground cumin" },
     { qty: 0.5, unit: "tsp", name: "garlic powder" },
