@@ -2226,7 +2226,7 @@ tags: ["dessert", "high protein"]
     { qty: 9, unit: "oz", name: "tomato paste", notes: "1 to 1½ small cans", display: "9 oz tomato paste (1 to 1½ small cans)" },
     { qty: 30, unit: "oz", name: "tomato sauce", display: "30 oz tomato sauce" },
     { qty: 29, unit: "oz", name: "diced tomatoes", notes: "with juice", display: "29 oz diced tomatoes, with juice" },
-    { qty: 3, qtyMax: 4, unit: "cup", name: "beef broth", notes: "low sodium" },
+    { qty: 3, qtyMax: 4, unit: "cup", name: "beef broth" },
     { qty: null, unit: null, name: "A splash of hot sauce" },
     { qty: null, unit: null, name: "A splash of Worcestershire sauce" },
 
