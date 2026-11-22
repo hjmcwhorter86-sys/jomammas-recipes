@@ -3010,4 +3010,54 @@ tags: ["dessert", "high protein"]
   ]
 },
 
+{
+  id: "buenasdillas",
+  title: "Buenasdillas (Breakfast Quesadillas)",
+  author: "Jo Daddy",
+  description: "A lazy, single-pan lunch of scrambled eggs and shredded ham folded into a crispy, cheese-glued tortilla. Low effort, minimal dishes, no apologies.",
+  image: "images/no-photo.jpg",
+  category: "Breakfast",
+  dateAdded: "2026-11-22",
+  carbs: null,
+  fat: null,
+  fiber: null,
+  calories: "",
+  protein: "",
+  servings: "1",
+  tags: ["breakfast", "quesadilla", "easy", "one pan", "lunch", "ham", "eggs"],
+
+  ingredients: [
+    { qty: 1, unit: null, name: "low carb tortilla", notes: "large, high fiber/protein" },
+    { qty: 3, unit: "oz", approx: true, name: "ham", notes: "deli sliced, a few slices" },
+    { qty: 2, unit: null, name: "egg", notes: "large" },
+    { qty: 1, unit: "tbsp", approx: true, name: "light margarine", notes: "or butter or cooking spray, divided between the two pan stages" },
+    { qty: 2, unit: "oz", approx: true, name: "shredded cheese", notes: "any melty cheese; Queso Quesadilla cheese works great, plus a little extra for the pan" },
+    { qty: null, unit: null, name: "seasoned salt", notes: "to taste" },
+    { qty: null, unit: null, name: "black pepper", notes: "to taste" },
+    { qty: null, unit: null, name: "garlic powder", notes: "to taste" },
+    { qty: null, unit: null, name: "onion powder", notes: "to taste" },
+    { qty: null, unit: null, name: "chili powder", notes: "to taste" },
+    { qty: null, unit: null, name: "jalapeños", notes: "optional, diced", optional: true },
+    { qty: null, unit: null, name: "salsa", notes: "for dipping; guacamole or sour cream also work", optional: true }
+  ],
+
+  steps: [
+    "Put the tortilla on a plate. Tear several slices of deli ham into shreds with your hands and pile them on top of the tortilla.",
+    "Heat a pan over medium heat and add a little margarine, butter, or cooking spray.",
+    "Crack the eggs straight into the hot pan and use your spatula to break them up and push them around. (You could scramble them in a bowl first, but that's one more dish to wash.)",
+    "Once the eggs are no longer liquid, add the shredded ham. Keep everything moving until the eggs and ham are warm and cooked how you like. Go a little under, since they cook more inside the tortilla. Toss in any extras now, like jalapeños.",
+    "Dump the ham and eggs onto the tortilla (still on the plate) and season with seasoned salt, pepper, garlic powder, onion powder, and chili powder, or whatever you like.",
+    "Add fresh margarine, butter, or oil to the pan and heat it up. When it's hot, slide the loaded tortilla into the pan, sprinkle the cheese over the top, and spread it around with the spatula.",
+    "Keep the heat at medium until the cheese looks melty, then fold the tortilla over and press it down with the back of the spatula so the cheese glues everything together.",
+    "Lift one side and peek underneath. Flip when it has as much color as you like, then slide it onto a plate when the second side is done.",
+    "Serve with salsa, guacamole, or sour cream for dipping."
+  ],
+
+  notes: [
+    "Cheese crispies: sprinkle extra cheese into the pan around the edge of the quesadilla, then push the cheese that falls in back onto the tortilla with your spatula. Skip this if your kids are in the \"ew, burnt cheese\" camp.",
+    "Make it your own: one of our kids likes jalapeños in the eggs. Other add-ins go in with the ham and eggs.",
+    "This is an intentionally low-effort, single-pan lunch. A more proper breakfast quesadilla may come later."
+  ]
+},
+
 ];
