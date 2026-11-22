@@ -3015,7 +3015,7 @@ tags: ["dessert", "high protein"]
   title: "Buenasdillas (Breakfast Quesadillas)",
   author: "Jo Daddy",
   description: "A lazy, single-pan lunch of scrambled eggs and shredded ham folded into a crispy, cheese-glued tortilla. Low effort, minimal dishes, no apologies.",
-  image: "images/no-photo.jpg",
+  image: "images/buenasdillas.png",
   category: "Breakfast",
   dateAdded: "2026-11-22",
   carbs: null,
