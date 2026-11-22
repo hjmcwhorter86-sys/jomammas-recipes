@@ -40,6 +40,18 @@ function getGuideLinkUrl(guideLink) {
   return guideLink.tab ? `${guide.url}#${guideLink.tab}` : guide.url;
 }
 
+// Optional guest-author byline. Recipes without an `author` field render
+// nothing, so Jo Mama's own recipes stay unchanged.
+function escapeAuthor(value) {
+  return String(value).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+}
+
+function renderAuthorByline(recipe) {
+  const author = recipe && typeof recipe.author === 'string' ? recipe.author.trim() : '';
+  if (!author) return '';
+  return `<p class="recipe-author">Guest recipe by <strong>${escapeAuthor(author)}</strong></p>`;
+}
+
 // Banner shown at the top of an in-progress recipe's detail page.
 function renderTestKitchenBanner(recipe) {
   if (!isInProgress(recipe)) return '';
@@ -1210,6 +1222,7 @@ if (pageType === 'list' && recipesEl && searchEl) {
           <div class="recipe-card-content">
             <h3>${r.title}</h3>
             <p>${r.description}</p>
+            ${renderAuthorByline(r)}
             <div class="recipe-meta-row">
               <span class="category-pill">${formatRecipeCategories(r)}</span>
             </div>
@@ -1248,6 +1261,7 @@ if (pageType === 'list' && recipesEl && searchEl) {
       <article class="recipe-detail">
         ${renderTestKitchenBanner(recipe)}
         <h1>${recipe.title}</h1>
+        ${renderAuthorByline(recipe)}
         <p class="recipe-description">${recipe.description}</p>
         <div class="recipe-meta">
           <div class="meta-primary">
@@ -1458,6 +1472,7 @@ if (pageType === 'detail' && detailedViewEl) {
       <article class="recipe-detail">
         ${renderTestKitchenBanner(recipe)}
         <h1>${recipe.title}</h1>
+        ${renderAuthorByline(recipe)}
         <p class="recipe-description">${recipe.description}</p>
         <div class="recipe-meta">
           <div class="meta-primary">
@@ -1614,6 +1629,7 @@ if (pageType === 'abc-detail' && detailedViewEl) {
       <article class="recipe-detail">
         ${renderTestKitchenBanner(recipe)}
         <h1>${recipe.title}</h1>
+        ${renderAuthorByline(recipe)}
         <p class="recipe-description">${recipe.description}</p>
         <div class="recipe-meta">
           <div class="meta-primary">

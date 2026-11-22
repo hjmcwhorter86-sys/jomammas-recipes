@@ -1177,6 +1177,13 @@ body{
   max-width: 68ch;
 }
 
+.recipe-author {
+  margin: 0 0 var(--space-2);
+  font-size: var(--font-size-smd);
+  font-style: italic;
+  color: var(--color-text-muted);
+}
+
 .recipe-meta {
   display: flex;
   gap: var(--space-4);
