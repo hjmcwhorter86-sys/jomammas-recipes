@@ -37,6 +37,10 @@
 // for display (e.g. 1.25 -> "1¼", 0.333 -> "⅓") via formatQuantityDisplay
 // in app.js. Units are pluralized for display based on data/units.js.
 //
+// Recipe-level `author: "Name"` is optional. When set, the recipe shows a
+// "Guest recipe by <name>" byline on its detail page and list card. Omit it
+// for the site owner's own recipes.
+//
 // Recipe-level `inProgress: true` marks a Test Kitchen (work-in-progress)
 // recipe. It's optional and defaults to false, so finished recipes omit it.
 // In-progress recipes are hidden from search, categories, and homepage
